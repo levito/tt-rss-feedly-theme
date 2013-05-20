@@ -614,9 +614,12 @@ div.articleNote {
 	margin-bottom: -1px;
 	cursor: pointer;
 }
+/*.cdm.expandable.active .cdmHeader,
+.cdm.expandable.active .cdmFooter,
+.hl.active,*/
 .cdm.expandable .cdmHeader:hover,
 .hl:hover {
-	background: #f2f2f2;
+	background: #f5f5f5;
 }
 .cdm.expandable.active {
 	border-color: #ccc;
