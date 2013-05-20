@@ -482,6 +482,32 @@ div.articleNote {
 	overflow: auto;
 	font-size: 14px;
 }
+.cdmContentInner h1,
+.postContent h1,
+.cdmContentInner h2,
+.postContent h2,
+.cdmContentInner h3,
+.postContent h3,
+.cdmContentInner h4,
+.postContent h4,
+.cdmContentInner h5,
+.postContent h5,
+.cdmContentInner h6,
+.postContent h6 {
+	font-family: "Arial Narrow", sans-serif;
+	padding-top: .5em;
+}
+.cdmContentInner h1,
+.postContent h1,
+.cdmContentInner h2,
+.postContent h2 {
+	font-weight: normal
+}
+
+.cdmContentInner p,
+.postContent p {
+	max-width: 50em;
+}
 .cdmContentInner img,
 .postContent img {
 	max-width: 100%;
