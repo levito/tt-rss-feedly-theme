@@ -214,6 +214,7 @@ input[type="search"] {
 .claro .dijitBorderContainer-dijitContentPane {
 	padding: 0;
 }
+img,
 .claro .dijitSplitContainer-child,
 .claro .dijitBorderContainer-child {
 	border: 0;
