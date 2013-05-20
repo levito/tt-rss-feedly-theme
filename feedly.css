@@ -172,8 +172,8 @@ ul.helpKbList {
 	max-height : 300px;
 	overflow : auto;
 	list-style-type : none;
-	border : 1px solid #c0c0c0;
-	background-color : #ecf4ff;
+	/*border : 1px solid #c0c0c0;
+	background-color : #ecf4ff;*/
 	margin : 0px 0px 5px 0px;
 	padding : 5px;
 }
@@ -181,7 +181,7 @@ ul.helpKbList {
 ul.helpKbList span.hksequence {
 	width : 6em;
 	margin-left : 20px;
-	color : #88b0f0;
+	/*color : #88b0f0;*/
 	font-weight : bold;
 	display : inline-block;
 }
