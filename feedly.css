@@ -311,7 +311,8 @@ html,
 }
 #main_toolbar_form > .dijitButton .dijitButtonContents {
 	font-size: 11px;
-	color: #999;
+	font-family: "Arial Narrow", sans-serif;
+	color: #777;
 }
 #main_toolbar_form > .dijitButton .dijitButtonText {
 	padding: 0;
@@ -383,7 +384,7 @@ html,
 	color: #999;
 }
 #headlines-toolbar .dijitSelect {
-	margin-left: 10px;
+	margin: -2px 0 0 10px;
 	color: #333;
 }
 #headlines-toolbar > .r {
