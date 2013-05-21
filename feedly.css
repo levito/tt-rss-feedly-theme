@@ -375,6 +375,7 @@ a:hover {
 }
 #main-toolbar {
 	padding: 4px 0 5px;
+	border: 0;
 }
 html,
 #overlay,
@@ -441,7 +442,7 @@ html,
 }
 #feeds-holder .counterNode {
 	float: right;
-	padding-right: 5px;
+	padding: 1px 5px 0;
 	font-size: 11px;
 	color: #aaa;
 }
@@ -459,9 +460,6 @@ html,
 }
 
 /* main */
-#main-toolbar {
-	border: 0;
-}
 #headlines-wrap-inner {
 	background: #fff;
 	box-shadow: 0 1px 4px rgba(0,0,0,.1);
