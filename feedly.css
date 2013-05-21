@@ -482,7 +482,7 @@ a:hover {
 }
 #feed_title {
 	padding-right: 3px;
-	font: normal normal bold 25px/1.2 "HelveticaNeue-condensed", "Arial Narrow", "Nimbus Sans Novus D Condensed bold", Arial, Helvetica, sans-serif;
+	font: normal normal normal 28px/33px "HelveticaNeue-condensed", "Arial Narrow", "Nimbus Sans Novus D Condensed bold", Arial, Helvetica, sans-serif;
 	text-rendering: optimizeLegibility;
 }
 #feed_title,
@@ -666,7 +666,7 @@ div.articleNote {
 	box-shadow: 0 1px 2px rgba(0,0,0,.1);
 }
 .cdm.expanded .title {
-	font: normal normal bold 25px/1.2 "HelveticaNeue-condensed", "Arial Narrow", "Nimbus Sans Novus D Condensed bold", Arial, Helvetica sans-serif;
+	font: normal normal normal 28px/33px "HelveticaNeue-condensed", "Arial Narrow", "Nimbus Sans Novus D Condensed bold", Arial, Helvetica sans-serif;
 }
 .cdm.expanded .titleWrap {
 	padding-top: 0;
