@@ -303,7 +303,7 @@ select.attachments {
 /* RESET ************************************************************/
 
 html {
-	font: 12px/1.5 Arial, sans-serif;
+	font: 12px/1.5 Arial, Helvetica, sans-serif;
 }
 :focus {
 	outline: none;
@@ -371,14 +371,13 @@ a:hover {
 	overflow: visible;
 }
 #ttrssMain #main {
-	margin: 0 30px;
+	padding: 0 30px;
 }
 #main-toolbar {
 	padding: 4px 0 5px;
 	border: 0;
 }
-html,
-#overlay,
+#main,
 #feeds-holder,
 #main-toolbar,
 #main #headlines-wrap-inner .dijitSplitter {
@@ -400,7 +399,7 @@ html,
 }
 #main_toolbar_form > .dijitButton .dijitButtonContents {
 	font-size: 11px;
-	font-family: "Arial Narrow", sans-serif;
+	font-family: "HelveticaNeue-condensed", "Arial Narrow", "Nimbus Sans Novus D Condensed bold", Arial, Helvetica sans-serif;
 	color: #777;
 }
 #main_toolbar_form > .dijitButton .dijitButtonText {
@@ -465,10 +464,10 @@ html,
 	box-shadow: 0 1px 4px rgba(0,0,0,.1);
 }
 #headlines-toolbar {
-	padding: 30px 35px 10px;
+	padding: 35px 35px 10px;
 	min-height: 20px;
 	text-align: right;
-	color: #999;
+	color: #bbb;
 }
 #headlines-toolbar .dijitSelect {
 	margin: -2px 0 0 10px;
@@ -476,14 +475,15 @@ html,
 }
 #headlines-toolbar > .r {
 	float: left;
-	margin-top: -11px;
+	margin-top: -10px;
 }
 #headlines-toolbar > .r img {
 	vertical-align: baseline !important;
 }
 #feed_title {
 	padding-right: 3px;
-	font: normal normal bold 25px/1.2 "Arial Narrow", sans-serif;
+	font: normal normal bold 25px/1.2 "HelveticaNeue-condensed", "Arial Narrow", "Nimbus Sans Novus D Condensed bold", Arial, Helvetica, sans-serif;
+	text-rendering: optimizeLegibility;
 }
 #feed_title,
 #feed_title a {
@@ -491,7 +491,7 @@ html,
 }
 #selected_prompt {
 	float: right;
-	padding: 11px 0 0 10px;
+	padding: 10px 0 0 10px;
 }
 #headlines-frame {
 	padding: 0 35px;
@@ -599,14 +599,15 @@ div.articleNote {
 .postContent h5,
 .cdmContentInner h6,
 .postContent h6 {
-	font-family: "Arial Narrow", sans-serif;
+	font-family: "HelveticaNeue-condensed", "Arial Narrow", "Nimbus Sans Novus D Condensed bold", Arial, Helvetica sans-serif;
 	padding-top: .5em;
+	text-rendering: optimizeLegibility;
 }
 .cdmContentInner h1,
 .postContent h1,
 .cdmContentInner h2,
 .postContent h2 {
-	font-weight: normal
+	font-weight: normal;
 }
 
 .cdmContentInner p,
@@ -665,7 +666,7 @@ div.articleNote {
 	box-shadow: 0 1px 2px rgba(0,0,0,.1);
 }
 .cdm.expanded .title {
-	font: normal normal bold 25px/1.2 "Arial Narrow", sans-serif;
+	font: normal normal bold 25px/1.2 "HelveticaNeue-condensed", "Arial Narrow", "Nimbus Sans Novus D Condensed bold", Arial, Helvetica sans-serif;
 }
 .cdm.expanded .titleWrap {
 	padding-top: 0;
@@ -722,12 +723,32 @@ div.articleNote {
 }
 
 /* extras */
+.cdmFeedTitle {
+	padding: 40px 0 25px;
+	color: #bbb;
+}
+.cdmFeedTitle:first-child {
+	padding-top: 30px;
+}
+.cdmFeedTitle > div:first-child{
+	float: none !important;
+	display: inline-block;
+	padding-right: 7px;
+}
+.cdmFeedTitle .title {
+	font: normal normal normal 20px/1.25 "HelveticaNeue-condensed", "Arial Narrow", "Nimbus Sans Novus D Condensed bold", Arial, Helvetica sans-serif;
+	padding-right: 7px;
+}
+.cdmFeedTitle .title,
+.cdmFeedTitle a {
+	color: #bbb;
+}
 .whiteBox {
 	text-align: center;
 	padding: 1em;
 }
 .insensitive {
-	color: #999;
+	color: #bbb;
 }
 
 
