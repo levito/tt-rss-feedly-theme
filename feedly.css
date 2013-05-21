@@ -600,7 +600,8 @@ div.articleNote {
 .cdmContentInner h6,
 .postContent h6 {
 	font-family: "HelveticaNeue-condensed", "Arial Narrow", "Nimbus Sans Novus D Condensed bold", Arial, Helvetica sans-serif;
-	padding-top: .5em;
+	margin-top: 35px;
+	margin-bottom: 14px;
 	text-rendering: optimizeLegibility;
 }
 .cdmContentInner h1,
@@ -667,9 +668,6 @@ div.articleNote {
 }
 .cdm.expanded .title {
 	font: normal normal normal 28px/33px "HelveticaNeue-condensed", "Arial Narrow", "Nimbus Sans Novus D Condensed bold", Arial, Helvetica sans-serif;
-}
-.cdm.expanded .titleWrap {
-	padding-top: 0;
 }
 .cdm.expanded .cdmHeader > div:first-child,
 .cdm.expanded .cdmHeader .hlFeed,
@@ -864,7 +862,9 @@ table.prefErrorLog td.filename, table.prefErrorLog td.login, table.prefErrorLog 
 #ttrssPrefs h1,
 #ttrssPrefs h2,
 #ttrssPrefs h3,
-#ttrssPrefs h4 {
+#ttrssPrefs h4,
+#ttrssPrefs h5,
+#ttrssPrefs h6 {
 	margin-top: 12px;
 	margin-bottom: 3px;
 }
