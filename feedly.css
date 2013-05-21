@@ -116,6 +116,89 @@ div.warning span, div.notice span, div.error span {
 	vertical-align : middle;
 }
 
+/* @422 */
+img.markedPic, img.pubPic {
+	cursor : pointer;
+	vertical-align : middle;
+}
+
+div.tagCloudContainer {
+	border : 1px solid #c0c0c0;
+	background-color : #ecf4ff;
+	margin : 5px 0px 5px 0px;
+	padding : 5px;
+	text-align : center;
+}
+
+div.errorExplained {
+	border : 1px solid #c0c0c0;
+	background-color : #ecf4ff;
+	margin : 5px 0px 5px 0px;
+	padding : 5px;
+}
+
+ul.feedErrorsList {
+	max-height : 300px;
+	overflow : auto;
+	list-style-type : none;
+	border : 1px solid #c0c0c0;
+	background-color : #ecf4ff;
+	margin : 0px 0px 5px 0px;
+	padding : 5px;
+}
+
+ul.feedErrorsList em {
+	color : #555;
+}
+
+ul.browseFeedList {
+	height : 300px;
+	overflow : auto;
+	border-width : 0px 1px 1px 1px;
+	border-color : #c0c0c0;
+	border-style : solid;
+	margin : 0px 0px 5px 0px;
+	background-color : white;
+	list-style-type : none;
+	padding : 0px;
+
+}
+
+ul.browseFeedList li {
+	margin : 0px;
+	padding : 2px 4px 2px 4px;
+}
+
+span.subscribers {
+	color : #808080;
+}
+
+div.subscribers {
+	color : #808080;
+	font-size : 12px;
+	float : right;
+}
+
+div.browserDetails {
+	margin : 5px 5px 5px 5px;
+	padding : 5px;
+}
+
+ul.compact {
+	list-style-type : none;
+	margin : 0px;
+	padding : 0px;
+}
+
+ul.compact li {
+	margin : 0px;
+	padding : 0px;
+}
+
+.noborder {
+	border-width : 0px;
+}
+
 /* @504 */
 #overlay {
 	background : white;
@@ -181,13 +264,18 @@ div#cmdline {
 	z-index : 5;
 }
 
+/* @882 */
+.dijitDialog .dijitToolbar {
+	border : 1px solid #c0c0c0;
+}
+
 /* @944 */
 ul.helpKbList {
 	max-height : 300px;
 	overflow : auto;
 	list-style-type : none;
-	/*border : 1px solid #c0c0c0;
-	background-color : #ecf4ff;*/
+	border : 1px solid #c0c0c0;
+	background-color : #ecf4ff;
 	margin : 0px 0px 5px 0px;
 	padding : 5px;
 }
@@ -195,7 +283,7 @@ ul.helpKbList {
 ul.helpKbList span.hksequence {
 	width : 6em;
 	margin-left : 20px;
-	/*color : #88b0f0;*/
+	color : #88b0f0;
 	font-weight : bold;
 	display : inline-block;
 }
@@ -340,7 +428,8 @@ html,
 	font-weight: bold;
 	color: #666;
 }
-#feeds-holder .dijitTreeRow.Error {
+#feeds-holder .dijitTreeRow.Error,
+#errorButton {
 	color: #d44;
 }
 #feeds-holder .dijitTreeRow.Hidden {
@@ -646,17 +735,88 @@ div.articleNote {
 
 /* PREFERENCES ************************************************************/
 
+/* from prefs.css */
+
+/* @24 */
 #pref-filter-wrap, #pref-filter-header, #pref-filter-content,
 #pref-label-wrap, #pref-label-header, #pref-label-content,
 #pref-user-wrap, #pref-user-header, #pref-user-content,
 #pref-instance-wrap, #pref-instance-header, #pref-instance-content {
-	margin: 0;
-	padding: 0;
-	border-width: 0;
+	margin : 0;
+	padding : 0;
+	border-width : 0;
 }
+
 #userConfigTab, #labelConfigTab, #filterConfigTab, #pref-feeds-feeds, #instanceConfigTab {
-	padding: 0;
+	padding : 0;
 }
+
+/* @53 */
+div.prefProfileHolder, div.prefFeedOPMLHolder, div.inactiveFeedHolder {
+	height : 300px;
+	overflow : auto;
+	border-width : 0px 1px 1px 1px;
+	border-color : #c0c0c0;
+	border-style : solid;
+	margin : 0px 0px 5px 0px;
+	background-color : #ecf4ff;
+}
+div.filterTestHolder, div.prefFeedOPMLHolder {
+	border-width : 1px;
+}
+
+ul.selfUpdateList {
+	height : 200px;
+	overflow : auto;
+	list-style-type : none;
+	border : 1px solid #c0c0c0;
+	background-color : #ecf4ff;
+	margin : 0px 0px 5px 0px;
+	padding : 5px;
+}
+
+div#feedlistLoading, div#filterlistLoading, div#labellistLoading {
+	text-align : center;
+	padding : 5px;
+	color : #555;
+}
+
+div#feedlistLoading img, div#filterlistLoading img, div#labellistLoading {
+	margin-right : 5px;
+}
+
+/* 98 */
+ul.userFeedList {
+	height : 300px;
+	overflow : auto;
+	list-style-type : none;
+	border : 1px solid #555;
+	background-color : white;
+	margin : 0px 0px 5px 0px;
+	padding : 0px;
+}
+
+table.prefErrorLog tr.errrow td {
+	font-size : 10px;
+}
+
+table.prefErrorLog tr.errrow td.errno {
+	font-style : italic;
+	font-weight : bold;
+	white-space : nowrap;
+}
+
+table.prefErrorLog td.filename, table.prefErrorLog td.login, table.prefErrorLog td.timestamp {
+	color : #555;
+}
+
+.dijitAccordionContainer-child {
+	box-shadow : inset 0px 0px 3px rgba(0,0,0,0.2);
+}
+
+
+/* layout */
+
 #ttrssPrefs a {
 	color: #08e;
 }
@@ -673,4 +833,28 @@ div.articleNote {
 	padding: 0 10px 5px;
 	text-align: center;
 	background: #e8e8e8;
+}
+
+/* content */
+
+#ttrssPrefs h1,
+#ttrssPrefs h2,
+#ttrssPrefs h3,
+#ttrssPrefs h4 {
+	margin-top: 12px;
+	margin-bottom: 3px;
+}
+#ttrssPrefs .feedParam {
+	font-size: 11px;
+	color: #999;
+}
+#ttrssPrefs a.bookmarklet {
+	padding: 2px 5px;
+	border-radius: 3px;
+	background: #ddd;
+	color: #333;
+	cursor: move;
+}
+#ttrssPrefs a.bookmarklet:hover {
+	text-decoration: none;
 }
