@@ -406,7 +406,7 @@ html,
 	padding: 0;
 }
 #ttrssMain #feedTree {
-	padding: 30px 25px 30px 0;
+	padding: 30px 20px 30px 0;
 }
 #feeds-holder .dijitTreeRow {
 	padding: 2px 0;
@@ -467,7 +467,7 @@ html,
 	box-shadow: 0 1px 4px rgba(0,0,0,.1);
 }
 #headlines-toolbar {
-	padding: 30px 30px 10px;
+	padding: 30px 35px 10px;
 	min-height: 20px;
 	text-align: right;
 	color: #999;
@@ -496,12 +496,12 @@ html,
 	padding: 11px 0 0 10px;
 }
 #headlines-frame {
-	padding: 0 30px;
+	padding: 0 35px;
 }
 
 /* articles - common */
 div.articleNote {
-	margin: 5px 35px;
+	margin: 5px 34px;
 	border-radius: 0;
 }
 
@@ -622,7 +622,7 @@ div.articleNote {
 	height: auto;
 }
 .cdmContentInner {
-	padding: 10px 35px;
+	padding: 10px 34px;
 }
 .postHeader,
 .postContent {
@@ -660,7 +660,7 @@ div.articleNote {
 }
 .cdm.expanded .cdmHeader,
 .cdm.expanded .cdmFooter {
-	padding: 0 35px;
+	padding: 0 34px;
 }
 .cdm.expanded.active {
 	border-color: #ccc;
