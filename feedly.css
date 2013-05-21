@@ -750,6 +750,11 @@ div.articleNote {
 .insensitive {
 	color: #bbb;
 }
+#feeds-holder,
+#headlines-frame,
+#content-insert {
+	-webkit-overflow-scrolling: touch;
+}
 
 
 /* PREFERENCES ************************************************************/
