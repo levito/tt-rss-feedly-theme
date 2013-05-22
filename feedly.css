@@ -386,40 +386,51 @@ a:hover {
 	left: 0;
 	bottom: 0;
 	width: 30px;
+	vertical-align: middle;
+}
+#main_toolbar_form > .dijitButton .dijitButtonNode,
+#main_toolbar_form > .dijitButtonFocused .dijitButtonNode {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	border-radius: 0;
+	border: none;
+	background: transparent;
 	color: #bbb;
 	-webkit-transition: all .5s;
 	transition: all .5s;
 }
-#main_toolbar_form > .dijitButton:hover {
-	background: rgba(0,0,0,.05);
+#main_toolbar_form > .dijitButtonHover .dijitButtonNode,
+#main_toolbar_form > .dijitButtonActive .dijitButtonNode {
+	border: none;
 	color: #333;
+	background: rgba(0,0,0,.05);
 }
-#main_toolbar_form > .dijitButton .dijitButtonNode {
-	top: 35px;
-	left: 10px;
-	border: 0;
-	padding: 0;
-	background: transparent !important;
-	color: inherit !important;
-}
-#main_toolbar_form > .dijitButton .dijitButtonNode,
-#main_toolbar_form > .dijitButton .dijitButtonNode:before,
-#main_toolbar_form > .dijitButton .dijitButtonNode:after {
+#main_toolbar_form > .dijitButton .dijitButtonContents,
+#main_toolbar_form > .dijitButton .dijitButtonContents:before,
+#main_toolbar_form > .dijitButton .dijitButtonContents:after {
 	position: absolute;
 	width: 16px;
 	border-top: 3px solid;
+
 }
-#main_toolbar_form > .dijitButton .dijitButtonNode:before,
-#main_toolbar_form > .dijitButton .dijitButtonNode:after {
+#main_toolbar_form > .dijitButton .dijitButtonContents {
+	top: 33px;
+	left: 8px;
+	padding: 0;
+	overflow: hidden;
+	text-indent: 100%;
+}
+#main_toolbar_form > .dijitButton .dijitButtonContents:before,
+#main_toolbar_form > .dijitButton .dijitButtonContents:after {
 	content: "";
 	top: 3px;
 	left: 0;
 }
-#main_toolbar_form > .dijitButton .dijitButtonNode:after {
+#main_toolbar_form > .dijitButton .dijitButtonContents:after {
 	top: 9px;
-}
-#main_toolbar_form > .dijitButton .dijitButtonContents {
-	display: none;
 }
 #ttrssMain #feedTree {
 	padding: 30px 20px 30px 0;
