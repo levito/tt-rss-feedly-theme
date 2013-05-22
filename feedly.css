@@ -386,7 +386,6 @@ a:hover {
 	left: 0;
 	bottom: 0;
 	width: 30px;
-	vertical-align: middle;
 }
 #main_toolbar_form > .dijitButton .dijitButtonNode,
 #main_toolbar_form > .dijitButtonFocused .dijitButtonNode {
@@ -417,7 +416,7 @@ a:hover {
 
 }
 #main_toolbar_form > .dijitButton .dijitButtonContents {
-	top: 33px;
+	top: 35px;
 	left: 8px;
 	padding: 0;
 	overflow: hidden;
