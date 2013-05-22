@@ -250,20 +250,6 @@ div.dlgButtons {
 	clear : both;
 }
 
-/* @669 */
-div#cmdline {
-	position : absolute;
-	left : 5px;
-	bottom : 5px;
-	font-size : 11px;
-	color : #555;
-	font-weight : bold;
-	background-color : white;
-	border : 1px solid #88b0f0;
-	padding : 3px 5px 3px 5px;
-	z-index : 5;
-}
-
 /* @882 */
 .dijitDialog .dijitToolbar {
 	border : 1px solid #c0c0c0;
@@ -394,13 +380,35 @@ a:hover {
 /* feed tree */
 #main_toolbar_form > .dijitButton {
 	position: fixed;
-	top: 5px;
-	left: 5px;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: 30px;
+	vertical-align: middle;
+}
+#main_toolbar_form > .dijitButton .dijitButtonNode {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	border-radius: 0;
+	font: normal normal normal 11px/1 "HelveticaNeue-condensed", "Arial Narrow", "Nimbus Sans Novus D Condensed bold", Arial, Helvetica sans-serif;
+	color: #777;
+}
+#main_toolbar_form > .dijitButtonHover .dijitButtonNode,
+#main_toolbar_form > .dijitButtonActive .dijitButtonNode,
+#main_toolbar_form > .dijitButtonFocused .dijitButtonNode {
+	border-color: transparent;
+	color: #333;
+	background: rgba(0,0,0,.05);
 }
 #main_toolbar_form > .dijitButton .dijitButtonContents {
-	font-size: 11px;
-	font-family: "HelveticaNeue-condensed", "Arial Narrow", "Nimbus Sans Novus D Condensed bold", Arial, Helvetica sans-serif;
-	color: #777;
+	position: absolute;
+	top: 33px;
+	left: 0;
+	right: 0;
+	text-align: center;
 }
 #main_toolbar_form > .dijitButton .dijitButtonText {
 	padding: 0;
@@ -555,7 +563,8 @@ div.articleNote {
 .cdmHeader .updated,
 .hlLeft,
 .hlUpdated,
-.hlRight {
+.hlRight,
+.author {
 	white-space: nowrap;
 }
 .hlUpdated div {
@@ -614,6 +623,10 @@ div.articleNote {
 .cdmContentInner p,
 .postContent p {
 	max-width: 50em;
+}
+.cdmContentInner tr,
+.postContent tr {
+	vertical-align: top
 }
 .cdmContentInner img,
 .postContent img {
@@ -721,6 +734,19 @@ div.articleNote {
 }
 
 /* extras */
+#cmdline {
+	position: absolute;
+	z-index: 5;
+	bottom: 5px;
+	left: 5px;
+	padding: 1px;
+	width: 18px;
+	border-radius: 4px;
+	background-color: #333;
+	color: #fff;
+	font-weight: bold;
+	text-align: center;
+}
 .cdmFeedTitle {
 	padding: 40px 0 25px;
 	color: #bbb;
@@ -846,7 +872,7 @@ table.prefErrorLog td.filename, table.prefErrorLog td.login, table.prefErrorLog 
 	position: relative;
 	z-index: 1;
 	float: right;
-	padding: 15px 10px 0;
+	padding: 12px 10px 0;
 }
 #ttrssPrefs #pref-tabs {
 	padding: 5px 10px 0;
