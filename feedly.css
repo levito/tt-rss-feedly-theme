@@ -725,21 +725,24 @@ div.articleNote {
 .hl {
 	border: 1px solid transparent;
 	border-top-color: #eee;
+	border-bottom: 0;
 }
 .cdm.expandable .cdmHeader,
 .hl {
 	margin-bottom: -1px;
 	cursor: pointer;
 }
-/*.cdm.expandable.active .cdmHeader,
-.cdm.expandable.active .cdmFooter,
-.hl.active,*/
 .cdm.expandable .cdmHeader:hover,
 .hl:hover {
 	background: #f5f5f5;
 }
-.cdm.expandable.active {
+.cdm.expandable.active,
+.hl.active {
 	border-color: #ccc;
+}
+.cdm.expandable.active + .cdm,
+.hl.active + .hl {
+	border-top-color: #ccc;
 }
 .cdm.expandable .cdmHeader,
 .hl {
