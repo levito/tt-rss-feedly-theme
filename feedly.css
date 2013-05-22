@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700);
+
 /* FROM TT-RSS.CSS ************************************************************/
 
 /* @66 */
@@ -397,7 +399,7 @@ a:hover {
 	border-color: transparent;
 	background: transparent;
 	color: #777;
-	font: normal normal normal 11px/1 "HelveticaNeue-condensed", "Arial Narrow", "Nimbus Sans Novus D Condensed bold", Arial, Helvetica sans-serif;
+	font: normal normal normal 11px/1 "Roboto Condensed", "Arial Narrow", "Liberation Sans Narrow", Arial, Helvetica, sans-serif;
 }
 #main_toolbar_form > .dijitButtonHover .dijitButtonNode,
 #main_toolbar_form > .dijitButtonActive .dijitButtonNode {
@@ -492,7 +494,7 @@ a:hover {
 }
 #feed_title {
 	padding-right: 3px;
-	font: normal normal normal 28px/33px "HelveticaNeue-condensed", "Arial Narrow", "Nimbus Sans Novus D Condensed bold", Arial, Helvetica, sans-serif;
+	font: normal normal normal 28px/33px "Roboto Condensed", "Arial Narrow", "Liberation Sans Narrow", Arial, Helvetica, sans-serif;
 	text-rendering: optimizeLegibility;
 }
 #feed_title,
@@ -610,7 +612,7 @@ div.articleNote {
 .postContent h5,
 .cdmContentInner h6,
 .postContent h6 {
-	font-family: "HelveticaNeue-condensed", "Arial Narrow", "Nimbus Sans Novus D Condensed bold", Arial, Helvetica sans-serif;
+	font-family: "Roboto Condensed", "Arial Narrow", "Liberation Sans Narrow", Arial, Helvetica, sans-serif;
 	margin-top: 35px;
 	margin-bottom: 14px;
 	text-rendering: optimizeLegibility;
@@ -682,7 +684,7 @@ div.articleNote {
 	box-shadow: 0 1px 2px rgba(0,0,0,.1);
 }
 .cdm.expanded .title {
-	font: normal normal normal 28px/33px "HelveticaNeue-condensed", "Arial Narrow", "Nimbus Sans Novus D Condensed bold", Arial, Helvetica sans-serif;
+	font: normal normal normal 28px/33px "Roboto Condensed", "Arial Narrow", "Liberation Sans Narrow", Arial, Helvetica, sans-serif;
 }
 .cdm.expanded .cdmHeader > div:first-child,
 .cdm.expanded .cdmHeader .hlFeed,
@@ -762,7 +764,7 @@ div.articleNote {
 	padding-right: 7px;
 }
 .cdmFeedTitle .title {
-	font: normal normal normal 20px/1.25 "HelveticaNeue-condensed", "Arial Narrow", "Nimbus Sans Novus D Condensed bold", Arial, Helvetica sans-serif;
+	font: normal normal normal 20px/1.25 "Roboto Condensed", "Arial Narrow", "Liberation Sans Narrow", Arial, Helvetica, sans-serif;
 	padding-right: 7px;
 }
 .cdmFeedTitle .title,
