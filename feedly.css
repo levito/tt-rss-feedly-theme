@@ -386,19 +386,21 @@ a:hover {
 	width: 30px;
 	vertical-align: middle;
 }
-#main_toolbar_form > .dijitButton .dijitButtonNode {
+#main_toolbar_form > .dijitButton .dijitButtonNode,
+#main_toolbar_form > .dijitButtonFocused .dijitButtonNode {
 	position: absolute;
 	top: 0;
 	left: 0;
 	bottom: 0;
 	right: 0;
 	border-radius: 0;
-	font: normal normal normal 11px/1 "HelveticaNeue-condensed", "Arial Narrow", "Nimbus Sans Novus D Condensed bold", Arial, Helvetica sans-serif;
+	border-color: transparent;
+	background: transparent;
 	color: #777;
+	font: normal normal normal 11px/1 "HelveticaNeue-condensed", "Arial Narrow", "Nimbus Sans Novus D Condensed bold", Arial, Helvetica sans-serif;
 }
 #main_toolbar_form > .dijitButtonHover .dijitButtonNode,
-#main_toolbar_form > .dijitButtonActive .dijitButtonNode,
-#main_toolbar_form > .dijitButtonFocused .dijitButtonNode {
+#main_toolbar_form > .dijitButtonActive .dijitButtonNode {
 	border-color: transparent;
 	color: #333;
 	background: rgba(0,0,0,.05);
@@ -669,7 +671,7 @@ div.articleNote {
 .cdm.expanded {
 	margin-bottom:15px;
 	border: 1px solid #eee;
-	padding: 45px 0 30px;
+	padding: 50px 0 25px;
 }
 .cdm.expanded .cdmHeader,
 .cdm.expanded .cdmFooter {
