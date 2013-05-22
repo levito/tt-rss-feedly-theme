@@ -386,36 +386,40 @@ a:hover {
 	left: 0;
 	bottom: 0;
 	width: 30px;
-	vertical-align: middle;
+	color: #bbb;
+	-webkit-transition: all .5s;
+	transition: all .5s;
+}
+#main_toolbar_form > .dijitButton:hover {
+	background: rgba(0,0,0,.05);
+	color: #333;
+}
+#main_toolbar_form > .dijitButton .dijitButtonNode {
+	top: 35px;
+	left: 10px;
+	border: 0;
+	padding: 0;
+	background: transparent !important;
+	color: inherit !important;
 }
 #main_toolbar_form > .dijitButton .dijitButtonNode,
-#main_toolbar_form > .dijitButtonFocused .dijitButtonNode {
+#main_toolbar_form > .dijitButton .dijitButtonNode:before,
+#main_toolbar_form > .dijitButton .dijitButtonNode:after {
 	position: absolute;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	border-radius: 0;
-	border-color: transparent;
-	background: transparent;
-	color: #777;
-	font: normal normal normal 11px/1 "Roboto Condensed", "Arial Narrow", "Liberation Sans Narrow", Arial, Helvetica, sans-serif;
+	width: 16px;
+	border-top: 3px solid;
 }
-#main_toolbar_form > .dijitButtonHover .dijitButtonNode,
-#main_toolbar_form > .dijitButtonActive .dijitButtonNode {
-	border-color: transparent;
-	color: #333;
-	background: rgba(0,0,0,.05);
+#main_toolbar_form > .dijitButton .dijitButtonNode:before,
+#main_toolbar_form > .dijitButton .dijitButtonNode:after {
+	content: "";
+	top: 3px;
+	left: 0;
+}
+#main_toolbar_form > .dijitButton .dijitButtonNode:after {
+	top: 9px;
 }
 #main_toolbar_form > .dijitButton .dijitButtonContents {
-	position: absolute;
-	top: 33px;
-	left: 0;
-	right: 0;
-	text-align: center;
-}
-#main_toolbar_form > .dijitButton .dijitButtonText {
-	padding: 0;
+	display: none;
 }
 #ttrssMain #feedTree {
 	padding: 30px 20px 30px 0;
