@@ -323,9 +323,10 @@ img,
 #main_toolbar_form,
 .actionChooser {
 	display: table-cell;
+	width: 25%;
 }
 #main_toolbar_form {
-	width: 100%;
+	width: 75%;
 	white-space: nowrap;
 }
 .actionChooser {
