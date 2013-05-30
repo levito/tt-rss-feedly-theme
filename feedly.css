@@ -538,6 +538,7 @@ a:hover {
 	content: "";
 	display: block;
 	border-top: 10px solid #fff;
+	margin: 0 -35px;
 }
 
 /* articles - common */
@@ -716,6 +717,7 @@ div.articleNote {
 }
 .cdm.expanded .title {
 	font: normal normal normal 28px/33px "Roboto Condensed", "Arial Narrow", "Liberation Sans Narrow", Arial, Helvetica, sans-serif;
+	text-rendering: optimizeLegibility;
 }
 .cdm.expanded .cdmHeader > div:first-child,
 .cdm.expanded .cdmHeader .hlFeed,
@@ -797,6 +799,7 @@ div.articleNote {
 .cdmFeedTitle .title {
 	font: normal normal normal 20px/1.25 "Roboto Condensed", "Arial Narrow", "Liberation Sans Narrow", Arial, Helvetica, sans-serif;
 	padding-right: 7px;
+	text-rendering: optimizeLegibility;
 }
 .cdmFeedTitle .title,
 .cdmFeedTitle a {
