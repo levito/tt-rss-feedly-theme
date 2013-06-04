@@ -372,6 +372,9 @@ a:hover {
 #main #headlines-wrap-inner .dijitSplitter {
 	background: #e8e8e8;
 }
+#main #headlines-wrap-inner .dijitSplitter {
+	margin: 0 -5px;
+}
 #main .dijitSplitterHover,
 #main .dijitSplitterActive {
 	background: transparent;
@@ -442,6 +445,10 @@ a:hover {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	color: #777;
+}
+#feeds-holder .dijitTreeRow,
+#feeds-holder .dijitTreeRow * {
+	cursor: pointer;
 }
 #feeds-holder .dijitTreeRowHover {
 	background: transparent;
@@ -561,6 +568,66 @@ a:hover {
 	margin: 0 -35px;
 }
 
+/* articles - expanded */
+.cdm.expanded {
+	margin-top:15px;
+	border: 1px solid #eee;
+	padding: 50px 0 25px;
+}
+.cdm.expanded .cdmHeader,
+.cdm.expanded .cdmFooter {
+	padding: 0 34px;
+}
+.cdm.expanded .title {
+	font: normal normal normal 28px/33px "Roboto Condensed", "Arial Narrow", "Liberation Sans Narrow", Arial, Helvetica, sans-serif;
+	text-rendering: optimizeLegibility;
+}
+.cdm.expanded .cdmHeader > div:first-child,
+.cdm.expanded .cdmHeader .hlFeed,
+.cdm.expanded .cdmHeader .updated,
+.cdm.expanded .cdmHeader .updated + div {
+	position: absolute;
+	top: 25px;
+}
+.cdm.expanded .cdmHeader > div:first-child {
+	left: 35px;
+}
+.cdm.expanded .cdmHeader .hlFeed {
+	left: 100px;
+}
+.cdm.expanded .cdmHeader .updated {
+	right: 80px;
+}
+.cdm.expanded .cdmHeader .updated + div {
+	right: 35px;
+}
+
+/* articles - expandable/separete */
+.cdm.expandable,
+.hl {
+	margin-top: -1px;
+	border: 1px solid transparent;
+	border-top-color: #eee;
+	border-bottom-color: #eee;
+}
+.cdm.expandable .cdmHeader,
+.hl {
+	cursor: pointer;
+}
+.cdm.expandable .cdmHeader:hover,
+.hl:hover {
+	background: #f5f5f5;
+}
+.cdm.expandable .cdmHeader,
+.hl {
+	display: table;
+}
+.cdm.expandable .cdmHeader > *,
+.hl > * {
+	display: table-cell;
+	padding: 5px;
+}
+
 /* articles - common */
 div.articleNote {
 	margin: 5px 34px;
@@ -570,9 +637,17 @@ div.articleNote {
 .hl {
 	position: relative;
 }
-#headlines-frame .cdm:first-child,
-#headlines-frame .hl:first-child {
+.cdm.expanded:first-child,
+.cdm.expandable:first-child,
+.hl:first-child {
 	margin-top: 0;
+}
+.cdm.expanded.active,
+.cdm.expandable.active,
+.hl.active {
+	z-index: 1;
+	border-color: #ccc;
+	box-shadow: 0 1px 2px rgba(0,0,0,.1);
 }
 .cdm > hr {
 	display: none;
@@ -646,56 +721,12 @@ div.articleNote {
 	border-radius: 3px;
 	color: #333;
 }
-.cdmContentInner,
-.postContent {
-	clear: both;
-	overflow: auto;
-	font-size: 14px;
-}
-.cdmContentInner h1,
-.postContent h1,
-.cdmContentInner h2,
-.postContent h2,
-.cdmContentInner h3,
-.postContent h3,
-.cdmContentInner h4,
-.postContent h4,
-.cdmContentInner h5,
-.postContent h5,
-.cdmContentInner h6,
-.postContent h6 {
-	font-family: "Roboto Condensed", "Arial Narrow", "Liberation Sans Narrow", Arial, Helvetica, sans-serif;
-	margin-top: 35px;
-	margin-bottom: 14px;
-	text-rendering: optimizeLegibility;
-}
-.cdmContentInner h1,
-.postContent h1,
-.cdmContentInner h2,
-.postContent h2 {
-	font-weight: normal;
-}
-
-.cdmContentInner p,
-.postContent p {
-	max-width: 50em;
-}
-.cdmContentInner tr,
-.postContent tr {
-	vertical-align: top
-}
-.cdmContentInner img,
-.postContent img {
-	max-width: 100%;
-	width: auto;
-	height: auto;
-}
 .cdmContentInner {
 	padding: 10px 34px;
 }
 .postHeader,
 .postContent {
-	padding: 10px 30px;
+	padding: 10px 35px;
 }
 .postHeader {
 	background: #f5f5f5;
@@ -721,73 +752,64 @@ div.articleNote {
 	padding: 5px;
 }
 
-/* articles - expanded */
-.cdm.expanded {
-	margin-top:15px;
-	border: 1px solid #eee;
-	padding: 50px 0 25px;
+/* article content */
+.cdmContentInner,
+.postContent {
+	clear: both;
+	overflow: auto;
+	font-size: 14px;
 }
-.cdm.expanded .cdmHeader,
-.cdm.expanded .cdmFooter {
-	padding: 0 34px;
-}
-.cdm.expanded.active {
-	border-color: #ccc;
-	box-shadow: 0 1px 2px rgba(0,0,0,.1);
-}
-.cdm.expanded .title {
-	font: normal normal normal 28px/33px "Roboto Condensed", "Arial Narrow", "Liberation Sans Narrow", Arial, Helvetica, sans-serif;
+.cdmContentInner h1,
+.postContent h1,
+.cdmContentInner h2,
+.postContent h2,
+.cdmContentInner h3,
+.postContent h3,
+.cdmContentInner h4,
+.postContent h4,
+.cdmContentInner h5,
+.postContent h5,
+.cdmContentInner h6,
+.postContent h6 {
+	margin-top: 35px;
+	margin-bottom: 14px;
+	font-family: "Roboto Condensed", "Arial Narrow", "Liberation Sans Narrow", Arial, Helvetica, sans-serif;
+	font-weight: bold;
 	text-rendering: optimizeLegibility;
 }
-.cdm.expanded .cdmHeader > div:first-child,
-.cdm.expanded .cdmHeader .hlFeed,
-.cdm.expanded .cdmHeader .updated,
-.cdm.expanded .cdmHeader .updated + div {
-	position: absolute;
-	top: 25px;
-}
-.cdm.expanded .cdmHeader > div:first-child {
-	left: 35px;
-}
-.cdm.expanded .cdmHeader .hlFeed {
-	left: 100px;
-}
-.cdm.expanded .cdmHeader .updated {
-	right: 80px;
-}
-.cdm.expanded .cdmHeader .updated + div {
-	right: 35px;
+.cdmContentInner h1,
+.postContent h1,
+.cdmContentInner h2,
+.postContent h2 {
+	font-weight: normal;
 }
 
-/* articles - expandable */
-.cdm.expandable,
-.hl {
-	margin-top: -1px;
-	border: 1px solid transparent;
-	border-top-color: #eee;
-	border-bottom-color: #eee;
+.cdmContentInner p,
+.postContent p {
+	max-width: 50em;
 }
-.cdm.expandable .cdmHeader,
-.hl {
-	cursor: pointer;
+.cdmContentInner tr,
+.postContent tr {
+	vertical-align: top
 }
-.cdm.expandable .cdmHeader:hover,
-.hl:hover {
-	background: #f5f5f5;
+.cdmContentInner img,
+.postContent img {
+	max-width: 100%;
+	width: auto;
+	height: auto;
 }
-.cdm.expandable.active,
-.hl.active {
-	z-index: 1;
-	border-color: #ccc;
+.cdmContentInner pre,
+.postContent pre {
+	white-space: pre-wrap;
 }
-.cdm.expandable .cdmHeader,
-.hl {
-	display: table;
-}
-.cdm.expandable .cdmHeader > *,
-.hl > * {
-	display: table-cell;
-	padding: 5px;
+.cdmContentInner q,
+.postContent q,
+.cdmContentInner blockquote,
+.postContent blockquote {
+	display: block;
+	margin: 1em 0;
+	padding: 0 0 0 1em;
+	border-left: 4px solid #ccc;
 }
 
 /* extras */
