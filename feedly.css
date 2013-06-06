@@ -435,7 +435,7 @@ a:hover {
 #main_toolbar_form > .dijitButton .dijitButtonContents:after {
 	top: 9px;
 }
-#ttrssMain #feedTree {
+#feeds-holder #feedTree {
 	padding: 30px 20px 30px 0;
 }
 #feeds-holder .dijitTreeRow {
@@ -568,6 +568,18 @@ a:hover {
 	margin: 0 -35px;
 }
 
+/* feed tree and main */
+#ttrssMain *::-webkit-scrollbar {
+	width: 6px;
+}
+#ttrssMain #feeds-holder::-webkit-scrollbar-thumb {
+	background: transparent;
+}
+#ttrssMain *::-webkit-scrollbar-thumb,
+#ttrssMain #feeds-holder:hover::-webkit-scrollbar-thumb {
+	background: rgba(0,0,0,.1);
+}
+
 /* articles - expanded */
 .cdm.expanded {
 	margin-top:15px;
@@ -633,9 +645,10 @@ div.articleNote {
 	margin: 5px 34px;
 	border-radius: 0;
 }
-.cdm,
+#headlines-frame .cdm,
 .hl {
 	position: relative;
+	-webkit-margin-end: -6px;
 }
 .cdm.expanded:first-child,
 .cdm.expandable:first-child,
