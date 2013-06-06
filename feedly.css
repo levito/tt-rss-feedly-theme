@@ -544,7 +544,8 @@ a:hover {
 	position: relative;
 	top: -2px;
 }
-#feed_title {
+#feed_title,
+#floatingTitle .title {
 	font: normal normal bold 14px/1.5 "Roboto Condensed", "Arial Narrow", "Liberation Sans Narrow", Arial, Helvetica, sans-serif;
 	text-rendering: optimizeLegibility;
 }
@@ -635,7 +636,8 @@ a:hover {
 	display: table;
 }
 .cdm.expandable .cdmHeader > *,
-.hl > * {
+.hl > *,
+#floatingTitle > * {
 	display: table-cell;
 	padding: 5px;
 }
@@ -682,7 +684,8 @@ div.articleNote {
 .cdm.Unread .cdmHeader,
 .hl.Unread .hlTitle a,
 .hl.Unread .hlUpdated,
-.postHeader .postTitle a {
+.postHeader .postTitle a,
+#floatingTitle a {
 	color: #333;
 }
 .cdm .title:hover,
@@ -694,7 +697,9 @@ div.articleNote {
 .cdmHeader input,
 .cdmFooter img,
 .hl img,
-.hl input {
+.hl input,
+#floatingTitle img,
+#floatingTitle input {
 	vertical-align: middle;
 	margin: 0px 2px;
 }
@@ -708,23 +713,28 @@ div.articleNote {
 .hlLeft,
 .hlUpdated,
 .hlRight,
-.author {
+.author,
+#floatingTitle > div,
+#floatingTitle .updated {
 	white-space: nowrap;
 }
 .hlUpdated div {
 	display: inline;
 	padding-left: 10px;
 }
-.cdmHeader > div:not(.hlFeed) {
+.cdmHeader > div:not(.hlFeed),
+#floatingTitle > div {
 	vertical-align: top !important;
 }
 .cdmHeader .titleWrap,
-.hl .hlTitle {
+.hl .hlTitle,
+#floatingTitle .titleWrap {
 	width: 100%;
 }
 .cdmHeader .updated,
 .cdmHeader .hlFeed,
-.hlUpdated {
+.hlUpdated,
+#floatingTitle .updated {
 	font-size: 11px;
 }
 .cdmHeader .hlFeed a,
@@ -740,6 +750,7 @@ div.articleNote {
 .postHeader,
 .postContent {
 	padding: 10px 35px;
+	-webkit-padding-end: 29px;
 }
 .postHeader {
 	background: #f5f5f5;
@@ -763,6 +774,41 @@ div.articleNote {
 .cdmFooter {
 	clear: both;
 	padding: 5px;
+}
+
+/* floating title extensions */
+#floatingTitle {
+	position: absolute;
+	z-index: 5;
+	top: 35px;
+	right: 33px;
+	left: 33px;
+	background: #fff;
+	border: 2px solid #fff;
+	border-bottom: 1px solid #eee;
+}
+#floatingTitle .titleWrap {
+	padding-top: 2px;
+}
+#floatingTitle > div:first-child {
+	padding-left: 0;
+}
+#floatingTitle .scoreWrap {
+	padding-right: 0;
+}
+#floatingTitle > div:first-child:after {
+	content: "";
+	display: block;
+	width: 57px;
+}
+#floatingTitle .scoreWrap:after {
+	content: "";
+	display: block;
+	width: 40px;
+}
+#floatingTitle .hlFeed,
+#floatingTitle .author {
+	display: none;
 }
 
 /* article content */
