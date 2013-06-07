@@ -575,10 +575,12 @@ a:hover {
 }
 #ttrssMain #feeds-holder::-webkit-scrollbar-thumb {
 	background: transparent;
+	opacity: 0;
 }
 #ttrssMain *::-webkit-scrollbar-thumb,
 #ttrssMain #feeds-holder:hover::-webkit-scrollbar-thumb {
 	background: rgba(0,0,0,.1);
+	opacity: 1;
 }
 
 /* articles - expanded */
@@ -640,6 +642,22 @@ a:hover {
 #floatingTitle > * {
 	display: table-cell;
 	padding: 5px;
+}
+
+/* experimental feedly-like headlines layout */
+.cdm.expandable .titleWrap,
+.hlTitle {
+	padding-left: 185px;
+}
+.cdm.expandable .hlFeed,
+.hl .hlFeed {
+	position: absolute;
+}
+.cdm.expandable .hlFeed {
+	left: 65px;
+}
+.hl .hlFeed {
+	left: 70px;
 }
 
 /* articles - common */
@@ -1043,7 +1061,8 @@ table.prefErrorLog td.filename, table.prefErrorLog td.login, table.prefErrorLog 
 	margin-top: 12px;
 	margin-bottom: 3px;
 }
-#ttrssPrefs .feedParam {
+#ttrssPrefs .feedParam,
+#ttrssPrefs .prefHelp {
 	font-size: 11px;
 	color: #999;
 }
