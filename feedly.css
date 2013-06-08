@@ -774,11 +774,14 @@ div.articleNote {
 #floatingTitle img,
 #floatingTitle input {
 	vertical-align: middle;
-	margin: 0px 2px;
+	margin: 0 2px;
 }
-.cdmHeader .updated,
-.cdmHeader .hlFeed {
-	vertical-align: baseline;
+.cdm.expandable:not(.active) .cdmHeader > div:first-child > *,
+.cdm.expandable:not(.active) .cdmHeader > .scoreWrap > *,
+.hlLeft > *,
+.hlRight > * {
+	position: relative;
+	top: -1px;
 }
 .cdmHeader > div,
 .cdmHeader .updated,
@@ -794,8 +797,8 @@ div.articleNote {
 	display: inline;
 	padding-left: 10px;
 }
-.cdmHeader > div,
-#floatingTitle > div {
+.cdmHeader > *,
+#floatingTitle > * {
 	vertical-align: baseline !important;
 }
 .cdmHeader .titleWrap,
@@ -810,8 +813,6 @@ div.articleNote {
 	font-size: 11px;
 }
 .cdmHeader .hlFeed a {
-	position: relative;
-	top: 1px;
 	display: inline-block;
 	padding: 0 5px;
 	border-radius: 3px;
@@ -853,7 +854,7 @@ div.articleNote {
 	top: 0;
 	right: 0;
 	left: 0;
-	padding: 5px;
+	padding: 7px 7px 6px;
 	font-size: 11px;
 	line-height: 1;
 	text-align: right;
@@ -863,12 +864,12 @@ div.articleNote {
 	content: "Collapse article";
 	position: relative;
 	top: 1px;
-	margin: 1px 20px 0;
+	margin: 1px 18px 0;
 	pointer-events: none;
 }
 .collapseBtn img {
-	margin: -5px 0 -5px -9999px;
-	padding: 5px 0 5px 9999px;
+	margin: -7px 0 -6px -9999px;
+	padding: 7px 0 6px 9999px;
 }
 
 /* floating title extensions */
