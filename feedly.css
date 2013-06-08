@@ -883,6 +883,9 @@ div.articleNote {
 	border: 2px solid #fff;
 	border-bottom: 1px solid #eee;
 }
+#floatingTitle > * {
+	vertical-align: top !important;
+}
 #floatingTitle .titleWrap {
 	padding-top: 2px;
 }
