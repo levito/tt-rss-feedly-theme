@@ -690,11 +690,11 @@ a:hover {
 }
 .cdm.expandable.active .cdmHeader > div:first-child,
 .cdm.expanded .cdmHeader > div:first-child {
-	left: 35px;
+	left: 34px;
 }
 .cdm.expandable.active .cdmHeader .hlFeed,
 .cdm.expanded .cdmHeader .hlFeed {
-	left: 100px;
+	left: 80px;
 }
 .cdm.expandable.active .cdmHeader .updated,
 .cdm.expanded .cdmHeader .updated {
@@ -702,7 +702,12 @@ a:hover {
 }
 .cdm.expandable.active .cdmHeader .scoreWrap,
 .cdm.expanded .cdmHeader .scoreWrap {
-	right: 35px;
+	right: 34px;
+}
+.cdm.expandable.active .rchk,
+.cdm.expanded .rchk,
+#floatingTitle .rchk {
+	display: none;
 }
 
 /* articles - common */
@@ -894,16 +899,6 @@ div.articleNote {
 }
 #floatingTitle .scoreWrap {
 	padding-right: 0;
-}
-#floatingTitle > div:first-child:after {
-	content: "";
-	display: block;
-	width: 57px;
-}
-#floatingTitle .scoreWrap:after {
-	content: "";
-	display: block;
-	width: 40px;
 }
 #floatingTitle .hlFeed,
 #floatingTitle .author {
