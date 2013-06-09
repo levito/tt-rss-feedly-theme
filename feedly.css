@@ -291,7 +291,7 @@ select.attachments {
 /* RESET ************************************************************/
 
 html {
-	font: 12px/1.5 Arial, Helvetica, sans-serif;
+	font: 12px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
 }
 :focus {
 	outline: none;
@@ -617,17 +617,28 @@ a:hover {
 }
 
 /* articles - expandable.active / expanded */
-.cdm.expandable .cdmHeader,
-.cdm.expanded .cdmHeader {
+.cdm.expandable:not(.active) .cdmHeader {
+	/* old flexbox: */
+	display: -moz-box;
+	display: -webkit-box;
+	-moz-box-orient: horizontal;
+	-webkit-box-orient: horizontal;
+	-moz-box-align: baseline;
+	-webkit-box-align: baseline;
+	/* new flexbox: */
 	display: -webkit-flex;
 	display: flex;
 	-webkit-align-items: baseline;
 	align-items: baseline;
 }
-.cdm.expandable .cdmHeader > *,
-.cdm.expanded .cdmHeader > * {
-	-webkit-order: 1;
-	order: 1;
+.cdm.expandable:not(.active) .cdmHeader > * {
+	/* old flexbox: */
+	display: block;
+	-moz-box-ordinal-group: 2;
+	-webkit-box-ordinal-group: 2;
+	/* new flexbox: */
+	-webkit-order: 2;
+	order: 2;
 	padding: 5px;
 }
 .cdm.expandable.active .cdmHeader > *:first-child,
@@ -642,11 +653,38 @@ a:hover {
 .cdm.expanded .cdmHeader > div:first-child,
 .cdm.expandable .cdmHeader > .hlFeed,
 .cdm.expanded .cdmHeader > .hlFeed {
-	-webkit-order: 0;
-	order: 0;
+	/* old flexbox: */
+	-moz-box-ordinal-group: 1;
+	-webkit-box-ordinal-group: 1;
+	/* new flexbox: */
+	-webkit-order: 1;
+	order: 1;
 }
+
+/* fix new flexbox bugs for some webkits: */
+.cdm.expandable .cdmHeader > div:first-child,
+.cdm.expanded .cdmHeader > div:first-child {
+	-webkit-flex: 1 0 55px;
+	flex: 1 0 55px;
+}
+/*.cdm.expandable .cdmHeader .updated,
+.cdm.expanded .cdmHeader > .updated {
+	-webkit-flex: 1 0 60px;
+	flex: 1 0 60px;
+}
+.cdm.expandable .cdmHeader .scoreWrap,
+.cdm.expanded .cdmHeader > .scoreWrap {
+	-webkit-flex: 1 0 38px;
+	flex: 1 0 38px;
+}*/
+
 .cdm.expandable .cdmHeader > .hlFeed,
 .cdm.expanded .cdmHeader > .hlFeed {
+	/* old flexbox: */
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	min-width: 190px;
+	/* new flexbox: */
 	-webkit-flex: 1 0 180px;
 	flex: 1 0 180px;
 }
@@ -657,8 +695,6 @@ a:hover {
 }
 .cdm.expandable.active .cdmHeader,
 .cdm.expanded .cdmHeader {
-	-webkit-flex-wrap: wrap;
-	flex-wrap: wrap;
 	padding: 50px 34px 0;
 }
 .cdm.expandable.active .cdmFooter,
@@ -777,8 +813,7 @@ div.articleNote {
 .cdm.expandable:not(.active) .cdmHeader > .scoreWrap > *,
 .hlLeft > *,
 .hlRight > * {
-	position: relative;
-	top: -1px;
+	margin-top: -1px;
 }
 .cdmHeader > div,
 .cdmHeader .updated,
@@ -802,6 +837,10 @@ div.articleNote {
 .hl .hlTitle,
 #floatingTitle .titleWrap {
 	width: 100%;
+	line-height: 16px;
+	/* old flexbox: */
+	-moz-box-flex: 1;
+	-webkit-box-flex: 1;
 }
 .cdmHeader .updated,
 .cdmHeader .hlFeed,
@@ -851,7 +890,7 @@ div.articleNote {
 	top: 0;
 	right: 0;
 	left: 0;
-	padding: 7px 7px 6px;
+	padding: 6px 7px 7px;
 	font-size: 11px;
 	line-height: 1;
 	text-align: right;
@@ -865,8 +904,8 @@ div.articleNote {
 	pointer-events: none;
 }
 .collapseBtn img {
-	margin: -7px 0 -6px -9999px;
-	padding: 7px 0 6px 9999px;
+	margin: -6px 0 -7px -9999px;
+	padding: 6px 0 7px 9999px;
 }
 
 /* floating title extensions */
