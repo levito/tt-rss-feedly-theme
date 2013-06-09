@@ -586,10 +586,9 @@ a:hover {
 /* articles - expandable / separete */
 .cdm.expandable,
 .hl {
-	margin-top: -1px;
 	border: 1px solid transparent;
 	border-top-color: #eee;
-	border-bottom-color: #eee;
+	border-bottom: 0;
 }
 .cdm.expandable .cdmHeader,
 .hl {
@@ -651,11 +650,9 @@ a:hover {
 	-webkit-flex: 1 0 180px;
 	flex: 1 0 180px;
 }
+.cdm.expandable.active,
 .cdm.expanded {
-	margin-top:15px;
 	border: 1px solid #eee;
-}
-.cdm.expandable.active {
 	margin-bottom: 15px;
 }
 .cdm.expandable.active .cdmHeader,
@@ -719,11 +716,6 @@ div.articleNote {
 .hl {
 	position: relative;
 	-webkit-margin-end: -6px;
-}
-.cdm.expanded:first-child,
-.cdm.expandable:first-child,
-.hl:first-child {
-	margin-top: 0;
 }
 .cdm.expanded.active,
 .cdm.expandable.active,
