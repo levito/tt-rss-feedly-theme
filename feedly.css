@@ -873,7 +873,7 @@ div.articleNote {
 	left: 0;
 	padding: 6px 7px 7px;
 	font-size: 11px;
-	line-height: 1;
+	line-height: 8px;
 	text-align: right;
 	vertical-align: top;
 }
