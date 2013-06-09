@@ -658,12 +658,8 @@ a:hover {
 	-moz-box-flex: 1;
 	-webkit-box-flex: 1;
 	-ms-flex: 99;
-}
-
-/* fix new flexbox bugs for some webkits: */
-.cdm.expandable:not(.active) .cdmHeader > div:first-child {
-	-webkit-flex: 1 0 55px;
-	flex: 1 0 55px;
+	-webkit-flex: 99;
+	flex: 99;
 }
 
 .cdm.expandable:not(.active) .cdmHeader > .hlFeed {
