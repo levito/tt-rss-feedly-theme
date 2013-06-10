@@ -1,4 +1,83 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700);
+@font-face {
+    font-family: 'TeXGyreHeros';
+    src: url('feedly/texgyreheros-regular-webfont.eot');
+    src: url('feedly/texgyreheros-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('feedly/texgyreheros-regular-webfont.woff') format('woff'),
+         url('feedly/texgyreheros-regular-webfont.ttf') format('truetype'),
+         url('feedly/texgyreheros-regular-webfont.svg#TeXGyreHerosRegular') format('svg');
+}
+
+@font-face {
+    font-family: 'TeXGyreHerosBold';
+    src: url('feedly/texgyreheros-bold-webfont.eot');
+    src: url('feedly/texgyreheros-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('feedly/texgyreheros-bold-webfont.woff') format('woff'),
+         url('feedly/texgyreheros-bold-webfont.ttf') format('truetype'),
+         url('feedly/texgyreheros-bold-webfont.svg#TeXGyreHerosBold') format('svg');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'TeXGyreHeros';
+    src: url('feedly/texgyreheros-italic-webfont.eot');
+    src: url('feedly/texgyreheros-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('feedly/texgyreheros-italic-webfont.woff') format('woff'),
+         url('feedly/texgyreheros-italic-webfont.ttf') format('truetype'),
+         url('feedly/texgyreheros-italic-webfont.svg#TeXGyreHerosItalic') format('svg');
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'TeXGyreHeros';
+    src: url('feedly/texgyreheros-bolditalic-webfont.eot');
+    src: url('feedly/texgyreheros-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('feedly/texgyreheros-bolditalic-webfont.woff') format('woff'),
+         url('feedly/texgyreheros-bolditalic-webfont.ttf') format('truetype'),
+         url('feedly/texgyreheros-bolditalic-webfont.svg#TeXGyreHerosBoldItalic') format('svg');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'TeXGyreHerosCn';
+    src: url('feedly/texgyreheroscn-regular-webfont.eot');
+    src: url('feedly/texgyreheroscn-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('feedly/texgyreheroscn-regular-webfont.woff') format('woff'),
+         url('feedly/texgyreheroscn-regular-webfont.ttf') format('truetype'),
+         url('feedly/texgyreheroscn-regular-webfont.svg#TeXGyreHerosCnRegular') format('svg');
+}
+
+@font-face {
+    font-family: 'TeXGyreHerosCn';
+    src: url('feedly/texgyreheroscn-bold-webfont.eot');
+    src: url('feedly/texgyreheroscn-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('feedly/texgyreheroscn-bold-webfont.woff') format('woff'),
+         url('feedly/texgyreheroscn-bold-webfont.ttf') format('truetype'),
+         url('feedly/texgyreheroscn-bold-webfont.svg#TeXGyreHerosCnBold') format('svg');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'TeXGyreHerosCn';
+    src: url('feedly/texgyreheroscn-italic-webfont.eot');
+    src: url('feedly/texgyreheroscn-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('feedly/texgyreheroscn-italic-webfont.woff') format('woff'),
+         url('feedly/texgyreheroscn-italic-webfont.ttf') format('truetype'),
+         url('feedly/texgyreheroscn-italic-webfont.svg#TeXGyreHerosCnItalic') format('svg');
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'TeXGyreHerosCn';
+    src: url('feedly/texgyreheroscn-bolditalic-webfont.eot');
+    src: url('feedly/texgyreheroscn-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('feedly/texgyreheroscn-bolditalic-webfont.woff') format('woff'),
+         url('feedly/texgyreheroscn-bolditalic-webfont.ttf') format('truetype'),
+         url('feedly/texgyreheroscn-bolditalic-webfont.svg#TeXGyreHerosCnBoldItalic') format('svg');
+    font-weight: bold;
+    font-style: italic;
+}
+
 
 /* FROM TT-RSS.CSS ************************************************************/
 
@@ -291,7 +370,8 @@ select.attachments {
 /* RESET ************************************************************/
 
 html {
-	font: 12px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
+	font: 12px/1.5 "Helvetica Neue", "TeXGyreHeros", Arial, Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
 }
 :focus {
 	outline: none;
@@ -444,15 +524,19 @@ a:hover {
 	max-width: 100%;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	color: #777;
+	color: #666;
+	-webkit-transition: color .3s;
+	transition: color .3s;
 }
 #feeds-holder .dijitTreeRow,
 #feeds-holder .dijitTreeRow * {
 	cursor: pointer;
 }
+#feeds-holder .dijitTreeRow:hover {
+	color: #333;
+}
 #feeds-holder .dijitTreeRowHover {
 	background: transparent;
-	color: #666;
 }
 #feeds-holder .dijitTreeRowSelected {
 	background: #d8d8d8;
@@ -460,7 +544,6 @@ a:hover {
 }
 #feeds-holder .dijitTreeLabel.Unread {
 	font-weight: bold;
-	color: #666;
 }
 #feeds-holder .dijitTreeRow.Error,
 #errorButton {
@@ -478,11 +561,12 @@ a:hover {
 	float: right;
 	padding: 1px 5px 0;
 	font-size: 11px;
-	color: #aaa;
-}
-#feeds-holder .dijitTreeRowHover .counterNode,
-#feeds-holder .dijitTreeRowSelected .counterNode {
 	color: #999;
+	-webkit-transition: color .3s;
+	transition: color .3s;
+}
+#feeds-holder .dijitTreeRow:hover .counterNode {
+	color: #555;
 }
 #feeds-holder .dijitTreeExpando {
 	margin: 0 0 0 5px;
@@ -514,7 +598,7 @@ a:hover {
 	padding: 15px 35px 5px;
 	min-height: 25px;
 	text-align: right;
-	color: #bbb;
+	color: #aaa;
 }
 #headlines-toolbar:after {
 	content: "";
@@ -538,7 +622,7 @@ a:hover {
 }
 #feed_title,
 #floatingTitle .title {
-	font: normal normal bold 14px/1.5 "Roboto Condensed", "Arial Narrow", "Liberation Sans Narrow", Arial, Helvetica, sans-serif;
+	font: normal normal bold 14px/1.5 "TeXGyreHerosCn", "Arial Narrow", "Liberation Sans Narrow", Arial, Helvetica, sans-serif;
 	text-rendering: optimizeLegibility;
 }
 #feed_title,
@@ -582,14 +666,11 @@ a:hover {
 	border-top-color: #eee;
 	border-bottom: 0;
 }
-.cdm.expandable .cdmHeader,
-.hl {
-	cursor: pointer;
-}
 .cdm.expandable:not(.active) .cdmHeader:hover,
 .hl:hover,
 .collapseBtn:hover {
 	background: #f5f5f5;
+	cursor: pointer;
 }
 .cdm.expandable .cdmHeader,
 .hl {
@@ -688,7 +769,7 @@ a:hover {
 }
 .cdm.expandable.active .cdmHeader .title,
 .cdm.expanded .title {
-	font: normal normal normal 28px/33px "Roboto Condensed", "Arial Narrow", "Liberation Sans Narrow", Arial, Helvetica, sans-serif;
+	font: normal normal bold 28px/33px "TeXGyreHerosCn", "Arial Narrow", "Liberation Sans Narrow", Arial, Helvetica, sans-serif;
 	text-rendering: optimizeLegibility;
 }
 .cdm.expandable.active .cdmHeader > div:first-child,
@@ -754,7 +835,6 @@ div.articleNote {
 .hlTitle .contentPreview {
 	font-size: 11px;
 	font-weight: normal;
-	color: #aaa;
 }
 .cdm .title,
 .cdm .cdmHeader,
@@ -773,7 +853,7 @@ div.articleNote {
 .cdm.Unread .cdmExcerpt,
 .cdm.Unread.expandable .author,
 .hl.Unread .hlTitle .contentPreview {
-	color: #777;
+	color: #555;
 }
 .cdm .title:hover,
 .hlTitle a:hover,
@@ -844,7 +924,7 @@ div.articleNote {
 	background: #f5f5f5;
 	border-bottom: 1px solid #eee;
 	font-size: 11px;
-	color: #777;
+	color: #808080;
 }
 .postHeader .postDate {
 	float: right;
@@ -873,8 +953,14 @@ div.articleNote {
 	line-height: 8px;
 	text-align: right;
 	vertical-align: top;
+	color: transparent;
+	-webkit-transition: all .5s;
+	transition: all .5s;
 }
-.collapseBtn:hover:before {
+.collapseBtn:hover {
+	color: #999;
+}
+.collapseBtn:before {
 	content: "Collapse article";
 	position: relative;
 	top: 1px;
@@ -935,15 +1021,9 @@ div.articleNote {
 .postContent h6 {
 	margin-top: 35px;
 	margin-bottom: 14px;
-	font-family: "Roboto Condensed", "Arial Narrow", "Liberation Sans Narrow", Arial, Helvetica, sans-serif;
+	font-family: "TeXGyreHerosCn", "Arial Narrow", "Liberation Sans Narrow", Arial, Helvetica, sans-serif;
 	font-weight: bold;
 	text-rendering: optimizeLegibility;
-}
-.cdmContentInner h1,
-.postContent h1,
-.cdmContentInner h2,
-.postContent h2 {
-	font-weight: normal;
 }
 
 .cdmContentInner p,
@@ -990,7 +1070,7 @@ div.articleNote {
 }
 .cdmFeedTitle {
 	padding: 40px 0 25px;
-	color: #bbb;
+	color: #aaa;
 }
 .cdmFeedTitle:first-child {
 	padding-top: 30px;
@@ -1001,20 +1081,20 @@ div.articleNote {
 	padding-right: 7px;
 }
 .cdmFeedTitle .title {
-	font: normal normal normal 20px/1.25 "Roboto Condensed", "Arial Narrow", "Liberation Sans Narrow", Arial, Helvetica, sans-serif;
+	font: normal normal bold 20px/1.25 "TeXGyreHerosCn", "Arial Narrow", "Liberation Sans Narrow", Arial, Helvetica, sans-serif;
 	padding-right: 7px;
 	text-rendering: optimizeLegibility;
 }
 .cdmFeedTitle .title,
 .cdmFeedTitle a {
-	color: #bbb;
+	color: #aaa;
 }
 .whiteBox {
 	text-align: center;
 	padding: 1em;
 }
 .insensitive {
-	color: #bbb;
+	color: #aaa;
 }
 #feeds-holder,
 #headlines-frame,
