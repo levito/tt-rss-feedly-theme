@@ -525,8 +525,8 @@ a:hover {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	color: #666;
-	-webkit-transition: color .3s;
-	transition: color .3s;
+	-webkit-transition: color .2s;
+	transition: color .2s;
 }
 #feeds-holder .dijitTreeRow,
 #feeds-holder .dijitTreeRow * {
@@ -562,8 +562,8 @@ a:hover {
 	padding: 1px 5px 0;
 	font-size: 11px;
 	color: #999;
-	-webkit-transition: color .3s;
-	transition: color .3s;
+	-webkit-transition: color .2s;
+	transition: color .2s;
 }
 #feeds-holder .dijitTreeRow:hover .counterNode {
 	color: #555;
@@ -982,6 +982,9 @@ div.articleNote {
 	background: #fff;
 	border: 2px solid #fff;
 	border-bottom: 1px solid #eee;
+}
+#floatingTitle:not(:empty) {
+	display: block !important;
 }
 #floatingTitle > * {
 	vertical-align: top !important;
