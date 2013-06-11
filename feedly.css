@@ -155,6 +155,17 @@ div.articleNote div.noteEdit {
 	border-color : #ff0000;
 }
 
+/* @227 */
+div.filterTestHolder {
+	height : 300px;
+	overflow : auto;
+	border-color : #c0c0c0;
+	border-style : solid;
+	margin : 0px 0px 5px 0px;
+	background-color : #ecf4ff;
+	border-width : 1px 1px 1px 1px;
+}
+
 /* @263 */
 div.notice, div.warning, div.error {
 	padding : 4px 10px 4px 4px;
@@ -353,7 +364,28 @@ div.fatalError textarea {
 	border : 1px solid #c0c0c0;
 }
 
-/* @944 */
+/* @933 */
+ul#filterDlg_Matches, ul#filterDlg_Actions {
+	max-height : 100px;
+	overflow : auto;
+	list-style-type : none;
+	border-style : solid;
+  	border-color : #c0c0c0;
+	border-width : 0px 1px 1px 1px;
+	background-color : #ecf4ff;
+	margin : 0px 0px 5px 0px;
+	padding : 0px;
+}
+
+ul#filterDlg_Matches li, ul#filterDlg_Actions li {
+	cursor : pointer;
+	padding : 0px 0px 0px 5px;
+}
+
+ul#filterDlg_Matches li div.dijitCheckBox, ul#filterDlg_Actions li div.dijitCheckBox {
+	margin-right : 5px;
+}
+
 ul.helpKbList {
 	max-height : 300px;
 	overflow : auto;
@@ -1240,9 +1272,18 @@ table.prefErrorLog td.filename, table.prefErrorLog td.login, table.prefErrorLog 
 	margin-bottom: 3px;
 }
 #ttrssPrefs .feedParam,
+#ttrssPrefs .labelParam,
 #ttrssPrefs .prefHelp {
 	font-size: 11px;
-	color: #999;
+	color: #808080;
+}
+#ttrssPrefs .feedParam,
+#ttrssPrefs .labelParam {
+	float: right;
+	margin-right: 1em;
+}
+#ttrssPrefs .labelParam.disabled {
+	color: #aaa;
 }
 #ttrssPrefs a.bookmarklet {
 	display: inline-block;
