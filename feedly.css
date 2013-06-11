@@ -331,6 +331,23 @@ div.dlgButtons {
 	clear : both;
 }
 
+/* @745 */
+div.fatalError {
+	margin-bottom : 10px;
+}
+
+div.fatalError button {
+	margin-top : 5px;
+}
+
+div.fatalError textarea {
+	width : 100%;
+	height : 100px;
+
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
 /* @882 */
 .dijitDialog .dijitToolbar {
 	border : 1px solid #c0c0c0;
