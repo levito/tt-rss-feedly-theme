@@ -445,7 +445,6 @@ select.attachments {
 
 html {
 	font: 12px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
-	-webkit-font-smoothing: antialiased;
 }
 :focus {
 	outline: none;
@@ -635,12 +634,12 @@ a:hover {
 	float: right;
 	padding: 1px 5px 0;
 	font-size: 11px;
-	color: #999;
+	color: #aaa;
 	-webkit-transition: color .2s;
 	transition: color .2s;
 }
 #feeds-holder .dijitTreeRow:hover .counterNode {
-	color: #555;
+	color: #666;
 }
 #feeds-holder .dijitTreeExpando {
 	margin: 0 0 0 5px;
@@ -700,9 +699,11 @@ a:hover {
 	top: -2px;
 }
 #feed_title,
-#floatingTitle .title {
+#floatingTitle .title,
+.postHeader .postTitle a  {
 	font: normal normal bold 14px/1.5 "TeXGyreHerosCn", "Arial Narrow", "Liberation Sans Narrow", Arial, Helvetica, sans-serif;
 	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
 }
 #feed_title,
 #feed_title a {
@@ -850,6 +851,7 @@ a:hover {
 .cdm.expanded .title {
 	font: normal normal bold 28px/33px "TeXGyreHerosCn", "Arial Narrow", "Liberation Sans Narrow", Arial, Helvetica, sans-serif;
 	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
 }
 .cdm.expandable.active .cdmHeader > div:first-child,
 .cdm.expandable.active .cdmHeader .hlFeed,
@@ -1009,9 +1011,6 @@ div.articleNote {
 	padding-top: 3px;
 	white-space: nowrap;
 }
-.postHeader .postTitle a {
-	font: normal normal bold 14px/1.5 "TeXGyreHerosCn", "Arial Narrow", "Liberation Sans Narrow", Arial, Helvetica, sans-serif;
-}
 .postTags > * {
 	vertical-align: middle;
 	margin: 0 1px;
@@ -1104,6 +1103,7 @@ div.articleNote {
 	font-family: "TeXGyreHerosCn", "Arial Narrow", "Liberation Sans Narrow", Arial, Helvetica, sans-serif;
 	font-weight: bold;
 	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
 }
 
 .cdmContentInner p,
@@ -1164,6 +1164,7 @@ div.articleNote {
 	font: normal normal bold 20px/1.25 "TeXGyreHerosCn", "Arial Narrow", "Liberation Sans Narrow", Arial, Helvetica, sans-serif;
 	padding-right: 7px;
 	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
 }
 .cdmFeedTitle .title,
 .cdmFeedTitle a {
