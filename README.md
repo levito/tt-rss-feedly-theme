@@ -1,9 +1,7 @@
 tt-rss-feedly-theme
 ===================
 
-Feedly theme for Tiny Tiny RSS 1.7.10
-
-Use https://github.com/gothfox/Tiny-Tiny-RSS/tree/0a561a4371a37da5b908a0fad9910435b3dd02f1 or later.
+Feedly theme for [Tiny Tiny RSS](http://tt-rss.org/redmine/projects/tt-rss/wiki) 1.8
 
 For the best experience, use a current browser. IE9 and older versions don't support flexbox and are not supported.
 
