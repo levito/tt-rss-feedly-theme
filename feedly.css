@@ -901,7 +901,7 @@ div.articleNote {
 .hl.active {
 	z-index: 1;
 	border-color: #ccc;
-	box-shadow: 0 1px 2px rgba(0,0,0,.1);
+	box-shadow: 0 1px 2px rgba(0,0,0,.15);
 }
 .cdm > hr {
 	display: none;
@@ -1029,7 +1029,8 @@ div.articleNote {
 	line-height: 8px;
 	text-align: right;
 	vertical-align: top;
-	color: transparent;
+	color: #fff;
+	background: #fff;
 	-webkit-transition: all .5s;
 	transition: all .5s;
 }
