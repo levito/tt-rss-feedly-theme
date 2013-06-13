@@ -823,7 +823,7 @@ a:hover {
 	flex: 99;
 }
 .cdm.expandable:not(.active) .cdmHeader > .hlFeed {
-	width: 130px;
+	width: 140px;
 }
 .cdm.expandable:not(.active) .cdmHeader > .hlFeed a {
 	max-width: 120px;
