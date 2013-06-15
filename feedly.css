@@ -1084,6 +1084,12 @@ div.articleNote {
 #floatingTitle .scoreWrap {
 	padding-right: 0;
 }
+#floatingTitle > div:first-child:after,
+#floatingTitle .scoreWrap:after {
+  content: "";
+  display: block;
+  width: 40px;
+}
 #floatingTitle .hlFeed,
 #floatingTitle .author,
 #floatingTitle .hlLabelRef {
@@ -1273,7 +1279,7 @@ table.prefErrorLog td.filename, table.prefErrorLog td.login, table.prefErrorLog 
 /* layout */
 
 #ttrssPrefs a {
-	color: #08e;
+	color: #28c;
 }
 #ttrssPrefs #header {
 	position: relative;
