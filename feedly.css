@@ -854,8 +854,7 @@ a:hover {
 }
 .cdm.expandable.active .title,
 .cdm.expanded .title {
-	display: inline-block;
-	width: 100%;
+	display: block;
 	margin-bottom: 5px;
 	font: normal normal bold 28px/33px "TeXGyreHerosCn", "Arial Narrow", "Liberation Sans Narrow", Arial, Helvetica, sans-serif;
 	text-rendering: optimizeLegibility;
@@ -1062,12 +1061,16 @@ div.articleNote {
 #floatingTitle {
 	position: absolute;
 	z-index: 5;
-	top: 35px;
+	top: 37px;
 	right: 33px;
 	left: 33px;
 	background: #fff;
-	border: 2px solid #fff;
-	border-bottom: 1px solid #eee;
+}
+#floatingTitle:after {
+	content: "";
+	display: block;
+	margin: 0 2px;
+	border-top: 1px solid #eee;
 }
 #floatingTitle:not(:empty) {
 	display: block !important;
