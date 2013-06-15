@@ -852,8 +852,11 @@ a:hover {
 .cdm.expanded .cdmHeader > .titleWrap {
 	padding: 0;
 }
-.cdm.expandable.active .cdmHeader .title,
+.cdm.expandable.active .title,
 .cdm.expanded .title {
+	display: inline-block;
+	width: 100%;
+	margin-bottom: 5px;
 	font: normal normal bold 28px/33px "TeXGyreHerosCn", "Arial Narrow", "Liberation Sans Narrow", Arial, Helvetica, sans-serif;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
@@ -1082,7 +1085,8 @@ div.articleNote {
 	padding-right: 0;
 }
 #floatingTitle .hlFeed,
-#floatingTitle .author {
+#floatingTitle .author,
+#floatingTitle .hlLabelRef {
 	display: none;
 }
 
