@@ -514,6 +514,32 @@ a:hover {
 #content-wrap .dijitOpened .dijitArrowButtonInner {
 	opacity: .75;
 }
+#ttrssMain .dijitPopup {
+	padding: 5px 7px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	box-shadow: 0 3px 12px rgba(0,0,0,.3);
+	background: #fff;
+}
+#ttrssMain .dijitMenu {
+	border-color: transparent;
+}
+#ttrssMain .dijitMenuItem {
+	color: #444;
+}
+#ttrssMain .dijitSelectMenu .dijitMenuItemHover td,
+#ttrssMain .dijitSelectMenu .dijitMenuItemSelected td,
+#ttrssMain .dijitMenuItemHover,
+#ttrssMain .dijitMenuItemSelected {
+	background: #eee;
+	border-color: #eee;
+	color: #444;
+}
+#ttrssMain .dijitSelectMenu .dijitMenuItemDisabled td,
+#ttrssMain .dijitMenuItemDisabled {
+	background: #fff;
+	border-color: #fff;
+}
 .labelColorIndicator,
 .labelColorIndicator2,
 .hlLabelRef {
