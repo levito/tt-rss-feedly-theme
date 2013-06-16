@@ -470,7 +470,45 @@ a:hover {
 #main .dijitSplitterThumb {
 	display: none;
 }
-
+#content-wrap .dijitSelect,
+#content-wrap .dijitButtonContents,
+#content-wrap .dijitButtonNode,
+#content-wrap .dijitArrowButton
+{
+	border-color: transparent;
+	background: transparent;
+	color: #999;
+	-webkit-transition: color .2s;
+	transition: color .2s;
+}
+#headlines-toolbar .dijitButtonContents {
+	color: #aaa;
+}
+#main_toolbar_form > * {
+	margin-right: 5px;
+}
+#content-wrap .dijitButtonContents,
+#content-wrap .dijitButtonText {
+	padding-left: 0;
+	padding-right: 0;
+}
+#content-wrap .dijitArrowButtonInner {
+	background: transparent url("feedly/treeExpandImages.png") -35px 0 no-repeat;
+	opacity: .5;
+	-webkit-transition: opacity .2s;
+	transition: opacity .2s;
+}
+#content-wrap .dijitSelect:hover .dijitButtonContents,
+#content-wrap .dijitSelect:hover .dijitArrowButtonInner,
+#content-wrap .dijitDropDownButton:hover .dijitButtonContents,
+#content-wrap .dijitDropDownButton:hover .dijitArrowButtonInner,
+#content-wrap .dijitComboButton .dijitButtonContents:hover,
+#content-wrap .dijitComboButton .dijitArrowButtonInner:hover,
+#content-wrap .dijitOpened .dijitButtonContents,
+#content-wrap .dijitOpened .dijitArrowButtonInner {
+	color: #444;
+	opacity: 1;
+}
 .labelColorIndicator,
 .labelColorIndicator2,
 .hlLabelRef {
@@ -509,8 +547,7 @@ a:hover {
 	bottom: 0;
 	width: 30px;
 }
-#main_toolbar_form > .dijitButton .dijitButtonNode,
-#main_toolbar_form > .dijitButtonFocused .dijitButtonNode {
+#main_toolbar_form > .dijitButton .dijitButtonNode {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -519,15 +556,8 @@ a:hover {
 	border-radius: 0;
 	border: none;
 	background: transparent;
-	color: #ccc;
-	-webkit-transition: all .5s;
-	transition: all .5s;
-}
-#main_toolbar_form > .dijitButtonHover .dijitButtonNode,
-#main_toolbar_form > .dijitButtonActive .dijitButtonNode {
-	border: none;
-	color: #444;
-	background: rgba(0,0,0,.05);
+	-webkit-transition: background .5s;
+	transition: background .5s;
 }
 #main_toolbar_form > .dijitButton .dijitButtonContents,
 #main_toolbar_form > .dijitButton .dijitButtonContents:before,
@@ -535,7 +565,7 @@ a:hover {
 	position: absolute;
 	width: 16px;
 	border-top: 3px solid;
-
+	background: transparent;
 }
 #main_toolbar_form > .dijitButton .dijitButtonContents {
 	top: 35px;
@@ -543,6 +573,9 @@ a:hover {
 	padding: 0;
 	overflow: hidden;
 	text-indent: 100%;
+	color: #ccc;
+	-webkit-transition: color .5s;
+	transition: color .5s;
 }
 #main_toolbar_form > .dijitButton .dijitButtonContents:before,
 #main_toolbar_form > .dijitButton .dijitButtonContents:after {
@@ -552,6 +585,12 @@ a:hover {
 }
 #main_toolbar_form > .dijitButton .dijitButtonContents:after {
 	top: 9px;
+}
+#main_toolbar_form > .dijitButton:hover .dijitButtonNode {
+	background: rgba(0,0,0,.05);
+}
+#main_toolbar_form > .dijitButton:hover .dijitButtonContents {
+	color: #444;
 }
 #feeds-holder #feedTree {
 	padding: 30px 20px 30px 0;
@@ -610,7 +649,7 @@ a:hover {
 }
 #feeds-holder .dijitTreeExpando {
 	margin: 0 0 0 5px;
-	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAAAQCAYAAAHCNwlLAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0NzEyMDgyRUMzRTUxMUUyQkI5OEIyRDY3QUMzQjFENyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo0NzEyMDgyRkMzRTUxMUUyQkI5OEIyRDY3QUMzQjFENyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjQ3MTIwODJDQzNFNTExRTJCQjk4QjJENjdBQzNCMUQ3IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjQ3MTIwODJEQzNFNTExRTJCQjk4QjJENjdBQzNCMUQ3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+MqN5swAAA69JREFUeNpi/P//PwNBAFIUFhZ2Bkr7Q+lWIGaAYYAAYiTGJKbw8HA4B8YGmQzlPwbRAAEENgkq2bJy5coaJA1Aqf+Mq1atQjEApB4kBuSnALlzgLgWqK+ZBcn9NWgu0WBkZIRzgIpRJIH8OVBmM4gACCCi/EYMYIH5F2i7CcxWcOgxMi4F8qOh3goAUhuAOAXmEnSvMoGdxchYjGw6yEtABVFIQiBDtkHDBAaWgQMR6n1YGD3A4kVGtPDxQgsjkEVwywACCB5GQKe6AdneQGY+yBb0wIV6ORwoFwdkemOLAKqFNRTsAlq2C0ivA+JXQJyBRf1KKL4FxE+A2AlZEuipiUBPWYPiDUgbAGlQkAYDHf4QSc1WoJwXUA4UGDZA6jAopQHV3ER3UDwQ5wIVmSAnQ7S4LAdSHbhSH1AsH0rPBKpNBzJNsKjxhtL7gWockaOUqsmaWgAggAadg1iQEiw4z+IqMZCLJ2g2ZIAVUzRxENCSaqAloIITZxqCZs//EOWM6I6FpcOFSOnFDejoXWhqQOmwE0lNOFAN3PdMSGbuBFpiB8SgekIeh4OWA+X5oI5SR5OTB+rLBdL2oNADeQ6o1htNjTpQHJQp/KFq/kOLEazZHqTgEFDBTiDzIZ5Q/QRyGFDtTTTxh9AoB4XyIyB7B5BGr0huQoMW5KHbQOYyIB2NUuchsc9ADanGV9mCimhQ1GGLVqivQVH+CotjkNWA3PUE3THoIdQMVLgRZBGeNJQCVDMXmzxaJsBWqKKrcRoS2R4gwDAcBM0JnkB8DSj3EBYaMHXEZnVoVR8NTVM3CYTWoAVM2JIJtLW0FujBZgrMrgXiJcCAvQGikdP0UAIsWDLlHGijwQDInggtJncA6RoSzQYFbjNQnw2Q3gorMKCpCi8ApmJ/aADDAno7mhJ3IG6FyQNT43Yc5iQjtSljgHgpmpJIaCEGlgeas5RgCkLKUheAbJAFr4C0B5Ceiac+YcBlDhAcAbXCoK05UEW4H0udgw42gkpXUMRAAxqUTVWAmAuID0IDZzu0sbUdjzlzQSUwEC+DpmJQJOkCMS8Qf4QGzlJog2wpsVkMVgaBHLUCiM+DHAuk0wnUb9hA9H9InroExIdBjgXSjtjKJGwBDE21ILt3AvWC3HIIZA5UrJbYiIKmWkZo/XsJWhdvgYrFkJTFgADUb6oBGnoU1PlA6hLhq94YcJRls4F6tsGa0OgFPgmgGqh3FqxBQUGRAmoPNMIaHUOyNT0UarFRgAQA8qm+GWirXsMAAAAASUVORK5CYII=);
+	background-image: url("feedly/treeExpandImages.png");
 	opacity: .4;
 	-webkit-transition: opacity .2s;
 	transition: opacity .2s;
