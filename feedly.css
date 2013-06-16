@@ -436,7 +436,7 @@ html {
 	color: #333;
 }
 a {
-	color: #7b1;
+	color: #6b3;
 	text-decoration: none;
 	-webkit-font-smoothing: subpixel-antialiased;
 }
@@ -458,7 +458,7 @@ a:hover {
 #feeds-holder,
 #main-toolbar,
 #main #headlines-wrap-inner .dijitSplitter {
-	background: #e8e8e8;
+	background: #eee;
 }
 #main #headlines-wrap-inner .dijitSplitter {
 	margin: 0 -5px;
@@ -570,22 +570,22 @@ a:hover {
 #feeds-holder .dijitTreeRow * {
 	cursor: pointer;
 }
-#feeds-holder .dijitTreeRow:hover {
+#feeds-holder .dijitTreeRow:hover,
+#feeds-holder .dijitTreeRowSelected {
 	color: #333;
 }
 #feeds-holder .dijitTreeRowHover {
 	background: transparent;
 }
 #feeds-holder .dijitTreeRowSelected {
-	background: #d8d8d8;
-	box-shadow: inset 0 0 2px rgba(0,0,0,.1);
+	background: #ddd;
 }
 #feeds-holder .dijitTreeLabel.Unread {
 	font-weight: bold;
 }
 #feeds-holder .dijitTreeRow.Error,
 #errorButton {
-	color: #d44;
+	color: #e44;
 }
 #feeds-holder .dijitTreeRow.Hidden {
 	display: none;
@@ -600,12 +600,13 @@ a:hover {
 	float: right;
 	padding: 1px 5px 0;
 	font-size: 11px;
-	color: #aaa;
+	color: #999;
 	-webkit-transition: color .2s;
 	transition: color .2s;
 }
-#feeds-holder .dijitTreeRow:hover .counterNode {
-	color: #666;
+#feeds-holder .dijitTreeRow:hover .counterNode,
+#feeds-holder .dijitTreeRowSelected .counterNode {
+	color: #333;
 }
 #feeds-holder .dijitTreeExpando {
 	margin: 0 0 0 5px;
@@ -634,7 +635,7 @@ a:hover {
 /* main */
 #headlines-wrap-inner {
 	background: #fff;
-	box-shadow: 0 1px 4px rgba(0,0,0,.1);
+	box-shadow: 0 1px 2px rgba(0,0,0,.07);
 }
 #headlines-toolbar {
 	z-index: 3;
@@ -676,7 +677,8 @@ a:hover {
 }
 #selected_prompt {
 	float: right;
-	padding-left: 10px;
+	position: relative;
+	left: 10px;
 }
 #headlines-frame {
 	z-index: 4;
@@ -808,11 +810,11 @@ a:hover {
 }
 .cdm.expandable.active .cdmHeader,
 .cdm.expanded .cdmHeader {
-	padding: 50px 34px 0;
+	padding: 54px 34px 0;
 }
 .cdm.expandable.active .cdmFooter,
 .cdm.expanded .cdmFooter {
-	padding: 0 34px 25px;
+	padding: 0 34px 30px;
 }
 .cdm.expandable.active .cdmHeader .titleWrap,
 .cdm.expanded .cdmHeader > .titleWrap {
@@ -821,7 +823,7 @@ a:hover {
 .cdm.expandable.active .title,
 .cdm.expanded .title {
 	display: block;
-	margin-bottom: 3px;
+	margin-bottom: 5px;
 	font: normal normal bold 28px/33px "TeXGyreHerosCn", "Arial Narrow", "Liberation Sans Narrow", Arial, Helvetica, sans-serif;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
@@ -835,7 +837,8 @@ a:hover {
 .cdm.expanded .cdmHeader .updated,
 .cdm.expanded .cdmHeader .scoreWrap {
 	position: absolute;
-	top: 25px;
+	top: 34px;
+	padding: 0;
 }
 .cdm.expandable.active .cdmHeader > div:first-child,
 .cdm.expanded .cdmHeader > div:first-child {
@@ -978,7 +981,7 @@ div.articleNote {
 	background: #f5f5f5;
 	border-bottom: 1px solid #eee;
 	font-size: 11px;
-	color: #808080;
+	color: #999;
 }
 .postHeader .postDate {
 	float: right;
@@ -1259,7 +1262,7 @@ table.prefErrorLog td.filename, table.prefErrorLog td.login, table.prefErrorLog 
 #ttrssPrefs #footer {
 	padding: 0 10px 5px;
 	text-align: center;
-	background: #e8e8e8;
+	background: #eee;
 }
 
 /* content */
@@ -1277,7 +1280,7 @@ table.prefErrorLog td.filename, table.prefErrorLog td.login, table.prefErrorLog 
 #ttrssPrefs .labelParam,
 #ttrssPrefs .prefHelp {
 	font-size: 11px;
-	color: #808080;
+	color: #999;
 }
 #ttrssPrefs .feedParam,
 #ttrssPrefs .labelParam {
