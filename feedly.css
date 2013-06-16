@@ -493,7 +493,8 @@ a:hover {
 	padding-right: 0;
 }
 #content-wrap .dijitArrowButtonInner {
-	background: transparent url("feedly/icons.png") no-repeat -16px 0 / 36px 16px;
+	background: transparent url("feedly/icons.png") -16px 0 no-repeat;
+	background-size: 36px 16px;
 	opacity: .3;
 	-webkit-transition: opacity .2s;
 	transition: opacity .2s;
@@ -797,9 +798,9 @@ a:hover {
 	display: -moz-box;
 	display: -webkit-box;
 	display: -ms-flexbox;
-	-moz-box-align: baseline;
-	-webkit-box-align: baseline;
-	-ms-flex-align: baseline;
+	-moz-box-align: top;
+	-webkit-box-align: top;
+	-ms-flex-align: top;
 	/* new flexbox: */
 	display: -webkit-flex;
 	display: flex;
@@ -845,6 +846,7 @@ a:hover {
 	flex: 99;
 }
 .cdm.expandable:not(.active) .cdmHeader > .hlFeed {
+	box-sizing: border-box;
 	width: 140px;
 }
 .cdm.expandable:not(.active) .cdmHeader > .hlFeed a {
@@ -1009,13 +1011,15 @@ div.articleNote {
 .hlUpdated,
 #floatingTitle .updated {
 	font-size: 11px;
+	line-height: 18px;
 }
 .cdmHeader .hlFeed a {
 	display: inline-block;
-	padding: 0 5px;
+	padding: 2px 5px;
 	border-radius: 3px;
 	background: rgba(0,0,0,.1);
 	color: #444;
+	line-height: 1;
 }
 .cdmContentInner {
 	padding: 10px 34px;
