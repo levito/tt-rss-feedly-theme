@@ -1,79 +1,39 @@
 @font-face {
-    font-family: 'TeXGyreHeros';
-    src: url('feedly/texgyreheros-regular-webfont.eot');
-    src: url('feedly/texgyreheros-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('feedly/texgyreheros-regular-webfont.woff') format('woff'),
-         url('feedly/texgyreheros-regular-webfont.ttf') format('truetype'),
-         url('feedly/texgyreheros-regular-webfont.svg#TeXGyreHerosRegular') format('svg');
-}
-
-@font-face {
-    font-family: 'TeXGyreHeros';
-    src: url('feedly/texgyreheros-bold-webfont.eot');
-    src: url('feedly/texgyreheros-bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('feedly/texgyreheros-bold-webfont.woff') format('woff'),
-         url('feedly/texgyreheros-bold-webfont.ttf') format('truetype'),
-         url('feedly/texgyreheros-bold-webfont.svg#TeXGyreHerosBold') format('svg');
-    font-weight: bold;
-}
-
-@font-face {
-    font-family: 'TeXGyreHeros';
-    src: url('feedly/texgyreheros-italic-webfont.eot');
-    src: url('feedly/texgyreheros-italic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('feedly/texgyreheros-italic-webfont.woff') format('woff'),
-         url('feedly/texgyreheros-italic-webfont.ttf') format('truetype'),
-         url('feedly/texgyreheros-italic-webfont.svg#TeXGyreHerosItalic') format('svg');
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'TeXGyreHeros';
-    src: url('feedly/texgyreheros-bolditalic-webfont.eot');
-    src: url('feedly/texgyreheros-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('feedly/texgyreheros-bolditalic-webfont.woff') format('woff'),
-         url('feedly/texgyreheros-bolditalic-webfont.ttf') format('truetype'),
-         url('feedly/texgyreheros-bolditalic-webfont.svg#TeXGyreHerosBoldItalic') format('svg');
-    font-weight: bold;
-    font-style: italic;
+    font-family: 'TeXGyreHerosCn';
+    src: url('feedly/fonts/texgyreheroscn-regular-webfont.eot');
+    src: url('feedly/fonts/texgyreheroscn-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('feedly/fonts/texgyreheroscn-regular-webfont.woff') format('woff'),
+         url('feedly/fonts/texgyreheroscn-regular-webfont.ttf') format('truetype'),
+         url('feedly/fonts/texgyreheroscn-regular-webfont.svg#TeXGyreHerosCnRegular') format('svg');
 }
 
 @font-face {
     font-family: 'TeXGyreHerosCn';
-    src: url('feedly/texgyreheroscn-regular-webfont.eot');
-    src: url('feedly/texgyreheroscn-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('feedly/texgyreheroscn-regular-webfont.woff') format('woff'),
-         url('feedly/texgyreheroscn-regular-webfont.ttf') format('truetype'),
-         url('feedly/texgyreheroscn-regular-webfont.svg#TeXGyreHerosCnRegular') format('svg');
-}
-
-@font-face {
-    font-family: 'TeXGyreHerosCn';
-    src: url('feedly/texgyreheroscn-bold-webfont.eot');
-    src: url('feedly/texgyreheroscn-bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('feedly/texgyreheroscn-bold-webfont.woff') format('woff'),
-         url('feedly/texgyreheroscn-bold-webfont.ttf') format('truetype'),
-         url('feedly/texgyreheroscn-bold-webfont.svg#TeXGyreHerosCnBold') format('svg');
+    src: url('feedly/fonts/texgyreheroscn-bold-webfont.eot');
+    src: url('feedly/fonts/texgyreheroscn-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('feedly/fonts/texgyreheroscn-bold-webfont.woff') format('woff'),
+         url('feedly/fonts/texgyreheroscn-bold-webfont.ttf') format('truetype'),
+         url('feedly/fonts/texgyreheroscn-bold-webfont.svg#TeXGyreHerosCnBold') format('svg');
     font-weight: bold;
 }
 
 @font-face {
     font-family: 'TeXGyreHerosCn';
-    src: url('feedly/texgyreheroscn-italic-webfont.eot');
-    src: url('feedly/texgyreheroscn-italic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('feedly/texgyreheroscn-italic-webfont.woff') format('woff'),
-         url('feedly/texgyreheroscn-italic-webfont.ttf') format('truetype'),
-         url('feedly/texgyreheroscn-italic-webfont.svg#TeXGyreHerosCnItalic') format('svg');
+    src: url('feedly/fonts/texgyreheroscn-italic-webfont.eot');
+    src: url('feedly/fonts/texgyreheroscn-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('feedly/fonts/texgyreheroscn-italic-webfont.woff') format('woff'),
+         url('feedly/fonts/texgyreheroscn-italic-webfont.ttf') format('truetype'),
+         url('feedly/fonts/texgyreheroscn-italic-webfont.svg#TeXGyreHerosCnItalic') format('svg');
     font-style: italic;
 }
 
 @font-face {
     font-family: 'TeXGyreHerosCn';
-    src: url('feedly/texgyreheroscn-bolditalic-webfont.eot');
-    src: url('feedly/texgyreheroscn-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('feedly/texgyreheroscn-bolditalic-webfont.woff') format('woff'),
-         url('feedly/texgyreheroscn-bolditalic-webfont.ttf') format('truetype'),
-         url('feedly/texgyreheroscn-bolditalic-webfont.svg#TeXGyreHerosCnBoldItalic') format('svg');
+    src: url('feedly/fonts/texgyreheroscn-bolditalic-webfont.eot');
+    src: url('feedly/fonts/texgyreheroscn-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('feedly/fonts/texgyreheroscn-bolditalic-webfont.woff') format('woff'),
+         url('feedly/fonts/texgyreheroscn-bolditalic-webfont.ttf') format('truetype'),
+         url('feedly/fonts/texgyreheroscn-bolditalic-webfont.svg#TeXGyreHerosCnBoldItalic') format('svg');
     font-weight: bold;
     font-style: italic;
 }
@@ -478,6 +438,7 @@ html {
 a {
 	color: #7b1;
 	text-decoration: none;
+	-webkit-font-smoothing: subpixel-antialiased;
 }
 a:hover {
 	text-decoration: underline;
@@ -697,7 +658,6 @@ a:hover {
 }
 #headlines-toolbar > .r {
 	float: left;
-	margin-top: -3px;
 }
 #headlines-toolbar > .r img {
 	position: relative;
@@ -706,7 +666,7 @@ a:hover {
 #feed_title,
 #floatingTitle .title,
 .postHeader .postTitle a  {
-	font: normal normal bold 14px/1.5 "TeXGyreHerosCn", "Arial Narrow", "Liberation Sans Narrow", Arial, Helvetica, sans-serif;
+	font: normal normal bold 14px/16px "TeXGyreHerosCn", "Arial Narrow", "Liberation Sans Narrow", Arial, Helvetica, sans-serif;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 }
@@ -716,7 +676,7 @@ a:hover {
 }
 #selected_prompt {
 	float: right;
-	padding: 3px 0 0 10px;
+	padding-left: 10px;
 }
 #headlines-frame {
 	z-index: 4;
@@ -772,6 +732,9 @@ a:hover {
 }
 .hl .hlUpdated .hlFeed {
 	display: none;
+}
+.postHeader .postTitle {
+	margin-bottom: 5px;
 }
 
 /* articles - expandable.active / expanded */
@@ -1016,7 +979,7 @@ div.articleNote {
 }
 .postHeader .postDate {
 	float: right;
-	padding-top: 3px;
+	padding-top: 1px;
 	white-space: nowrap;
 }
 .postTags > * {
@@ -1061,7 +1024,7 @@ div.articleNote {
 #floatingTitle {
 	position: absolute;
 	z-index: 5;
-	top: 37px;
+	top: 35px;
 	right: 33px;
 	left: 33px;
 	background: #fff;
@@ -1077,9 +1040,6 @@ div.articleNote {
 }
 #floatingTitle > * {
 	vertical-align: top !important;
-}
-#floatingTitle .titleWrap {
-	padding-top: 2px;
 }
 #floatingTitle > div:first-child {
 	padding-left: 0;
