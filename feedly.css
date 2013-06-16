@@ -734,7 +734,10 @@ a:hover {
 	display: none;
 }
 .postHeader .postTitle {
-	margin-bottom: 5px;
+	margin-bottom: 3px;
+}
+.postHeader .postTags {
+	margin-top: -1px;
 }
 
 /* articles - expandable.active / expanded */
@@ -818,7 +821,7 @@ a:hover {
 .cdm.expandable.active .title,
 .cdm.expanded .title {
 	display: block;
-	margin-bottom: 5px;
+	margin-bottom: 3px;
 	font: normal normal bold 28px/33px "TeXGyreHerosCn", "Arial Narrow", "Liberation Sans Narrow", Arial, Helvetica, sans-serif;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
