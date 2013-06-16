@@ -493,21 +493,25 @@ a:hover {
 	padding-right: 0;
 }
 #content-wrap .dijitArrowButtonInner {
-	background: transparent url("feedly/treeExpandImages.png") -35px 0 no-repeat;
-	opacity: .5;
+	background: transparent url("feedly/icons.png") no-repeat -16px 0 / 36px 16px;
+	opacity: .3;
 	-webkit-transition: opacity .2s;
 	transition: opacity .2s;
 }
+#content-wrap .dijitComboButton .dijitArrowButtonInner {
+	background-position: -18px 0;
+}
 #content-wrap .dijitSelect:hover .dijitButtonContents,
-#content-wrap .dijitSelect:hover .dijitArrowButtonInner,
 #content-wrap .dijitDropDownButton:hover .dijitButtonContents,
-#content-wrap .dijitDropDownButton:hover .dijitArrowButtonInner,
 #content-wrap .dijitComboButton .dijitButtonContents:hover,
-#content-wrap .dijitComboButton .dijitArrowButtonInner:hover,
-#content-wrap .dijitOpened .dijitButtonContents,
-#content-wrap .dijitOpened .dijitArrowButtonInner {
+#content-wrap .dijitOpened .dijitButtonContents {
 	color: #444;
-	opacity: 1;
+}
+#content-wrap .dijitSelect:hover .dijitArrowButtonInner,
+#content-wrap .dijitDropDownButton:hover .dijitArrowButtonInner,
+#content-wrap .dijitComboButton .dijitArrowButtonInner:hover,
+#content-wrap .dijitOpened .dijitArrowButtonInner {
+	opacity: .75;
 }
 .labelColorIndicator,
 .labelColorIndicator2,
@@ -649,13 +653,20 @@ a:hover {
 }
 #feeds-holder .dijitTreeExpando {
 	margin: 0 0 0 5px;
-	background-image: url("feedly/treeExpandImages.png");
-	opacity: .4;
+	background-image: url("feedly/icons.png");
+	background-size: 36px 16px;
+	opacity: .2;
 	-webkit-transition: opacity .2s;
 	transition: opacity .2s;
 }
 #feeds-holder .dijitTreeExpando:hover {
-	opacity: 1;
+	opacity: .75;
+}
+#feeds-holder .dijitTreeExpandoClosed {
+	background-position: 1px 0;
+}
+#feeds-holder .dijitTreeExpandoOpened {
+	background-position: -17px 0;
 }
 #feeds-holder .dijitFolderClosed,
 #feeds-holder .dijitFolderOpened,
