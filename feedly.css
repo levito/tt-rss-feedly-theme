@@ -545,6 +545,7 @@ a:hover {
 }
 #ttrssMain .dijitMenuItemDisabled .dijitMenuItemLabel {
 	background: #fff;
+	color: #444;
 	font-weight: bold;
 	opacity: 1;
 	padding-top: 5px;
