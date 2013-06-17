@@ -735,7 +735,18 @@ a:hover {
 	padding: 15px 35px 5px;
 	min-height: 25px;
 	text-align: right;
+	color: transparent;
+	cursor: default;
+}
+#headlines-toolbar a {
+	text-decoration: none;
 	color: #aaa;
+	margin-left: 8px;
+	-webkit-transition: color .2s;
+	transition: color .2s;
+}
+#headlines-toolbar a:hover {
+	color: #444;
 }
 #headlines-toolbar:after {
 	content: "";
@@ -747,10 +758,10 @@ a:hover {
 }
 #headlines-toolbar .dijitSelect {
 	margin: -2px 0 0 10px;
-	color: #444;
 }
 #headlines-toolbar > .r {
 	float: left;
+	color: #aaa;
 }
 #headlines-toolbar > .r img {
 	position: relative;
