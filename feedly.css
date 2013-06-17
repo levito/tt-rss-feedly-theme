@@ -251,21 +251,6 @@ ul.compact li {
 	border-width : 0px;
 }
 
-#overlay {
-	background : white;
-	left : 0;
-	top : 0;
-	height : 100%;
-	width : 100%;
-	z-index : 100;
-	position : absolute;
-}
-
-#overlay_inner {
-	font-weight : bold;
-	margin : 1em;
-}
-
 /* @611 */
 div.dlgSec {
 	font-size : 12px;
@@ -556,6 +541,43 @@ a:hover {
 	padding: 0 0 8px;
 	border-top: 1px solid #ddd;
 }
+#overlay {
+	display: table;
+	position: absolute;
+	z-index: 100;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	background: #fff;
+}
+#overlay:before {
+	content: "";
+	height: 90%;
+}
+#overlay:before,
+#overlay_inner {
+	display: inline-block;
+	vertical-align: middle;
+}
+#overlay_inner .insensitive {
+	margin: 0 0 20px;
+}
+#overlay_inner .dijitProgressBar {
+	margin: -10px 0;
+	border: 1px solid #d8d8d8;
+}
+#overlay_inner .dijitProgressBarFull {
+	border: 0;
+}
+#overlay_inner .dijitProgressBarTile {
+	background: #e5e5e5;
+}
+#overlay_inner .dijitProgressBarLabel {
+	color: #444;
+	font-weight: bold;
+}
 .labelColorIndicator,
 .labelColorIndicator2,
 .hlLabelRef {
@@ -738,14 +760,14 @@ a:hover {
 	color: transparent;
 	cursor: default;
 }
-#headlines-toolbar a {
+#headlines-toolbar > a {
 	text-decoration: none;
 	color: #aaa;
 	margin-left: 8px;
 	-webkit-transition: color .2s;
 	transition: color .2s;
 }
-#headlines-toolbar a:hover {
+#headlines-toolbar > a:hover {
 	color: #444;
 }
 #headlines-toolbar:after {
