@@ -515,30 +515,45 @@ a:hover {
 	opacity: .75;
 }
 #ttrssMain .dijitPopup {
-	padding: 5px 7px;
+	padding: 5px 0;
 	border: 1px solid #ccc;
 	border-radius: 3px;
 	box-shadow: 0 3px 12px rgba(0,0,0,.3);
 	background: #fff;
 }
 #ttrssMain .dijitMenu {
-	border-color: transparent;
+	border: none;
 }
 #ttrssMain .dijitMenuItem {
 	color: #444;
 }
-#ttrssMain .dijitSelectMenu .dijitMenuItemHover td,
-#ttrssMain .dijitSelectMenu .dijitMenuItemSelected td,
-#ttrssMain .dijitMenuItemHover,
-#ttrssMain .dijitMenuItemSelected {
-	background: #eee;
-	border-color: #eee;
-	color: #444;
+#ttrssMain .dijitMenu td {
+	display: none;
 }
-#ttrssMain .dijitSelectMenu .dijitMenuItemDisabled td,
-#ttrssMain .dijitMenuItemDisabled {
+#ttrssMain .dijitMenu .dijitMenuItemLabel {
+	display: table-cell;
+	padding: 4px 10px;
+	border: 0;
+}
+#ttrssMain .dijitSelectSelectedOption .dijitMenuItemLabel {
+	font-weight: normal;
+}
+#ttrssMain .dijitMenuItemHover .dijitMenuItemLabel,
+#ttrssMain .dijitMenuItemSelected .dijitMenuItemLabel {
+	background: #eee;
+	color: #222;
+}
+#ttrssMain .dijitMenuItemDisabled .dijitMenuItemLabel {
 	background: #fff;
-	border-color: #fff;
+	font-weight: bold;
+	opacity: 1;
+	padding-top: 5px;
+}
+#ttrssMain .dijitMenuItemDisabled .dijitMenuItemLabel:before {
+	content: "";
+	display: block;
+	padding: 0 0 8px;
+	border-top: 1px solid #ddd;
 }
 .labelColorIndicator,
 .labelColorIndicator2,
