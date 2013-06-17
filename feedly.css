@@ -522,7 +522,7 @@ a:hover {
 	background: #fff;
 }
 #ttrssMain .dijitMenu {
-	border: none;
+	border: 0;
 }
 #ttrssMain .dijitMenuItem {
 	color: #444;
@@ -601,7 +601,7 @@ a:hover {
 	bottom: 0;
 	right: 0;
 	border-radius: 0;
-	border: none;
+	border: 0;
 	background: transparent;
 	-webkit-transition: background .5s;
 	transition: background .5s;
@@ -644,11 +644,11 @@ a:hover {
 }
 #feeds-holder .dijitTreeRow {
 	padding: 2px 0;
-	border: none;
+	border: 0;
 	max-width: 100%;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	color: #555;
+	color: #666;
 	-webkit-transition: color .2s;
 	transition: color .2s;
 }
@@ -692,7 +692,7 @@ a:hover {
 }
 #feeds-holder .dijitTreeRow:hover .counterNode,
 #feeds-holder .dijitTreeRowSelected .counterNode {
-	color: #444;
+	color: #222;
 }
 #feeds-holder .dijitTreeExpando {
 	margin: 0 0 0 5px;
