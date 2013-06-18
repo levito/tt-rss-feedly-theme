@@ -817,26 +817,12 @@ a:hover {
 	margin: 0 -35px;
 }
 
-/* feed tree and main */
-#ttrssMain *::-webkit-scrollbar {
-	width: 6px;
-}
-#ttrssMain #feeds-holder::-webkit-scrollbar-thumb {
-	background: transparent;
-	opacity: 0;
-}
-#ttrssMain *::-webkit-scrollbar-thumb,
-#ttrssMain #feeds-holder:hover::-webkit-scrollbar-thumb {
-	background: rgba(0,0,0,.1);
-	opacity: 1;
-}
-
 /* articles - expandable / separete */
 .cdm.expandable,
 .hl {
 	border: 1px solid transparent;
 	border-top-color: #eee;
-	border-bottom: 0;
+	margin-bottom: -1px;
 }
 .cdm.expandable:not(.active) .cdmHeader:hover,
 .hl:hover,
@@ -996,7 +982,6 @@ div.articleNote {
 #headlines-frame .cdm,
 .hl {
 	position: relative;
-	-webkit-margin-end: -6px;
 }
 .cdm.expanded.active,
 .cdm.expandable.active,
