@@ -637,7 +637,7 @@ a:hover {
 	background: transparent;
 }
 #main_toolbar_form > .dijitButton .dijitButtonContents {
-	top: 35px;
+	top: 46px;
 	left: 8px;
 	padding: 0;
 	overflow: hidden;
@@ -662,10 +662,10 @@ a:hover {
 	color: #444;
 }
 #feeds-holder #feedTree {
-	padding: 30px 10px 30px 0;
+	padding: 42px 10px 30px 0;
 }
 #feeds-holder .dijitTreeRow {
-	padding: 2px 0;
+	padding: 3px 0 4px;
 	border: 0;
 	max-width: 100%;
 	overflow: hidden;
@@ -746,6 +746,9 @@ a:hover {
 	height: 11px;
 	background: transparent url("../images/indicator_tiny.gif") 0 0 no-repeat;
 }
+#feeds-holder[style*=none] ~ .dijitSplitter {
+	display: none;
+}
 
 /* main */
 #headlines-wrap-inner {
@@ -783,6 +786,7 @@ a:hover {
 }
 #headlines-toolbar > .r {
 	float: left;
+	white-space: nowrap;
 	color: #aaa;
 }
 #headlines-toolbar > .r img {
@@ -798,7 +802,8 @@ a:hover {
 }
 #feed_title,
 #feed_title a {
-	color: #444;
+	color: #000;
+	-webkit-font-smoothing: antialiased;
 }
 #selected_prompt {
 	float: right;
