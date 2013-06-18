@@ -1154,7 +1154,8 @@ div.articleNote {
 	content: "";
 	display: block;
 	margin: 0 2px;
-	border-top: 1px solid #eee;
+	height: 7px;
+	border-bottom: 1px solid #eee;
 }
 #floatingTitle:not(:empty) {
 	display: block !important;
