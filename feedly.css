@@ -463,7 +463,6 @@ a:hover {
 	border-color: transparent;
 	background: transparent;
 	color: #999;
-	-webkit-transition: color .2s;
 	transition: color .2s;
 }
 #headlines-toolbar .dijitButtonContents {
@@ -481,7 +480,6 @@ a:hover {
 	background: transparent url("feedly/icons.png") -16px 0 no-repeat;
 	background-size: 36px 16px;
 	opacity: .3;
-	-webkit-transition: opacity .2s;
 	transition: opacity .2s;
 }
 #content-wrap .dijitComboButton .dijitArrowButtonInner {
@@ -526,7 +524,7 @@ a:hover {
 #ttrssMain .dijitMenuItemHover .dijitMenuItemLabel,
 #ttrssMain .dijitMenuItemSelected .dijitMenuItemLabel {
 	background: #eee;
-	color: #222;
+	color: #000;
 }
 #ttrssMain .dijitMenuItemDisabled .dijitMenuItemLabel {
 	background: #fff;
@@ -662,7 +660,7 @@ a:hover {
 	color: #444;
 }
 #feeds-holder #feedTree {
-	padding: 42px 10px 30px 0;
+	padding: 42px 5px 30px 0;
 }
 #feeds-holder .dijitTreeRow {
 	padding: 3px 0 4px;
@@ -680,7 +678,7 @@ a:hover {
 }
 #feeds-holder .dijitTreeRow:hover,
 #feeds-holder .dijitTreeRowSelected {
-	color: #222;
+	color: #000;
 }
 #feeds-holder .dijitTreeRowHover {
 	background: transparent;
@@ -706,7 +704,7 @@ a:hover {
 }
 #feeds-holder .counterNode {
 	float: right;
-	padding: 1px 5px 0;
+	padding: 1px 10px 0 5px;
 	font-size: 11px;
 	color: #999;
 	-webkit-transition: color .2s;
@@ -714,7 +712,7 @@ a:hover {
 }
 #feeds-holder .dijitTreeRow:hover .counterNode,
 #feeds-holder .dijitTreeRowSelected .counterNode {
-	color: #222;
+	color: #444;
 }
 #feeds-holder .dijitTreeExpando {
 	margin: 0 0 0 5px;
@@ -832,7 +830,7 @@ a:hover {
 .cdm.expandable:not(.active) .cdmHeader:hover,
 .hl:hover,
 .collapseBtn:hover {
-	background: #f5f5f5;
+	background: rgba(0,0,0,.038);
 	cursor: pointer;
 }
 .cdm.expandable .cdmHeader,
@@ -1123,8 +1121,8 @@ div.articleNote {
 	line-height: 8px;
 	text-align: right;
 	vertical-align: top;
-	color: #fff;
-	background: #fff;
+	color: transparent;
+	background: transparent;
 	-webkit-transition: all .5s;
 	transition: all .5s;
 }
