@@ -682,6 +682,7 @@ a:hover {
 	border-radius: 0;
 	border: 0;
 	background: transparent;
+	box-shadow: none;
 	-webkit-transition: background .5s;
 	transition: background .5s;
 }
@@ -981,7 +982,7 @@ a:hover {
 .cdm.expandable.active,
 .cdm.expanded {
 	border: 1px solid #eee;
-	margin-bottom: 15px;
+	margin-bottom: 17px;
 }
 .cdm.expandable.active .cdmHeader,
 .cdm.expanded .cdmHeader {
