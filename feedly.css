@@ -539,6 +539,64 @@ a:hover {
 	padding: 0 0 8px;
 	border-top: 1px solid #ddd;
 }
+#ttrssMain .dijitDialog {
+	border: 1px solid #aaa;
+	border-radius: 3px;
+	box-shadow: 0 3px 12px rgba(0,0,0,.3);
+}
+#ttrssMain .dijitDialogTitleBar {
+	border: none;
+	padding: 6px 10px;
+	background: #e5e5e5;
+	font-weight: bold;
+}
+#ttrssMain .dijitDialogCloseIcon {
+	top: 2px;
+	right: 10px;
+	background: none;
+	font-size: 22px;
+	line-height: 1;
+	font-weight: normal;
+	text-align: right;
+	color: #999;
+	-webkit-transition: color .2s;
+	transition: color .2s;
+}
+#ttrssMain .dijitDialogCloseIcon:hover {
+	color: #000;
+}
+#ttrssMain .dijitDialogCloseIcon:before {
+	content: "\00d7";
+}
+#ttrssMain .dijitDialogPaneContent {
+	border-top-color: #ddd;
+	padding: 10px;
+}
+#ttrssMain .dijitButton .dijitButtonNode {
+	padding: 7px;
+	border-color: #d8d8d8;
+	border-radius: 2px;
+	background: #e5e5e5;
+	box-shadow: 0 1px 1px rgba(0,0,0,.05);
+	-webkit-transition: all .2s;
+	transition: all .2s;
+}
+#ttrssMain .dijitButtonHover .dijitButtonNode {
+	background: #e8e8e8;
+	border-color: #c0c0c0;
+	box-shadow: 0 1px 1px rgba(0,0,0,.1);
+}
+#ttrssMain .dijitButtonActive .dijitButtonNode {
+	background: #d8d8d8;
+	border-color: #b8b8b8;
+	box-shadow: inset 0 2px 2px rgba(0,0,0,.1);
+	-webkit-transition: none;
+	transition: none;
+}
+#ttrssMain .dijitDialogUnderlay {
+	background: #000;
+	opacity: .2;
+}
 #overlay {
 	display: table;
 	position: absolute;
@@ -660,10 +718,10 @@ a:hover {
 	color: #444;
 }
 #feeds-holder #feedTree {
-	padding: 42px 5px 30px 0;
+	padding: 41px 5px 30px 0;
 }
 #feeds-holder .dijitTreeRow {
-	padding: 3px 0 4px;
+	padding: 4px 0 3px;
 	border: 0;
 	max-width: 100%;
 	overflow: hidden;
@@ -698,6 +756,7 @@ a:hover {
 }
 #feeds-holder img.feedIcon,
 #feeds-holder .labelColorIndicator {
+	vertical-align: middle;
 	position: relative;
 	top: -1px;
 	left: -5px;
@@ -816,7 +875,7 @@ a:hover {
 #headlines-frame:before {
 	content: "";
 	display: block;
-	border-top: 10px solid #fff;
+	border-top: 25px solid #fff;
 	margin: 0 -35px;
 }
 
@@ -1187,6 +1246,7 @@ div.articleNote {
 	clear: both;
 	overflow: auto;
 	font-size: 14px;
+	line-height: 1.7;
 }
 .cdmContentInner h1,
 .postContent h1,
