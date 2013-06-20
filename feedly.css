@@ -776,7 +776,7 @@ a:hover {
 	color: #444;
 }
 #feeds-holder .dijitTreeExpando {
-	margin: 0 0 0 5px;
+	margin: -1px 0 1px 5px;
 	background-image: url("feedly/icons.png");
 	background-size: 36px 16px;
 	opacity: .2;
@@ -886,6 +886,7 @@ a:hover {
 .hl {
 	border: 1px solid transparent;
 	border-top-color: #eee;
+	border-bottom-color: #eee;
 	margin-bottom: -1px;
 }
 .cdm.expandable:not(.active) .cdmHeader:hover,
@@ -1077,8 +1078,7 @@ div.articleNote {
 .cdm.Unread .cdmHeader,
 .hl.Unread .hlTitle a,
 .hl.Unread .hlUpdated,
-.postHeader .postTitle a,
-#floatingTitle a {
+.postHeader .postTitle a {
 	color: #444;
 }
 .cdm.Unread .cdmExcerpt,
@@ -1224,6 +1224,10 @@ div.articleNote {
 #floatingTitle > * {
 	vertical-align: top !important;
 }
+#floatingTitle .title,
+#floatingTitle .updated {
+	color: #aaa;
+}
 #floatingTitle > div:first-child {
 	padding-left: 0;
 }
@@ -1313,19 +1317,19 @@ div.articleNote {
 	text-align: center;
 }
 .cdmFeedTitle {
-	padding: 40px 0 25px;
+	padding: 56px 0 28px;
 	color: #aaa;
 }
 .cdmFeedTitle:first-child {
-	padding-top: 30px;
+	padding-top: 14px;
 }
 .cdmFeedTitle > div:first-child{
 	float: none !important;
 	display: inline-block;
-	padding-right: 7px;
+	padding: 0 12px 0 7px;
 }
 .cdmFeedTitle .title {
-	font: normal normal bold 20px/1.25 "TeXGyreHerosCn", "Arial Narrow", "Liberation Sans Narrow", Arial, Helvetica, sans-serif;
+	font: normal normal bold 18px/24px "TeXGyreHerosCn", "Arial Narrow", "Liberation Sans Narrow", Arial, Helvetica, sans-serif;
 	padding-right: 7px;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
