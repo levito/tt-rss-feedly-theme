@@ -1276,7 +1276,7 @@ div.articleNote {
 
 .cdmContentInner p,
 .postContent p {
-	max-width: 50em;
+	max-width: 45em;
 }
 .cdmContentInner tr,
 .postContent tr {
@@ -1287,6 +1287,12 @@ div.articleNote {
 	max-width: 100%;
 	width: auto;
 	height: auto;
+}
+.cdmContentInner figure,
+.postContent figure {
+	margin: 1em 0;
+	font-size: 12px;
+	font-style: italic;
 }
 .cdmContentInner pre,
 .postContent pre {
