@@ -1290,19 +1290,14 @@ div.articleNote {
 }
 .cdmContentInner figure,
 .postContent figure {
-	width: -moz-min-content;
-	width: -webkit-min-content;
-	width: min-content;
-	max-width: 100%;
 	margin: 1em 0;
 	font-size: 12px;
 	line-height: 16px;
 	font-style: italic;
 }
-.cdmContentInner figure img,
-.postContent figure img {
-	max-width: none;
-	margin-bottom: .5em;
+.cdmContentInner figure figcaption,
+.postContent figure figcaption {
+	margin-top: .5em;
 }
 .cdmContentInner pre,
 .postContent pre {
