@@ -1287,6 +1287,7 @@ div.articleNote {
 	max-width: 100%;
 	width: auto;
 	height: auto;
+	margin: .5em 1em .5em 0;
 }
 .cdmContentInner figure,
 .postContent figure {
@@ -1295,10 +1296,14 @@ div.articleNote {
 	line-height: 16px;
 	font-style: italic;
 }
-.cdmContentInner figure figcaption,
-.postContent figure figcaption {
-	margin-top: .5em;
-}
+/*.cdmContentInner p img,
+.postContent p img,
+.cdmContentInner h2 img,
+.postContent h2 img {
+	float: right;
+	margin-left: 1em;
+	margin-right: 0;
+}*/
 .cdmContentInner pre,
 .postContent pre {
 	white-space: pre-wrap;
