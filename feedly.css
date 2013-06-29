@@ -903,10 +903,19 @@ a:hover {
 .hl > *,
 #floatingTitle > * {
 	display: table-cell;
+	vertical-align: top !important;
 	padding: 5px;
 }
+.cdm.expandable .cdmHeader > .titleWrap,
+.hl > .hlTitle {
+	padding-top: 4px;
+}
+.cdmHeader > :first-child,
+.scoreWrap,
+.hlLeft,
 .hlRight {
-	word-spacing: -.3em;
+	word-spacing: -.31em;
+	line-height: 1;
 }
 .hl .hlUpdated .hlFeed {
 	display: none;
@@ -924,14 +933,14 @@ a:hover {
 	display: -moz-box;
 	display: -webkit-box;
 	display: -ms-flexbox;
-	-moz-box-align: top;
-	-webkit-box-align: top;
-	-ms-flex-align: top;
+	-moz-box-align: start;
+	-webkit-box-align: start;
+	-ms-flex-align: flex-start;
 	/* new flexbox: */
 	display: -webkit-flex;
 	display: flex;
-	-webkit-align-items: baseline;
-	align-items: baseline;
+	-webkit-align-items: flex-start;
+	align-items: flex-start;
 }
 .cdm.expandable:not(.active) .cdmHeader > * {
 	/* old flexbox: */
@@ -943,17 +952,8 @@ a:hover {
 	/* new flexbox: */
 	-webkit-order: 2;
 	order: 2;
-	padding: 5px;
 }
-.cdm.expandable.active .cdmHeader > *:first-child,
-.cdm.expanded .cdmHeader > *:first-child {
-	padding-left: 0;
-}
-.cdm.expandable.active .cdmHeader > *:last-child,
-.cdm.expanded .cdmHeader > *:last-child {
-	padding-right: 0;
-}
-.cdm.expandable:not(.active) .cdmHeader > div:first-child,
+.cdm.expandable:not(.active) .cdmHeader > :first-child,
 .cdm.expandable:not(.active) .cdmHeader > .hlFeed {
 	/* old flexbox: */
 	-moz-box-ordinal-group: 1;
@@ -989,8 +989,8 @@ a:hover {
 .cdm.expanded .cdmHeader {
 	padding: 54px 34px 0;
 }
-.cdm.expandable.active .cdmFooter,
-.cdm.expanded .cdmFooter {
+.cdmFooter {
+	clear: both;
 	padding: 0 34px 30px;
 }
 .cdm.expandable.active .cdmHeader .titleWrap,
@@ -1005,11 +1005,11 @@ a:hover {
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 }
-.cdm.expandable.active .cdmHeader > div:first-child,
+.cdm.expandable.active .cdmHeader > :first-child,
 .cdm.expandable.active .cdmHeader .hlFeed,
 .cdm.expandable.active .cdmHeader .updated,
 .cdm.expandable.active .cdmHeader .scoreWrap,
-.cdm.expanded .cdmHeader > div:first-child,
+.cdm.expanded .cdmHeader > :first-child,
 .cdm.expanded .cdmHeader .hlFeed,
 .cdm.expanded .cdmHeader .updated,
 .cdm.expanded .cdmHeader .scoreWrap {
@@ -1017,8 +1017,8 @@ a:hover {
 	top: 34px;
 	padding: 0;
 }
-.cdm.expandable.active .cdmHeader > div:first-child,
-.cdm.expanded .cdmHeader > div:first-child {
+.cdm.expandable.active .cdmHeader > :first-child,
+.cdm.expanded .cdmHeader > :first-child {
 	left: 34px;
 }
 .cdm.expandable.active .cdmHeader .hlFeed,
@@ -1100,12 +1100,6 @@ div.articleNote {
 	vertical-align: middle;
 	margin: 0 2px;
 }
-.cdm.expandable:not(.active) .cdmHeader > div:first-child > *,
-.cdm.expandable:not(.active) .cdmHeader > .scoreWrap > *,
-.hlLeft > *,
-.hlRight > * {
-	margin-top: -1px;
-}
 .cdmHeader > div,
 .cdmHeader .updated,
 .hlLeft,
@@ -1120,10 +1114,6 @@ div.articleNote {
 	display: inline;
 	padding-left: 10px;
 }
-.cdmHeader > *,
-#floatingTitle > * {
-	vertical-align: baseline !important;
-}
 .cdmHeader .titleWrap,
 .hl .hlTitle,
 #floatingTitle .titleWrap {
@@ -1135,7 +1125,6 @@ div.articleNote {
 .hlUpdated,
 #floatingTitle .updated {
 	font-size: 11px;
-	line-height: 18px;
 }
 .cdmHeader .hlFeed a {
 	display: inline-block;
@@ -1167,10 +1156,6 @@ div.articleNote {
 .postTags > * {
 	vertical-align: middle;
 	margin: 0 1px;
-}
-.cdmFooter {
-	clear: both;
-	padding: 5px;
 }
 .collapseBtn {
 	position: absolute;
@@ -1206,7 +1191,7 @@ div.articleNote {
 #floatingTitle {
 	position: absolute;
 	z-index: 5;
-	top: 35px;
+	top: 36px;
 	right: 33px;
 	left: 33px;
 	background: #fff;
@@ -1215,26 +1200,23 @@ div.articleNote {
 	content: "";
 	display: block;
 	margin: 0 2px;
-	height: 7px;
+	height: 8px;
 	border-bottom: 1px solid #eee;
 }
 #floatingTitle:not(:empty) {
 	display: block !important;
 }
-#floatingTitle > * {
-	vertical-align: top !important;
-}
 #floatingTitle .title,
 #floatingTitle .updated {
 	color: #aaa;
 }
-#floatingTitle > div:first-child {
+#floatingTitle > :first-child {
 	padding-left: 0;
 }
 #floatingTitle .scoreWrap {
 	padding-right: 0;
 }
-#floatingTitle > div:first-child:after,
+#floatingTitle > :first-child:after,
 #floatingTitle .scoreWrap:after {
   content: "";
   display: block;
@@ -1296,14 +1278,6 @@ div.articleNote {
 	line-height: 16px;
 	font-style: italic;
 }
-/*.cdmContentInner p img,
-.postContent p img,
-.cdmContentInner h2 img,
-.postContent h2 img {
-	float: right;
-	margin-left: 1em;
-	margin-right: 0;
-}*/
 .cdmContentInner pre,
 .postContent pre {
 	white-space: pre-wrap;
