@@ -903,12 +903,8 @@ a:hover {
 .hl > *,
 #floatingTitle > * {
 	display: table-cell;
-	vertical-align: top !important;
-	padding: 5px;
-}
-.cdm.expandable .cdmHeader > .titleWrap,
-.hl > .hlTitle {
-	padding-top: 4px;
+	vertical-align: top;
+	padding: 7px 4px;
 }
 .cdmHeader > :first-child,
 .scoreWrap,
@@ -1118,7 +1114,7 @@ div.articleNote {
 .hl .hlTitle,
 #floatingTitle .titleWrap {
 	width: 100%;
-	line-height: 16px;
+	line-height: 14px;
 }
 .cdmHeader .updated,
 .cdmHeader .hlFeed,
@@ -1191,7 +1187,7 @@ div.articleNote {
 #floatingTitle {
 	position: absolute;
 	z-index: 5;
-	top: 36px;
+	top: 34px;
 	right: 33px;
 	left: 33px;
 	background: #fff;
@@ -1200,7 +1196,7 @@ div.articleNote {
 	content: "";
 	display: block;
 	margin: 0 2px;
-	height: 8px;
+	height: 6px;
 	border-bottom: 1px solid #eee;
 }
 #floatingTitle:not(:empty) {
