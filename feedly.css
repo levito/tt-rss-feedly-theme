@@ -10,7 +10,8 @@
 @font-face {
     font-family: 'TeXGyreHerosCn';
     src: url('feedly/fonts/texgyreheroscn-bold-webfont.eot');
-    src: url('feedly/fonts/texgyreheroscn-bold-webfont.eot?#iefix') format('embedded-opentype'),
+    src: local('HelveticaNeue-CondensedBold'),
+         url('feedly/fonts/texgyreheroscn-bold-webfont.eot?#iefix') format('embedded-opentype'),
          url('feedly/fonts/texgyreheroscn-bold-webfont.woff') format('woff'),
          url('feedly/fonts/texgyreheroscn-bold-webfont.ttf') format('truetype'),
          url('feedly/fonts/texgyreheroscn-bold-webfont.svg#TeXGyreHerosCnBold') format('svg');
@@ -903,7 +904,7 @@ a:hover {
 .hl > *,
 #floatingTitle > * {
 	display: table-cell;
-	vertical-align: top;
+	vertical-align: top !important;
 	padding: 7px 4px;
 }
 .cdmHeader > :first-child,
@@ -1258,7 +1259,7 @@ div.articleNote {
 }
 .cdmContentInner tr,
 .postContent tr {
-	vertical-align: top
+	vertical-align: top;
 }
 .cdmContentInner img,
 .postContent img {
