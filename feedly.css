@@ -640,7 +640,7 @@ a:hover {
 .labelColorIndicator2,
 .hlLabelRef {
 	display: inline-block;
-	border-radius: 999px;
+	border-radius: 99px;
 	background-color: #fec;
 	color: #444;
 	font-weight: bold;
@@ -660,7 +660,7 @@ a:hover {
 	top: -1px;
 	margin-right: 5px;
 	border: 1px solid rgba(0,0,0,.06);
-	padding: 0 3px 1px;
+	padding: 0 4px 1px;
 	font-size: 9px;
 	line-height: 1;
 }
@@ -981,7 +981,7 @@ a:hover {
 	width: 140px;
 }
 .cdm.expandable:not(.active) .cdmHeader > .hlFeed a {
-	max-width: 120px;
+	max-width: 115px;
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
@@ -1139,9 +1139,9 @@ div.articleNote {
 .cdmHeader .hlFeed a {
 	display: inline-block;
 	margin-top: 1px;
-	padding: 1px 4px;
+	padding: 1px 6px;
 	border: 1px solid rgba(0,0,0,.03);
-	border-radius: 2px;
+	border-radius: 99px;
 	background: rgba(0,0,0,.1);
 	color: #444;
 	line-height: 1;
