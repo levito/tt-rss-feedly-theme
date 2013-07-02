@@ -852,6 +852,7 @@ a:hover {
 	top: -2px;
 }
 #feed_title,
+#feed_title a,
 #floatingTitle .title,
 .postHeader .postTitle a  {
 	font: normal normal bold 14px/16px "TeXGyreHerosCn", "Arial Narrow", "Liberation Sans Narrow", Arial, Helvetica, sans-serif;
@@ -860,8 +861,7 @@ a:hover {
 }
 #feed_title,
 #feed_title a {
-	color: #000;
-	-webkit-font-smoothing: antialiased;
+	color: #222;
 }
 #selected_prompt {
 	float: right;
@@ -879,11 +879,27 @@ a:hover {
 	border-top: 25px solid #fff;
 	margin: 0 -35px;
 }
-#headlines-frame:after {
-	content: " ";
-	display: table;
-	clear: both;
+#headlines-spacer {
+	position: relative;
 	height: 100%;
+}
+#headlines-spacer:after {
+	content: "The End";
+	position: absolute;
+	bottom: 0;
+	right: -35px;
+	left: -35px;
+	padding: 50px;
+	background: #ddd;
+	color: #999;
+	text-shadow: 0 1px 1px #fff;
+	font-size: 18px;
+	letter-spacing: 1px;
+	text-align: center;
+
+}
+.whiteBox + #headlines-spacer {
+	display: none;
 }
 
 /* articles - expandable / separete */
