@@ -698,7 +698,7 @@ a:hover {
 	background: transparent;
 }
 #main_toolbar_form > .dijitButton .dijitButtonContents {
-	top: 46px;
+	top: 51px;
 	left: 8px;
 	padding: 0;
 	overflow: hidden;
@@ -723,7 +723,7 @@ a:hover {
 	color: #444;
 }
 #feeds-holder #feedTree {
-	padding: 41px 5px 30px 0;
+	padding: 46px 5px 30px 0;
 }
 #feeds-holder .dijitTreeRow {
 	padding: 4px 0 3px;
@@ -815,11 +815,19 @@ a:hover {
 #headlines-toolbar {
 	z-index: 3;
 	overflow: visible;
-	padding: 15px 35px 5px;
+	padding: 20px 35px 0;
 	min-height: 25px;
 	text-align: right;
 	color: #fff;
 	cursor: default;
+}
+#headlines-toolbar:after {
+	content: "";
+	position: absolute;
+	bottom: -1px;
+	right: 35px;
+	left: 35px;
+	border-top: 1px solid #eee;
 }
 #headlines-toolbar > a {
 	text-decoration: none;
@@ -830,14 +838,6 @@ a:hover {
 }
 #headlines-toolbar > a:hover {
 	color: #444;
-}
-#headlines-toolbar:after {
-	content: "";
-	position: absolute;
-	bottom: -1px;
-	right: 35px;
-	left: 35px;
-	border-top: 1px solid #eee;
 }
 #headlines-toolbar .dijitSelect {
 	margin: -2px 0 0 10px;
@@ -1215,7 +1215,7 @@ div.articleNote {
 #floatingTitle {
 	position: absolute;
 	z-index: 5;
-	top: 34px;
+	top: 40px;
 	right: 33px;
 	left: 33px;
 	background: #fff;
@@ -1224,7 +1224,6 @@ div.articleNote {
 	content: "";
 	display: block;
 	margin: 0 2px;
-	height: 6px;
 	border-bottom: 1px solid #eee;
 }
 #floatingTitle:not(:empty) {
