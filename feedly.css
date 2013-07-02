@@ -768,15 +768,11 @@ a:hover {
 }
 #feeds-holder .counterNode {
 	float: right;
-	padding: 0 10px 0 5px;
-	font-size: 11px;
-	color: #999;
-	-webkit-transition: color .2s;
-	transition: color .2s;
+	padding: 1px 10px 0 5px;
+	font-size: 10px;
 }
-#feeds-holder .dijitTreeRow:hover .counterNode,
-#feeds-holder .dijitTreeRowSelected .counterNode {
-	color: #444;
+#feeds-holder .dijitTreeRow .counterNode.aux {
+	color: #aaa;
 }
 #feeds-holder .dijitTreeExpando {
 	margin: -1px 0 1px 5px;
