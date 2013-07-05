@@ -1,40 +1,36 @@
 @font-face {
-    font-family: 'TeXGyreHerosCn';
-    src: url('feedly/fonts/texgyreheroscn-regular-webfont.eot');
-    src: url('feedly/fonts/texgyreheroscn-regular-webfont.eot?#iefix') format('embedded-opentype'),
+    font-family: 'SansCn';
+    src: local('Arial Narrow'),
+         local('Liberation Sans Narrow'),
          url('feedly/fonts/texgyreheroscn-regular-webfont.woff') format('woff'),
-         url('feedly/fonts/texgyreheroscn-regular-webfont.ttf') format('truetype'),
-         url('feedly/fonts/texgyreheroscn-regular-webfont.svg#TeXGyreHerosCnRegular') format('svg');
+         url('feedly/fonts/texgyreheroscn-regular-webfont.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'TeXGyreHerosCn';
-    src: url('feedly/fonts/texgyreheroscn-bold-webfont.eot');
+    font-family: 'SansCn';
     src: local('HelveticaNeue-CondensedBold'),
-         url('feedly/fonts/texgyreheroscn-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         local('Arial Narrow'),
+         local('Liberation Sans Narrow'),
          url('feedly/fonts/texgyreheroscn-bold-webfont.woff') format('woff'),
-         url('feedly/fonts/texgyreheroscn-bold-webfont.ttf') format('truetype'),
-         url('feedly/fonts/texgyreheroscn-bold-webfont.svg#TeXGyreHerosCnBold') format('svg');
+         url('feedly/fonts/texgyreheroscn-bold-webfont.ttf') format('truetype');
     font-weight: bold;
 }
 
 @font-face {
-    font-family: 'TeXGyreHerosCn';
-    src: url('feedly/fonts/texgyreheroscn-italic-webfont.eot');
-    src: url('feedly/fonts/texgyreheroscn-italic-webfont.eot?#iefix') format('embedded-opentype'),
+    font-family: 'SansCn';
+    src: local('Arial Narrow'),
+         local('Liberation Sans Narrow'),
          url('feedly/fonts/texgyreheroscn-italic-webfont.woff') format('woff'),
-         url('feedly/fonts/texgyreheroscn-italic-webfont.ttf') format('truetype'),
-         url('feedly/fonts/texgyreheroscn-italic-webfont.svg#TeXGyreHerosCnItalic') format('svg');
+         url('feedly/fonts/texgyreheroscn-italic-webfont.ttf') format('truetype');
     font-style: italic;
 }
 
 @font-face {
-    font-family: 'TeXGyreHerosCn';
-    src: url('feedly/fonts/texgyreheroscn-bolditalic-webfont.eot');
-    src: url('feedly/fonts/texgyreheroscn-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+    font-family: 'SansCn';
+    src: local('Arial Narrow'),
+         local('Liberation Sans Narrow'),
          url('feedly/fonts/texgyreheroscn-bolditalic-webfont.woff') format('woff'),
-         url('feedly/fonts/texgyreheroscn-bolditalic-webfont.ttf') format('truetype'),
-         url('feedly/fonts/texgyreheroscn-bolditalic-webfont.svg#TeXGyreHerosCnBoldItalic') format('svg');
+         url('feedly/fonts/texgyreheroscn-bolditalic-webfont.ttf') format('truetype');
     font-weight: bold;
     font-style: italic;
 }
@@ -855,7 +851,7 @@ a:hover {
 #feed_title a,
 #floatingTitle .title,
 .postHeader .postTitle a  {
-	font: normal normal bold 14px/16px "TeXGyreHerosCn", "Arial Narrow", "Liberation Sans Narrow", Arial, Helvetica, sans-serif;
+	font: normal normal bold 14px/16px SansCn;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 }
@@ -965,7 +961,6 @@ a:hover {
 	-moz-box-ordinal-group: 2;
 	-webkit-box-ordinal-group: 2;
 	-ms-flex-order: 2;
-	xx-ms-flex: 1;
 	/* new flexbox: */
 	-webkit-order: 2;
 	order: 2;
@@ -1016,7 +1011,7 @@ a:hover {
 }
 .cdm.expandable.active .title,
 .cdm.expanded .title {
-	font: normal normal bold 28px/33px "TeXGyreHerosCn", "Arial Narrow", "Liberation Sans Narrow", Arial, Helvetica, sans-serif;
+	font: normal normal bold 28px/33px SansCn;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 }
@@ -1273,7 +1268,7 @@ div.articleNote {
 .postContent h6 {
 	margin-top: 35px;
 	margin-bottom: 14px;
-	font-family: "TeXGyreHerosCn", "Arial Narrow", "Liberation Sans Narrow", Arial, Helvetica, sans-serif;
+	font-family: SansCn;
 	font-weight: bold;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
@@ -1342,7 +1337,7 @@ div.articleNote {
 	padding: 0 12px 0 7px;
 }
 .cdmFeedTitle .title {
-	font: normal normal bold 18px/24px "TeXGyreHerosCn", "Arial Narrow", "Liberation Sans Narrow", Arial, Helvetica, sans-serif;
+	font: normal normal bold 18px/24px SansCn;
 	padding-right: 7px;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
