@@ -844,9 +844,8 @@ a:hover {
 #headlines-toolbar > .r img {
 	position: relative;
 	top: -2px;
+	left: 2px;
 }
-#feed_title,
-#feed_title a,
 #floatingTitle .title,
 .postHeader .postTitle a  {
 	font: normal normal bold 14px/16px SansCn;
@@ -855,7 +854,10 @@ a:hover {
 }
 #feed_title,
 #feed_title a {
-	color: #222;
+	color: #444;
+	font: normal normal bold 18px/14px SansCn;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
 }
 #selected_prompt {
 	float: right;
