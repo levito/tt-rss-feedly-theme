@@ -652,11 +652,9 @@ a:hover {
 	text-align: center;
 }
 .hlLabelRef {
-	position: relative;
-	top: -1px;
 	margin-right: 5px;
 	border: 1px solid rgba(0,0,0,.06);
-	padding: 0 4px 1px;
+	padding: 0 4px;
 	font-size: 9px;
 	line-height: 1;
 }
@@ -1146,7 +1144,7 @@ div.articleNote {
 .cdmHeader .hlFeed a {
 	display: inline-block;
 	margin-top: 1px;
-	padding: 1px 6px;
+	padding: 1px 6px 0;
 	border: 1px solid rgba(0,0,0,.03);
 	border-radius: 99px;
 	background: rgba(0,0,0,.1);
