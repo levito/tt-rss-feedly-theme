@@ -1359,6 +1359,77 @@ div.articleNote {
 	-webkit-overflow-scrolling: touch;
 }
 
+/* icons */
+img[src*='images/tag.png'],
+img[src*='images/fresh.png'],
+img[src*='images/mark_set.svg'],
+img[src*='images/mark_unset.svg'],
+img[src*='images/pub_set.svg'],
+img[src*='images/pub_unset.svg'],
+img[src*='images/archive.png'],
+img[src*='images/recently_read.png'] {
+	padding-top: 16px;
+	width: 16px;
+	height: 0;
+	background-size: 16px 16px;
+	background-repeat: no-repeat;
+	opacity: .2;
+}
+img[src*='images/tag.png'] {
+	background-image: url("feedly/inbox.png");
+}
+img[src*='images/fresh.png'] {
+	background-image: url("feedly/leaf.png");
+}
+img[src*='images/mark_set.svg'],
+img[src*='images/mark_unset.svg'] {
+	background-image: url("feedly/star.png");
+}
+img[src*='images/pub_set.svg'],
+img[src*='images/pub_unset.svg'] {
+	background-image: url("feedly/rss-sign.png");
+}
+img[src*='images/archive.png'] {
+	background-image: url("feedly/archive.png");
+}
+img[src*='images/recently_read.png'] {
+	background-image: url("feedly/time.png")
+}
+
+#headlines-toolbar img[src*='images/pub_set.svg'] {
+	background-image: url("feedly/rss.png");
+	opacity: .75;
+}
+#headlines-frame img[src*='images/tag.png'] {
+	background-image: url("feedly/tags.png");
+}
+#headlines-frame .dijitCheckBox {
+	background: transparent url("feedly/check.png") 0 0 no-repeat;
+	background-size: 16px 16px;
+	opacity: .2;
+}
+#headlines-frame .dijitCheckBox input {
+	cursor: pointer;
+}
+#headlines-frame img[src*='images/mark_set.svg'],
+#headlines-frame img[src*='images/mark_unset.svg']:hover,
+#headlines-frame img[src*='images/pub_set.svg'],
+#headlines-frame img[src*='images/pub_unset.svg']:hover,
+#headlines-frame .dijitCheckBoxHover,
+#headlines-frame .dijitCheckBoxActive {
+	opacity: .45;
+	-webkit-transition: opacity .2s;
+	transition: opacity .2s;
+
+}
+#headlines-frame img[src*='images/mark_set.svg'],
+#headlines-frame img[src*='images/pub_set.svg'],
+#headlines-frame .dijitCheckBoxChecked {
+	opacity: .75;
+}
+
+
+
 
 /* PREFERENCES ************************************************************/
 
