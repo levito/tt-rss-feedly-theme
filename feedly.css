@@ -474,8 +474,8 @@ a:hover {
 	padding-right: 0;
 }
 #content-wrap .dijitArrowButtonInner {
-	background: transparent url("feedly/icons.png") -16px 0 no-repeat;
-	background-size: 36px 16px;
+	background: transparent url("feedly/iconsprite.png") -16px 0 no-repeat;
+	background-size: 180px 16px;
 	opacity: .3;
 	transition: opacity .2s;
 }
@@ -772,8 +772,8 @@ a:hover {
 }
 #feeds-holder .dijitTreeExpando {
 	margin: -1px 0 1px 5px;
-	background-image: url("feedly/icons.png");
-	background-size: 36px 16px;
+	background-image: url("feedly/iconsprite.png");
+	background-size: 180px 16px;
 	opacity: .2;
 	-webkit-transition: opacity .2s;
 	transition: opacity .2s;
@@ -1371,64 +1371,61 @@ img[src*='images/recently_read.png'] {
 	padding-top: 16px;
 	width: 16px;
 	height: 0;
-	background-size: 16px 16px;
-	background-repeat: no-repeat;
+	background: transparent url("feedly/iconsprite.png") no-repeat;
+	background-size: 180px 16px;
 	opacity: .2;
 }
 img[src*='images/tag.png'] {
-	background-image: url("feedly/inbox.png");
+	background-position: -36px 0;
 }
 img[src*='images/fresh.png'] {
-	background-image: url("feedly/leaf.png");
+	background-position: -52px 0;
 }
 img[src*='images/mark_set.svg'],
 img[src*='images/mark_unset.svg'] {
-	background-image: url("feedly/star.png");
+	background-position: -68px 0;
 }
 img[src*='images/pub_set.svg'],
 img[src*='images/pub_unset.svg'] {
-	background-image: url("feedly/rss-sign.png");
+	background-position: -84px 0;
 }
 img[src*='images/archive.png'] {
-	background-image: url("feedly/archive.png");
+	background-position: -100px 0;
 }
 img[src*='images/recently_read.png'] {
-	background-image: url("feedly/time.png")
+	background-position: -116px 0;
 }
-
-#headlines-toolbar img[src*='images/pub_set.svg'] {
-	background-image: url("feedly/rss.png");
+#header-wrap img[src*='images/pub_set.svg'] {
+	background-position: -132px 0;
 	opacity: .75;
 }
-#headlines-frame img[src*='images/tag.png'] {
-	background-image: url("feedly/tags.png");
+#header-wrap img[src*='images/tag.png'] {
+	background-position: -164px 0;
 }
-#headlines-frame .dijitCheckBox {
-	background: transparent url("feedly/check.png") 0 0 no-repeat;
-	background-size: 16px 16px;
+#header-wrap .dijitCheckBox {
+	width: 16px;
+	background: transparent url("feedly/iconsprite.png") -148px 0 no-repeat;
+	background-size: 180px 16px;
 	opacity: .2;
 }
-#headlines-frame .dijitCheckBox input {
+#header-wrap .dijitCheckBox input {
 	cursor: pointer;
 }
-#headlines-frame img[src*='images/mark_set.svg'],
-#headlines-frame img[src*='images/mark_unset.svg']:hover,
-#headlines-frame img[src*='images/pub_set.svg'],
-#headlines-frame img[src*='images/pub_unset.svg']:hover,
-#headlines-frame .dijitCheckBoxHover,
-#headlines-frame .dijitCheckBoxActive {
-	opacity: .45;
+#header-wrap img[src*='images/mark_set.svg'],
+#header-wrap img[src*='images/mark_unset.svg']:hover,
+#header-wrap img[src*='images/pub_set.svg'],
+#header-wrap img[src*='images/pub_unset.svg']:hover,
+#header-wrap .dijitCheckBox:hover {
+	opacity: .35;
 	-webkit-transition: opacity .2s;
 	transition: opacity .2s;
 
 }
-#headlines-frame img[src*='images/mark_set.svg'],
-#headlines-frame img[src*='images/pub_set.svg'],
-#headlines-frame .dijitCheckBoxChecked {
+#header-wrap img[src*='images/mark_set.svg'],
+#header-wrap img[src*='images/pub_set.svg'],
+#header-wrap .dijitCheckBox.dijitCheckBoxChecked {
 	opacity: .75;
 }
-
-
 
 
 /* PREFERENCES ************************************************************/
