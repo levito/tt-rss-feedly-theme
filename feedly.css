@@ -420,7 +420,6 @@ html {
 a {
 	color: #6b3;
 	text-decoration: none;
-	-webkit-font-smoothing: subpixel-antialiased;
 }
 a:hover {
 	text-decoration: underline;
@@ -1415,7 +1414,7 @@ img[src*='images/archive.png'] {
 img[src*='images/recently_read.png'] {
 	background-position: -116px 0;
 }
-#header-wrap img[src*='images/pub_set.svg'] {
+#headlines-toolbar img[src*='images/pub_set.svg'] {
 	background-position: -132px 0;
 	opacity: .75;
 }
