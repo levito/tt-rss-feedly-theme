@@ -993,8 +993,7 @@ a:hover {
 	flex: 99;
 }
 .cdm.expandable:not(.active) .cdmHeader > .hlFeed {
-	box-sizing: border-box;
-	width: 140px;
+	width: 132px;
 }
 .cdm.expandable:not(.active) .cdmHeader > .hlFeed a {
 	max-width: 115px;
