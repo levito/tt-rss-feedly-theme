@@ -731,8 +731,8 @@ a:hover {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	color: #666;
-	-webkit-transition: none;
-	transition: none;
+	-webkit-transition: color .2s;
+	transition: color .2s;
 }
 #feeds-holder .dijitTreeRow,
 #feeds-holder .dijitTreeRow * {
@@ -742,6 +742,8 @@ a:hover {
 #feeds-holder .dijitTreeRow:hover,
 #feeds-holder .dijitTreeRowSelected {
 	color: #000;
+	-webkit-transition: none;
+	transition: none;
 }
 #feeds-holder .dijitTreeRowSelected {
 	background: rgba(0,0,0,.05);
@@ -776,12 +778,20 @@ a:hover {
 	background-image: url("feedly/iconsprite.png");
 	background-size: 180px 16px;
 	opacity: .2;
+	-webkit-transition: opacity .2s;
+	transition: opacity .2s;
 }
-#feeds-holder .dijitTreeRowSelected .dijitTreeExpando,
-#feeds-holder .dijitTreeRow:hover .dijitTreeExpando,
 #feeds-holder .dijitTreeRowSelected img[src*=images],
 #feeds-holder .dijitTreeRow:hover img[src*=images] {
 	opacity: .3;
+	-webkit-transition: none;
+	transition: none;
+}
+#feeds-holder .dijitTreeRowSelected .dijitTreeExpando,
+#feeds-holder .dijitTreeRow:hover .dijitTreeExpando {
+	opacity: .35;
+	-webkit-transition: none;
+	transition: none;
 }
 #feeds-holder .dijitTreeRow .dijitTreeExpando:hover {
 	opacity: .75;
@@ -1291,6 +1301,10 @@ div.articleNote {
 .postContent tr {
 	vertical-align: top;
 }
+.cdmContentInner iframe,
+.postContent iframe {
+	margin: .5em 0;
+}
 .cdmContentInner img,
 .postContent img {
 	max-width: 100%;
@@ -1384,6 +1398,8 @@ div.articleNote {
 	background: transparent url("feedly/iconsprite.png") -148px 0 no-repeat;
 	background-size: 180px 16px;
 	opacity: .2;
+	-webkit-transition: opacity .2s;
+	transition: opacity .2s;
 }
 #header-wrap .dijitCheckBox {
 	padding-top: 0;
@@ -1422,7 +1438,7 @@ div.articleNote {
 #header-wrap img[src*='images/mark_unset.svg']:hover,
 #header-wrap img[src*='images/pub_unset.svg']:hover,
 #header-wrap .dijitCheckBox:hover {
-	opacity: .3;
+	opacity: .35;
 
 }
 #header-wrap img[src*='images/mark_set.svg'],
