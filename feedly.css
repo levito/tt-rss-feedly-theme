@@ -431,7 +431,7 @@ a:hover {
 #ttrssMain .dijitDialog {
 	border: 1px solid #aaa;
 	border-radius: 3px;
-	box-shadow: 0 3px 12px rgba(0,0,0,.3);
+	box-shadow: 0 1px 4px rgba(0,0,0,.2);
 }
 #ttrssMain .dijitDialogTitleBar {
 	border: none;
@@ -562,8 +562,8 @@ a:hover {
 #ttrssMain .dijitPopup {
 	padding: 5px 0;
 	border: 1px solid #ccc;
-	border-radius: 3px;
-	box-shadow: 0 3px 12px rgba(0,0,0,.3);
+	border-radius: 2px;
+	box-shadow: 0 1px 2px rgba(0,0,0,.2);
 	background: #fff;
 }
 #ttrssMain .dijitMenu {
