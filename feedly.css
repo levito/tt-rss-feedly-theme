@@ -646,7 +646,6 @@ a:hover {
 	color: #444;
 	font-weight: bold;
 }
-
 .labelColorIndicator,
 .labelColorIndicator2 {
 	width: 13px;
@@ -730,6 +729,7 @@ a:hover {
 	max-width: 100%;
 	overflow: hidden;
 	text-overflow: ellipsis;
+	background: transparent;
 	color: #666;
 	-webkit-transition: color .2s;
 	transition: color .2s;
@@ -737,7 +737,6 @@ a:hover {
 #feeds-holder .dijitTreeRow,
 #feeds-holder .dijitTreeRow * {
 	cursor: pointer;
-	background: transparent;
 }
 #feeds-holder .dijitTreeRow:hover,
 #feeds-holder .dijitTreeRowSelected {
