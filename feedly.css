@@ -1072,7 +1072,8 @@ a:hover {
 }
 .cdm.expandable.active .rchk,
 .cdm.expanded .rchk,
-#floatingTitle .rchk {
+#floatingTitle .rchk,
+#floatingTitle .anchor {
 	display: none;
 }
 
