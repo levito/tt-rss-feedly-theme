@@ -1385,12 +1385,17 @@ div.articleNote {
 /* icons */
 #ttrssMain img[src*='images/tag.png'],
 #ttrssMain img[src*='images/fresh.png'],
-#ttrssMain img[src*='images/mark_set.svg'],
-#ttrssMain img[src*='images/mark_unset.svg'],
-#ttrssMain img[src*='images/pub_set.svg'],
-#ttrssMain img[src*='images/pub_unset.svg'],
+#ttrssMain img[src*='images/mark_set'],
+#ttrssMain img[src*='images/mark_unset'],
+#ttrssMain img[src*='images/pub_set'],
+#ttrssMain img[src*='images/pub_unset'],
 #ttrssMain img[src*='images/archive.png'],
 #ttrssMain img[src*='images/recently_read.png'],
+/* new icons: */
+#ttrssMain img[src*='images/folder.png'],
+#ttrssMain img[src*='images/star.png'],
+#ttrssMain img[src*='images/feed.png'],
+#ttrssMain img[src*='images/time.png'],
 #header-wrap .dijitCheckBox {
 	padding-top: 16px;
 	width: 16px;
@@ -1408,41 +1413,45 @@ div.articleNote {
 #header-wrap .dijitCheckBox input {
 	cursor: pointer;
 }
-#ttrssMain img[src*='images/tag.png'] {
+#ttrssMain img[src*='images/tag.png'],
+#ttrssMain img[src*='images/folder.png'], {
 	background-position: -36px 0;
 }
 #ttrssMain img[src*='images/fresh.png'] {
 	background-position: -52px 0;
 }
-#ttrssMain img[src*='images/mark_set.svg'],
-#ttrssMain img[src*='images/mark_unset.svg'] {
+#ttrssMain img[src*='images/mark_set'],
+#ttrssMain img[src*='images/mark_unset'],
+#ttrssMain img[src*='images/star.png'] {
 	background-position: -68px 0;
 }
-#ttrssMain img[src*='images/pub_set.svg'],
-#ttrssMain img[src*='images/pub_unset.svg'] {
+#ttrssMain img[src*='images/pub_set'],
+#ttrssMain img[src*='images/pub_unset'],
+#ttrssMain img[src*='images/feed.png'] {
 	background-position: -84px 0;
 }
 #ttrssMain img[src*='images/archive.png'] {
 	background-position: -100px 0;
 }
-#ttrssMain img[src*='images/recently_read.png'] {
+#ttrssMain img[src*='images/recently_read.png'],
+#ttrssMain img[src*='images/time.png'] {
 	background-position: -116px 0;
 }
-#headlines-toolbar img[src*='images/pub_set.svg'] {
+#headlines-toolbar img[src*='images/pub_set'] {
 	background-position: -132px 0;
 	opacity: .75;
 }
 #header-wrap img[src*='images/tag.png'] {
 	background-position: -164px 0;
 }
-#header-wrap img[src*='images/mark_unset.svg']:hover,
-#header-wrap img[src*='images/pub_unset.svg']:hover,
+#header-wrap img[src*='images/mark_unset']:hover,
+#header-wrap img[src*='images/pub_unset']:hover,
 #header-wrap .dijitCheckBox:hover {
 	opacity: .35;
 
 }
-#header-wrap img[src*='images/mark_set.svg'],
-#header-wrap img[src*='images/pub_set.svg'],
+#header-wrap img[src*='images/mark_set'],
+#header-wrap img[src*='images/pub_set'],
 #header-wrap .dijitCheckBox.dijitCheckBoxChecked {
 	opacity: .75;
 }
