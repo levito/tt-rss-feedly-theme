@@ -1414,7 +1414,7 @@ div.articleNote {
 	cursor: pointer;
 }
 #ttrssMain img[src*='images/tag.png'],
-#ttrssMain img[src*='images/folder.png'], {
+#ttrssMain img[src*='images/folder.png'] {
 	background-position: -36px 0;
 }
 #ttrssMain img[src*='images/fresh.png'] {
