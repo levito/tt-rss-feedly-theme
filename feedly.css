@@ -1072,7 +1072,8 @@ a:hover {
 .cdm.expandable.active .rchk,
 .cdm.expanded .rchk,
 #floatingTitle .rchk,
-#floatingTitle .anchor {
+#floatingTitle .anchor,
+#floatingTitle .titleWrap span {
 	display: none;
 }
 
