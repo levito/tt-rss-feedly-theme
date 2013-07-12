@@ -1000,6 +1000,7 @@ a:hover {
 	-moz-box-flex: 1;
 	-webkit-box-flex: 1;
 	-ms-flex: 99;
+	/* new flexbox: */
 	-webkit-flex: 99;
 	flex: 99;
 }
@@ -1201,29 +1202,44 @@ div.articleNote {
 	top: 0;
 	right: 0;
 	left: 0;
-	padding: 6px 7px 7px;
-	font-size: 11px;
-	line-height: 8px;
-	text-align: right;
-	vertical-align: top;
-	color: transparent;
+	height: 27px;
+	line-height: 1;
 	background: transparent;
 	-webkit-transition: all .5s;
 	transition: all .5s;
 }
-.collapseBtn:hover {
-	color: #999;
+.collapseBtn img {
+	position: absolute;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	opacity: .001;
 }
 .collapseBtn:before {
 	content: "Collapse article";
-	position: relative;
-	top: 1px;
-	margin: 1px 18px 0;
-	pointer-events: none;
+	position: absolute;
+	top: 8px;
+	right: 35px;
+	font-size: 11px;
+	color: #fff;
+	-webkit-transition: all .5s;
+	transition: all .5s;
 }
-.collapseBtn img {
-	margin: -6px 0 -7px -9999px;
-	padding: 6px 0 7px 9999px;
+.collapseBtn:after {
+	content: "\00d7";
+	position: absolute;
+	top: 0;
+	right: 7px;
+	font-size: 22px;
+	color: #ccc;
+	-webkit-transition: all .5s;
+	transition: all .5s;
+}
+.collapseBtn:hover:before {
+	color: #999;
+}
+.collapseBtn:hover:after {
+	color: #222;
 }
 
 /* floating title extensions */
