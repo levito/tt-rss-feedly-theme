@@ -439,23 +439,22 @@ a:hover {
 	background: #eee;
 	font-weight: bold;
 }
-#ttrssMain .dijitDialogCloseIcon {
-	top: 1px;
-	right: 10px;
-	background: none;
-	font-size: 22px;
-	line-height: 1;
-	font-weight: normal;
-	text-align: right;
-	color: #999;
-	-webkit-transition: color .2s;
-	transition: color .2s;
+#ttrssMain .dijitDialogCloseIcon,
+.collapseBtn:after {
+	position: absolute;
+	top: 7px;
+	right: 7px;
+	width: 16px;
+	height: 16px;
+	background: transparent url("feedly/icons.png") -16px -16px no-repeat;
+	background-size: 176px 32px;
+	opacity: .3;
+	-webkit-transition: opacity .2s;
+	transition: opacity .2s;
 }
-#ttrssMain .dijitDialogCloseIcon:hover {
-	color: #222;
-}
-#ttrssMain .dijitDialogCloseIcon:before {
-	content: "\00d7";
+#ttrssMain .dijitDialogCloseIcon:hover,
+.collapseBtn:hover:after {
+	opacity: .75;
 }
 #ttrssMain .dijitDialogPaneContent {
 	border-top-color: #eaeaea;
@@ -688,38 +687,25 @@ a:hover {
 	-webkit-transition: background .5s;
 	transition: background .5s;
 }
-#main_toolbar_form > .dijitButton .dijitButtonContents,
-#main_toolbar_form > .dijitButton .dijitButtonContents:before,
-#main_toolbar_form > .dijitButton .dijitButtonContents:after {
-	position: absolute;
-	width: 16px;
-	border-top: 3px solid;
-	background: transparent;
-}
 #main_toolbar_form > .dijitButton .dijitButtonContents {
+	position: absolute;
 	top: 51px;
 	left: 8px;
-	padding: 0;
+	width: 16px;
+	height: 16px;
 	overflow: hidden;
-	text-indent: 100%;
-	color: #ccc;
-	-webkit-transition: color .5s;
-	transition: color .5s;
-}
-#main_toolbar_form > .dijitButton .dijitButtonContents:before,
-#main_toolbar_form > .dijitButton .dijitButtonContents:after {
-	content: "";
-	top: 3px;
-	left: 0;
-}
-#main_toolbar_form > .dijitButton .dijitButtonContents:after {
-	top: 9px;
+	text-indent: 101%;
+	background: transparent url("feedly/icons.png") 0 -16px no-repeat;
+	background-size: 176px 32px;
+	opacity: .2;
+	-webkit-transition: opacity .2s;
+	transition: opacity .2s;
 }
 #main_toolbar_form > .dijitButton:hover .dijitButtonNode {
 	background: rgba(0,0,0,.05);
 }
 #main_toolbar_form > .dijitButton:hover .dijitButtonContents {
-	color: #444;
+	opacity: .75;
 }
 #feeds-holder #feedTree {
 	padding: 46px 5px 30px 0;
@@ -1226,21 +1212,14 @@ div.articleNote {
 	-webkit-transition: all .5s;
 	transition: all .5s;
 }
-.collapseBtn:after {
-	content: "\00d7";
-	position: absolute;
-	top: 0;
-	right: 7px;
-	font-size: 22px;
-	color: #ccc;
-	-webkit-transition: all .5s;
-	transition: all .5s;
-}
 .collapseBtn:hover:before {
 	color: #999;
 }
-.collapseBtn:hover:after {
-	color: #222;
+.collapseBtn:after {
+	content: "";
+	position: absolute;
+	top: 5px;
+	right: 5px;
 }
 
 /* floating title extensions */
