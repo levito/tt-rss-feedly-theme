@@ -466,7 +466,7 @@ a:hover {
 	border-color: #e5e5e5;
 	border-radius: 2px;
 	background: #eee;
-	color: #444;
+	color: #666;
 	box-shadow: 0 1px 1px rgba(0,0,0,.05);
 	-webkit-transition: all .2s;
 	transition: all .2s;
@@ -480,6 +480,7 @@ a:hover {
 #ttrssMain .dijitButtonActive .dijitButtonNode {
 	background: #ddd;
 	border-color: #ccc;
+	color: #222;
 	box-shadow: inset 0 2px 2px rgba(0,0,0,.1);
 	-webkit-transition: none;
 	transition: none;
@@ -539,8 +540,8 @@ a:hover {
 	padding-right: 0;
 }
 #content-wrap .dijitArrowButtonInner {
-	background: transparent url("feedly/iconsprite.png") -16px 0 no-repeat;
-	background-size: 180px 16px;
+	background: transparent url("feedly/icons.png") -16px 0 no-repeat;
+	background-size: 176px 32px;
 	opacity: .3;
 	transition: opacity .2s;
 }
@@ -774,8 +775,8 @@ a:hover {
 }
 #feeds-holder .dijitTreeRow .dijitTreeExpando {
 	margin: -1px 0 1px 5px;
-	background-image: url("feedly/iconsprite.png");
-	background-size: 180px 16px;
+	background-image: url("feedly/icons.png");
+	background-size: 176px 32px;
 	opacity: .2;
 	-webkit-transition: opacity .2s;
 	transition: opacity .2s;
@@ -796,10 +797,10 @@ a:hover {
 	opacity: .75;
 }
 #feeds-holder .dijitTreeExpandoClosed {
-	background-position: 1px 0;
+	background-position: 0 0;
 }
 #feeds-holder .dijitTreeExpandoOpened {
-	background-position: -17px 0;
+	background-position: -16px 0;
 }
 #feeds-holder .dijitFolderClosed,
 #feeds-holder .dijitFolderOpened,
@@ -1417,8 +1418,8 @@ div.articleNote {
 	padding-top: 16px;
 	width: 16px;
 	height: 0;
-	background: transparent url("feedly/iconsprite.png") -148px 0 no-repeat;
-	background-size: 180px 16px;
+	background: transparent url("feedly/icons.png") -160px 0 no-repeat;
+	background-size: 176px 32px;
 	opacity: .2;
 	-webkit-transition: opacity .2s;
 	transition: opacity .2s;
@@ -1432,34 +1433,34 @@ div.articleNote {
 }
 #ttrssMain img[src*='images/tag.png'],
 #ttrssMain img[src*='images/folder.png'] {
-	background-position: -36px 0;
+	background-position: -32px 0;
 }
 #ttrssMain img[src*='images/fresh.png'] {
-	background-position: -52px 0;
+	background-position: -48px 0;
 }
 #ttrssMain img[src*='images/mark_set'],
 #ttrssMain img[src*='images/mark_unset'],
 #ttrssMain img[src*='images/star.png'] {
-	background-position: -68px 0;
+	background-position: -64px 0;
 }
 #ttrssMain img[src*='images/pub_set'],
 #ttrssMain img[src*='images/pub_unset'],
 #ttrssMain img[src*='images/feed.png'] {
-	background-position: -84px 0;
+	background-position: -80px 0;
 }
 #ttrssMain img[src*='images/archive.png'] {
-	background-position: -100px 0;
+	background-position: -96px 0;
 }
 #ttrssMain img[src*='images/recently_read.png'],
 #ttrssMain img[src*='images/time.png'] {
-	background-position: -116px 0;
+	background-position: -112px 0;
 }
 #headlines-toolbar img[src*='images/pub_set'] {
-	background-position: -132px 0;
+	background-position: -128px 0;
 	opacity: .75;
 }
 #header-wrap img[src*='images/tag.png'] {
-	background-position: -164px 0;
+	background-position: -144px 0;
 }
 #header-wrap img[src*='images/mark_unset']:hover,
 #header-wrap img[src*='images/pub_unset']:hover,
