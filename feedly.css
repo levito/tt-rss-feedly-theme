@@ -1206,7 +1206,7 @@ div.articleNote {
 	top: 40px;
 	right: 35px;
 	left: 35px;
-	padding: 0 5px;
+	padding: 0 1px;
 	background: #fff;
 	border-bottom: 1px solid #e5e5e5;
 }
@@ -1216,18 +1216,6 @@ div.articleNote {
 #floatingTitle .title,
 #floatingTitle .updated {
 	color: #aaa;
-}
-#floatingTitle > :first-child {
-	padding-left: 0;
-}
-#floatingTitle .scoreWrap {
-	padding-right: 0;
-}
-#floatingTitle > :first-child:after,
-#floatingTitle .scoreWrap:after {
-  content: "";
-  display: block;
-  width: 40px;
 }
 .cdm > hr,
 .cdm.expandable.active .rchk,
