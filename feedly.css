@@ -814,7 +814,7 @@ a:hover {
 	bottom: -1px;
 	right: 35px;
 	left: 35px;
-	border-top: 1px solid #eee;
+	border-top: 1px solid #e5e5e5;
 }
 #headlines-toolbar > a {
 	text-decoration: none;
@@ -1046,13 +1046,6 @@ a:hover {
 .cdm.expanded .cdmHeader .scoreWrap {
 	right: 34px;
 }
-.cdm.expandable.active .rchk,
-.cdm.expanded .rchk,
-#floatingTitle .rchk,
-#floatingTitle .anchor,
-#floatingTitle .titleWrap span {
-	display: none;
-}
 
 /* articles - common */
 div.articleNote {
@@ -1068,9 +1061,6 @@ div.articleNote {
 .hl.active {
 	z-index: 1;
 	border-color: #ccc;
-}
-.cdm > hr {
-	display: none;
 }
 .cdm .title,
 .hlTitle {
@@ -1214,15 +1204,11 @@ div.articleNote {
 	position: absolute;
 	z-index: 5;
 	top: 40px;
-	right: 33px;
-	left: 33px;
+	right: 35px;
+	left: 35px;
+	padding: 0 5px;
 	background: #fff;
-}
-#floatingTitle:after {
-	content: "";
-	display: block;
-	margin: 0 2px;
-	border-bottom: 1px solid #eee;
+	border-bottom: 1px solid #e5e5e5;
 }
 #floatingTitle:not(:empty) {
 	display: block !important;
@@ -1243,9 +1229,15 @@ div.articleNote {
   display: block;
   width: 40px;
 }
+.cdm > hr,
+.cdm.expandable.active .rchk,
+.cdm.expanded .rchk,
+#floatingTitle .anchor,
+#floatingTitle .rchk,
 #floatingTitle .hlFeed,
 #floatingTitle .author,
-#floatingTitle .hlLabelRef {
+#floatingTitle .hlLabelRef,
+#floatingTitle .titleWrap span {
 	display: none;
 }
 
@@ -1375,6 +1367,7 @@ div.articleNote {
 #ttrssMain img[src*='images/pub_unset'],
 #ttrssMain img[src*='images/archive.png'],
 #ttrssMain img[src*='images/recently_read.png'],
+.hlScorePic,
 /* new icons: */
 #ttrssMain img[src*='images/folder.png'],
 #ttrssMain img[src*='images/star.png'],
@@ -1427,9 +1420,25 @@ div.articleNote {
 #header-wrap img[src*='images/tag.png'] {
 	background-position: -144px 0;
 }
+.hlScorePic[src*='score_neutral'] {
+	background-position: -32px -16px;
+}
+.hlScorePic[src*='score_half_high'] {
+	background-position: -48px -16px;
+}
+.hlScorePic[src*='score_high'] {
+	background-position: -64px -16px;
+}
+.hlScorePic[src*='score_half_low'] {
+	background-position: -80px -16px;
+}
+.hlScorePic[src*='score_low'] {
+	background-position: -96px -16px;
+}
 #header-wrap img[src*='images/mark_unset']:hover,
 #header-wrap img[src*='images/pub_unset']:hover,
-#header-wrap .dijitCheckBox:hover {
+#header-wrap .dijitCheckBox:hover,
+.hlScorePic:hover {
 	opacity: .35;
 
 }
