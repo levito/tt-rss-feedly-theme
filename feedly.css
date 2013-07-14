@@ -1437,15 +1437,19 @@ div.articleNote {
 }
 #header-wrap img[src*='images/mark_unset']:hover,
 #header-wrap img[src*='images/pub_unset']:hover,
-#header-wrap .dijitCheckBox:hover,
-.hlScorePic:hover {
+#header-wrap .dijitCheckBox:hover {
 	opacity: .35;
 
 }
 #header-wrap img[src*='images/mark_set'],
 #header-wrap img[src*='images/pub_set'],
-#header-wrap .dijitCheckBox.dijitCheckBoxChecked {
+#header-wrap .dijitCheckBox.dijitCheckBoxChecked,
+.hlScorePic {
 	opacity: .75;
+}
+.hlScorePic:hover {
+	opacity: 1;
+	cursor: pointer;
 }
 
 
