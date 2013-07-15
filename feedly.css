@@ -1440,6 +1440,17 @@ div.articleNote {
 	cursor: pointer;
 }
 
+/* plugin: article toolbar small */
+.actionChooser .button_nav,
+.actionChooser .button_nav:hover {
+	border: none;
+	padding: 0;
+	background: transparent !important;
+	opacity: 1;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
 
 /* PREFERENCES ************************************************************/
 
