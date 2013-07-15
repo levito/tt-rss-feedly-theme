@@ -460,25 +460,26 @@ a:hover {
 	padding: 10px;
 }
 #ttrssMain .dijitButton .dijitButtonNode {
-	padding: 5px 7px;
-	border-color: #e5e5e5;
+	padding: 5px 7px 6px;
+	border-color: #d8d8d8;
 	border-radius: 2px;
 	background: #eee;
 	color: #666;
-	box-shadow: 0 1px 1px rgba(0,0,0,.05);
-	transition: all .2s;
+	font-size: 11px;
+	font-weight: bold;
+	box-shadow: none;
+	transition: all .1s;
 }
 #ttrssMain .dijitButtonHover .dijitButtonNode {
 	background: #e5e5e5;
-	border-color: #ddd;
+	border-color: #bfbfbf;
 	color: #222;
-	box-shadow: 0 1px 1px rgba(0,0,0,.1);
 }
 #ttrssMain .dijitButtonActive .dijitButtonNode {
 	background: #ddd;
-	border-color: #ccc;
+	border-color: #bfbfbf;
 	color: #222;
-	box-shadow: inset 0 2px 2px rgba(0,0,0,.1);
+	box-shadow: inset 0 1px 0 rgba(0,0,0,.07);
 	transition: none;
 }
 .claro .dijitTextBox,
@@ -1008,7 +1009,7 @@ a:hover {
 }
 .cdm.expandable.active .title,
 .cdm.expanded .title {
-	font: normal normal bold 28px/33px SansCn;
+	font: normal normal bold 24px/28px SansCn;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 }
@@ -1238,6 +1239,10 @@ div.articleNote {
 	font-size: 14px;
 	line-height: 1.7;
 }
+.cdmContentInner :not("article") h1,
+.postContent :not("article") h1 {
+	font-size: 24px;
+}
 .cdmContentInner h1,
 .postContent h1,
 .cdmContentInner h2,
@@ -1254,6 +1259,7 @@ div.articleNote {
 	margin-bottom: 14px;
 	font-family: SansCn;
 	font-weight: bold;
+	line-height: 1.3;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 }
