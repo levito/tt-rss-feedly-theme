@@ -453,7 +453,7 @@ a:hover {
 }
 #ttrssMain .dijitDialogCloseIcon:hover,
 .collapseBtn:hover:after {
-	opacity: .75;
+	opacity: .7;
 }
 #ttrssMain .dijitDialogPaneContent {
 	border-top-color: #eaeaea;
@@ -554,7 +554,7 @@ a:hover {
 #content-wrap .dijitDropDownButton:hover .dijitArrowButtonInner,
 #content-wrap .dijitComboButton .dijitArrowButtonInner:hover,
 #content-wrap .dijitOpened .dijitArrowButtonInner {
-	opacity: .75;
+	opacity: .7;
 }
 #ttrssMain .dijitPopup {
 	padding: 5px 0;
@@ -665,6 +665,7 @@ a:hover {
 
 /* feed tree */
 #main_toolbar_form > .dijitButton {
+	display: block !important;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -700,7 +701,7 @@ a:hover {
 	background: rgba(0,0,0,.05);
 }
 #main_toolbar_form > .dijitButton:hover .dijitButtonContents {
-	opacity: .75;
+	opacity: .7;
 }
 #feeds-holder #feedTree {
 	padding: 46px 5px 30px 0;
@@ -770,7 +771,7 @@ a:hover {
 	transition: none;
 }
 #feeds-holder .dijitTreeRow .dijitTreeExpando:hover {
-	opacity: .75;
+	opacity: .7;
 }
 #feeds-holder .dijitTreeExpandoClosed {
 	background-position: 0 0;
@@ -1403,7 +1404,7 @@ div.articleNote {
 }
 #headlines-toolbar img[src*='images/pub_set'] {
 	background-position: -128px 0;
-	opacity: .75;
+	opacity: .7;
 }
 #header-wrap img[src*='images/tag.png'] {
 	background-position: -144px 0;
@@ -1433,7 +1434,7 @@ div.articleNote {
 #header-wrap img[src*='images/pub_set'],
 #header-wrap .dijitCheckBox.dijitCheckBoxChecked,
 .hlScorePic {
-	opacity: .75;
+	opacity: .7;
 }
 .hlScorePic:hover {
 	opacity: 1;
