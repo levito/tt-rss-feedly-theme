@@ -459,33 +459,115 @@ a:hover {
 	border-top-color: #eaeaea;
 	padding: 10px;
 }
+#ttrssMain .dijitButton .dijitButtonNode,
+#ttrssMain .dijitSelect .dijitArrowButton {
+	border-color: transparent;
+	background: #eee;
+	box-shadow: none;
+}
 #ttrssMain .dijitButton .dijitButtonNode {
 	padding: 5px 7px 6px;
-	border-color: #d8d8d8;
 	border-radius: 2px;
-	background: #eee;
-	color: #666;
 	font-size: 11px;
 	font-weight: bold;
-	box-shadow: none;
 	transition: all .1s;
 }
+#ttrssMain .dijitComboButton .dijitButtonNode,
+#ttrssMain .dijitDropDownButton .dijitButtonNode,
+#ttrssMain .dijitButton .dijitButtonNode {
+	color: #666;
+}
+#ttrssMain .dijitComboButton .dijitButtonNode,
+#ttrssMain .dijitDropDownButton .dijitButtonNode {
+	border: 1px solid;
+	padding: 1px;
+}
+#ttrssMain .dijitTextBox,
+#ttrssMain .dijitSelect,
+#ttrssMain .dijitSelect .dijitButtonContents,
+#ttrssMain .dijitComboButton .dijitButtonNode,
+#ttrssMain .dijitDropDownButton .dijitButtonNode,
+#ttrssMain .dijitButton .dijitButtonNode {
+	border-color: #d8d8d8;
+}
+#ttrssMain .dijitComboButtonHover .dijitButtonNode {
+	background: #eee;
+}
+#ttrssMain .dijitSelectHover .dijitArrowButton,
+#ttrssMain .dijitComboButton .dijitButtonNode:hover,
+#ttrssMain .dijitDropDownButtonHover .dijitButtonNode,
 #ttrssMain .dijitButtonHover .dijitButtonNode {
 	background: #e5e5e5;
-	border-color: #bfbfbf;
 	color: #222;
 }
+#ttrssMain .dijitSelectFocused .dijitArrowButton,
+#ttrssMain .dijitComboButtonFocused .dijitButtonNode,
+#ttrssMain .dijitComboButtonFocused .dijitButtonNode:hover,
+#ttrssMain .dijitDropDownButtonFocused .dijitButtonNode,
 #ttrssMain .dijitButtonActive .dijitButtonNode {
 	background: #ddd;
-	border-color: #bfbfbf;
 	color: #222;
-	box-shadow: inset 0 1px 0 rgba(0,0,0,.07);
 	transition: none;
+}
+#ttrssMain .dijitSelectHover .dijitArrowButton,
+#ttrssMain .dijitSelectFocused .dijitArrowButton {
+	border-color: transparent;
+}
+#ttrssMain .dijitTextBoxHover,
+#ttrssMain .dijitSelectHover,
+#ttrssMain .dijitSelectHover .dijitButtonContents,
+#ttrssMain .dijitComboButtonHover .dijitButtonNode,
+#ttrssMain .dijitDropDownButtonHover .dijitButtonNode,
+#ttrssMain .dijitButtonHover .dijitButtonNode,
+#ttrssMain .dijitTextBoxFocused,
+#ttrssMain .dijitSelectFocused,
+#ttrssMain .dijitSelectFocused .dijitButtonContents,
+#ttrssMain .dijitComboButtonFocused .dijitButtonNode,
+#ttrssMain .dijitDropDownButtonFocused .dijitButtonNode,
+#ttrssMain .dijitButtonActive .dijitButtonNode {
+	border-color: #bfbfbf;
+}
+#ttrssMain .dijitTextBoxFocused,
+#ttrssMain .dijitSelectFocused .dijitButtonContents,
+#ttrssMain .dijitSelectFocused .dijitArrowButton,
+#ttrssMain .dijitComboButtonFocused .dijitButtonNode,
+#ttrssMain .dijitDropDownButtonFocused .dijitButtonNode,
+#ttrssMain .dijitButtonActive .dijitButtonNode {
+	box-shadow: inset 0 1px 0 rgba(0,0,0,.1);
+}
+#ttrssMain .dijitTextBoxError {
+	border-color: #c66;
+}
+#ttrssMain .dijitArrowButtonInner {
+	background: transparent url("feedly/icons.png") -16px 0 no-repeat;
+	background-size: 176px 32px;
+	opacity: .3;
+	transition: opacity .2s;
+}
+#ttrssMain .dijitComboButton .dijitArrowButtonInner {
+	background-position: -17px 0;
+}
+#ttrssMain .dijitComboButton .dijitArrowButton {
+	border-left: none;
+}
+#ttrssMain .dijitComboButton .dijitButtonText {
+	padding: 0;
+}
+#ttrssMain .dijitSelectHover .dijitArrowButtonInner,
+#ttrssMain .dijitComboButton .dijitArrowButtonInner:hover,
+#ttrssMain .dijitDropDownButtonHover .dijitArrowButtonInner,
+#ttrssMain .dijitSelectFocused .dijitArrowButtonInner,
+#ttrssMain .dijitComboButtonFocused .dijitArrowButtonInner,
+#ttrssMain .dijitDropDownButtonFocused .dijitArrowButtonInner {
+	opacity: .7;
 }
 .claro .dijitTextBox,
 .claro .dijitSelect {
-	background: #fff;
 	border-radius: 2px;
+	background: #fff;
+}
+.claro .dijitTextBoxFocused .dijitInputContainer {
+	background: transparent;
 }
 
 
@@ -515,7 +597,10 @@ a:hover {
 #main .dijitSplitterThumb {
 	display: none;
 }
-#content-wrap .dijitSelect,
+
+/* TODO: rebuild as adjustment based on claro reskinning */
+
+/*#content-wrap .dijitSelect,
 #content-wrap .dijitButtonContents,
 #content-wrap .dijitButtonNode,
 #content-wrap .dijitArrowButton
@@ -556,7 +641,7 @@ a:hover {
 #content-wrap .dijitComboButton .dijitArrowButtonInner:hover,
 #content-wrap .dijitOpened .dijitArrowButtonInner {
 	opacity: .7;
-}
+}*/
 #ttrssMain .dijitPopup {
 	padding: 5px 0;
 	border: 1px solid #ccc;
@@ -689,6 +774,7 @@ a:hover {
 	position: absolute;
 	top: 51px;
 	left: 8px;
+	padding: 0;
 	width: 16px;
 	height: 16px;
 	overflow: hidden;
