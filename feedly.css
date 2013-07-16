@@ -747,7 +747,7 @@ a:hover {
 }
 
 /* feed tree */
-#main_toolbar_form > .dijitButton {
+#ttrssMain #main_toolbar_form > .dijitButton {
 	display: block !important;
 	position: fixed;
 	top: 0;
@@ -755,7 +755,7 @@ a:hover {
 	bottom: 0;
 	width: 30px;
 }
-#main_toolbar_form > .dijitButton .dijitButtonNode {
+#ttrssMain #main_toolbar_form > .dijitButton .dijitButtonNode {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -767,7 +767,7 @@ a:hover {
 	box-shadow: none;
 	transition: background .5s;
 }
-#main_toolbar_form > .dijitButton .dijitButtonContents {
+#ttrssMain #main_toolbar_form > .dijitButton .dijitButtonContents {
 	position: absolute;
 	top: 51px;
 	left: 8px;
@@ -781,10 +781,10 @@ a:hover {
 	opacity: .2;
 	transition: opacity .2s;
 }
-#main_toolbar_form > .dijitButton:hover .dijitButtonNode {
+#ttrssMain #main_toolbar_form > .dijitButton:hover .dijitButtonNode {
 	background: rgba(0,0,0,.05);
 }
-#main_toolbar_form > .dijitButton:hover .dijitButtonContents {
+#ttrssMain #main_toolbar_form > .dijitButton:hover .dijitButtonContents {
 	opacity: .7;
 }
 #feeds-holder #feedTree {
