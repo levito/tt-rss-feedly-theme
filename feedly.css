@@ -449,7 +449,7 @@ a:hover {
 	background: transparent url("feedly/icons.png") -16px -16px no-repeat;
 	background-size: 176px 32px;
 	opacity: .3;
-	transition: opacity .2s;
+	transition: opacity .3s;
 }
 #ttrssMain .dijitDialogCloseIcon:hover,
 .collapseBtn:hover:after {
@@ -482,7 +482,7 @@ a:hover {
 }
 #ttrssMain .dijitButton .dijitButtonNode {
 	border-radius: 2px;
-	transition: all .2s;
+	transition: all .3s;
 }
 #ttrssMain .dijitComboButton .dijitButtonNode,
 #ttrssMain .dijitDropDownButton .dijitButtonNode,
@@ -555,7 +555,7 @@ a:hover {
 	background: transparent url("feedly/icons.png") -16px 0 no-repeat;
 	background-size: 176px 32px;
 	opacity: .3;
-	transition: opacity .2s;
+	transition: opacity .3s;
 }
 #ttrssMain .dijitComboButton .dijitArrowButtonInner {
 	background-position: -17px 0;
@@ -618,7 +618,7 @@ a:hover {
 	background-color: transparent;
 	color: #999;
 	box-shadow: none;
-	transition: color .2s;
+	transition: color .3s;
 }
 #main #content-wrap .dijitSelectHover .dijitButtonContents,
 #main #content-wrap .dijitDropDownButtonHover .dijitButtonContents,
@@ -779,7 +779,7 @@ a:hover {
 	background: transparent url("feedly/icons.png") 0 -16px no-repeat;
 	background-size: 176px 32px;
 	opacity: .2;
-	transition: opacity .2s;
+	transition: opacity .3s;
 }
 #ttrssMain #main_toolbar_form > .dijitButton:hover .dijitButtonNode {
 	background: rgba(0,0,0,.05);
@@ -798,7 +798,7 @@ a:hover {
 	text-overflow: ellipsis;
 	background: transparent;
 	color: #666;
-	transition: color .2s;
+	transition: color .3s;
 }
 #feeds-holder .dijitTreeRow,
 #feeds-holder .dijitTreeRow * {
@@ -842,7 +842,7 @@ a:hover {
 	background-image: url("feedly/icons.png");
 	background-size: 176px 32px;
 	opacity: .2;
-	transition: opacity .2s;
+	transition: opacity .3s;
 }
 #feeds-holder .dijitTreeRowSelected img[src*=images],
 #feeds-holder .dijitTreeRow:hover img[src*=images] {
@@ -905,7 +905,7 @@ a:hover {
 	text-decoration: none;
 	color: #aaa;
 	margin-left: 8px;
-	transition: color .2s;
+	transition: color .3s;
 }
 #headlines-toolbar > a:hover {
 	color: #444;
@@ -1293,14 +1293,22 @@ div.articleNote {
 	left: 35px;
 	padding: 0 1px;
 	background: #fff;
-	border-bottom: 1px solid #e5e5e5;
 }
-#floatingTitle:not(:empty) {
+#floatingTitle {
 	display: block !important;
 }
 #floatingTitle .title,
 #floatingTitle .updated {
 	color: #aaa;
+}
+#floatingTitle .title:after {
+	content: "";
+	display: block;
+	position: absolute;
+	bottom: -1px;
+	left: 0;
+	right: 0;
+	border-bottom: 1px solid #e5e5e5;
 }
 .cdm > hr,
 .cdm.expandable.active .rchk,
@@ -1458,7 +1466,7 @@ div.articleNote {
 	background: transparent url("feedly/icons.png") -160px 0 no-repeat;
 	background-size: 176px 32px;
 	opacity: .2;
-	transition: opacity .2s;
+	transition: opacity .3s;
 }
 #header-wrap .dijitCheckBox {
 	padding-top: 0;
