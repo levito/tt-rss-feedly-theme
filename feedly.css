@@ -1,3 +1,5 @@
+@import url(feedly/claro-mod.min.css);
+
 @font-face {
     font-family: 'SansCn';
     src: local('Arial Narrow'),
@@ -60,7 +62,7 @@ div.articleNote div.noteEdit {
 /* @129 */
 #notify {
 	bottom : 10px;
-	right : 10px;
+	right : 20px;
 	border-width : 1px;
 	border-style : solid;
 	position : absolute;
@@ -120,10 +122,12 @@ div.filterTestHolder {
 	border-style : solid;
 	margin : 0px 0px 5px 0px;
 	background-color : #ecf4ff;
-	border-width : 1px 1px 1px 1px;
+	border-width : 1px;
+	border-radius : 4px;
+	box-shadow : inset 0px 0px 2px rgba(0,0,0,0.1);
 }
 
-/* @268 */
+/* @270 */
 div.notice, div.warning, div.error {
 	padding : 4px 10px 4px 4px;
 	display : inline-block;
@@ -133,7 +137,7 @@ div.notice, div.warning, div.error {
 	border-color : #ccc;
 	border-radius : 4px;
 	border-width : 1px;
-	box-shadow : 0px 0px 2px rgba(0,0,0,0.1);
+	box-shadow : inset 0px 0px 2px rgba(0,0,0,0.1);
 }
 
 div.notice div.inner, div.warning div.inner, div.error div.inner {
@@ -156,7 +160,7 @@ div.error {
 }
 
 div.warning img, div.notice img, div.error img {
-	margin-right : 4px;
+	margin : 4px;
 	vertical-align : middle;
 }
 
@@ -165,7 +169,13 @@ div.warning span, div.notice span, div.error span {
 	vertical-align : middle;
 }
 
-/* @422 */
+ul.nomarks {
+	list-style-type : none;
+	margin : 0px;
+	padding : 10px;
+}
+
+/* @423 */
 img.markedPic, img.pubPic {
 	cursor : pointer;
 	vertical-align : middle;
@@ -177,6 +187,8 @@ div.tagCloudContainer {
 	margin : 5px 0px 5px 0px;
 	padding : 5px;
 	text-align : center;
+	border-radius : 4px;
+	box-shadow : inset 0px 0px 2px rgba(0,0,0,0.1);
 }
 
 div.errorExplained {
@@ -184,6 +196,8 @@ div.errorExplained {
 	background-color : #ecf4ff;
 	margin : 5px 0px 5px 0px;
 	padding : 5px;
+	border-radius : 4px;
+	box-shadow : inset 0px 0px 2px rgba(0,0,0,0.1);
 }
 
 ul.feedErrorsList {
@@ -194,6 +208,8 @@ ul.feedErrorsList {
 	background-color : #ecf4ff;
 	margin : 0px 0px 5px 0px;
 	padding : 5px;
+	border-radius : 4px;
+	box-shadow : inset 0px 0px 2px rgba(0,0,0,0.1);
 }
 
 ul.feedErrorsList em {
@@ -248,7 +264,7 @@ ul.compact li {
 	border-width : 0px;
 }
 
-/* @611 */
+/* @624 */
 div.dlgSec {
 	font-size : 12px;
 	color : #555;
@@ -283,7 +299,7 @@ div.dlgButtons {
 	clear : both;
 }
 
-/* @745 */
+/* @747 */
 div.fatalError {
 	margin-bottom : 10px;
 }
@@ -295,17 +311,14 @@ div.fatalError button {
 div.fatalError textarea {
 	width : 100%;
 	height : 100px;
-
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
 }
 
-/* @882 */
+/* @899 */
 .dijitDialog .dijitToolbar {
 	border : 1px solid #c0c0c0;
 }
 
-/* @933 */
+/* @940 */
 ul#filterDlg_Matches, ul#filterDlg_Actions {
 	max-height : 100px;
 	overflow : auto;
@@ -316,6 +329,7 @@ ul#filterDlg_Matches, ul#filterDlg_Actions {
 	background-color : #ecf4ff;
 	margin : 0px 0px 5px 0px;
 	padding : 0px;
+	box-shadow : inset 0px 0px 2px rgba(0,0,0,0.1);
 }
 
 ul#filterDlg_Matches li, ul#filterDlg_Actions li {
@@ -335,6 +349,8 @@ ul.helpKbList {
 	background-color : #ecf4ff;
 	margin : 0px 0px 5px 0px;
 	padding : 5px;
+	border-radius : 4px;
+	box-shadow : inset 0px 0px 2px rgba(0,0,0,0.1);
 }
 
 ul.helpKbList span.hksequence {
@@ -367,6 +383,10 @@ html {
 }
 input[type="search"] {
 	-webkit-appearance: none;
+}
+textarea {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 .claro .dijitBorderContainer,
 .claro .dijitSplitContainer-dijitContentPane,
@@ -407,8 +427,8 @@ img,
 }
 img.feedIcon,
 img.tinyFeedIcon  {
-	width : 16px;
-	height : 16px;
+	width: 16px;
+	height: 16px;
 }
 
 
@@ -449,7 +469,7 @@ a:hover {
 	background: transparent url("feedly/icons.png") -16px -16px no-repeat;
 	background-size: 176px 32px;
 	opacity: .3;
-	transition: opacity .3s;
+	transition: opacity .2s;
 }
 #ttrssMain .dijitDialogCloseIcon:hover,
 .collapseBtn:hover:after {
@@ -482,7 +502,7 @@ a:hover {
 }
 #ttrssMain .dijitButton .dijitButtonNode {
 	border-radius: 2px;
-	transition: all .3s;
+	transition: all .2s;
 }
 #ttrssMain .dijitComboButton .dijitButtonNode,
 #ttrssMain .dijitDropDownButton .dijitButtonNode,
@@ -555,7 +575,7 @@ a:hover {
 	background: transparent url("feedly/icons.png") -16px 0 no-repeat;
 	background-size: 176px 32px;
 	opacity: .3;
-	transition: opacity .3s;
+	transition: opacity .2s;
 }
 #ttrssMain .dijitComboButton .dijitArrowButtonInner {
 	background-position: -17px 0;
@@ -618,7 +638,7 @@ a:hover {
 	background-color: transparent;
 	color: #999;
 	box-shadow: none;
-	transition: color .3s;
+	transition: color .2s;
 }
 #main #content-wrap .dijitSelectHover .dijitButtonContents,
 #main #content-wrap .dijitDropDownButtonHover .dijitButtonContents,
@@ -779,7 +799,7 @@ a:hover {
 	background: transparent url("feedly/icons.png") 0 -16px no-repeat;
 	background-size: 176px 32px;
 	opacity: .2;
-	transition: opacity .3s;
+	transition: opacity .2s;
 }
 #ttrssMain #main_toolbar_form > .dijitButton:hover .dijitButtonNode {
 	background: rgba(0,0,0,.05);
@@ -798,7 +818,7 @@ a:hover {
 	text-overflow: ellipsis;
 	background: transparent;
 	color: #666;
-	transition: color .3s;
+	transition: color .2s;
 }
 #feeds-holder .dijitTreeRow,
 #feeds-holder .dijitTreeRow * {
@@ -842,7 +862,7 @@ a:hover {
 	background-image: url("feedly/icons.png");
 	background-size: 176px 32px;
 	opacity: .2;
-	transition: opacity .3s;
+	transition: opacity .2s;
 }
 #feeds-holder .dijitTreeRowSelected img[src*=images],
 #feeds-holder .dijitTreeRow:hover img[src*=images] {
@@ -905,7 +925,7 @@ a:hover {
 	text-decoration: none;
 	color: #aaa;
 	margin-left: 8px;
-	transition: color .3s;
+	transition: color .2s;
 }
 #headlines-toolbar > a:hover {
 	color: #444;
@@ -1466,7 +1486,7 @@ div.articleNote {
 	background: transparent url("feedly/icons.png") -160px 0 no-repeat;
 	background-size: 176px 32px;
 	opacity: .2;
-	transition: opacity .3s;
+	transition: opacity .2s;
 }
 #header-wrap .dijitCheckBox {
 	padding-top: 0;
@@ -1605,7 +1625,19 @@ div#feedlistLoading img, div#filterlistLoading img, div#labellistLoading {
 	margin-right : 5px;
 }
 
-/* 101 */
+/* 97 */
+table.prefPluginsList td label, table.prefUserList td {
+	cursor : pointer;
+}
+
+table.prefPluginsList label {
+	white-space : nowrap;
+}
+
+table.prefPluginsList label img {
+	vertical-align : middle;
+}
+
 table.prefErrorLog tr.errrow td {
 	font-size : 10px;
 }
@@ -1627,9 +1659,6 @@ table.prefErrorLog td.filename, table.prefErrorLog td.login, table.prefErrorLog 
 
 /* layout */
 
-#ttrssPrefs a {
-	color: #28c;
-}
 #ttrssPrefs #header {
 	position: relative;
 	z-index: 1;
