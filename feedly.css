@@ -444,159 +444,11 @@ a {
 a:hover {
 	text-decoration: underline;
 }
-/*#ttrssMain .dijitDialogUnderlay {
-	background: #000;
-	opacity: .2;
-}
-#ttrssMain .dijitDialog {
-	border: 1px solid #aaa;
-	border-radius: 3px;
-	box-shadow: 0 1px 4px rgba(0,0,0,.2);
-}
-#ttrssMain .dijitDialogTitleBar {
-	border: none;
-	padding: 5px 10px 4px;
-	background: #eee;
-	font-weight: bold;
-}
-#ttrssMain .dijitDialogCloseIcon,
-.collapseBtn:after {
-	position: absolute;
-	top: 7px;
-	right: 7px;
-	width: 16px;
-	height: 16px;
-	background: transparent url("feedly/icons.png") -16px -16px no-repeat;
-	background-size: 176px 32px;
-	opacity: .3;
-	transition: opacity .2s;
-}
-#ttrssMain .dijitDialogCloseIcon:hover,
-.collapseBtn:hover:after {
-	opacity: .7;
-}
-#ttrssMain .dijitDialogPaneContent {
-	border-top-color: #eaeaea;
-	padding: 10px;
-}
-
-.claro .dijitTextBox,
-.claro .dijitSelect {
-	border-radius: 2px;
-	background: #fff;
-	color: inherit;
-}
-.claro .dijitTextBox .dijitInputContainer,
-.claro .dijitInputInner {
-	background: transparent;
-	color: inherit;
-}
-
-#ttrssMain .dijitSelect .dijitArrowButton,
-#ttrssMain .dijitComboBox .dijitArrowButton,
-#ttrssMain .dijitComboButton .dijitButtonNode,
-#ttrssMain .dijitButton .dijitButtonNode {
-	border-color: transparent;
-	background: #eee;
-	box-shadow: none;
-}
-#ttrssMain .dijitButton .dijitButtonNode {
-	border-radius: 2px;
-	transition: all .2s;
-}
-#ttrssMain .dijitComboButton .dijitButtonNode,
-#ttrssMain .dijitDropDownButton .dijitButtonNode,
-#ttrssMain .dijitButton .dijitButtonNode {
-	border-width: 1px;
-	padding: 1px;
-	color: #666;
-}
-#ttrssMain .dijitButton .dijitButtonContents {
-	padding: 1px;
-}
-#ttrssMain .dijitTextBox,
-#ttrssMain .dijitSelect,
-#ttrssMain .dijitSelect .dijitButtonContents,
-#ttrssMain .dijitComboBox,
-#ttrssMain .dijitComboBox .dijitButtonNode,
-#ttrssMain .dijitComboButton .dijitButtonNode,
-#ttrssMain .dijitDropDownButton .dijitButtonNode,
-#ttrssMain .dijitButton .dijitButtonNode {
-	border-color: #d8d8d8;
-}
-#ttrssMain .dijitComboButtonHover .dijitButtonNode {
-	background: #eee;
-}
-#ttrssMain .dijitSelectHover .dijitArrowButton,
-#ttrssMain .dijitComboBox .dijitArrowButton:hover,
-#ttrssMain .dijitComboButton .dijitButtonNode:hover,
-#ttrssMain .dijitDropDownButtonHover .dijitButtonNode,
-#ttrssMain .dijitButtonHover .dijitButtonNode {
-	background: #e5e5e5;
-	color: #222;
-}
-#ttrssMain .dijitComboBoxFocused .dijitArrowButton,
-#ttrssMain .dijitComboBoxFocused .dijitArrowButton:hover,
-#ttrssMain .dijitOpened .dijitButtonNode,
-#ttrssMain .dijitOpened .dijitButtonNode:hover,
-#ttrssMain .dijitButtonActive .dijitButtonNode {
-	background: #ddd;
-	color: #222;
-	transition: none;
-}
-#ttrssMain .dijitComboBox .dijitArrowButtonInner,
-#ttrssMain .dijitSelect .dijitArrowButton {
-	border-color: transparent;
-}
-#ttrssMain .dijitTextBoxHover,
-#ttrssMain .dijitSelectHover,
-#ttrssMain .dijitSelectHover .dijitButtonContents,
-#ttrssMain .dijitComboBoxHover .dijitButtonContents,
-#ttrssMain .dijitComboButtonHover .dijitButtonNode,
-#ttrssMain .dijitDropDownButtonHover .dijitButtonNode,
-#ttrssMain .dijitButtonHover .dijitButtonNode,
-#ttrssMain .dijitTextBoxFocused,
-#ttrssMain .dijitOpened,
-#ttrssMain .dijitOpened .dijitButtonContents,
-#ttrssMain .dijitButtonActive .dijitButtonNode {
-	border-color: #bfbfbf;
-}
-#ttrssMain .dijitTextBoxFocused,
-#ttrssMain .dijitOpened .dijitButtonContents,
-#ttrssMain .dijitComboBoxFocused .dijitArrowButton,
-#ttrssMain .dijitOpened .dijitButtonNode,
-#ttrssMain .dijitButtonActive .dijitButtonNode {
-	box-shadow: inset 0 1px 0 rgba(0,0,0,.1);
-}
-#ttrssMain .dijitTextBoxError {
-	border-color: #c66;
-}
-#ttrssMain .dijitArrowButtonInner {
-	background: transparent url("feedly/icons.png") -16px 0 no-repeat;
-	background-size: 176px 32px;
-	opacity: .3;
-	transition: opacity .2s;
-}
-#ttrssMain .dijitComboButton .dijitArrowButtonInner {
-	background-position: -17px 0;
-}
-#ttrssMain .dijitSelectHover .dijitArrowButtonInner,
-#ttrssMain .dijitComboBox .dijitArrowButtonInner:hover,
-#ttrssMain .dijitComboButton .dijitArrowButtonInner:hover,
-#ttrssMain .dijitDropDownButtonHover .dijitArrowButtonInner,
-#ttrssMain .dijitComboBoxFocused .dijitArrowButtonInner,
-#ttrssMain .dijitOpened .dijitArrowButtonInner {
-	opacity: .7;
-}
-#ttrssMain .dijitButtonDisabled .dijitButtonNode {
-	color: #aaa;
-}
-
-#ttrssMain .dlgButtons .dijitButton .dijitButtonNode,
-#ttrssMain .dijitDialog [align='center'] .dijitButton .dijitButtonNode {
+.claro .dlgButtons .dijitButton .dijitButtonNode,
+.claro .dijitDialog [align] .dijitButton .dijitButtonNode {
 	padding: 4px 6px 5px;
 	font-weight: bold;
-}*/
+}
 
 
 /* STYLING ************************************************************/
@@ -630,7 +482,7 @@ a:hover {
 	display: none;
 }
 
-/*#main #content-wrap .dijitSelect,
+#main #content-wrap .dijitSelect,
 #main #content-wrap .dijitButtonContents,
 #main #content-wrap .dijitButtonNode,
 #main #content-wrap .dijitArrowButton {
@@ -659,48 +511,6 @@ a:hover {
 	margin-right: 5px;
 }
 
-#ttrssMain .dijitPopup {
-	padding: 5px 0;
-	border: 1px solid #ccc;
-	border-radius: 2px;
-	box-shadow: 0 1px 2px rgba(0,0,0,.2);
-	background: #fff;
-}
-#ttrssMain .dijitMenu {
-	border: 0;
-}
-#ttrssMain .dijitMenuItem {
-	color: #444;
-}
-#ttrssMain .dijitMenu td {
-	display: none;
-}
-#ttrssMain .dijitMenu .dijitMenuItemLabel {
-	display: table-cell;
-	padding: 4px 10px;
-	border: 0;
-}
-#ttrssMain .dijitSelectSelectedOption .dijitMenuItemLabel {
-	font-weight: normal;
-}
-#ttrssMain .dijitMenuItemHover .dijitMenuItemLabel,
-#ttrssMain .dijitMenuItemSelected .dijitMenuItemLabel {
-	background: #eee;
-	color: #222;
-}
-#ttrssMain .dijitMenuItemDisabled .dijitMenuItemLabel {
-	background: #fff;
-	color: #444;
-	font-weight: bold;
-	opacity: 1;
-	padding-top: 5px;
-}
-#ttrssMain .dijitMenuItemDisabled .dijitMenuItemLabel:before {
-	content: "";
-	display: block;
-	padding: 0 0 8px;
-	border-top: 1px solid #ddd;
-}*/
 #overlay {
 	position: absolute;
 	z-index: 100;
