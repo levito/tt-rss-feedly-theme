@@ -444,7 +444,7 @@ a {
 a:hover {
 	text-decoration: underline;
 }
-#ttrssMain .dijitDialogUnderlay {
+/*#ttrssMain .dijitDialogUnderlay {
 	background: #000;
 	opacity: .2;
 }
@@ -596,7 +596,7 @@ a:hover {
 #ttrssMain .dijitDialog [align='center'] .dijitButton .dijitButtonNode {
 	padding: 4px 6px 5px;
 	font-weight: bold;
-}
+}*/
 
 
 /* STYLING ************************************************************/
@@ -630,7 +630,7 @@ a:hover {
 	display: none;
 }
 
-#main #content-wrap .dijitSelect,
+/*#main #content-wrap .dijitSelect,
 #main #content-wrap .dijitButtonContents,
 #main #content-wrap .dijitButtonNode,
 #main #content-wrap .dijitArrowButton {
@@ -700,7 +700,7 @@ a:hover {
 	display: block;
 	padding: 0 0 8px;
 	border-top: 1px solid #ddd;
-}
+}*/
 #overlay {
 	position: absolute;
 	z-index: 100;
