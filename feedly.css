@@ -1112,6 +1112,15 @@ div.articleNote {
 	position: absolute;
 	top: 5px;
 	right: 5px;
+	width: 16px;
+	height: 16px;
+	background: transparent url("feedly/icons.png") -16px -16px no-repeat;
+	background-size: 176px 32px;
+	opacity: .3;
+	transition: opacity .2s;
+}
+.collapseBtn:hover:after {
+	opacity: .7;
 }
 
 /* floating title extensions */
