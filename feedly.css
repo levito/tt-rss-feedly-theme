@@ -1493,6 +1493,10 @@ table.prefErrorLog td.filename, table.prefErrorLog td.login, table.prefErrorLog 
 	background: #eee;
 }
 
+#dijit_layout_AccordionPane_1_wrapper .dijitAccordionContainer-child {
+	padding: 0;
+}
+
 /* content */
 
 #ttrssPrefs h1,
