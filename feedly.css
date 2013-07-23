@@ -453,6 +453,7 @@ a:hover {
 
 /* STYLING ************************************************************/
 
+#toolbar,
 .dijitBorderContainer,
 .dijitBorderContainerNoGutter {
 	overflow: visible;
@@ -579,18 +580,14 @@ a:hover {
 /* feed tree */
 #ttrssMain #main_toolbar_form > .dijitButton {
 	display: block !important;
+}
+#ttrssMain #main_toolbar_form > .dijitButton .dijitButtonNode {
 	position: fixed;
 	top: 0;
 	left: 0;
 	bottom: 0;
 	width: 30px;
-}
-#ttrssMain #main_toolbar_form > .dijitButton .dijitButtonNode {
-	position: absolute;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
+	padding: 0;
 	border-radius: 0;
 	border: 0;
 	background: transparent;
