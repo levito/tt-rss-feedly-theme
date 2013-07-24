@@ -843,10 +843,6 @@ a:hover {
 .postHeader .postTags {
 	margin-top: -1px;
 }
-.postHeader .postTags + div {
-	clear: both;
-	height: 0;
-}
 
 /* articles - expandable.active / expanded */
 .cdm.expandable:not(.active) .cdmHeader {
@@ -1065,6 +1061,11 @@ div.articleNote {
 	border-bottom: 1px solid #eee;
 	font-size: 11px;
 	color: #999;
+}
+.postHeader:after {
+	content: " ";
+	display: table;
+	clear: both;
 }
 .postHeader .postDate {
 	float: right;
