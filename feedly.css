@@ -1130,9 +1130,13 @@ div.articleNote {
 	left: 35px;
 	padding: 0 1px;
 	background: #fff;
-}
-#floatingTitle {
 	display: block !important;
+}
+#floatingTitle .titleWrap {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	max-width: 1px; /* whatever makes this work... */
 }
 #floatingTitle .title,
 #floatingTitle .updated {
@@ -1196,9 +1200,20 @@ div.articleNote {
 .postContent p {
 	max-width: 45em;
 }
+.cdmContentInner table,
+.postContent table {
+	border-collapse: collapse;
+}
 .cdmContentInner tr,
 .postContent tr {
 	vertical-align: top;
+}
+.cdmContentInner th,
+.postContent th,
+.cdmContentInner td,
+.postContent td {
+	border: 1px solid #ddd;
+	padding: 0 .31em;
 }
 .cdmContentInner iframe,
 .postContent iframe {
