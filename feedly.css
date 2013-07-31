@@ -971,36 +971,36 @@ div.articleNote {
 	border-color: #ccc;
 }
 .cdm .title,
-.hlTitle {
+.hlContent  {
 	font-size: 13px;
 	font-weight: bold;
 }
 .cdm .cdmExcerpt,
 .cdm.expandable .author,
-.hlTitle .contentPreview {
+.hlContent .contentPreview {
 	font-size: 11px;
 	font-weight: normal;
 }
 .cdm .title,
 .cdm .cdmHeader,
-.hl .hlTitle a,
+.hl .hlContent a,
 .hl .hlUpdated {
 	color: #999;
 }
 .cdm.Unread .title,
 .cdm.Unread .cdmHeader,
-.hl.Unread .hlTitle a,
+.hl.Unread .hlContent a,
 .hl.Unread .hlUpdated,
 .postHeader .postTitle a {
 	color: #444;
 }
 .cdm.Unread .cdmExcerpt,
 .cdm.Unread.expandable .author,
-.hl.Unread .hlTitle .contentPreview {
+.hl.Unread .hlContent .contentPreview {
 	color: #999;
 }
 .cdm .title,
-.hlTitle a {
+.hlContent a {
 	text-decoration: none;
 }
 .cdmHeader img,
@@ -1028,7 +1028,7 @@ div.articleNote {
 	padding-left: 10px;
 }
 .cdmHeader .titleWrap,
-.hl .hlTitle,
+.hlTitle,
 #floatingTitle .titleWrap {
 	width: 100%;
 	line-height: 14px;
@@ -1121,6 +1121,19 @@ div.articleNote {
 	opacity: .7;
 }
 
+/* single-line previews */
+.cdm.expandable:not(.active) .titleWrap,
+.hlTitle,
+#floatingTitle .titleWrap {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.hlTitle,
+#floatingTitle .titleWrap {
+	max-width: 1px; /* whatever makes this work... */
+}
+
 /* floating title extensions */
 #floatingTitle {
 	position: absolute;
@@ -1131,12 +1144,6 @@ div.articleNote {
 	padding: 0 1px;
 	background: #fff;
 	display: block !important;
-}
-#floatingTitle .titleWrap {
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	max-width: 1px; /* whatever makes this work... */
 }
 #floatingTitle .title,
 #floatingTitle .updated {
