@@ -1421,6 +1421,42 @@ div.articleNote {
 	cursor: pointer;
 }
 
+/* plugin: shorten expanded */
+.cdmContentInner .expandPrompt {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 5px 0 6px;
+	width: 100%;
+	font-size: 12px;
+	line-height: normal;
+	text-align: center;
+	font-weight: bold;
+	background: #eee;
+	color: #666;
+	border: 1px solid #d8d8d8;
+	border-radius: 2px;
+	cursor: pointer;
+	transition: all .2s;
+}
+.cdmContentInner .expandPrompt:hover {
+	background: #e5e5e5;
+	color: #222;
+	border-color: #ccc;
+}
+.cdmContentInner .expandPrompt:active {
+	background: #ddd;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.1);
+	transition: none;
+}
+.cdmContentInner > div {
+	max-height: 9999px;
+	transition: max-height 3s;
+}
+.cdmContentInner > .contentSizeWrapper {
+	height: auto;
+	max-height: 700px;
+}
+
 
 /* PREFERENCES ************************************************************/
 
