@@ -1455,6 +1455,7 @@ div.articleNote {
 .cdmContentInner > .contentSizeWrapper {
 	height: auto;
 	max-height: 700px;
+	border-bottom: 1px solid #e5e5e5;
 }
 
 
