@@ -505,9 +505,6 @@ a:hover {
 #main #content-wrap .dijitComboButton .dijitButtonText {
 	padding: 0;
 }
-#main #headlines-toolbar .dijitButtonContents {
-	color: #aaa;
-}
 #main_toolbar_form > * {
 	margin-right: 5px;
 }
@@ -730,7 +727,7 @@ a:hover {
 }
 #headlines-toolbar > a {
 	text-decoration: none;
-	color: #aaa;
+	color: #999;
 	margin-left: 8px;
 	transition: color .2s;
 }
@@ -743,7 +740,7 @@ a:hover {
 #headlines-toolbar > .r {
 	float: left;
 	white-space: nowrap;
-	color: #aaa;
+	color: #999;
 }
 #headlines-toolbar > .r img {
 	position: relative;
@@ -1144,10 +1141,13 @@ div.articleNote {
 	padding: 0 1px;
 	background: #fff;
 	display: block !important;
+	color: #999;
 }
-#floatingTitle .title,
-#floatingTitle .updated {
-	color: #aaa;
+#floatingTitle.Unread {
+	color: #444;
+}
+#floatingTitle .title {
+	color: inherit;
 }
 #floatingTitle .title:after {
 	content: "";
@@ -1161,7 +1161,6 @@ div.articleNote {
 .cdm > hr,
 .cdm.expandable.active .rchk,
 .cdm.expanded .rchk,
-#floatingTitle .anchor,
 #floatingTitle .rchk,
 #floatingTitle .hlFeed,
 #floatingTitle .author,
@@ -1297,6 +1296,14 @@ div.articleNote {
 .insensitive {
 	color: #aaa;
 }
+.highlight {
+	position: relative;
+	margin: -.1em -.2em;
+	padding: .1em .2em;
+	border-radius: .2em;
+	background: rgba(255,204,0,.5);
+	color: #000;
+}
 #feeds-holder,
 #headlines-frame,
 #content-insert {
@@ -1318,7 +1325,8 @@ div.articleNote {
 #ttrssMain img[src*='images/star.png'],
 #ttrssMain img[src*='images/feed.png'],
 #ttrssMain img[src*='images/time.png'],
-#header-wrap .dijitCheckBox {
+#header-wrap .dijitCheckBox,
+#floatingTitle .anchor {
 	padding-top: 16px;
 	width: 16px;
 	height: 0;
@@ -1380,9 +1388,14 @@ div.articleNote {
 .hlScorePic[src*='score_low'] {
 	background-position: -96px -16px;
 }
+#floatingTitle .anchor {
+	margin-left: 0;
+	background-position: -112px -16px;
+}
 #header-wrap img[src*='images/mark_unset']:hover,
 #header-wrap img[src*='images/pub_unset']:hover,
-#header-wrap .dijitCheckBox:hover {
+#header-wrap .dijitCheckBox:hover,
+#floatingTitle .anchor:hover {
 	opacity: .35;
 
 }
