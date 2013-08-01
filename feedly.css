@@ -748,10 +748,9 @@ a:hover {
 	left: 2px;
 }
 #floatingTitle .title,
-.postHeader .postTitle a  {
-	font: normal normal bold 14px/16px SansCn;
-	text-rendering: optimizeLegibility;
-	-webkit-font-smoothing: antialiased;
+.postHeader .postTitle {
+	font-size: 13px;
+	font-weight: bold;
 }
 #feed_title,
 #feed_title a {
@@ -836,6 +835,7 @@ a:hover {
 }
 .postHeader .postTitle {
 	margin-bottom: 3px;
+	line-height: 16px;
 }
 .postHeader .postTags {
 	margin-top: -1px;
@@ -1066,7 +1066,7 @@ div.articleNote {
 }
 .postHeader .postDate {
 	float: right;
-	padding-top: 1px;
+	padding: 1px 0;
 	white-space: nowrap;
 }
 .postTags > * {
