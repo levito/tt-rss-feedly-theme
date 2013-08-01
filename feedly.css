@@ -375,7 +375,7 @@ select.attachments {
 
 /* RESET ************************************************************/
 
-html {
+html, button, input, select, textarea {
 	font: 12px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
 }
 :focus {
