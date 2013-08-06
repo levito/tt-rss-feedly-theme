@@ -802,14 +802,14 @@ a:hover {
 .cdm.expandable,
 .hl {
 	border: 1px solid transparent;
-	border-top-color: #eee;
-	border-bottom-color: #eee;
+	border-top-color: rgba(0,0,0,.066);
+	border-bottom-color: rgba(0,0,0,.066);
 	margin-bottom: -1px;
 }
 .cdm.expandable:not(.active) .cdmHeader:hover,
 .hl:hover,
 .collapseBtn:hover {
-	background: rgba(0,0,0,.038);
+	background: #f5f5f5;
 	cursor: pointer;
 }
 .cdm.expandable .cdmHeader,
@@ -866,7 +866,6 @@ a:hover {
 	-webkit-order: 2;
 	order: 2;
 }
-.cdm.expandable:not(.active) .cdmHeader > :first-child,
 .cdm.expandable:not(.active) .cdmHeader > .hlFeed {
 	/* old flexbox: */
 	-moz-box-ordinal-group: 1;
@@ -875,6 +874,24 @@ a:hover {
 	/* new flexbox: */
 	-webkit-order: 1;
 	order: 1;
+}
+.cdm.expandable:not(.active) .cdmHeader > .scoreWrap {
+	/* old flexbox: */
+	-moz-box-ordinal-group: 3;
+	-webkit-box-ordinal-group: 3;
+	-ms-flex-order: 3;
+	/* new flexbox: */
+	-webkit-order: 3;
+	order: 3;
+}
+.cdm.expandable:not(.active) .cdmHeader > :first-child {
+	/* old flexbox: */
+	-moz-box-ordinal-group: 4;
+	-webkit-box-ordinal-group: 4;
+	-ms-flex-order: 4;
+	/* new flexbox: */
+	-webkit-order: 4;
+	order: 4;
 }
 .cdm.expandable:not(.active) .cdmHeader > .titleWrap {
 	/* old flexbox: */
@@ -887,15 +904,49 @@ a:hover {
 }
 .cdm.expandable:not(.active) .cdmHeader > .hlFeed {
 	width: 132px;
+	padding-left: 30px;
 }
 .cdm.expandable:not(.active) .cdmHeader > .hlFeed a {
 	max-width: 115px;
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
+.cdm.expandable:not(.active) .cdmHeader > :first-child,
+.cdm.expandable:not(.active) .cdmHeader > .scoreWrap {
+	padding-left: 0;
+	padding-right: 0;
+}
+.cdm.expandable:not(.active) .cdmHeader > :first-child > *,
+.cdm.expandable:not(.active) .cdmHeader > .scoreWrap > * {
+	display: none;
+	float: right;
+	margin: 0 8px 0 4px;
+}
+.cdm.expandable:not(.active) .cdmHeader:hover > :first-child > *,
+.cdm.expandable:not(.active) .cdmHeader:hover > .scoreWrap > * {
+	display: block;
+}
+.cdm.expandable:not(.active) .cdmHeader > .scoreWrap > .hlScorePic {
+	margin-left: 20px;
+}
+.cdm.expandable:not(.active) .cdmHeader > .scoreWrap > span {
+	display: block;
+	position: absolute;
+	left: 0;
+	margin-left: 5px;
+}
+.cdm.expandable.marked:not(.active) .cdmHeader {
+	background: #e0f2dd;
+}
+.cdm.expandable.published:not(.active) .cdmHeader {
+	background: #fce5d5;
+}
+.cdm.expandable.Selected:not(.active) .cdmHeader {
+	background: #faf8d5;
+}
 .cdm.expandable.active,
 .cdm.expanded {
-	border: 1px solid #eee;
+	border: 1px solid rgba(0,0,0,.066);
 	margin-bottom: 17px;
 }
 .cdm.expandable.active .cdmHeader,
