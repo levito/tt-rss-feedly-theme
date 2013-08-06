@@ -925,7 +925,7 @@ a:hover {
 .cdm.expandable.active .rchk,
 .cdm.expanded .rchk,
 .hl .hlUpdated .hlFeed {
-	display: none;
+	display: none !important;
 }
 #floatingTitle > :first-child,
 #floatingTitle > .scoreWrap,
@@ -940,8 +940,8 @@ a:hover {
 }
 #floatingTitle > :first-child > *,
 #floatingTitle > .scoreWrap > *,
-.cdm.expandable:not(.active) .cdmHeader > :first-child > *,
-.cdm.expandable:not(.active) .cdmHeader > .scoreWrap > *,
+.cdm .cdmHeader > :first-child > *,
+.cdm .cdmHeader > .scoreWrap > *,
 .hl > .hlLeft > *,
 .hl > .hlRight > * {
 	display: none;
@@ -950,6 +950,10 @@ a:hover {
 }
 #floatingTitle > :first-child > *,
 #floatingTitle > .scoreWrap > *,
+.cdm.expanded .cdmHeader > :first-child > *,
+.cdm.expanded .cdmHeader > .scoreWrap > *,
+.cdm.expandable.active .cdmHeader > :first-child > *,
+.cdm.expandable.active .cdmHeader > .scoreWrap > *,
 .cdm.expandable:not(.active) .cdmHeader:hover > :first-child > *,
 .cdm.expandable:not(.active) .cdmHeader:hover > .scoreWrap > *,
 .hl:hover > .hlLeft > *,
@@ -1029,30 +1033,33 @@ a:hover {
 .cdm.expandable.active .cdmHeader > :first-child,
 .cdm.expandable.active .cdmHeader .hlFeed,
 .cdm.expandable.active .cdmHeader .updated,
-.cdm.expandable.active .cdmHeader .scoreWrap,
+.cdm.expandable.active .cdmHeader .scoreWrap > *,
 .cdm.expanded .cdmHeader > :first-child,
 .cdm.expanded .cdmHeader .hlFeed,
 .cdm.expanded .cdmHeader .updated,
-.cdm.expanded .cdmHeader .scoreWrap {
+.cdm.expanded .cdmHeader .scoreWrap > * {
 	position: absolute;
 	top: 34px;
-	padding: 0;
 }
-.cdm.expandable.active .cdmHeader > :first-child,
-.cdm.expanded .cdmHeader > :first-child {
-	left: 34px;
+.cdm.expandable.active .cdmHeader .scoreWrap > span,
+.cdm.expanded .cdmHeader .scoreWrap > span {
+	left: 30px;
 }
 .cdm.expandable.active .cdmHeader .hlFeed,
 .cdm.expanded .cdmHeader .hlFeed {
-	left: 80px;
+	left: 60px;
 }
 .cdm.expandable.active .cdmHeader .updated,
 .cdm.expanded .cdmHeader .updated {
-	right: 80px;
+	right: 124px;
 }
-.cdm.expandable.active .cdmHeader .scoreWrap,
-.cdm.expanded .cdmHeader .scoreWrap {
-	right: 34px;
+.cdm.expandable.active .cdmHeader .scoreWrap > .hlScorePic,
+.cdm.expanded .cdmHeader .scoreWrap > .hlScorePic {
+	right: 83px;
+}
+.cdm.expandable.active .cdmHeader > :first-child,
+.cdm.expanded .cdmHeader > :first-child {
+	right: 28px;
 }
 
 /* articles - common */
