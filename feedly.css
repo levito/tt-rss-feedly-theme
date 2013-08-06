@@ -812,7 +812,7 @@ a:hover {
 	background: #f5f5f5;
 	cursor: pointer;
 }
-.cdm.expandable .cdmHeader,
+/*.cdm.expandable .cdmHeader,
 .hl {
 	display: table;
 }
@@ -822,7 +822,7 @@ a:hover {
 	display: table-cell;
 	vertical-align: top !important;
 	padding: 7px 4px;
-}
+}*/
 .cdmHeader > :first-child,
 .scoreWrap,
 .hlLeft,
@@ -842,7 +842,8 @@ a:hover {
 }
 
 /* articles - expandable.active / expanded */
-.cdm.expandable:not(.active) .cdmHeader {
+.cdm.expandable:not(.active) .cdmHeader,
+.hl {
 	/* old flexbox: */
 	display: -moz-box;
 	display: -webkit-box;
@@ -856,7 +857,9 @@ a:hover {
 	-webkit-align-items: flex-start;
 	align-items: flex-start;
 }
-.cdm.expandable:not(.active) .cdmHeader > * {
+.cdm.expandable:not(.active) .cdmHeader > *,
+.hl > * {
+	padding: 7px 4px;
 	/* old flexbox: */
 	display: block;
 	-moz-box-ordinal-group: 2;
@@ -875,7 +878,8 @@ a:hover {
 	-webkit-order: 1;
 	order: 1;
 }
-.cdm.expandable:not(.active) .cdmHeader > .scoreWrap {
+.cdm.expandable:not(.active) .cdmHeader > .scoreWrap,
+.hl > .hlRight {
 	/* old flexbox: */
 	-moz-box-ordinal-group: 3;
 	-webkit-box-ordinal-group: 3;
@@ -884,7 +888,8 @@ a:hover {
 	-webkit-order: 3;
 	order: 3;
 }
-.cdm.expandable:not(.active) .cdmHeader > :first-child {
+.cdm.expandable:not(.active) .cdmHeader > :first-child,
+.hl > .hlLeft {
 	/* old flexbox: */
 	-moz-box-ordinal-group: 4;
 	-webkit-box-ordinal-group: 4;
@@ -893,7 +898,8 @@ a:hover {
 	-webkit-order: 4;
 	order: 4;
 }
-.cdm.expandable:not(.active) .cdmHeader > .titleWrap {
+.cdm.expandable:not(.active) .cdmHeader > .titleWrap,
+.hl > .hlTitle {
 	/* old flexbox: */
 	-moz-box-flex: 1;
 	-webkit-box-flex: 1;
@@ -902,9 +908,12 @@ a:hover {
 	-webkit-flex: 99;
 	flex: 99;
 }
+.cdm.expandable:not(.active) .cdmHeader > .hlFeed,
+.hl > .hlTitle {
+	padding-left: 30px;
+}
 .cdm.expandable:not(.active) .cdmHeader > .hlFeed {
 	width: 132px;
-	padding-left: 30px;
 }
 .cdm.expandable:not(.active) .cdmHeader > .hlFeed a {
 	max-width: 115px;
@@ -912,37 +921,47 @@ a:hover {
 	text-overflow: ellipsis;
 }
 .cdm.expandable:not(.active) .cdmHeader > :first-child,
-.cdm.expandable:not(.active) .cdmHeader > .scoreWrap {
+.cdm.expandable:not(.active) .cdmHeader > .scoreWrap,
+.hl > .hlLeft,
+.hl > .hlRight {
 	padding-left: 0;
 	padding-right: 0;
 }
 .cdm.expandable:not(.active) .cdmHeader > :first-child > *,
-.cdm.expandable:not(.active) .cdmHeader > .scoreWrap > * {
+.cdm.expandable:not(.active) .cdmHeader > .scoreWrap > *,
+.hl > .hlLeft > *,
+.hl > .hlRight > * {
 	display: none;
 	float: right;
 	margin: 0 8px 0 4px;
 }
 .cdm.expandable:not(.active) .cdmHeader:hover > :first-child > *,
-.cdm.expandable:not(.active) .cdmHeader:hover > .scoreWrap > * {
+.cdm.expandable:not(.active) .cdmHeader:hover > .scoreWrap > *,
+.hl:hover > .hlLeft > *,
+.hl:hover > .hlRight > * {
 	display: block;
 }
 .cdm.expandable:not(.active) .cdmHeader > .scoreWrap > .hlScorePic {
 	margin-left: 20px;
 }
-.cdm.expandable:not(.active) .cdmHeader > .scoreWrap > span {
+.cdm.expandable:not(.active) .cdmHeader > .scoreWrap > span,
+.hl > .hlRight > span {
 	display: block;
 	position: absolute;
 	left: 0;
 	margin-left: 5px;
 }
-.cdm.expandable.marked:not(.active) .cdmHeader {
+.cdm.expandable.marked:not(.active) .cdmHeader,
+.hl.marked {
 	background: #e0f2dd;
 }
-.cdm.expandable.published:not(.active) .cdmHeader {
+.cdm.expandable.published:not(.active) .cdmHeader,
+.hl.published {
 	background: #fce5d5;
 }
-.cdm.expandable.Selected:not(.active) .cdmHeader {
-	background: #faf8d5;
+.cdm.expandable.Selected:not(.active) .cdmHeader,
+.hl.Selected {
+	background: #fcf8d5;
 }
 .cdm.expandable.active,
 .cdm.expanded {
@@ -1013,8 +1032,7 @@ div.articleNote {
 	position: relative;
 }
 .cdm.expanded.active,
-.cdm.expandable.active,
-.hl.active {
+.cdm.expandable.active {
 	z-index: 1;
 	border-color: #ccc;
 }
@@ -1179,7 +1197,7 @@ div.articleNote {
 }
 .hlTitle,
 #floatingTitle .titleWrap {
-	max-width: 1px; /* whatever makes this work... */
+	/*max-width: 1px; /* whatever makes this work... */
 }
 
 /* floating title extensions */
