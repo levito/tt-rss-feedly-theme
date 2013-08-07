@@ -721,8 +721,8 @@ a:hover {
 	content: "";
 	position: absolute;
 	bottom: -1px;
-	right: 35px;
-	left: 35px;
+	right: 25px;
+	left: 25px;
 	border-top: 1px solid #ccc;
 }
 #headlines-toolbar > a {
@@ -835,7 +835,6 @@ a:hover {
 #floatingTitle,
 .cdm.expandable:not(.active) .cdmHeader,
 .hl {
-	background: #fff;
 	/* old flexbox: */
 	display: -moz-box !important;
 	display: -webkit-box !important;
