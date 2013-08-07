@@ -979,11 +979,11 @@ a:hover {
 }
 .cdm.expandable.marked:not(.active) .cdmHeader,
 .hl.marked {
-	background: #e0f2dd;
+	background: #e8f8e5;
 }
 .cdm.expandable.published:not(.active) .cdmHeader,
 .hl.published {
-	background: #fce5d5;
+	background: #ffecda;
 }
 .cdm.expandable.Selected:not(.active) .cdmHeader,
 .hl.Selected {
