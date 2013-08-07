@@ -711,7 +711,7 @@ a:hover {
 #headlines-toolbar {
 	z-index: 3;
 	overflow: visible;
-	padding: 20px 35px 0;
+	padding: 20px 30px 0;
 	min-height: 25px;
 	text-align: right;
 	color: #fff;
@@ -766,14 +766,14 @@ a:hover {
 }
 #headlines-frame {
 	z-index: 4;
-	padding: 0 35px;
+	padding: 0 24px;
 	background: transparent;
 }
 #headlines-frame:before {
 	content: "";
 	display: block;
 	border-top: 25px solid #fff;
-	margin: 0 -35px;
+	margin: 0 -24px;
 }
 #headlines-spacer {
 	position: relative;
@@ -783,8 +783,8 @@ a:hover {
 	content: "The End";
 	position: absolute;
 	bottom: 0;
-	right: -35px;
-	left: -35px;
+	right: -24px;
+	left: -24px;
 	padding: 50px;
 	background: #ddd;
 	color: #999;
@@ -803,8 +803,8 @@ a:hover {
 	position: absolute;
 	z-index: 5;
 	top: 40px;
-	right: 35px;
-	left: 35px;
+	right: 24px;
+	left: 24px;
 	padding: 0 1px;
 	background: #fff;
 	display: block !important;
@@ -1157,7 +1157,7 @@ div.articleNote {
 }
 .postHeader,
 .postContent {
-	padding: 10px 35px;
+	padding: 10px 30px;
 }
 .postHeader {
 	background: #f5f5f5;
