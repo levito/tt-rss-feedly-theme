@@ -821,8 +821,8 @@ a:hover {
 	display: block;
 	position: absolute;
 	bottom: -1px;
-	left: 0;
-	right: 0;
+	left: 1px;
+	right: 1px;
 	border-bottom: 1px solid #ccc;
 }
 .cdm.expandable,
@@ -858,7 +858,7 @@ a:hover {
 #floatingTitle > *,
 .cdm.expandable:not(.active) .cdmHeader > *,
 .hl > * {
-	padding: 7px 4px;
+	padding: 7px 5px;
 	/* old flexbox: */
 	display: block;
 	-moz-box-ordinal-group: 3;
@@ -946,7 +946,7 @@ a:hover {
 .hl > .hlRight > * {
 	display: none;
 	float: right;
-	margin: 0 8px 0 4px;
+	margin: 0 9px 0 0;
 }
 #floatingTitle > :first-child > *,
 #floatingTitle > .scoreWrap > *,
@@ -963,19 +963,19 @@ a:hover {
 #floatingTitle > :first-child > .pubPic,
 .cdm.expandable:not(.active) .cdmHeader:hover > :first-child > .pubPic,
 .hl:hover > .hlLeft > .pubPic {
-	margin-left: 40px;
+	margin-left: 35px;
 }
 #floatingTitle > .scoreWrap > .hlScorePic,
 .cdm.expandable:not(.active) .cdmHeader > .scoreWrap > .hlScorePic,
 .hl > .hlRight > .hlScorePic {
 	position: absolute;
-	right: 84px;
+	right: 76px;
 }
 #floatingTitle > .scoreWrap > span,
 .cdm.expandable:not(.active) .cdmHeader > .scoreWrap > span,
 .hl > .hlRight > span {
 	display: block;
-	margin-right: 0;
+	margin-right: 2px;
 }
 .cdm.expandable.marked:not(.active) .cdmHeader,
 .hl.marked {
@@ -1043,23 +1043,23 @@ a:hover {
 }
 .cdm.expandable.active .cdmHeader .scoreWrap > span,
 .cdm.expanded .cdmHeader .scoreWrap > span {
-	left: 30px;
+	left: 29px;
 }
 .cdm.expandable.active .cdmHeader .hlFeed,
 .cdm.expanded .cdmHeader .hlFeed {
-	left: 60px;
+	left: 57px;
 }
 .cdm.expandable.active .cdmHeader .updated,
 .cdm.expanded .cdmHeader .updated {
-	right: 124px;
+	right: 115px;
 }
 .cdm.expandable.active .cdmHeader .scoreWrap > .hlScorePic,
 .cdm.expanded .cdmHeader .scoreWrap > .hlScorePic {
-	right: 83px;
+	right: 75px;
 }
 .cdm.expandable.active .cdmHeader > :first-child,
 .cdm.expanded .cdmHeader > :first-child {
-	right: 28px;
+	right: 25px;
 }
 
 /* articles - common */
@@ -1109,40 +1109,37 @@ div.articleNote {
 .hlContent a {
 	text-decoration: none;
 }
+#floatingTitle img,
+#floatingTitle input,
 .cdmHeader img,
 .cdmHeader input,
 .cdmFooter img,
 .hl img,
 .hl input,
-#floatingTitle img,
-#floatingTitle input {
+.postTags img {
 	vertical-align: middle;
-	margin: 0 2px;
+	margin: 0 0 0 5px;
 }
+#floatingTitle > div,
+#floatingTitle .updated,
 .cdmHeader > div,
 .cdmHeader .updated,
 .hlLeft,
 .hlUpdated,
 .hlRight,
-.author,
-#floatingTitle > div,
-#floatingTitle .updated {
+.author {
 	white-space: nowrap;
 }
-.hlUpdated div {
-	display: inline;
-	padding-left: 10px;
-}
+#floatingTitle .titleWrap,
 .cdmHeader .titleWrap,
-.hlTitle,
-#floatingTitle .titleWrap {
+.hlTitle {
 	width: 100%;
 	line-height: 14px;
 }
+#floatingTitle .updated,
 .cdmHeader .updated,
 .cdmHeader .hlFeed,
-.hlUpdated,
-#floatingTitle .updated {
+.hlUpdated {
 	font-size: 11px;
 }
 .cdmHeader .hlFeed a {
@@ -1196,7 +1193,7 @@ div.articleNote {
 	left: 0;
 	height: 27px;
 	line-height: 1;
-	background: transparent;
+	background: #fff;
 	transition: all .5s;
 }
 .collapseBtn img {
@@ -1221,8 +1218,8 @@ div.articleNote {
 .collapseBtn:after {
 	content: "";
 	position: absolute;
-	top: 5px;
-	right: 5px;
+	top: 6px;
+	right: 9px;
 	width: 16px;
 	height: 16px;
 	background: transparent url("feedly/icons.png") -16px -16px no-repeat;
