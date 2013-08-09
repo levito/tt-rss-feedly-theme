@@ -1282,6 +1282,10 @@ div.articleNote {
 	border: 1px solid #ddd;
 	padding: 0 .31em;
 }
+.cdmContentInner th,
+.postContent th {
+	background: #eee;
+}
 .cdmContentInner hr,
 .postContent hr {
 	border: none;
@@ -1308,6 +1312,22 @@ div.articleNote {
 .cdmContentInner pre,
 .postContent pre {
 	white-space: pre-wrap;
+	font-size: 12px;
+	line-height: 14px;
+	padding: 1em;
+	background: #f5f5f5;
+}
+.cdmContentInner code,
+.postContent code {
+	margin: 0 -.16em;
+	padding: 0 .16em;
+	background: rgba(0,0,0,.066);
+	color: #222;
+}
+.cdmContentInner pre code,
+.postContent pre code {
+	background: inherit;
+	color: inherit;
 }
 .cdmContentInner q,
 .postContent q,
@@ -1315,8 +1335,9 @@ div.articleNote {
 .postContent blockquote {
 	display: block;
 	margin: 1em 0;
-	padding: 0 0 0 1em;
-	border-left: 4px solid #ccc;
+	padding: .31em 1em;
+	border-left: 4px solid rgba(0,0,0,.166);
+	background: rgba(0,0,0,.033);
 }
 
 /* extras */
