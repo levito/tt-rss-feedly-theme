@@ -808,10 +808,6 @@ a:hover {
 	padding: 0 1px;
 	background: #fff;
 	display: block !important;
-	color: #999;
-}
-#floatingTitle.Unread {
-	color: #444;
 }
 #floatingTitle .title {
 	color: inherit;
@@ -1086,23 +1082,19 @@ div.articleNote {
 	font-size: 11px;
 	font-weight: normal;
 }
+#floatingTitle,
 .cdm .title,
 .cdm .cdmHeader,
 .hl .hlContent a,
-.hl .hlUpdated {
-	color: #999;
-}
-.cdm.Unread .title,
-.cdm.Unread .cdmHeader,
-.hl.Unread .hlContent a,
-.hl.Unread .hlUpdated,
-.postHeader .postTitle a {
-	color: #444;
-}
-.cdm.Unread .cdmExcerpt,
-.cdm.Unread.expandable .author,
+.hl .hlUpdated,
 .hl.Unread .hlContent .contentPreview {
 	color: #999;
+}
+#floatingTitle.Unread .title,
+.cdm.Unread .title,
+.hl.Unread .hlContent a,
+.postHeader .postTitle a {
+	color: #444;
 }
 .cdm .title,
 .hlContent a {
@@ -1679,7 +1671,6 @@ table.prefErrorLog td.filename, table.prefErrorLog td.login, table.prefErrorLog 
 	display: inline-block;
 	margin: 10px 50px 25px;
 	padding: 2px 15px 2px 10px;
-	/*border-radius: 999px;*/
 	border: 1px solid #ddd;
 	background: #eee;
 	color: #222;
