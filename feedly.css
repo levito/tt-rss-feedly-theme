@@ -1254,10 +1254,6 @@ div.articleNote {
 	font-size: 14px;
 	line-height: 1.7;
 }
-.cdmContentInner :not("article") h1,
-.postContent :not("article") h1 {
-	font-size: 24px;
-}
 .cdmContentInner h1,
 .postContent h1,
 .cdmContentInner h2,
@@ -1272,13 +1268,33 @@ div.articleNote {
 .postContent h6 {
 	margin-top: 35px;
 	margin-bottom: 14px;
-	font-family: SansCn;
-	font-weight: bold;
-	line-height: 1.3;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 }
-
+.cdmContentInner h1,
+.postContent h1 {
+	font: normal normal bold 24px/28px SansCn;
+}
+.cdmContentInner h2,
+.postContent h2 {
+	font: normal normal bold 21px/26px SansCn;
+}
+.cdmContentInner h3,
+.postContent h4 {
+	font: normal normal bold 18px/24px SansCn;
+}
+.cdmContentInner h4,
+.postContent h4 {
+	font: normal normal bold 16px/22px SansCn;
+}
+.cdmContentInner h5,
+.postContent h5 {
+	font: normal normal bold 14px/20px SansCn;
+}
+.cdmContentInner h6,
+.postContent h6 {
+	font: normal normal bold 13px/18px SansCn;
+}
 .cdmContentInner p,
 .postContent p {
 	max-width: 45em;
