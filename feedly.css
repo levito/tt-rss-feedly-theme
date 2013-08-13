@@ -483,15 +483,16 @@ a:hover {
 #toolbar {
 	position: relative !important;
 	z-index: 3;
-	height: 0;
 	padding-right: 27px;
+	height: 0;
 	overflow: visible;
 }
 #main-toolbar {
 	float: right;
+	border: none;
+	padding: 15px 0 0;
 	width: auto;
-	padding: 15px 0 5px;
-	border: 0;
+	height: 25px;
 }
 #ttrssMain #main {
 	padding: 0 0 0 30px;
@@ -534,6 +535,9 @@ a:hover {
 }
 #main #content-wrap .dijitComboButton .dijitButtonText {
 	padding: 0;
+}
+#main #content-wrap .dijitDropDownButton .dijitArrowButtonInner {
+	height: 14px;
 }
 #main_toolbar_form > * {
 	margin: 0 -3px 0 5px;
@@ -623,7 +627,7 @@ a:hover {
 }
 #ttrssMain #main_toolbar_form > .dijitButton .dijitButtonContents {
 	position: absolute;
-	top: 18px;
+	top: 17px;
 	left: 8px;
 	padding: 0;
 	width: 16px;
@@ -642,10 +646,10 @@ a:hover {
 	opacity: .7;
 }
 #feeds-holder #feedTree {
-	padding: 13px 8px 30px 0;
+	padding: 12px 8px 30px 0;
 }
 #feeds-holder .dijitTreeRow {
-	padding: 4px 0 3px;
+	padding: 4px 0;
 	border: 0;
 	max-width: 100%;
 	overflow: hidden;
@@ -685,14 +689,14 @@ a:hover {
 }
 #feeds-holder .counterNode {
 	float: right;
-	padding: 1px 10px 0 5px;
+	padding: 2px 10px 0 5px;
 	font-size: 10px;
 }
 #feeds-holder .dijitTreeRow .counterNode.aux {
 	color: #aaa;
 }
 #feeds-holder .dijitTreeRow .dijitTreeExpando {
-	margin: -1px 0 1px 5px;
+	margin: 0 0 0 5px;
 	background-image: url("feedly/icons.png");
 	background-size: 176px 32px;
 	opacity: .2;
@@ -747,7 +751,7 @@ a:hover {
 #headlines-toolbar {
 	z-index: 3;
 	overflow: visible;
-	padding: 16px 30px 0;
+	padding: 15px 30px 0;
 	width: auto !important;
 	min-height: 25px;
 	text-align: right;
@@ -818,7 +822,7 @@ a:hover {
 #headlines-frame:before {
 	content: "";
 	display: block;
-	border-top: 25px solid #fff;
+	border-top: 26px solid #fff;
 	margin: 0 -34px 0 -24px;
 }
 #headlines-spacer {
