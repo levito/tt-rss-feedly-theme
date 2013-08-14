@@ -627,7 +627,7 @@ a:hover {
 }
 #ttrssMain #main_toolbar_form > .dijitButton .dijitButtonContents {
 	position: absolute;
-	top: 17px;
+	top: 43px;
 	left: 8px;
 	padding: 0;
 	width: 16px;
@@ -747,6 +747,24 @@ a:hover {
 }
 #feeds-holder[style*=none] ~ .dijitSplitter {
 	display: none;
+}
+
+#feeds-holder #dijit__TreeNode_1 > .dijitTreeRow {
+	opacity: 0;
+	transition: opacity .2s;
+}
+#feeds-holder #dijit__TreeNode_1 > .dijitTreeRow:hover,
+#feeds-holder #dijit__TreeNode_1 > .dijitTreeRowSelected {
+	opacity: 1;
+}
+#feeds-holder #dijit__TreeNode_1 > .dijitTreeContainer {
+	padding-bottom: 26px;
+}
+#feeds-holder #dijit__TreeNode_1 .counterNode + .dijitInline {
+	padding: 0 !important;
+}
+#feeds-holder #dijit__TreeNode_1 .feedIcon {
+	margin: 0 6px 0 -2px;
 }
 
 /* main */
