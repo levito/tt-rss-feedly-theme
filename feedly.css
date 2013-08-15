@@ -398,7 +398,7 @@ select.attachments {
 /* RESET ************************************************************/
 
 html, button, input, select, textarea {
-	font: 12px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
+	font: 12px/1.5 "Helvetica Neue", Arial, Helvetica, "Liberation Sans", sans-serif;
 }
 :focus {
 	outline: none;
@@ -1054,33 +1054,33 @@ a:hover {
 }
 .cdm.expandable.marked:not(.active),
 .hl.marked {
-	background: #eafbe2;
+	background: #eefae9;
 }
 .cdm.expandable.published:not(.active),
 .hl.published {
-	background: #ffeed9;
+	background: #fff2dd;
 }
 .cdm.expandable.Selected:not(.active),
 .hl.Selected {
-	background: #fffbd4;
+	background: #fffad4;
 }
 .cdm.expandable.marked:not(.active),
 .cdm.expandable.marked:not(.active) + .cdm,
 .hl.marked,
 .hl.marked + .hl {
-	border-top-color: #aca;
+	border-top-color: #bbe1b7;
 }
 .cdm.expandable.published:not(.active),
 .cdm.expandable.published:not(.active) + .cdm,
 .hl.published,
 .hl.published + .hl {
-	border-top-color: #eba;
+	border-top-color: #fcb;
 }
 .cdm.expandable.Selected:not(.active),
 .cdm.expandable.Selected:not(.active) + .cdm,
 .hl.Selected,
 .hl.Selected + .hl {
-	border-top-color: #dc9;
+	border-top-color: #eda;
 }
 
 /* single-line previews */
@@ -1426,22 +1426,23 @@ div.articleNote {
 .postContent pre {
 	white-space: pre-wrap;
 	font-size: 11px;
+	border: 1px solid rgba(0,0,0,.0333);
 	padding: 1em;
-	background: #f5f5f5;
+	background: rgba(0,0,0,.0333);
 }
 .cdmContentInner code,
 .postContent code {
 	display: inline-block;
-	border: 1px solid rgba(0,0,0,.05);
+	border: 1px solid rgba(0,0,0,.0333);
 	padding: 0 .31em;
 	line-height: 1.333;
-	background: rgba(0,0,0,.05);
+	background: rgba(0,0,0,.0333);
 }
 .cdmContentInner pre code,
 .postContent pre code {
 	border: none;
 	padding: 0;
-	background: inherit;
+	background: transparent;
 	color: inherit;
 }
 .cdmContentInner q,
