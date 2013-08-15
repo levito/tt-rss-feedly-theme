@@ -796,8 +796,8 @@ a:hover {
 	content: "";
 	position: absolute;
 	bottom: -1px;
-	right: 35px;
-	left: 25px;
+	right: 34px;
+	left: 24px;
 	border-top: 1px solid #e5e5e5;
 }
 #headlines-toolbar > * {
@@ -896,11 +896,10 @@ a:hover {
 }
 #floatingTitle .title:after {
 	content: "";
-	display: block;
 	position: absolute;
 	bottom: -1px;
-	left: 1px;
-	right: 1px;
+	left: 0;
+	right: 0;
 	border-bottom: 1px solid #d4d4d4;
 }
 .cdm.expandable,
@@ -1394,7 +1393,7 @@ div.articleNote {
 }
 .cdmContentInner th,
 .postContent th {
-	background: #eee;
+	background: rgba(0,0,0,.05);
 }
 .cdmContentInner hr,
 .postContent hr {
@@ -1656,9 +1655,11 @@ div.articleNote {
 	transition: none;
 }
 .cdmContentInner > .contentSizeWrapper {
+	margin: 0 -10px;
+	padding: 0 10px;
+	border-bottom: 1px solid #ddd;
 	height: auto;
 	height: 600px;
-	border-bottom: 1px solid #ddd;
 }
 
 
