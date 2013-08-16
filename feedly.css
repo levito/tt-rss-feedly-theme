@@ -740,12 +740,17 @@ a:hover {
 #feeds-holder .dijitTreeExpandoLeaf {
 	display: none;
 }
-#feeds-holder .dijitTreeExpandoLeaf[src*=indicator] ~ .dijitTreeContent:after  {
+#feeds-holder #feedTree .loadingNode, /* needs #feedTree to raise specifity for opacity */
+#feeds-holder .dijitTreeExpandoLeaf[src*=indicator] ~ .dijitTreeContent:after {
+	opacity: 1;
+	margin-left: 5px;
+	width: 16px;
+	height: 11px;
+}
+#feeds-holder .dijitTreeExpandoLeaf[src*=indicator] ~ .dijitTreeContent:after {
 	content: "";
 	display: inline-block;
 	vertical-align: middle;
-	width: 16px;
-	height: 11px;
 	background: transparent url("../images/indicator_tiny.gif") 0 0 no-repeat;
 }
 #feeds-holder[style*=none] ~ .dijitSplitter {
@@ -1071,7 +1076,7 @@ a:hover {
 .cdm.expandable.marked:not(.active) + .cdm,
 .hl.marked,
 .hl.marked + .hl {
-	border-top-color: #bbe1b7;
+	border-top-color: #bbe1b6;
 }
 .cdm.expandable.published:not(.active),
 .cdm.expandable.published:not(.active) + .cdm,
