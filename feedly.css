@@ -1071,21 +1071,23 @@ this hack will not exclude older webkits, but at least non-webkits.
 older webkits will therefore show colored squares and ignore the mask.
 other browsers will fall back to monochrome images. */
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
-	.cdm.expandable.marked img[src*='images/mark_set'],
+	#floatingTitle img[src*='images/mark_set'],
+	.cdm.marked img[src*='images/mark_set'],
 	.hl.marked img[src*='images/mark_set'] {
 		background: #6b5 !important;
 		opacity: 1 !important;
 		-webkit-mask: url("feedly/icons.png") -64px 0/176px 32px;
 		mask: url("feedly/icons.png") -64px 0/176px 32px;
 	}
-	.cdm.expandable.published .pubPic,
+	#floatingTitle img[src*='images/pub_set'],
+	.cdm.published .pubPic,
 	.hl.published .pubPic {
 		background: #e84 !important;
 		opacity: 1 !important;
 		-webkit-mask: url("feedly/icons.png") -80px 0/176px 32px;
 		mask: url("feedly/icons.png") -80px 0/176px 32px;
 	}
-	.cdm.expandable.Selected .rchk,
+	.cdm.Selected .rchk,
 	.hl.Selected .rchk {
 		background: #db0 !important;
 		opacity: 1 !important;
