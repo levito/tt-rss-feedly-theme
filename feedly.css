@@ -1067,10 +1067,8 @@ a:hover {
 	margin-right: 2px;
 }
 /* only Chrome and Safari 7 support -webkit-mask.
-this hack will not exclude older webkits, but at least non-webkits.
-older webkits will therefore show colored squares and ignore the mask.
-other browsers will fall back to monochrome images. */
-@media screen and (-webkit-min-device-pixel-ratio: 0) {
+hack inspired by browserhacks.com */
+@media screen { @media (-webkit-min-device-pixel-ratio: 0) {
 	#floatingTitle img[src*='images/mark_set'],
 	.cdm.marked img[src*='images/mark_set'],
 	.hl.marked img[src*='images/mark_set'] {
@@ -1094,7 +1092,7 @@ other browsers will fall back to monochrome images. */
 		-webkit-mask: url("feedly/icons.png") -160px 0/176px 32px;
 		mask: url("feedly/icons.png") -160px 0/176px 32px;
 	}
-}
+}}
 .cdm.expandable.marked:not(.active),
 .hl.marked {
 	background: #eefae9;
