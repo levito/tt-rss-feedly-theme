@@ -1066,33 +1066,6 @@ a:hover {
 	display: block;
 	margin-right: 2px;
 }
-/* only Chrome and Safari 7 support -webkit-mask.
-hack inspired by browserhacks.com */
-@media screen { @media (-webkit-min-device-pixel-ratio: 0) {
-	#floatingTitle img[src*='images/mark_set'],
-	.cdm.marked img[src*='images/mark_set'],
-	.hl.marked img[src*='images/mark_set'] {
-		background: #6b5 !important;
-		opacity: 1 !important;
-		-webkit-mask: url("feedly/icons.png") -64px 0/176px 32px;
-		mask: url("feedly/icons.png") -64px 0/176px 32px;
-	}
-	#floatingTitle img[src*='images/pub_set'],
-	.cdm.published .pubPic,
-	.hl.published .pubPic {
-		background: #e84 !important;
-		opacity: 1 !important;
-		-webkit-mask: url("feedly/icons.png") -80px 0/176px 32px;
-		mask: url("feedly/icons.png") -80px 0/176px 32px;
-	}
-	.cdm.Selected .rchk,
-	.hl.Selected .rchk {
-		background: #db0 !important;
-		opacity: 1 !important;
-		-webkit-mask: url("feedly/icons.png") -160px 0/176px 32px;
-		mask: url("feedly/icons.png") -160px 0/176px 32px;
-	}
-}}
 .cdm.expandable.marked:not(.active),
 .hl.marked {
 	background: #eefae9;
@@ -1570,7 +1543,7 @@ div.articleNote {
 #ttrssMain img[src*='images/star.png'],
 #ttrssMain img[src*='images/feed.png'],
 #ttrssMain img[src*='images/time.png'],
-#header-wrap .dijitCheckBox,
+#header-wrap .rchk,
 #floatingTitle .anchor {
 	padding-top: 16px;
 	width: 16px;
@@ -1580,11 +1553,11 @@ div.articleNote {
 	opacity: .2;
 	transition: opacity .2s;
 }
-#header-wrap .dijitCheckBox {
+#header-wrap .rchk {
 	padding-top: 0;
 	height: 16px;
 }
-#header-wrap .dijitCheckBox input {
+#header-wrap .rchk input {
 	cursor: pointer;
 }
 #ttrssMain img[src*='images/tag.png'],
@@ -1638,14 +1611,14 @@ div.articleNote {
 }
 #header-wrap img[src*='images/mark_unset']:hover,
 #header-wrap img[src*='images/pub_unset']:hover,
-#header-wrap .dijitCheckBox:hover,
+#header-wrap .rchk:hover,
 #floatingTitle .anchor:hover {
 	opacity: .35;
 
 }
 #header-wrap img[src*='images/mark_set'],
 #header-wrap img[src*='images/pub_set'],
-#header-wrap .dijitCheckBox.dijitCheckBoxChecked,
+#header-wrap .rchk.dijitCheckBoxChecked,
 .hlScorePic {
 	opacity: .7;
 }
@@ -1653,6 +1626,33 @@ div.articleNote {
 	opacity: 1;
 	cursor: pointer;
 }
+/* only Chrome and Safari 7 support -webkit-mask.
+hack inspired by browserhacks.com */
+@media screen { @media (-webkit-min-device-pixel-ratio: 0) {
+	#floatingTitle img[src*='images/mark_set'],
+	#headlines-frame img[src*='images/mark_set'] {
+		background: #6b5;
+		opacity: 1;
+		transition: none;
+		-webkit-mask: url("feedly/icons.png") -64px 0/176px 32px;
+		mask: url("feedly/icons.png") -64px 0/176px 32px;
+	}
+	#floatingTitle img[src*='images/pub_set'],
+	#headlines-frame img[src*='images/pub_set'] {
+		background: #e84;
+		opacity: 1;
+		transition: none;
+		-webkit-mask: url("feedly/icons.png") -80px 0/176px 32px;
+		mask: url("feedly/icons.png") -80px 0/176px 32px;
+	}
+	#headlines-frame .rchk.dijitCheckBoxChecked {
+		background: #db0;
+		opacity: 1;
+		transition: none;
+		-webkit-mask: url("feedly/icons.png") -160px 0/176px 32px;
+		mask: url("feedly/icons.png") -160px 0/176px 32px;
+	}
+}}
 
 /* plugin: article toolbar small */
 .actionChooser .button_nav,
