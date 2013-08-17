@@ -1037,14 +1037,20 @@ a:hover {
 .cdm.expanded .cdmHeader > .scoreWrap > *,
 .cdm.expandable.active .cdmHeader > :first-child > *,
 .cdm.expandable.active .cdmHeader > .scoreWrap > *,
-.cdm.expandable:not(.active) .cdmHeader:hover > :first-child > *,
-.cdm.expandable:not(.active) .cdmHeader:hover > .scoreWrap > *,
+.cdm.expandable:not(.active):hover .cdmHeader > :first-child > *,
+.cdm.expandable:not(.active):hover .cdmHeader > .scoreWrap > *,
 .hl:hover > .hlLeft > *,
-.hl:hover > .hlRight > * {
+.hl:hover > .hlRight > *,
+.cdm.expandable.marked img[src*='images/mark_set'],
+.hl.marked img[src*='images/mark_set'],
+.cdm.expandable.published .pubPic,
+.hl.published .pubPic,
+.cdm.expandable.Selected .rchk,
+.hl.Selected .rchk {
 	display: block;
 }
 #floatingTitle > :first-child > .pubPic,
-.cdm.expandable:not(.active) .cdmHeader:hover > :first-child > .pubPic,
+.cdm.expandable:not(.active):hover .cdmHeader > :first-child > .pubPic,
 .hl:hover > .hlLeft > .pubPic {
 	margin-left: 35px;
 }
@@ -1052,13 +1058,40 @@ a:hover {
 .cdm.expandable:not(.active) .cdmHeader > .scoreWrap > .hlScorePic,
 .hl > .hlRight > .hlScorePic {
 	position: absolute;
-	right: 76px;
+	right: 78px;
 }
 #floatingTitle > .scoreWrap > span,
 .cdm.expandable:not(.active) .cdmHeader > .scoreWrap > span,
 .hl > .hlRight > span {
 	display: block;
 	margin-right: 2px;
+}
+/* only Chrome and Safari 7 support -webkit-mask.
+this hack will not exclude older webkits, but at least non-webkits.
+older webkits will therefore show colored squares and ignore the mask.
+other browsers will fall back to monochrome images. */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+	.cdm.expandable.marked img[src*='images/mark_set'],
+	.hl.marked img[src*='images/mark_set'] {
+		background: #6b5 !important;
+		opacity: 1 !important;
+		-webkit-mask: url("feedly/icons.png") -64px 0/176px 32px;
+		mask: url("feedly/icons.png") -64px 0/176px 32px;
+	}
+	.cdm.expandable.published .pubPic,
+	.hl.published .pubPic {
+		background: #e84 !important;
+		opacity: 1 !important;
+		-webkit-mask: url("feedly/icons.png") -80px 0/176px 32px;
+		mask: url("feedly/icons.png") -80px 0/176px 32px;
+	}
+	.cdm.expandable.Selected .rchk,
+	.hl.Selected .rchk {
+		background: #db0 !important;
+		opacity: 1 !important;
+		-webkit-mask: url("feedly/icons.png") -160px 0/176px 32px;
+		mask: url("feedly/icons.png") -160px 0/176px 32px;
+	}
 }
 .cdm.expandable.marked:not(.active),
 .hl.marked {
@@ -1156,7 +1189,7 @@ a:hover {
 }
 .cdm.expandable.active .cdmHeader .scoreWrap > .hlScorePic,
 .cdm.expanded .cdmHeader .scoreWrap > .hlScorePic {
-	right: 75px;
+	right: 77px;
 }
 .cdm.expandable.active .cdmHeader > :first-child,
 .cdm.expanded .cdmHeader > :first-child {
