@@ -1439,6 +1439,7 @@ div.articleNote {
 .cdmContentInner pre,
 .postContent pre {
 	white-space: pre-wrap;
+	overflow: auto;
 	font-size: 11px;
 	border: 1px solid rgba(0,0,0,.0333);
 	padding: 1em;
