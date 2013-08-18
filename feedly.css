@@ -750,6 +750,7 @@ a:hover {
 #feeds-holder .dijitTreeExpandoLeaf[src*=indicator] ~ .dijitTreeContent:after {
 	content: "";
 	display: inline-block;
+	margin-left: 2px; /* compensate added white-space */
 	vertical-align: middle;
 	background: transparent url("../images/indicator_tiny.gif") 0 0 no-repeat;
 }
@@ -909,9 +910,13 @@ a:hover {
 }
 .cdm.expandable,
 .hl,
+.cdmFeedTitle,
 #headlines-spacer {
 	border-top: 1px solid #eee;
 }
+.cdmFeedTitle:first-child,
+.cdm.expandable.active + .cdmFeedTitle,
+.cdm.expanded + .cdmFeedTitle,
 .cdm.expandable.active + #headlines-spacer,
 .cdm.expanded + #headlines-spacer {
 	border-top: none;
@@ -1079,21 +1084,21 @@ a:hover {
 	background: #fffad4;
 }
 .cdm.expandable.marked:not(.active),
-.cdm.expandable.marked:not(.active) + .cdm,
+.cdm.expandable.marked:not(.active) + *,
 .hl.marked,
-.hl.marked + .hl {
+.hl.marked + * {
 	border-top-color: #bbe1b6;
 }
 .cdm.expandable.published:not(.active),
-.cdm.expandable.published:not(.active) + .cdm,
+.cdm.expandable.published:not(.active) + *,
 .hl.published,
-.hl.published + .hl {
+.hl.published + * {
 	border-top-color: #fcb;
 }
 .cdm.expandable.Selected:not(.active),
-.cdm.expandable.Selected:not(.active) + .cdm,
+.cdm.expandable.Selected:not(.active) + *,
 .hl.Selected,
-.hl.Selected + .hl {
+.hl.Selected + * {
 	border-top-color: #eda;
 }
 
@@ -1304,7 +1309,7 @@ div.articleNote {
 	z-index: 1;
 	width: 100%;
 	height: 100%;
-	opacity: .001;
+	opacity: 0;
 }
 .collapseBtn:before {
 	content: "Collapse article";
@@ -1361,11 +1366,11 @@ div.articleNote {
 }
 .cdmContentInner h1,
 .postContent h1 {
-	font: normal normal bold 24px/28px SansCn;
+	font: normal normal bold 22px/28px SansCn;
 }
 .cdmContentInner h2,
 .postContent h2 {
-	font: normal normal bold 21px/26px SansCn;
+	font: normal normal bold 20px/26px SansCn;
 }
 .cdmContentInner h3,
 .postContent h4 {
@@ -1487,7 +1492,7 @@ div.articleNote {
 }
 .cdmFeedTitle {
 	padding: 56px 0 28px;
-	color: #aaa;
+	color: #fff;
 }
 .cdmFeedTitle:first-child {
 	padding-top: 14px;
@@ -1500,13 +1505,20 @@ div.articleNote {
 }
 .cdmFeedTitle .title {
 	font: normal normal bold 16px/18px SansCn;
-	padding-right: 7px;
+	padding-right: 5px;
+	color: #aaa;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 }
-.cdmFeedTitle .title,
-.cdmFeedTitle a {
-	color: #aaa;
+.cdmFeedTitle .title:hover {
+	text-decoration: underline;
+}
+.cdmFeedTitle .catchup {
+	opacity: 0;
+	transition: opacity .2s;
+}
+.cdmFeedTitle:hover .catchup {
+	opacity: 1;
 }
 .whiteBox {
 	text-align: center;
