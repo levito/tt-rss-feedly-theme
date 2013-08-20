@@ -10,7 +10,7 @@
 		local('Arial Narrow Bold'),                 // Windows, Firefox assumes style/weight in the name and will use this declaration
 		local('Arial Narrow'),                      // Windows, Chrome won't find 'Arial Narrow Bold' and fall back to this declaration
 		local('Liberation Sans Narrow Bold'),       // Same for Linux, Liberation Sans Narrow is a perfect, widely used equivalent
-		local('Liberation Sans Narrow'),            // Fallback for WebKit browsers
+		local('Liberation Sans Narrow'),            // Prefer Liberation over Nimbus which might come as ugly false-condensed
 		url('feedly/fonts/texgyreheroscn-bold-webfont.woff') format('woff'),       // ... if no local font is found, use the webfont
 		url('feedly/fonts/texgyreheroscn-bold-webfont.ttf') format('truetype');    // woff and ttf are enough; we don't support oldIEs
 */
@@ -33,6 +33,7 @@
 		local('Arial Narrow'),
 		local('Liberation Sans Narrow Bold'),
 		local('Liberation Sans Narrow'),
+		local('serif'),
 		url('feedly/fonts/texgyreheroscn-bold-webfont.woff') format('woff'),
 		url('feedly/fonts/texgyreheroscn-bold-webfont.ttf') format('truetype');
 }
@@ -55,6 +56,7 @@
 		local('Arial Narrow'),
 		local('Liberation Sans Narrow Bold Italic'),
 		local('Liberation Sans Narrow'),
+		local('serif'),
 		url('feedly/fonts/texgyreheroscn-bolditalic-webfont.woff') format('woff'),
 		url('feedly/fonts/texgyreheroscn-bolditalic-webfont.ttf') format('truetype');
 }
@@ -398,7 +400,7 @@ select.attachments {
 /* RESET ************************************************************/
 
 html, button, input, select, textarea {
-	font: 12px/1.5 "Helvetica Neue", Arial, Helvetica, "Liberation Sans", sans-serif;
+	font: 12px/1.5 "Helvetica Neue", Arial, Helvetica, "Liberation Sans", "Nimbus Sans L", FreeSans, sans-serif;
 }
 :focus {
 	outline: none;
@@ -803,7 +805,7 @@ a:hover {
 	position: absolute;
 	bottom: -1px;
 	right: 34px;
-	left: 24px;
+	left: 22px;
 	border-top: 1px solid #e5e5e5;
 }
 #headlines-toolbar > * {
@@ -855,14 +857,14 @@ a:hover {
 #headlines-frame {
 	z-index: 3;
 	margin-top: -40px;
-	padding: 0 34px 0 24px;
+	padding: 0 34px 0 22px;
 	background: transparent;
 }
 #headlines-frame:before {
 	content: "";
 	display: block;
 	border-top: 26px solid #fff;
-	margin: 0 -34px 0 -24px;
+	margin: 0 -34px 0 -22px;
 }
 #headlines-spacer {
 	position: relative;
@@ -873,7 +875,7 @@ a:hover {
 	position: absolute;
 	bottom: 0;
 	right: -34px;
-	left: -24px;
+	left: -22px;
 	padding: 50px;
 	background: #ddd;
 	color: #999;
@@ -893,7 +895,7 @@ a:hover {
 	z-index: 4;
 	top: 36px;
 	right: 34px;
-	left: 24px;
+	left: 22px;
 	background: #fff;
 	display: block !important;
 }
@@ -939,7 +941,7 @@ a:hover {
 #floatingTitle > *,
 .cdm.expandable:not(.active) .cdmHeader > *,
 .hl > * {
-	padding: 7px 5px;
+	padding: 7px;
 	/* old flexbox: */
 	display: block;
 	-moz-box-ordinal-group: 3;
@@ -983,7 +985,7 @@ a:hover {
 	flex: 99;
 }
 .cdm.expandable:not(.active) .cdmHeader > .hlFeed {
-	width: 132px;
+	width: 125px;
 	/* old flexbox: */
 	-moz-box-ordinal-group: 2;
 	-webkit-box-ordinal-group: 2;
@@ -1027,7 +1029,7 @@ a:hover {
 .hl > .hlRight > * {
 	display: none;
 	float: right;
-	margin: 0 10px 0 0;
+	margin: 0 7px 0 5px;
 }
 #floatingTitle > :first-child > *,
 #floatingTitle > .scoreWrap > *,
@@ -1056,13 +1058,13 @@ a:hover {
 .cdm.expandable:not(.active) .cdmHeader > .scoreWrap > .hlScorePic,
 .hl > .hlRight > .hlScorePic {
 	position: absolute;
-	right: 78px;
+	right: 84px;
 }
 #floatingTitle > .scoreWrap > span,
 .cdm.expandable:not(.active) .cdmHeader > .scoreWrap > span,
 .hl > .hlRight > span {
 	display: block;
-	margin-right: 2px;
+	margin: 0 0 0 2px;
 }
 .cdm.expandable.marked:not(.active),
 .hl.marked {
@@ -1136,7 +1138,7 @@ a:hover {
 }
 .cdm.expandable.active .cdmHeader .scoreWrap > span,
 .cdm.expanded .cdmHeader .scoreWrap > span {
-	left: 29px;
+	left: 24px;
 }
 .cdm.expandable.active .cdmHeader .hlFeed,
 .cdm.expanded .cdmHeader .hlFeed {
@@ -1144,15 +1146,15 @@ a:hover {
 }
 .cdm.expandable.active .cdmHeader .updated,
 .cdm.expanded .cdmHeader .updated {
-	right: 117px;
+	right: 120px;
 }
 .cdm.expandable.active .cdmHeader .scoreWrap > .hlScorePic,
 .cdm.expanded .cdmHeader .scoreWrap > .hlScorePic {
-	right: 77px;
+	right: 83px;
 }
 .cdm.expandable.active .cdmHeader > :first-child,
 .cdm.expanded .cdmHeader > :first-child {
-	right: 25px;
+	right: 27px;
 }
 
 /* articles - common */
@@ -1199,12 +1201,9 @@ div.articleNote {
 	text-decoration: none;
 }
 #floatingTitle img,
-#floatingTitle input,
 .cdmHeader img,
-.cdmHeader input,
 .cdmFooter img,
 .hl img,
-.hl input,
 .postTags img {
 	vertical-align: middle;
 	margin: 0 0 0 5px;
@@ -1246,7 +1245,7 @@ div.articleNote {
 }
 .postHeader,
 .postContent {
-	padding: 10px 40px 10px 30px;
+	padding: 10px 43px 10px 30px;
 }
 .postHeader {
 	background: #f5f5f5;
@@ -1296,7 +1295,7 @@ div.articleNote {
 	content: "Collapse article";
 	position: absolute;
 	top: 8px;
-	right: 35px;
+	right: 34px;
 	font-size: 11px;
 	color: #fff;
 	transition: all .5s;
@@ -1308,7 +1307,7 @@ div.articleNote {
 	content: "";
 	position: absolute;
 	top: 6px;
-	right: 9px;
+	right: 6px;
 	width: 16px;
 	height: 16px;
 	background: transparent url("feedly/icons.png") -16px -16px no-repeat;
@@ -1455,6 +1454,18 @@ div.articleNote {
 	padding: .31em 1em;
 	border-left: 4px solid rgba(0,0,0,.167);
 	background: rgba(0,0,0,.033);
+}
+.cdmContentInner q :first-child,
+.postContent q :first-child,
+.cdmContentInner blockquote :first-child,
+.postContent blockquote :first-child {
+	margin-top: 0;
+}
+.cdmContentInner q :last-child,
+.postContent q :last-child,
+.cdmContentInner blockquote :last-child,
+.postContent blockquote :last-child {
+	margin-bottom: 0;
 }
 
 /* extras */
