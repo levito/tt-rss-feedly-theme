@@ -651,7 +651,7 @@ a:hover {
 	opacity: .7;
 }
 #feeds-holder #feedTree {
-	padding: 12px 8px 30px 0;
+	padding: 12px 9px 30px 0;
 }
 #feeds-holder .dijitTreeRow {
 	-moz-box-sizing: border-box;
@@ -1097,11 +1097,11 @@ a:hover {
 }
 .cdm.expandable.active .cdmHeader,
 .cdm.expanded .cdmHeader {
-	padding: 54px 34px 0;
+	padding: 54px 33px 0;
 }
 .cdmFooter {
 	clear: both;
-	padding: 0 34px 30px;
+	padding: 0 33px 30px;
 }
 .cdm.expandable.active .cdmHeader .titleWrap,
 .cdm.expanded .cdmHeader > .titleWrap {
@@ -1154,7 +1154,7 @@ a:hover {
 
 /* articles - common */
 div.articleNote {
-	margin: 5px 34px;
+	margin: 5px 33px;
 	border-radius: 0;
 }
 .cdm,
@@ -1236,7 +1236,7 @@ div.articleNote {
 	line-height: 1;
 }
 .cdmContentInner {
-	padding: 10px 34px;
+	padding: 10px 33px;
 }
 .postHeader,
 .postContent {
@@ -1422,8 +1422,9 @@ div.articleNote {
 	white-space: pre-wrap;
 	overflow: auto;
 	font-size: 11px;
+	line-height: 1.333;
 	border: 1px solid rgba(0,0,0,.0333);
-	padding: 1em;
+	padding: .5em;
 	background: rgba(0,0,0,.0333);
 }
 .cdmContentInner code,
@@ -1563,6 +1564,7 @@ div.articleNote {
 }
 #ttrssMain img[src*='images/tag.png'],
 #ttrssMain img[src*='images/folder.png'] {
+	margin-left: 0;
 	background-position: -32px 0;
 }
 #ttrssMain img[src*='images/fresh.png'] {
