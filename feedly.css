@@ -805,7 +805,7 @@ a:hover {
 	position: absolute;
 	bottom: -1px;
 	right: 34px;
-	left: 23px;
+	left: 22px;
 	border-top: 1px solid #e5e5e5;
 }
 #headlines-toolbar > * {
@@ -857,14 +857,14 @@ a:hover {
 #headlines-frame {
 	z-index: 3;
 	margin-top: -40px;
-	padding: 0 34px 0 23px;
+	padding: 0 34px 0 22px;
 	background: transparent;
 }
 #headlines-frame:before {
 	content: "";
 	display: block;
 	border-top: 26px solid #fff;
-	margin: 0 -34px 0 -23px;
+	margin: 0 -34px 0 -22px;
 }
 #headlines-spacer {
 	position: relative;
@@ -875,7 +875,7 @@ a:hover {
 	position: absolute;
 	bottom: 0;
 	right: -34px;
-	left: -23px;
+	left: -22px;
 	padding: 50px;
 	background: #ddd;
 	color: #999;
@@ -895,7 +895,7 @@ a:hover {
 	z-index: 4;
 	top: 36px;
 	right: 34px;
-	left: 23px;
+	left: 22px;
 	background: #fff;
 	display: block !important;
 }
@@ -941,7 +941,7 @@ a:hover {
 #floatingTitle > *,
 .cdm.expandable:not(.active) .cdmHeader > *,
 .hl > * {
-	padding: 7px 6px;
+	padding: 7px;
 	/* old flexbox: */
 	display: block;
 	-moz-box-ordinal-group: 3;
@@ -985,7 +985,7 @@ a:hover {
 	flex: 99;
 }
 .cdm.expandable:not(.active) .cdmHeader > .hlFeed {
-	width: 135px;
+	width: 125px;
 	/* old flexbox: */
 	-moz-box-ordinal-group: 2;
 	-webkit-box-ordinal-group: 2;
@@ -1010,34 +1010,37 @@ a:hover {
 .hl .hlUpdated .hlFeed {
 	display: none !important;
 }
-#headlines-frame .hlFeed,
 #floatingTitle > :first-child,
+#floatingTitle > .scoreWrap,
 .cdm.expandable:not(.active) .cdmHeader > :first-child,
-.hl .hlLeft {
+.cdm.expandable:not(.active) .cdmHeader > .scoreWrap,
+.hl > .hlLeft,
+.hl > .hlRight {
 	padding-left: 0;
 	padding-right: 0;
+	word-spacing: -.31em;
 	line-height: 1;
 }
 #floatingTitle > :first-child > *,
-#floatingTitle .hlScorePic,
+#floatingTitle > .scoreWrap > *,
 .cdm .cdmHeader > :first-child > *,
-.cdm .cdmHeader .hlScorePic,
-.hl .hlLeft > *,
-.hl .hlScorePic {
+.cdm .cdmHeader > .scoreWrap > *,
+.hl > .hlLeft > *,
+.hl > .hlRight > * {
 	display: none;
 	float: right;
-	margin: 0 6px;
+	margin: 0 7px 0 5px;
 }
 #floatingTitle > :first-child > *,
-#floatingTitle .hlScorePic,
+#floatingTitle > .scoreWrap > *,
 .cdm.expanded .cdmHeader > :first-child > *,
-.cdm.expanded .cdmHeader .hlScorePic,
+.cdm.expanded .cdmHeader > .scoreWrap > *,
 .cdm.expandable.active .cdmHeader > :first-child > *,
-.cdm.expandable.active .hlScorePic,
+.cdm.expandable.active .cdmHeader > .scoreWrap > *,
 .cdm.expandable:not(.active):hover .cdmHeader > :first-child > *,
-.cdm.expandable:not(.active):hover .hlScorePic,
+.cdm.expandable:not(.active):hover .cdmHeader > .scoreWrap > *,
 .hl:hover > .hlLeft > *,
-.hl:hover .hlScorePic,
+.hl:hover > .hlRight > *,
 .cdm.expandable.marked img[src*='images/mark_set'],
 .hl.marked img[src*='images/mark_set'],
 .cdm.expandable.published .pubPic,
@@ -1056,6 +1059,12 @@ a:hover {
 .hl > .hlRight > .hlScorePic {
 	position: absolute;
 	right: 84px;
+}
+#floatingTitle > .scoreWrap > span,
+.cdm.expandable:not(.active) .cdmHeader > .scoreWrap > span,
+.hl > .hlRight > span {
+	display: block;
+	margin: 0 0 0 2px;
 }
 .cdm.expandable.marked:not(.active),
 .hl.marked {
@@ -1129,11 +1138,11 @@ a:hover {
 }
 .cdm.expandable.active .cdmHeader .scoreWrap > span,
 .cdm.expanded .cdmHeader .scoreWrap > span {
-	left: 34px;
+	left: 24px;
 }
 .cdm.expandable.active .cdmHeader .hlFeed,
 .cdm.expanded .cdmHeader .hlFeed {
-	left: 56px;
+	left: 57px;
 }
 .cdm.expandable.active .cdmHeader .updated,
 .cdm.expanded .cdmHeader .updated {
@@ -1198,9 +1207,6 @@ div.articleNote {
 .postTags img {
 	vertical-align: middle;
 	margin: 0 0 0 5px;
-}
-#ttrssMain .tinyFeedIcon {
-	margin: 0;
 }
 #floatingTitle > div,
 #floatingTitle .updated,
