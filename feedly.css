@@ -485,7 +485,7 @@ a:hover {
 #toolbar {
 	position: relative !important;
 	z-index: 3;
-	padding-right: 27px;
+	padding-right: 34px;
 	height: 0;
 	overflow: visible;
 }
@@ -791,7 +791,7 @@ a:hover {
 #headlines-toolbar {
 	z-index: 3;
 	overflow: visible;
-	padding: 15px 30px 0;
+	padding: 15px 32px 0;
 	width: auto !important;
 	min-height: 25px;
 	text-align: right;
@@ -805,7 +805,7 @@ a:hover {
 	position: absolute;
 	bottom: -1px;
 	right: 34px;
-	left: 24px;
+	left: 26px;
 	border-top: 1px solid #e5e5e5;
 }
 #headlines-toolbar > * {
@@ -857,14 +857,14 @@ a:hover {
 #headlines-frame {
 	z-index: 3;
 	margin-top: -40px;
-	padding: 0 34px 0 24px;
+	padding: 0 34px 0 26px;
 	background: transparent;
 }
 #headlines-frame:before {
 	content: "";
 	display: block;
 	border-top: 26px solid #fff;
-	margin: 0 -34px 0 -24px;
+	margin: 0 -34px 0 -26px;
 }
 #headlines-spacer {
 	position: relative;
@@ -875,7 +875,7 @@ a:hover {
 	position: absolute;
 	bottom: 0;
 	right: -34px;
-	left: -24px;
+	left: -26px;
 	padding: 50px;
 	background: #ddd;
 	color: #999;
@@ -895,7 +895,7 @@ a:hover {
 	z-index: 4;
 	top: 36px;
 	right: 34px;
-	left: 24px;
+	left: 26px;
 	background: #fff;
 	display: block !important;
 }
@@ -1141,7 +1141,7 @@ a:hover {
 }
 .cdm.expandable.active .cdmHeader .updated,
 .cdm.expanded .cdmHeader .updated {
-	right: 120px;
+	right: 118px;
 }
 .cdm.expandable.active .cdmHeader .scoreWrap > .hlScorePic,
 .cdm.expanded .cdmHeader .scoreWrap > .hlScorePic {
@@ -1240,7 +1240,7 @@ div.articleNote {
 }
 .postHeader,
 .postContent {
-	padding: 10px 43px 10px 30px;
+	padding: 10px 40px 10px 32px;
 }
 .postHeader {
 	background: #f5f5f5;
@@ -1274,7 +1274,7 @@ div.articleNote {
 	top: 0;
 	right: 0;
 	left: 0;
-	height: 27px;
+	height: 26px;
 	line-height: 1;
 	background: #fff;
 	transition: all .5s;
@@ -1284,12 +1284,13 @@ div.articleNote {
 	z-index: 1;
 	width: 100%;
 	height: 100%;
+	margin: 0;
 	opacity: 0;
 }
 .collapseBtn:before {
 	content: "Collapse article";
 	position: absolute;
-	top: 8px;
+	top: 7px;
 	right: 34px;
 	font-size: 11px;
 	color: #fff;
@@ -1301,8 +1302,8 @@ div.articleNote {
 .collapseBtn:after {
 	content: "";
 	position: absolute;
-	top: 6px;
-	right: 6px;
+	top: 5px;
+	right: 5px;
 	width: 16px;
 	height: 16px;
 	background: transparent url("feedly/icons.png") -16px -16px no-repeat;
