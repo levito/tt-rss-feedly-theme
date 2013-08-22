@@ -1053,13 +1053,13 @@ a:hover {
 #floatingTitle > :first-child > .pubPic,
 .cdm.expandable:not(.active):hover .cdmHeader > :first-child > .pubPic,
 .hl:hover > .hlLeft > .pubPic {
-	margin-left: 35px;
+	margin-left: 33px;
 }
 #floatingTitle > .scoreWrap > .hlScorePic,
 .cdm.expandable:not(.active) .cdmHeader > .scoreWrap > .hlScorePic,
 .hl > .hlRight > .hlScorePic {
 	position: absolute;
-	right: 84px;
+	right: 83px;
 }
 .cdm.expandable.marked:not(.active),
 .hl.marked {
@@ -1097,11 +1097,11 @@ a:hover {
 }
 .cdm.expandable.active .cdmHeader,
 .cdm.expanded .cdmHeader {
-	padding: 54px 33px 0;
+	padding: 53px 33px 0;
 }
 .cdmFooter {
 	clear: both;
-	padding: 0 33px 30px;
+	padding: 0 33px 33px;
 }
 .cdm.expandable.active .cdmHeader .titleWrap,
 .cdm.expanded .cdmHeader > .titleWrap {
@@ -1129,23 +1129,23 @@ a:hover {
 .cdm.expanded .cdmHeader .updated,
 .cdm.expanded .cdmHeader .scoreWrap > * {
 	position: absolute;
-	top: 34px;
+	top: 33px;
 }
 .cdm.expandable.active .cdmHeader .scoreWrap > span,
 .cdm.expanded .cdmHeader .scoreWrap > span {
-	left: 28px;
+	left: 27px;
 }
 .cdm.expandable.active .cdmHeader .hlFeed,
 .cdm.expanded .cdmHeader .hlFeed {
-	left: 56px;
+	left: 55px;
 }
 .cdm.expandable.active .cdmHeader .updated,
 .cdm.expanded .cdmHeader .updated {
-	right: 118px;
+	right: 116px;
 }
 .cdm.expandable.active .cdmHeader .scoreWrap > .hlScorePic,
 .cdm.expanded .cdmHeader .scoreWrap > .hlScorePic {
-	right: 83px;
+	right: 82px;
 }
 .cdm.expandable.active .cdmHeader > :first-child,
 .cdm.expanded .cdmHeader > :first-child {
