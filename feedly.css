@@ -1051,7 +1051,8 @@ a:hover {
 .hl.published .pubPic,
 .cdm.expandable.Selected .rchk,
 .hl.Selected .rchk {
-	display: block;
+	display: inline-block;
+	vertical-align: middle;
 }
 #floatingTitle > :first-child > .pubPic,
 .cdm.expandable:not(.active):hover .cdmHeader > :first-child > .pubPic,
@@ -1262,10 +1263,11 @@ div.articleNote {
 }
 .postHeader .postTags {
 	margin-top: -1px;
+	text-align: right;
 }
 .postHeader .postDate {
 	float: right;
-	padding: 1px 0;
+	padding: 1px 0 1px 10px;
 	white-space: nowrap;
 }
 .postTags > * {
