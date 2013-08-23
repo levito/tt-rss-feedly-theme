@@ -495,6 +495,7 @@ a:hover {
 	padding: 15px 0 0;
 	width: auto;
 	height: 25px;
+	background: #fff;
 }
 #ttrssMain #main {
 	padding: 0 0 0 30px;
@@ -1683,7 +1684,7 @@ hack inspired by browserhacks.com */
 	line-height: normal;
 	text-align: center;
 	font-weight: bold;
-	background: #eee;
+	background: #e9e9e9;
 	color: #666;
 	border: 1px solid #d8d8d8;
 	border-radius: 2px;
@@ -1691,7 +1692,7 @@ hack inspired by browserhacks.com */
 	transition: all .2s;
 }
 .cdmContentInner .expandPrompt:hover {
-	background: #e5e5e5;
+	background: #e1e1e1;
 	color: #222;
 	border-color: #d4d4d4;
 }
