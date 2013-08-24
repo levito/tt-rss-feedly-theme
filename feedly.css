@@ -492,9 +492,9 @@ a:hover {
 #main-toolbar {
 	float: right;
 	border: none;
-	padding: 15px 0 0;
+	padding: 12px 0 0;
 	width: auto;
-	height: 25px;
+	height: 32px;
 	background: #fff;
 }
 #ttrssMain #main {
@@ -508,9 +508,6 @@ a:hover {
 #feeds-holder,
 #main #headlines-wrap-inner .dijitSplitter {
 	background: #eee;
-}
-#main #headlines-wrap-inner .dijitSplitterV {
-	margin-top: 1px;
 }
 #main .dijitSplitterHover,
 #main .dijitSplitterActive {
@@ -633,8 +630,8 @@ a:hover {
 }
 #ttrssMain #main_toolbar_form > .dijitButton .dijitButtonContents {
 	position: absolute;
-	top: 43px;
-	left: 8px;
+	top: 84px;
+	left: 7px;
 	padding: 0;
 	width: 16px;
 	height: 16px;
@@ -654,6 +651,23 @@ a:hover {
 #feeds-holder #feedTree {
 	padding: 0 9px 30px 0;
 }
+
+/* don't react on clicks between rows */
+#feeds-holder #feedTree:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+#feeds-holder .dijitTreeNode .dijitTreeNode .dijitTreeRow,
+#feeds-holder .dijitTreeNode .dijitTreeNode .dijitTreeRow * {
+	position: relative;
+	z-index: 1;
+	cursor: pointer;
+}
+
 #feeds-holder .dijitTreeRow {
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -665,10 +679,6 @@ a:hover {
 	background: transparent;
 	color: #666;
 	transition: color .2s;
-}
-#feeds-holder .dijitTreeRow,
-#feeds-holder .dijitTreeRow * {
-	cursor: pointer;
 }
 #feeds-holder .dijitTreeRow:hover,
 #feeds-holder .dijitTreeRowSelected {
@@ -763,6 +773,8 @@ a:hover {
 
 #feeds-holder #dijit__TreeNode_1 > .dijitTreeRow {
 	display: table;
+	margin: 0 0 33px;
+	padding: 0 6px;
 }
 #feeds-holder #dijit__TreeNode_1 > .dijitTreeRowSelected {
 	background: transparent;
@@ -777,7 +789,7 @@ a:hover {
 #feeds-holder #dijit__TreeNode_1 > .dijitTreeRow .dijitTreeContent {
 	display: table-cell;
 	width: 50%;
-	padding: 12px 0 6px;
+	padding: 13px 0;
 	border-bottom: 1px solid #a1a1a1;
 	text-align: center;
 	font-weight: bold;
@@ -816,15 +828,15 @@ a:hover {
 	top: 0 !important;
 }
 #headlines-wrap-inner {
-	padding-top: 40px;
+	padding-top: 45px;
 	background: #fff;
 }
 #headlines-toolbar {
 	z-index: 3;
 	overflow: visible;
-	padding: 15px 32px 0;
+	padding: 12px 32px 0;
 	width: auto !important;
-	min-height: 25px;
+	min-height: 32px;
 	text-align: right;
 	color: #fff;
 	cursor: default;
@@ -837,7 +849,7 @@ a:hover {
 	bottom: -1px;
 	right: 34px;
 	left: 26px;
-	border-top: 1px solid #e5e5e5;
+	border-top: 1px solid #eee;
 }
 #headlines-toolbar > * {
 	font-size: 12px;
@@ -870,10 +882,9 @@ a:hover {
 }
 #feed_title,
 #feed_title a {
+	font-size: 13px;
+	font-weight: bold;
 	color: #444;
-	font: normal normal bold 16px/18px SansCn;
-	text-rendering: optimizeLegibility;
-	-webkit-font-smoothing: antialiased;
 }
 #selected_prompt {
 	float: right;
@@ -883,18 +894,19 @@ a:hover {
 }
 #content-insert {
 	z-index: 3;
-	border-top: 1px solid #e5e5e5 !important;
+	margin-top: -1px;
+	border-top: 1px solid #eee !important;
 }
 #headlines-frame {
 	z-index: 3;
-	margin-top: -40px;
+	margin-top: -45px;
 	padding: 0 34px 0 26px;
 	background: transparent;
 }
 #headlines-frame:before {
 	content: "";
 	display: block;
-	border-top: 26px solid #fff;
+	border-top: 31px solid #fff;
 	margin: 0 -34px 0 -26px;
 }
 #headlines-spacer {
@@ -927,7 +939,7 @@ a:hover {
 #floatingTitle {
 	position: absolute;
 	z-index: 4;
-	top: 36px;
+	top: 45px;
 	right: 34px;
 	left: 26px;
 	background: #fff;
@@ -936,13 +948,20 @@ a:hover {
 #floatingTitle .title {
 	color: inherit;
 }
+#floatingTitle .title:before,
 #floatingTitle .title:after {
 	content: "";
 	position: absolute;
-	bottom: -1px;
 	left: 0;
 	right: 0;
-	border-bottom: 1px solid #d4d4d4;
+	border-top: 1px solid #d4d4d4;
+}
+#floatingTitle .title:before {
+	top: -1px;
+	border-color: #eee;
+}
+#floatingTitle .title:after {
+	bottom: -1px;
 }
 .cdm.expandable,
 .hl {
