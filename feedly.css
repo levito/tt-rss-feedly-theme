@@ -805,10 +805,10 @@ a:hover {
 	border-color: #a1a1a1;
 }
 #feeds-holder #dijit__TreeNode_1 > .dijitTreeRow .dijitTreeExpandoOpened + .dijitExpandoText:after {
-	content: " Close";
+	content: " Collapse";
 }
 #feeds-holder #dijit__TreeNode_1 > .dijitTreeRow .dijitTreeExpandoClosed + .dijitExpandoText:after {
-	content: " Open";
+	content: " Expand";
 }
 
 #feeds-holder #dijit__TreeNode_1 > .dijitTreeContainer {
