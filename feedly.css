@@ -811,8 +811,8 @@ a:hover {
 	content: " Expand";
 }
 
-#feeds-holder #dijit__TreeNode_1 > .dijitTreeContainer {
-	padding-bottom: 26px;
+#feeds-holder #dijit__TreeNode_1 .dijitTreeIsLast {
+	margin-bottom: 26px;
 }
 #feeds-holder #dijit__TreeNode_1 .counterNode + .dijitInline {
 	padding: 0 !important;
@@ -942,8 +942,7 @@ a:hover {
 	top: 45px;
 	right: 34px;
 	left: 26px;
-	background: #fff;
-	display: block !important;
+	background: rgba(255,255,255,.933);
 }
 #floatingTitle .title {
 	color: inherit;
