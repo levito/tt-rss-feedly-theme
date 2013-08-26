@@ -630,7 +630,7 @@ a:hover {
 }
 #ttrssMain #main_toolbar_form > .dijitButton .dijitButtonContents {
 	position: absolute;
-	top: 84px;
+	top: 83px;
 	left: 7px;
 	padding: 0;
 	width: 16px;
@@ -913,7 +913,7 @@ a:hover {
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	position: relative;
-	padding-top: 12px;
+	padding-top: 42px;
 	height: 100%;
 	text-align: center;
 }

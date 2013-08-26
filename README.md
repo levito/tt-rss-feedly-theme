@@ -7,10 +7,14 @@ For the best experience, use a current browser. IE9 and older versions are not s
 
 This theme is tested in Chrome on a regular basis and has proved to work fine in IE10 and recent versions of Safari, Firefox and Opera (15+) as well.
 
-![expandable](https://raw.github.com/levito/tt-rss-feedly-theme/master/feedly-screenshots/feedly-expandable.png)
+![expandable](https://raw.github.com/levito/tt-rss-feedly-theme/master/feedly-screenshots/feedly-expandable.png?130826)
 
-![expanded](https://raw.github.com/levito/tt-rss-feedly-theme/master/feedly-screenshots/feedly-expanded.png)
+![expanded](https://raw.github.com/levito/tt-rss-feedly-theme/master/feedly-screenshots/feedly-expanded.png?130826)
 
-![traditional, wide, hidden sidebar](https://raw.github.com/levito/tt-rss-feedly-theme/master/feedly-screenshots/feedly-traditional.png)
+![traditional](https://raw.github.com/levito/tt-rss-feedly-theme/master/feedly-screenshots/feedly-traditional.png?130826)
+
+![traditional, wide, hidden sidebar](https://raw.github.com/levito/tt-rss-feedly-theme/master/feedly-screenshots/feedly-traditional-widescreen.png?130826)
+
+![preferences + layer](https://raw.github.com/levito/tt-rss-feedly-theme/master/feedly-screenshots/feedly-prefs-layer.png?130826)
 
 Licensed under the WTFPL
