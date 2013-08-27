@@ -947,19 +947,19 @@ a:hover {
 #floatingTitle .title {
 	color: inherit;
 }
-#floatingTitle .title:before,
-#floatingTitle .title:after {
+#floatingTitle .titleWrap:before,
+#floatingTitle .titleWrap:after {
 	content: "";
 	position: absolute;
 	left: 0;
 	right: 0;
 	border-top: 1px solid #d4d4d4;
 }
-#floatingTitle .title:before {
+#floatingTitle .titleWrap:before {
 	top: -1px;
 	border-color: #eee;
 }
-#floatingTitle .title:after {
+#floatingTitle .titleWrap:after {
 	bottom: -1px;
 }
 .cdm.expandable,
