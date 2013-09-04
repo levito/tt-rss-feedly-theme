@@ -33,7 +33,6 @@
 		local('Arial Narrow'),
 		local('Liberation Sans Narrow Bold'),
 		local('Liberation Sans Narrow'),
-		local('serif'),
 		url('feedly/fonts/texgyreheroscn-bold-webfont.woff') format('woff'),
 		url('feedly/fonts/texgyreheroscn-bold-webfont.ttf') format('truetype');
 }
@@ -56,7 +55,6 @@
 		local('Arial Narrow'),
 		local('Liberation Sans Narrow Bold Italic'),
 		local('Liberation Sans Narrow'),
-		local('serif'),
 		url('feedly/fonts/texgyreheroscn-bolditalic-webfont.woff') format('woff'),
 		url('feedly/fonts/texgyreheroscn-bolditalic-webfont.ttf') format('truetype');
 }
@@ -1714,6 +1712,8 @@ hack inspired by browserhacks.com */
 /* plugin: article toolbar small */
 .actionChooser .button_nav,
 .actionChooser .button_nav:hover {
+	position: relative;
+	left: 5px;
 	border: none;
 	padding: 0;
 	background: transparent !important;
