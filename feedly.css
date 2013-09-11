@@ -1709,6 +1709,51 @@ hack inspired by browserhacks.com */
 	}
 }}
 
+/* standard button styling applied to various elements */
+#ttrssPrefs #header a,
+.cdmContentInner .expandPrompt {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 2px 8px;
+	font-size: 12px;
+	line-height: normal;
+	text-align: center;
+	background: #e9e9e9;
+	color: #666;
+	border: 1px solid #d8d8d8;
+	border-radius: 2px;
+	cursor: pointer;
+	transition: all .2s;
+	text-decoration: none;
+}
+#ttrssPrefs #header a:hover,
+.cdmContentInner .expandPrompt:hover {
+	background: #e1e1e1;
+	color: #222;
+	border-color: #d4d4d4;
+}
+#ttrssPrefs #header a:hover:active,
+.cdmContentInner .expandPrompt:hover:active {
+	background: #ddd;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.1);
+	transition: none;
+}
+
+
+/* plugin: shorten expanded */
+.cdmContentInner .expandPrompt {
+	width: 100%;
+	padding: 5px 0 6px;
+	font-weight: bold;
+}
+.cdmContentInner > .contentSizeWrapper {
+	margin: 0 -10px;
+	padding: 0 10px;
+	border-bottom: 1px solid #ddd;
+	height: auto;
+	height: 600px;
+}
+
 /* plugin: article toolbar small */
 .actionChooser .button_nav,
 .actionChooser .button_nav:hover {
@@ -1720,41 +1765,6 @@ hack inspired by browserhacks.com */
 	opacity: 1;
 	vertical-align: middle;
 	cursor: pointer;
-}
-
-/* plugin: shorten expanded */
-.cdmContentInner .expandPrompt {
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-	padding: 5px 0 6px;
-	width: 100%;
-	font-size: 12px;
-	line-height: normal;
-	text-align: center;
-	font-weight: bold;
-	background: #e9e9e9;
-	color: #666;
-	border: 1px solid #d8d8d8;
-	border-radius: 2px;
-	cursor: pointer;
-	transition: all .2s;
-}
-.cdmContentInner .expandPrompt:hover {
-	background: #e1e1e1;
-	color: #222;
-	border-color: #d4d4d4;
-}
-.cdmContentInner .expandPrompt:active {
-	background: #ddd;
-	box-shadow: inset 0 1px 1px rgba(0,0,0,.1);
-	transition: none;
-}
-.cdmContentInner > .contentSizeWrapper {
-	margin: 0 -10px;
-	padding: 0 10px;
-	border-bottom: 1px solid #ddd;
-	height: auto;
-	height: 600px;
 }
 
 
@@ -1851,7 +1861,7 @@ table.prefErrorLog td.filename, table.prefErrorLog td.login, table.prefErrorLog 
 	position: relative;
 	z-index: 3;
 	float: right;
-	padding: 12px 10px 0;
+	padding: 15px 10px 5px;
 }
 #ttrssPrefs #pref-tabs {
 	padding: 5px 10px 0;
