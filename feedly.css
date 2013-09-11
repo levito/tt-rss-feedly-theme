@@ -1849,7 +1849,7 @@ table.prefErrorLog td.filename, table.prefErrorLog td.login, table.prefErrorLog 
 
 #ttrssPrefs #header {
 	position: relative;
-	z-index: 1;
+	z-index: 3;
 	float: right;
 	padding: 12px 10px 0;
 }
