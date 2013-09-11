@@ -1866,6 +1866,17 @@ table.prefErrorLog td.filename, table.prefErrorLog td.login, table.prefErrorLog 
 #ttrssPrefs #pref-tabs {
 	padding: 5px 10px 0;
 }
+#ttrssPrefs #pref-tabs_tablist {
+	padding-right: 150px;
+}
+#ttrssPrefs #pref-tabs_tablist:after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 150px;
+	border-top: 1px solid #d8d8d8;
+}
 #ttrssPrefs #footer {
 	padding: 0 10px 5px;
 	text-align: center;
