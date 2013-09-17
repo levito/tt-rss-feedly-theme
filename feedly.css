@@ -970,15 +970,15 @@ a:hover {
 .cdm.expandable:not(.active) .cdmHeader,
 .hl {
 	/* old flexbox: */
-	display: -moz-box !important;
-	display: -webkit-box !important;
-	display: -ms-flexbox !important;
+	display: -moz-box;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	-moz-box-align: start;
 	-webkit-box-align: start;
 	-ms-flex-align: flex-start;
 	/* new flexbox: */
-	display: -webkit-flex !important;
-	display: flex !important;
+	display: -webkit-flex;
+	display: flex;
 	-webkit-align-items: flex-start;
 	align-items: flex-start;
 }
