@@ -675,16 +675,12 @@ a:hover {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	background: transparent;
-	color: #666;
+	color: #909090;
 	transition: color .2s;
 }
-#feeds-holder .dijitTreeRow:hover,
 #feeds-holder .dijitTreeRowSelected {
-	color: #000;
+	color: #222;
 	transition: none;
-}
-#feeds-holder .dijitTreeRowSelected {
-	background: rgba(0,0,0,.05);
 }
 #feeds-holder .dijitTreeLabel.Unread {
 	font-weight: bold;
@@ -711,7 +707,7 @@ a:hover {
 	font-size: 10px;
 }
 #feeds-holder .dijitTreeRow .counterNode.aux {
-	color: #aaa;
+	color: #b2b2b2;
 }
 #feeds-holder img.feedIcon,
 #feeds-holder .labelColorIndicator {
@@ -725,20 +721,9 @@ a:hover {
 	background-image: url("feedly/icons.png");
 	background-size: 176px 32px;
 	opacity: .2;
-	transition: opacity .2s;
-}
-#feeds-holder .dijitTreeRowSelected img[src*=images],
-#feeds-holder .dijitTreeRow:hover img[src*=images] {
-	opacity: .3;
-	transition: none;
-}
-#feeds-holder .dijitTreeRowSelected .dijitTreeExpando,
-#feeds-holder .dijitTreeRow:hover .dijitTreeExpando {
-	opacity: .35;
-	transition: none;
 }
 #feeds-holder .dijitTreeRow .dijitTreeExpando:hover {
-	opacity: .7;
+	opacity: .35;
 }
 #feeds-holder .dijitTreeExpandoClosed {
 	background-position: 0 0;
@@ -791,7 +776,7 @@ a:hover {
 	border-bottom: 1px solid #a1a1a1;
 	text-align: center;
 	font-weight: bold;
-	color: #666;
+	color: #909090;
 }
 #feeds-holder #dijit__TreeNode_1 > .dijitTreeRowSelected .dijitExpandoText,
 #feeds-holder #dijit__TreeNode_1 > .dijitTreeRow .dijitTreeContent {
