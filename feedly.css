@@ -925,7 +925,7 @@ a:hover {
 	top: 45px;
 	right: 34px;
 	left: 26px;
-	background: rgba(255,255,255,.933);
+	background: #fff;
 }
 #floatingTitle .title {
 	color: inherit;
