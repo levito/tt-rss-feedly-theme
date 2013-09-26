@@ -908,7 +908,7 @@ a:hover {
 	left: -26px;
 	padding: 50px;
 	background: #ddd;
-	color: #999;
+	color: #909090;
 	text-shadow: 0 1px 1px #fff;
 	font-size: 18px;
 	letter-spacing: 1px;
@@ -1130,6 +1130,7 @@ a:hover {
 .cdm.expanded {
 	border: 1px solid #eee;
 	margin-bottom: 17px;
+	overflow: hidden;
 }
 .cdm.expandable.active .cdmHeader,
 .cdm.expanded .cdmHeader {
@@ -1219,7 +1220,7 @@ div.articleNote {
 .hl,
 .hl a,
 .hl.Unread .contentPreview {
-	color: #999;
+	color: #909090;
 }
 #floatingTitle.Unread .title,
 .cdm.Unread .title,
@@ -1272,7 +1273,8 @@ div.articleNote {
 	line-height: 1;
 }
 .cdmContentInner {
-	padding: 10px 33px;
+	margin: -200px 0 0;
+	padding: 210px 33px 10px;
 }
 .postHeader,
 .postContent {
@@ -1282,7 +1284,7 @@ div.articleNote {
 	background: #f5f5f5;
 	border-bottom: 1px solid #eee;
 	font-size: 11px;
-	color: #999;
+	color: #909090;
 }
 .postHeader:after {
 	content: " ";
@@ -1313,7 +1315,7 @@ div.articleNote {
 	left: 0;
 	height: 26px;
 	line-height: 1;
-	background: #fff;
+	background: rgba(255,255,255,0);
 	transition: all .5s;
 }
 .collapseBtn img {
@@ -1334,7 +1336,7 @@ div.articleNote {
 	transition: all .5s;
 }
 .collapseBtn:hover:before {
-	color: #999;
+	color: #909090;
 }
 .collapseBtn:after {
 	content: "";
@@ -1887,7 +1889,7 @@ table.prefErrorLog td.filename, table.prefErrorLog td.login, table.prefErrorLog 
 #ttrssPrefs .labelParam,
 #ttrssPrefs .prefHelp {
 	font-size: 11px;
-	color: #999;
+	color: #909090;
 }
 #ttrssPrefs .feedParam,
 #ttrssPrefs .labelParam {
