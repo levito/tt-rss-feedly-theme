@@ -754,22 +754,22 @@ a:hover {
 	display: none;
 }
 
-#feeds-holder #dijit__TreeNode_1 > .dijitTreeRow {
+#feeds-holder #feedTree > .dijitTreeNode > .dijitTreeContainer > .dijitTreeNode:first-child > .dijitTreeRow {
 	display: table;
 	margin: 0 0 33px;
 	padding: 0 6px;
 }
-#feeds-holder #dijit__TreeNode_1 > .dijitTreeRowSelected {
+#feeds-holder #feedTree > .dijitTreeNode > .dijitTreeContainer > .dijitTreeNode:first-child > .dijitTreeRowSelected {
 	background: transparent;
 }
-#feeds-holder #dijit__TreeNode_1 > .dijitTreeRow .dijitTreeExpando {
+#feeds-holder #feedTree > .dijitTreeNode > .dijitTreeContainer > .dijitTreeNode:first-child > .dijitTreeRow .dijitTreeExpando {
 	display: none;
 }
-#feeds-holder #dijit__TreeNode_1 > .dijitTreeRow .loadingNode {
+#feeds-holder #feedTree > .dijitTreeNode > .dijitTreeContainer > .dijitTreeNode:first-child > .dijitTreeRow .loadingNode {
 	margin-right: -20px;
 }
-#feeds-holder #dijit__TreeNode_1 > .dijitTreeRow .dijitExpandoText,
-#feeds-holder #dijit__TreeNode_1 > .dijitTreeRow .dijitTreeContent {
+#feeds-holder #feedTree > .dijitTreeNode > .dijitTreeContainer > .dijitTreeNode:first-child > .dijitTreeRow .dijitExpandoText,
+#feeds-holder #feedTree > .dijitTreeNode > .dijitTreeContainer > .dijitTreeNode:first-child > .dijitTreeRow .dijitTreeContent {
 	display: table-cell;
 	width: 50%;
 	padding: 13px 0;
@@ -778,29 +778,29 @@ a:hover {
 	font-weight: bold;
 	color: #909090;
 }
-#feeds-holder #dijit__TreeNode_1 > .dijitTreeRowSelected .dijitExpandoText,
-#feeds-holder #dijit__TreeNode_1 > .dijitTreeRow .dijitTreeContent {
+#feeds-holder #feedTree > .dijitTreeNode > .dijitTreeContainer > .dijitTreeNode:first-child > .dijitTreeRowSelected .dijitExpandoText,
+#feeds-holder #feedTree > .dijitTreeNode > .dijitTreeContainer > .dijitTreeNode:first-child > .dijitTreeRow .dijitTreeContent {
 	font-weight: normal;
 	border-color: #d4d4d4;
 }
-#feeds-holder #dijit__TreeNode_1 > .dijitTreeRowSelected .dijitTreeContent {
+#feeds-holder #feedTree > .dijitTreeNode > .dijitTreeContainer > .dijitTreeNode:first-child > .dijitTreeRowSelected .dijitTreeContent {
 	font-weight: bold;
 	border-color: #a1a1a1;
 }
-#feeds-holder #dijit__TreeNode_1 > .dijitTreeRow .dijitTreeExpandoOpened + .dijitExpandoText:after {
+#feeds-holder #feedTree > .dijitTreeNode > .dijitTreeContainer > .dijitTreeNode:first-child > .dijitTreeRow .dijitTreeExpandoOpened + .dijitExpandoText:after {
 	content: " Collapse";
 }
-#feeds-holder #dijit__TreeNode_1 > .dijitTreeRow .dijitTreeExpandoClosed + .dijitExpandoText:after {
+#feeds-holder #feedTree > .dijitTreeNode > .dijitTreeContainer > .dijitTreeNode:first-child > .dijitTreeRow .dijitTreeExpandoClosed + .dijitExpandoText:after {
 	content: " Expand";
 }
 
-#feeds-holder #dijit__TreeNode_1 .dijitTreeIsLast {
+#feeds-holder #feedTree > .dijitTreeNode > .dijitTreeContainer > .dijitTreeNode:first-child .dijitTreeIsLast {
 	margin-bottom: 26px;
 }
-#feeds-holder #dijit__TreeNode_1 .counterNode + .dijitInline {
+#feeds-holder #feedTree > .dijitTreeNode > .dijitTreeContainer > .dijitTreeNode:first-child .counterNode + .dijitInline {
 	padding: 0 !important;
 }
-#feeds-holder #dijit__TreeNode_1 .feedIcon {
+#feeds-holder #feedTree > .dijitTreeNode > .dijitTreeContainer > .dijitTreeNode:first-child .feedIcon {
 	margin: 0 6px 0 -2px;
 }
 
