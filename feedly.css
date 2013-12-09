@@ -483,16 +483,16 @@ a:hover {
 #toolbar {
 	position: relative !important;
 	z-index: 3;
+	overflow: visible;
 	padding-right: 34px;
 	height: 0;
-	overflow: visible;
 }
 #main-toolbar {
 	float: right;
-	border: none;
 	padding: 12px 0 0;
 	width: auto;
 	height: 32px;
+	border: none;
 	background: #fff;
 }
 #ttrssMain #main {
@@ -521,8 +521,8 @@ a:hover {
 #main #content-wrap .dijitArrowButton {
 	border-color: transparent;
 	background-color: transparent;
-	color: #b2b2b2;
 	box-shadow: none;
+	color: #b2b2b2;
 	transition: color .2s;
 }
 #main #content-wrap .dijitSelectHover .dijitButtonContents,
@@ -546,17 +546,17 @@ a:hover {
 
 #overlay {
 	position: absolute;
-	z-index: 100;
 	top: 0;
 	left: 0;
+	z-index: 100;
 	width: 100%;
 	height: 100%;
-	text-align: center;
 	background: #fff;
+	text-align: center;
 }
 #overlay:before {
-	content: "";
 	height: 90%;
+	content: "";
 }
 #overlay:before,
 #overlay_inner {
@@ -594,14 +594,14 @@ a:hover {
 	width: 13px;
 	height: 13px;
 	border: 1px solid rgba(0,0,0,.1);
+	text-align: center;
 	font-size: 10px;
 	line-height: 1;
-	text-align: center;
 }
 .hlLabelRef {
 	margin-right: 5px;
-	border: 1px solid rgba(0,0,0,.067);
 	padding: 0 4px;
+	border: 1px solid rgba(0,0,0,.067);
 	font-size: 9px;
 	line-height: 1;
 }
@@ -616,12 +616,12 @@ a:hover {
 #ttrssMain #main_toolbar_form > .dijitButton .dijitButtonNode {
 	position: fixed;
 	top: 0;
-	left: 0;
 	bottom: 0;
-	width: 30px;
+	left: 0;
 	padding: 0;
-	border-radius: 0;
+	width: 30px;
 	border: 0;
+	border-radius: 0;
 	background: transparent;
 	box-shadow: none;
 	transition: background .5s;
@@ -630,13 +630,13 @@ a:hover {
 	position: absolute;
 	top: 83px;
 	left: 7px;
+	overflow: hidden;
 	padding: 0;
 	width: 16px;
 	height: 16px;
-	overflow: hidden;
-	text-indent: 101%;
 	background: transparent url("feedly/icons.png") 0 -16px no-repeat;
 	background-size: 176px 32px;
+	text-indent: 101%;
 	opacity: .2;
 	transition: opacity .2s;
 }
@@ -652,12 +652,12 @@ a:hover {
 
 /* don't react on clicks between rows */
 #feeds-holder #feedTree:after {
-	content: "";
 	position: absolute;
 	top: 0;
 	right: 0;
 	bottom: 0;
 	left: 0;
+	content: "";
 }
 #feeds-holder .dijitTreeNode .dijitTreeNode .dijitTreeRow,
 #feeds-holder .dijitTreeNode .dijitTreeNode .dijitTreeRow * {
@@ -667,15 +667,15 @@ a:hover {
 }
 
 #feeds-holder .dijitTreeRow {
+	overflow: hidden;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	padding: 4px 6px;
-	border: 0;
 	max-width: 100%;
-	overflow: hidden;
-	text-overflow: ellipsis;
+	border: 0;
 	background: transparent;
 	color: #909090;
+	text-overflow: ellipsis;
 	transition: color .2s;
 }
 #feeds-holder .dijitTreeRowSelected {
@@ -711,10 +711,10 @@ a:hover {
 }
 #feeds-holder img.feedIcon,
 #feeds-holder .labelColorIndicator {
-	vertical-align: middle;
 	position: relative;
 	top: -1px;
 	margin: 0 4px 0 0;
+	vertical-align: middle;
 }
 #feeds-holder .dijitTreeRow .dijitTreeExpando {
 	margin: 0 4px 0 0;
@@ -738,17 +738,17 @@ a:hover {
 }
 #feeds-holder #feedTree .loadingNode, /* needs #feedTree to raise specifity for opacity */
 #feeds-holder .dijitTreeExpandoLeaf[src*=indicator] ~ .dijitTreeContent:after {
-	opacity: 1;
 	margin-left: 5px;
 	width: 16px;
 	height: 11px;
+	opacity: 1;
 }
 #feeds-holder .dijitTreeExpandoLeaf[src*=indicator] ~ .dijitTreeContent:after {
-	content: "";
 	display: inline-block;
 	margin-left: 2px; /* compensate added white-space */
-	vertical-align: middle;
 	background: transparent url("../images/indicator_tiny.gif") 0 0 no-repeat;
+	content: "";
+	vertical-align: middle;
 }
 #feeds-holder[style*=none] ~ .dijitSplitter {
 	display: none;
@@ -783,30 +783,30 @@ a:hover {
 	z-index: 3;
 	overflow: visible;
 	padding: 12px 32px 0;
-	width: auto !important;
 	min-height: 32px;
-	text-align: right;
+	width: auto !important;
 	color: #fff;
-	cursor: default;
-	font-size: 0;
+	text-align: right;
 	white-space: nowrap;
+	font-size: 0;
+	cursor: default;
 }
 #headlines-toolbar:after {
-	content: "";
 	position: absolute;
-	bottom: -1px;
 	right: 34px;
+	bottom: -1px;
 	left: 26px;
 	border-top: 1px solid #eee;
+	content: "";
 }
 #headlines-toolbar > * {
-	font-size: 12px;
-	vertical-align: middle;
 	color: #b2b2b2;
+	vertical-align: middle;
+	font-size: 12px;
 }
 #headlines-toolbar > a {
-	text-decoration: none;
 	margin-left: 12px;
+	text-decoration: none;
 	transition: color .2s;
 }
 #headlines-toolbar > a:hover {
@@ -825,20 +825,20 @@ a:hover {
 }
 #floatingTitle .title,
 .postHeader .postTitle a {
-	font-size: 13px;
 	font-weight: bold;
+	font-size: 13px;
 }
 #feed_title,
 #feed_title a {
-	font-size: 13px;
 	font-weight: bold;
+	font-size: 13px;
 	color: #444;
 }
 #selected_prompt {
-	float: right;
 	position: relative;
 	top: 1px;
 	left: 10px;
+	float: right;
 }
 #content-insert {
 	z-index: 3;
@@ -852,31 +852,31 @@ a:hover {
 	background: transparent;
 }
 #headlines-frame:before {
-	content: "";
 	display: block;
-	border-top: 31px solid #fff;
 	margin: 0 -34px 0 -26px;
+	border-top: 31px solid #fff;
+	content: "";
 }
 #headlines-spacer {
+	position: relative;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	position: relative;
 	padding-top: 42px;
 	height: 100%;
 	text-align: center;
 }
 #headlines-spacer:after {
-	content: "The End";
 	position: absolute;
-	bottom: 0;
 	right: -34px;
+	bottom: 0;
 	left: -26px;
 	padding: 50px;
 	background: #ddd;
 	color: #909090;
+	content: "The End";
 	text-shadow: 0 1px 1px #fff;
-	font-size: 18px;
 	letter-spacing: 1px;
+	font-size: 18px;
 
 }
 .whiteBox + #headlines-spacer {
@@ -886,10 +886,10 @@ a:hover {
 /* articles - collapsed, floating title */
 #floatingTitle {
 	position: absolute;
-	z-index: 4;
 	top: 45px;
 	right: 34px;
 	left: 26px;
+	z-index: 4;
 	background: #fff;
 }
 #floatingTitle .title {
@@ -897,11 +897,11 @@ a:hover {
 }
 #floatingTitle .titleWrap:before,
 #floatingTitle .titleWrap:after {
-	content: "";
 	position: absolute;
-	left: 0;
 	right: 0;
+	left: 0;
 	border-top: 1px solid #d4d4d4;
+	content: "";
 }
 #floatingTitle .titleWrap:before {
 	top: -1px;
@@ -995,8 +995,8 @@ a:hover {
 	order: 2;
 }
 .cdm.expandable:not(.active) .cdmHeader > .hlFeed a {
-	max-width: 115px;
 	overflow: hidden;
+	max-width: 115px;
 	text-overflow: ellipsis;
 }
 #floatingTitle .rchk,
@@ -1017,8 +1017,8 @@ a:hover {
 .cdm.expandable:not(.active) .cdmHeader > .hlFeed,
 .hl > .hlLeft,
 .hl > .hlRight {
-	padding-left: 0;
 	padding-right: 0;
+	padding-left: 0;
 	line-height: 1;
 }
 #floatingTitle > :first-child > *,
@@ -1085,17 +1085,17 @@ a:hover {
 #floatingTitle .titleWrap,
 .cdm.expandable:not(.active) .titleWrap,
 .hlTitle {
-	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 
 /* articles - expanded */
 .cdm.expandable.active,
 .cdm.expanded {
-	border: 1px solid #eee;
-	margin-bottom: 17px;
 	overflow: hidden;
+	margin-bottom: 17px;
+	border: 1px solid #eee;
 }
 .cdm.expandable.active .cdmHeader,
 .cdm.expanded .cdmHeader {
@@ -1117,10 +1117,10 @@ a:hover {
 }
 .cdm.expandable.active .title:after,
 .cdm.expanded .title:after {
-	content: " ";
 	display: table;
 	clear: both;
 	margin-top: 5px;
+	content: " ";
 }
 .cdm.expandable.active .cdmHeader > :first-child,
 .cdm.expandable.active .cdmHeader .hlFeed,
@@ -1170,14 +1170,15 @@ div.articleNote {
 }
 .cdm .title,
 .hlContent  {
-	font-size: 13px;
 	font-weight: bold;
+	font-size: 13px;
 }
 .cdm .cdmExcerpt,
 .cdm.expandable .author,
+.cdm.expanded .author,
 .hlContent .contentPreview {
-	font-size: 11px;
 	font-weight: normal;
+	font-size: 11px;
 }
 #floatingTitle,
 .cdm .title,
@@ -1202,8 +1203,8 @@ div.articleNote {
 .cdmFooter img,
 .hl img,
 .postTags img {
-	vertical-align: middle;
 	margin: 0 0 0 5px;
+	vertical-align: middle;
 }
 #floatingTitle > div,
 #floatingTitle .updated,
@@ -1246,15 +1247,15 @@ div.articleNote {
 	padding: 10px 40px 10px 32px;
 }
 .postHeader {
-	background: #f5f5f5;
 	border-bottom: 1px solid #eee;
-	font-size: 11px;
+	background: #f5f5f5;
 	color: #909090;
+	font-size: 11px;
 }
 .postHeader:after {
-	content: " ";
 	display: table;
 	clear: both;
+	content: " ";
 }
 .postHeader .postTitle {
 	margin-bottom: 3px;
@@ -1270,8 +1271,8 @@ div.articleNote {
 	white-space: nowrap;
 }
 .postTags > * {
-	vertical-align: middle;
 	margin: 0 1px;
+	vertical-align: middle;
 }
 .collapseBtn {
 	position: absolute;
@@ -1279,32 +1280,31 @@ div.articleNote {
 	right: 0;
 	left: 0;
 	height: 26px;
-	line-height: 1;
 	background: rgba(255,255,255,0);
+	line-height: 1;
 	transition: all .5s;
 }
 .collapseBtn img {
 	position: absolute;
 	z-index: 1;
+	margin: 0;
 	width: 100%;
 	height: 100%;
-	margin: 0;
 	opacity: 0;
 }
 .collapseBtn:before {
-	content: "Collapse article";
 	position: absolute;
 	top: 7px;
 	right: 34px;
-	font-size: 11px;
 	color: #fff;
+	content: "Collapse article";
+	font-size: 11px;
 	transition: all .5s;
 }
 .collapseBtn:hover:before {
 	color: #909090;
 }
 .collapseBtn:after {
-	content: "";
 	position: absolute;
 	top: 5px;
 	right: 5px;
@@ -1312,6 +1312,7 @@ div.articleNote {
 	height: 16px;
 	background: transparent url("feedly/icons.png") -16px -16px no-repeat;
 	background-size: 176px 32px;
+	content: "";
 	opacity: .3;
 	transition: opacity .2s;
 }
@@ -1384,8 +1385,8 @@ div.articleNote {
 .postContent th,
 .cdmContentInner td,
 .postContent td {
-	border: 1px solid #ddd;
 	padding: 0 .5em;
+	border: 1px solid #ddd;
 }
 .cdmContentInner th,
 .postContent th {
@@ -1402,47 +1403,47 @@ div.articleNote {
 }
 .cdmContentInner img,
 .postContent img {
+	margin: .5em 1em .5em 0;
 	max-width: 100%;
 	width: auto;
 	height: auto;
-	margin: .5em 1em .5em 0;
 }
 .cdmContentInner figure,
 .postContent figure {
 	margin: 1em 0;
+	font-style: italic;
 	font-size: 12px;
 	line-height: 16px;
-	font-style: italic;
 }
 .cdmContentInner pre,
 .postContent pre,
 .cdmContentInner code,
 .postContent code {
-	font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
 	color: #222;
+	font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
 }
 .cdmContentInner pre,
 .postContent pre {
-	white-space: pre-wrap;
 	overflow: auto;
+	padding: .5em;
+	border: 1px solid rgba(0,0,0,.0333);
+	background: rgba(0,0,0,.0333);
+	white-space: pre-wrap;
 	font-size: 11px;
 	line-height: 1.333;
-	border: 1px solid rgba(0,0,0,.0333);
-	padding: .5em;
-	background: rgba(0,0,0,.0333);
 }
 .cdmContentInner code,
 .postContent code {
 	display: inline-block;
-	border: 1px solid rgba(0,0,0,.0333);
 	padding: 0 .31em;
-	line-height: 1.333;
+	border: 1px solid rgba(0,0,0,.0333);
 	background: rgba(0,0,0,.0333);
+	line-height: 1.333;
 }
 .cdmContentInner pre code,
 .postContent pre code {
-	border: none;
 	padding: 0;
+	border: none;
 	background: transparent;
 	color: inherit;
 }
@@ -1472,16 +1473,16 @@ div.articleNote {
 /* extras */
 #cmdline {
 	position: absolute;
-	z-index: 5;
 	bottom: 5px;
 	left: 5px;
+	z-index: 5;
 	padding: 1px;
 	width: 18px;
 	border-radius: 4px;
 	background-color: #444;
 	color: #fff;
-	font-weight: bold;
 	text-align: center;
+	font-weight: bold;
 }
 .cdmFeedTitle {
 	padding: 56px 0 28px;
@@ -1491,15 +1492,15 @@ div.articleNote {
 	padding-top: 14px;
 }
 .cdmFeedTitle > div:first-child{
-	float: none !important;
 	display: inline-block;
+	float: none !important;
 	padding: 0 12px 0 7px;
 	vertical-align: top;
 }
 .cdmFeedTitle .title {
-	font: normal normal bold 16px/18px SansCn;
 	padding-right: 5px;
 	color: #aaa;
+	font: normal normal bold 16px/18px SansCn;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 }
@@ -1514,8 +1515,8 @@ div.articleNote {
 	opacity: 1;
 }
 .whiteBox {
-	text-align: center;
 	padding: 1em;
+	text-align: center;
 }
 .insensitive {
 	color: #aaa;
@@ -1667,22 +1668,22 @@ hack inspired by browserhacks.com */
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	padding: 2px 8px;
-	font-size: 12px;
-	line-height: normal;
-	text-align: center;
-	background: #e9e9e9;
-	color: #666;
 	border: 1px solid #d8d8d8;
 	border-radius: 2px;
+	background: #e9e9e9;
+	color: #666;
+	text-align: center;
+	text-decoration: none;
+	font-size: 12px;
+	line-height: normal;
 	cursor: pointer;
 	transition: all .2s;
-	text-decoration: none;
 }
 #ttrssPrefs #header a:hover,
 .cdmContentInner .expandPrompt:hover {
+	border-color: #d4d4d4;
 	background: #e1e1e1;
 	color: #222;
-	border-color: #d4d4d4;
 }
 #ttrssPrefs #header a:hover:active,
 .cdmContentInner .expandPrompt:hover:active {
@@ -1694,16 +1695,16 @@ hack inspired by browserhacks.com */
 
 /* plugin: shorten expanded */
 .cdmContentInner .expandPrompt {
-	width: 100%;
 	padding: 5px 0 6px;
+	width: 100%;
 	font-weight: bold;
 }
 .cdmContentInner > .contentSizeWrapper {
 	margin: 0 -10px;
 	padding: 0 10px;
-	border-bottom: 1px solid #ddd;
 	height: auto;
 	height: 600px;
+	border-bottom: 1px solid #ddd;
 }
 
 /* plugin: article toolbar small */
@@ -1711,11 +1712,11 @@ hack inspired by browserhacks.com */
 .actionChooser .button_nav:hover {
 	position: relative;
 	left: 5px;
-	border: none;
 	padding: 0;
+	border: none;
 	background: transparent !important;
-	opacity: 1;
 	vertical-align: middle;
+	opacity: 1;
 	cursor: pointer;
 }
 
@@ -1822,17 +1823,17 @@ table.prefErrorLog td.filename, table.prefErrorLog td.login, table.prefErrorLog 
 	padding-right: 150px;
 }
 #ttrssPrefs #pref-tabs_tablist:after {
-	content: "";
 	position: absolute;
-	bottom: 0;
 	right: 0;
+	bottom: 0;
 	width: 150px;
 	border-top: 1px solid #d8d8d8;
+	content: "";
 }
 #ttrssPrefs #footer {
 	padding: 0 10px 5px;
-	text-align: center;
 	background: #eee;
+	text-align: center;
 }
 
 #dijit_layout_AccordionPane_1_wrapper .dijitAccordionContainer-child {
@@ -1853,8 +1854,8 @@ table.prefErrorLog td.filename, table.prefErrorLog td.login, table.prefErrorLog 
 #ttrssPrefs .feedParam,
 #ttrssPrefs .labelParam,
 #ttrssPrefs .prefHelp {
-	font-size: 11px;
 	color: #909090;
+	font-size: 11px;
 }
 #ttrssPrefs .feedParam,
 #ttrssPrefs .labelParam {
@@ -1872,18 +1873,18 @@ table.prefErrorLog td.filename, table.prefErrorLog td.login, table.prefErrorLog 
 	border: 1px solid #ddd;
 	background: #eee;
 	color: #222;
-	font-weight: bold;
-	text-shadow: 1px 1px 0 #fff;
 	text-decoration: none;
+	text-shadow: 1px 1px 0 #fff;
+	font-weight: bold;
 	cursor: move;
 	-webkit-user-drag: element;
 }
 #ttrssPrefs a.bookmarklet:after {
-	content: "";
 	position: absolute;
 	top: -1px;
 	right: -1px;
 	border: 4px solid #fff;
 	border-bottom-color: #ccc;
 	border-left-color: #ccc;
+	content: "";
 }
