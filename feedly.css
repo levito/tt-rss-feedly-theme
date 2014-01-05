@@ -932,12 +932,6 @@ a:hover {
 	-webkit-align-items: flex-start;
 	align-items: flex-start;
 }
-.cdm.expandable:not(.active):hover .cdmHeader,
-.hl:hover > *,
-.collapseBtn:hover {
-	background: rgba(0,0,0,.033);
-	cursor: pointer;
-}
 #floatingTitle > *,
 .cdm.expandable:not(.active) .cdmHeader > *,
 .hl > * {
@@ -1061,6 +1055,16 @@ a:hover {
 .hl > .hlRight > .hlScorePic {
 	position: absolute;
 	right: 83px;
+}
+.cdm.expandable:not(.active):hover .updated,
+.hl:hover .hlUpdated {
+	display: none;
+}
+.cdm.expandable:not(.active):hover .cdmHeader,
+.hl:hover > *,
+.collapseBtn:hover {
+	background: rgba(0,0,0,.033);
+	cursor: pointer;
 }
 .cdm.expandable.marked:not(.active),
 .hl.marked {
