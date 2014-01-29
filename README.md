@@ -1,7 +1,9 @@
 tt-rss-feedly-theme
 ===================
 
-Feedly theme for [Tiny Tiny RSS](http://tt-rss.org/redmine/projects/tt-rss/wiki) 1.8, 1.9 or newer
+Feedly theme for [Tiny Tiny RSS](http://tt-rss.org/redmine/projects/tt-rss/wiki) 1.8 up to 1.11.
+
+It's not yet compatible with trunk, the latest compatible commit is [8d53c81874](https://github.com/gothfox/Tiny-Tiny-RSS/commit/8d53c81874faabe9f0c78922a4d263ee5f067082).
 
 For the best experience, use a current browser. IE9 and older versions are not supported.
 
