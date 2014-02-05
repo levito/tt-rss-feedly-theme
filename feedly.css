@@ -923,14 +923,14 @@ a:hover {
 	display: -moz-box;
 	display: -webkit-box;
 	display: -ms-flexbox;
-	-moz-box-align: start;
-	-webkit-box-align: start;
-	-ms-flex-align: flex-start;
+	-moz-box-align: stretch;
+	-webkit-box-align: stretch;
+	-ms-flex-align: stretch;
 	/* new flexbox: */
 	display: -webkit-flex;
 	display: flex;
-	-webkit-align-items: flex-start;
-	align-items: flex-start;
+	-webkit-align-items: stretch;
+	align-items: stretch;
 }
 #floatingTitle > *,
 .cdm.expandable:not(.active) .cdmHeader > *,
@@ -1092,6 +1092,12 @@ a:hover {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
+}
+#headlines-frame.wide .contentPreview {
+	display: block;
+	overflow: hidden;
+	white-space: normal;
+	height: 30px;
 }
 
 /* articles - expanded */
