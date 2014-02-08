@@ -689,9 +689,6 @@ a:hover {
 #errorButton {
 	color: #e44;
 }
-#feeds-holder .dijitTreeRow.Hidden {
-	display: none;
-}
 #feeds-holder .dijitInline[style*="19px"] {
 	padding-right: 6px;
 }
@@ -731,11 +728,6 @@ a:hover {
 #feeds-holder .dijitTreeExpandoOpened {
 	background-position: -16px 0;
 }
-#feeds-holder .dijitFolderClosed,
-#feeds-holder .dijitFolderOpened,
-#feeds-holder .dijitTreeExpandoLeaf {
-	display: none;
-}
 #feeds-holder #feedTree .loadingNode, /* needs #feedTree to raise specifity for opacity */
 #feeds-holder .dijitTreeExpandoLeaf[src*=indicator] ~ .dijitTreeContent:after {
 	margin-left: 5px;
@@ -750,7 +742,11 @@ a:hover {
 	content: "";
 	vertical-align: middle;
 }
-#feeds-holder[style*=none] ~ .dijitSplitter {
+#feeds-holder .dijitTreeRow.Hidden,
+#feeds-holder .dijitFolderClosed,
+#feeds-holder .dijitFolderOpened,
+#feeds-holder .dijitTreeExpandoLeaf,
+#feeds-holder[style*=none] ~ .dijitSplitter { /* hide splitter when sidebar is collapsed */
 	display: none;
 }
 
@@ -1106,6 +1102,9 @@ a:hover {
 	overflow: hidden;
 	margin-bottom: 17px;
 	border: 1px solid #eee;
+}
+.cdm.expandable.active .cdmExcerpt {
+	display: none;
 }
 .cdm.expandable.active .cdmHeader,
 .cdm.expanded .cdmHeader {
