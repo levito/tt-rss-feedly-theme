@@ -610,6 +610,11 @@ a:hover {
 }
 
 /* feed tree */
+#header-wrap,
+#content-wrap,
+#toolbar {
+	overflow: visible;
+}
 #ttrssMain #main_toolbar_form > .dijitButton {
 	display: block !important;
 }
