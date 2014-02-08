@@ -431,14 +431,18 @@ img,
 #main {
 	width: auto;
 }
-#main-toolbar {
+#main-toolbar,
+#headlines-toolbar .holder {
 	display: table;
 	width: 100%;
 }
 #headlines-toolbar,
+#headlines-toolbar .r,
+#headlines-toolbar .main,
 #main_toolbar_form,
 .actionChooser {
 	display: table-cell;
+	vertical-align: top;
 	white-space: nowrap;
 }
 #headlines-toolbar {
@@ -477,27 +481,15 @@ a:hover {
 /* STYLING ************************************************************/
 
 #toolbar {
-	padding: 11px 34px 0 32px;
+	padding: 12px 34px 0 32px;
 	z-index: 3;
 }
 #main-toolbar {
 	padding: 0;
-	height: 34px;
+	height: 33px;
 	border: none;
 	background: #fff;
 	margin-bottom: -1px;
-}
-#headlines-toolbar .holder {
-	display: table;
-	width: 100%;
-}
-#headlines-toolbar .r,
-#headlines-toolbar .main {
-	display: table-cell;
-}
-#headlines-toolbar .r > * {
-	position: relative;
-	top: 1px;
 }
 #headlines-toolbar .r img {
 	float: right;
@@ -510,9 +502,9 @@ a:hover {
 	text-align: right;
 	cursor: default;
 }
-#headlines-toolbar .main #selected_prompt {
+/*#headlines-toolbar .main*/ #selected_prompt {
 	float: left;
-	margin-left: 19px;
+	margin: 1px 0 0 29px;
 }
 #headlines-toolbar .main > * {
 	color: #b2b2b2;
@@ -823,12 +815,6 @@ a:hover {
 	font-weight: bold;
 	font-size: 13px;
 	color: #444;
-}
-#selected_prompt {
-	position: relative;
-	top: 1px;
-	left: 10px;
-	float: right;
 }
 #content-insert {
 	z-index: 3;
