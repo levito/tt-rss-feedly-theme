@@ -1,7 +1,7 @@
 tt-rss-feedly-theme
 ===================
 
-Feedly theme for [Tiny Tiny RSS](http://tt-rss.org/redmine/projects/tt-rss/wiki) 1.8, 1.9 or newer
+Feedly theme for [Tiny Tiny RSS](http://tt-rss.org/redmine/projects/tt-rss/wiki) 1.12 or newer
 
 For the best experience, use a current browser. IE9 and older versions are not supported.
 
