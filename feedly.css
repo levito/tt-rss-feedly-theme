@@ -62,16 +62,14 @@
 
 /* FROM TT-RSS.CSS ************************************************************/
 
-/* @66 */
+/* @60 */
 div.articleNote {
 	background-color : #fff7d5;
 	padding : 5px;
-	border-radius : 4px;
 	margin : 5px;
 	border-style : solid;
 	border-color : #e7d796;
 	border-width : 1px;
-	box-shadow : inset 0px 0px 2px rgba(0,0,0,0.1);
 	background-color : #fff7d5;
 	color : #9a8c59;
 }
@@ -81,7 +79,7 @@ div.articleNote div.noteEdit {
 	cursor : pointer;
 }
 
-/* @129 */
+/* @142 */
 #notify {
 	bottom : 10px;
 	right : 20px;
@@ -94,7 +92,6 @@ div.articleNote div.noteEdit {
 	min-width : 100px;
 	padding : 5px;
 	-width : 200px;
-	box-shadow : 0px 0px 2px rgba(0,0,0,0.2);
 }
 
 #notify img {
@@ -136,20 +133,18 @@ div.articleNote div.noteEdit {
 	border-color : #ff0000;
 }
 
-/* @227 */
+/* @232 */
 div.filterTestHolder {
 	height : 300px;
 	overflow : auto;
-	border-color : #c0c0c0;
+	border-color : #ddd;
 	border-style : solid;
 	margin : 0px 0px 5px 0px;
-	background-color : #ecf4ff;
+	background-color : #f5f5f5;
 	border-width : 1px;
-	border-radius : 4px;
-	box-shadow : inset 0px 0px 2px rgba(0,0,0,0.1);
 }
 
-/* @270 */
+/* @273 */
 div.notice, div.warning, div.error {
 	padding : 4px 10px 4px 4px;
 	display : inline-block;
@@ -157,9 +152,7 @@ div.notice, div.warning, div.error {
 	font-size : 12px;
 	border-style : solid;
 	border-color : #ccc;
-	border-radius : 4px;
 	border-width : 1px;
-	box-shadow : inset 0px 0px 2px rgba(0,0,0,0.1);
 }
 
 div.notice div.inner, div.warning div.inner, div.error div.inner {
@@ -189,6 +182,7 @@ div.warning img, div.notice img, div.error img {
 div.warning span, div.notice span, div.error span {
 	display : table-cell;
 	vertical-align : middle;
+
 }
 
 ul.nomarks {
@@ -197,41 +191,35 @@ ul.nomarks {
 	padding : 10px;
 }
 
-/* @423 */
+/* @425 */
 img.markedPic, img.pubPic {
 	cursor : pointer;
 	vertical-align : middle;
 }
 
 div.tagCloudContainer {
-	border : 1px solid #c0c0c0;
-	background-color : #ecf4ff;
+	border : 1px solid #ddd;
+	background-color : #f5f5f5;
 	margin : 5px 0px 5px 0px;
 	padding : 5px;
 	text-align : center;
-	border-radius : 4px;
-	box-shadow : inset 0px 0px 2px rgba(0,0,0,0.1);
 }
 
 div.errorExplained {
-	border : 1px solid #c0c0c0;
-	background-color : #ecf4ff;
+	border : 1px solid #ddd;
+	background-color : #f5f5f5;
 	margin : 5px 0px 5px 0px;
 	padding : 5px;
-	border-radius : 4px;
-	box-shadow : inset 0px 0px 2px rgba(0,0,0,0.1);
 }
 
 ul.feedErrorsList {
 	max-height : 300px;
 	overflow : auto;
 	list-style-type : none;
-	border : 1px solid #c0c0c0;
-	background-color : #ecf4ff;
+	border : 1px solid #ddd;
+	background-color : #f5f5f5;
 	margin : 0px 0px 5px 0px;
 	padding : 5px;
-	border-radius : 4px;
-	box-shadow : inset 0px 0px 2px rgba(0,0,0,0.1);
 }
 
 ul.feedErrorsList em {
@@ -242,7 +230,7 @@ ul.browseFeedList {
 	height : 300px;
 	overflow : auto;
 	border-width : 0px 1px 1px 1px;
-	border-color : #c0c0c0;
+	border-color : #ddd;
 	border-style : solid;
 	margin : 0px 0px 5px 0px;
 	background-color : white;
@@ -286,7 +274,7 @@ ul.compact li {
 	border-width : 0px;
 }
 
-/* @624 */
+/* @612 */
 div.dlgSec {
 	font-size : 12px;
 	color : #555;
@@ -321,7 +309,7 @@ div.dlgButtons {
 	clear : both;
 }
 
-/* @747 */
+/* @759 */
 div.fatalError {
 	margin-bottom : 10px;
 }
@@ -335,23 +323,17 @@ div.fatalError textarea {
 	height : 100px;
 }
 
-/* @899 */
-.dijitDialog .dijitToolbar {
-	border : 1px solid #c0c0c0;
-}
-
-/* @940 */
+/* @911 */
 ul#filterDlg_Matches, ul#filterDlg_Actions {
 	max-height : 100px;
 	overflow : auto;
 	list-style-type : none;
 	border-style : solid;
-  	border-color : #c0c0c0;
+  	border-color : #ddd;
 	border-width : 0px 1px 1px 1px;
-	background-color : #ecf4ff;
+	background-color : white;
 	margin : 0px 0px 5px 0px;
 	padding : 0px;
-	box-shadow : inset 0px 0px 2px rgba(0,0,0,0.1);
 }
 
 ul#filterDlg_Matches li, ul#filterDlg_Actions li {
@@ -359,20 +341,14 @@ ul#filterDlg_Matches li, ul#filterDlg_Actions li {
 	padding : 0px 0px 0px 5px;
 }
 
-ul#filterDlg_Matches li div.dijitCheckBox, ul#filterDlg_Actions li div.dijitCheckBox {
-	margin-right : 5px;
-}
-
 ul.helpKbList {
 	max-height : 300px;
 	overflow : auto;
 	list-style-type : none;
-	border : 1px solid #c0c0c0;
-	background-color : #ecf4ff;
+	border : 1px solid #ddd;
+	background-color : #f5f5f5;
 	margin : 0px 0px 5px 0px;
 	padding : 5px;
-	border-radius : 4px;
-	box-shadow : inset 0px 0px 2px rgba(0,0,0,0.1);
 }
 
 ul.helpKbList span.hksequence {
@@ -387,7 +363,7 @@ ul.helpKbList h2 {
 	margin-top : 0px;
 }
 
-/* @1029 */
+/* @981 */
 select.attachments {
 	display : block;
 	margin-top : 10px;
@@ -1708,30 +1684,29 @@ hack inspired by browserhacks.com */
 
 /* from prefs.css */
 
-/* @24 */
+/* @35 */
 #pref-filter-wrap, #pref-filter-header, #pref-filter-content,
 #pref-label-wrap, #pref-label-header, #pref-label-content,
 #pref-user-wrap, #pref-user-header, #pref-user-content,
 #pref-instance-wrap, #pref-instance-header, #pref-instance-content {
-	margin : 0;
-	padding : 0;
-	border-width : 0;
+	margin : 0px;
+	padding : 0px;
+	border-width : 0px;
 }
 
 #userConfigTab, #labelConfigTab, #filterConfigTab, #pref-feeds-feeds, #instanceConfigTab {
-	padding : 0;
+	padding : 0px;
 }
 
-/* @51 */
+/* @62 */
 div.prefProfileHolder, div.prefFeedOPMLHolder, div.inactiveFeedHolder {
 	height : 300px;
 	overflow : auto;
 	border-width : 0px 1px 1px 1px;
-	border-color : #c0c0c0;
+	border-color : #ddd;
 	border-style : solid;
 	margin : 0px 0px 5px 0px;
-	background-color : #ecf4ff;
-	box-shadow : inset 0px 0px 2px rgba(0,0,0,0.1);
+	background-color : white;
 }
 div.filterTestHolder, div.prefFeedOPMLHolder {
 	border-width : 1px;
@@ -1741,12 +1716,10 @@ ul.selfUpdateList, ul.userFeedList {
 	height : 200px;
 	overflow : auto;
 	list-style-type : none;
-	border : 1px solid #c0c0c0;
-	background-color : #ecf4ff;
+	border : 1px solid #ddd;
+	background-color : #f5f5f5;
 	margin : 0px 0px 5px 0px;
 	padding : 5px;
-	box-shadow : inset 0px 0px 2px rgba(0,0,0,0.1);
-	border-radius : 4px;
 }
 
 div#feedlistLoading, div#filterlistLoading, div#labellistLoading {
@@ -1759,7 +1732,7 @@ div#feedlistLoading img, div#filterlistLoading img, div#labellistLoading {
 	margin-right : 5px;
 }
 
-/* 97 */
+/* 106 */
 table.prefPluginsList td label, table.prefUserList td {
 	cursor : pointer;
 }
@@ -1784,10 +1757,6 @@ table.prefErrorLog tr.errrow td.errno {
 
 table.prefErrorLog td.filename, table.prefErrorLog td.login, table.prefErrorLog td.timestamp {
 	color : #555;
-}
-
-.dijitAccordionContainer-child {
-	box-shadow : inset 0px 0px 3px rgba(0,0,0,0.2);
 }
 
 
@@ -1833,6 +1802,10 @@ table.prefErrorLog td.filename, table.prefErrorLog td.login, table.prefErrorLog 
 #ttrssPrefs h6 {
 	margin-top: 12px;
 	margin-bottom: 3px;
+}
+#ttrssPrefs hr {
+	border: none;
+	border-top: 1px solid #ddd;
 }
 #ttrssPrefs .feedParam,
 #ttrssPrefs .labelParam,
