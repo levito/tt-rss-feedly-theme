@@ -464,7 +464,7 @@ a:hover {
 	padding: 0;
 	height: 33px;
 	border: none;
-	background: #fff;
+	background: transparent;
 	margin-bottom: -1px;
 }
 #headlines-toolbar .r img {
@@ -506,6 +506,12 @@ a:hover {
 #feeds-holder,
 #main #headlines-wrap-inner .dijitSplitter {
 	background: #eee;
+}
+#header-wrap,
+#content-wrap,
+#toolbar {
+	overflow: visible; /* fixes transitions of feed tree collapse button */
+	background: #fff;
 }
 #main .dijitSplitterHover,
 #main .dijitSplitterActive {
@@ -610,11 +616,6 @@ a:hover {
 }
 
 /* feed tree */
-#header-wrap,
-#content-wrap,
-#toolbar {
-	overflow: visible;
-}
 #ttrssMain #main_toolbar_form > .dijitButton {
 	display: block !important;
 }
@@ -771,9 +772,6 @@ a:hover {
 }
 
 /* main */
-#headlines-wrap-inner {
-	background: #fff;
-}
 #headlines-wrap-inner:after {
 	position: absolute;
 	top: 0;
