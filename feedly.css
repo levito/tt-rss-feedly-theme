@@ -927,7 +927,8 @@ a:hover {
 	-webkit-flex: 99;
 	flex: 99;
 }
-.cdm.expandable:not(.active) .cdmHeader > .hlFeed {
+.cdm.expandable:not(.active) .cdmHeader > .hlFeed,
+.hl > .hlFeed {
 	width: 135px;
 	/* old flexbox: */
 	-moz-box-ordinal-group: 2;
@@ -937,7 +938,8 @@ a:hover {
 	-webkit-order: 2;
 	order: 2;
 }
-.cdm.expandable:not(.active) .cdmHeader > .hlFeed a {
+.cdm.expandable:not(.active) .cdmHeader > .hlFeed a,
+.hl > .hlFeed a {
 	overflow: hidden;
 	max-width: 115px;
 	text-overflow: ellipsis;
@@ -949,8 +951,7 @@ a:hover {
 #floatingTitle .titleWrap span,
 .cdm > hr,
 .cdm.expandable.active .rchk,
-.cdm.expanded .rchk,
-.hl .hlFeed {
+.cdm.expanded .rchk {
 	display: none !important;
 }
 #floatingTitle > :first-child,
@@ -958,6 +959,7 @@ a:hover {
 .cdm.expandable:not(.active) .cdmHeader > :first-child,
 .cdm.expandable:not(.active) .cdmHeader > .scoreWrap,
 .cdm.expandable:not(.active) .cdmHeader > .hlFeed,
+.hl > .hlFeed,
 .hl > .hlLeft,
 .hl > .hlRight {
 	padding-right: 0;
@@ -1047,6 +1049,25 @@ a:hover {
 	overflow: hidden;
 	white-space: normal;
 	height: 30px;
+}
+#headlines-frame.wide .hlTitle {
+	padding-bottom: 23px;
+}
+#headlines-frame.wide .hlTitle > :not(.hlContent) {
+	position: absolute;
+	bottom: 8px;
+	right: 1px;
+}
+#headlines-frame.wide .hlFeed {
+	position: absolute;
+	bottom: 0;
+	left: 6px;
+}
+#headlines-frame.wide .hlFeed {
+	width: auto;
+}
+#headlines-frame.wide .hlFeed a {
+	max-width: none;
 }
 
 /* articles - expanded */
@@ -1175,6 +1196,7 @@ div.articleNote {
 .hlLeft,
 .hlUpdated,
 .hlRight,
+.hlFeed,
 .author {
 	white-space: nowrap;
 }
@@ -1187,10 +1209,12 @@ div.articleNote {
 #floatingTitle .updated,
 .cdmHeader .updated,
 .cdmHeader .hlFeed,
+.hl > .hlFeed,
 .hlUpdated {
 	font-size: 11px;
 }
-.cdmHeader .hlFeed a {
+.cdmHeader .hlFeed a,
+.hl > .hlFeed a {
 	display: inline-block;
 	margin-top: 1px;
 	padding: 1px 6px 0;
@@ -1258,7 +1282,7 @@ div.articleNote {
 	position: absolute;
 	top: 7px;
 	right: 34px;
-	color: #fff;
+	color: rgba(255,255,255,0);
 	content: "Collapse article";
 	font-size: 11px;
 	transition: all .5s;
