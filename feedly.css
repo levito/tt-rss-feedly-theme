@@ -1058,15 +1058,13 @@ a:hover {
 	bottom: 8px;
 	right: 1px;
 }
-#headlines-frame.wide .hlFeed {
+#headlines-frame.wide .hl > .hlFeed {
 	position: absolute;
 	bottom: 0;
 	left: 6px;
-}
-#headlines-frame.wide .hlFeed {
 	width: auto;
 }
-#headlines-frame.wide .hlFeed a {
+#headlines-frame.wide .hl > .hlFeed a {
 	max-width: none;
 }
 
