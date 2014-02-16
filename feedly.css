@@ -1049,17 +1049,23 @@ a:hover {
 	white-space: nowrap;
 }
 #headlines-frame.wide .hl {
+	-webkit-flex-wrap: wrap;
 	flex-wrap: wrap;
 }
 #headlines-frame.wide .hl:before {
 	content: "";
+	display: block; /* IE fix */
 	/* old flexbox: */
 	-moz-box-flex: 1;
 	-webkit-box-flex: 1;
 	-ms-flex: 99;
+	-moz-box-ordinal-group: 3;
+	-webkit-box-ordinal-group: 3;
+	-ms-flex-order: 3;
 	/* new flexbox: */
 	-webkit-flex: 99;
 	flex: 99;
+	-webkit-order: 3;
 	order: 3;
 }
 #headlines-frame.wide .hl > .hlTitle {
@@ -1071,9 +1077,13 @@ a:hover {
 	-moz-box-flex: 1;
 	-webkit-box-flex: 1;
 	-ms-flex: 100% 1;
+	-moz-box-ordinal-group: 4;
+	-webkit-box-ordinal-group: 4;
+	-ms-flex-order: 4;
 	/* new flexbox: */
 	-webkit-flex: 100% 1;
 	flex: 100% 1;
+	-webkit-order: 4;
 	order: 4;
 }
 
