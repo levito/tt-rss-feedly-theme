@@ -1010,10 +1010,8 @@ a:hover {
 .cdm.expandable:not(.active):hover .updated,
 .hl:hover .hlUpdated {
 	display: none;
-	pointer-events: none; /* widescreen mode: don't hide updated (see next rule) but make it click-through */
 }
 #headlines-frame.wide .hl:hover > * {
-	display: block; /* don't hide updated */
 	background: transparent; /* only .hlTitle should have background color (next rule) */
 }
 .cdm.expandable:not(.active):hover .cdmHeader,
@@ -1064,13 +1062,8 @@ a:hover {
 	flex: 99;
 	order: 3;
 }
-#headlines-frame.wide .hl > .hlFeed {
-	width: auto;
-}
-#headlines-frame.wide .hl > .hlFeed a {
-	max-width: none;
-}
 #headlines-frame.wide .hl > .hlTitle {
+	white-space: normal;
 	width: 100%;
 	margin-top: -30px;
 	padding-top: 30px;
@@ -1082,9 +1075,6 @@ a:hover {
 	-webkit-flex: 100% 1;
 	flex: 100% 1;
 	order: 4;
-}
-#headlines-frame.wide .hl .contentPreview {
-	white-space: normal;
 }
 
 /* articles - expanded */
