@@ -1180,6 +1180,10 @@ div.articleNote {
 	font-weight: normal;
 	font-size: 11px;
 }
+.cdm .cdmExcerpt:before,
+.hlContent .contentPreview:before {
+	content: " ";
+}
 #floatingTitle,
 .cdm .title,
 .cdm .cdmHeader,
