@@ -1044,25 +1044,29 @@ a:hover {
 	text-overflow: ellipsis;
 	white-space: nowrap;
 }
-#headlines-frame.wide .contentPreview {
-	display: block;
-	overflow: hidden;
+#headlines-frame.wide .hl {
+	height: 75px;
+}
+#headlines-frame.wide .hl .contentPreview {
 	white-space: normal;
-	height: 30px;
 }
-#headlines-frame.wide .hlTitle {
-	padding-bottom: 23px;
-}
-#headlines-frame.wide .hlTitle > :not(.hlContent) {
+#headlines-frame.wide .hl > .hlTitle {
 	position: absolute;
-	bottom: 8px;
-	right: 1px;
+	top: 20px;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: transparent;
 }
 #headlines-frame.wide .hl > .hlFeed {
-	position: absolute;
-	bottom: 0;
-	left: 6px;
 	width: auto;
+	/* old flexbox: */
+	-moz-box-flex: 1;
+	-webkit-box-flex: 1;
+	-ms-flex: 99;
+	/* new flexbox: */
+	-webkit-flex: 99;
+	flex: 99;
 }
 #headlines-frame.wide .hl > .hlFeed a {
 	max-width: none;
