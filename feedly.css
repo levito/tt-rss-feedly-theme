@@ -1010,9 +1010,15 @@ a:hover {
 .cdm.expandable:not(.active):hover .updated,
 .hl:hover .hlUpdated {
 	display: none;
+	pointer-events: none; /* widescreen mode: don't hide updated (see next rule) but make it click-through */
+}
+#headlines-frame.wide .hl:hover > * {
+	display: block; /* don't hide updated */
+	background: transparent; /* only .hlTitle should have background color (next rule) */
 }
 .cdm.expandable:not(.active):hover .cdmHeader,
 .hl:hover > *,
+#headlines-frame.wide .hl:hover > .hlTitle,
 .collapseBtn:hover {
 	background: rgba(0,0,0,.033);
 	cursor: pointer;
@@ -1045,21 +1051,10 @@ a:hover {
 	white-space: nowrap;
 }
 #headlines-frame.wide .hl {
-	height: 75px;
+	flex-wrap: wrap;
 }
-#headlines-frame.wide .hl .contentPreview {
-	white-space: normal;
-}
-#headlines-frame.wide .hl > .hlTitle {
-	position: absolute;
-	top: 20px;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background: transparent;
-}
-#headlines-frame.wide .hl > .hlFeed {
-	width: auto;
+#headlines-frame.wide .hl:before {
+	content: "";
 	/* old flexbox: */
 	-moz-box-flex: 1;
 	-webkit-box-flex: 1;
@@ -1067,9 +1062,29 @@ a:hover {
 	/* new flexbox: */
 	-webkit-flex: 99;
 	flex: 99;
+	order: 3;
+}
+#headlines-frame.wide .hl > .hlFeed {
+	width: auto;
 }
 #headlines-frame.wide .hl > .hlFeed a {
 	max-width: none;
+}
+#headlines-frame.wide .hl > .hlTitle {
+	width: 100%;
+	margin-top: -30px;
+	padding-top: 30px;
+	/* old flexbox: */
+	-moz-box-flex: 1;
+	-webkit-box-flex: 1;
+	-ms-flex: 100% 1;
+	/* new flexbox: */
+	-webkit-flex: 100% 1;
+	flex: 100% 1;
+	order: 4;
+}
+#headlines-frame.wide .hl .contentPreview {
+	white-space: normal;
 }
 
 /* articles - expanded */
