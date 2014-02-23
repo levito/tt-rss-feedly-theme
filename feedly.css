@@ -1232,7 +1232,6 @@ div.articleNote {
 #floatingTitle .titleWrap,
 .cdmHeader .titleWrap,
 .hlTitle {
-	min-height: 16px;
 	line-height: 14px;
 }
 #floatingTitle .updated,
@@ -1240,6 +1239,7 @@ div.articleNote {
 .cdmHeader .hlFeed,
 .hlUpdated {
 	font-size: 11px;
+	line-height: 16px;
 }
 .cdmHeader .hlFeed a {
 	display: inline-block;
