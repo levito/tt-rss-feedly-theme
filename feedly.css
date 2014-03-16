@@ -469,10 +469,7 @@ a:hover {
 }
 #headlines-toolbar .r img {
 	vertical-align: top !important;
-}
-#headlines-toolbar .r a > img {
-	float: right;
-	margin: 1px -21px 0 0;
+	margin: 1px 6px 0 0;
 }
 #headlines-toolbar .main {
 	width: 100%;
@@ -483,7 +480,7 @@ a:hover {
 }
 /*#headlines-toolbar .main*/ #selected_prompt {
 	float: left;
-	margin: 1px 0 0 29px;
+	margin: 1px 0 0 12px;
 }
 #headlines-toolbar .main > * {
 	color: #b2b2b2;
@@ -1677,7 +1674,7 @@ hack inspired by browserhacks.com */
 
 #cancel_search {
 	font-size: 0;
-	margin-left: 5px;
+	margin-left: 12px;
 }
 /* standard button styling applied to various elements */
 #ttrssPrefs #header a,
