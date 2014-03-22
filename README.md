@@ -3,7 +3,7 @@ tt-rss-feedly-theme
 
 Feedly theme for [Tiny Tiny RSS](http://tt-rss.org/redmine/projects/tt-rss/wiki) 1.12 or newer.
 
-Use the [legacy branch](https://github.com/levito/tt-rss-feedly-theme/tree/master) for TT-RSS 1.11 or older.
+Use the [legacy branch](https://github.com/levito/tt-rss-feedly-theme/tree/legacy) for TT-RSS 1.11 or older.
 
 For the best experience, use a current browser. IE9 and older versions are not supported.
 
