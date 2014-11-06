@@ -83,13 +83,13 @@ div.articleNote div.noteEdit {
 #notify.visible {
 	transform: translate(0, -35px);
 	-webkit-transform: translate(0, -35px);
-   -o-transform: translate(0, -35px);
-   -moz-transform: translate(0, -35px);
+   	-o-transform: translate(0, -35px);
+   	-moz-transform: translate(0, -35px);
 
 	transition: all 0.5s ease-in-out;
 	-webkit-transition: all 0.5s ease-in-out;
-   -moz-transition: all 0.5s ease-in-out;
-   -o-transition: all 0.5s ease-in-out;
+   	-moz-transition: all 0.5s ease-in-out;
+   	-o-transition: all 0.5s ease-in-out;
 }
 
 #notify {
@@ -98,7 +98,7 @@ div.articleNote div.noteEdit {
 	height: 20px;
 	border-width : 1px;
 	border-style : solid;
-	position : absolute;
+	position : fixed;
 	font-size : 12px;
 	z-index : 99;
 	max-width : 200px;
@@ -417,6 +417,7 @@ img,
 #ttrssMain,
 #ttrssPrefs {
 	overflow: hidden;
+	max-height: 100%;
 }
 #main {
 	width: auto;
