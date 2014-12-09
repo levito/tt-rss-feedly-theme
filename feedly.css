@@ -137,12 +137,12 @@ div.articleNote div.noteEdit {
 	background-color : #fff7d5;
 }
 
-.notify.notify-info {
+.notify.notify_info {
 	border-color : #88b0f0;
 	background-color : #ecf4ff;
 }
 
-.notify.notify-error {
+.notify.notify_error {
 	background-color : #ffcccc;
 	border-color : #ff0000;
 }
