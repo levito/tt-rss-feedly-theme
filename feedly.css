@@ -1,4 +1,4 @@
-/* supports-version:1.15.1 */
+/* supports-version:1.15.3 */
 
 @import url(feedly/claro-mod.min.css);
 
@@ -478,6 +478,9 @@ a:hover {
 
 /* STYLING ************************************************************/
 
+#notify {
+	line-height: 1;
+}
 #toolbar {
 	padding: 12px 34px 0 32px;
 	z-index: 3;
