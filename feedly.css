@@ -498,8 +498,6 @@ a:hover {
 }
 #headlines-toolbar .main {
 	width: 100%;
-	color: #fff;
-	font-size: 0;
 	text-align: right;
 	cursor: default;
 }
@@ -507,17 +505,24 @@ a:hover {
 	float: left;
 	margin: 1px 0 0 12px;
 }
-#headlines-toolbar .main > * {
-	color: #b2b2b2;
+/*#headlines-toolbar .main*/ .sel_links {
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 0;
+	color: #fff;
+}
+#headlines-toolbar .main > :not(.sel_links),
+/*#headlines-toolbar .main*/ .sel_links a {
 	vertical-align: middle;
 	font-size: 12px;
+	color: #b2b2b2;
 }
-#headlines-toolbar .main > a {
+/*#headlines-toolbar .main*/ .sel_links a {
 	margin: 0 10px 0 2px;
 	text-decoration: none;
 	transition: color .2s;
 }
-#headlines-toolbar .main > a:hover {
+/*#headlines-toolbar .main*/ .sel_links a:hover {
 	color: #444;
 }
 #ttrssMain #main {
