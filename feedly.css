@@ -863,7 +863,7 @@ a:hover {
 #floatingTitle {
 	position: absolute;
 	top: 1px;
-	right: 34px;
+	right: -26px;
 	left: 26px;
 	z-index: 4;
 	background: #fff;
