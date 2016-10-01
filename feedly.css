@@ -1285,7 +1285,8 @@ div.articleNote {
 	color: #444;
 	line-height: 1;
 }
-.cdmContentInner {
+.cdmContentInner,
+.cdmIntermediate {
 	margin: -200px 0 0;
 	padding: 210px 33px 10px;
 }
@@ -1369,6 +1370,7 @@ div.articleNote {
 
 /* article content */
 .cdmContentInner,
+.cdmIntermediate,
 .postContent {
 	clear: both;
 	overflow: auto;
@@ -1449,6 +1451,7 @@ div.articleNote {
 	margin: .5em 0;
 }
 .cdmContentInner img,
+.cdmIntermediate img,
 .postContent img {
 	margin: .5em 1em .5em 0;
 	max-width: 100%;
