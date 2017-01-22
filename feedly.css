@@ -784,19 +784,13 @@ a:hover {
 	display: none;
 }
 
-#feeds-holder #feedTree > .dijitTreeNode > .dijitTreeContainer > .dijitTreeNode:first-child > .dijitTreeRow {
-	margin: 0 0 7px;
-	padding: 13px 6px;
+#feeds-holder #feedTree > .dijitTreeContainer > .dijitTreeNode > .dijitTreeNodeContainer > .dijitTreeNode:first-child {
+	margin-bottom: 13px;
+	padding: 13px 0;
 	border-bottom: 1px solid #d4d4d4;
 }
-#feeds-holder #feedTree > .dijitTreeNode > .dijitTreeContainer > .dijitTreeNode:first-child {
-	margin-bottom: 26px;
-}
-#feeds-holder #feedTree > .dijitTreeNode > .dijitTreeContainer > .dijitTreeNode:first-child .counterNode + .dijitInline {
-	padding: 0 !important;
-}
-#feeds-holder #feedTree > .dijitTreeNode > .dijitTreeContainer > .dijitTreeNode:first-child .feedIcon {
-	margin: 0 6px 0 -2px;
+#feeds-holder #feedTree > .dijitTreeContainer > .dijitTreeNode > .dijitTreeNodeContainer .feedIcon {
+	margin: 0 6px 0 9px;
 }
 
 /* main */
