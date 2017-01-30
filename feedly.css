@@ -701,15 +701,12 @@ a:hover {
 }
 
 #feeds-holder .dijitTreeRow {
-	overflow: hidden;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	padding: 4px 6px;
-	max-width: 100%;
 	border: 0;
 	background: transparent;
 	color: #909090;
-	text-overflow: ellipsis;
 	transition: color .2s;
 }
 #feeds-holder .dijitTreeRowSelected {
@@ -791,6 +788,15 @@ a:hover {
 }
 #feeds-holder #feedTree > .dijitTreeContainer > .dijitTreeNode > .dijitTreeNodeContainer .feedIcon {
 	margin: 0 6px 0 9px;
+}
+
+body#ttrssMain #feedTree.dijitTree .dijitTreeContainer {
+	max-width : 100%;
+}
+
+body#ttrssMain #feedTree.dijitTree .dijitTreeRow {
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 /* main */
