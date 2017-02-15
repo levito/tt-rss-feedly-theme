@@ -725,14 +725,14 @@ a:hover {
 #errorButton {
 	color: #e44;
 }
-#feeds-holder .dijitInline[style*="19px"] {
-	padding-right: 6px;
+#feeds-holder .dijitTreeRow[style*="19px"] {
+	padding-left: 31px !important;
 }
-#feeds-holder .dijitInline[style*="38px"] {
-	padding-right: 12px;
+#feeds-holder .dijitTreeRow[style*="38px"] {
+	padding-left: 56px !important;
 }
-#feeds-holder .dijitInline[style*="57px"] {
-	padding-right: 18px;
+#feeds-holder .dijitTreeRow[style*="57px"] {
+	padding-left: 81px !important;
 }
 #feeds-holder .counterNode {
 	float: right;
@@ -742,7 +742,7 @@ a:hover {
 #feeds-holder .dijitTreeRow .counterNode.aux {
 	color: #b2b2b2;
 }
-#feeds-holder img.feedIcon,
+#feeds-holder img.tinyFeedIcon,
 #feeds-holder .labelColorIndicator {
 	position: relative;
 	top: -1px;
@@ -790,8 +790,11 @@ a:hover {
 	padding: 13px 6px !important;
 	border-bottom: 1px solid #d4d4d4;
 }
+#feeds-holder #feedTree > .dijitTreeContainer > .dijitTreeNode > .dijitTreeNodeContainer > .dijitTreeNode:first-child .dijitTreeRow {
+	padding-left: 6px !important
+}
 #feeds-holder #feedTree > .dijitTreeContainer > .dijitTreeNode > .dijitTreeNodeContainer > .dijitTreeNode:first-child {
-	margin-bottom: 26px;
+	margin-bottom: 33px;
 }
 
 /* main */
