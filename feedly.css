@@ -700,11 +700,16 @@ a:hover {
 	cursor: pointer;
 }
 
+#feeds-holder .dijitTreeContainer {
+	max-width: 100%;
+}
 #feeds-holder .dijitTreeRow {
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	padding: 4px 6px;
+	padding: 4px 6px !important;
 	border: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
 	background: transparent;
 	color: #909090;
 	transition: color .2s;
@@ -780,23 +785,13 @@ a:hover {
 #feeds-holder[style*=none] ~ .dijitSplitter { /* hide splitter when sidebar is collapsed */
 	display: none;
 }
-
-#feeds-holder #feedTree > .dijitTreeContainer > .dijitTreeNode > .dijitTreeNodeContainer > .dijitTreeNode:first-child {
-	margin-bottom: 13px;
-	padding: 13px 0;
+#feeds-holder #feedTree > .dijitTreeContainer > .dijitTreeNode > .dijitTreeNodeContainer > .dijitTreeNode:first-child > .dijitTreeRow {
+	margin: 0 0 7px;
+	padding: 13px 6px !important;
 	border-bottom: 1px solid #d4d4d4;
 }
-#feeds-holder #feedTree > .dijitTreeContainer > .dijitTreeNode > .dijitTreeNodeContainer .feedIcon {
-	margin: 0 6px 0 9px;
-}
-
-body#ttrssMain #feedTree.dijitTree .dijitTreeContainer {
-	max-width : 100%;
-}
-
-body#ttrssMain #feedTree.dijitTree .dijitTreeRow {
-	overflow: hidden;
-	text-overflow: ellipsis;
+#feeds-holder #feedTree > .dijitTreeContainer > .dijitTreeNode > .dijitTreeNodeContainer > .dijitTreeNode:first-child {
+	margin-bottom: 26px;
 }
 
 /* main */
