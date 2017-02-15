@@ -644,9 +644,6 @@ a:hover {
 }
 
 /* feed tree */
-#ttrssMain #main-toolbar > .dijitButton {
-	display: block !important;
-}
 #ttrssMain #main-toolbar > .dijitButton .dijitButtonNode {
 	position: fixed;
 	top: 0;
@@ -794,7 +791,8 @@ a:hover {
 	padding-left: 6px !important
 }
 #feeds-holder #feedTree > .dijitTreeContainer > .dijitTreeNode > .dijitTreeNodeContainer > .dijitTreeNode:first-child {
-	margin-bottom: 33px;
+	overflow: hidden;
+	margin-bottom: 27px;
 }
 
 /* main */
