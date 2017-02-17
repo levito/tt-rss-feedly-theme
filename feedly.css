@@ -516,30 +516,13 @@ a:hover {
 }
 #headlines-toolbar .main {
 	width: 100%;
+	color: #b2b2b2;
 	text-align: right;
 	cursor: default;
 }
 /*#headlines-toolbar .main*/ #selected_prompt {
 	float: left;
 	margin: 1px 0 0 12px;
-}
-#headlines-toolbar .main > .sel_links {
-	font-size: 0;
-	color: #fff;
-}
-#headlines-toolbar .main > *,
-#headlines-toolbar .main > .sel_links a {
-	vertical-align: middle;
-	font-size: 12px;
-	color: #b2b2b2;
-}
-#headlines-toolbar .main > .sel_links a {
-	margin: 0 10px 0 2px;
-	text-decoration: none;
-	transition: color .2s;
-}
-#headlines-toolbar .main > .sel_links a:hover {
-	color: #444;
 }
 #ttrssMain #main {
 	padding: 0 0 0 30px;
