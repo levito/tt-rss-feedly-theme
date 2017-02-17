@@ -64,7 +64,7 @@
 
 /* FROM TT-RSS.CSS ************************************************************/
 
-/* @60 */
+/* @66 */
 div.articleNote {
 	background-color : #fff7d5;
 	padding : 5px;
@@ -72,7 +72,6 @@ div.articleNote {
 	border-style : solid;
 	border-color : #e7d796;
 	border-width : 1px;
-	background-color : #fff7d5;
 	color : #9a8c59;
 }
 
@@ -81,14 +80,7 @@ div.articleNote div.noteEdit {
 	cursor : pointer;
 }
 
-/* @146 */
-#notify.visible {
-	transform: translate(0, -35px);
-	-webkit-transform: translate(0, -35px);
-	-o-transform: translate(0, -35px);
-	-moz-transform: translate(0, -35px);
-}
-
+/* @148 */
 #notify.visible {
 	transform: translate(0, -35px);
 	-webkit-transform: translate(0, -35px);
@@ -145,7 +137,7 @@ div.articleNote div.noteEdit {
 }
 
 .notify.notify_info {
-	border-color : #88b0f0;
+	border-color : rgb(82, 168, 236);
 	background-color : #ecf4ff;
 }
 
@@ -161,66 +153,95 @@ div.filterTestHolder {
 	border-color : #ddd;
 	border-style : solid;
 	margin : 0px 0px 5px 0px;
-	background-color : #f5f5f5;
 	border-width : 1px;
 }
 
-/* @273 */
-div.notice, div.warning, div.error {
-	padding : 4px 10px 4px 4px;
-	display : inline-block;
-	margin : 2px 0px 4px 0px;
-	font-size : 12px;
-	border-style : solid;
-	border-color : #ccc;
-	border-width : 1px;
+/* @290 */
+.alert {
+	padding: 8px 35px 8px 14px;
+	margin-bottom: 10px;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	background-color: #fcf8e3;
+	border: 1px solid #fbeed5;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
 }
 
-div.notice div.inner, div.warning div.inner, div.error div.inner {
-	vertical-align : middle;
+.alert,
+.alert h4 {
+	color: #c09853;
 }
 
-div.notice {
-	background : #ecf4ff;
-	border-color : #88b0f0;
+.alert h4 {
+	margin: 0;
 }
 
-div.warning {
-	background : #fff7d5;
-	border-color : #e7d796;;
+.alert .close {
+	position: relative;
+	top: -2px;
+	right: -21px;
+	line-height: 20px;
+	cursor : pointer;
 }
 
-div.error {
-	background : #ffcccc;
-	border-color : #ff0000;
+.alert-success {
+	color: #468847;
+	background-color: #dff0d8;
+	border-color: #d6e9c6;
 }
 
-div.warning img, div.notice img, div.error img {
-	margin : 4px;
-	vertical-align : middle;
+.alert-success h4 {
+	color: #468847;
 }
 
-div.warning span, div.notice span, div.error span {
-	display : table-cell;
-	vertical-align : middle;
+.alert-danger,
+.alert-error {
+	color: #b94a48;
+	background-color: #f2dede;
+	border-color: #eed3d7;
+}
 
+.alert-danger h4,
+.alert-error h4 {
+	color: #b94a48;
+}
+
+.alert-info {
+	color: #3a87ad;
+	background-color: #d9edf7;
+	border-color: #bce8f1;
+}
+
+.alert-info h4 {
+	color: #3a87ad;
 }
 
 ul.nomarks {
 	list-style-type : none;
 	margin : 0px;
-	padding : 10px;
+	padding : 10px; 
 }
 
-/* @425 */
+/* @472 */
 img.markedPic, img.pubPic {
 	cursor : pointer;
 	vertical-align : middle;
+	opacity : 0.5;
+	-webkit-transition : opacity 0.25s;
+	transition : opacity 0.25s;
+}
+
+img.markedPic:hover, img.pubPic:hover {
+	opacity : 1;
+}
+
+img[src*='pub_set.png'], img[src*='mark_set.png'] {
+	opacity : 1;
 }
 
 div.tagCloudContainer {
 	border : 1px solid #ddd;
-	background-color : #f5f5f5;
 	margin : 5px 0px 5px 0px;
 	padding : 5px;
 	text-align : center;
@@ -228,7 +249,6 @@ div.tagCloudContainer {
 
 div.errorExplained {
 	border : 1px solid #ddd;
-	background-color : #f5f5f5;
 	margin : 5px 0px 5px 0px;
 	padding : 5px;
 }
@@ -238,7 +258,6 @@ ul.feedErrorsList {
 	overflow : auto;
 	list-style-type : none;
 	border : 1px solid #ddd;
-	background-color : #f5f5f5;
 	margin : 0px 0px 5px 0px;
 	padding : 5px;
 }
@@ -295,7 +314,7 @@ ul.compact li {
 	border-width : 0px;
 }
 
-/* @612 */
+/* @664 */
 div.dlgSec {
 	font-size : 12px;
 	color : #555;
@@ -313,7 +332,7 @@ div.dlgSecCont {
 	font-weight : normal;
 }
 
-div.dlgSecCont hr {
+div.dlgSecCont hr, div.dlgSecSimple hr {
 	height : 0px;
 	line-height : 0px;
 	border : 0px solid transparent;
@@ -330,7 +349,7 @@ div.dlgButtons {
 	clear : both;
 }
 
-/* @759 */
+/* @811 */
 div.fatalError {
 	margin-bottom : 10px;
 }
@@ -344,7 +363,7 @@ div.fatalError textarea {
 	height : 100px;
 }
 
-/* @911 */
+/* @976 */
 ul#filterDlg_Matches, ul#filterDlg_Actions {
 	max-height : 100px;
 	overflow : auto;
@@ -367,7 +386,6 @@ ul.helpKbList {
 	overflow : auto;
 	list-style-type : none;
 	border : 1px solid #ddd;
-	background-color : #f5f5f5;
 	margin : 0px 0px 5px 0px;
 	padding : 5px;
 }
@@ -375,7 +393,7 @@ ul.helpKbList {
 ul.helpKbList span.hksequence {
 	width : 6em;
 	margin-left : 20px;
-	color : #88b0f0;
+	color : rgb(82, 168, 236);
 	font-weight : bold;
 	display : inline-block;
 }
@@ -1808,12 +1826,11 @@ div.filterTestHolder, div.prefFeedOPMLHolder {
 	border-width : 1px;
 }
 
-ul.selfUpdateList, ul.userFeedList {
+ul.userFeedList {
 	height : 200px;
 	overflow : auto;
 	list-style-type : none;
 	border : 1px solid #ddd;
-	background-color : #f5f5f5;
 	margin : 0px 0px 5px 0px;
 	padding : 5px;
 }
@@ -1828,7 +1845,7 @@ div#feedlistLoading img, div#filterlistLoading img, div#labellistLoading {
 	margin-right : 5px;
 }
 
-/* 106 */
+/* 98 */
 table.prefPluginsList td label, table.prefUserList td {
 	cursor : pointer;
 }
