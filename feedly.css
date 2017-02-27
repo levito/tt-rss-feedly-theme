@@ -702,12 +702,10 @@ a:hover {
 	max-width: 100%;
 }
 #feeds-holder .dijitTreeRow {
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
+	display: flex;
+	flex-flow: row-reverse nowrap;
 	padding: 4px 6px !important;
 	border: 0;
-	overflow: hidden;
-	text-overflow: ellipsis;
 	background: transparent;
 	color: #909090;
 	transition: color .2s;
@@ -724,37 +722,40 @@ a:hover {
 	color: #e44;
 }
 #feeds-holder .dijitTreeRow[style*="19px"] {
-	padding-left: 31px !important;
+	padding-left: 32px !important;
 }
 #feeds-holder .dijitTreeRow[style*="38px"] {
-	padding-left: 56px !important;
+	padding-left: 57px !important;
 }
 #feeds-holder .dijitTreeRow[style*="57px"] {
-	padding-left: 81px !important;
+	padding-left: 82px !important;
 }
 #feeds-holder .counterNode {
-	float: right;
 	padding: 2px 2px 0;
 	font-size: 10px;
 }
-#feeds-holder .dijitTreeRow .counterNode.aux {
+#feeds-holder .counterNode.aux {
 	color: #b2b2b2;
 }
-#feeds-holder img.tinyFeedIcon,
+#feeds-holder .tinyFeedIcon,
 #feeds-holder .labelColorIndicator {
 	position: relative;
 	top: -1px;
 	margin: 0 4px 0 0;
 	vertical-align: middle;
 }
-#feeds-holder .dijitTreeRow .dijitTreeExpando {
-	margin: 0 4px 0 0;
+#feeds-holder .dijitTreeExpando {
+	margin: 2px 4px 0 0;
 	background-image: url("feedly/icons.png");
 	background-size: 176px 32px;
 	opacity: .2;
 }
-#feeds-holder .dijitTreeRow .dijitTreeExpando:hover {
+#feeds-holder .dijitTreeExpando:hover {
 	opacity: .35;
+}
+#feeds-holder .dijitTreeExpandoClosed,
+#feeds-holder .dijitTreeExpandoOpened {
+	order: 1;
 }
 #feeds-holder .dijitTreeExpandoClosed {
 	background-position: 0 0;
@@ -762,25 +763,25 @@ a:hover {
 #feeds-holder .dijitTreeExpandoOpened {
 	background-position: -16px 0;
 }
-#feeds-holder #feedTree .loadingNode, /* needs #feedTree to raise specifity for opacity */
-#feeds-holder .dijitTreeExpandoLeaf[src*=indicator] ~ .dijitTreeContent:after {
-	margin-left: 5px;
-	width: 16px;
-	height: 11px;
+#feeds-holder .dijitTreeExpandoLeaf {
+	flex: 1;
 	opacity: 1;
+	background-image: none;
 }
-#feeds-holder .dijitTreeExpandoLeaf[src*=indicator] ~ .dijitTreeContent:after {
-	display: inline-block;
-	margin-left: 2px; /* compensate added white-space */
-	background: transparent url("../images/indicator_tiny.gif") 0 0 no-repeat;
-	content: "";
-	vertical-align: middle;
+#feeds-holder .dijitTreeExpandoLeaf img {
+	margin: -4px;
+}
+#feeds-holder .dijitTreeContent {
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+#feeds-holder .dijitTreeExpandoOpened ~ .dijitTreeContent,
+#feeds-holder .dijitTreeExpandoClosed ~ .dijitTreeContent {
+	flex: 1;
 }
 #feeds-holder .dijitTreeRow.Hidden,
 #feeds-holder .dijitFolderClosed,
-#feeds-holder .dijitFolderOpened,
-#feeds-holder .dijitTreeExpandoLeaf,
-#feeds-holder[style*=none] ~ .dijitSplitter { /* hide splitter when sidebar is collapsed */
+#feeds-holder .dijitFolderOpened {
 	display: none;
 }
 #feeds-holder #feedTree > .dijitTreeContainer > .dijitTreeNode > .dijitTreeNodeContainer > .dijitTreeNode:first-child > .dijitTreeRow {
