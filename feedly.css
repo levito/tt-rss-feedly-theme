@@ -896,74 +896,33 @@ a:hover {
 #floatingTitle,
 .cdm.expandable:not(.active) .cdmHeader,
 .hl {
-	/* old flexbox: */
-	display: -moz-box;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	-moz-box-align: stretch;
-	-webkit-box-align: stretch;
-	-ms-flex-align: stretch;
-	/* new flexbox: */
-	display: -webkit-flex;
 	display: flex;
-	-webkit-align-items: stretch;
 	align-items: stretch;
 }
 #floatingTitle > *,
 .cdm.expandable:not(.active) .cdmHeader > *,
 .hl > * {
 	padding: 7px 6px;
-	/* old flexbox: */
-	display: block;
-	-moz-box-ordinal-group: 3;
-	-webkit-box-ordinal-group: 3;
-	-ms-flex-order: 3;
-	/* new flexbox: */
-	-webkit-order: 3;
 	order: 3;
 }
 #floatingTitle > :first-child,
 .cdm.expandable:not(.active) .cdmHeader > :first-child,
 .hl > .hlLeft {
-	/* old flexbox: */
-	-moz-box-ordinal-group: 4;
-	-webkit-box-ordinal-group: 4;
-	-ms-flex-order: 4;
-	/* new flexbox: */
-	-webkit-order: 4;
 	order: 4;
 }
 #floatingTitle > .scoreWrap,
 .cdm.expandable:not(.active) .cdmHeader > .scoreWrap,
 .hl > .hlRight {
-	/* old flexbox: */
-	-moz-box-ordinal-group: 1;
-	-webkit-box-ordinal-group: 1;
-	-ms-flex-order: 1;
-	/* new flexbox: */
-	-webkit-order: 1;
 	order: 1;
 }
 #floatingTitle > .titleWrap,
 .cdm.expandable:not(.active) .cdmHeader > .titleWrap,
 .hl > .hlTitle {
-	/* old flexbox: */
-	-moz-box-flex: 1;
-	-webkit-box-flex: 1;
-	-ms-flex: 99;
-	/* new flexbox: */
-	-webkit-flex: 99;
-	flex: 99;
+	flex: 1;
 }
 .cdm.expandable:not(.active) .cdmHeader > .hlFeed,
 .hl > .hlFeed {
 	width: 135px;
-	/* old flexbox: */
-	-moz-box-ordinal-group: 2;
-	-webkit-box-ordinal-group: 2;
-	-ms-flex-order: 2;
-	/* new flexbox: */
-	-webkit-order: 2;
 	order: 2;
 }
 .cdm.expandable:not(.active) .cdmHeader > .hlFeed a,
@@ -1083,17 +1042,7 @@ a:hover {
 #headlines-frame.wide .hl:before {
 	content: "";
 	display: block; /* IE fix */
-	/* old flexbox: */
-	-moz-box-flex: 1;
-	-webkit-box-flex: 1;
-	-ms-flex: 99;
-	-moz-box-ordinal-group: 3;
-	-webkit-box-ordinal-group: 3;
-	-ms-flex-order: 3;
-	/* new flexbox: */
-	-webkit-flex: 99;
-	flex: 99;
-	-webkit-order: 3;
+	flex: 1;
 	order: 3;
 }
 #headlines-frame.wide .hl > .hlTitle {
@@ -1101,17 +1050,7 @@ a:hover {
 	width: 100%;
 	margin-top: -30px;
 	padding-top: 30px;
-	/* old flexbox: */
-	-moz-box-flex: 1;
-	-webkit-box-flex: 1;
-	-ms-flex: 100% 1;
-	-moz-box-ordinal-group: 4;
-	-webkit-box-ordinal-group: 4;
-	-ms-flex-order: 4;
-	/* new flexbox: */
-	-webkit-flex: 100% 1;
 	flex: 100% 1;
-	-webkit-order: 4;
 	order: 4;
 }
 
