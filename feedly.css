@@ -704,7 +704,7 @@ a:hover {
 #feeds-holder .dijitTreeRow {
 	display: flex;
 	flex-flow: row-reverse nowrap;
-	padding: 4px 6px !important;
+	padding: 4px;
 	border: 0;
 	background: transparent;
 	color: #909090;
@@ -721,15 +721,6 @@ a:hover {
 #errorButton {
 	color: #e44;
 }
-#feeds-holder .dijitTreeRow[style*="19px"] {
-	padding-left: 32px !important;
-}
-#feeds-holder .dijitTreeRow[style*="38px"] {
-	padding-left: 57px !important;
-}
-#feeds-holder .dijitTreeRow[style*="57px"] {
-	padding-left: 82px !important;
-}
 #feeds-holder .counterNode {
 	padding: 2px 2px 0;
 	font-size: 10px;
@@ -737,15 +728,15 @@ a:hover {
 #feeds-holder .counterNode.aux {
 	color: #b2b2b2;
 }
-#feeds-holder .tinyFeedIcon,
+#feeds-holder .tinyFeedIcon.tinyFeedIcon,
 #feeds-holder .labelColorIndicator {
 	position: relative;
 	top: -1px;
-	margin: 0 4px 0 0;
+	margin: 0 5px 0 11px;
 	vertical-align: middle;
 }
 #feeds-holder .dijitTreeExpando {
-	margin: 2px 4px 0 0;
+	margin: 2px 5px 0;
 	background-image: url("feedly/icons.png");
 	background-size: 176px 32px;
 	opacity: .2;
@@ -763,12 +754,12 @@ a:hover {
 #feeds-holder .dijitTreeExpandoOpened {
 	background-position: -16px 0;
 }
-#feeds-holder .dijitTreeExpandoLeaf {
+#feeds-holder .dijitTreeExpandoLeaf.dijitTreeExpandoLeaf { /* raise specificity to top #feeds-holder .dijitTreeExpando:hover for opacity */
 	flex: 1;
 	opacity: 1;
 	background-image: none;
 }
-#feeds-holder .dijitTreeExpandoLeaf img {
+#feeds-holder .dijitTreeExpandoLeaf img { /* loading spinner */
 	margin: -4px;
 }
 #feeds-holder .dijitTreeContent {
@@ -786,11 +777,12 @@ a:hover {
 }
 #feeds-holder #feedTree > .dijitTreeContainer > .dijitTreeNode > .dijitTreeNodeContainer > .dijitTreeNode:first-child > .dijitTreeRow {
 	margin: 0 0 7px;
-	padding: 13px 6px !important;
+	padding: 13px 0;
 	border-bottom: 1px solid #d4d4d4;
 }
-#feeds-holder #feedTree > .dijitTreeContainer > .dijitTreeNode > .dijitTreeNodeContainer > .dijitTreeNode:first-child .dijitTreeRow {
-	padding-left: 6px !important
+#feeds-holder #feedTree > .dijitTreeContainer > .dijitTreeNode > .dijitTreeNodeContainer > .dijitTreeNode:first-child > .dijitTreeNodeContainer .dijitTreeRow {
+	margin-left: -6px;
+	padding-left: 0 !important;
 }
 #feeds-holder #feedTree > .dijitTreeContainer > .dijitTreeNode > .dijitTreeNodeContainer > .dijitTreeNode:first-child {
 	overflow: hidden;
