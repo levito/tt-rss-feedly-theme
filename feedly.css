@@ -525,7 +525,7 @@ a:hover {
 	margin: 1px 0 0 12px;
 }
 #ttrssMain #main {
-	padding: 0 0 0 30px;
+	padding: 0 0 0 35px;
 }
 /* status icons */
 #main-toolbar .actionChooser > .dijitButton .dijitButtonNode {
@@ -644,24 +644,24 @@ a:hover {
 	margin-left: 0;
 }
 
-/* feed tree */
+/* plugin: toggle sidebar */
 #ttrssMain #main-toolbar > .dijitButton .dijitButtonNode {
 	position: fixed;
 	top: 0;
 	bottom: 0;
 	left: 0;
 	padding: 0;
-	width: 30px;
+	width: 35px;
 	border: 0;
 	border-radius: 0;
 	background: transparent;
 	box-shadow: none;
-	transition: background .5s;
+	transition: background-color .3s;
 }
 #ttrssMain #main-toolbar > .dijitButton .dijitButtonContents {
 	position: absolute;
-	top: 83px;
-	left: 7px;
+	top: 53px;
+	left: 9px;
 	overflow: hidden;
 	padding: 0;
 	width: 16px;
@@ -678,10 +678,17 @@ a:hover {
 #ttrssMain #main-toolbar > .dijitButton:hover .dijitButtonContents {
 	opacity: .7;
 }
-#feeds-holder #feedTree {
-	padding: 0 9px 30px 0;
-}
 
+/* feed tree */
+#feeds-holder {
+	overflow: visible;
+}
+#feeds-holder #feedTree {
+	box-sizing: border-box;
+	margin-left: -35px;
+	padding: 46px 0;
+	height: 100% !important;
+}
 /* don't react on clicks between rows */
 #feeds-holder #feedTree:after {
 	position: absolute;
@@ -690,6 +697,9 @@ a:hover {
 	bottom: 0;
 	left: 0;
 	content: "";
+}
+#feeds-holder ~ .dijitSplitter {
+	background: #fff;
 }
 #feeds-holder .dijitTreeNode .dijitTreeNode .dijitTreeRow,
 #feeds-holder .dijitTreeNode .dijitTreeNode .dijitTreeRow * {
@@ -707,33 +717,37 @@ a:hover {
 	display: none;
 }
 #feeds-holder .dijitTreeRow {
-	padding: 4px 0;
+	padding: 5px 25px 5px 0;
 	border: 0;
+	border-left: 40px solid transparent;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	background: transparent;
-	color: #909090;
+	color: rgba(0,0,0,.6);
 	transition: color .2s;
 }
-#feeds-holder .dijitTreeRowSelected {
-	color: #222;
+#feeds-holder .dijitTreeRow:hover {
+	background: #e5e5e5;
+}
+#feeds-holder .dijitTreeRow.dijitTreeRowSelected {
 	transition: none;
+	background: #ddd;
 }
 #feeds-holder .dijitTreeLabel.Unread {
 	font-weight: bold;
 }
 #feeds-holder .dijitTreeRow.Error,
 #errorButton {
-	color: #e44;
+	color: #b94a48;
 }
 #feeds-holder .counterNode {
 	float: right;
-	padding: 2px 4px 0;
+	padding: 2px 0 0 5px;
 	font-size: 10px;
 }
 /* counter for starred/published items */
 #feeds-holder .counterNode.aux {
-	color: #b2b2b2;
+	color: rgba(0,0,0,.3);
 }
 #feeds-holder .dijitTreeExpandoClosed,
 #feeds-holder .dijitTreeExpandoOpened {
@@ -764,17 +778,12 @@ a:hover {
 #feeds-holder .loadingExpando[src*='images/indicator'] {
 	top: -5px;
 	left: 2px;
-	background: #eee;
+	border-radius: 999px;
+	background: #ddd;
 }
 /* special feeds section */
 #feeds-holder #feedTree > .dijitTreeContainer > .dijitTreeNode > .dijitTreeNodeContainer > .dijitTreeNode:first-child {
-	overflow: hidden;
-	margin-bottom: 27px;
-}
-#feeds-holder #feedTree > .dijitTreeContainer > .dijitTreeNode > .dijitTreeNodeContainer > .dijitTreeNode:first-child > .dijitTreeRow {
-	margin: 0 0 7px;
-	padding: 13px 0;
-	border-bottom: 1px solid #d4d4d4;
+	margin-bottom: 28px;
 }
 #feeds-holder #feedTree > .dijitTreeContainer > .dijitTreeNode > .dijitTreeNodeContainer > .dijitTreeNode:first-child > .dijitTreeNodeContainer .dijitTreeRow {
 	margin-left: -4px;
