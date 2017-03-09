@@ -525,7 +525,7 @@ a:hover {
 	margin: 1px 0 0 12px;
 }
 #ttrssMain #main {
-	padding: 0 0 0 35px;
+	padding: 0 0 0 30px;
 }
 /* status icons */
 #main-toolbar .actionChooser > .dijitButton .dijitButtonNode {
@@ -651,17 +651,17 @@ a:hover {
 	bottom: 0;
 	left: 0;
 	padding: 0;
-	width: 35px;
+	width: 30px;
 	border: 0;
 	border-radius: 0;
-	background: transparent;
-	box-shadow: none;
-	transition: background-color .3s;
+	background: transparent -30px 0 no-repeat;
+	background-image: linear-gradient(to right, rgba(0,0,0,.075), rgba(0,0,0,0));
+	transition: background-position .1s;
 }
 #ttrssMain #main-toolbar > .dijitButton .dijitButtonContents {
 	position: absolute;
 	top: 53px;
-	left: 9px;
+	left: 7px;
 	overflow: hidden;
 	padding: 0;
 	width: 16px;
@@ -673,7 +673,7 @@ a:hover {
 	transition: opacity .2s;
 }
 #ttrssMain #main-toolbar > .dijitButton:hover .dijitButtonNode {
-	background: rgba(0,0,0,.05);
+	background-position: 0 0;
 }
 #ttrssMain #main-toolbar > .dijitButton:hover .dijitButtonContents {
 	opacity: .7;
@@ -684,10 +684,11 @@ a:hover {
 	overflow: visible;
 }
 #feeds-holder #feedTree {
-	box-sizing: border-box;
-	margin-left: -35px;
-	padding: 46px 0;
+	margin-left: -30px;
 	height: 100% !important;
+}
+#feeds-holder #feedTree > .dijitTreeContainer {
+	margin: 46px 0;
 }
 /* don't react on clicks between rows */
 #feeds-holder #feedTree:after {
@@ -719,7 +720,7 @@ a:hover {
 #feeds-holder .dijitTreeRow {
 	padding: 5px 25px 5px 0;
 	border: 0;
-	border-left: 40px solid transparent;
+	border-left: 27px solid transparent;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	background: transparent;
@@ -1512,7 +1513,7 @@ div.articleNote {
 	background: rgba(255,204,0,.5);
 	color: #b80;
 }
-#feeds-holder,
+#feedTree,
 #headlines-frame,
 #content-insert {
 	-webkit-overflow-scrolling: touch;
