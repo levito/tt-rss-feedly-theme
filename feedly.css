@@ -116,8 +116,8 @@ div.articleNote div.noteEdit {
 	width : 100%;
 }
 
-#notify span.close {
-	text-align : right;
+#notify img.close {
+	cursor : pointer;
 }
 
 #notify span {
