@@ -684,7 +684,7 @@ a:hover {
 	overflow: visible;
 }
 #feeds-holder #feedTree {
-	margin-left: -30px;
+	margin: 0 -5px 0 -30px;
 	height: 100% !important;
 }
 #feeds-holder #feedTree > .dijitTreeContainer {
@@ -700,7 +700,7 @@ a:hover {
 	content: "";
 }
 #feeds-holder ~ .dijitSplitter {
-	background: #fff;
+	background: transparent;
 }
 #feeds-holder .dijitTreeNode .dijitTreeNode .dijitTreeRow,
 #feeds-holder .dijitTreeNode .dijitTreeNode .dijitTreeRow * {
