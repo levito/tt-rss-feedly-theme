@@ -510,8 +510,17 @@ a:hover {
 	background: transparent;
 	margin-bottom: -1px;
 }
+/*#headlines-toolbar*/ #feed_title {
+	font-weight: bold;
+	font-size: 13px;
+	color: #444;
+}
+/*#headlines-toolbar*/ #feed_title a {
+	color: inherit;
+	margin-right: 6px;
+}
 #headlines-toolbar .r img {
-	vertical-align: top !important;
+	vertical-align: top;
 	margin: 1px 6px 0 0;
 }
 #headlines-toolbar .main {
@@ -530,6 +539,7 @@ a:hover {
 /* status icons */
 #main-toolbar .actionChooser > .dijitButton .dijitButtonNode {
 	padding: 0;
+	border: 0;
 }
 #main,
 #feeds-holder,
@@ -699,9 +709,6 @@ a:hover {
 	left: 0;
 	content: "";
 }
-#feeds-holder ~ .dijitSplitter {
-	background: transparent;
-}
 #feeds-holder .dijitTreeNode .dijitTreeNode .dijitTreeRow,
 #feeds-holder .dijitTreeNode .dijitTreeNode .dijitTreeRow * {
 	position: relative;
@@ -737,7 +744,7 @@ a:hover {
 #feeds-holder .dijitTreeLabel.Unread {
 	font-weight: bold;
 }
-#feeds-holder .dijitTreeRow.Error,
+#feedTree .dijitTreeRow.Error,
 #errorButton {
 	color: #b94a48;
 }
@@ -807,14 +814,6 @@ a:hover {
 .postHeader .postTitle a {
 	font-weight: bold;
 	font-size: 13px;
-}
-#feed_title {
-	font-weight: bold;
-	font-size: 13px;
-	color: #444;
-}
-#feed_title a {
-	color: inherit;
 }
 #content-insert {
 	z-index: 3;
@@ -1534,6 +1533,8 @@ div.articleNote {
 #ttrssMain img[src*='images/star.png'],
 #ttrssMain img[src*='images/feed.png'],
 #ttrssMain img[src*='images/time.png'],
+#ttrssMain img[src*='images/new_version.png'],
+#ttrssMain img[src*='images/error.png'],
 #header-wrap .rchk,
 #floatingTitle .anchor {
 	padding-top: 16px;
@@ -1575,6 +1576,12 @@ div.articleNote {
 #ttrssMain img[src*='images/recently_read.png'],
 #ttrssMain img[src*='images/time.png'] {
 	background-position: -112px 0;
+}
+#ttrssMain img[src*='images/new_version.png'] {
+	background-position: -128px -16px;
+}
+#ttrssMain img[src*='images/error.png'] {
+	background-position: -144px -16px;
 }
 #headlines-toolbar img[src*='images/pub_set'] {
 	background-position: -128px 0;
