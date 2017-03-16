@@ -422,7 +422,6 @@ input[type="search"] {
 	-webkit-appearance: none;
 }
 textarea {
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 .claro .dijitBorderContainer,
@@ -832,7 +831,6 @@ a:hover {
 }
 #headlines-spacer {
 	position: relative;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	padding-top: 42px;
 	height: 100%;
@@ -1032,7 +1030,6 @@ a:hover {
 	white-space: nowrap;
 }
 #headlines-frame.wide .hl {
-	-webkit-flex-wrap: wrap;
 	flex-wrap: wrap;
 }
 #headlines-frame.wide .hl:before {
@@ -1669,7 +1666,6 @@ hack inspired by browserhacks.com */
 #ttrssPrefs #header a,
 #cancel_search a,
 .cdmContentInner .expandPrompt {
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	padding: 2px 8px;
 	border: 1px solid #d8d8d8;
