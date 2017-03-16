@@ -1041,6 +1041,12 @@ a:hover {
 	flex: 1;
 	order: 3;
 }
+#headlines-frame.wide .hl > .hlFeed {
+	width: auto
+}
+#headlines-frame.wide .hl > .hlFeed a {
+	max-width: none;
+}
 #headlines-frame.wide .hl > .hlTitle {
 	white-space: normal;
 	width: 100%;
@@ -1049,13 +1055,13 @@ a:hover {
 	flex: 100% 1;
 	order: 4;
 }
-
-#headlines-frame.wide + #content-insert .postReply {
+/* sticky post header in widescreen layout */
+#headlines-frame.wide ~ #content-insert .postReply {
 	display: flex;
 	flex-direction: column;
 	height: 100%;
 }
-#headlines-frame.wide + #content-insert .postContent {
+#headlines-frame.wide ~ #content-insert .postContent {
 	flex: 1;
 	overflow: auto;
 }
@@ -1514,7 +1520,8 @@ div.articleNote {
 }
 #feedTree,
 #headlines-frame,
-#content-insert {
+#content-insert,
+.postContent {
 	-webkit-overflow-scrolling: touch;
 }
 
