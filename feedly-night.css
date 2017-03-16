@@ -1,0 +1,22 @@
+/* supports-version:17.1 */
+
+@import url(feedly.css);
+
+html {
+	-webkit-filter: brightness(90%) invert(100%) hue-rotate(180deg);
+	filter: brightness(90%) invert(100%) hue-rotate(180deg);
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+iframe,
+picture,
+video,
+img[src*='feed-icons'],
+.postTags img[src*='plugins'],
+.cdmFooter img[src*='plugins'],
+.cdmContentInner img,
+.cdmIntermediate img,
+.postContent img {
+	-webkit-filter: hue-rotate(180deg) invert(100%) brightness(111.111%);
+	filter: hue-rotate(180deg) invert(100%) brightness(111.111%);
+}
