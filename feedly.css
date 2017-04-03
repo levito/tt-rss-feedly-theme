@@ -540,9 +540,15 @@ a:hover {
 	padding: 0;
 	border: 0;
 }
+#main .dijitSplitter {
+	background: transparent;
+}
+#main .dijitSplitterThumb {
+	display: none;
+}
 #main,
 #feeds-holder,
-#main #headlines-wrap-inner .dijitSplitter {
+#headlines-wrap-inner .dijitSplitter {
 	background: #eee;
 }
 #header-wrap,
@@ -550,13 +556,6 @@ a:hover {
 #toolbar {
 	overflow: visible; /* fixes transitions of feed tree collapse button */
 	background: #fff;
-}
-#main .dijitSplitterHover,
-#main .dijitSplitterActive {
-	background: transparent;
-}
-#main .dijitSplitterThumb {
-	display: none;
 }
 
 #main #content-wrap .dijitSelect,
@@ -1376,6 +1375,13 @@ div.articleNote {
 .cdmContentInner th,
 .postContent th {
 	background: rgba(0,0,0,.05);
+}
+.cdmContentInner table[border='0'] th,
+.postContent table[border='0'] th,
+.cdmContentInner table[border='0'] td,
+.postContent table[border='0'] td {
+	padding: 0;
+	border: 0;
 }
 .cdmContentInner hr,
 .postContent hr {
