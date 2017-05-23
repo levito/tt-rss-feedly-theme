@@ -17,3 +17,11 @@ img[src*='feed-icons'],
 .postContent img {
 	filter: hue-rotate(180deg) invert(100%) brightness(111.111%);
 }
+iframe:-moz-full-screen,
+video:-moz-full-screen {
+	filter: none;
+}
+iframe:-webkit-full-screen,
+video:-webkit-full-screen {
+	filter: none;
+}
