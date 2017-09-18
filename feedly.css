@@ -696,10 +696,11 @@ a:hover {
 	height: 100% !important;
 }
 #feeds-holder #feedTree > .dijitTreeContainer {
+	position: relative;
 	margin: 46px 0;
 }
 /* don't react on clicks between rows */
-#feeds-holder #feedTree:after {
+#feeds-holder #feedTree > .dijitTreeContainer:after {
 	position: absolute;
 	top: 0;
 	right: 0;
