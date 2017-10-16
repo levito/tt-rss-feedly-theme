@@ -223,7 +223,7 @@ ul.nomarks {
 	padding : 10px; 
 }
 
-/* @472 */
+/* @473 */
 img.markedPic, img.pubPic {
 	cursor : pointer;
 	vertical-align : middle;
@@ -314,7 +314,7 @@ ul.compact li {
 	border-width : 0px;
 }
 
-/* @664 */
+/* @665 */
 div.dlgSec {
 	font-size : 12px;
 	color : #555;
@@ -349,7 +349,7 @@ div.dlgButtons {
 	clear : both;
 }
 
-/* @811 */
+/* @812 */
 div.fatalError {
 	margin-bottom : 10px;
 }
@@ -363,7 +363,7 @@ div.fatalError textarea {
 	height : 200px;
 }
 
-/* @976 */
+/* @977 */
 ul#filterDlg_Matches, ul#filterDlg_Actions {
 	max-height : 100px;
 	overflow : auto;
@@ -402,11 +402,17 @@ ul.helpKbList h2 {
 	margin-top : 0px;
 }
 
-/* @981 */
+/* @1051 */
 select.attachments {
 	display : block;
 	margin-top : 10px;
 	max-width : 120px;
+}
+
+/* @1097 */
+#filterDlg_feeds select {
+	height : 150px;
+	width : 410px;
 }
 
 
@@ -1394,8 +1400,11 @@ div.articleNote {
 	margin: .5em 0;
 }
 .cdmContentInner img,
+.cdmContentInner video,
 .cdmIntermediate img,
-.postContent img {
+.cdmIntermediate video,
+.postContent img,
+.postContent video {
 	margin: .5em 1em .5em 0;
 	max-width: 100%;
 	width: auto;
