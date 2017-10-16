@@ -9,20 +9,20 @@ Use the [branch v1.12](https://github.com/levito/tt-rss-feedly-theme/tree/v1.12)
 
 For the best experience, use a current browser. IE9 and older versions are not supported.
 
-This theme is tested in Chrome on a regular basis and has proved to work fine in IE10 and recent versions of Safari, Firefox (28+) and Opera (15+) as well.
+This theme is tested in Chrome on a regular basis and should work fine in IE10 and recent versions of Safari, Firefox (28+) and Opera (15+) as well.
 
 ## Installation
 
-**Prerequesites:** Running instance of TT-RSS
+**Prerequisites:** Running instance of TT-RSS
 
-Install-steps (If you did not find the description on the [TT-RSS Homepage](http://tt-rss.org/redmine/projects/tt-rss/wiki/Themes)):
+Install steps (If you did not find the description on the [TT-RSS Homepage](http://tt-rss.org/redmine/projects/tt-rss/wiki/Themes)):
 
 1. Download the ZIP-File: `wget https://github.com/levito/tt-rss-feedly-theme/archive/master.zip`
 2. Unzip the ZIP-File: `unzip master.zip`
 3. Change into the newly created folder: `cd tt-rss-feedly-theme-master`
 4. Copy the relevant files into your TT-RSS folder:
 
-    * `cp feedly.css [TT-RSS_Home]/themes`
+    * `cp feedly.css feedly-night.css [TT-RSS_Home]/themes`
     * `cp -r feedly/ [TT-RSS_Home]/themes`
 
 5. Go into your TT-RSS preferences and select the feedly-theme.
