@@ -1,7 +1,7 @@
 tt-rss-feedly-theme
 ===================
 
-Feedly theme for [Tiny Tiny RSS](http://tt-rss.org/redmine/projects/tt-rss/wiki) 1.15 or newer.
+Feedly theme for [Tiny Tiny RSS](https://git.tt-rss.org/git/tt-rss/wiki) 1.15 or newer.
 
 Use the [legacy branch](https://github.com/levito/tt-rss-feedly-theme/tree/legacy) for TT-RSS 1.11 or older.
 
@@ -15,7 +15,7 @@ This theme is tested in Chrome on a regular basis and should work fine in IE10 a
 
 **Prerequisites:** Running instance of TT-RSS
 
-Install steps (If you did not find the description on the [TT-RSS Homepage](http://tt-rss.org/redmine/projects/tt-rss/wiki/Themes)):
+Install steps (If you did not find the description on the [TT-RSS Homepage](https://git.tt-rss.org/git/tt-rss/wiki/Themes)):
 
 1. Download the ZIP-File: `wget https://github.com/levito/tt-rss-feedly-theme/archive/master.zip`
 2. Unzip the ZIP-File: `unzip master.zip`
