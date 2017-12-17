@@ -1,4 +1,4 @@
-/* supports-version:17.4 */
+/* supports-version:17.12 */
 
 @import url(feedly/claro-mod.min.css);
 
@@ -444,13 +444,15 @@ img,
 
 /* BASE LAYOUT ************************************************************/
 
-#ttrssMain,
-#ttrssPrefs {
+body {
 	overflow: hidden;
-	max-height: 100%;
+	margin: 0;
 }
+body,
 #main {
-	width: auto;
+	position: absolute;
+	width: 100%;
+	height: 100%;
 }
 #main-toolbar,
 #headlines-toolbar .holder {
@@ -538,7 +540,8 @@ a:hover {
 	float: left;
 	margin: 1px 0 0 12px;
 }
-#ttrssMain #main {
+#ttrssMain #main,
+.ttrss_main #main {
 	padding: 0 0 0 30px;
 }
 /* status icons */
@@ -659,7 +662,8 @@ a:hover {
 }
 
 /* plugin: toggle sidebar */
-#ttrssMain #main-toolbar > .dijitButton .dijitButtonNode {
+#ttrssMain #main-toolbar > .dijitButton .dijitButtonNode,
+.ttrss_main #main-toolbar > .dijitButton .dijitButtonNode {
 	position: fixed;
 	top: 0;
 	bottom: 0;
@@ -672,7 +676,8 @@ a:hover {
 	background-image: linear-gradient(to right, rgba(0,0,0,.075), rgba(0,0,0,0));
 	transition: background-position .1s;
 }
-#ttrssMain #main-toolbar > .dijitButton .dijitButtonContents {
+#ttrssMain #main-toolbar > .dijitButton .dijitButtonContents,
+.ttrss_main #main-toolbar > .dijitButton .dijitButtonContents {
 	position: absolute;
 	top: 53px;
 	left: 7px;
@@ -686,10 +691,12 @@ a:hover {
 	opacity: .2;
 	transition: opacity .2s;
 }
-#ttrssMain #main-toolbar > .dijitButton:hover .dijitButtonNode {
+#ttrssMain #main-toolbar > .dijitButton:hover .dijitButtonNode,
+.ttrss_main #main-toolbar > .dijitButton:hover .dijitButtonNode {
 	background-position: 0 0;
 }
-#ttrssMain #main-toolbar > .dijitButton:hover .dijitButtonContents {
+#ttrssMain #main-toolbar > .dijitButton:hover .dijitButtonContents,
+.ttrss_main #main-toolbar > .dijitButton:hover .dijitButtonContents {
 	opacity: .7;
 }
 
@@ -964,6 +971,7 @@ a:hover {
 	margin: 0 6px;
 }
 #ttrssMain .tinyFeedIcon,
+.ttrss_main.ttrss_main .tinyFeedIcon,
 #floatingTitle > :first-child > *,
 #floatingTitle > .scoreWrap img,
 .cdm.expanded .cdmHeader > :first-child > *,
@@ -1547,6 +1555,14 @@ div.articleNote {
 #ttrssMain img[src*='images/pub_unset'],
 #ttrssMain img[src*='images/archive.png'],
 #ttrssMain img[src*='images/recently_read.png'],
+.ttrss_main img[src*='images/tag.png'],
+.ttrss_main img[src*='images/fresh.png'],
+.ttrss_main img[src*='images/mark_set'],
+.ttrss_main img[src*='images/mark_unset'],
+.ttrss_main img[src*='images/pub_set'],
+.ttrss_main img[src*='images/pub_unset'],
+.ttrss_main img[src*='images/archive.png'],
+.ttrss_main img[src*='images/recently_read.png'],
 .hlScorePic,
 /* new icons: */
 #ttrssMain img[src*='images/folder.png'],
@@ -1555,6 +1571,12 @@ div.articleNote {
 #ttrssMain img[src*='images/time.png'],
 #ttrssMain img[src*='images/new_version.png'],
 #ttrssMain img[src*='images/error.png'],
+.ttrss_main img[src*='images/folder.png'],
+.ttrss_main img[src*='images/star.png'],
+.ttrss_main img[src*='images/feed.png'],
+.ttrss_main img[src*='images/time.png'],
+.ttrss_main img[src*='images/new_version.png'],
+.ttrss_main img[src*='images/error.png'],
 #header-wrap .rchk,
 #floatingTitle .anchor {
 	padding-top: 16px;
@@ -1573,34 +1595,46 @@ div.articleNote {
 	cursor: pointer;
 }
 #ttrssMain img[src*='images/tag.png'],
-#ttrssMain img[src*='images/folder.png'] {
+#ttrssMain img[src*='images/folder.png'],
+.ttrss_main img[src*='images/tag.png'],
+.ttrss_main img[src*='images/folder.png'] {
 	margin-left: 0;
 	background-position: -32px 0;
 }
-#ttrssMain img[src*='images/fresh.png'] {
+#ttrssMain img[src*='images/fresh.png'],
+.ttrss_main img[src*='images/fresh.png'] {
 	background-position: -48px 0;
 }
 #ttrssMain img[src*='images/mark_set'],
 #ttrssMain img[src*='images/mark_unset'],
-#ttrssMain img[src*='images/star.png'] {
+#ttrssMain img[src*='images/star.png'],
+.ttrss_main img[src*='images/mark_set'],
+.ttrss_main img[src*='images/mark_unset'],
+.ttrss_main img[src*='images/star.png'] {
 	background-position: -64px 0;
 }
 #ttrssMain img[src*='images/pub_set'],
 #ttrssMain img[src*='images/pub_unset'],
-#ttrssMain img[src*='images/feed.png'] {
+#ttrssMain img[src*='images/feed.png'],
+.ttrss_main img[src*='images/pub_set'],
+.ttrss_main img[src*='images/pub_unset'],
+.ttrss_main img[src*='images/feed.png'] {
 	background-position: -80px 0;
 }
-#ttrssMain img[src*='images/archive.png'] {
+#ttrssMain img[src*='images/archive.png'],
+.ttrss_main img[src*='images/archive.png'] {
 	background-position: -96px 0;
 }
 #ttrssMain img[src*='images/recently_read.png'],
-#ttrssMain img[src*='images/time.png'] {
+.ttrss_main img[src*='images/time.png'] {
 	background-position: -112px 0;
 }
-#ttrssMain img[src*='images/new_version.png'] {
+#ttrssMain img[src*='images/new_version.png'],
+.ttrss_main img[src*='images/new_version.png'] {
 	background-position: -128px -16px;
 }
-#ttrssMain img[src*='images/error.png'] {
+#ttrssMain img[src*='images/error.png'],
+.ttrss_main img[src*='images/error.png'] {
 	background-position: -144px -16px;
 }
 #headlines-toolbar img[src*='images/pub_set'] {
@@ -1680,6 +1714,7 @@ hack inspired by browserhacks.com */
 }
 /* standard button styling applied to various elements */
 #ttrssPrefs #header a,
+.ttrss_prefs #header a,
 #cancel_search a,
 .cdmContentInner .expandPrompt {
 	box-sizing: border-box;
@@ -1697,6 +1732,7 @@ hack inspired by browserhacks.com */
 	transition: all .2s;
 }
 #ttrssPrefs #header a:hover,
+.ttrss_prefs #header a:hover,
 #cancel_search a:hover,
 .cdmContentInner .expandPrompt:hover {
 	border-color: #d4d4d4;
@@ -1704,6 +1740,7 @@ hack inspired by browserhacks.com */
 	color: #222;
 }
 #ttrssPrefs #header a:hover:active,
+.ttrss_prefs #header a:hover:active,
 #cancel_search a:hover:active,
 .cdmContentInner .expandPrompt:hover:active {
 	background: #ddd;
@@ -1821,19 +1858,27 @@ table.prefErrorLog td.filename, table.prefErrorLog td.login, table.prefErrorLog 
 
 /* layout */
 
-#ttrssPrefs #header {
+.ttrss_prefs #main {
+	padding-left: 0;
+}
+
+#ttrssPrefs #header,
+.ttrss_prefs #header {
 	position: absolute;
 	top: 7px;
 	right: 2px;
 	z-index: 1;
 }
-#ttrssPrefs #pref-tabs {
+#ttrssPrefs #pref-tabs,
+.ttrss_prefs #pref-tabs {
 	padding: 5px 10px 0;
 }
-#ttrssPrefs #pref-tabs_tablist {
+#ttrssPrefs #pref-tabs_tablist,
+.ttrss_prefs #pref-tabs_tablist {
 	padding-right: 150px;
 }
-#ttrssPrefs #pref-tabs_tablist:after {
+#ttrssPrefs #pref-tabs_tablist:after,
+.ttrss_prefs #pref-tabs_tablist:after {
 	position: absolute;
 	right: 0;
 	bottom: 0;
@@ -1841,7 +1886,8 @@ table.prefErrorLog td.filename, table.prefErrorLog td.login, table.prefErrorLog 
 	border-top: 1px solid #d8d8d8;
 	content: "";
 }
-#ttrssPrefs #footer {
+#ttrssPrefs #footer,
+.ttrss_prefs #footer {
 	padding: 0 10px 5px;
 	background: #eee;
 	text-align: center;
@@ -1858,29 +1904,43 @@ table.prefErrorLog td.filename, table.prefErrorLog td.login, table.prefErrorLog 
 #ttrssPrefs h3,
 #ttrssPrefs h4,
 #ttrssPrefs h5,
-#ttrssPrefs h6 {
+#ttrssPrefs h6,
+.ttrss_prefs h1,
+.ttrss_prefs h2,
+.ttrss_prefs h3,
+.ttrss_prefs h4,
+.ttrss_prefs h5,
+.ttrss_prefs h6 {
 	margin-top: 12px;
 	margin-bottom: 3px;
 }
-#ttrssPrefs hr {
+#ttrssPrefs hr,
+.ttrss_prefs hr {
 	border: none;
 	border-top: 1px solid #ddd;
 }
 #ttrssPrefs .feedParam,
 #ttrssPrefs .labelParam,
-#ttrssPrefs .prefHelp {
+#ttrssPrefs .prefHelp,
+.ttrss_prefs .feedParam,
+.ttrss_prefs .labelParam,
+.ttrss_prefs .prefHelp {
 	color: #909090;
 	font-size: 11px;
 }
 #ttrssPrefs .feedParam,
-#ttrssPrefs .labelParam {
+#ttrssPrefs .labelParam,
+.ttrss_prefs .feedParam,
+.ttrss_prefs .labelParam {
 	float: right;
 	margin-right: 1em;
 }
-#ttrssPrefs .labelParam.disabled {
+#ttrssPrefs .labelParam.disabled,
+.ttrss_prefs .labelParam.disabled {
 	color: #aaa;
 }
-#ttrssPrefs a.bookmarklet {
+#ttrssPrefs a.bookmarklet,
+.ttrss_prefs a.bookmarklet {
 	position: relative;
 	display: inline-block;
 	margin: 10px 50px 25px;
@@ -1894,7 +1954,8 @@ table.prefErrorLog td.filename, table.prefErrorLog td.login, table.prefErrorLog 
 	cursor: move;
 	-webkit-user-drag: element;
 }
-#ttrssPrefs a.bookmarklet:after {
+#ttrssPrefs a.bookmarklet:after,
+.ttrss_prefs a.bookmarklet:after {
 	position: absolute;
 	top: -1px;
 	right: -1px;
