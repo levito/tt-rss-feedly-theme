@@ -965,7 +965,7 @@ a:hover {
 	float: right;
 	margin: 0 6px;
 }
-.ttrss_main.ttrss_main .tinyFeedIcon,
+.ttrss_main.ttrss_main.ttrss_main .tinyFeedIcon,
 #floatingTitle > :first-child > *,
 #floatingTitle > .scoreWrap img,
 .cdm.expanded .cdmHeader > :first-child > *,
