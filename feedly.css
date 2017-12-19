@@ -448,9 +448,11 @@ body {
 	overflow: hidden;
 	margin: 0;
 }
+html,
+body,
 #main {
-	width: 100vw;
-	height: 100vh;
+	width: 100%;
+	height: 100%;
 }
 #main-toolbar,
 #headlines-toolbar .holder {
@@ -539,7 +541,7 @@ a:hover {
 	margin: 1px 0 0 12px;
 }
 .ttrss_main #main {
-	padding: 0 0 0 30px;
+	padding-left: 30px;
 }
 /* status icons */
 #main-toolbar .actionChooser > .dijitButton .dijitButtonNode {
