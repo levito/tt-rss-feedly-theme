@@ -1231,8 +1231,8 @@ div.articleNote {
 }
 .cdmContentInner,
 .cdmIntermediate {
-	margin: -200px 0 0;
-	padding: 210px 33px 10px;
+	margin: 0 0 0;
+	padding: 10px 33px 10px;
 }
 .postHeader,
 .postContent {
