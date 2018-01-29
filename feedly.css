@@ -1680,6 +1680,9 @@ hack inspired by browserhacks.com */
 	margin-left: 12px;
 }
 /* standard button styling applied to various elements */
+button,
+a.dijitButton,
+label.dijitButton,
 .ttrss_prefs #header a,
 #cancel_search a,
 .cdmContentInner .expandPrompt {
@@ -1697,6 +1700,9 @@ hack inspired by browserhacks.com */
 	cursor: pointer;
 	transition: all .2s;
 }
+button:hover,
+a.dijitButton:hover,
+label.dijitButton:hover,
 .ttrss_prefs #header a:hover,
 #cancel_search a:hover,
 .cdmContentInner .expandPrompt:hover {
@@ -1704,6 +1710,9 @@ hack inspired by browserhacks.com */
 	background: #e1e1e1;
 	color: #222;
 }
+button:hover:active,
+a.dijitButton:hover:active,
+label.dijitButton:hover:active,
 .ttrss_prefs #header a:hover:active,
 #cancel_search a:hover:active,
 .cdmContentInner .expandPrompt:hover:active {
