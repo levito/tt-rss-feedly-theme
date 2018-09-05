@@ -22,8 +22,8 @@ Install steps (If you did not find the description on the [TT-RSS Homepage](http
 3. Change into the newly created folder: `cd tt-rss-feedly-theme-master`
 4. Copy the relevant files into your TT-RSS folder:
 
-    * `cp feedly.css feedly-night.css [TT-RSS_Home]/themes`
-    * `cp -r feedly/ [TT-RSS_Home]/themes`
+    * `cp feedly.css feedly-night.css [TT-RSS_Home]/themes.local`
+    * `cp -r feedly/ [TT-RSS_Home]/themes.local`
 
 5. Go into your TT-RSS preferences and select the feedly-theme.
 
