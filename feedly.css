@@ -1,14 +1,5 @@
 /* supports-version:18.12 */
 
-/* 
-TODO:
-- `.scoreWrap` had to be replaced by `:last-child` - check if this breaks stuff
-- other potential class name clashes (e. g. `.cdmContent`, `.postContent`, `.cdmHeader`, `.postHeader` => `.content`, `.header`)
-- `.expandable` view is broken but should go anyway according to https://discourse.tt-rss.org/t/combined-unexpanded-mode-has-to-go/1668
-- `.collapse` might also be removed but is still in markup. hide it for now?
-- `.feed-titl` is a typo in current tt-rss code which might be fixed soon
-*/
-
 @import url(feedly/claro-mod.min.css);
 
 /*
@@ -921,8 +912,8 @@ a:hover {
 .hl > .left {
 	order: 4;
 }
-#floatingTitle > :last-child/*.scoreWrap*/,
-.cdm.expandable:not(.active) .header > :last-child/*.scoreWrap*/,
+#floatingTitle > /*.scoreWrap*/:last-child,
+.cdm.expandable:not(.active) .header > /*.scoreWrap*/:last-child,
 .hl > .right {
 	order: 1;
 }
@@ -953,9 +944,9 @@ a:hover {
 	display: none !important;
 }
 #floatingTitle > :first-child,
-#floatingTitle > :last-child/*.scoreWrap*/,
+#floatingTitle > /*.scoreWrap*/:last-child,
 .cdm.expandable:not(.active) .header > :first-child,
-.cdm.expandable:not(.active) .header > :last-child/*.scoreWrap*/,
+.cdm.expandable:not(.active) .header > /*.scoreWrap*/:last-child,
 .cdm.expandable:not(.active) .header > .feed,
 .hl > .feed,
 .hl > .left,
@@ -965,9 +956,9 @@ a:hover {
 	line-height: 1;
 }
 #floatingTitle > :first-child > *,
-#floatingTitle > :last-child/*.scoreWrap*/ img,
+#floatingTitle > /*.scoreWrap*/:last-child img,
 .cdm .header > :first-child > *,
-.cdm .header > :last-child/*.scoreWrap*/ img,
+.cdm .header > /*.scoreWrap*/:last-child img,
 .hl .left > *,
 .hl .right img {
 	display: none;
@@ -976,13 +967,13 @@ a:hover {
 }
 .ttrss_main.ttrss_main.ttrss_main .tinyFeedIcon,
 #floatingTitle > :first-child > *,
-#floatingTitle > :last-child/*.scoreWrap*/ img,
+#floatingTitle > /*.scoreWrap*/:last-child img,
 .cdm.expanded .header > :first-child > *,
-.cdm.expanded .header > :last-child/*.scoreWrap*/ img,
+.cdm.expanded .header > /*.scoreWrap*/:last-child img,
 .cdm.expandable.active .header > :first-child > *,
-.cdm.expandable.active .header > :last-child/*.scoreWrap*/ img,
+.cdm.expandable.active .header > /*.scoreWrap*/:last-child img,
 .cdm.expandable:not(.active):hover .header > :first-child > *,
-.cdm.expandable:not(.active):hover .header > :last-child/*.scoreWrap*/ img,
+.cdm.expandable:not(.active):hover .header > /*.scoreWrap*/:last-child img,
 .hl:hover .left > *,
 .hl:hover .right img,
 .cdm.expandable.marked img[src*='images/mark_set'],
@@ -999,8 +990,8 @@ a:hover {
 .hl:hover > .left > .pub-pic {
 	margin-left: 33px;
 }
-#floatingTitle > :last-child/*.scoreWrap*/ > .score-pic,
-.cdm.expandable:not(.active) .header > :last-child/*.scoreWrap*/ > .score-pic,
+#floatingTitle > /*.scoreWrap*/:last-child > .score-pic,
+.cdm.expandable:not(.active) .header > /*.scoreWrap*/:last-child > .score-pic,
 .hl > .right > .score-pic {
 	position: absolute;
 	right: 83px;
@@ -1121,16 +1112,16 @@ a:hover {
 .cdm.expandable.active .header > :first-child,
 .cdm.expandable.active .header .feed,
 .cdm.expandable.active .header .updated,
-.cdm.expandable.active .header > :last-child/*.scoreWrap*/ > *,
+.cdm.expandable.active .header > /*.scoreWrap*/:last-child > *,
 .cdm.expanded .header > :first-child,
 .cdm.expanded .header .feed,
 .cdm.expanded .header .updated,
-.cdm.expanded .header > :last-child/*.scoreWrap*/ > * {
+.cdm.expanded .header > /*.scoreWrap*/:last-child > * {
 	position: absolute;
 	top: 33px;
 }
-.cdm.expandable.active .header > :last-child/*.scoreWrap*/ > span,
-.cdm.expanded .header > :last-child/*.scoreWrap*/ > span {
+.cdm.expandable.active .header > /*.scoreWrap*/:last-child > span,
+.cdm.expanded .header > /*.scoreWrap*/:last-child > span {
 	left: 27px;
 }
 .cdm.expandable.active .header .feed,
@@ -1141,8 +1132,8 @@ a:hover {
 .cdm.expanded .header .updated {
 	right: 116px;
 }
-.cdm.expandable.active .header > :last-child/*.scoreWrap*/ > .score-pic,
-.cdm.expanded .header > :last-child/*.scoreWrap*/ > .score-pic {
+.cdm.expandable.active .header > /*.scoreWrap*/:last-child > .score-pic,
+.cdm.expanded .header > /*.scoreWrap*/:last-child > .score-pic {
 	right: 82px;
 }
 .cdm.expandable.active .header > :first-child,
@@ -1278,9 +1269,6 @@ div.articleNote {
 	margin: 0 1px;
 	vertical-align: middle;
 }
-/* .collapse {
-	display: none;
-} */
 .collapse {
 	position: absolute;
 	top: 0;
