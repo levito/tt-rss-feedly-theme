@@ -1328,121 +1328,89 @@ div.articleNote {
 }
 
 /* article content */
-.content-inner,
-.intermediate,
-.post .content {
+.content {
 	clear: both;
 	overflow: auto;
 	font-size: 14px;
 	line-height: 1.7;
 }
-.content-inner h1,
-.post .content h1,
-.content-inner h2,
-.post .content h2,
-.content-inner h3,
-.post .content h3,
-.content-inner h4,
-.post .content h4,
-.content-inner h5,
-.post .content h5,
-.content-inner h6,
-.post .content h6 {
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
 	margin-top: 35px;
 	margin-bottom: 14px;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 }
-.content-inner h1,
-.post .content h1 {
+.content h1 {
 	font: normal normal bold 22px/28px SansCn;
 }
-.content-inner h2,
-.post .content h2 {
+.content h2 {
 	font: normal normal bold 20px/26px SansCn;
 }
-.content-inner h3,
-.post .content h4 {
+.content h4 {
 	font: normal normal bold 18px/24px SansCn;
 }
-.content-inner h4,
-.post .content h4 {
+.content h4 {
 	font: normal normal bold 16px/22px SansCn;
 }
-.content-inner h5,
-.post .content h5 {
+.content h5 {
 	font: normal normal bold 14px/20px SansCn;
 }
-.content-inner h6,
-.post .content h6 {
+.content h6 {
 	font: normal normal bold 13px/18px SansCn;
 }
-.content-inner p,
-.post .content p {
+.content p {
 	max-width: 45em;
 }
-.content-inner table,
-.post .content table {
+.content table {
 	border-collapse: collapse;
 }
-.content-inner tr,
-.post .content tr {
+.content tr {
 	vertical-align: top;
 }
-.content-inner th,
-.post .content th,
-.content-inner td,
-.post .content td {
+.content th,
+.content td {
 	padding: 0 .5em;
 	border: 1px solid #ddd;
 }
-.content-inner th,
-.post .content th {
+.content th {
 	background: rgba(0,0,0,.05);
 }
-.content-inner table[border='0'] th,
-.post .content table[border='0'] th,
-.content-inner table[border='0'] td,
-.post .content table[border='0'] td {
+.content table[border='0'] th,
+.content table[border='0'] td {
 	padding: 0;
 	border: 0;
 }
-.content-inner hr,
-.post .content hr {
+.content hr {
 	border: none;
 	border-top: 1px solid #ddd;
 }
-.content-inner iframe,
-.post .content iframe {
+.content iframe {
 	margin: .5em 0;
 }
-.content-inner img,
-.content-inner video,
-.intermediate img,
-.intermediate video,
-.post .content img,
-.post .content video {
+.content img,
+.content video {
 	margin: .5em 1em .5em 0;
 	max-width: 100%;
 	width: auto;
 	height: auto;
 }
-.content-inner figure,
-.post .content figure {
+.content figure {
 	margin: 1em 0;
 	font-style: italic;
 	font-size: 12px;
 	line-height: 16px;
 }
-.content-inner pre,
-.post .content pre,
-.content-inner code,
-.post .content code {
+.content pre,
+.content code {
 	color: #222;
 	font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
 }
-.content-inner pre,
-.post .content pre {
+.content pre {
 	overflow: auto;
 	padding: .5em;
 	border: 1px solid rgba(0,0,0,.0333);
@@ -1451,41 +1419,33 @@ div.articleNote {
 	font-size: 11px;
 	line-height: 1.333;
 }
-.content-inner code,
-.post .content code {
+.content code {
 	display: inline-block;
 	padding: 0 .31em;
 	border: 1px solid rgba(0,0,0,.0333);
 	background: rgba(0,0,0,.0333);
 	line-height: 1.333;
 }
-.content-inner pre code,
-.post .content pre code {
+.content pre code {
 	padding: 0;
 	border: none;
 	background: transparent;
 	color: inherit;
 }
-.content-inner q,
-.post .content q,
-.content-inner blockquote,
-.post .content blockquote {
+.content q,
+.content blockquote {
 	display: block;
 	margin: 1em 0;
 	padding: .31em 1em;
 	border-left: 4px solid rgba(0,0,0,.167);
 	background: rgba(0,0,0,.033);
 }
-.content-inner q :first-child,
-.post .content q :first-child,
-.content-inner blockquote :first-child,
-.post .content blockquote :first-child {
+.content q :first-child,
+.content blockquote :first-child {
 	margin-top: 0;
 }
-.content-inner q :last-child,
-.post .content q :last-child,
-.content-inner blockquote :last-child,
-.post .content blockquote :last-child {
+.content q :last-child,
+.content blockquote :last-child {
 	margin-bottom: 0;
 }
 
