@@ -1451,34 +1451,34 @@ div.articleNote {
 	text-align: center;
 	font-weight: bold;
 }
-.feed-titl {
+.feed-title {
 	padding: 56px 0 28px;
 	color: #fff;
 }
-.feed-titl:first-child {
+.feed-title:first-child {
 	padding-top: 14px;
 }
-.feed-titl > div:first-child{
+.feed-title > div:first-child{
 	display: inline-block;
 	float: none !important;
 	padding: 0 12px 0 7px;
 	vertical-align: top;
 }
-.feed-titl .title {
+.feed-title .title {
 	padding-right: 5px;
 	color: #aaa;
 	font: normal normal bold 16px/18px SansCn;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 }
-.feed-titl .title:hover {
+.feed-title .title:hover {
 	text-decoration: underline;
 }
-.feed-titl .catchup {
+.feed-title .catchup {
 	opacity: 0;
 	transition: opacity .2s;
 }
-.feed-titl:hover .catchup {
+.feed-title:hover .catchup {
 	opacity: 1;
 }
 .whiteBox {
