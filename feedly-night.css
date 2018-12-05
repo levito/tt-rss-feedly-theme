@@ -1,4 +1,4 @@
-/* supports-version:18.12 */
+/* supports-version:18.8 */
 
 @import url(feedly.css);
 
@@ -10,9 +10,11 @@ iframe,
 picture,
 video,
 img[src*='feed-icons'],
-.tags img[src*='plugins'],
-.footer img[src*='plugins'],
-.content img {
+.postTags img[src*='plugins'],
+.cdmFooter img[src*='plugins'],
+.cdmContentInner img,
+.cdmIntermediate img,
+.postContent img {
 	filter: hue-rotate(180deg) invert(100%) brightness(111.111%);
 }
 iframe:-moz-full-screen,
