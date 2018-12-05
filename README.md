@@ -1,6 +1,8 @@
 tt-rss-feedly-theme
 ===================
 
+**Caution: This branch only works until tt-rss commit [f679ec2](https://git.tt-rss.org/fox/tt-rss/commit/f679ec2e6e25598c511177d7d160c51d2bdf631e)! Later commits include a new dojo base theme and will break badly!**
+
 Feedly theme for [Tiny Tiny RSS](https://git.tt-rss.org/git/tt-rss/wiki) 1.15 or newer.
 
 Use the [legacy branch](https://github.com/levito/tt-rss-feedly-theme/tree/legacy) for TT-RSS 1.11 or older.
