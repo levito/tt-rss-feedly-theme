@@ -1089,7 +1089,8 @@ a:hover {
 	padding: 53px 33px 0;
 }
 .footer {
-	clear: both;
+	display: flex;
+	justify-content: space-between;
 	padding: 0 33px 33px;
 }
 .cdm.expandable.active .header .titleWrap,
