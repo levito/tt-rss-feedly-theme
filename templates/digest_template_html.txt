@@ -1,0 +1,17 @@
+<!-- $BeginBlock digest -->
+<h1 style='font-size : x-large'>New headlines for last 24 hours, as of ${CUR_DATE} ${CUR_TIME}</h1>
+<hr/>
+<!-- $BeginBlock feed -->
+<h2 style='font-size : large'>${FEED_TITLE}</h2>
+
+<ul>
+<!-- $BeginBlock article -->
+<li><a href="${ARTICLE_LINK}">${ARTICLE_TITLE}</a> - ${ARTICLE_UPDATED}
+<div style='color : gray'>${ARTICLE_EXCERPT}</div>
+<!-- $EndBlock article -->
+</ul>
+<!-- $EndBlock feed -->
+ 
+<hr>
+<em>To unsubscribe, visit your configuration options or contact instance owner.</em>
+<!-- $EndBlock digest -->

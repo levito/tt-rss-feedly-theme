@@ -1,0 +1,1284 @@
+body.ttrss_main {
+	background : @default-bg;
+	color : @default-fg;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	overflow : hidden;
+
+	:focus {
+		outline: none;
+	}
+
+	div.post {
+		padding : 0px;
+		font-size : 13px;
+
+		div.header {
+			padding : 5px;
+			color : #909090;
+			border: 0px solid @border-default;
+			border-bottom-width: 1px;
+			background: @color-panel-bg;
+
+			.left, .right {
+				display : flex;
+			}
+
+			.row {
+				display : flex;
+				margin-bottom : 4px;
+				flex-wrap : nowrap;
+
+				> * {
+					align-self : center;
+				}
+			}
+
+			.comments {
+				flex-grow : 2;
+			}
+
+			.date {
+				text-align : right;
+				white-space : nowrap;
+				align-self : flex-start;
+			}
+
+			img, i {
+				margin : 0px 4px;
+				vertical-align: middle;
+			}
+
+			.title {
+				flex-grow : 2;
+				align-self : flex-start;
+				font-size : 15px;
+				font-weight : 600;
+				text-rendering: optimizelegibility;
+				font-family : @fonts-ui-bold;
+			}
+		}
+
+		div.content {
+			padding : 10px;
+			font-size : 16px;
+
+			img,
+			video {
+				border-width : 0px;
+				max-width : 98%;
+				height: auto;
+			}
+
+			p {
+				hyphens: auto;
+			}
+
+			iframe {
+				min-width : 50%;
+				max-width : 98%;
+			}
+		}
+	}
+
+	.inline-player {
+		display : flex;
+
+		> * {
+			align-self : center;
+		}
+
+		audio {
+			margin-right : 8px;
+		}
+	}
+
+	.article-note {
+		background-color : #fff7d5;
+		margin : 5px;
+		border: 1px solid #e7d796;
+		color : #9a8c59;
+		display : flex;
+
+		> * {
+			align-self : center;
+			padding : 5px;
+		}
+	}
+
+	.article-note.editable {
+		cursor : pointer;
+	}
+
+	h1 {
+		font-size : 18px;
+		font-weight : 600;
+		text-rendering: optimizelegibility;
+		//font-family : @fonts-ui;
+	}
+
+	h2 {
+		font-size : 16px;
+		font-weight : 600;
+		text-rendering: optimizelegibility;
+		//font-family : @fonts-ui;
+	}
+
+	h3 {
+		font-size : 16px;
+		font-weight : 600;
+		text-rendering: optimizelegibility;
+		//font-family : @fonts-ui;
+	}
+
+	h4 {
+		font-size : 14px;
+		font-weight : 600;
+		text-rendering: optimizelegibility;
+		//font-family : @fonts-ui;
+	}
+
+	hr {
+		border: 0px solid #ccc;
+		border-bottom-width: 1px;
+	}
+
+	a {
+		color: @color-link;
+		text-decoration: none;
+	}
+
+	a:hover {
+		color: darken(@color-link, 20%);
+		text-decoration: underline;
+	}
+
+	#notify.visible {
+		transform: translate(0, -45px);
+	}
+
+	#notify {
+		bottom : -45px;
+		right : 0px;
+		height : 30px;
+		left : 0px;
+		border-width : 1px 0px 0px 0px;
+		border-style : solid;
+		position : fixed;
+		font-size : 13px;
+		z-index : 99;
+		display : flex;
+
+		transition: all 0.5s ease-in-out;
+
+		> * {
+			align-self : center;
+			padding : 4px;
+		}
+
+		img {
+			vertical-align : middle;
+		}
+
+		.msg {
+			flex-grow : 2;
+		}
+
+		.icon-close {
+			cursor : pointer;
+		}
+	}
+
+	.notify {
+		border-color : #d7c47a;
+		background-color : #fff7d5;
+	}
+
+	.notify.notify_progress {
+		border-color : #d7c47a;
+		background-color : #fff7d5;
+	}
+
+	.notify.notify_info {
+		border-color : @color-accent;
+		background-color : @color-accent-light;
+
+		i.icon-notify {
+			color : @color-accent;
+		}
+	}
+
+	.notify.notify_error {
+		background-color : #c00;
+		border-color : #900;
+		color : white;
+
+		i.icon-notify, i.icon-close {
+			color : white;
+		}
+	}
+
+	.hl {
+		border: 0px solid @border-default;
+		border-bottom-width: 1px;
+		transition : color 0.2s, background 0.2s;
+		display : flex;
+		flex-direction : row;
+		flex-wrap : nowrap;
+		background : @color-panel-bg;
+
+		> * {
+			align-self : center;
+			white-space : nowrap;
+			padding : 4px;
+		}
+
+		img {
+			vertical-align : middle;
+		}
+
+		.left, .right {
+			display : flex;
+
+			> * {
+				align-self : center;
+			}
+
+			i.material-icons {
+				margin-left : 2px;
+				padding : 2px;
+				transition : color 0.2s linear;
+				user-select: none;
+				font-size : 21px;
+			}
+		}
+
+		div.title {
+			cursor : pointer;
+			flex-grow : 2;
+			overflow : hidden;
+			text-overflow : ellipsis;
+		}
+
+		span.author {
+			white-space : nowrap;
+			color : @default-text;
+			font-size : 11px;
+			font-weight : normal;
+		}
+
+		div.right {
+			text-align : right;
+		}
+
+		span.feed a {
+			border-radius : 4px;
+			display : inline-block;
+			padding : 1px 4px;
+			font-size : 11px;
+			font-style : italic;
+			font-weight : normal;
+			color : @default-text;
+		}
+
+		span.feed a:hover {
+			color : @color-accent;
+		}
+
+		span.updated {
+			color : @default-text;
+			text-align : right;
+			font-size : 11px;
+			padding-left : 10px;
+		}
+
+		span.updated div {
+			display : inline-block;
+		}
+
+		div.left input {
+			margin : 0px 4px;
+		}
+
+		div.left img, div.right img {
+			margin : 0px 4px;
+		}
+
+		div.title a {
+			font-weight : 600;
+			text-rendering: optimizelegibility;
+			font-family : @fonts-ui;
+			color : #555;
+		}
+
+		a.title.high, span.hl-content.high .preview {
+			color : #00aa00;
+		}
+	}
+
+	.hl.vgrlf .feed {
+		display : none;
+	}
+
+	.hl.Unread {
+		background : white;
+	}
+
+	.hl.Unread div.title a {
+		color : black;
+	}
+
+	.hl.active div.title a {
+		color : @color-accent;
+		/* text-shadow : 1px 1px 2px #fff; */
+	}
+
+	.hl.active {
+		background : @color-accent ! important;
+	}
+
+	.hl.active,
+	.hl.Selected {
+		color : white;
+		background : desaturate(@color-accent, 25%);
+
+		a,
+		.feed a,
+		.hl-content a.title,
+		span {
+			color : white;
+		}
+	}
+
+	.hl.Grayed {
+		color : #909090;
+	}
+
+	#content-insert blockquote,
+	#headlines-frame blockquote,
+	.dijitContentPane blockquote {
+		margin : 5px 0px 5px 0px;
+		color : @default-text;
+		padding-left : 10px;
+		border: 0px solid #ccc;
+		border-left-width: 4px;
+	}
+
+	#content-insert code,
+	#headlines-frame code,
+	.dijitContentPane code {
+		color : #009900;
+		font-family : monospace;
+	}
+
+	#content-insert pre,
+	#headlines-frame pre,
+	.dijitContentPane pre {
+		margin: 5px 0px 5px 0px;
+		padding: 10px;
+		color: @default-text;
+		font-family: monospace;
+		font-size: 12px;
+		border: 0px solid #ccc;
+		background: @color-panel-bg;
+		display: block;
+		max-width: 98%;
+		overflow: auto;
+	}
+
+	.alert {
+		padding: 8px 35px 8px 14px;
+		margin-bottom: 10px;
+		/* text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5); */
+		background-color: #fcf8e3;
+		border: 1px solid #fbeed5;
+		border-radius: 4px;
+
+		.close {
+			position: relative;
+			top: -2px;
+			right: -21px;
+			line-height: 20px;
+			cursor : pointer;
+		}
+	}
+
+	.alert,
+	.alert h4 {
+		color: #c09853;
+	}
+
+	.alert h4 {
+		margin: 0;
+	}
+
+	.alert-success {
+		color: #468847;
+		background-color: #dff0d8;
+		border-color: #d6e9c6;
+	}
+
+	.alert-success h4 {
+		color: #468847;
+	}
+
+	.alert-danger,
+	.alert-error {
+		color: #b94a48;
+		background-color: #f2dede;
+		border-color: #eed3d7;
+	}
+
+	.alert-danger h4,
+	.alert-error h4 {
+		color: #b94a48;
+	}
+
+	.alert-info {
+		color: #3a87ad;
+		background-color: #d9edf7;
+		border-color: #bce8f1;
+
+		h4 {
+			color: #3a87ad;
+		}
+	}
+
+	div.prefHelp {
+		color : @default-text;
+		padding : 5px;
+	}
+
+	.insensitive {
+		color : @default-text;
+	}
+
+	.small {
+		font-size : 11px;
+	}
+
+	span.preview {
+		color : #999;
+		font-weight : normal;
+		font-size : 12px;
+		padding-left : 4px;
+	}
+
+	.label {
+		display : inline-flex;
+		vertical-align: middle;
+		background-color : #fff7d5;
+		font-size : 9px;
+		color : @default-fg;
+		font-weight : normal;
+		margin-left : 2px;
+		padding : 1px 4px 1px 1px;
+		white-space: nowrap;
+
+		i {
+			margin-right : 2px;
+		}
+
+		> * {
+			align-self: center;
+		}
+	}
+
+	i.marked-pic, i.pub-pic {
+		cursor : pointer;
+		color : #ccc;
+	}
+
+	div.errorExplained {
+		border : 1px solid @border-default;
+		margin : 5px 0px 5px 0px;
+		padding : 5px;
+	}
+
+	ul.browseFeedList {
+		height : 300px;
+		width : 100%;
+		overflow : auto;
+		border-width : 0px 1px 1px 1px;
+		border-color : @border-default;
+		border-style : solid;
+		margin : 0px 0px 5px 0px;
+		background-color : white;
+		list-style-type : none;
+		padding : 0px;
+
+		li {
+			display : flex;
+
+			> * {
+				align-self : center;
+				margin : 2px;
+			}
+		}
+	}
+
+
+	.browseFeedList span.subscribers {
+		color : #808080;
+	}
+
+	ul.compact {
+		list-style-type : none;
+		margin : 0px;
+		padding : 0px;
+
+		li {
+			margin : 0px;
+			padding : 0px;
+		}
+	}
+
+	.noborder {
+		border-width : 0px;
+	}
+
+	#overlay {
+		background : @default-bg;
+		left : 0;
+		top : 0;
+		height : 100%;
+		width : 100%;
+		z-index : 100;
+		position : absolute;
+	}
+
+	#overlay_inner {
+		font-weight : bold;
+		margin : 1em;
+	}
+
+	div.loadingPrompt {
+		padding : 1em;
+		text-align : center;
+		font-weight : bold;
+	}
+
+	div.whiteBox {
+		margin-left : 1px;
+		text-align : center;
+		padding : 1em 1em 0px 1em;
+		font-size : 11px;
+		border: 0px solid @border-default;
+		border-bottom-width: 1px;
+	}
+
+	div.autocomplete {
+		position : absolute;
+		width : 250px;
+		background-color : @default-bg;
+		border :1px solid @border-default;
+		margin : 0px;
+		padding : 0px;
+
+		ul {
+			list-style-type : none;
+			margin : 0px;
+			padding : 0px;
+		}
+
+		ul li.selected {
+			background-color : darken(@default-bg, 10%);
+		}
+
+		ul li {
+			list-style-type : none;
+			display : block;
+			margin : 0;
+			padding : 2px;
+			height : 32px;
+			cursor : pointer;
+		}
+	}
+
+
+	div#headlines-frame.wide {
+		.title {
+			overflow: visible;
+			white-space: normal;
+		}
+
+		.hl .feed {
+			display: none;
+		}
+	}
+
+
+	div.dlgSec {
+		font-size : 14px;
+		font-weight : bold;
+		clear : both;
+		margin : 8px;
+		position : relative;
+		top : 8px;
+	}
+
+	div.dlgSecHoriz {
+		font-size : 14px;
+		font-weight : bold;
+		clear : both;
+		margin-bottom : 8px;
+		margin-top : 8px;
+	}
+
+	div.dlgSecCont {
+		position : relative;
+		left : 150px;
+		top : -20px;
+		float : left;
+		font-weight : normal;
+
+		> * {
+			position : relative;
+			top : -2px;
+		}
+	}
+
+	div.dlgSecCont hr, div.dlgSecSimple hr {
+		height : 0px;
+		line-height : 0px;
+		border : 0px solid transparent;
+		margin : 2px;
+	}
+
+	.dijitDialog {
+		.dlgButtons {
+			margin-top : 4px;
+			text-align: right;
+			clear: both;
+		}
+	}
+
+	i.icon-label {
+		color : #fff7d5;
+	}
+
+	div#cmdline {
+		position : absolute;
+		left : 5px;
+		bottom : 5px;
+		font-size : 11px;
+		color : @default-text;
+		font-weight : bold;
+		background-color : @default-bg;
+		border : 1px solid @color-accent;
+		padding : 3px 5px 3px 5px;
+		z-index : 5;
+	}
+
+	#feed_browser_spinner {
+		vertical-align : middle;
+		height : 18px;
+		width : 18px;
+	}
+
+	#exceptionDlg {
+		.dijitDialogTitleBar {
+			background : red;
+			color : white;
+		}
+
+		.dijitDialogPaneContent {
+			background : #fcc;
+		}
+
+		.error-contents {
+			.message {
+				color : red;
+			}
+
+			textarea {
+				width : 99%;
+				height : 200px;
+			}
+			.dlgButtons {
+				text-align : center;
+			}
+		}
+	}
+
+	#content-wrap {
+		padding : 0px;
+		border-width : 0px;
+		margin : 0px;
+	}
+
+	#feeds-holder {
+		padding : 0px;
+		border: 0px solid @border-default;
+		overflow : hidden;
+		background : @color-panel-bg;
+		box-shadow : inset -1px 0px 2px -1px rgba(0,0,0,0.1);
+		-webkit-overflow-scrolling : touch;
+
+		#feedTree {
+			height : 100%;
+			overflow-x : hidden;
+			text-rendering: optimizelegibility;
+			font-family : @fonts-ui;
+
+			.counterNode.aux {
+				background : @color-panel-bg;
+				color : lighten(@default-text, 10%);
+				border-color : darken(@color-panel-bg, 10%);
+			}
+
+			.counterNode {
+				font-weight : bold;
+				display : inline-block;
+				font-size : 9px;
+				text-align : center;
+				border : 1px solid lighten(@color-accent, 5%);;
+				color : white;
+				background : lighten(@color-accent, 5%);
+				border-radius : 4px;
+				vertical-align : middle;
+				float : right;
+				position : relative;
+				line-height : 14px;
+				margin-right : 8px;
+				margin-top : 2px;
+				min-width : 23px;
+				height : 14px;
+			}
+
+			.dijitTreeNode .loadingExpando {
+				left : -3px;
+				height : 22px;
+				position : relative;
+				top : -3px;
+			}
+
+			.dijitTreeRow .dijitTreeLabel.Unread {
+				font-weight : bold;
+			}
+
+			.dijitTreeRow.Error .dijitTreeLabel {
+				color : red;
+			}
+
+			.dijitTreeNode .dijitTreeRow {
+				border : 1px solid transparent;
+			}
+
+			.dijitTreeNode .dijitTreeRowSelected {
+				box-shadow : -1px 0px 2px -1px rgba(0,0,0,0.1);
+				border-color : @border-default transparent;
+				background : @default-bg;
+				color : #333;
+			}
+
+			.icon {
+				position : relative;
+				top : -2px;
+			}
+
+			i.icon {
+				left : -2px;
+			}
+
+			i.icon.icon-inbox {
+				color : #555;
+			}
+
+			i.icon.icon-archive {
+				color : #c77b2e;
+			}
+
+			i.icon.icon-star {
+				color : @color-marked;
+				font-size : 21px;
+				top : -4px;
+				left : -4px;
+			}
+
+			i.icon.icon-rss_feed {
+				color : @color-published;
+			}
+
+			i.icon.icon-whatshot {
+				color : @color-checked;
+			}
+
+			i.icon.icon-restore {
+				font-weight : bold;
+				left : -3px;
+				color : @color-accent;
+			}
+
+		}
+	}
+
+	#headlines-wrap-inner {
+		padding : 0px;
+		margin : 0px;
+		border-width : 0px;
+	}
+
+	#headlines-frame {
+		padding : 0px;
+		border: 0px @border-default;
+		margin-top : 0px;
+		-webkit-overflow-scrolling : touch;
+		-webkit-transform: translateZ(0);
+		-webkit-backface-visibility: hidden;
+
+		div.feed-title {
+			border: 0px solid @color-link;
+			border-bottom-width: 1px;
+			padding: 5px 8px;
+		}
+
+		div.feed-title a.title {
+			color: @default-text;
+			font-weight: bold;
+		}
+
+		div.feed-title a {
+			color: @default-text;
+		}
+
+		div.feed-title a:hover {
+			color: @color-link;
+		}
+	}
+
+	#toolbar-frame_splitter {
+		display : none;
+	}
+
+	#toolbar-frame {
+		padding : 0px;
+		margin : 0px;
+		border-width : 0px;
+		white-space: nowrap;
+		font-size : 12px;
+
+		#toolbar {
+			background : white;
+			border: 0px solid @border-default;
+			border-bottom-width: 1px;
+			padding-left : 4px;
+			height : 32px;
+			display : flex;
+			flex-direction : row;
+			flex-wrap : nowrap;
+			color : @default-text;
+			font-size : 12px;
+
+			> * {
+				align-self : center;
+			}
+
+			.dijitSelect,
+			.dijitDropDownButton .dijitButtonNode,
+			.dijitComboButton .dijitButtonNode {
+				border : 0px;
+			}
+
+			i.net-alert, .left i.icon-error {
+				color : red;
+			}
+
+			i.log-alert {
+				color : #ddba1c;
+			}
+
+			#toolbar-headlines {
+				padding-right : 4px;
+				flex-grow : 2;
+				display : flex;
+
+				.left {
+					flex-grow: 2;
+					display : flex;
+
+					img {
+						vertical-align : middle;
+						margin-right : 8px;
+					}
+
+					> * {
+						align-self: center;
+					}
+				}
+
+				.right {
+					display : flex;
+
+					> * {
+						align-self : center;
+					}
+				}
+			}
+
+			#updates-available {
+				color : @color-checked;
+				padding-right : 4px;
+			}
+
+			#selected_prompt {
+				font-style : italic;
+				text-align : right;
+				margin-right : 4px;
+				color : @color-accent;
+			}
+
+			@media (max-width: 992px) {
+				#selected_prompt {
+					display : none;
+				}
+			}
+		}
+	}
+
+	#header {
+		border-width : 0px;
+		text-align : right;
+		color : @default-text;
+		padding : 5px 5px 0px 0px;
+		margin : 0px;
+		position : absolute;
+		right : 0px;
+		top : 0px;
+		z-index : 5;
+	}
+
+	#content-insert {
+		padding : 0px;
+		border-color : @border-default;
+		border-width : 0px;
+		line-height: 1.5;
+		overflow : auto;
+		-webkit-overflow-scrolling : touch;
+	}
+
+	img.feed-icon, img.icon {
+		width : 16px;
+		height : 16px;
+		line-height : 16px;
+		vertical-align : middle;
+		display : inline-block;
+	}
+
+	.player {
+		display : inline-block;
+		color : @default-text;
+		font-size : 11px;
+		font-family : sans-serif;
+		border : 1px solid @default-text;
+		padding : 0px 4px 0px 4px;
+		margin : 0px 2px 0px 2px;
+		width : 50px;
+		text-align : center;
+		background : @default-bg;
+	}
+
+	.player.playing {
+		color : #00c000;
+		border-color : #00c000;
+	}
+
+	.player:hover {
+		background : @color-panel-bg;
+		cursor : pointer;
+	}
+
+	#headlines-frame.auto_catchup #headlines-spacer {
+		height : 100%;
+	}
+
+	#headlines-spacer {
+		margin-left : 1px;
+		text-align : center;
+		color : @default-text;
+		font-size : 11px;
+		font-style : italic;
+
+		a, span {
+			color : @default-text;
+			padding : 10px;
+			display : block;
+		}
+
+		a:hover {
+			color : @color-accent;
+		}
+	}
+
+	ul#filterDlg_Matches, ul#filterDlg_Actions {
+		max-height : 100px;
+		overflow : auto;
+		list-style-type : none;
+		border-style : solid;
+		border-color : @border-default;
+		border-width : 1px 1px 1px 1px;
+		background-color : @default-bg;
+		margin : 0px 0px 5px 0px;
+		padding : 4px;
+		min-height : 16px;
+	}
+
+	ul#filterDlg_Matches li, ul#filterDlg_Actions li {
+		cursor : pointer;
+	}
+
+	ul#filterDlg_Matches li .dijitCheckBox, ul#filterDlg_Actions li .dijitCheckBox {
+		margin-right: 4px;
+	}
+
+	ul.hotkeys-help {
+		li {
+			display : flex;
+		}
+
+		li.desc {
+			flex-grow : 2;
+		}
+
+		.hk {
+			color : @color-accent;
+			width : 100px;
+		}
+
+		h3 {
+			margin : 8px 0px;
+		}
+	}
+
+	select.attachments {
+		display : block;
+		margin-top : 10px;
+		max-width : 120px;
+	}
+
+	#filterDlg_feeds select {
+		height : 150px;
+		width : 410px;
+	}
+
+	span.highlight {
+		background-color : #ffff00;
+		color : #cc90cc;
+	}
+
+	div.enclosure_title {
+
+	}
+
+	#headlines-frame .dijitCheckBox {
+		margin-right : 4px;
+	}
+
+	#editTagsDlg{
+		overflow: visible;
+	}
+
+	#feedEditDlg img.feedIcon {
+		border : 1px solid #ccc;
+		padding : 5px;
+		margin : 5px;
+		max-width : 20px;
+		max-height : 20px;
+		height : auto;
+		width : auto;
+	}
+}
+
+body.ttrss_login {
+	padding : 2em;
+	font-size : 14px;
+
+	fieldset {
+		margin-left : auto;
+		margin-right : auto;
+		display : block;
+		width : 400px;
+		border-width : 0px;
+	}
+
+	label {
+		width : 120px;
+		margin-right : 20px;
+		display : inline-block;
+		text-align : right;
+		color : gray;
+	}
+
+	div.header {
+		border: 0px solid @color-accent;
+		border-bottom-width: 1px;
+		margin-bottom : 1em;
+		padding-bottom : 5px;
+	}
+
+	div.footer {
+		margin-top : 1em;
+		padding-top : 5px;
+		border: 0px solid @color-accent;
+		border-top-width: 1px;
+		text-align : center;
+		color : gray;
+		font-size : 12px;
+	}
+
+	a.forgotpass {
+		text-align : right;
+		font-size : 11px;
+		display : inline-block;
+	}
+
+	a {
+		color: @color-accent;
+		text-decoration: none;
+	}
+
+	a:hover,
+	a:focus {
+		color: @color-accent;
+		text-decoration: underline;
+	}
+
+	div.footer a {
+		color : gray;
+	}
+
+	div.footer a:hover {
+		color : @color-accent;
+	}
+
+	div.row {
+		padding : 0px 0px 5px 0px;
+	}
+
+	div.row-error {
+		color : red;
+		text-align : center;
+		padding : 0px 0px 5px 0px;
+	}
+}
+
+body.ttrss_main .dijitDialog {
+	h1:first-of-type,
+	h2:first-of-type,
+	h3:first-of-type,
+	h4:first-of-type {
+		margin-top: 0px;
+	}
+}
+
+body.ttrss_main {
+	i.icon-syndicate {
+		color : @color-published;
+		margin-right : 8px;
+		border : 1px solid @color-published;
+		border-radius : 4px;
+	}
+
+	i.icon-no-feed {
+		opacity : 0.2;
+	}
+
+	.dijitTreeRow.UpdatesDisabled .dijitTreeLabel {
+		opacity : 0.5;
+	}
+
+	#floatingTitle.marked i.marked-pic,
+	.cdm.marked .left i.marked-pic,
+	.hl.marked .left i.marked-pic {
+		color : @color-marked;
+	}
+
+	#floatingTitle.published i.pub-pic,
+	.cdm.published .left i.pub-pic,
+	.hl.published .left i.pub-pic {
+		color : @color-published;
+	}
+
+	.score-high i.icon-score {
+		color : @color-checked;
+	}
+
+	.score-low i.icon-score {
+		color : #500;
+	}
+
+	.score-neutral i.icon-score {
+		opacity : 0.5;
+	}
+
+	i.icon-score {
+		cursor : pointer;
+	}
+
+	.panel {
+		border : 1px solid @border-default;
+		background : @color-panel-bg;
+		padding : 4px;
+	}
+
+	.dijitDialog .panel {
+		background : @default-bg;
+	}
+
+	.panel-scrollable {
+		overflow : auto;
+		height : 200px;
+	}
+
+	ul.list li {
+		padding : 2px;
+	}
+
+	ul.list {
+		padding : 4px;
+	}
+
+	ul.list-unstyled {
+		list-style-type : none;
+	}
+
+	.text-center {
+		text-align : center;
+	}
+
+	#prefFilterTestResultList {
+		.preview {
+			margin : 8px;
+		}
+
+		.title {
+			font-weight: bold;
+		}
+
+		.feed {
+			color : @color-accent;
+		}
+	}
+
+}
+
+::selection {
+	background : @color-accent;
+	color : @default-bg;
+}
+
+::-webkit-scrollbar {
+	width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: @color-accent;
+}
+
+::-webkit-scrollbar-track {
+	background-color: #eee;
+}
+
+video::-webkit-media-controls-overlay-play-button {
+	display: none;
+}

@@ -1,0 +1,21 @@
+@import "../css/default.css";
+body.ttrss_main.ttrss_index.flat #feedTree.dijitTree .dijitTreeLabel {
+  font-size: 13px ! important;
+}
+body.ttrss_main.ttrss_index.flat .dijitMenu .dijitMenuItemLabel,
+body.ttrss_main.ttrss_index.flat .content-inner,
+body.ttrss_main.ttrss_index.flat #content-insert,
+body.ttrss_main.ttrss_index.flat .cdm .content,
+body.ttrss_main.ttrss_index.flat .post .content {
+  font-size: 12px ! important;
+}
+body.ttrss_main.ttrss_index.flat div[id*=RROW] i.material-icons {
+  font-size: 18px;
+}
+body.ttrss_main.ttrss_index.flat .hl,
+body.ttrss_main.ttrss_index.flat .post .header .title,
+body.ttrss_main.ttrss_index.flat #floatingTitle a.title,
+body.ttrss_main.ttrss_index.flat .cdm .title {
+  font-size: 13px ! important;
+}
+/*# sourceMappingURL=compact.css.map */

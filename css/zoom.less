@@ -1,0 +1,117 @@
+body.ttrss_zoom {
+	margin-left : auto;
+	margin-right : auto;
+	padding : 20px;
+	max-width : 800px;
+	background : @color-panel-bg;
+
+	div.post {
+		border : 1px solid #ddd;
+		background : white;
+		box-shadow : 0px 1px 1px -1px rgba(0,0,0,0.1);
+
+		.attachments {
+			display : none;
+		}
+
+		div.header {
+			margin : 10px;
+			padding-bottom : 10px;
+			border: 0px solid #eee;
+			border-bottom-width: 1px;
+			background : white;
+			font-size : 12px;
+			color : #555;
+
+			.row {
+				display : flex;
+				margin-bottom : 4px;
+				flex-wrap : nowrap;
+
+				> * {
+					align-self : center;
+				}
+			}
+
+			.comments {
+				flex-grow : 2;
+			}
+
+			.date {
+				text-align : right;
+				white-space : nowrap;
+				align-self : flex-start;
+			}
+
+			img, i {
+				margin : 0px 4px;
+				vertical-align: middle;
+			}
+
+			.title {
+				flex-grow : 2;
+				align-self : flex-start;
+				font-size : 15px;
+				font-weight : 600;
+				text-rendering: optimizelegibility;
+				font-family : @fonts-ui-bold;
+			}
+
+			div.feed-title {
+				text-align : right;
+			}
+		}
+
+		p {
+			-webkit-hyphens: auto;
+			-moz-hyphens: auto;
+			hyphens: auto;
+		}
+
+		div.footer {
+			margin-top : 1em;
+			text-align : center;
+		}
+
+		div.content {
+			font-size : 15px;
+			line-height : 1.5;
+			padding : 10px;
+			border-width : 0px;
+
+			img, video {
+				max-width : 760px;
+				height : auto;
+			}
+
+			blockquote {
+				margin : 5px 0px 5px 0px;
+				color : @default-text;
+				padding-left : 10px;
+				border: 0px solid #ccc;
+				border-left-width: 4px;
+			}
+
+			code {
+				color : #009900;
+				font-family : monospace;
+				font-size : 12px;
+			}
+
+			pre {
+				margin : 5px 0px 5px 0px;
+				padding : 10px;
+				color : @default-text;
+				font-family : monospace;
+				font-size : 12px;
+				border: 0px solid #ccc;
+				background : @color-panel-bg;
+				display : block;
+				max-width : 98%;
+				overflow : auto;
+			}
+		}
+	}
+
+}
+
