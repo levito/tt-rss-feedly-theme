@@ -1,0 +1,17 @@
+__("Title");
+__("Title or Content");
+__("Link");
+__("Content");
+__("Article Date");
+
+__("Delete article");
+__("Mark as read");
+__("Set starred");
+__("Publish article");
+__("Assign tags");
+__("Assign label");
+__("Modify score");
+
+__("General");
+__("Interface");
+__("Advanced");

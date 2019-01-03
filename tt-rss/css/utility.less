@@ -1,0 +1,284 @@
+body.ttrss_utility.sanity_failed {
+	background : #900;
+}
+
+body.ttrss_utility {
+	background : @color-panel-bg;
+	color : @default-fg;
+	padding : 0px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	margin-left : auto;
+	margin-right : auto;
+	max-width : 800px;
+
+	form {
+		margin : 10px 0px 0px 0px;
+		padding : 0px;
+	}
+
+	div.content {
+		overflow : hidden;
+		background : white;
+		border : 1px solid #ddd;
+		padding : 10px;
+		border-radius : 6px;
+		box-shadow : 0px 1px 1px -1px rgba(0,0,0,0.1);
+	}
+
+	p.warning {
+		color : red;
+	}
+
+	p.query, code {
+		color : green;
+	}
+
+	p.insensitive {
+		color : gray;
+	}
+
+	div.insensitive-small {
+		color : gray;
+		font-size : 10px;
+	}
+
+	.floatingLogo {
+		display : none;
+	}
+
+	a {
+		color : @color-link;
+		text-decoration : none;
+	}
+
+	a:hover,
+	a:focus {
+		color: darken(@color-link, 20%);
+		text-decoration: underline;
+	}
+
+	.alert {
+		padding: 8px 35px 8px 14px;
+		margin-bottom: 20px;
+		text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+		background-color: #fcf8e3;
+		border: 1px solid #fbeed5;
+		-webkit-border-radius: 4px;
+		-moz-border-radius: 4px;
+		border-radius: 4px;
+	}
+
+	.alert,
+	.alert h4 {
+		color: #c09853;
+	}
+
+	.alert h4 {
+		margin: 0;
+	}
+
+	.alert .close {
+		position: relative;
+		top: -2px;
+		right: -21px;
+		line-height: 20px;
+		cursor :  pointer;
+	}
+
+	.alert-success {
+		color: #468847;
+		background-color: #dff0d8;
+		border-color: #d6e9c6;
+	}
+
+	.alert-success h4 {
+		color: #468847;
+	}
+
+	.alert-danger,
+	.alert-error {
+		color: #b94a48;
+		background-color: #f2dede;
+		border-color: #eed3d7;
+	}
+
+	.alert-danger h4,
+	.alert-error h4 {
+		color: #b94a48;
+	}
+
+	.alert-info {
+		color: #3a87ad;
+		background-color: #d9edf7;
+		border-color: #bce8f1;
+	}
+
+	.alert-info h4 {
+		color: #3a87ad;
+	}
+
+	h1 {
+		color : @color-accent;
+		font-size : 32px;
+		margin : 20px 0px 5px 0px;
+		text-shadow : 0 0 6px #fff;
+	}
+
+	h2 {
+		color : @color-accent;
+		font-size : 14pt;
+		border-width : 0px 0px 1px 0px;
+		border-color : #f0f0f0;
+		border-style : solid;
+	}
+
+	div.content > h2 {
+		margin-top : 0px;
+	}
+
+	div.rss h1 {
+		border-width : 0px 0px 1px 0px;
+		border-color : gray;
+		border-style : dotted;
+		color : gray;
+	}
+
+	div.rss h2 {
+		font-size : 12pt;
+	}
+
+	div.rss a.extlink {
+		color : gray;
+		border-width : 0px 0px 1px 0px;
+		border-color : #778899;
+		border-style : dotted;
+		font-size : 9pt;
+	}
+
+	div.rss img {
+		max-width : 775px;
+	}
+
+	div.rss p.description {
+		color : gray;
+		font-size : 9pt;
+	}
+
+	div.rss div.content {
+		margin-top : 0.5em;
+	}
+
+	div.rss img.feedicon {
+		float : right;
+	}
+
+	div.rss hr {
+		border-width : 0px 0px 1px 0px;
+		border-style : dashed;
+		border-color : #e0e0e0;
+	}
+
+	div.autocomplete {
+		position : absolute;
+		width : 250px;
+		background-color : white;
+		border :1px solid #778899;
+		margin : 0px;
+		padding : 0px;
+		z-index : 4;
+	}
+
+	div.autocomplete ul {
+		list-style-type : none;
+		margin : 0px;
+		padding : 0px;
+		font-size : 10px;
+	}
+
+	div.autocomplete ul li.selected {
+		background-color : #fff7d5;
+	}
+
+	div.autocomplete ul li {
+		list-style-type : none;
+		display : block;
+		margin : 0;
+		padding : 2px;
+		height : 32px;
+		cursor : pointer;
+	}
+
+	fieldset {
+		border-width : 0px;
+		padding : 0px 0px 5px 0px;
+		margin : 0px;
+	}
+
+	fieldset input {
+		font-family : sans-serif;
+		font-size : medium;
+		border-spacing : 2px;
+		border : 1px solid #b5bcc7;
+		padding : 2px;
+	}
+
+	fieldset label {
+		width : 120px;
+		margin-right : 20px;
+		display : inline-block;
+		text-align : right;
+		color : gray;
+	}
+
+	body.otp {
+		margin : 1em;
+		padding : 0px;
+	}
+
+	form.otpform {
+		margin : 0px;
+		padding : 0px;
+	}
+
+	form.otpform label {
+		margin : 0px;
+		padding : 0px;
+	}
+
+	body.otp div.content {
+		display : inline-block;
+		width : auto;
+	}
+
+	span.hint {
+		font-size : 10px;
+		color : gray;
+	}
+}
+
+body.small_margins {
+	margin : 1em;
+	max-width : none;
+}
+
+body#sharepopup {
+	color : @default-fg;
+	background: @default-bg;
+	margin : 10px;
+
+	h1 {
+		font-size : 14px;
+		margin : 0px;
+		color : @color-accent;
+	}
+
+	form {
+		height : 100%;
+	}
+
+	input {
+		width : 100%;
+	}
+
+}

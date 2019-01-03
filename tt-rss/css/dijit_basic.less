@@ -1,0 +1,145 @@
+.flat {
+
+	li {
+		padding: 2px;
+	}
+
+	#filterDlg_Matches span.filterRule {
+		color: green;
+	}
+
+	#filterTree .filterRules li.inverse,
+	#filterDlg_Matches span.filterRule.inverse {
+		color: red;
+	}
+
+	.dijitToolbar {
+		font-size: 13px;
+		padding: 0px;
+	}
+
+	.dijitAccordionContainer {
+		box-shadow : 0px 0px 8px rgba(0,0,0,0.1);
+	}
+
+	.dijitCheckBox.dijitCheckBoxChecked {
+		background-color : @color-checked;
+		border-color : darken(@color-checked, 10%);
+	}
+
+	.dijitMenu .dijitMenuItem .dijitMenuItemLabel {
+		padding: 4px 8px;
+		font-size: 13px;
+	}
+
+	.dijitMenu .dijitMenuItem.dijitDisabled:not(.dijitMenuItemSelected) .dijitMenuItemLabel {
+		color : lighten(@color-accent, 10%);
+	}
+
+	.dijitMenu .dijitMenuItem td {
+		padding: 0px;
+	}
+
+	.dijitCheckBox {
+		margin : 1px;
+	}
+
+	.dijitCheckBox:before {
+		font-family: "flat-icon";
+		content: "\f00c";
+		color: white;
+	}
+
+	.dijitTab,
+	.dijitAccordionInnerContainer:not(.dijitSelected) {
+		i.material-icons {
+			color: @color-accent;
+		}
+	}
+
+	.dijitTree {
+		.dijitFolderClosed,
+		.dijitFolderOpened {
+			display : none;
+		}
+
+		.dijitTreeRowSelected {
+			.filterRules li {
+				color : white;
+			}
+
+			.dijitTreeExpando {
+				color : @color-accent;
+			}
+		}
+
+		.dijitTreeNode .dijitTreeRow.dijitTreeRowSelected {
+			color : white;
+		}
+
+		.dijitTreeRow .dijitTreeExpando {
+			position : relative;
+			top : -2px;
+		}
+
+		.labelParam {
+			float: right;
+			margin-right: 16px;
+		}
+
+		.dijitTreeRow.filterDisabled {
+			opacity : 0.5;
+
+			.filterRules {
+				filter : saturate(0%);
+			}
+		}
+
+		.feedParam {
+			float: right;
+		}
+
+		.filterRules {
+			font-size: 12px;
+			line-height : normal;
+			white-space: normal;
+			margin-left : 28px;
+
+			li {
+				color : green;
+			}
+		}
+
+		.dijitTreeContainer {
+			max-width : 100%;
+		}
+
+		.dijitTreeRow {
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+
+	}
+
+	label.dijitButton {
+		border : 1px solid #ccc;
+		padding : 6px;
+		border-radius : 4px;
+		cursor : pointer;
+		position: relative;
+		top : 1px;
+	}
+
+	label.dijitButton:hover {
+		background-color : @color-panel-bg;
+	}
+
+	.dijitTree {
+		.dijitTreeNode .dijitTreeRow {
+			padding : 4px 0px 4px;
+			border-width : 1px;
+			color : @default-text;
+		}
+	}
+
+}

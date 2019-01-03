@@ -1,0 +1,117 @@
+body.ttrss_prefs {
+	background-color : @color-panel-bg;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+
+	#footer, #header {
+		padding : 8px;
+		font-size : 13px;
+	}
+
+	#header {
+		float : right;
+	}
+
+	#footer_splitter {
+		display : none;
+	}
+
+	#footer {
+		background-color : @color-panel-bg;
+		font-size : 13px;
+		border : 0px;
+		text-align : center;
+	}
+
+	#header img {
+		vertical-align : middle;
+		cursor : pointer;
+	}
+
+	.dijitTree#filterTree .dijitTreeIcon,
+	.dijitTree#labelTree .dijitTreeIcon,
+	.dijitTree#filterTree .dijitTreeIcon {
+		display : none;
+	}
+
+	.dijitAccordionTitle i.material-icons {
+		top : -1px;
+		position : relative;
+	}
+
+	.dijitAccordionTitleSelected i.material-icons {
+		color : white;
+	}
+
+	.dijitDialog #pref-profiles-list .dijitInlineEditBoxDisplayMode {
+		padding : 0px;
+	}
+
+	tr.title td {
+		border: 0px solid #ecf4ff;
+		border-bottom-width: 1px;
+		color : @color-link;
+	}
+
+	.prefPrefsList td {
+		padding-bottom : 4px;
+	}
+
+	div#feedlistLoading, div#filterlistLoading, div#labellistLoading {
+		text-align : center;
+		padding : 5px;
+		color : @default-text;
+	}
+
+	div#feedlistLoading img, div#filterlistLoading img, div#labellistLoading {
+		margin-right : 5px;
+	}
+
+	#errorButton {
+		color : red;
+	}
+
+	.user-css-editor {
+		height : 300px;
+		width : 575px;
+	}
+
+	table.prefPluginsList td label, table.prefUserList td {
+		cursor : pointer;
+	}
+
+	table.prefPluginsList{
+		label {
+			white-space : nowrap;
+		}
+
+		i.plugin-enabled {
+			color : @color-checked;
+		}
+	}
+
+	table.prefPluginsList label img {
+		vertical-align : middle;
+	}
+
+	table.prefErrorLog tr.errrow td {
+		font-size : 10px;
+	}
+
+	table.prefErrorLog tr.errrow td.errno {
+		font-style : italic;
+		font-weight : bold;
+		white-space : nowrap;
+	}
+
+	table.prefErrorLog td.filename, table.prefErrorLog td.login, table.prefErrorLog td.timestamp {
+		color : @default-text;
+	}
+
+	hr {
+		border-color : #ecf4ff;
+		max-width : 100%;
+	}
+
+}
+

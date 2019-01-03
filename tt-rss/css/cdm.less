@@ -1,0 +1,423 @@
+.cdm {
+	.header, .footer {
+		display : flex;
+		flex-direction : row;
+		flex-wrap : nowrap;
+	}
+
+	.header img, .footer img,
+	.footer i {
+		margin : 0px 4px;
+		vertical-align: middle;
+	}
+
+	.header {
+		> * {
+			align-self : center;
+			padding : 4px;
+			white-space : nowrap;
+		}
+
+		.left, .right {
+			display : flex;
+
+			> * {
+				align-self : center;
+			}
+
+			i.material-icons {
+				margin-left : 2px;
+				padding : 2px;
+				transition : color 0.2s linear;
+				user-select: none;
+				font-size : 21px;
+			}
+		}
+
+		.titleWrap {
+			flex-grow : 2;
+		}
+
+		span.updated {
+			color : @default-text;
+			font-weight : normal;
+			font-size : 11px;
+			white-space : nowrap;
+		}
+
+		input {
+			margin : 0px 4px;
+		}
+	}
+
+	.footer {
+		height : 30px;
+		padding-left : 5px;
+		font-weight : normal;
+		color : @default-text;
+		clear : both;
+
+		> * {
+			align-self : center;
+		}
+
+		.left {
+			flex-grow : 2;
+		}
+	}
+
+	.intermediate {
+		margin-top : 10px;
+		margin-left : 10px;
+	}
+
+	.content-inner {
+		margin : 10px;
+		line-height : 1.5;
+		font-size : 16px;
+	}
+
+	.intermediate img,
+	.intermediate video,
+	.content-inner img,
+	.content-inner video {
+		border-width : 0px;
+		max-width : 98%;
+		height : auto;
+	}
+}
+
+.cdm.expanded {
+	/*margin-top : 4px;
+	margin-bottom : 4px;*/
+
+	.collapse, .excerpt {
+		display : none;
+	}
+
+	.titleWrap {
+		white-space : normal;
+	}
+
+	.footer {
+		border: 0px solid @border-default;
+		border-bottom-width: 1px;
+	}
+
+	> hr {
+		margin-top : 0px;
+		margin-bottom : 0px;
+	}
+
+}
+
+div.cdm.expanded div.header {
+	background : transparent ! important;
+}
+
+div.cdm.expanded div.header a.title {
+	font-size : 16px;
+	color : #999;
+	font-weight : 600;
+	transition : color 0.2s, background 0.2s;
+	text-rendering: optimizelegibility;
+	font-family : @fonts-ui-bold;
+}
+
+div.cdm.expanded.active {
+	background : white;
+}
+
+div.cdm.expanded.active div.header a.title {
+	color : @color-link;
+}
+
+div.cdm.expanded.Unread div.header a.title {
+	color : black;
+}
+
+div.cdm.expanded div.content {
+	color : @default-text;
+}
+
+div.cdm.expanded.Unread div.content {
+	color : black;
+}
+
+div.cdm.active div.content {
+	color : black;
+}
+
+div.cdm.vgrlf .feed {
+	display : none;
+}
+
+.cdm {
+	div.feed-title {
+		border: 0px solid @color-link;
+		border-bottom-width: 1px;
+		padding: 5px 3px 5px 5px;
+	}
+
+	div.feed-title a.title {
+		color: @default-text;
+		font-weight: bold;
+	}
+
+	div.feed-title a {
+		color: @default-text;
+	}
+
+	div.feed-title a:hover {
+		color: @color-link;
+	}
+
+	div.header span.feed {
+		float: right;
+		font-weight: normal;
+		font-style: italic;
+	}
+
+	div.header div.feed, div.header div.feed a {
+		vertical-align: middle;
+		color: @default-text;
+		font-weight: normal;
+		font-style: italic;
+		font-size: 11px;
+	}
+
+	div.content-inner p {
+		/*max-width : 650px;*/
+		-webkit-hyphens: auto;
+		-moz-hyphens: auto;
+		hyphens: auto;
+	}
+
+	div.content-inner iframe {
+		min-width : 50%;
+		max-width : 98%;
+	}
+
+	div.header span.author {
+		white-space : nowrap;
+		color : @default-text;
+		font-size : 11px;
+		font-weight : normal;
+	}
+
+	.feed a {
+		border-radius : 4px;
+		display : inline-block;
+		padding : 1px 4px 1px 4px;
+	}
+}
+
+div#floatingTitle {
+	position : absolute;
+	z-index : 5;
+	top : 0px;
+	right : 0px;
+	left : 0px;
+	border: 0px solid @border-default;
+	border-bottom-width: 1px;
+	background : white;
+	color : @default-text;
+	display : flex;
+	flex-direction : row;
+	flex-wrap : nowrap;
+	box-shadow : 0px 1px 1px -1px rgba(0,0,0,0.1);
+
+	> * {
+		align-self: center;
+		white-space : nowrap;
+		padding : 4px;
+	}
+
+	.left, .right {
+		display : flex;
+
+		> * {
+			align-self : center;
+		}
+
+		i.material-icons {
+			margin-left : 2px;
+			font-size : 21px;
+			padding : 2px;
+			user-select: none;
+		}
+
+		i.icon-anchor {
+			margin-left : 0px;
+			margin-right : 1px; // replaces checkbox which is a bit wider
+			padding : 0px;
+			color : #ccc;
+			cursor : pointer;
+		}
+	}
+
+	span.author {
+		color : @default-text;
+		font-size : 11px;
+		font-weight : normal;
+	}
+
+	a.title {
+		font-size : 16px;
+		color : #999;
+		transition : color 0.2s, background 0.2s;
+		font-weight : 600;
+		text-rendering: optimizelegibility;
+		font-family : @fonts-ui-bold;
+	}
+
+	div.feed {
+		padding-right : 10px;
+		color : @default-text;
+		font-weight : normal;
+		font-style : italic;
+		font-size : 11px;
+		white-space : nowrap;
+	}
+
+	div.feed a {
+		border-radius : 4px;
+		display : inline-block;
+		padding : 1px 4px 1px 4px;
+	}
+
+	span.updated {
+		padding-right : 10px;
+		white-space : nowrap;
+		color : @default-text;
+		font-size : 11px;
+	}
+
+	div.feed a {
+		color : @default-text;
+	}
+
+	.collapse, .excerpt {
+		display : none;
+	}
+
+	span.titleWrap {
+		width : 100%;
+		white-space : normal;
+	}
+
+	.feed-title {
+		> * {
+			display : table-cell;
+			vertical-align : middle;
+		}
+
+		a.title {
+			width : 100%;
+		}
+
+		a.catchup {
+			text-align : right;
+			color : @default-text;
+			padding-right : 10px;
+			font-size : 11px;
+			white-space : nowrap;
+		}
+
+		a.catchup:hover {
+			color : @color-link;
+		}
+
+	}
+}
+
+div#floatingTitle.Unread a.title {
+	color : black;
+}
+
+.cdm.expandable {
+	background-color : @color-panel-bg;
+	border: 0px solid @border-default;
+	border-bottom-width: 1px;
+
+	> hr {
+		display : none;
+	}
+
+	div.header span.titleWrap {
+		white-space : nowrap;
+		text-overflow : ellipsis;
+		overflow : hidden;
+	}
+
+	.excerpt {
+		white-space : nowrap;
+		font-size : 11px;
+		color : #999;
+		font-weight : normal;
+		cursor : pointer;
+	}
+
+}
+
+.cdm.expandable.Unread {
+	background : white;
+}
+
+.cdm.expandable.Selected:not(.active) {
+	background : desaturate(@color-accent, 25%);
+
+	a,
+	.header a.title,
+	span {
+		color : white;
+	}
+}
+
+.cdm.expandable.active {
+	background : white ! important;
+}
+
+div.cdm.expandable.active div.header span.titleWrap {
+	white-space : normal;
+}
+
+div.cdm.expandable div.header a.title {
+	font-weight : 600;
+	color : @default-text;
+	font-size : 14px;
+	transition : color 0.2s, background 0.2s;
+	text-rendering: optimizelegibility;
+	font-family : @fonts-ui-bold;
+}
+
+div.cdm.expandable.Unread div.header a.title {
+	color : black;
+}
+
+div.cdm.expandable.active {
+	.collapse i {
+		color : @color-accent;
+		cursor : pointer;
+	}
+
+	.excerpt {
+		display: none;
+	}
+
+	div.header a.title {
+		color: @color-link;
+		font-size: 16px;
+		font-weight: 600;
+		text-rendering: optimizelegibility;
+		font-family: @fonts-ui-bold;
+	}
+}
+
+div.cdm.expandable:not(.active) {
+	cursor : pointer;
+
+	.content, .collapse {
+		display : none;
+	}
+}

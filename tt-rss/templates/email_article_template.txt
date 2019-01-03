@@ -1,0 +1,16 @@
+<!-- $BeginBlock email -->
+Hi,
+
+Thought I'd share the following with you:
+
+<!-- $BeginBlock article -->
+* ${ARTICLE_TITLE}
+<!-- $BeginBlock note -->
+  ${ARTICLE_NOTE}
+<!-- $EndBlock note -->
+  ${ARTICLE_URL}
+<!-- $EndBlock article -->
+
+-- 
+This message has been sent by Tiny Tiny RSS installation at ${TTRSS_HOST}.
+<!-- $EndBlock email -->

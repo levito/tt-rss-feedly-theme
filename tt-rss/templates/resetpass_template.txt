@@ -1,0 +1,9 @@
+<!-- $BeginBlock message -->
+Hello, ${LOGIN}.
+
+Your password for this Tiny Tiny RSS installation has been reset.
+
+Your new password is ${NEWPASS}, please remember it for later reference.
+
+Sincerely, Tiny Tiny RSS Mail Daemon.
+<!-- $EndBlock message -->

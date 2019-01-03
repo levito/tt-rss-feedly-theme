@@ -1,0 +1,44 @@
+phpmd:
+  image: php:5.6
+  when: manual
+  script:
+    - sh utils/gitlab-ci/php-lint.sh
+    - curl -o /usr/bin/phpmd -L http://static.phpmd.org/php/2.6.0/phpmd.phar
+    - chmod +x /usr/bin/phpmd
+    - sh utils/gitlab-ci/phpmd.sh
+
+schema:
+  image: fox/selenium-ci
+  when: manual
+  script:
+    - /etc/init.d/postgresql start
+    - /usr/local/sbin/init-database.sh
+    - sh ./utils/gitlab-ci/check-schema.sh
+
+phpunit_basic:
+  image: fox/selenium-ci
+  when: manual
+  script:
+    - /etc/init.d/postgresql start
+    - /usr/local/sbin/init-database.sh
+    - sh ./utils/gitlab-ci/check-schema.sh
+    - cp utils/gitlab-ci/config-template.php config.php
+    - su -s /bin/bash www-data -c "php ./update.php --debug-feed 1"
+    - wget -O /usr/bin/phpunit https://phar.phpunit.de/phpunit-5.7.phar
+    - chmod +x /usr/bin/phpunit
+    - phpunit tests/*.php
+
+phpunit_functional:
+  image: fox/selenium-ci
+  when: manual
+  script:
+    - /etc/init.d/postgresql start
+    - /etc/init.d/nginx start
+    - /etc/init.d/php5-fpm start
+    - /usr/local/sbin/init-database.sh
+    - sh ./utils/gitlab-ci/check-schema.sh
+    - ln -s `pwd` ../../tt-rss
+    - cp utils/gitlab-ci/config-template.php config.php
+    - chmod -R 777 cache lock feed-icons
+    - /usr/local/sbin/init-selenium.sh
+    - phpunit tests/functional/*.php
