@@ -1,0 +1,22 @@
+{
+  "name": "tt-rss-feedly-theme",
+  "version": "2.0.0",
+  "description": "Feedly theme for Tiny Tiny RSS",
+  "main": "index.js",
+  "repository": "git@github.com:levito/tt-rss-feedly-theme.git",
+  "author": "Veit Lehmann",
+  "license": "WTFPL",
+  "private": true,
+  "scripts": {
+    "build-less": "lessc --source-map-inline src/$FILE.less > $FILE.css",
+    "build-default": "FILE=feedly npm run build-less",
+    "build-night": "FILE=feedly-night npm run build-less",
+    "build": "npm run build-default & npm run build-night",
+    "start": "chokidar 'src/**/*.less' --initial -c 'npm run build'",
+    "pull": "git subtree pull --prefix tt-rss https://tt-rss.org/gitlab/fox/tt-rss.git master --squash"
+  },
+  "dependencies": {
+    "chokidar-cli": "1.2.1",
+    "less": "3.9.0"
+  }
+}
