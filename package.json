@@ -8,15 +8,26 @@
   "license": "WTFPL",
   "private": true,
   "scripts": {
-    "build-less": "lessc --source-map-inline src/$FILE.less > $FILE.css",
-    "build-default": "FILE=feedly npm run build-less",
-    "build-night": "FILE=feedly-night npm run build-less",
+    "build-template": "lessc --source-map-inline src/$FILE.less > $FILE.css",
+    "build-default": "FILE=feedly npm run build-template",
+    "build-night": "FILE=feedly-night npm run build-template",
     "build": "npm run build-default & npm run build-night",
+    "compress-template": "cleancss --inline none -o $FILE.css $FILE.css",
+    "compress-default": "FILE=feedly npm run compress-template",
+    "compress-night": "FILE=feedly-night npm run compress-template",
+    "compress": "npm run compress-default & npm run compress-night",
     "start": "chokidar 'src/**/*.less' --initial -c 'npm run build'",
     "pull": "git subtree pull --prefix tt-rss https://tt-rss.org/gitlab/fox/tt-rss.git master --squash"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run build && npm run compress && sleep 1"
+    }
+  },
   "dependencies": {
     "chokidar-cli": "1.2.1",
+    "clean-css-cli": "4.2.1",
+    "husky": "1.3.1",
     "less": "3.9.0"
   }
 }
