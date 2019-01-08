@@ -490,7 +490,8 @@ body.ttrss_main {
       box-sizing: border-box;
       width: 100%;
     }
-    .hl-content {
+    .hl-content,
+    > .titleWrap .title {
       position: relative;
       top: -5px;
     }
@@ -511,10 +512,8 @@ body.ttrss_main {
   .content {
     .content-inner {
       margin: 5px;
-    }
-
-    p {
-      max-width: 45em;
+      font-size: 14px;
+      line-height: 1.7;
     }
 
     h1,
@@ -525,9 +524,111 @@ body.ttrss_main {
     h6 {
       margin-top: 35px;
       margin-bottom: 14px;
-      font-family: @fonts-heading;
       text-rendering: optimizeLegibility;
       -webkit-font-smoothing: antialiased;
+    }
+    h1 {
+      font: normal normal bold 22px/28px @fonts-heading;
+    }
+    h2 {
+      font: normal normal bold 20px/26px @fonts-heading;
+    }
+    h4 {
+      font: normal normal bold 18px/24px @fonts-heading;
+    }
+    h4 {
+      font: normal normal bold 16px/22px @fonts-heading;
+    }
+    h5 {
+      font: normal normal bold 14px/20px @fonts-heading;
+    }
+    h6 {
+      font: normal normal bold 13px/18px @fonts-heading;
+    }
+    p {
+      max-width: 45em;
+    }
+    table {
+      border-collapse: collapse;
+    }
+    tr {
+      vertical-align: top;
+    }
+    th,
+    td {
+      padding: 0 0.5em;
+      border: 1px solid #ddd;
+    }
+    th {
+      background: fade(@default-fg, 5%);
+    }
+    table[border="0"] th,
+    table[border="0"] td {
+      padding: 0;
+      border: 0;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #ddd;
+    }
+    iframe {
+      margin: 0.5em 0;
+    }
+    img,
+    video {
+      margin: 0.5em 1em 0.5em 0;
+      max-width: 100%;
+      width: auto;
+      height: auto;
+    }
+    figure {
+      margin: 1em 0;
+      font-style: italic;
+      font-size: 12px;
+      line-height: 16px;
+    }
+    pre,
+    code {
+      color: #222;
+      font-family: @fonts-mono;
+    }
+    pre {
+      overflow: auto;
+      padding: 0.5em;
+      border: 1px solid fade(@default-fg, 3%);
+      background: fade(@default-fg, 3%);
+      white-space: pre-wrap;
+      font-size: 11px;
+      line-height: 1.333;
+    }
+    code {
+      display: inline-block;
+      padding: 0 0.31em;
+      border: 1px solid fade(@default-fg, 3%);
+      background: fade(@default-fg, 3%);
+      line-height: 1.333;
+    }
+    pre code {
+      padding: 0;
+      border: none;
+      background: transparent;
+      color: inherit;
+    }
+    q,
+    blockquote {
+      display: block;
+      margin: 1em 0;
+      padding: 0.31em 1em;
+      border-left: 4px solid fade(@default-fg, 1.5%);
+      background: fade(@default-fg, 3%);
+    }
+    q :first-child,
+    blockquote :first-child {
+      margin-top: 0;
+    }
+    q :last-child,
+    blockquote :last-child {
+      margin-bottom: 0;
     }
   }
 }
