@@ -1,15 +1,9 @@
 tt-rss-feedly-theme
 ===================
 
-Feedly theme for [Tiny Tiny RSS](https://tt-rss.org) 1.15 – 18.8. This theme will probably not be updated to support newer versions of tt-rss.
+Feedly theme for [Tiny Tiny RSS](https://tt-rss.org) 18.12+.
 
-The latest fully working tt-rss commit of version 18.8 is [da1a3c2](https://git.tt-rss.org/fox/tt-rss/commit/da1a3c2cc5621bccdb844cfbd03e377ada079fa9). After that, things start to fall apart.
-
-If you are on version 18.12 or newer, this theme will not work. Until tt-rss commit [f679ec2](https://git.tt-rss.org/fox/tt-rss/commit/f679ec2e6e25598c511177d7d160c51d2bdf631e), you can try the [branch v18.12](https://github.com/levito/tt-rss-feedly-theme/tree/v18.12). Later commits include a new dojo base theme and will break badly!
-
-Use the [legacy branch](https://github.com/levito/tt-rss-feedly-theme/tree/legacy) for TT-RSS 1.11 or older.
-
-Use the [branch v1.12](https://github.com/levito/tt-rss-feedly-theme/tree/v1.12) if you use version 1.12 up to 1.14.
+If you are using an older version of TT-RSS, have a look at the branches.
 
 For the best experience, use a current browser. IE9 and older versions are not supported.
 
