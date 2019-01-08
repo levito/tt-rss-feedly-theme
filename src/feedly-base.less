@@ -3,6 +3,7 @@
 @color-checked: #db0;
 @color-panel-bg: fade(@default-fg, 4%);
 @border-default: fade(@default-fg, 7%);
+@border-active: fade(@default-fg, 17%);
 @default-text: fade(@default-fg, 75%);
 
 @fonts-ui: "Helvetica Neue", Arial, Helvetica, "Liberation Sans",
@@ -175,7 +176,7 @@ body.ttrss_main {
   }
 
   #toolbar {
-    padding: 5px 0 6px !important;
+    padding: 5px 0 !important;
 
     .icon-syndicate {
       border: none;
@@ -239,15 +240,7 @@ body.ttrss_main {
   }
 
   #headlines-frame {
-    padding-top: 31px;
-  }
-  #floatingTitle {
-    margin-right: 34px;
-    margin-left: 26px;
-
-    .icon-anchor {
-      margin-left: 5px;
-    }
+    padding-top: 32px;
   }
 
   .post.post {
@@ -408,7 +401,7 @@ body.ttrss_main {
       border-color: @border-default !important;
     }
     &.active {
-      border-color: fade(@default-fg, 17%) !important;
+      border-color: @border-active !important;
     }
     &.expanded,
     &.expandable.active {
@@ -458,6 +451,12 @@ body.ttrss_main {
   }
 
   #floatingTitle {
+    min-height: 32px;
+    margin-right: 34px;
+    margin-left: 26px;
+    border-bottom-color: @border-active;
+    box-shadow: none;
+
     .titleWrap {
       white-space: nowrap;
       overflow: hidden;
@@ -472,6 +471,9 @@ body.ttrss_main {
     .right {
       padding-right: 5px;
       padding-left: 5px;
+    }
+    .icon-anchor {
+      margin-left: 5px;
     }
   }
 
@@ -510,6 +512,8 @@ body.ttrss_main {
   }
 
   .content {
+    color: @default-text;
+
     .content-inner {
       margin: 5px;
       font-size: 14px;
