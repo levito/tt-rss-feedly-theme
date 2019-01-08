@@ -374,6 +374,8 @@ body.ttrss_main {
 
   .cdm.expandable:not(.active),
   .hl {
+    // color: fade(@default-text, 30%) !important;
+
     .left {
       display: none;
     }
@@ -392,10 +394,13 @@ body.ttrss_main {
 
       &,
       a,
-      span,
-      .title,
-      .content {
+      span {
         color: inherit !important;
+      }
+      .title,
+      .excerpt,
+      .preview {
+        color: fade(@default-fg, 45%) !important;
       }
     }
     .title {
