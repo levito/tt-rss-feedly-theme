@@ -1,7 +1,7 @@
 tt-rss-feedly-theme
 ===================
 
-Feedly theme for [Tiny Tiny RSS](https://tt-rss.org) 1.15 – 18.8. This theme will probably not be updated to support newer versions of tt-rss.
+Feedly theme for [Tiny Tiny RSS](https://tt-rss.org) 1.15 – 18.8.
 
 The latest fully working tt-rss commit of version 18.8 is [da1a3c2](https://git.tt-rss.org/fox/tt-rss/commit/da1a3c2cc5621bccdb844cfbd03e377ada079fa9). After that, things start to fall apart.
 
