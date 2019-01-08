@@ -12,6 +12,8 @@
 @fonts-mono: Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono",
   "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
 
+@feedy-hide-score-icon: true;
+
 @font-face {
   font-family: "SansCn";
   font-style: normal;
@@ -51,12 +53,7 @@
 
 body.ttrss_main {
   color: @default-text;
-
-  &,
-  #header-wrap,
-  #content-wrap {
-    background-color: @default-bg;
-  }
+  background-color: @default-bg;
 
   .dijitSplitter {
     background-color: transparent;
@@ -66,9 +63,12 @@ body.ttrss_main {
     display: none;
   }
 
-  #main,
-  #headlines-wrap-inner .dijitSplitter {
+  #main {
     background-color: @border-default;
+  }
+
+  &:not(.ttrss_prefs) #main {
+    padding-left: 30px;
   }
 
   #feeds-holder {
@@ -78,7 +78,7 @@ body.ttrss_main {
 
     #feedTree {
       font-size: 12px;
-      margin-right: -5px;
+      margin: 0 -5px 0 -30px;
 
       .dijitTreeContainer {
         padding: 46px 0;
@@ -101,7 +101,6 @@ body.ttrss_main {
       .counterNode.counterNode {
         border-color: transparent;
         background-color: transparent;
-        color: inherit;
         font-weight: normal;
         text-align: right;
         color: fade(@default-text, 60%);
@@ -168,16 +167,75 @@ body.ttrss_main {
   #headlines-frame {
     padding-right: 34px;
     padding-left: 26px;
+    background-color: @default-bg;
+  }
+
+  #toolbar-frame {
+    z-index: 3;
   }
 
   #toolbar {
-    padding: 6px 0;
-  }
-  #feed_title {
-    font-weight: bold;
-  }
-  #selected_prompt {
-    font-style: normal !important;
+    padding: 5px 0 6px !important;
+
+    .icon-syndicate {
+      border: none;
+      color: @default-text;
+    }
+    #feed_title {
+      font-size: 14px;
+      font-weight: bold;
+    }
+    #selected_prompt {
+      font-style: normal !important;
+    }
+    > .dijitButton {
+      .dijitButtonNode {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        padding: 0;
+        width: 30px;
+        border: 0;
+        border-radius: 0;
+        background: linear-gradient(
+            to right,
+            fade(@default-fg, 7.5%),
+            fade(@default-fg, 0)
+          ) -30px 0 no-repeat;
+        box-shadow: none;
+        transition: background-position 0.1s;
+      }
+      .dijitButtonContents {
+        position: absolute;
+        top: 53px;
+        left: 7px;
+        width: 16px;
+        height: 16px;
+        padding: 0;
+        overflow: hidden;
+        text-indent: 101%;
+        opacity: 0.2;
+        transition: opacity 0.2s;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          right: 0;
+          left: 0;
+          height: 3px;
+          background-color: @default-fg;
+          box-shadow: 0 6px 0 @default-fg, 0 12px 0 @default-fg;
+        }
+      }
+      &:hover .dijitButtonNode {
+        background-position: 0 0;
+      }
+      &:hover .dijitButtonContents {
+        opacity: 0.7;
+      }
+    }
   }
 
   #headlines-frame {
@@ -202,17 +260,21 @@ body.ttrss_main {
   #floatingTitle,
   .header,
   .hl {
+    min-height: 30px;
+
+    > * {
+      padding: 2px 1px;
+    }
     > .right {
       order: 1;
     }
     > .feed {
       order: 2;
-      flex: 0 0 135px;
     }
     > .title,
     > .titleWrap {
       order: 3;
-      overflow: hidden;
+      padding-left: 5px;
     }
     // date
     > :nth-child(4) {
@@ -228,19 +290,46 @@ body.ttrss_main {
     }
   }
 
-  .hl > * {
-    display: flex;
-    align-self: stretch;
-    align-items: center;
+  .hl {
+    > * {
+      display: flex;
+      align-self: stretch;
+      align-items: center;
+    }
+
+    .title .hl-content {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
 
-  .feed a {
-    padding: 1px 6px !important;
-    border-radius: 99px !important;
-    font-style: normal !important;
+  .icon-score when (@feedy-hide-score-icon = true) {
+    display: none;
+  }
 
-    &:empty {
-      display: none;
+  .updated {
+    padding: 0 5px 0 10px;
+  }
+
+  .feed {
+    display: flex !important;
+    flex: 0 0 130px;
+    max-width: 130px;
+    padding: 8px 5px 8px 0;
+
+    a {
+      max-width: 100%;
+      padding: 1px 6px !important;
+      border: 1px solid fade(@default-fg, 3%);
+      border-radius: 99px !important;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-style: normal !important;
+      color: @default-text !important;
+
+      &:empty {
+        display: none;
+      }
     }
   }
 
@@ -290,7 +379,7 @@ body.ttrss_main {
         color: inherit !important;
       }
     }
-    .title.title {
+    .title {
       text-decoration: none;
       color: fade(@default-fg, 45%) !important;
     }
@@ -324,13 +413,19 @@ body.ttrss_main {
     &.expanded,
     &.expandable.active {
       margin-bottom: 17px;
-      padding: 23px;
+      padding: 28px;
 
       .title.title {
         display: block;
         font: normal normal bold 24px/28px @fonts-heading;
         text-rendering: optimizeLegibility;
         -webkit-font-smoothing: antialiased;
+      }
+    }
+    &.expandable:not(.active) {
+      .titleWrap,
+      .title {
+        white-space: nowrap;
       }
     }
     .collapse {
@@ -340,10 +435,8 @@ body.ttrss_main {
       left: 0;
       height: 26px;
       text-align: right;
+      transition: background-color 0.5s;
 
-      &:hover {
-        background-color: fade(@default-fg, 3%);
-      }
       i {
         position: absolute;
         top: 0;
@@ -352,7 +445,33 @@ body.ttrss_main {
         left: 0;
         z-index: 1;
         padding: 4px;
+        color: fade(@default-fg, 30%) !important;
+        transition: color 0.2s;
       }
+      &:hover {
+        background-color: fade(@default-fg, 3%);
+        i {
+          color: fade(@default-fg, 70%) !important;
+        }
+      }
+    }
+  }
+
+  #floatingTitle {
+    .titleWrap {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .title {
+      font-size: unset;
+    }
+    .feed {
+      display: none !important;
+    }
+    .right {
+      padding-right: 5px;
+      padding-left: 5px;
     }
   }
 
@@ -362,18 +481,38 @@ body.ttrss_main {
     flex-wrap: wrap;
 
     > .feed {
-      display: flex !important;
       flex: 1;
+      max-width: none;
     }
-
     > .title,
     > .titleWrap {
       order: 5;
+      box-sizing: border-box;
       width: 100%;
+    }
+    .hl-content {
+      position: relative;
+      top: -5px;
+    }
+  }
+
+  #headlines-frame.wide ~ #content-insert {
+    .post {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .content {
+      flex: 1;
+      overflow: auto;
     }
   }
 
   .content {
+    .content-inner {
+      margin: 5px;
+    }
+
     p {
       max-width: 45em;
     }
