@@ -176,7 +176,7 @@ body.ttrss_main {
   }
 
   #toolbar {
-    padding: 5px 0 !important;
+    padding: 6px 0 !important;
 
     .icon-syndicate {
       border: none;
@@ -240,7 +240,33 @@ body.ttrss_main {
   }
 
   #headlines-frame {
-    padding-top: 32px;
+    padding-top: 30px;
+  }
+
+  #floatingTitle {
+    margin-right: 34px;
+    margin-left: 26px;
+    border-bottom-color: @border-active;
+    box-shadow: none;
+
+    .titleWrap {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .title {
+      font-size: unset;
+    }
+    .feed {
+      display: none !important;
+    }
+    .right {
+      padding-right: 5px;
+      padding-left: 5px;
+    }
+    .icon-anchor {
+      margin-left: 5px;
+    }
   }
 
   .post.post {
@@ -308,7 +334,7 @@ body.ttrss_main {
     display: flex !important;
     flex: 0 0 130px;
     max-width: 130px;
-    padding: 8px 5px 8px 0;
+    padding: 7px 5px 7px 0;
 
     a {
       max-width: 100%;
@@ -447,33 +473,6 @@ body.ttrss_main {
           color: fade(@default-fg, 70%) !important;
         }
       }
-    }
-  }
-
-  #floatingTitle {
-    min-height: 32px;
-    margin-right: 34px;
-    margin-left: 26px;
-    border-bottom-color: @border-active;
-    box-shadow: none;
-
-    .titleWrap {
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .title {
-      font-size: unset;
-    }
-    .feed {
-      display: none !important;
-    }
-    .right {
-      padding-right: 5px;
-      padding-left: 5px;
-    }
-    .icon-anchor {
-      margin-left: 5px;
     }
   }
 
