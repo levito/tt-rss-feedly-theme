@@ -17,7 +17,7 @@
     "compress-night": "FILE=feedly-night npm run compress-template",
     "compress": "npm run compress-default & npm run compress-night",
     "start": "chokidar 'src/**/*.less' --initial -c 'npm run build'",
-    "pull": "git subtree pull --prefix tt-rss https://tt-rss.org/gitlab/fox/tt-rss.git master --squash"
+    "postinstall": "git submodule init && git submodule update"
   },
   "husky": {
     "hooks": {
