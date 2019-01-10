@@ -40,10 +40,19 @@
     }
   }
 
-  .post.post {
+  .post {
     .header,
     .content {
+      margin: 0;
       padding: 10px 40px 10px 32px;
+    }
+    .header > * {
+      padding: 0;
+      min-height: unset;
+      align-items: unset;
+    }
+    .title {
+      font-size: inherit;
     }
   }
 
