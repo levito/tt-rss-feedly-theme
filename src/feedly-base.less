@@ -303,8 +303,16 @@ body.ttrss_main {
       order: 5;
       flex-direction: row-reverse;
 
+      i {
+        color: fade(@default-fg, 20%);
+      }
       .dijitCheckBox {
         margin-left: 10px;
+        border-color: transparent !important;
+        background-color: fade(@default-fg, 20%);
+      }
+      .dijitCheckBoxChecked {
+        background-color: @color-checked;
       }
     }
   }
@@ -374,8 +382,6 @@ body.ttrss_main {
 
   .cdm.expandable:not(.active),
   .hl {
-    // color: fade(@default-text, 30%) !important;
-
     .left {
       display: none;
     }
@@ -565,10 +571,10 @@ body.ttrss_main {
     th,
     td {
       padding: 0 0.5em;
-      border: 1px solid #ddd;
+      border: 1px solid fade(@default-fg, 15%);
     }
     th {
-      background: fade(@default-fg, 5%);
+      background-color: fade(@default-fg, 5%);
     }
     table[border="0"] th,
     table[border="0"] td {
@@ -577,7 +583,7 @@ body.ttrss_main {
     }
     hr {
       border: none;
-      border-top: 1px solid #ddd;
+      border-top: 1px solid fade(@default-fg, 15%);
     }
     iframe {
       margin: 0.5em 0;
@@ -597,14 +603,14 @@ body.ttrss_main {
     }
     pre,
     code {
-      color: #222;
-      font-family: @fonts-mono;
+      color: inherit !important;
+      font-family: @fonts-mono !important;
     }
     pre {
       overflow: auto;
       padding: 0.5em;
-      border: 1px solid fade(@default-fg, 3%);
-      background: fade(@default-fg, 3%);
+      border: 1px solid fade(@default-fg, 3%) !important;
+      background-color: fade(@default-fg, 3%) !important;
       white-space: pre-wrap;
       font-size: 11px;
       line-height: 1.333;
@@ -613,14 +619,13 @@ body.ttrss_main {
       display: inline-block;
       padding: 0 0.31em;
       border: 1px solid fade(@default-fg, 3%);
-      background: fade(@default-fg, 3%);
+      background-color: fade(@default-fg, 3%);
       line-height: 1.333;
     }
     pre code {
       padding: 0;
       border: none;
-      background: transparent;
-      color: inherit;
+      background-color: transparent;
     }
     q,
     blockquote {
@@ -628,7 +633,7 @@ body.ttrss_main {
       margin: 1em 0;
       padding: 0.31em 1em;
       border-left: 4px solid fade(@default-fg, 1.5%);
-      background: fade(@default-fg, 3%);
+      background-color: fade(@default-fg, 3%);
     }
     q :first-child,
     blockquote :first-child {
