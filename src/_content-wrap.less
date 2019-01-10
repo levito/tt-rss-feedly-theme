@@ -8,78 +8,10 @@
     background-color: @default-bg;
   }
 
-  #toolbar-frame {
-    z-index: 3;
-  }
-
   #headlines-frame {
     margin: 0;
     border: none;
     padding-top: 30px;
-  }
-
-  #toolbar {
-    padding: 6px 0;
-
-    .icon-syndicate {
-      border: none;
-      color: @default-text;
-    }
-    #feed_title {
-      font-size: 14px;
-      font-weight: bold;
-    }
-    #selected_prompt {
-      font-style: normal;
-    }
-    > .dijitButton {
-      .dijitButtonNode {
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        padding: 0;
-        width: 30px;
-        border: 0;
-        border-radius: 0;
-        background: linear-gradient(
-            to right,
-            fade(@default-fg, 7.5%),
-            fade(@default-fg, 0)
-          ) -30px 0 no-repeat;
-        box-shadow: none;
-        transition: background-position 0.1s;
-      }
-      .dijitButtonContents {
-        position: absolute;
-        top: 53px;
-        left: 7px;
-        width: 16px;
-        height: 16px;
-        padding: 0;
-        overflow: hidden;
-        text-indent: 101%;
-        opacity: 0.2;
-        transition: opacity 0.2s;
-
-        &::before {
-          content: "";
-          position: absolute;
-          top: 0;
-          right: 0;
-          left: 0;
-          height: 3px;
-          background-color: @default-fg;
-          box-shadow: 0 6px 0 @default-fg, 0 12px 0 @default-fg;
-        }
-      }
-      &:hover .dijitButtonNode {
-        background-position: 0 0;
-      }
-      &:hover .dijitButtonContents {
-        opacity: 0.7;
-      }
-    }
   }
 
   #floatingTitle {
