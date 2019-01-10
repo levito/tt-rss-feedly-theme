@@ -1,15 +1,15 @@
 @import "_variables.less";
 
-body.ttrss_main {
+#content-wrap#content-wrap {
+  .content,
+  .content-inner {
+    margin: 5px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: @default-text;
+  }
+
   .content {
-    color: @default-text !important;
-
-    .content-inner {
-      margin: 5px;
-      font-size: 14px;
-      line-height: 1.7;
-    }
-
     h1,
     h2,
     h3,
@@ -83,14 +83,14 @@ body.ttrss_main {
     }
     pre,
     code {
-      color: inherit !important;
-      font-family: @fonts-mono !important;
+      color: inherit;
+      font-family: @fonts-mono;
     }
     pre {
       overflow: auto;
       padding: 0.5em;
-      border: 1px solid fade(@default-fg, 3%) !important;
-      background-color: fade(@default-fg, 3%) !important;
+      border: 1px solid fade(@default-fg, 3%);
+      background-color: fade(@default-fg, 3%);
       white-space: pre-wrap;
       font-size: 11px;
       line-height: 1.333;

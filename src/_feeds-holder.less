@@ -1,94 +1,92 @@
 @import "_variables.less";
 
-body.ttrss_main {
-  #feeds-holder {
-    overflow: visible;
-    box-shadow: none !important;
-    background-color: transparent;
+#feeds-holder#feeds-holder {
+  overflow: visible;
+  box-shadow: none;
+  background-color: transparent;
 
-    #feedTree {
-      font-size: 12px;
-      margin: 0 -5px 0 -30px;
+  #feedTree {
+    font-size: 12px;
+    margin: 0 -5px 0 -30px;
 
-      .dijitTreeContainer {
-        padding: 46px 0;
+    .dijitTreeContainer {
+      padding: 46px 0;
 
-        .dijitTreeRow {
-          border: 0 solid transparent;
-          border-left-width: 20px;
-          padding-right: 20px;
+      .dijitTreeRow {
+        border: 0 solid transparent;
+        border-left-width: 20px;
+        padding-right: 20px;
 
-          &:hover {
-            background-color: fade(@default-fg, 4%);
-          }
+        &:hover {
+          background-color: fade(@default-fg, 4%);
+        }
 
-          &.dijitTreeRowSelected {
-            background-color: fade(@default-fg, 7%);
-          }
+        &.dijitTreeRowSelected {
+          background-color: fade(@default-fg, 7%);
         }
       }
+    }
 
-      .counterNode.counterNode {
-        border-color: transparent;
-        background-color: transparent;
-        font-weight: normal;
-        text-align: right;
-        color: fade(@default-text, 60%);
+    .counterNode.counterNode {
+      border-color: transparent;
+      background-color: transparent;
+      font-weight: normal;
+      text-align: right;
+      color: fade(@default-text, 60%);
 
-        &.aux {
-          color: fade(@default-text, 30%);
-        }
+      &.aux {
+        color: fade(@default-text, 30%);
       }
+    }
 
-      .dijitTreeIcon,
-      .dijitTreeExpando,
-      .dijitTreeLabel {
-        margin-left: 8px !important;
+    .dijitTreeIcon,
+    .dijitTreeExpando,
+    .dijitTreeLabel {
+      margin-left: 8px;
+    }
+
+    .dijitTreeExpando {
+      top: -1px;
+      left: -1px;
+
+      &::before {
+        font-family: "Material Icons";
+        font-size: 20px;
       }
+    }
+    .dijitTreeExpandoClosed::before {
+      content: "\e315";
+    }
+    .dijitTreeExpandoOpened::before {
+      content: "\e313";
+    }
 
-      .dijitTreeExpando {
-        top: -1px;
-        left: -1px;
+    .icon.material-icons:not(.icon-label),
+    .dijitTreeExpando {
+      color: fade(@default-fg, 25%);
+    }
 
-        &::before {
-          font-family: "Material Icons";
-          font-size: 20px;
-        }
-      }
-      .dijitTreeExpandoClosed::before {
-        content: "\e315";
-      }
-      .dijitTreeExpandoOpened::before {
-        content: "\e313";
-      }
+    .dijitTreeContent {
+      display: inline-block;
+    }
 
-      .icon.material-icons:not(.icon-label),
-      .dijitTreeExpando {
-        color: fade(@default-fg, 25%) !important;
-      }
+    .dijitTreeExpandoLeaf {
+      float: right;
+      top: 2px;
+    }
 
-      .dijitTreeContent {
-        display: inline-block;
-      }
+    .dijitTreeRow[style="padding-left: 19px;"] {
+      padding-left: 24px !important;
+    }
 
-      .dijitTreeExpandoLeaf {
-        float: right;
-        top: 2px;
-      }
+    > .dijitTreeContainer
+      > .dijitTreeNode
+      > .dijitTreeNodeContainer
+      > .dijitTreeNode:first-child {
+      margin-bottom: 28px;
 
-      .dijitTreeRow[style="padding-left: 19px;"] {
-        padding-left: 24px !important;
-      }
-
-      > .dijitTreeContainer
-        > .dijitTreeNode
-        > .dijitTreeNodeContainer
-        > .dijitTreeNode:first-child {
-        margin-bottom: 28px;
-
-        > .dijitTreeNodeContainer .dijitTreeRow {
-          padding-left: 2px !important;
-        }
+      > .dijitTreeNodeContainer .dijitTreeRow {
+        padding-left: 2px !important;
       }
     }
   }
