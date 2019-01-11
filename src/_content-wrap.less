@@ -85,9 +85,6 @@
       order: 5;
       flex-direction: row-reverse;
 
-      i {
-        color: fade(@default-fg, 20%);
-      }
       .dijitCheckBox {
         margin-left: 10px;
         border-color: transparent;
@@ -161,9 +158,6 @@
 
   .cdm.expandable:not(.active),
   .hl {
-    .left {
-      display: none;
-    }
     &.marked {
       border-color: fade(@color-marked, 40%);
       background-color: fade(@color-marked, 15%);
@@ -200,12 +194,20 @@
         color: @default-text;
       }
     }
+    &:not(.marked) .left .marked-pic,
+    &:not(.published) .left .pub-pic,
+    &:not(.Selected) .left .dijitCheckBox {
+      color: fade(@default-fg, 20%);
+      display: none;
+    }
     &:hover {
       > * {
         background-color: fade(@default-fg, 4%);
       }
-      .left {
-        display: flex;
+      .left .marked-pic,
+      .left .pub-pic,
+      .left .dijitCheckBox {
+        display: block;
       }
       .updated {
         display: none;
@@ -320,5 +322,11 @@
       text-transform: uppercase;
       color: fade(@default-text, 45%);
     }
+  }
+
+  #headlines-spacer {
+    padding: 30px 0;
+    font-size: 12px;
+    font-style: normal;
   }
 }
