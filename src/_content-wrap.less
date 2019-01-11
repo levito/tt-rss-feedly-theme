@@ -157,7 +157,6 @@
     border-right-color: transparent !important;
     border-left-color: transparent !important;
     background-color: transparent;
-    color: fade(@default-fg, 60%);
   }
 
   .cdm.expandable:not(.active),
@@ -189,12 +188,12 @@
       .title,
       .excerpt,
       .preview {
-        color: fade(@default-fg, 45%);
+        color: fade(@default-text, 45%);
       }
     }
     .title {
       text-decoration: none;
-      color: fade(@default-fg, 45%);
+      color: fade(@default-text, 45%);
     }
     &.Unread {
       .title {
@@ -304,6 +303,22 @@
     .content {
       flex: 1;
       overflow: auto;
+    }
+  }
+
+  .feed-title {
+    display: flex;
+    border: none;
+    padding: 30px 0 16px;
+
+    > * {
+      padding: 0 6px;
+    }
+
+    .title {
+      font-size: 12px;
+      text-transform: uppercase;
+      color: fade(@default-text, 45%);
     }
   }
 }
