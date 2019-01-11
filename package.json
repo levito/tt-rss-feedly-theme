@@ -17,7 +17,7 @@
     "compress-night": "FILE=feedly-night npm run compress-template",
     "compress": "npm run compress-default & npm run compress-night",
     "start": "chokidar 'src/**/*.less' --initial -c 'npm run build'",
-    "postinstall": "git submodule init && git submodule update"
+    "postinstall": "git submodule update --init"
   },
   "husky": {
     "hooks": {
