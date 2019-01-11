@@ -25,16 +25,25 @@ Install steps (If you did not find the description on the [TT-RSS Homepage](http
 
 5. Go into your TT-RSS preferences and select the feedly-theme.
 
+## Development
+
+You will need node.js and yarn (preferred, alternatively npm) installed.
+
+1. Run `yarn` (or `npm install`) to install dependencies
+2. Run `yarn start` (or `npm start`) to watch `src` and compile on changes
+
 ## Screenshots
 
-![expandable](https://raw.github.com/levito/tt-rss-feedly-theme/master/feedly-screenshots/feedly-expandable.png?130826)
+![grouped](https://raw.github.com/levito/tt-rss-feedly-theme/master/feedly-screenshots/feedly-grouped.png?190111)
 
-![expanded](https://raw.github.com/levito/tt-rss-feedly-theme/master/feedly-screenshots/feedly-expanded.png?130826)
+![expandable](https://raw.github.com/levito/tt-rss-feedly-theme/master/feedly-screenshots/feedly-expandable.png?190111)
 
-![traditional](https://raw.github.com/levito/tt-rss-feedly-theme/master/feedly-screenshots/feedly-traditional.png?130826)
+![expanded](https://raw.github.com/levito/tt-rss-feedly-theme/master/feedly-screenshots/feedly-expanded.png?190111)
 
-![traditional, wide, hidden sidebar](https://raw.github.com/levito/tt-rss-feedly-theme/master/feedly-screenshots/feedly-traditional-widescreen.png?130826)
+![traditional](https://raw.github.com/levito/tt-rss-feedly-theme/master/feedly-screenshots/feedly-traditional.png?190111)
 
-![preferences + layer](https://raw.github.com/levito/tt-rss-feedly-theme/master/feedly-screenshots/feedly-prefs-layer.png?130826)
+![traditional, wide, hidden sidebar](https://raw.github.com/levito/tt-rss-feedly-theme/master/feedly-screenshots/feedly-traditional-widescreen.png?190111)
+
+![preferences + layer](https://raw.github.com/levito/tt-rss-feedly-theme/master/feedly-screenshots/feedly-night.png?190111)
 
 Licensed under the WTFPL
