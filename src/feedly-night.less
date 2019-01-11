@@ -7,3 +7,28 @@
 
 @default-fg: #fff;
 @default-bg: #111;
+
+#main#main {
+  #floatingTitle,
+  .dijitContentPane {
+    background-color: @default-bg;
+  }
+  #feeds-holder,
+  #toolbar,
+  .dijitSelect:not(.dijitHover),
+  .dijitToolbar .dijitSelect:not(.dijitHover) .dijitButtonContents,
+  .dijitToolbar .dijitSelect:not(.dijitHover) .dijitButtonNode {
+    background-color: transparent;
+  }
+  .cdm.expandable.active {
+    background-color: transparent !important;
+  }
+  .hl.active,
+  .hl.Selected,
+  .cdm.expandable.Selected {
+    > *,
+    .dijitCheckBox {
+      filter: none;
+    }
+  }
+}
