@@ -67,8 +67,9 @@
       color: @color-fade4;
     }
 
-    .dijitTreeContent {
-      display: inline-block;
+    .dijitTreeContent::before {
+      content: "";
+      margin-left: -0.3em;
     }
 
     .dijitTreeExpandoLeaf {
