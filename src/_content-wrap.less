@@ -78,12 +78,13 @@
     > .title,
     > .titleWrap {
       order: 3;
-      padding-left: 5px;
+      padding: 1px 5px 3px;
       min-height: unset;
     }
     // date
     > :nth-child(4) {
       order: 4;
+      padding: 3px 2px 1px;
       min-height: unset;
     }
     > .left {
@@ -112,14 +113,13 @@
       overflow: hidden;
       text-overflow: ellipsis;
     }
+    .updated {
+      padding: 0;
+    }
   }
 
   .icon-score when (@feedy-hide-score-icon = true) {
     display: none;
-  }
-
-  .updated {
-    padding: 0 5px 0 10px;
   }
 
   .feed {
@@ -169,11 +169,7 @@
     }
     .title {
       text-decoration: none;
-    }
-    &.Unread {
-      .title {
-        color: @default-text;
-      }
+      color: @default-text;
     }
   }
 
@@ -194,6 +190,11 @@
     }
     .title {
       color: @faded-text;
+    }
+    &.Unread {
+      .title {
+        color: @default-text;
+      }
     }
     &:not(.marked) .left .marked-pic,
     &:not(.published) .left .pub-pic,
@@ -293,7 +294,7 @@
     .hl-content,
     > .titleWrap .title {
       position: relative;
-      top: -5px;
+      top: -3px;
     }
   }
 
