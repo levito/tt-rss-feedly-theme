@@ -6,18 +6,14 @@
 @import "_content.less";
 
 @default-fg: #fff;
-@default-bg: #111;
+@default-bg: #1e1e1e;
 
 #main#main {
   #floatingTitle,
   .dijitContentPane {
     background-color: @default-bg;
   }
-  #feeds-holder,
-  #toolbar,
-  .dijitSelect:not(.dijitHover),
-  .dijitToolbar .dijitSelect:not(.dijitHover) .dijitButtonContents,
-  .dijitToolbar .dijitSelect:not(.dijitHover) .dijitButtonNode {
+  #feeds-holder {
     background-color: transparent;
   }
   .cdm.expandable.active {

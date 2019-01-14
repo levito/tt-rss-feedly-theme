@@ -3,6 +3,13 @@
 #toolbar-frame#toolbar-frame {
   z-index: 3;
 
+  #toolbar,
+  .dijitSelect:not(.dijitHover),
+  .dijitToolbar .dijitSelect:not(.dijitHover) .dijitButtonContents,
+  .dijitToolbar .dijitSelect:not(.dijitHover) .dijitButtonNode {
+    background-color: transparent;
+  }
+
   #toolbar {
     padding: 6px 0;
 
