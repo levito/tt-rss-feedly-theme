@@ -21,7 +21,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run build && npm run compress && git add *.css"
+      "pre-push": "npm run build && npm run compress && git add *.css && git commit -m 'build css'"
     }
   },
   "dependencies": {
