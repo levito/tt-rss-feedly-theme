@@ -159,6 +159,22 @@
     border-right-color: transparent !important;
     border-left-color: transparent !important;
     background-color: transparent;
+
+    .author,
+    .excerpt,
+    .preview,
+    .titleWrap,
+    .updated {
+      color: @faded-text;
+    }
+    .title {
+      text-decoration: none;
+    }
+    &.Unread {
+      .title {
+        color: @default-text;
+      }
+    }
   }
 
   .cdm.expandable:not(.active),
@@ -175,29 +191,9 @@
     &.Selected {
       border-color: fade(@color-checked, 30%);
       background-color: fade(@color-checked, 15%) !important;
-
-      &,
-      a,
-      span {
-        color: inherit;
-      }
-      .author {
-        color: @default-text;
-      }
-      .title,
-      .excerpt,
-      .preview {
-        color: @faded-text;
-      }
     }
     .title {
-      text-decoration: none;
       color: @faded-text;
-    }
-    &.Unread {
-      .title {
-        color: @default-text;
-      }
     }
     &:not(.marked) .left .marked-pic,
     &:not(.published) .left .pub-pic,
@@ -234,7 +230,7 @@
       margin-bottom: 17px;
       padding: 25px;
 
-      .title.title {
+      .title {
         display: block;
         font: normal normal bold 24px/28px @fonts-heading;
         text-rendering: optimizeLegibility;
