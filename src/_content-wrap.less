@@ -43,6 +43,9 @@
     .icon-anchor {
       margin-left: 5px;
     }
+    .updated {
+      color: @faded-text;
+    }
   }
 
   .post {
@@ -169,7 +172,11 @@
     }
     .title {
       text-decoration: none;
-      color: @default-text;
+    }
+    &.Unread {
+      .title {
+        color: @default-text;
+      }
     }
   }
 
