@@ -16,13 +16,14 @@
         border: 0 solid transparent;
         border-left-width: 20px;
         padding-right: 20px;
+        color: @default-feeds-text;
 
         &:hover {
-          background-color: fade(@default-fg, 4%);
+          background-color: @color-fade1;
         }
 
         &.dijitTreeRowSelected {
-          background-color: fade(@default-fg, 7%);
+          background-color: @color-fade2;
         }
       }
     }
@@ -32,10 +33,10 @@
       background-color: transparent;
       font-weight: normal;
       text-align: right;
-      color: fade(@default-text, 60%);
+      color: @default-feeds-text;
 
       &.aux {
-        color: fade(@default-text, 30%);
+        color: @faded-feeds-text;
       }
     }
 
@@ -63,7 +64,7 @@
 
     .icon.material-icons:not(.icon-label),
     .dijitTreeExpando {
-      color: fade(@default-fg, 25%);
+      color: @color-fade4;
     }
 
     .dijitTreeContent {

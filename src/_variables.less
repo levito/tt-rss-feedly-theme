@@ -3,10 +3,23 @@
 @color-published: #e84;
 @color-marked: #6b5;
 @color-checked: #db0;
-@color-panel-bg: fade(@default-fg, 4%);
-@border-default: fade(@default-fg, 7%);
-@border-active: fade(@default-fg, 17%);
-@default-text: fade(@default-fg, 75%);
+
+@color-fade0: fade(@default-fg, 0%);
+@color-fade1: fade(@default-fg, 4%);
+@color-fade2: fade(@default-fg, 7%);
+@color-fade3: fade(@default-fg, 15%);
+@color-fade4: fade(@default-fg, 22%);
+@color-fade5: fade(@default-fg, 30%);
+@color-fade6: fade(@default-fg, 45%);
+@color-fade7: fade(@default-fg, 60%);
+@color-fade8: fade(@default-fg, 75%);
+
+@color-panel-bg: @color-fade1;
+@border-default: @color-fade2;
+@faded-feeds-text: @color-fade5;
+@faded-text: @color-fade6;
+@default-feeds-text: @color-fade7;
+@default-text: @color-fade8;
 
 @fonts-ui: "Helvetica Neue", Arial, Helvetica, "Liberation Sans",
   "Nimbus Sans L", FreeSans, sans-serif;

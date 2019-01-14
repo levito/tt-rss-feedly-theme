@@ -12,6 +12,7 @@
 
   #toolbar {
     padding: 6px 0;
+    color: @faded-text;
 
     .icon-syndicate {
       border: none;
@@ -24,6 +25,7 @@
     #feed_title {
       font-size: 14px;
       font-weight: bold;
+      color: @default-text;
     }
     #selected_prompt {
       font-style: normal;
@@ -38,11 +40,8 @@
         width: 30px;
         border: 0;
         border-radius: 0;
-        background: linear-gradient(
-            to right,
-            fade(@default-fg, 7.5%),
-            fade(@default-fg, 0)
-          ) -30px 0 no-repeat;
+        background: linear-gradient(to right, @color-fade2, @color-fade0) -30px 0
+          no-repeat;
         box-shadow: none;
         transition: background-position 0.1s;
       }
@@ -55,7 +54,7 @@
         padding: 0;
         overflow: hidden;
         text-indent: 101%;
-        opacity: 0.2;
+        opacity: 0.22;
         transition: opacity 0.2s;
 
         &::before {
@@ -73,7 +72,7 @@
         background-position: 0 0;
       }
       &:hover .dijitButtonContents {
-        opacity: 0.7;
+        opacity: 0.75;
       }
     }
   }

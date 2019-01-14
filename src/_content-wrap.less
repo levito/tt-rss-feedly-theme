@@ -22,7 +22,7 @@
   #floatingTitle {
     margin-right: 34px;
     margin-left: 26px;
-    border-bottom-color: @border-active;
+    border-bottom-color: @color-fade3;
     box-shadow: none;
 
     .titleWrap {
@@ -93,7 +93,7 @@
       .dijitCheckBox {
         margin-left: 10px;
         border-color: transparent;
-        background-color: fade(@default-fg, 20%);
+        background-color: @color-fade4;
       }
       .dijitCheckBoxChecked {
         background-color: @color-checked;
@@ -129,7 +129,7 @@
       width: 115px;
       margin-right: 5px;
       padding: 1px 6px;
-      border: 1px solid fade(@default-fg, 3%);
+      border: 1px solid @color-fade1;
       border-radius: 99px;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -164,16 +164,16 @@
   .cdm.expandable:not(.active),
   .hl {
     &.marked {
-      border-color: fade(@color-marked, 40%);
+      border-color: fade(@color-marked, 30%);
       background-color: fade(@color-marked, 15%);
     }
     &.published {
-      border-color: fade(@color-published, 40%);
+      border-color: fade(@color-published, 30%);
       background-color: fade(@color-published, 15%);
     }
     &.active,
     &.Selected {
-      border-color: fade(@color-checked, 40%);
+      border-color: fade(@color-checked, 30%);
       background-color: fade(@color-checked, 15%) !important;
 
       &,
@@ -187,12 +187,12 @@
       .title,
       .excerpt,
       .preview {
-        color: fade(@default-text, 45%);
+        color: @faded-text;
       }
     }
     .title {
       text-decoration: none;
-      color: fade(@default-text, 45%);
+      color: @faded-text;
     }
     &.Unread {
       .title {
@@ -202,12 +202,12 @@
     &:not(.marked) .left .marked-pic,
     &:not(.published) .left .pub-pic,
     &:not(.Selected) .left .dijitCheckBox {
-      color: fade(@default-fg, 20%);
+      color: @color-fade4;
       display: none;
     }
     &:hover {
       > * {
-        background-color: fade(@default-fg, 4%);
+        background-color: @color-fade1;
       }
       .left .marked-pic,
       .left .pub-pic,
@@ -227,7 +227,7 @@
       border-color: @border-default !important;
     }
     &.active {
-      border-color: @border-active !important;
+      border-color: @color-fade3 !important;
     }
     &.expanded,
     &.expandable.active {
@@ -264,13 +264,13 @@
         left: 0;
         z-index: 1;
         padding: 4px;
-        color: fade(@default-fg, 20%);
+        color: @color-fade4;
         transition: color 0.2s;
       }
       &:hover {
-        background-color: fade(@default-fg, 3%);
+        background-color: @color-fade1;
         i {
-          color: fade(@default-fg, 70%);
+          color: @color-fade8;
         }
       }
     }
@@ -325,7 +325,7 @@
     .title {
       font-size: 12px;
       text-transform: uppercase;
-      color: fade(@default-text, 45%);
+      color: @faded-text;
     }
   }
 
