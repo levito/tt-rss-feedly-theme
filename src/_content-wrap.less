@@ -41,7 +41,8 @@
       padding-left: 5px;
     }
     .icon-anchor {
-      margin-left: 5px;
+      margin: 0 2px;
+      padding: 2px;
     }
     .updated {
       color: @faded-text;
@@ -93,9 +94,10 @@
     > .left {
       order: 5;
       flex-direction: row-reverse;
+      padding-left: 28px;
 
       .dijitCheckBox {
-        margin-left: 10px;
+        margin-left: 7px;
         border-color: transparent;
         background-color: @color-fade4;
 
@@ -125,8 +127,10 @@
     }
   }
 
-  .icon-score when (@feedy-hide-score-icon = true) {
-    display: none;
+  .icon-score {
+    position: absolute;
+    right: 85px;
+    opacity: 1;
   }
 
   .feed {
@@ -162,6 +166,8 @@
   #floatingTitle,
   [data-article-id].cdm,
   .hl {
+    position: relative;
+
     .author,
     .excerpt,
     .preview,
@@ -177,9 +183,10 @@
         color: @default-text;
       }
     }
-    &:not(.marked) .left .marked-pic,
-    &:not(.published) .left .pub-pic,
-    .left .icon-anchor,
+    &:not(.marked) .marked-pic,
+    &:not(.published) .pub-pic,
+    .icon-anchor,
+    .icon-score,
     .footer .material-icons {
       color: @color-fade4;
       transition: color 0.2s;
@@ -222,29 +229,34 @@
         color: @default-text;
       }
     }
-    &:not(.marked) .left .marked-pic,
-    &:not(.published) .left .pub-pic,
-    &:not(.Selected) .left .dijitCheckBox {
+    &:not(.marked) .marked-pic,
+    &:not(.published) .pub-pic,
+    &:not(.Selected) .dijitCheckBox,
+    .icon-score {
       display: none;
     }
     &:hover {
       > * {
         background-color: @color-fade1;
       }
-      .left .marked-pic,
-      .left .pub-pic,
-      .left .dijitCheckBox {
+      .marked-pic,
+      .pub-pic,
+      .dijitCheckBox,
+      .icon-score {
         display: block;
       }
       .updated {
         display: none;
       }
     }
+    &:not(:hover) {
+      .left {
+        padding-left: 2px;
+      }
+    }
   }
 
   .cdm {
-    position: relative;
-
     &.expanded {
       border-color: @border-default !important;
     }
@@ -261,6 +273,9 @@
         font: normal normal bold 24px/28px @fonts-heading;
         text-rendering: optimizeLegibility;
         -webkit-font-smoothing: antialiased;
+      }
+      .icon-score {
+        right: 110px;
       }
     }
     &.expandable:not(.active) {
