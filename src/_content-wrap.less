@@ -98,9 +98,13 @@
         margin-left: 10px;
         border-color: transparent;
         background-color: @color-fade4;
-      }
-      .dijitCheckBoxChecked {
-        background-color: @color-checked;
+
+        &:hover {
+          background-color: @color-fade6;
+        }
+        &.dijitCheckBoxChecked {
+          background-color: @color-checked;
+        }
       }
     }
   }
@@ -155,14 +159,9 @@
     }
   }
 
-  .cdm,
+  #floatingTitle,
+  [data-article-id].cdm,
   .hl {
-    margin-bottom: -1px;
-    border: 1px solid @border-default;
-    border-right-color: transparent !important;
-    border-left-color: transparent !important;
-    background-color: transparent;
-
     .author,
     .excerpt,
     .preview,
@@ -178,6 +177,26 @@
         color: @default-text;
       }
     }
+    &:not(.marked) .left .marked-pic,
+    &:not(.published) .left .pub-pic,
+    .left .icon-anchor,
+    .footer .material-icons {
+      color: @color-fade4;
+      transition: color 0.2s;
+
+      &:hover {
+        color: @color-fade6;
+      }
+    }
+  }
+
+  [data-article-id].cdm,
+  .hl {
+    margin-bottom: -1px;
+    border: 1px solid @border-default;
+    border-right-color: transparent !important;
+    border-left-color: transparent !important;
+    background-color: transparent;
   }
 
   .cdm.expandable:not(.active),
@@ -206,7 +225,6 @@
     &:not(.marked) .left .marked-pic,
     &:not(.published) .left .pub-pic,
     &:not(.Selected) .left .dijitCheckBox {
-      color: @color-fade4;
       display: none;
     }
     &:hover {
@@ -277,6 +295,9 @@
           color: @color-fade8;
         }
       }
+    }
+    .footer {
+      border: none;
     }
   }
 
