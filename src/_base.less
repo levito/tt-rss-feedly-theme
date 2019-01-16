@@ -1,4 +1,8 @@
 @import "_variables.less";
+@import "_feeds-holder.less";
+@import "_toolbar-frame.less";
+@import "_content-wrap.less";
+@import "_content.less";
 
 @font-face {
   font-family: "SansCn";
@@ -41,6 +45,10 @@
   height: 4px;
 }
 
+.material-icons {
+  color: @color-fade6;
+}
+
 body.ttrss_main {
   color: @default-text;
   background-color: @default-bg;
@@ -60,8 +68,4 @@ body.ttrss_main {
   &:not(.ttrss_prefs) #main {
     padding-left: 30px;
   }
-}
-
-.material-icons {
-  color: @color-fade6;
 }
