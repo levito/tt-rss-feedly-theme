@@ -3,16 +3,51 @@
 #content-wrap#content-wrap {
   .content,
   .content-inner {
+    font-family: @fonts-content;
     font-size: 14px;
     line-height: 1.7;
     color: @default-text;
   }
 
-  .content-inner {
-    margin: 5px;
+  .expand-prompt,
+  .footer {
+    font-family: @fonts-ui;
+  }
+
+  .footer {
+    padding-right: 5px;
+  }
+
+  .content-shrink-wrap {
+    margin: 0 -10px;
+    border-bottom: 1px solid @color-fade3;
+    padding: 0 10px;
+  }
+
+  .expand-prompt {
+    margin: 20px 0 0;
+
+    &,
+    .dijitButtonNode {
+      display: block;
+    }
+    .dijitButtonNode {
+      background-color: fade(@default-fg, 10%);
+      border-color: @color-fade1;
+      font-size: 12px;
+      font-weight: bold;
+      color: @color-fade7;
+
+      &:hover {
+        background-color: fade(@default-fg, 12%);
+        color: @color-fade8;
+      }
+    }
   }
 
   .content {
+    margin: -5px;
+
     h1,
     h2,
     h3,
