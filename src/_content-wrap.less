@@ -140,10 +140,12 @@
 
   .feed {
     display: flex;
+    flex: 0 0 130px;
+    max-width: 130px;
+    padding-right: 5px;
 
     a {
-      width: 115px;
-      margin-right: 5px;
+      max-width: 100%;
       padding: 1px 6px;
       border: 1px solid @color-fade1;
       border-radius: 99px;
@@ -151,11 +153,11 @@
       text-overflow: ellipsis;
       font-style: normal;
       color: @default-text;
-
-      &:empty {
-        display: none;
-      }
     }
+  }
+
+  #headlines-frame[is-vfeed="0"] .feed {
+    display: none;
   }
 
   .label {
@@ -329,10 +331,7 @@
 
     > .feed {
       flex: 1;
-
-      a {
-        width: auto;
-      }
+      max-width: unset;
     }
     > .title,
     > .titleWrap {
