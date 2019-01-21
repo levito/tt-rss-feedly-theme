@@ -3,6 +3,7 @@
 @import "_toolbar-frame.less";
 @import "_content-wrap.less";
 @import "_content.less";
+@import "_overlay.less";
 
 @font-face {
   font-family: "SansCn";
@@ -67,5 +68,9 @@ body.ttrss_main {
 
   &:not(.ttrss_prefs) #main {
     padding-left: 30px;
+  }
+
+  .dijitDialogUnderlay {
+    opacity: 0.4;
   }
 }

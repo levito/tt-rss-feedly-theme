@@ -1,0 +1,37 @@
+@import "_variables.less";
+
+#overlay {
+  #overlay_inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: @color-fade5;
+  }
+
+  #loading_bar,
+  .alert {
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    width: 100% !important;
+    border-radius: 0;
+  }
+
+  #loading_bar {
+    background-color: transparent;
+
+    &,
+    .dijitProgressBarFull {
+      height: 5px;
+    }
+    .dijitProgressBarFull {
+      background-color: @color-fade3;
+    }
+  }
+
+  #loading_bar_label {
+    display: none;
+  }
+}
