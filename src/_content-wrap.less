@@ -1,6 +1,9 @@
 @import "_variables.less";
 
 #content-wrap#content-wrap {
+  @spacing-right: 34px;
+  @spacing-left: 26px;
+
   &,
   #toolbar-frame {
     overflow: visible;
@@ -8,8 +11,8 @@
 
   #toolbar,
   #headlines-frame {
-    padding-right: 34px;
-    padding-left: 26px;
+    padding-right: @spacing-right;
+    padding-left: @spacing-left;
     background-color: @default-bg;
   }
 
@@ -25,8 +28,8 @@
   }
 
   #floatingTitle {
-    margin-right: 34px;
-    margin-left: 26px;
+    margin-right: @spacing-right;
+    margin-left: @spacing-left;
     border-bottom-color: @color-fade3;
     box-shadow: none;
 
@@ -378,9 +381,30 @@
     }
   }
 
+  .whiteBox {
+    font-size: 12px;
+    line-height: 1.5;
+    padding-bottom: 30px;
+  }
+
   #headlines-spacer {
-    padding: 30px 0;
+    position: relative;
+    padding-top: 31px;
+    height: 100%;
     font-size: 12px;
     font-style: normal;
+
+    &::after {
+      content: "The End";
+      position: absolute;
+      right: -@spacing-right;
+      bottom: 0;
+      left: -@spacing-left;
+      padding: 50px;
+      font-size: 18px;
+      letter-spacing: 1px;
+      background-color: @color-fade3;
+      color: @color-fade5;
+    }
   }
 }
