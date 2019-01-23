@@ -29,9 +29,9 @@
       padding-right: 4px; // same as .updates-available for each icon
     }
     #feed_title {
+      color: @default-text;
       font-size: 14px;
       font-weight: bold;
-      color: @default-text;
 
       > * {
         vertical-align: middle;
@@ -46,14 +46,14 @@
         top: 0;
         bottom: 0;
         left: 0;
-        padding: 0;
         width: 30px;
+        padding: 0;
+        transition: background-position 0.1s;
         border: 0;
         border-radius: 0;
         background: linear-gradient(to right, @color-fade2, @color-fade0) -30px 0
           no-repeat;
         box-shadow: none;
-        transition: background-position 0.1s;
       }
       .dijitButtonContents {
         position: absolute;
@@ -63,9 +63,9 @@
         height: 16px;
         padding: 0;
         overflow: hidden;
-        text-indent: 101%;
-        opacity: 0.22;
         transition: opacity 0.2s;
+        opacity: 0.22;
+        text-indent: 101%;
 
         &::before {
           content: "";

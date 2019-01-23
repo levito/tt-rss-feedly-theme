@@ -3,10 +3,10 @@
 #content-wrap#content-wrap {
   .content,
   .content-inner {
+    color: @default-text;
     font-family: @fonts-content;
     font-size: 14px;
     line-height: 1.7;
-    color: @default-text;
   }
 
   .expand-prompt,
@@ -20,8 +20,8 @@
 
   .content-shrink-wrap {
     margin: 0 -10px;
-    border-bottom: 1px solid @color-fade3;
     padding: 0 10px;
+    border-bottom: 1px solid @color-fade3;
   }
 
   .expand-prompt {
@@ -32,11 +32,11 @@
       display: block;
     }
     .dijitButtonNode {
-      background-color: fade(@default-fg, 10%);
       border-color: @color-fade1;
+      background-color: fade(@default-fg, 10%);
+      color: @color-fade7;
       font-size: 12px;
       font-weight: bold;
-      color: @color-fade7;
 
       &:hover {
         background-color: fade(@default-fg, 12%);
@@ -56,8 +56,8 @@
     h6 {
       margin-top: 35px;
       margin-bottom: 14px;
-      text-rendering: optimizeLegibility;
       -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
     h1 {
       font: normal normal bold 22px/28px @fonts-heading;
@@ -108,15 +108,15 @@
     }
     img,
     video {
-      margin: 0.5em 1em 0.5em 0;
-      max-width: 100%;
       width: auto;
+      max-width: 100%;
       height: auto;
+      margin: 0.5em 1em 0.5em 0;
     }
     figure {
       margin: 1em 0;
-      font-style: italic;
       font-size: 12px;
+      font-style: italic;
       line-height: 16px;
     }
     pre,
@@ -125,13 +125,13 @@
       font-family: @fonts-mono;
     }
     pre {
-      overflow: auto;
       padding: 0.5em;
+      overflow: auto;
       border: 1px solid @color-fade1;
       background-color: @color-fade1;
-      white-space: pre-wrap;
       font-size: 11px;
       line-height: 1.333;
+      white-space: pre-wrap;
     }
     code {
       display: inline-block;

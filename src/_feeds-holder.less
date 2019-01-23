@@ -2,23 +2,23 @@
 
 #feeds-holder#feeds-holder {
   overflow: visible;
-  box-shadow: none;
   background-color: transparent;
+  box-shadow: none;
 
   #feedTree {
-    font-size: 12px;
     margin: 0 -5px 0 -30px;
+    font-size: 12px;
 
     .dijitTreeContainer {
       padding: 46px 0;
     }
 
     .dijitTreeRow {
+      padding-right: 20px;
+      transition: none;
       border: 0 solid transparent;
       border-left-width: 20px;
-      padding-right: 20px;
       color: @default-feeds-text;
-      transition: none;
 
       &,
       * {
@@ -35,9 +35,9 @@
     .counterNode {
       border-color: transparent;
       background-color: transparent;
+      color: @default-feeds-text;
       font-weight: normal;
       text-align: right;
-      color: @default-feeds-text;
 
       &.aux {
         color: @faded-feeds-text;
@@ -68,8 +68,8 @@
 
     .icon.material-icons:not(.icon-label),
     .dijitTreeExpando {
-      color: @color-fade4;
       transition: color 0.2s;
+      color: @color-fade4;
     }
 
     .dijitTreeExpando:hover {
