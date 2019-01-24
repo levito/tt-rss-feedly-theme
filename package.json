@@ -22,15 +22,17 @@
     "compress": "run-p compress:*",
     "fmt": "prettier 'src/**/*.less' --write",
     "lint": "stylelint 'src/**/*.less'",
-    "lint:fix": "npm run lint -- --fix",
     "start": "chokidar 'src/**/*.less' --initial -c 'run-s build lint'",
     "postinstall": "git submodule update --init"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "run-s lint:fix fmt && git add src/*",
+      "pre-commit": "lint-staged",
       "pre-push": "run-s build compress && git add *.css && git commit -m 'build css'"
     }
+  },
+  "lint-staged": {
+    "src/**/*.less": ["npm run lint -- --fix", "prettier --write", "git add"]
   },
   "stylelint": {
     "extends": "stylelint-config-property-sort-order-smacss"
@@ -40,6 +42,7 @@
     "clean-css-cli": "4.2.1",
     "husky": "1.3.1",
     "less": "3.9.0",
+    "lint-staged": "8.1.0",
     "npm-run-all": "4.1.5",
     "prettier": "1.16.1",
     "stylelint": "9.10.1",
