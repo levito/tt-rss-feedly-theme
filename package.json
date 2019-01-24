@@ -20,9 +20,8 @@
     "compress:ocean": "FILE=feedly-ocean npm run compress-template",
     "compress:paper": "FILE=feedly-paper npm run compress-template",
     "compress": "run-p compress:*",
-    "fmt": "prettier 'src/**/*.less' --write",
     "lint": "stylelint 'src/**/*.less'",
-    "start": "chokidar 'src/**/*.less' --initial -c 'run-s build lint'",
+    "start": "chokidar 'src/**/*.less' --initial -c 'run-p lint build --silent'",
     "postinstall": "git submodule update --init"
   },
   "husky": {
@@ -32,7 +31,7 @@
     }
   },
   "lint-staged": {
-    "src/**/*.less": ["npm run lint -- --fix", "prettier --write", "git add"]
+    "src/**/*.less": ["stylelint --fix", "prettier --write", "git add"]
   },
   "stylelint": {
     "extends": "stylelint-config-property-sort-order-smacss"
