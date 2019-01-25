@@ -31,7 +31,11 @@
     }
   },
   "lint-staged": {
-    "src/**/*.less": ["stylelint --fix", "prettier --write", "git add"]
+    "src/**/*.less": [
+      "stylelint --fix",
+      "prettier --write",
+      "git add"
+    ]
   },
   "stylelint": {
     "extends": "stylelint-config-property-sort-order-smacss"
