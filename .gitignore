@@ -1,0 +1,11 @@
+*~
+.DS_Store
+._*
+[Dd]esktop.ini
+Thumbs.db
+
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+node_modules
