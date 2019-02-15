@@ -9,7 +9,7 @@
   "private": true,
   "scripts": {
     "build": "foreach -g 'src/!(_)*.less' -x 'lessc --source-map-inline #{path} > #{name}.css'",
-    "compress": "foreach -g '*.css' -x 'cleancss --inline none -o #{path} #{path}'",
+    "compress": "foreach -g '*.css' -x 'cleancss --inline none -O2 -o #{path} #{path}'",
     "lint": "stylelint 'src/**/*.less'",
     "start": "chokidar 'src/**/*.less' --initial -c 'run-p lint build'",
     "postinstall": "git submodule update --init"
