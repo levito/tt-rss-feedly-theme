@@ -27,10 +27,10 @@ Install steps (If you did not find the description on the [TT-RSS Homepage](http
 
 ## Development
 
-You will need node.js and yarn (preferred, alternatively npm) installed.
+You will need node.js and npm installed.
 
-1. Run `yarn` (or `npm install`) to install dependencies
-2. Run `yarn start` (or `npm start`) to watch `src` and compile on changes
+1. Run `npm install` to install dependencies
+2. Run `npm start` to watch `src` and compile on changes
 
 ## Screenshots
 
