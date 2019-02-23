@@ -1,7 +1,7 @@
 tt-rss-feedly-theme
 ===================
 
-Feedly theme for [Tiny Tiny RSS](https://tt-rss.org) 18.12+.
+Feedly theme for [Tiny Tiny RSS](https://tt-rss.org) 19.2+.
 
 If you are using an older version of TT-RSS, have a look at the branches.
 
