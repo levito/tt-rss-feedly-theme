@@ -28,7 +28,11 @@
     ]
   },
   "stylelint": {
-    "extends": "stylelint-config-property-sort-order-smacss"
+    "extends": "stylelint-config-property-sort-order-smacss",
+    "ignoreFiles": [
+      "*.css",
+      "tt-rss/**"
+    ]
   },
   "dependencies": {
     "chokidar-cli": "1.2.2",
