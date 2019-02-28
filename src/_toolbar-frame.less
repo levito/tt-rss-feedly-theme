@@ -46,7 +46,7 @@
         top: 0;
         bottom: 0;
         left: 0;
-        width: 30px;
+        width: @feeds-toggle-width;
         padding: 0;
         transition: background-position 0.1s;
         border: 0;
@@ -57,10 +57,11 @@
       }
       .dijitButtonContents {
         position: absolute;
-        top: 53px;
-        left: 7px;
+        top: 37px + @headline-height / 2;
+        left: 50%;
         width: 16px;
         height: 16px;
+        margin-left: -8px;
         padding: 0;
         overflow: hidden;
         transition: opacity 0.2s;

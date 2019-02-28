@@ -1,10 +1,11 @@
 @import "_variables.less";
 
 #content-wrap#content-wrap {
-  @spacing-right: 34px;
-  @spacing-left: 26px;
-
   margin-left: -5px;
+
+  #feeds-holder[style*="none"] ~ & {
+    margin-left: 0;
+  }
 
   &,
   #toolbar-frame {
@@ -13,14 +14,14 @@
 
   #toolbar,
   #headlines-frame {
-    padding-right: @spacing-right;
-    padding-left: @spacing-left;
+    padding-right: @content-spacing-right;
+    padding-left: @content-spacing-left;
     background-color: @default-bg;
   }
 
   #headlines-frame {
     margin: 0;
-    padding-top: 30px;
+    padding-top: @headline-height;
     border: none;
   }
 
@@ -30,8 +31,8 @@
   }
 
   #floatingTitle {
-    margin-right: @spacing-right;
-    margin-left: @spacing-left;
+    margin-right: @content-spacing-right;
+    margin-left: @content-spacing-left;
     border-bottom-color: @color-fade3;
     box-shadow: none;
 
@@ -64,7 +65,8 @@
     .header,
     .content {
       margin: 0;
-      padding: 10px 40px 6px 32px;
+      padding: 10px (@content-spacing-right + 6px) 6px
+        (@content-spacing-left + 6px);
     }
     .header {
       font-size: 11px;
@@ -85,8 +87,8 @@
   .hl {
     > * {
       align-items: center;
-      min-height: 26px;
-      padding: 2px 1px;
+      min-height: @headline-height - 2px;
+      padding: 1px;
     }
     > .right {
       order: 1;
@@ -98,7 +100,7 @@
     > .titleWrap {
       order: 3;
       min-height: unset;
-      padding: 1px 5px 3px;
+      padding: 0 5px 2px;
     }
     // date
     > :nth-child(4) {
@@ -311,26 +313,20 @@
       top: 0;
       right: 0;
       left: 0;
-      height: 26px;
-      transition: background-color 0.5s;
-      text-align: right;
 
       i {
-        position: absolute;
+        display: flex;
         z-index: 1;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        padding: 4px;
-        transition: color 0.2s;
+        align-items: center;
+        justify-content: flex-end;
+        height: @headline-height / 2 + 10px;
+        padding: 0 5px;
+        transition: background-color 0.5s, color 0.2s;
         color: @color-fade4;
       }
-      &:hover {
+      &:hover i {
         background-color: @color-fade1;
-        i {
-          color: @color-fade8;
-        }
+        color: @color-fade8;
       }
     }
     .footer {
@@ -402,16 +398,16 @@
     position: relative;
     height: 100%;
     margin: 0;
-    padding-top: 31px;
+    padding-top: @headline-height + 1px;
     font-size: 12px;
     font-style: normal;
 
     &::after {
       content: "The End";
       position: absolute;
-      right: -@spacing-right;
+      right: -@content-spacing-right;
       bottom: 0;
-      left: -@spacing-left;
+      left: -@content-spacing-left;
       padding: 50px;
       background-color: @color-fade3;
       color: @color-fade5;

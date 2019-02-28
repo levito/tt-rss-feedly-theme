@@ -6,18 +6,18 @@
   box-shadow: none;
 
   #feedTree {
-    margin-left: -30px;
+    margin-left: -@feeds-toggle-width;
     font-size: 12px;
 
     .dijitTreeContainer {
-      padding: 46px 0;
+      padding: (30px + @headline-height / 2) 0;
     }
 
     .dijitTreeRow {
-      padding-right: 20px;
+      padding-right: @feeds-spacing;
       transition: none;
       border: 0 solid transparent;
-      border-left-width: 20px;
+      border-left-width: @feeds-spacing;
       color: @default-feeds-text;
 
       &,

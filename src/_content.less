@@ -5,7 +5,7 @@
   .content-inner {
     color: @default-text;
     font-family: @fonts-content;
-    font-size: 14px;
+    font-size: @font-size-content;
     line-height: 1.7;
   }
 
@@ -56,26 +56,24 @@
     h6 {
       margin-top: 35px;
       margin-bottom: 14px;
+      font: normal normal bold @font-size-content / 1.333 @fonts-heading;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
     }
     h1 {
-      font: normal normal bold 22px/28px @fonts-heading;
+      font-size: 1.571 * @font-size-content;
     }
     h2 {
-      font: normal normal bold 20px/26px @fonts-heading;
+      font-size: 1.429 * @font-size-content;
     }
     h4 {
-      font: normal normal bold 18px/24px @fonts-heading;
+      font-size: 1.285 * @font-size-content;
     }
     h4 {
-      font: normal normal bold 16px/22px @fonts-heading;
-    }
-    h5 {
-      font: normal normal bold 14px/20px @fonts-heading;
+      font-size: 1.143 * @font-size-content;
     }
     h6 {
-      font: normal normal bold 13px/18px @fonts-heading;
+      font-size: 0.929 * @font-size-content;
     }
     p {
       max-width: 45em;
@@ -129,7 +127,7 @@
       overflow: auto;
       border: 1px solid @color-fade1;
       background-color: @color-fade1;
-      font-size: 11px;
+      font-size: 0.786 * @font-size-content;
       line-height: 1.333;
       white-space: pre-wrap;
     }
