@@ -232,17 +232,20 @@
   .cdm.expandable:not(.active),
   .hl {
     &.marked {
-      border-color: fade(@color-marked, 30%);
-      background-color: fade(@color-marked, 15%);
+      z-index: 1;
+      border-color: mix(@color-marked, @default-bg, 45%);
+      background-color: mix(@color-marked, @default-bg, 15%);
     }
     &.published {
-      border-color: fade(@color-published, 30%);
-      background-color: fade(@color-published, 15%);
+      z-index: 1;
+      border-color: mix(@color-published, @default-bg, 45%);
+      background-color: mix(@color-published, @default-bg, 15%);
     }
     &.active,
     &.Selected {
-      border-color: fade(@color-checked, 30%);
-      background-color: fade(@color-checked, 15%) !important;
+      z-index: 1;
+      border-color: mix(@color-checked, @default-bg, 45%);
+      background-color: mix(@color-checked, @default-bg, 15%) !important;
     }
     .title {
       color: @faded-text;
