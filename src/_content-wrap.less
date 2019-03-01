@@ -342,8 +342,12 @@
   .cdm.expandable.active .header {
     flex-wrap: wrap;
 
-    > .feed {
+    &::before {
+      content: "";
       flex: 1;
+      order: 3;
+    }
+    > .feed {
       max-width: unset;
 
       a {
@@ -363,15 +367,26 @@
     }
   }
 
-  #headlines-frame.wide ~ #content-insert {
-    .post {
-      display: flex;
-      flex-direction: column;
-      height: 100%;
+  #headlines-frame.wide {
+    .hl {
+      > .title {
+        margin-top: -@headline-height;
+        padding-top: @headline-height;
+      }
+      > *:not(.title) {
+        background-color: transparent;
+      }
     }
-    .content {
-      flex: 1;
-      overflow: auto;
+    ~ #content-insert {
+      .post {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+      .content {
+        flex: 1;
+        overflow: auto;
+      }
     }
   }
 
