@@ -38,3 +38,10 @@
 @headline-height: @base-spacing;
 @content-spacing-right: @base-spacing + 4px;
 @content-spacing-left: @base-spacing - 4px;
+
+.heading-font-size(@level: 0) {
+  @font-size: @font-size-content + 10 - 2 * @level;
+
+  font-size: @font-size;
+  line-height: @font-size + 6px;
+}
