@@ -99,9 +99,11 @@
     }
     > .title,
     > .titleWrap {
+      @padding-vertical: (@headline-height - 17px) / 2;
+
       order: 3;
       min-height: unset;
-      padding: 0 5px 2px;
+      padding: ceil(@padding-vertical - 1) 5px floor(@padding-vertical + 1);
     }
     // date
     > :nth-child(4) {
