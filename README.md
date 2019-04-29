@@ -18,11 +18,7 @@ Install steps (If you did not find the description on the [TT-RSS Homepage](http
 1. Download the ZIP-File: `wget https://github.com/levito/tt-rss-feedly-theme/archive/master.zip`
 2. Unzip the ZIP-File: `unzip master.zip`
 3. Change into the newly created folder: `cd tt-rss-feedly-theme-master`
-4. Copy the relevant files into your TT-RSS folder:
-
-    * `cp feedly.css feedly-night.css [TT-RSS_Home]/themes.local`
-    * `cp -r feedly/ [TT-RSS_Home]/themes.local`
-
+4. Copy the relevant files into your TT-RSS folder: `cp -r feedly* [TT-RSS_Home]/themes.local`
 5. Go into your TT-RSS preferences and select the feedly-theme.
 
 ## Development
