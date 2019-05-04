@@ -395,16 +395,19 @@
 
   .feed-title {
     display: flex;
-    padding: 30px 0 16px;
+    padding: @headline-height 0 @headline-height - 16px;
     border: none;
 
     > * {
       padding: 0 6px;
+      line-height: 1;
     }
 
     .title {
-      color: @faded-text;
+      padding-top: 2px;
       font-size: 12px;
+      letter-spacing: 0.05em;
+      line-height: 14px;
       text-transform: uppercase;
     }
   }
@@ -433,7 +436,7 @@
       background-color: @color-fade3;
       color: @color-fade5;
       font-size: 18px;
-      letter-spacing: 1px;
+      letter-spacing: 0.05em;
     }
   }
 }
