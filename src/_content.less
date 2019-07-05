@@ -95,10 +95,12 @@
     th {
       background-color: @color-fade1;
     }
-    table[border="0"] th,
-    table[border="0"] td {
-      padding: 0;
-      border: 0;
+    table[border="0"] {
+      th,
+      td {
+        padding: 0;
+        border: 0;
+      }
     }
     hr {
       border: none;
@@ -150,14 +152,13 @@
       padding: 0.31em 1em;
       border-left: 4px solid @color-fade3;
       background-color: @color-fade1;
-    }
-    q :first-child,
-    blockquote :first-child {
-      margin-top: 0;
-    }
-    q :last-child,
-    blockquote :last-child {
-      margin-bottom: 0;
+
+      :first-child {
+        margin-top: 0;
+      }
+      :last-child {
+        margin-bottom: 0;
+      }
     }
   }
 }
