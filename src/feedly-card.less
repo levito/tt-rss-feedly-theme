@@ -1,0 +1,72 @@
+@import "../tt-rss/css/default.less";
+@import "_base.less";
+
+@font-size-content: 16px;
+@base-spacing: 40px;
+
+.dijitContentPane {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#content-wrap#content-wrap .cdm.expandable:not(.active) {
+  border: 0;
+
+  .header {
+    display: flex;
+    flex-wrap: wrap;
+    width: 250px;
+    height: 350px;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14),
+      0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+
+    .right {
+      order: 1;
+      width: 30px;
+    }
+    .feed {
+      order: 2;
+      width: 150px;
+    }
+    .updated {
+      order: 3;
+      width: 70px;
+    }
+    .titleWrap {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      order: 4;
+      height: 250px;
+      text-overflow: unset;
+
+      .excerpt {
+        flex: 1;
+        font-size: @font-size-content - 2;
+        text-overflow: ellipsis;
+        white-space: normal;
+      }
+
+      .title {
+        margin-bottom: 10px;
+        font-size: @font-size-content + 1;
+        white-space: normal;
+      }
+    }
+    .left {
+      order: 5;
+    }
+  }
+}
+
+#content-wrap#content-wrap .icon-score {
+  bottom: 13px;
+  left: 10px;
+}
+
+#content-wrap#content-wrap .cdm.expandable.active {
+  width: 100%;
+}
