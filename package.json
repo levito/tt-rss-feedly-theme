@@ -17,7 +17,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "run-s build compress && git add *.css && git commit -m 'build css'"
+      "pre-push": "run-s build compress && test -z \"$(git status --porcelain)\" || (git add *.css && git commit -m 'build css')"
     }
   },
   "lint-staged": {
