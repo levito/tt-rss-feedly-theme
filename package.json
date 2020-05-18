@@ -1,6 +1,6 @@
 {
   "name": "tt-rss-feedly-theme",
-  "version": "2.4.1",
+  "version": "2.5.0",
   "description": "Feedly theme for Tiny Tiny RSS",
   "main": "index.js",
   "repository": "git@github.com:levito/tt-rss-feedly-theme.git",
@@ -37,12 +37,12 @@
     "chokidar-cli": "2.1.0",
     "clean-css-cli": "4.3.0",
     "foreach-cli": "1.8.1",
-    "husky": "^4.2.3",
+    "husky": "^4.2.5",
     "less": "^3.11.1",
-    "lint-staged": "^10.0.8",
+    "lint-staged": "^10.2.3",
     "npm-run-all": "4.1.5",
-    "prettier": "1.19.1",
-    "stylelint": "^13.2.0",
-    "stylelint-config-property-sort-order-smacss": "6.0.0"
+    "prettier": "^2.0.5",
+    "stylelint": "^13.4.0",
+    "stylelint-config-property-sort-order-smacss": "^6.3.0"
   }
 }
