@@ -25,40 +25,12 @@
     border: none;
   }
 
-  #floatingTitle,
   .dijitContentPane {
     background-color: @default-bg;
   }
 
   #floatingTitle {
-    margin-right: @content-spacing-right;
-    margin-left: @content-spacing-left;
-    border-bottom-color: @color-fade3;
-    box-shadow: none;
-
-    .titleWrap {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-    .title {
-      color: @color-accent;
-      font-size: unset;
-    }
-    .feed {
-      display: none;
-    }
-    .right {
-      padding-right: 5px;
-      padding-left: 5px;
-    }
-    .icon-anchor {
-      margin: 0 2px;
-      padding: 2px;
-    }
-    .updated {
-      color: @faded-text;
-    }
+    display: none;
   }
 
   .post {
@@ -82,7 +54,6 @@
     }
   }
 
-  #floatingTitle,
   .header,
   .hl {
     > * {
@@ -186,7 +157,6 @@
     vertical-align: baseline;
   }
 
-  #floatingTitle,
   [data-article-id].cdm,
   .hl {
     position: relative;
@@ -297,10 +267,21 @@
     }
     &.expanded,
     &.expandable.active {
+      @padding: 25px;
+
       margin-bottom: 17px;
-      padding: 25px;
       background-color: transparent !important;
 
+      .header {
+        top: -@headline-height - @padding;
+        padding: @padding @padding 0;
+        opacity: 1;
+        background-color: fade(@default-bg, 90%) !important;
+        backdrop-filter: blur(6px);
+      }
+      .content {
+        padding: 0 @padding @padding;
+      }
       .title {
         .heading-font-size(0);
 
