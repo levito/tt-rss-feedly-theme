@@ -14,6 +14,10 @@
     padding: 6px 0;
     color: @faded-text;
 
+    .material-icons {
+      margin-left: 0;
+    }
+
     .icon-syndicate {
       border: none;
       color: @default-text;
@@ -21,20 +25,21 @@
     #toolbar-headlines .left,
     > .material-icons {
       position: relative;
-      top: -2px;
+      top: -1px;
       padding-left: 1px;
     }
     > .material-icons {
       left: 4px;
-      padding-right: 4px; // same as .updates-available for each icon
+      padding-right: 4px; // same as #updates-available for each icon
     }
     #feed_title {
+      display: flex;
       color: @default-text;
       font-size: 14px;
       font-weight: bold;
 
-      > * {
-        vertical-align: middle;
+      > .material-icons {
+        margin-left: 8px;
       }
     }
     #cancel_search {
