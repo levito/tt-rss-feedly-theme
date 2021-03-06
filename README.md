@@ -23,7 +23,9 @@ Install steps (If you did not find the description on the [TT-RSS Homepage](http
 
 ## Development
 
-You will need node.js and npm installed.
+Don't make direct changes to the CSS files on root level. They are generated from `src`.
+
+In order to generate the CSS files, you will need node.js and npm installed.
 
 1. Run `npm install` to install dependencies
 2. Run `npm start` to watch `src` and compile on changes
