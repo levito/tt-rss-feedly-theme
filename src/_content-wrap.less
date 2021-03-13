@@ -189,6 +189,7 @@
     &:not(.published) .pub-pic,
     .icon-anchor,
     .icon-score,
+    .icon-grid-span,
     .footer .material-icons {
       transition: color 0.2s;
       color: @color-fade4;
@@ -378,6 +379,28 @@
     }
   }
 
+  #headlines-frame[data-is-cdm=true][data-is-cdm-expanded=true][data-enable-grid=true] {
+    grid-gap: 0 17px;
+    padding-bottom: 0;
+
+    .header {
+      border-top: none;
+      border-right: none;
+      border-left: none;
+    }
+    .content {
+      border: none;
+      background-color: transparent;
+    }
+    .left {
+      padding-left: 54px;
+    }
+    .icon-grid-span {
+      position: absolute;
+      right: 136px;
+    }
+  }
+
   .feed-title {
     display: flex;
     padding: @headline-height 0 @headline-height - 16px;
@@ -405,7 +428,8 @@
 
   #headlines-spacer {
     position: relative;
-    height: 100%;
+    box-sizing: border-box;
+    height: calc(100vh - 44px); // #toolbar height
     margin: 0;
     padding-top: @headline-height + 1px;
     font-size: 12px;
