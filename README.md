@@ -1,7 +1,7 @@
 tt-rss-feedly-theme
 ===================
 
-Feedly theme for [Tiny Tiny RSS](https://tt-rss.org) 19.2+.
+Feedly theme for [Tiny Tiny RSS](https://tt-rss.org).
 
 If you are using an older version of TT-RSS, have a look at the branches.
 
@@ -32,16 +32,16 @@ In order to generate the CSS files, you will need node.js and npm installed.
 
 ## Screenshots
 
-![grouped](https://raw.github.com/levito/tt-rss-feedly-theme/master/feedly-screenshots/feedly-grouped.png?190111)
+![grouped](https://raw.github.com/levito/tt-rss-feedly-theme/master/screenshots/feedly-grouped.png?190111)
 
-![expandable](https://raw.github.com/levito/tt-rss-feedly-theme/master/feedly-screenshots/feedly-expandable.png?190111)
+![expandable](https://raw.github.com/levito/tt-rss-feedly-theme/master/screenshots/feedly-expandable.png?190111)
 
-![expanded](https://raw.github.com/levito/tt-rss-feedly-theme/master/feedly-screenshots/feedly-expanded.png?190111)
+![expanded](https://raw.github.com/levito/tt-rss-feedly-theme/master/screenshots/feedly-expanded.png?190111)
 
-![traditional](https://raw.github.com/levito/tt-rss-feedly-theme/master/feedly-screenshots/feedly-traditional.png?190111)
+![traditional](https://raw.github.com/levito/tt-rss-feedly-theme/master/screenshots/feedly-traditional.png?190111)
 
-![traditional, wide, hidden sidebar](https://raw.github.com/levito/tt-rss-feedly-theme/master/feedly-screenshots/feedly-traditional-widescreen.png?190111)
+![traditional, wide, hidden sidebar](https://raw.github.com/levito/tt-rss-feedly-theme/master/screenshots/feedly-traditional-widescreen.png?190111)
 
-![preferences + layer](https://raw.github.com/levito/tt-rss-feedly-theme/master/feedly-screenshots/feedly-night.png?190111)
+![preferences + layer](https://raw.github.com/levito/tt-rss-feedly-theme/master/screenshots/feedly-night.png?190111)
 
 Licensed under the WTFPL
