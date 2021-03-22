@@ -51,12 +51,13 @@
     }
 
     .dijitTreeIcon {
-      margin-left: 12px;
-      line-height: 0;
+      position: relative;
+      top: -1px;
     }
 
     .dijitTreeExpando {
-      top: -1px;
+      position: relative;
+      top: 2px;
       left: -1px;
 
       &::before {
@@ -78,7 +79,6 @@
     }
 
     .icon.material-icons {
-      top: 0;
       left: 0;
       font-size: 18px;
     }
@@ -87,14 +87,13 @@
       color: @color-fade6;
     }
 
-    .dijitTreeContent::before {
-      content: "";
-      margin-left: -0.3em;
+    .dijitTreeExpandoLeaf {
+      top: 0;
+      order: 1;
     }
 
-    .dijitTreeExpandoLeaf {
-      top: 2px;
-      float: right;
+    .loadingNode {
+      top: 0;
     }
 
     .dijitTreeRow[style="padding-left: 19px;"] {
