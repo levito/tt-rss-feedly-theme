@@ -161,7 +161,7 @@
     vertical-align: baseline;
   }
 
-  [data-article-id].cdm,
+  .cdm[data-article-id],
   .hl {
     position: relative;
 
@@ -201,7 +201,7 @@
     }
   }
 
-  [data-article-id].cdm,
+  .cdm[data-article-id],
   .hl {
     margin-bottom: -1px;
     border: 1px solid @border-default;
@@ -333,7 +333,7 @@
     }
   }
 
-  #headlines-frame.wide .hl,
+  #headlines-frame[data-is-wide-screen=true] .hl,
   .cdm.expanded .header,
   .cdm.expandable.active .header {
     flex-wrap: wrap;
@@ -358,7 +358,7 @@
     }
   }
 
-  #headlines-frame.wide {
+  #headlines-frame[data-is-wide-screen=true] {
     .hl {
       > .title {
         margin-top: -@headline-height;
