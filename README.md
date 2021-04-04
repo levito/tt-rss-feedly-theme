@@ -38,6 +38,10 @@ In order to generate the CSS files, you will need node.js and npm installed.
 
 ![expanded](https://raw.github.com/levito/tt-rss-feedly-theme/master/screenshots/feedly-expanded.png?190111)
 
+![cards (expandable grid)](https://raw.github.com/levito/tt-rss-feedly-theme/master/screenshots/feedly-cards.png?210404)
+
+![cards (expanded grid)](https://raw.github.com/levito/tt-rss-feedly-theme/master/screenshots/feedly-grid.png?210404)
+
 ![traditional](https://raw.github.com/levito/tt-rss-feedly-theme/master/screenshots/feedly-traditional.png?190111)
 
 ![traditional, wide, hidden sidebar](https://raw.github.com/levito/tt-rss-feedly-theme/master/screenshots/feedly-traditional-widescreen.png?190111)
