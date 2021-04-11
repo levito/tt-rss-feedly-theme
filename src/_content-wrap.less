@@ -457,6 +457,12 @@
         @header-height: @font-size-post * 2 + @base-spacing * 2 + 56px;
         @header-bottom: @margin-y + @header-height;
 
+        &::before,
+        .header,
+        .content {
+          position: fixed !important;
+          z-index: 20;
+        }
         &::before {
           content: "";
           top: 0;
@@ -465,13 +471,6 @@
           left: 0;
           background-color: rgb(0 0 0 / 40%);
         }
-        &::before,
-        .header,
-        .content {
-          position: fixed !important;
-          z-index: 20;
-        }
-
         .header,
         .content {
           right: @margin-x;
