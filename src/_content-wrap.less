@@ -451,9 +451,8 @@
         }
       }
       &.active {
-        @expand: 5px;
         @margin-x: 14vw;
-        @margin-y: @base-spacing + @expand;
+        @margin-y: @base-spacing;
         @padding-x: 7vw;
         @header-height: @font-size-post * 2 + @base-spacing * 2 + 56px;
         @header-bottom: @margin-y + @header-height;
@@ -484,23 +483,26 @@
         .header {
           top: @margin-y;
           backdrop-filter: none;
-          box-shadow: 0 0 0 @expand @default-bg,
-            0 7px 3px (@expand - 4px) rgb(0 0 0 / 30%),
-            0 8px 8px @expand rgb(0 0 0 / 20%);
+          box-shadow: 0 7px 3px -4px rgb(0 0 0 / 30%),
+            0 8px 8px rgb(0 0 0 / 20%);
 
           &::after {
             content: "";
             position: absolute;
             z-index: -1;
             top: (@headline-height / 2 + 10px);
-            right: -@expand;
+            right: 0;
             bottom: 0;
-            left: -@expand;
+            left: 0;
           }
         }
         .content {
           top: @header-bottom;
+          margin: 0;
           overflow: auto;
+        }
+        .content-inner {
+          margin: 5px;
         }
         .collapse {
           position: fixed;
@@ -510,7 +512,7 @@
           i {
             align-items: flex-start;
             height: 100%;
-            padding: (@margin-y + @expand) calc(@margin-x + @expand);
+            padding: (@margin-y + 10px) calc(@margin-x + 10px);
             background-color: transparent;
           }
         }
