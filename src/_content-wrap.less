@@ -405,6 +405,11 @@
       position: absolute;
       right: 136px;
     }
+    .feed-title,
+    .whiteBox,
+    #headlines-spacer {
+      grid-column: 1 / -1;
+    }
   }
 
   #headlines-frame[data-is-cdm="true"][data-is-cdm-expanded="true"][data-enable-grid="true"] {
@@ -520,11 +525,6 @@
           right: calc(@padding-x + 85px);
         }
       }
-    }
-    .feed-title,
-    .whiteBox,
-    #headlines-spacer {
-      grid-column: 1 / -1;
     }
   }
 
