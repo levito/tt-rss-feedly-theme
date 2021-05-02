@@ -7,7 +7,7 @@ If you are using an older version of TT-RSS, have a look at the branches.
 
 For the best experience, use a current browser. IE9 and older versions are not supported.
 
-This theme is tested in Chrome on a regular basis and should work fine in IE10 and recent versions of Safari, Firefox (28+) and Opera (15+) as well.
+This theme is tested in recent versions of Chrome and its relatives (Edge, Brave, Vivaldi, Opera) on a regular basis and should work fine in Firefox as well.
 
 ## Installation
 
