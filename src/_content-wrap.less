@@ -375,16 +375,11 @@
         background-color: transparent;
       }
     }
-    ~ #content-insert {
-      .post {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-      }
-      .content {
-        flex: 1;
-        overflow: auto;
-      }
+    ~ #content-insert .header {
+      position: sticky;
+      z-index: 1;
+      top: 0;
+      background-color: mix(@default-fg, @default-bg, 4%);
     }
   }
 
