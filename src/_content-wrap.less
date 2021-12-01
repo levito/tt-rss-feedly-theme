@@ -134,18 +134,24 @@
     display: flex;
     flex: 0 0 130px;
     max-width: 130px;
-
-    a {
-      max-width: 100%;
-      margin-right: 5px;
-      padding: 1px 6px;
-      overflow: hidden;
-      border: 1px solid @color-fade1;
-      border-radius: 99px;
-      color: @default-text;
-      font-style: normal;
-      text-overflow: ellipsis;
-    }
+  }
+  a.feed,
+  .feed a {
+    box-sizing: border-box;
+    max-width: 100%;
+    min-height: 0;
+    margin-right: 5px;
+    padding: 1px 6px;
+    overflow: hidden;
+    border: 1px solid @color-fade1;
+    border-radius: 99px;
+    color: @default-text;
+    font-style: normal;
+    text-overflow: ellipsis;
+  }
+  a.feed {
+    display: block;
+    margin: 1px;
   }
 
   #headlines-frame[is-vfeed="0"] .feed {
@@ -348,10 +354,11 @@
     }
     > .feed {
       max-width: unset;
-
-      a {
-        max-width: 15vw;
-      }
+    }
+    > a.feed,
+    > .feed a {
+      flex-basis: unset;
+      max-width: 15vw;
     }
     > .title,
     > .titleWrap {
