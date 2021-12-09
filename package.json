@@ -34,15 +34,15 @@
     ]
   },
   "dependencies": {
-    "chokidar-cli": "2.1.0",
-    "clean-css-cli": "5.2.2",
+    "chokidar-cli": "3.0.0",
+    "clean-css-cli": "5.5.0",
     "foreach-cli": "1.8.1",
     "husky": "4.3.8",
-    "less": "4.1.1",
+    "less": "4.1.2",
     "lint-staged": "10.5.4",
     "npm-run-all": "4.1.5",
-    "prettier": "2.2.1",
-    "stylelint": "13.12.0",
-    "stylelint-config-property-sort-order-smacss": "7.0.0"
+    "prettier": "2.5.1",
+    "stylelint": "13.13.1",
+    "stylelint-config-property-sort-order-smacss": "7.1.0"
   }
 }
