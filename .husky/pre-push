@@ -1,0 +1,8 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+npm run build
+npm run compress
+if [ "$(git status --porcelain)" ]; then
+  git add *.css && git commit -m 'build css'
+fi
