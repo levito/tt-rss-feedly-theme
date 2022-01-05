@@ -57,6 +57,11 @@
 
   .header,
   .hl {
+    display: grid;
+    grid-template-areas: "icon feed title updated actions";
+    grid-template-columns: auto 130px 1fr auto auto;
+    grid-template-rows: auto 1fr;
+
     > * {
       align-items: center;
       min-height: @headline-height - 2px;
@@ -64,30 +69,31 @@
     }
     > .right {
       z-index: 1;
-      order: 1;
+      grid-area: icon;
       line-height: 1;
     }
     > .feed {
-      order: 2;
+      grid-area: feed;
     }
     > .title,
     > .titleWrap {
       @padding-vertical: (@headline-height - 17px) / 2;
 
-      order: 3;
+      grid-area: title;
+      width: auto;
       min-height: unset;
       padding: ceil((@padding-vertical - 1px)) 5px
         floor((@padding-vertical + 1px));
     }
     // date
     > :nth-child(4) {
-      order: 4;
+      grid-area: updated;
       min-height: unset;
     }
     > .left {
       position: relative;
+      grid-area: actions;
       flex-direction: row-reverse;
-      order: 5;
       padding-left: 28px;
 
       .dijitCheckBox {
@@ -130,17 +136,11 @@
     opacity: 1;
   }
 
-  .feed {
-    display: flex;
-    flex: 0 0 130px;
-    max-width: 130px;
-  }
   a.feed,
   .feed a {
     box-sizing: border-box;
-    max-width: 100%;
+    max-width: calc(100% - 5px);
     min-height: 0;
-    margin-right: 5px;
     padding: 1px 6px;
     overflow: hidden;
     border: 1px solid @color-fade1;
@@ -150,11 +150,20 @@
     text-overflow: ellipsis;
   }
   a.feed {
-    display: block;
+    justify-self: start;
+    max-width: calc(100% - 7px);
     margin: 1px;
   }
-  #headlines-frame[is-vfeed="0"] .feed {
-    display: none;
+
+  #headlines-frame[is-vfeed="0"] {
+    .header,
+    .hl {
+      grid-template-columns: auto auto 1fr auto auto;
+    }
+
+    .feed {
+      display: none;
+    }
   }
 
   .label {
@@ -340,25 +349,13 @@
     .header,
   .cdm.expanded .header,
   .cdm.expandable.active .header {
-    flex-wrap: wrap;
+    grid-template-areas:
+      "icon feed feed updated actions"
+      "title title title title title";
 
-    &::before {
-      content: "";
-      flex: 1;
-      order: 3;
-    }
-    > .feed {
-      max-width: unset;
-    }
-    > a.feed,
-    > .feed a {
-      flex-basis: unset;
-      max-width: 15vw;
-    }
     > .title,
     > .titleWrap {
       box-sizing: border-box;
-      order: 5;
       width: 100%;
     }
     > .titleWrap,
@@ -370,7 +367,7 @@
   #headlines-frame[data-is-wide-screen="true"] {
     .hl {
       > .title {
-        margin-top: -@headline-height;
+        grid-row-start: 1;
         padding-top: @headline-height;
       }
       > *:not(.title) {
@@ -431,14 +428,12 @@
         border-color: @border-default !important;
 
         .header {
+          grid-template-columns: auto auto 1fr auto auto;
           flex: 1;
           padding: (@base-spacing / 6) (@base-spacing / 4);
         }
-        .feed {
-          max-width: 130px;
-        }
         .titleWrap {
-          margin-top: -@headline-height;
+          grid-row-start: 1;
           padding-top: @headline-height;
         }
         .title {
