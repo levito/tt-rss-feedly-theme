@@ -3,6 +3,6 @@
 
 npm run build
 npm run compress
-if [ "$(git status --porcelain)" ]; then
+if [ "$(git status --porcelain *.css)" ]; then
   git add *.css && git commit -m 'build css'
 fi
