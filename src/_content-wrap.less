@@ -154,6 +154,11 @@
     max-width: calc(100% - 7px);
     margin: 1px;
   }
+  // for backward-compatibility with tt-rss before https://git.tt-rss.org/fox/tt-rss/commit/df7b2e79849419fcc278c0549fdf10c094991558
+  div.feed {
+    display: flex;
+    max-width: 100%;
+  }
 
   #headlines-frame[is-vfeed="0"] {
     .header,
