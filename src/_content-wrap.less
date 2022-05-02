@@ -121,12 +121,6 @@
       align-items: center;
       align-self: stretch;
     }
-    .feed {
-      visibility: hidden;
-      a {
-        visibility: visible;
-      }
-    }
     .title .hl-content {
       overflow: hidden;
       text-overflow: ellipsis;
@@ -391,6 +385,12 @@
       z-index: 1;
       top: 0;
       background-color: mix(@default-fg, @default-bg, 4%);
+    }
+    .feed {
+      pointer-events: none;
+      a {
+        pointer-events: all;
+      }
     }
   }
 
