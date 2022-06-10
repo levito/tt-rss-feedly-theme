@@ -1,6 +1,6 @@
 {
   "name": "tt-rss-feedly-theme",
-  "version": "2.9.1",
+  "version": "2.10.0",
   "description": "Feedly theme for Tiny Tiny RSS",
   "main": "index.js",
   "repository": "git@github.com:levito/tt-rss-feedly-theme.git",
