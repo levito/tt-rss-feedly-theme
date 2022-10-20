@@ -48,6 +48,7 @@
     .title {
       font-size: 13px;
       line-height: 1.2;
+      word-break: unset;
     }
     .header > * {
       align-items: unset;
@@ -283,6 +284,10 @@
   .cdm {
     &.expanded {
       border-color: @border-default !important;
+
+      .titleWrap {
+        word-break: unset;
+      }
     }
     &.active {
       border-color: @color-fade3 !important;
