@@ -1,1 +1,1 @@
-@import url(feedly-compact.css) (prefers-color-scheme: light);@import url(feedly-compact_night.css) (prefers-color-scheme: dark);
+@import url(feedly.css) (prefers-color-scheme: light);@import url(feedly_night.css) (prefers-color-scheme: dark);:root{--base-spacing:27px;--font-size-post:12px}
