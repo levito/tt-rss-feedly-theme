@@ -1,4 +1,5 @@
 :root {
+  --base-spacing: 30px;
   --font-size-post: 14px;
 }
 
@@ -34,12 +35,11 @@
 @fonts-mono: Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono",
   "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
 
-@base-spacing: 30px;
-@feeds-toggle-width: @base-spacing;
-@feeds-spacing: @base-spacing - 10px;
-@headline-height: @base-spacing;
-@content-spacing-right: @base-spacing + 4px;
-@content-spacing-left: @base-spacing - 4px;
+@feeds-toggle-width: var(--base-spacing);
+@feeds-spacing: calc(var(--base-spacing) - 10px);
+@headline-height: var(--base-spacing);
+@content-spacing-right: e("var(--base-spacing) + 4px");
+@content-spacing-left: e("var(--base-spacing) - 4px");
 
 .heading-font-size(@level: 0) {
   @font-size: e("var(--font-size-post) + 10 - 2 * @{level}");

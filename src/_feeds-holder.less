@@ -6,11 +6,11 @@
   box-shadow: none;
 
   #feedTree {
-    margin-left: -@feeds-toggle-width;
+    margin-left: calc(-1 * @feeds-toggle-width);
     font-size: 12px;
 
     .dijitTreeContainer {
-      padding: (30px + @headline-height / 2) 0;
+      padding: calc(30px + @headline-height / 2) 0;
     }
 
     .dijitTreeRow {
