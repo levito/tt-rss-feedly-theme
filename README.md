@@ -21,6 +21,21 @@ Install steps (If you did not find the description on the [TT-RSS Homepage](http
 4. Copy the relevant files into your TT-RSS folder: `cp -r feedly* [TT-RSS_Home]/themes.local`
 5. Go into your TT-RSS preferences and select the feedly-theme.
 
+## Configuration
+
+There are different color schemes available. If you choose the `auto` variants, your OS/browser will decide whether to use the light or dark color scheme.
+
+You can configure the post content font size and the general UI spacing by using the `Customize` button in the TT-RSS settings and adding and adjusting this chunk of CSS code:
+
+```css
+:root {
+  --base-spacing: 30px;
+  --font-size-post: 14px;
+}
+```
+
+`feedly_cozy` and `feedly_compact` are two examples preconfigured with different font-size and spacing values. They might be removed in the future in favor of using TT-RSS custom styles for this kind of adjustment.
+
 ## Development
 
 Don't make direct changes to the CSS files on root level. They are generated from `src`.
