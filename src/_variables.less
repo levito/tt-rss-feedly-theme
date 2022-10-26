@@ -1,3 +1,7 @@
+:root {
+  --font-size-post: 14px;
+}
+
 @default-fg: #000;
 @default-bg: #fff;
 @color-published: #e84;
@@ -30,8 +34,6 @@
 @fonts-mono: Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono",
   "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
 
-@font-size-post: 14px;
-
 @base-spacing: 30px;
 @feeds-toggle-width: @base-spacing;
 @feeds-spacing: @base-spacing - 10px;
@@ -40,8 +42,8 @@
 @content-spacing-left: @base-spacing - 4px;
 
 .heading-font-size(@level: 0) {
-  @font-size: @font-size-post + 10 - 2 * @level;
+  @font-size: e("var(--font-size-post) + 10 - 2 * @{level}");
 
-  font-size: @font-size;
-  line-height: @font-size + 6px;
+  font-size: calc(@font-size);
+  line-height: calc(@font-size + 6px);
 }

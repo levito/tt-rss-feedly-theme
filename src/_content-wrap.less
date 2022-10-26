@@ -460,7 +460,7 @@
           display: block;
           margin: (@base-spacing / 8) 0 (@base-spacing / 4);
           font-family: @fonts-heading;
-          font-size: @font-size-post;
+          font-size: var(--font-size-post);
           white-space: normal;
         }
         .icon-score {
@@ -471,8 +471,10 @@
         @margin-x: 14vw;
         @margin-y: @base-spacing;
         @padding-x: 7vw;
-        @header-height: @font-size-post * 2 + @base-spacing * 2 + 56px;
-        @header-bottom: @margin-y + @header-height;
+        @header-height: e(
+          "var(--font-size-post) * 2 + @{base-spacing} * 2 + 56px"
+        );
+        @header-bottom: calc(@margin-y + @header-height);
 
         &::before,
         .header,
