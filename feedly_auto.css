@@ -1,1 +1,2 @@
-@import url(feedly.css) (prefers-color-scheme: light);@import url(feedly_night.css) (prefers-color-scheme: dark);
+@import 'feedly.css' (prefers-color-scheme: light);
+@import 'feedly_night.css' (prefers-color-scheme: dark);

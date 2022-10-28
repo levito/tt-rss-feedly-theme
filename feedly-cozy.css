@@ -1,1 +1,6 @@
-@import url(feedly.css);:root{--base-spacing:40px;--font-size-post:16px}
+@import 'feedly.css';
+
+:root {
+  --base-spacing: 40px;
+  --font-size-post: 16px;
+}

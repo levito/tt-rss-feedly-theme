@@ -1,1 +1,6 @@
-@import url(feedly_night.css);:root{--base-spacing:40px;--font-size-post:16px}
+@import 'feedly_night.css';
+
+:root {
+  --base-spacing: 40px;
+  --font-size-post: 16px;
+}
