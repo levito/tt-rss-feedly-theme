@@ -42,7 +42,7 @@
 @content-spacing-left: e("var(--base-spacing) - 4px");
 
 .heading-font-size(@level: 0) {
-  @font-size: e("var(--font-size-post) + 10 - 2 * @{level}");
+  @font-size: e("var(--font-size-post) + 10px - 2px * @{level}");
 
   font-size: calc(@font-size);
   line-height: calc(@font-size + 6px);
