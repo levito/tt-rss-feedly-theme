@@ -4,14 +4,14 @@
   .content,
   .content-inner {
     color: @default-text;
-    font-family: @fonts-content;
+    font-family: var(--fonts-content);
     font-size: var(--font-size-post);
     line-height: 1.7;
   }
 
   .expand-prompt,
   .footer {
-    font-family: @fonts-ui;
+    font-family: var(--fonts-ui);
   }
 
   .footer {
@@ -56,7 +56,7 @@
     h6 {
       margin-top: calc(2.5 * var(--font-size-post));
       margin-bottom: var(--font-size-post);
-      font: normal normal bold 1em / 1 @fonts-heading;
+      font: normal normal bold 1em / 1 var(--fonts-heading);
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
     }
@@ -127,7 +127,7 @@
       border: 1px solid @color-fade1;
       background-color: @color-fade1;
       color: inherit;
-      font-family: @fonts-mono;
+      font-family: var(--fonts-mono);
       line-height: 1.333;
     }
     pre {

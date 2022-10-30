@@ -1,6 +1,12 @@
 :root {
   --base-spacing: 30px;
   --font-size-post: 14px;
+  --fonts-ui: "Helvetica Neue", Arial, Helvetica, "Liberation Sans",
+    "Nimbus Sans L", FreeSans, sans-serif;
+  --fonts-content: var(--fonts-ui);
+  --fonts-heading: SansCn;
+  --fonts-mono: Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono",
+    "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
 }
 
 @default-fg: #000;
@@ -27,13 +33,8 @@
 @default-feeds-text: @color-fade7;
 @default-text: @color-fade8;
 
-@fonts-ui: "Helvetica Neue", Arial, Helvetica, "Liberation Sans",
-  "Nimbus Sans L", FreeSans, sans-serif;
-@fonts-ui-bold: @fonts-ui;
-@fonts-heading: SansCn;
-@fonts-content: @fonts-ui;
-@fonts-mono: Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono",
-  "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
+// needed to override defines.less
+@fonts-ui: var(--fonts-ui);
 
 @feeds-toggle-width: var(--base-spacing);
 @feeds-spacing: calc(var(--base-spacing) - 10px);
