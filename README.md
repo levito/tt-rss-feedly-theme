@@ -28,9 +28,16 @@ There are different color schemes available. If you choose the `auto` variants, 
 You can configure the post content font size and the general UI spacing by using the `Customize` button in the TT-RSS settings and adding and adjusting this chunk of CSS code:
 
 ```css
+/* These are the default settings for feedly.css */
 :root {
   --base-spacing: 30px;
   --font-size-post: 14px;
+  --fonts-ui: "Helvetica Neue", Arial, Helvetica, "Liberation Sans",
+    "Nimbus Sans L", FreeSans, sans-serif;
+  --fonts-content: var(--fonts-ui);
+  --fonts-heading: SansCn;
+  --fonts-mono: Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono",
+    "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
 }
 ```
 
