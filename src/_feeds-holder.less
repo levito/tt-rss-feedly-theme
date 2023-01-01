@@ -53,6 +53,12 @@
     .dijitTreeIcon {
       position: relative;
       top: -1px;
+
+      &:empty::after {
+        content: "rss_feed";
+        font-family: "Material Icons";
+        font-size: 18px;
+      }
     }
 
     .dijitTreeExpando {

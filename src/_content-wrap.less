@@ -34,6 +34,12 @@
     display: none;
   }
 
+  .icon-close-article {
+    order: 1;
+    transform: scale(1.167); // 18px => 21px without changing dimensions
+    color: @color-icon;
+  }
+
   .post {
     .header,
     .content {
@@ -58,10 +64,6 @@
     .right {
       position: relative;
       left: 4px;
-    }
-    .icon-close-article {
-      order: 1;
-      color: @color-icon;
     }
   }
 
@@ -117,6 +119,7 @@
       }
     }
     .icon-no-feed {
+      opacity: 0.8;
       font-size: 18px;
     }
   }
@@ -187,6 +190,11 @@
   .cdm[data-article-id],
   .hl {
     position: relative;
+    margin-bottom: -1px;
+    border: 1px solid @border-default;
+    border-right-color: transparent !important;
+    border-left-color: transparent !important;
+    background-color: @default-bg;
 
     .author,
     .excerpt,
@@ -222,15 +230,6 @@
         color: @color-fade6;
       }
     }
-  }
-
-  .cdm[data-article-id],
-  .hl {
-    margin-bottom: -1px;
-    border: 1px solid @border-default;
-    border-right-color: transparent !important;
-    border-left-color: transparent !important;
-    background-color: @default-bg;
   }
 
   .cdm.expandable:not(.active),
@@ -352,6 +351,12 @@
         padding: 0 5px;
         transition: background-color 0.5s, color 0.2s;
         color: @color-fade4;
+        font-size: 0;
+
+        &::after {
+          content: "close";
+          font-size: 21px;
+        }
       }
       &:hover i {
         background-color: @color-fade1;
