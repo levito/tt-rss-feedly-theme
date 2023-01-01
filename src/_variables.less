@@ -49,3 +49,12 @@
   font-size: calc(@font-size);
   line-height: calc(@font-size + 6px);
 }
+
+.interactive-icon() {
+  transition: color 0.2s;
+  color: @color-fade4;
+
+  &:hover {
+    color: @color-fade6;
+  }
+}

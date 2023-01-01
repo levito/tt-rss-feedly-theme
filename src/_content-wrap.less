@@ -61,9 +61,34 @@
       min-height: unset;
       padding: 0;
     }
+    .author,
+    .tags {
+      margin-right: 4px;
+      color: @color-fade6;
+    }
+    .author:not(:empty) {
+      order: -1;
+    }
+    .tags + a {
+      .interactive-icon();
+      font-family: "Material Icons";
+      font-size: 0;
+      line-height: 1;
+      text-decoration: none;
+
+      &::after {
+        content: "add";
+        font-size: 18px;
+      }
+    }
     .right {
       position: relative;
       left: 4px;
+      align-items: flex-start;
+
+      .material-icons {
+        .interactive-icon();
+      }
     }
   }
 
@@ -223,12 +248,7 @@
     .icon-score,
     .icon-grid-span,
     .footer .material-icons {
-      transition: color 0.2s;
-      color: @color-fade4;
-
-      &:hover {
-        color: @color-fade6;
-      }
+      .interactive-icon();
     }
   }
 
