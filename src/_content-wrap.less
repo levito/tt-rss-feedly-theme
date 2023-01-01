@@ -40,6 +40,19 @@
     color: @color-icon;
   }
 
+  .tags + a {
+    .interactive-icon();
+    font-family: "Material Icons";
+    font-size: 0;
+    line-height: 1;
+    text-decoration: none;
+
+    &::after {
+      content: "add";
+      font-size: 18px;
+    }
+  }
+
   .post {
     .header,
     .content {
@@ -64,22 +77,10 @@
     .author,
     .tags {
       margin-right: 4px;
-      color: @color-fade6;
+      color: @faded-text;
     }
     .author:not(:empty) {
       order: -1;
-    }
-    .tags + a {
-      .interactive-icon();
-      font-family: "Material Icons";
-      font-size: 0;
-      line-height: 1;
-      text-decoration: none;
-
-      &::after {
-        content: "add";
-        font-size: 18px;
-      }
     }
     .right {
       position: relative;
@@ -247,7 +248,7 @@
     .icon-anchor,
     .icon-score,
     .icon-grid-span,
-    .footer .material-icons {
+    .right .material-icons {
       .interactive-icon();
     }
   }
@@ -385,6 +386,8 @@
     }
     .footer {
       border: none;
+      color: @faded-text;
+      font-size: 11px;
     }
   }
 
