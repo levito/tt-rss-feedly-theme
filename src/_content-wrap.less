@@ -2,36 +2,21 @@
 
 #content-wrap#content-wrap {
   margin-left: -5px;
+  overflow: visible;
 
   #feeds-holder[style*="none"] ~ & {
     margin-left: 0;
   }
 
-  &,
-  #toolbar-frame {
-    overflow: visible;
-  }
-
-  #toolbar,
   #headlines-frame {
+    padding-top: @headline-height;
     padding-right: calc(@content-spacing-right);
     padding-left: calc(@content-spacing-left);
-    background-color: @default-bg;
-  }
-
-  #headlines-frame {
-    margin: 0;
-    padding-top: @headline-height;
     transform: none;
-    border: none;
   }
 
   .dijitContentPane {
     background-color: @default-bg;
-  }
-
-  #floatingTitle {
-    display: none;
   }
 
   .icon-close-article {
