@@ -78,19 +78,14 @@
       content: "\e313";
     }
 
-    .icon.material-icons:not(.icon-label),
-    .dijitTreeExpando {
-      transition: color 0.2s;
-      color: @color-fade4;
-    }
-
     .icon.material-icons {
       left: 0;
+      color: @color-fade4;
       font-size: 18px;
     }
 
-    .dijitTreeExpando:hover {
-      color: @color-fade6;
+    .dijitTreeExpando {
+      .interactive-icon();
     }
 
     .dijitTreeExpandoLeaf {
