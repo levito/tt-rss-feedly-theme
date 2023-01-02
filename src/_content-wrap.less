@@ -19,12 +19,14 @@
     background-color: @default-bg;
   }
 
+  // ---------------------------------------------------------------------------
+  // split detail header, combined expanded footer
+  // ---------------------------------------------------------------------------
   .icon-close-article {
     order: 1;
     transform: scale(1.167); // 18px => 21px without changing dimensions
     color: @color-icon;
   }
-
   .tags + a {
     .interactive-icon();
     font-family: "Material Icons";
@@ -38,6 +40,9 @@
     }
   }
 
+  // ---------------------------------------------------------------------------
+  // split detail
+  // ---------------------------------------------------------------------------
   .post {
     .header,
     .content {
@@ -78,6 +83,9 @@
     }
   }
 
+  // ---------------------------------------------------------------------------
+  // single row layout for combined collapsed header and horizontally split list item
+  // ---------------------------------------------------------------------------
   .header,
   .hl {
     display: grid;
@@ -134,7 +142,6 @@
       font-size: 18px;
     }
   }
-
   .hl {
     > * {
       display: flex;
@@ -149,13 +156,15 @@
       padding: 0;
     }
   }
-
   .icon-score {
     position: absolute;
     right: 85px;
     opacity: 1;
   }
 
+  // ---------------------------------------------------------------------------
+  // shared feed name styles for all layouts
+  // ---------------------------------------------------------------------------
   a.feed,
   .feed a {
     box-sizing: border-box;
@@ -175,12 +184,15 @@
     max-width: calc(100% - 7px);
     margin: 1px;
   }
-  // for backward-compatibility with tt-rss before https://git.tt-rss.org/fox/tt-rss/commit/df7b2e79849419fcc278c0549fdf10c094991558
+  // for backward-compatibility with tt-rss before https://git.tt-rss.org/fox/tt-rss.git/commit/?id=df7b2e79849419fcc278c0549fdf10c094991558
   div.feed {
     display: flex;
     max-width: 100%;
   }
 
+  // ---------------------------------------------------------------------------
+  // combined collapsed, split list for single feed: hide feed name
+  // ---------------------------------------------------------------------------
   #headlines-frame[is-vfeed="0"] {
     .header,
     .hl {
@@ -198,6 +210,9 @@
     vertical-align: baseline;
   }
 
+  // ---------------------------------------------------------------------------
+  // content for combined collapsed/expanded item and split list item
+  // ---------------------------------------------------------------------------
   .cdm[data-article-id],
   .hl {
     position: relative;
@@ -238,6 +253,9 @@
     }
   }
 
+  // ---------------------------------------------------------------------------
+  // content for combined collapsed item and split list item
+  // ---------------------------------------------------------------------------
   .cdm.expandable:not(.active),
   .hl {
     &.marked {
@@ -291,6 +309,9 @@
     }
   }
 
+  // ---------------------------------------------------------------------------
+  // combined expanded
+  // ---------------------------------------------------------------------------
   .cdm {
     &.expanded {
       border-color: @border-default !important;
@@ -376,6 +397,9 @@
     }
   }
 
+  // ---------------------------------------------------------------------------
+  // layout for vertically split list item, card and combined expanded header
+  // ---------------------------------------------------------------------------
   #headlines-frame[data-is-wide-screen="true"] .hl,
   #headlines-frame[data-is-cdm="true"][data-is-cdm-expanded="false"][data-enable-grid="true"]
     .header,
@@ -396,6 +420,9 @@
     }
   }
 
+  // ---------------------------------------------------------------------------
+  // vertically split list item and detail overrides
+  // ---------------------------------------------------------------------------
   #headlines-frame[data-is-wide-screen="true"] {
     .hl {
       > .title {
@@ -420,6 +447,9 @@
     }
   }
 
+  // ---------------------------------------------------------------------------
+  // cards/grid shared styles
+  // ---------------------------------------------------------------------------
   #headlines-frame[data-is-cdm="true"][data-enable-grid="true"] {
     grid-gap: 0 17px;
     padding-bottom: 0;
@@ -450,12 +480,18 @@
     }
   }
 
+  // ---------------------------------------------------------------------------
+  // grid view
+  // ---------------------------------------------------------------------------
   #headlines-frame[data-is-cdm="true"][data-is-cdm-expanded="true"][data-enable-grid="true"] {
     .header > .left {
       padding-left: 54px;
     }
   }
 
+  // ---------------------------------------------------------------------------
+  // cards view with overlay for detail
+  // ---------------------------------------------------------------------------
   #headlines-frame[data-is-cdm="true"][data-is-cdm-expanded="false"][data-enable-grid="true"] {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -566,6 +602,9 @@
     }
   }
 
+  // ---------------------------------------------------------------------------
+  // group by feed
+  // ---------------------------------------------------------------------------
   .feed-title {
     display: flex;
     padding: @headline-height 0 calc(@headline-height - 16px);
@@ -585,12 +624,18 @@
     }
   }
 
+  // ---------------------------------------------------------------------------
+  // initial loading
+  // ---------------------------------------------------------------------------
   .whiteBox {
     padding-bottom: 30px;
     font-size: 12px;
     line-height: 1.5;
   }
 
+  // ---------------------------------------------------------------------------
+  // end of list
+  // ---------------------------------------------------------------------------
   #headlines-spacer {
     position: relative;
     box-sizing: border-box;
