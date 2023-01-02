@@ -55,21 +55,20 @@
     // buttons excluding show/hide feeds
     // -------------------------------------------------------------------------
     > :not(.dijitButton) {
-      .dijitInline {
+      .dijitInline,
+      .dijitReset {
         background-color: transparent;
         box-shadow: none;
       }
-
       .dijitDropDownButton,
       .dijitSelect {
         transition: color 0.2s;
         color: @faded-text;
-
-        &.dijitActive,
-        &.dijitHover,
-        &.dijitOpened {
-          color: @default-text;
-        }
+      }
+      .dijitActive,
+      .dijitHover,
+      .dijitOpened {
+        color: @default-text;
       }
     }
 
