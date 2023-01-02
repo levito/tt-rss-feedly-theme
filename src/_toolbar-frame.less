@@ -7,25 +7,6 @@
     padding: 6px calc(@content-spacing-left);
     background-color: @default-bg;
 
-    // exclude show/hide feeds
-    > :not(.dijitButton) {
-      .dijitInline {
-        background-color: transparent;
-        box-shadow: none;
-      }
-
-      .dijitDropDownButton,
-      .dijitSelect {
-        transition: color 0.2s;
-        color: @faded-text;
-
-        &.dijitActive,
-        &.dijitHover,
-        &.dijitOpened {
-          color: @default-text;
-        }
-      }
-    }
     .icon-syndicate {
       border: none;
       color: @default-text;
@@ -65,7 +46,31 @@
       font-size: 12px;
     }
     #selected_prompt {
+      margin-right: 25px;
+      color: @faded-text;
       font-style: normal;
+    }
+
+    // -------------------------------------------------------------------------
+    // buttons excluding show/hide feeds
+    // -------------------------------------------------------------------------
+    > :not(.dijitButton) {
+      .dijitInline {
+        background-color: transparent;
+        box-shadow: none;
+      }
+
+      .dijitDropDownButton,
+      .dijitSelect {
+        transition: color 0.2s;
+        color: @faded-text;
+
+        &.dijitActive,
+        &.dijitHover,
+        &.dijitOpened {
+          color: @default-text;
+        }
+      }
     }
 
     // -------------------------------------------------------------------------
