@@ -11,7 +11,7 @@
     "build": "foreach -g 'src/!(_)*.less' -x 'lessc --js --source-map-inline #{path} > #{name}.css'",
     "compress": "foreach -g 'src/!(_)*.less' -x 'cleancss --inline none -O2 -o #{name}.css #{name}.css'",
     "lint": "stylelint 'src/**/*.less'",
-    "start": "chokidar 'src/**/*.less' --initial -c 'run-p lint build'",
+    "start": "chokidar 'src/**/*.less' --initial -c 'run-s lint build'",
     "postinstall": "git submodule update --init",
     "prepare": "husky install"
   },
@@ -24,6 +24,7 @@
   "stylelint": {
     "extends": "stylelint-config-property-sort-order-smacss",
     "customSyntax": "postcss-less",
+    "defaultSeverity": "warning",
     "ignoreFiles": [
       "*.css",
       "tt-rss/**"
