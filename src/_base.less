@@ -167,6 +167,15 @@ body.ttrss_main {
       border-color: @color-accent;
     }
   }
+  :is(.dijitButton, .dijitCheckBox, .dijitComboButton, .dijitSelect, .dijitTextBox) {
+    &:is(.dijitActive, .dijitFocused):not(.dijitDisabled) {
+      box-shadow: 0 0 0 2px fade(@color-accent, 45%);
+
+      &:is(.dijitButton, .dijitComboButton) {
+        border-radius: 4px;
+      }
+    }
+  }
   .dijitTab:not(.dijitChecked) {
     border-color: transparent;
   }
