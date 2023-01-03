@@ -108,14 +108,15 @@ body.ttrss_main {
   }
   .dijitAccordionTitle,
   .dijitButton.dijitButton:not(.dijit),
-  .dijitButton .dijitButtonNode,
+  :is(.dijitButton, .dijitDropDownButton) .dijitButtonNode,
   .dijitTextBox :is(.dijitDownArrowButton, .dijitUpArrowButton),
   .dijitToolbar {
     background-color: mix(@default-fg, @default-bg, 4%);
   }
   .dijitAccordionTitle.dijitHover:not(.dijitSelected),
   .dijitButton.dijitButton:not(.dijit):hover,
-  .dijitButton:where(.dijitFocused, .dijitHover) .dijitButtonNode,
+  :is(.dijitButton, .dijitDropDownButton):where(.dijitFocused, .dijitHover)
+    .dijitButtonNode,
   .dijitTextBox :is(.dijitDownArrowButtonHover, .dijitUpArrowButtonHover),
   .dijitToolbar .dijitHover:not(.dijitSelect) .dijitButtonNode,
   .dijitTreeRowHover {
@@ -123,7 +124,7 @@ body.ttrss_main {
   }
   .dijitAccordionTitle.dijitActive:not(.dijitSelected),
   .dijitButton.dijitButton:not(.dijit):active,
-  .dijitButton:where(.dijitActive) .dijitButtonNode,
+  :is(.dijitButton, .dijitDropDownButton):where(.dijitActive) .dijitButtonNode,
   .dijitTextBox :is(.dijitDownArrowButtonActive, .dijitUpArrowButtonActive),
   .dijitToolbar .dijitActive:not(.dijitSelect) .dijitButtonNode {
     background-color: shade(@default-bg, 15%);
@@ -167,13 +168,19 @@ body.ttrss_main {
       border-color: @color-accent;
     }
   }
-  :is(.dijitButton, .dijitCheckBox, .dijitComboButton, .dijitSelect, .dijitTextBox) {
+  :is(.dijitButton, .dijitCheckBox, .dijitComboButton, .dijitDropDownButton, .dijitSelect, .dijitTextBox) {
     &:is(.dijitActive, .dijitFocused):not(.dijitDisabled) {
       box-shadow: 0 0 0 2px fade(@color-accent, 45%);
 
-      &:is(.dijitButton, .dijitComboButton) {
+      &:is(.dijitButton, .dijitComboButton, .dijitDropDownButton) {
         border-radius: 4px;
       }
+    }
+  }
+  .dijitToolbar
+    :is(.dijitButton, .dijitComboButton, .dijitDropDownButton, .dijitSelect) {
+    &:is(.dijitActive, .dijitFocused):not(.dijitDisabled) {
+      box-shadow: none;
     }
   }
   .dijitTab:not(.dijitChecked) {
