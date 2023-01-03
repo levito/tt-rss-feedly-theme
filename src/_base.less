@@ -59,24 +59,11 @@ body.ttrss_main {
   background-color: @default-bg;
   color: @default-text;
 
-  .dijitSplitter {
-    background-color: transparent;
-  }
-
-  .dijitSplitterThumb {
-    display: none;
-  }
-
   #main {
     background-color: @border-default !important;
   }
-
   &:not(.ttrss_prefs) #main {
     padding-left: @feeds-toggle-width;
-  }
-
-  .dijitDialogUnderlay {
-    opacity: 0.4;
   }
 
   span.highlight {
@@ -90,8 +77,92 @@ body.ttrss_main {
   #pref_feeds_errors_btn,
   .exception-contents h3,
   .Error .dijitTreeLabel,
-  .net-alert,
-  .icon-error {
+  .icon-error,
+  .net-alert {
     color: @color-error !important;
+  }
+
+  // ---------------------------------------------------------------------------
+  // dijit widgets
+  // ---------------------------------------------------------------------------
+  .dijitAccordionInnerContainer,
+  .dijitButtonNode.dijitButtonNode,
+  .dijitContentPane,
+  .dijitDialog,
+  .dijitMenu,
+  .dijitSelect,
+  .dijitTab.dijitChecked,
+  .dijitTabPaneWrapper,
+  .dijitTextBox {
+    background-color: @default-bg;
+  }
+  #feedsTab,
+  .dijitAccordionChildWrapper.dijitAccordionChildWrapper,
+  .dijitSplitter.dijitSplitter,
+  .dijitTab.dijitTab:not(.dijitChecked) {
+    background-color: transparent;
+  }
+  .dijitToolbar,
+  .dijitAccordionTitle,
+  .dijitToolbar .dijitHover .dijitButtonNode {
+    background-color: @color-fade1;
+  }
+  .dijitAccordionTitle.dijitHover:not(.dijitSelected),
+  .dijitTreeRowHover {
+    background-color: @color-fade2;
+  }
+  :where(.dijitButton, .dijitTextBox):is(.dijitFocused, .dijitHover)
+    .dijitButtonNode,
+  .dijitButton.dijitButton:not(.dijit):hover {
+    background-color: mix(@default-fg, @default-bg, 4%);
+  }
+  .dijitCheckBox {
+    background-color: mix(@default-fg, @default-bg, 15%);
+  }
+  .dijitTab:not(.dijitChecked) {
+    border-color: transparent;
+  }
+  hr,
+  &.ttrss_prefs.ttrss_prefs hr,
+  .dijitAccordionChildWrapper.dijitAccordionChildWrapper,
+  .dijitAccordionInnerContainer,
+  .dijitButton.dijitButton:not(.dijit),
+  .dijitButtonNode.dijitButtonNode,
+  .dijitDialog,
+  .dijitDialogTitleBar,
+  .dijitMenu,
+  .dijitMenuSeparatorTop,
+  .dijitSelect,
+  .dijitTab.dijitChecked,
+  .dijitTabPaneWrapper,
+  .dijitTextBox.dijitTextBox,
+  .dijitToolbar .dijitHover .dijitButtonNode {
+    border-color: @color-fade3;
+  }
+  .dijitSelect,
+  .dijitTextBox {
+    &:is(.dijitActive, .dijitFocused, .dijitHover):not(.dijitDisabled) {
+      border-color: @color-accent;
+    }
+  }
+  .dijitTabContainerTop-tabs .dijitTabChecked {
+    border-bottom-color: transparent;
+  }
+  .dijitTabContainerLeft-tabs .dijitTabChecked {
+    border-right-color: transparent;
+  }
+  .dijitDisabled {
+    opacity: 0.75;
+
+    &,
+    .dijitButtonNode {
+      color: @faded-text;
+    }
+  }
+  .dijitSplitterThumb {
+    display: none;
+  }
+  .dijitDialogUnderlay {
+    opacity: 0.4;
   }
 }
