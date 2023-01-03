@@ -88,6 +88,85 @@ body.ttrss_main {
   }
 
   // ---------------------------------------------------------------------------
+  // preferences
+  // ---------------------------------------------------------------------------
+  &.ttrss_prefs {
+    :is(h1, h2, h3, h4) {
+      margin-top: 60px;
+
+      + :is(h1, h2, h3, h4) {
+        margin-top: 20px;
+      }
+    }
+    :is(h2, h3, h4) {
+      font-size: 14px;
+    }
+    h2 {
+      padding-bottom: 4px;
+      border: 0 solid @color-fade3;
+      border-width: 0 0 1px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    // qr code for authenticator
+    img[src^="data:image/png"] {
+      background-color: #fff;
+    }
+
+    .phpinfo {
+      img {
+        display: block;
+        background-color: transparent;
+      }
+      // colored text for syntax highlighting
+      font {
+        padding: 0 5px;
+        border-radius: 4px;
+        background-color: #fff;
+      }
+      a:not([href]) {
+        color: inherit;
+        text-decoration: none;
+      }
+      :is(h1, h2, table) {
+        margin-bottom: 20px;
+      }
+      :is(h1, h2) {
+        padding-left: 20px;
+      }
+      table :is(h1, h2) {
+        padding-left: 0;
+      }
+      h1 {
+        font-size: 28px;
+      }
+      h2 {
+        padding-top: 50px;
+        padding-bottom: 0;
+        border-width: 1px 0 0;
+        font-size: 20px;
+        letter-spacing: 0;
+        text-transform: none;
+      }
+      :is(th, td) {
+        padding: 10px 20px;
+        border-color: @color-fade2;
+        vertical-align: top;
+      }
+      .p {
+        margin: 1em 0;
+        font: inherit;
+        letter-spacing: 0;
+        text-transform: none;
+      }
+      :is(.p, .v) {
+        color: @faded-text;
+      }
+    }
+  }
+
+  // ---------------------------------------------------------------------------
   // dijit widgets
   // ---------------------------------------------------------------------------
   .dijitAccordionInnerContainer,
