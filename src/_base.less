@@ -149,7 +149,7 @@ body.ttrss_main {
   .dijitAccordionInnerContainer,
   .dijitButton.dijitButton:not(.dijit),
   .dijitButtonNode.dijitButtonNode,
-  .dijitCheckBox:not(.dijitChecked, .dijitHover),
+  .dijitCheckBox,
   .dijitDialog,
   .dijitDialogTitleBar,
   .dijitMenu,
@@ -162,8 +162,7 @@ body.ttrss_main {
   .panel.panel {
     border-color: @color-fade3;
   }
-  .dijitSelect,
-  .dijitTextBox {
+  :is(.dijitCheckBox, .dijitSelect, .dijitTextBox) {
     &:is(.dijitActive, .dijitFocused, .dijitHover):not(.dijitDisabled) {
       border-color: @color-accent;
     }
