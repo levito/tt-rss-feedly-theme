@@ -86,41 +86,57 @@ body.ttrss_main {
   // dijit widgets
   // ---------------------------------------------------------------------------
   .dijitAccordionInnerContainer,
-  .dijitButtonNode.dijitButtonNode,
   .dijitContentPane,
   .dijitDialog,
   .dijitMenu,
-  .dijitSelect,
   .dijitTab.dijitChecked,
-  .dijitTabPaneWrapper,
-  .dijitTextBox {
+  .dijitTabPaneWrapper {
     background-color: @default-bg;
   }
   #feedsTab,
   .dijitAccordionChildWrapper.dijitAccordionChildWrapper,
+  .dijitCheckBox.dijitCheckBox:not(.dijitChecked)::before,
+  .dijitDialog .dijitToolbar,
   .dijitSplitter.dijitSplitter,
   .dijitTab.dijitTab:not(.dijitChecked) {
     background-color: transparent;
   }
-  .dijitToolbar,
   .dijitAccordionTitle,
-  .dijitToolbar .dijitHover .dijitButtonNode {
-    background-color: @color-fade1;
-  }
-  .dijitAccordionTitle.dijitHover:not(.dijitSelected),
-  .dijitTreeRowHover {
-    background-color: @color-fade2;
-  }
-  :where(.dijitButton, .dijitTextBox):is(.dijitFocused, .dijitHover)
-    .dijitButtonNode,
-  .dijitButton.dijitButton:not(.dijit):hover {
+  .dijitButton.dijitButton:not(.dijit),
+  .dijitButton .dijitButtonNode,
+  .dijitTextBox :is(.dijitDownArrowButton, .dijitUpArrowButton),
+  .dijitToolbar {
     background-color: mix(@default-fg, @default-bg, 4%);
   }
-  .dijitCheckBox {
-    background-color: mix(@default-fg, @default-bg, 15%);
+  .dijitAccordionTitle.dijitHover:not(.dijitSelected),
+  .dijitButton.dijitButton:not(.dijit):hover,
+  .dijitButton:where(.dijitFocused, .dijitHover) .dijitButtonNode,
+  .dijitTextBox :is(.dijitDownArrowButtonHover, .dijitUpArrowButtonHover),
+  .dijitToolbar .dijitHover:not(.dijitSelect) .dijitButtonNode,
+  .dijitTreeRowHover {
+    background-color: mix(@default-fg, @default-bg, 7%);
   }
-  .dijitTab:not(.dijitChecked) {
-    border-color: transparent;
+  .dijitAccordionTitle.dijitActive:not(.dijitSelected),
+  .dijitButton.dijitButton:not(.dijit):active,
+  .dijitButton:where(.dijitActive) .dijitButtonNode,
+  .dijitTextBox :is(.dijitDownArrowButtonActive, .dijitUpArrowButtonActive),
+  .dijitToolbar .dijitActive:not(.dijitSelect) .dijitButtonNode {
+    background-color: shade(@default-bg, 15%);
+  }
+  .dijitCheckBox {
+    background-color: @color-checkbox;
+  }
+  .dijitComboBoxMenu,
+  .dijitComboBoxMenuPopup,
+  .dijitMenuPopup,
+  .dijitSelect,
+  .dijitSelect .dijitButtonNode,
+  .dijitSelectMenu,
+  .dijitTextBox {
+    background-color: @color-input;
+  }
+  .dijitSelectActive {
+    box-shadow: none;
   }
   hr,
   &.ttrss_prefs.ttrss_prefs hr,
@@ -128,6 +144,7 @@ body.ttrss_main {
   .dijitAccordionInnerContainer,
   .dijitButton.dijitButton:not(.dijit),
   .dijitButtonNode.dijitButtonNode,
+  .dijitCheckBox:not(.dijitChecked, .dijitHover),
   .dijitDialog,
   .dijitDialogTitleBar,
   .dijitMenu,
@@ -136,7 +153,8 @@ body.ttrss_main {
   .dijitTab.dijitChecked,
   .dijitTabPaneWrapper,
   .dijitTextBox.dijitTextBox,
-  .dijitToolbar .dijitHover .dijitButtonNode {
+  .dijitToolbar :is(.dijitActive, .dijitHover) .dijitButtonNode,
+  .panel.panel {
     border-color: @color-fade3;
   }
   .dijitSelect,
@@ -145,6 +163,9 @@ body.ttrss_main {
       border-color: @color-accent;
     }
   }
+  .dijitTab:not(.dijitChecked) {
+    border-color: transparent;
+  }
   .dijitTabContainerTop-tabs .dijitTabChecked {
     border-bottom-color: transparent;
   }
@@ -152,12 +173,16 @@ body.ttrss_main {
     border-right-color: transparent;
   }
   .dijitDisabled {
-    opacity: 0.75;
-
+    opacity: 0.5;
     &,
     .dijitButtonNode {
-      color: @faded-text;
+      color: @default-text;
     }
+  }
+  // bookmarklets
+  .dijitButton:not(.dijit) a {
+    color: inherit;
+    text-decoration: none;
   }
   .dijitSplitterThumb {
     display: none;
