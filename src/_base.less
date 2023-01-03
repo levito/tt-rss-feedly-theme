@@ -169,7 +169,6 @@ body.ttrss_main {
   // ---------------------------------------------------------------------------
   // dijit widgets
   // ---------------------------------------------------------------------------
-  .dijitAccordionInnerContainer,
   .dijitContentPane,
   .dijitDialog,
   .dijitTab.dijitChecked,
@@ -178,20 +177,21 @@ body.ttrss_main {
   }
   #feedsTab,
   .dijitAccordionChildWrapper.dijitAccordionChildWrapper,
+  .dijitAccordionTitle.dijitAccordionTitle,
   .dijitCheckBox.dijitCheckBox:not(.dijitChecked)::before,
   .dijitDialog .dijitToolbar,
   .dijitSplitter.dijitSplitter,
   .dijitTab.dijitTab:not(.dijitChecked) {
     background-color: transparent;
   }
-  .dijitAccordionTitle,
+  .dijitAccordionInnerContainer,
   .dijitButton.dijitButton:not(.dijit),
   :is(.dijitButton, .dijitDropDownButton) .dijitButtonNode,
   .dijitTextBox :is(.dijitDownArrowButton, .dijitUpArrowButton),
   .dijitToolbar {
     background-color: mix(@default-fg, @default-bg, 4%);
   }
-  .dijitAccordionTitle.dijitHover:not(.dijitSelected),
+  .dijitAccordionInnerContainer.dijitHover,
   .dijitButton.dijitButton:not(.dijit):hover,
   :is(.dijitButton, .dijitDropDownButton):where(.dijitFocused, .dijitHover)
     .dijitButtonNode,
@@ -200,12 +200,25 @@ body.ttrss_main {
   .dijitTreeRowHover {
     background-color: mix(@default-fg, @default-bg, 7%);
   }
-  .dijitAccordionTitle.dijitActive:not(.dijitSelected),
+  .dijitAccordionInnerContainer.dijitActive,
   .dijitButton.dijitButton:not(.dijit):active,
   :is(.dijitButton, .dijitDropDownButton):where(.dijitActive) .dijitButtonNode,
   .dijitTextBox :is(.dijitDownArrowButtonActive, .dijitUpArrowButtonActive),
   .dijitToolbar .dijitActive:not(.dijitSelect) .dijitButtonNode {
     background-color: shade(@default-bg, 15%);
+  }
+  .dijitAccordionInnerContainer {
+    transition: none;
+
+    &.dijitSelected {
+      background-color: mix(@color-accent, @default-bg, 45%);
+
+      .dijitAccordionTitle {
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        background-color: @color-accent;
+      }
+    }
   }
   .dijitCheckBox {
     background-color: @color-checkbox;
