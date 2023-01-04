@@ -265,7 +265,14 @@ body.ttrss_main {
       border-color: @color-accent;
     }
   }
-  :is(.dijitButton, .dijitCheckBox, .dijitComboButton, .dijitDropDownButton, .dijitSelect, .dijitTextBox) {
+  :is(
+      .dijitButton,
+      .dijitCheckBox,
+      .dijitComboButton,
+      .dijitDropDownButton,
+      .dijitSelect,
+      .dijitTextBox
+    ) {
     &:is(.dijitActive, .dijitFocused):not(.dijitDisabled) {
       box-shadow: 0 0 0 2px fade(@color-accent, 45%);
 
