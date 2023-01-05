@@ -126,7 +126,11 @@
         margin-left: 7px;
         border-color: transparent;
         background-color: @color-fade5;
+        box-shadow: none;
 
+        &::before {
+          color: mix(@default-fg, @default-bg, 7%);
+        }
         &:hover {
           background-color: @color-fade6;
         }

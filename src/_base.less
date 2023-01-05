@@ -271,6 +271,7 @@ body.ttrss_main {
   .dijitCheckBox {
     background-color: @color-checkbox;
   }
+  .dijitCheckBox,
   .dijitComboBoxMenu,
   .dijitComboBoxMenuPopup,
   .dijitMenu,
@@ -307,6 +308,13 @@ body.ttrss_main {
     &:is(.dijitActive, .dijitFocused, .dijitHover):not(.dijitDisabled) {
       border-color: @color-accent;
     }
+  }
+  .dijitCheckBox.dijitChecked {
+    border-color: @color-fade3;
+    background-color: @color-accent;
+  }
+  .dijitCheckBox.dijitCheckBox:not(.dijitChecked)::before {
+    color: transparent;
   }
   :is(
       .dijitButton,
