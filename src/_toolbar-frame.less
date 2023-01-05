@@ -54,28 +54,28 @@
     // -------------------------------------------------------------------------
     // buttons excluding show/hide feeds
     // -------------------------------------------------------------------------
-    > :not(.dijitButton) {
-      .dijitInline,
-      .dijitReset {
-        background-color: transparent;
-        box-shadow: none;
-      }
-      .dijitDropDownButton,
-      .dijitSelect {
-        transition: color 0.2s;
-        color: @fg-text-muted;
-      }
-      .dijitActive,
-      .dijitHover,
-      .dijitOpened {
-        color: @default-text;
-      }
+    .dijitInline,
+    .dijitReset {
+      border-color: transparent;
+      background-color: transparent;
+      box-shadow: none;
+    }
+    .dijitButton,
+    .dijitDropDownButton,
+    .dijitSelect {
+      transition: color 0.2s;
+      color: @fg-text-muted;
+    }
+    .dijitActive,
+    .dijitHover,
+    .dijitOpened {
+      color: @default-text;
     }
 
     // -------------------------------------------------------------------------
-    // show/hide feeds
+    // show/hide feeds, exclude plugin "search button"
     // -------------------------------------------------------------------------
-    > .dijitButton {
+    > .dijitButton:not([style]) {
       margin: 0;
 
       .dijitButtonNode {
