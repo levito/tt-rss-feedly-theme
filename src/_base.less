@@ -146,9 +146,22 @@ body.ttrss_main {
         }
       }
     }
-    // fix some icons rendered too wide in top tabs
+
+    // visual fixes:
+    // some icons rendered too wide in top tabs
     .tabLabel .material-icons {
       width: 18px;
+    }
+    // broken focus outline of buttons in plugin installer
+    .plugin-installer-list li > .dijitButton {
+      margin-top: 8px;
+      padding: 0;
+    }
+    // my feeds: missing spacing on right text
+    .feedParam {
+      margin-right: 16px;
+      opacity: 0.6;
+      font-size: 13px;
     }
 
     .phpinfo {
@@ -203,11 +216,6 @@ body.ttrss_main {
       td.v {
         font-family: var(--fonts-mono);
       }
-    }
-
-    .plugin-installer-list li > .dijitButton {
-      margin-top: 8px;
-      padding: 0;
     }
 
     // plugin "effective config"
