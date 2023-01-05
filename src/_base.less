@@ -203,6 +203,27 @@ body.ttrss_main {
       margin-top: 8px;
       padding: 0;
     }
+
+    // plugin: effective config
+    #config-items-list {
+      th,
+      td {
+        padding: 8px 12px;
+      }
+      tr:hover,
+      td.gray {
+        background-color: @color-fade2;
+      }
+      th,
+      td:not(:last-child) {
+        border-color: @border-light;
+      }
+      .envvar_prefix,
+      td.redacted {
+        opacity: 1;
+        color: @color-fade5;
+      }
+    }
   }
 
   // ---------------------------------------------------------------------------
