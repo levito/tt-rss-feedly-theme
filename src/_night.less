@@ -1,10 +1,14 @@
 @import "_variables.less";
 
+@default-fg: #fff;
 @color-error: rgba(255, 102, 102, 0.8);
 @color-input: darken(@default-bg, 4%);
 @color-checkbox: @color-input;
 
 #main#main {
+  hr {
+    border-color: @border-default;
+  }
   .cdm.expandable.active {
     background-color: transparent !important;
   }

@@ -60,7 +60,7 @@ body.ttrss_main {
   color: @default-text;
 
   #main {
-    background-color: @border-default !important;
+    background-color: @color-panel-bg !important;
   }
   &:not(.ttrss_prefs) #main {
     padding-left: @feeds-toggle-width;
@@ -71,12 +71,13 @@ body.ttrss_main {
     padding: 0.1em 0.2em;
     border-radius: 0.2em;
     background-color: rgba(255, 192, 0, 0.5);
-    color: @faded-text;
+    color: @fg-text-muted;
   }
 
   #pref_feeds_errors_btn,
   .exception-contents h3,
-  .Error .dijitTreeLabel,
+  .Error:not(.dijitTreeRowSelected) .dijitTreeLabel,
+  #feedTree .Error .dijitTreeLabel,
   .icon-error,
   .net-alert {
     color: @color-error !important;
@@ -112,6 +113,39 @@ body.ttrss_main {
     // qr code for authenticator
     img[src^="data:image/png"] {
       background-color: #fff;
+    }
+
+    #header {
+      display: flex;
+      align-items: center;
+      margin-top: 1px;
+      padding: 0;
+
+      > a {
+        display: inline-flex;
+        margin-left: 8px;
+        padding: 7px 16px;
+        transition: background-color 0.2s;
+        color: @default-text;
+        font-size: 14px;
+        text-decoration: none;
+
+        &::before {
+          content: "exit_to_app";
+          margin: 0 4px;
+          color: @color-accent;
+          font-family: "Material Icons";
+          font-size: 18px;
+          line-height: 1;
+        }
+      }
+      #updates-available {
+        padding-right: 0;
+      }
+    }
+    // fix some icons rendered too wide in top tabs
+    .tabLabel .material-icons {
+      width: 18px;
     }
 
     .phpinfo {
@@ -161,7 +195,7 @@ body.ttrss_main {
         text-transform: none;
       }
       :is(.p, .v) {
-        color: @faded-text;
+        color: @fg-text-muted;
       }
     }
 
@@ -181,6 +215,9 @@ body.ttrss_main {
     background-color: @default-bg;
   }
   #feedsTab,
+  #filterDlg_Actions#filterDlg_Actions,
+  #filterDlg_Matches#filterDlg_Matches,
+  #footer#footer,
   .dijitAccordionChildWrapper.dijitAccordionChildWrapper,
   .dijitAccordionTitle.dijitAccordionTitle,
   .dijitCheckBox.dijitCheckBox:not(.dijitChecked)::before,
@@ -188,6 +225,10 @@ body.ttrss_main {
   .dijitSplitter.dijitSplitter,
   .dijitTab.dijitTab:not(.dijitChecked) {
     background-color: transparent;
+  }
+  &.ttrss_prefs #header > a:hover,
+  .dijitTab.dijitHover:not(.dijitChecked) {
+    background-color: @color-fade1;
   }
   .dijitAccordionInnerContainer,
   .dijitButton.dijitButton:not(.dijit),
@@ -205,15 +246,17 @@ body.ttrss_main {
   .dijitTreeRowHover {
     background-color: mix(@default-fg, @default-bg, 7%);
   }
+  &.ttrss_prefs #header > a:active,
   .dijitAccordionInnerContainer.dijitActive,
   .dijitButton.dijitButton:not(.dijit):active,
   :is(.dijitButton, .dijitDropDownButton):where(.dijitActive) .dijitButtonNode,
+  .dijitTab.dijitActive:not(.dijitChecked),
   .dijitTextBox :is(.dijitDownArrowButtonActive, .dijitUpArrowButtonActive),
   .dijitToolbar .dijitActive:not(.dijitSelect) .dijitButtonNode {
     background-color: shade(@default-bg, 15%);
   }
   .dijitAccordionInnerContainer {
-    transition: none;
+    transition-duration: 0.1s;
 
     &.dijitSelected {
       background-color: mix(@color-accent, @default-bg, 45%);
@@ -232,17 +275,17 @@ body.ttrss_main {
   .dijitComboBoxMenuPopup,
   .dijitMenu,
   .dijitMenuPopup,
+  .dijitMultiSelect,
   .dijitSelect,
   .dijitSelect .dijitButtonNode,
   .dijitSelectMenu,
   .dijitTextBox {
     background-color: @color-input;
   }
+  .dijitMultiSelect,
   .dijitSelectActive {
     box-shadow: none;
   }
-  hr,
-  &.ttrss_prefs.ttrss_prefs hr,
   .dijitAccordionChildWrapper.dijitAccordionChildWrapper,
   .dijitAccordionInnerContainer,
   .dijitButton.dijitButton:not(.dijit),
@@ -252,15 +295,15 @@ body.ttrss_main {
   .dijitDialogTitleBar,
   .dijitMenu,
   .dijitMenuSeparatorTop,
+  .dijitMultiSelect,
   .dijitSelect,
   .dijitTab.dijitChecked,
   .dijitTabPaneWrapper,
   .dijitTextBox.dijitTextBox,
-  .dijitToolbar :is(.dijitActive, .dijitHover) .dijitButtonNode,
-  .panel.panel {
+  .dijitToolbar :is(.dijitActive, .dijitHover) .dijitButtonNode {
     border-color: @color-fade3;
   }
-  :is(.dijitCheckBox, .dijitSelect, .dijitTextBox) {
+  :is(.dijitCheckBox, .dijitMultiSelect, .dijitSelect, .dijitTextBox) {
     &:is(.dijitActive, .dijitFocused, .dijitHover):not(.dijitDisabled) {
       border-color: @color-accent;
     }
@@ -270,22 +313,30 @@ body.ttrss_main {
       .dijitCheckBox,
       .dijitComboButton,
       .dijitDropDownButton,
+      .dijitMultiSelect,
       .dijitSelect,
       .dijitTextBox
     ) {
     &:is(.dijitActive, .dijitFocused):not(.dijitDisabled) {
       box-shadow: 0 0 0 2px fade(@color-accent, 45%);
-
-      &:is(.dijitButton, .dijitComboButton, .dijitDropDownButton) {
-        border-radius: 4px;
-      }
     }
+  }
+  :is(
+      .dijitButton,
+      .dijitComboButton,
+      .dijitDropDownButton,
+      .dijitMultiSelect
+    ) {
+    border-radius: 4px;
   }
   .dijitToolbar
     :is(.dijitButton, .dijitComboButton, .dijitDropDownButton, .dijitSelect) {
     &:is(.dijitActive, .dijitFocused):not(.dijitDisabled) {
       box-shadow: none;
     }
+  }
+  .dijitMultiSelect {
+    color: @default-text;
   }
   .dijitTab:not(.dijitChecked) {
     border-color: transparent;

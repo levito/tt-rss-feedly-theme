@@ -28,12 +28,12 @@
 @color-fade7: fade(@default-fg, 60%);
 @color-fade8: fade(@default-fg, 75%);
 
-@color-panel-bg: @color-fade1;
+@color-panel-bg: @color-fade2;
 @border-default: @color-fade2;
-@faded-feeds-text: @color-fade5;
-@faded-text: @color-fade6;
-@color-icon: @color-fade6;
-@default-feeds-text: @color-fade7;
+@border-light: @color-fade3;
+@color-icon: @color-fade5;
+@fg-text-muted: @color-fade6;
+@feeds-text: @color-fade7;
 @default-text: @color-fade8;
 
 // needed to override defines.less
@@ -52,9 +52,9 @@
   line-height: calc(@font-size + 6px);
 }
 
-.interactive-icon() {
+.interactive-icon(@color: @color-icon) {
   transition: color 0.2s;
-  color: @color-fade4;
+  color: @color;
 
   &:hover {
     color: @color-fade6;
