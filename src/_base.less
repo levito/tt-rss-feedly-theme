@@ -129,8 +129,9 @@ body.ttrss_main {
       > a {
         display: inline-flex;
         margin-left: 8px;
-        padding: 7px 16px 8px;
+        padding: 6px 16px 7px;
         transition: background-color 0.2s;
+        border: 1px solid transparent;
         color: @default-text;
         font-size: 14px;
         text-decoration: none;
@@ -307,6 +308,7 @@ body.ttrss_main {
   .dijitSelectActive {
     box-shadow: none;
   }
+  &.ttrss_prefs #header > a:active,
   .dijitAccordionChildWrapper.dijitAccordionChildWrapper,
   .dijitAccordionInnerContainer,
   .dijitButton.dijitButton:not(.dijit),
@@ -318,6 +320,7 @@ body.ttrss_main {
   .dijitMenuSeparatorTop,
   .dijitMultiSelect,
   .dijitSelect,
+  .dijitTab.dijitActive:not(.dijitChecked),
   .dijitTab.dijitChecked,
   .dijitTabPaneWrapper,
   .dijitTextBox.dijitTextBox,
@@ -363,11 +366,12 @@ body.ttrss_main {
       box-shadow: none;
     }
   }
-  .dijitMultiSelect {
+  .dijitMultiSelect,
+  .dijitTab.dijitActive {
     color: @default-text;
   }
   .dijitTab:not(.dijitChecked) {
-    border-color: transparent;
+    border: 1px solid transparent;
   }
   .dijitTabContainerTop-tabs .dijitTabChecked {
     border-bottom-color: transparent;
