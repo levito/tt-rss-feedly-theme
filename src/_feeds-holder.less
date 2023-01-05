@@ -62,23 +62,6 @@
       }
     }
 
-    .dijitTreeExpando {
-      position: relative;
-      top: 2px;
-      left: -1px;
-
-      &::before {
-        font-family: "Material Icons";
-        font-size: 20px;
-      }
-    }
-    .dijitTreeExpandoClosed::before {
-      content: "\e315";
-    }
-    .dijitTreeExpandoOpened::before {
-      content: "\e313";
-    }
-
     .icon.material-icons {
       left: 0;
       color: @color-fade4;
@@ -87,6 +70,11 @@
 
     .dijitTreeExpando {
       .interactive-icon(@color-fade4);
+
+      &::before {
+        top: 1px;
+        left: -1px;
+      }
     }
 
     .dijitTreeExpandoLeaf {
