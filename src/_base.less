@@ -200,6 +200,9 @@ body.ttrss_main {
       :is(.p, .v) {
         color: @fg-text-muted;
       }
+      td.v {
+        font-family: var(--fonts-mono);
+      }
     }
 
     .plugin-installer-list li > .dijitButton {
@@ -385,6 +388,9 @@ body.ttrss_main {
     .dijitButtonNode {
       color: @default-text;
     }
+  }
+  .dijitTextArea {
+    font-family: var(--fonts-mono);
   }
   .dijitDropDownButton .dijitArrowButtonInner:before,
   .dijitArrowButton:before {
