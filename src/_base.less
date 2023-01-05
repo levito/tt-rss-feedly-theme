@@ -307,16 +307,12 @@ body.ttrss_main {
   .dijitTextBox.dijitTextBox.dijitTextBox {
     background-color: @color-input;
   }
-  .dijitMultiSelect,
-  .dijitSelectActive {
-    box-shadow: none;
-  }
   &.ttrss_prefs #header > a:active,
   .dijitAccordionChildWrapper.dijitAccordionChildWrapper,
   .dijitAccordionInnerContainer,
   .dijitButton.dijitButton:not(.dijit),
   .dijitButtonNode.dijitButtonNode,
-  .dijitCheckBox,
+  .dijitCheckBox.dijitCheckBox,
   .dijitDialog,
   .dijitDialogTitleBar,
   .dijitMenu,
@@ -336,7 +332,6 @@ body.ttrss_main {
     }
   }
   .dijitCheckBox.dijitChecked {
-    border-color: @color-fade3;
     background-color: @color-accent;
   }
   .dijitCheckBox.dijitCheckBox:not(.dijitChecked)::before {
@@ -363,6 +358,8 @@ body.ttrss_main {
     ) {
     border-radius: 4px;
   }
+  .dijitMultiSelect,
+  .dijitSelectActive,
   .dijitToolbar
     :is(.dijitButton, .dijitComboButton, .dijitDropDownButton, .dijitSelect) {
     &:is(.dijitActive, .dijitFocused):not(.dijitDisabled) {
