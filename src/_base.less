@@ -76,6 +76,26 @@ body.flat {
     color: @fg-text-muted;
   }
 
+  // arrow icons, expando animation
+  .dijitDropDownButton .dijitArrowButtonInner,
+  .dijitArrowButton,
+  .dijitTreeExpandoClosed,
+  .dijitTreeExpandoOpened {
+    &::before {
+      content: "\f006";
+    }
+  }
+  :is(.dijitTreeExpandoClosed, .dijitTreeExpandoOpened) {
+    position: relative;
+    top: -1px;
+    left: -2px;
+    transition: all 0.2s !important;
+    font-size: 20px;
+  }
+  .dijitTreeExpandoClosed {
+    transform: translate(3px, 3px) rotate(-90deg);
+  }
+
   #pref_feeds_errors_btn,
   .dijitValidationTextBoxError .dijitValidationContainer,
   .exception-contents h3,
