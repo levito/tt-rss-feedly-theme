@@ -8,15 +8,10 @@ body.ttrss_prefs {
       margin-top: 20px;
     }
   }
-  :is(h2, h3, h4) {
-    font-size: 14px;
-  }
   h2 {
     padding-bottom: 4px;
     border: 0 solid @color-fade3;
     border-width: 0 0 1px;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
   }
 
   // qr code for authenticator
@@ -119,10 +114,8 @@ body.ttrss_prefs {
       padding-bottom: 0;
       border-width: 1px 0 0;
       font-size: 20px;
-      letter-spacing: 0;
-      text-transform: none;
     }
-    :is(th, td) {
+    &.phpinfo :is(th, td) {
       padding: 8px 12px;
       border-color: @color-fade2;
       vertical-align: top;
