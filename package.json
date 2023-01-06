@@ -1,6 +1,6 @@
 {
   "name": "tt-rss-feedly-theme",
-  "version": "2.10.0",
+  "version": "3.0.0",
   "description": "Feedly theme for Tiny Tiny RSS",
   "main": "feedly.css",
   "repository": {
