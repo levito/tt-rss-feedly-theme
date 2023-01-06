@@ -179,19 +179,24 @@ body.flat {
   .dijitTextArea {
     font-family: var(--fonts-mono);
   }
-  .dijitDropDownButton .dijitArrowButtonInner::before,
-  .dijitArrowButton::before,
-  .dijitTreeExpandoOpened::before {
-    content: "\f006";
+  .dijitDropDownButton .dijitArrowButtonInner,
+  .dijitArrowButton,
+  .dijitTreeExpandoClosed,
+  .dijitTreeExpandoOpened {
+    &::before {
+      content: "\f006";
+    }
   }
-  .dijitTreeExpandoClosed::before {
-    content: "\f005";
-  }
-  .dijitTreeExpando::before {
+  .dijitTreeExpandoClosed,
+  .dijitTreeExpandoOpened {
     position: relative;
     top: -1px;
     left: -2px;
+    transition: all 0.2s !important;
     font-size: 20px;
+  }
+  .dijitTreeExpandoClosed {
+    transform: translate(3px, 3px) rotate(-90deg);
   }
   // bookmarklets
   .dijitButton:not(.dijit) a {
