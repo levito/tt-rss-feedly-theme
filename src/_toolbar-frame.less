@@ -56,21 +56,16 @@
     // -------------------------------------------------------------------------
     // buttons excluding show/hide feeds
     // -------------------------------------------------------------------------
-    .dijitInline,
-    .dijitReset {
+    :is(.dijitInline, .dijitReset) {
       border-color: transparent;
       background-color: transparent;
       box-shadow: none;
     }
-    .dijitButton,
-    .dijitDropDownButton,
-    .dijitSelect {
+    :is(.dijitButton, .dijitDropDownButton, .dijitSelect) {
       transition: color 0.2s;
       color: @fg-text-muted;
     }
-    .dijitActive,
-    .dijitHover,
-    .dijitOpened {
+    :is(.dijitActive, .dijitHover, .dijitOpened) {
       color: @default-text;
     }
 

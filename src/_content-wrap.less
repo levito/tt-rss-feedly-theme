@@ -43,8 +43,7 @@
   // split detail
   // ---------------------------------------------------------------------------
   .post {
-    .header,
-    .content {
+    :is(.header, .content) {
       margin: 0;
       padding: 10px calc(@content-spacing-right + 6px) 6px
         calc(@content-spacing-left + 6px);
@@ -65,8 +64,7 @@
       min-height: unset;
       padding: 0;
     }
-    .author,
-    .tags {
+    :is(.author, .tags) {
       margin-right: 4px;
     }
     .author:not(:empty) {
@@ -86,8 +84,7 @@
   // ---------------------------------------------------------------------------
   // single row layout for combined collapsed header and horizontally split list item
   // ---------------------------------------------------------------------------
-  .header,
-  .hl {
+  :is(.header, .hl) {
     display: grid;
     grid-template-areas: "icon feed title updated actions";
     grid-template-columns: auto 130px 1fr auto auto;
@@ -105,8 +102,7 @@
     > .feed {
       grid-area: feed;
     }
-    > .title,
-    > .titleWrap {
+    > :is(.title, .titleWrap) {
       grid-area: title;
       width: auto;
       min-height: unset;
@@ -152,7 +148,7 @@
       align-items: center;
       align-self: stretch;
     }
-    .title .hl-content {
+    :is(.title .hl-content) {
       overflow: hidden;
       text-overflow: ellipsis;
     }
@@ -169,8 +165,7 @@
   // ---------------------------------------------------------------------------
   // shared feed name styles for all layouts
   // ---------------------------------------------------------------------------
-  a.feed,
-  .feed a {
+  :is(a.feed, .feed a) {
     box-sizing: border-box;
     max-width: calc(100% - 5px);
     min-height: 0;
@@ -198,8 +193,7 @@
   // combined collapsed, split list for single feed: hide feed name
   // ---------------------------------------------------------------------------
   #headlines-frame[is-vfeed="0"] {
-    .header,
-    .hl {
+    :is(.header, .hl) {
       grid-template-columns: auto auto 1fr auto auto;
     }
 
@@ -217,8 +211,7 @@
   // ---------------------------------------------------------------------------
   // content for combined collapsed/expanded item and split list item
   // ---------------------------------------------------------------------------
-  .cdm[data-article-id],
-  .hl {
+  :is(.cdm[data-article-id], .hl) {
     position: relative;
     margin-bottom: -1px;
     border: 1px solid @border-default;
@@ -226,12 +219,7 @@
     border-left-color: transparent !important;
     background-color: @default-bg;
 
-    .author,
-    .excerpt,
-    .hl-content,
-    .preview,
-    .titleWrap,
-    .updated {
+    :is(.author, .excerpt, .hl-content, .preview, .titleWrap, .updated) {
       color: @fg-text-muted;
     }
     .preview {
@@ -249,9 +237,7 @@
     }
     &:not(.marked) .marked-pic,
     &:not(.published) .pub-pic,
-    .icon-anchor,
-    .icon-score,
-    .icon-grid-span,
+    :is(.icon-anchor, .icon-score, .icon-grid-span),
     .right .material-icons:not(.icon-no-feed) {
       .interactive-icon();
     }
@@ -272,8 +258,7 @@
       border-color: mix(@color-published, @default-bg, 45%);
       background-color: mix(@color-published, @default-bg, 15%);
     }
-    &.active,
-    &.Selected {
+    &:is(.active, .Selected) {
       z-index: 1;
       border-color: mix(@color-checked, @default-bg, 45%);
       background-color: mix(@color-checked, @default-bg, 15%) !important;
@@ -296,10 +281,7 @@
       > * {
         background-color: @color-fade1;
       }
-      .marked-pic,
-      .pub-pic,
-      .dijitCheckBox,
-      .icon-score {
+      :is(.marked-pic, .pub-pic, .dijitCheckBox, .icon-score) {
         display: block;
       }
       .updated {
@@ -327,8 +309,7 @@
     &.active {
       border-color: @color-fade3 !important;
     }
-    &.expanded,
-    &.expandable.active {
+    &:is(.expanded, .expandable.active) {
       @padding: 25px;
 
       margin-bottom: 17px;
@@ -361,8 +342,7 @@
     &.expandable:not(.active) {
       cursor: unset;
 
-      .titleWrap,
-      .title {
+      :is(.titleWrap, .title) {
         white-space: nowrap;
         cursor: pointer;
       }
@@ -404,18 +384,19 @@
   // ---------------------------------------------------------------------------
   // layout for vertically split list item, card and combined expanded header
   // ---------------------------------------------------------------------------
-  #headlines-frame[data-is-wide-screen="true"] .hl,
-  #headlines-frame[data-is-cdm="true"][data-is-cdm-expanded="false"][data-enable-grid="true"]
-    .header,
-  .cdm.expanded .header,
-  .cdm.expandable.active .header {
+  :is(
+      #headlines-frame[data-is-wide-screen="true"] .hl,
+      #headlines-frame[data-is-cdm="true"][data-is-cdm-expanded="false"][data-enable-grid="true"]
+        .header,
+      .cdm.expanded .header,
+      .cdm.expandable.active .header
+    ) {
     grid-template-areas:
       "icon feed feed updated actions"
       "title title title title title";
     grid-template-rows: auto 1fr;
 
-    > .title,
-    > .titleWrap {
+    > :is(.title, .titleWrap) {
       box-sizing: border-box;
       width: 100%;
     }
@@ -477,9 +458,7 @@
       position: absolute;
       right: 136px;
     }
-    .feed-title,
-    .whiteBox,
-    #headlines-spacer {
+    :is(.feed-title, .whiteBox, #headlines-spacer) {
       grid-column: 1 / -1;
     }
   }
@@ -541,8 +520,7 @@
         @header-bottom: calc(@margin-y + @header-height);
 
         &::before,
-        .header,
-        .content {
+        :is(.header, .content) {
           position: fixed !important;
           z-index: 20;
         }
@@ -554,8 +532,7 @@
           left: 0;
           background-color: rgb(0 0 0 / 40%);
         }
-        .header,
-        .content {
+        :is(.header, .content) {
           right: @margin-x;
           bottom: @margin-y;
           left: @margin-x;

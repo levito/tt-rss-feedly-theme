@@ -124,8 +124,7 @@ body.flat {
     ) {
     border-radius: 4px;
   }
-  .dijitMultiSelect,
-  .dijitSelectActive {
+  :is(.dijitMultiSelect, .dijitSelectActive) {
     box-shadow: none;
   }
   .dijitToolbar {
@@ -154,8 +153,7 @@ body.flat {
     padding: 0;
     border: none;
   }
-  .dijitMultiSelect,
-  .dijitTab.dijitActive {
+  :is(.dijitMultiSelect, .dijitTab.dijitActive) {
     color: @default-text;
   }
   .dijitTab:not(.dijitChecked) {
@@ -174,8 +172,7 @@ body.flat {
       color: @default-text;
     }
   }
-  &.flat code,
-  &.flat pre,
+  &.flat :is(code, pre),
   .dijitTextArea {
     font-family: var(--fonts-mono);
   }
@@ -187,8 +184,7 @@ body.flat {
       content: "\f006";
     }
   }
-  .dijitTreeExpandoClosed,
-  .dijitTreeExpandoOpened {
+  :is(.dijitTreeExpandoClosed, .dijitTreeExpandoOpened) {
     position: relative;
     top: -1px;
     left: -2px;

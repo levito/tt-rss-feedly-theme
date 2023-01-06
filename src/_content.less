@@ -48,12 +48,7 @@
   .content {
     margin: -5px;
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
+    :is(h1, h2, h3, h4, h5, h6) {
       margin-top: calc(2.5 * var(--font-size-post));
       margin-bottom: var(--font-size-post);
       font: normal normal bold 1em / 1 var(--fonts-heading);
@@ -87,8 +82,7 @@
     tr {
       vertical-align: top;
     }
-    th,
-    td {
+    :is(th, td) {
       padding: 0 0.5em;
       border: 1px solid @color-fade3;
     }
@@ -96,8 +90,7 @@
       background-color: @color-fade1;
     }
     table[border="0"] {
-      th,
-      td {
+      :is(th, td) {
         padding: 0;
         border: 0;
       }
@@ -121,8 +114,7 @@
       font-style: italic;
       line-height: 1.333;
     }
-    pre,
-    code {
+    :is(pre, code) {
       border: 1px solid @color-fade1;
       background-color: @color-fade1;
       color: inherit !important;
@@ -145,8 +137,7 @@
       background-color: transparent;
       font-size: 1em;
     }
-    q,
-    blockquote {
+    :is(q, blockquote) {
       display: block;
       margin: 1em 0;
       padding: 0.31em 1em;

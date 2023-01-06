@@ -139,20 +139,17 @@ body.ttrss_prefs {
   // ---------------------------------------------------------------------------
   // plugin "effective config"
   #config-items-list {
-    th,
-    td {
+    :is(th, td) {
       padding: 8px 12px;
     }
-    tr:hover,
-    td.gray {
+    :is(tr:hover, td.gray) {
       background-color: @color-fade2;
     }
     th,
     td:not(:last-child) {
       border-color: @border-light;
     }
-    .envvar_prefix,
-    td.redacted {
+    :is(.envvar_prefix, td.redacted) {
       opacity: 1;
       color: @color-fade5;
     }
