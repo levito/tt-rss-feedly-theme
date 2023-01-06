@@ -25,23 +25,31 @@ Install steps (If you did not find the description on the [TT-RSS Homepage](http
 
 There are different color schemes available. If you choose the `auto` variants, your OS/browser will decide whether to use the light or dark color scheme.
 
-You can configure the post content font size and the general UI spacing by using the `Customize` button in the TT-RSS settings and adding and adjusting this chunk of CSS code:
+You can configure the fonts and the UI spacing by using the `Customize` button in the TT-RSS settings and adding and adjusting this chunk of CSS code:
 
 ```css
 /* These are the default settings for feedly.css */
 :root {
-  --base-spacing: 30px;
-  --font-size-post: 14px;
+  --base-spacing: 45px;
+  --font-size-post: 16px;
   --fonts-ui: "Helvetica Neue", Arial, Helvetica, "Liberation Sans",
     "Nimbus Sans L", FreeSans, sans-serif;
   --fonts-content: var(--fonts-ui);
   --fonts-heading: SansCn;
-  --fonts-mono: Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono",
-    "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
+  --fonts-mono: "Fira Code", Menlo, Monaco, Consolas, "Lucida Console",
+    "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono",
+    "Courier New", monospace;
 }
 ```
 
-`feedly_cozy` and `feedly_compact` are two examples preconfigured with different font-size and spacing values. They might be removed in the future in favor of using TT-RSS custom styles for this kind of adjustment.
+For a more compact spacing, try using the following custom CSS:
+
+```css
+:root {
+  --base-spacing: 30px;
+  --font-size-post: 14px;
+}
+```
 
 ## Development
 

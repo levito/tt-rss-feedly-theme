@@ -1,7 +1,0 @@
-@import 'feedly.css' (prefers-color-scheme: light);
-@import 'feedly_night.css' (prefers-color-scheme: dark);
-
-:root {
-  --base-spacing: 40px;
-  --font-size-post: 16px;
-}
