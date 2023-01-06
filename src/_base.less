@@ -163,6 +163,10 @@ body.ttrss_main {
       opacity: 0.6;
       font-size: 13px;
     }
+    // preferences > personal > app passwords
+    #app_passwords_holder .dijitToolbar {
+      margin: 0 0 8px;
+    }
 
     .phpinfo {
       img {
@@ -369,12 +373,34 @@ body.ttrss_main {
     border-radius: 4px;
   }
   .dijitMultiSelect,
-  .dijitSelectActive,
-  .dijitToolbar
+  .dijitSelectActive {
+    box-shadow: none;
+  }
+  .dijitToolbar {
+    margin: 8px;
+    padding: 4px;
+    border: 1px solid @color-fade2;
+    border-radius: 4px;
+
     :is(.dijitButton, .dijitComboButton, .dijitDropDownButton, .dijitSelect) {
-    &:is(.dijitActive, .dijitFocused):not(.dijitDisabled) {
-      box-shadow: none;
+      &:is(.dijitActive, .dijitFocused):not(.dijitDisabled) {
+        box-shadow: none;
+      }
     }
+    // event log severity selector
+    .dijitSelect {
+      margin: 4px;
+
+      .dijitButtonNode {
+        padding-top: 2px;
+        padding-bottom: 2px;
+      }
+    }
+  }
+  .dijitDialogPaneContent .dijitToolbar {
+    margin: 0;
+    padding: 0;
+    border: none;
   }
   .dijitMultiSelect,
   .dijitTab.dijitActive {
