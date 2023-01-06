@@ -49,7 +49,7 @@
   height: 4px;
 }
 
-body.flat.ttrss_main ::-webkit-scrollbar-track {
+body.flat.flat ::-webkit-scrollbar-track {
   background-color: transparent;
 }
 
@@ -57,14 +57,14 @@ body.flat.ttrss_main ::-webkit-scrollbar-track {
   left: -101vw !important;
 }
 
-body.ttrss_main {
+body.flat {
   background-color: @default-bg;
   color: @default-text;
 
   #main {
     background-color: @color-panel-bg !important;
   }
-  &:not(.ttrss_prefs) #main {
+  &.ttrss_index #main {
     padding-left: @feeds-toggle-width;
   }
 
