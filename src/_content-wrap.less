@@ -26,16 +26,21 @@
     order: 1;
     transform: scale(1.167); // 18px => 21px without changing dimensions
   }
-  .tags + a {
-    .interactive-icon();
-    font-family: "Material Icons";
-    font-size: 0;
-    line-height: 1;
-    text-decoration: none;
+  .tags {
+    overflow: hidden;
+    text-overflow: ellipsis;
 
-    &::after {
-      content: "add";
-      font-size: 18px;
+    + a {
+      .interactive-icon();
+      font-family: "Material Icons";
+      font-size: 0;
+      line-height: 1;
+      text-decoration: none;
+
+      &::after {
+        content: "add";
+        font-size: 18px;
+      }
     }
   }
 
