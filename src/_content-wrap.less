@@ -50,7 +50,7 @@
     }
     .header {
       display: block;
-      background-color: mix(@default-fg, @default-bg, 4%);
+      background-color: mix(@default-fg, @default-bg, @fade1);
       color: @fg-text-muted;
       font-size: 11px;
     }
@@ -126,7 +126,7 @@
         box-shadow: none;
 
         &::before {
-          color: mix(@default-fg, @default-bg, 7%);
+          color: mix(@default-fg, @default-bg, @fade2);
         }
         &:hover {
           background-color: @color-fade6;
@@ -250,18 +250,18 @@
   .hl {
     &.marked {
       z-index: 1;
-      border-color: mix(@color-marked, @default-bg, 45%);
-      background-color: mix(@color-marked, @default-bg, 15%);
+      border-color: mix(@color-marked, @default-bg, @fade6);
+      background-color: mix(@color-marked, @default-bg, @fade3);
     }
     &.published {
       z-index: 1;
-      border-color: mix(@color-published, @default-bg, 45%);
-      background-color: mix(@color-published, @default-bg, 15%);
+      border-color: mix(@color-published, @default-bg, @fade6);
+      background-color: mix(@color-published, @default-bg, @fade3);
     }
     &:is(.active, .Selected) {
       z-index: 1;
-      border-color: mix(@color-checked, @default-bg, 45%);
-      background-color: mix(@color-checked, @default-bg, 15%) !important;
+      border-color: mix(@color-checked, @default-bg, @fade6);
+      background-color: mix(@color-checked, @default-bg, @fade3) !important;
     }
     .title {
       color: @fg-text-muted;

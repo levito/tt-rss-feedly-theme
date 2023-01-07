@@ -10,23 +10,32 @@
     "Courier New", monospace;
 }
 
+@fade1: (55% / 15);
+@fade2: (100% / 15);
+@fade3: (200% / 15);
+@fade4: (300% / 15);
+@fade5: (400% / 15);
+@fade6: (600% / 15);
+@fade7: (900% / 15);
+@fade8: (1100% / 15);
+
 @default-fg: #000;
 @default-bg: #fff;
 @color-published: #e84;
 @color-marked: #6b5;
 @color-checked: #db0;
 @color-error: #c00c;
-@color-input: lighten(@default-bg, 4%);
+@color-input: lighten(@default-bg, @fade1);
 
 @color-fade0: fade(@default-fg, 0%);
-@color-fade1: fade(@default-fg, 4%);
-@color-fade2: fade(@default-fg, 7%);
-@color-fade3: fade(@default-fg, 15%);
-@color-fade4: fade(@default-fg, 22%);
-@color-fade5: fade(@default-fg, 30%);
-@color-fade6: fade(@default-fg, 45%);
-@color-fade7: fade(@default-fg, 60%);
-@color-fade8: fade(@default-fg, 75%);
+@color-fade1: fade(@default-fg, @fade1);
+@color-fade2: fade(@default-fg, @fade2);
+@color-fade3: fade(@default-fg, @fade3);
+@color-fade4: fade(@default-fg, @fade4);
+@color-fade5: fade(@default-fg, @fade5);
+@color-fade6: fade(@default-fg, @fade6);
+@color-fade7: fade(@default-fg, @fade7);
+@color-fade8: fade(@default-fg, @fade8);
 
 @color-panel-bg: @color-fade2;
 @border-default: @color-fade2;

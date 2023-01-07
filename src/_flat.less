@@ -28,7 +28,7 @@ body.flat {
   :is(.dijitButton, .dijitDropDownButton) .dijitButtonNode,
   .dijitTextBox :is(.dijitDownArrowButton, .dijitUpArrowButton),
   .dijitToolbar {
-    background-color: mix(@default-fg, @default-bg, 4%);
+    background-color: mix(@default-fg, @default-bg, @fade1);
   }
   .dijitAccordionInnerContainer.dijitHover,
   .dijitButton.dijitButton:not(.dijit):hover,
@@ -37,7 +37,7 @@ body.flat {
   .dijitTextBox :is(.dijitDownArrowButtonHover, .dijitUpArrowButtonHover),
   .dijitToolbar .dijitHover:not(.dijitSelect) .dijitButtonNode,
   .dijitTreeRowHover {
-    background-color: mix(@default-fg, @default-bg, 7%);
+    background-color: mix(@default-fg, @default-bg, @fade2);
   }
   &.ttrss_prefs #header > a:active,
   .dijitAccordionInnerContainer.dijitActive,
@@ -46,13 +46,13 @@ body.flat {
   .dijitTab.dijitActive:not(.dijitChecked),
   .dijitTextBox :is(.dijitDownArrowButtonActive, .dijitUpArrowButtonActive),
   .dijitToolbar .dijitActive:not(.dijitSelect) .dijitButtonNode {
-    background-color: shade(@default-bg, 15%);
+    background-color: shade(@default-bg, @fade3);
   }
   .dijitAccordionInnerContainer {
     transition-duration: 0.1s;
 
     &.dijitSelected {
-      background-color: mix(@color-accent, @default-bg, 45%);
+      background-color: mix(@color-accent, @default-bg, @fade6);
 
       .dijitAccordionTitle {
         border-bottom-right-radius: 0;
@@ -113,7 +113,7 @@ body.flat {
       .dijitTextBox
     ) {
     &:is(.dijitActive, .dijitFocused):not(.dijitDisabled) {
-      box-shadow: 0 0 0 2px fade(@color-accent, 45%);
+      box-shadow: 0 0 0 2px fade(@color-accent, @fade6);
     }
   }
   :is(
