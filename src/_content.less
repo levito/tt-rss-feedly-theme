@@ -33,14 +33,18 @@
     }
     .dijitButtonNode {
       border-color: @color-fade1;
-      background-color: fade(@default-fg, 10%);
-      color: @color-fade7;
+      background-color: @color-button;
+      color: @fg-text-muted;
       font-size: 12px;
       font-weight: bold;
 
       &:hover {
-        background-color: fade(@default-fg, 12%);
-        color: @color-fade8;
+        background-color: @color-button-hover;
+        color: @default-text;
+      }
+
+      &:active {
+        background-color: @color-button-active;
       }
     }
   }

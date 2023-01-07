@@ -28,7 +28,7 @@ body.flat {
   :is(.dijitButton, .dijitDropDownButton) .dijitButtonNode,
   .dijitTextBox :is(.dijitDownArrowButton, .dijitUpArrowButton),
   .dijitToolbar {
-    background-color: mix(@default-fg, @default-bg, @fade1);
+    background-color: @color-button;
   }
   .dijitAccordionInnerContainer.dijitHover,
   .dijitButton.dijitButton:not(.dijit):hover,
@@ -37,7 +37,7 @@ body.flat {
   .dijitTextBox :is(.dijitDownArrowButtonHover, .dijitUpArrowButtonHover),
   .dijitToolbar .dijitHover:not(.dijitSelect) .dijitButtonNode,
   .dijitTreeRowHover {
-    background-color: mix(@default-fg, @default-bg, @fade2);
+    background-color: @color-button-hover;
   }
   &.ttrss_prefs #header > a:active,
   .dijitAccordionInnerContainer.dijitActive,
@@ -46,7 +46,7 @@ body.flat {
   .dijitTab.dijitActive:not(.dijitChecked),
   .dijitTextBox :is(.dijitDownArrowButtonActive, .dijitUpArrowButtonActive),
   .dijitToolbar .dijitActive:not(.dijitSelect) .dijitButtonNode {
-    background-color: shade(@default-bg, @fade3);
+    background-color: @color-button-active;
   }
   .dijitAccordionInnerContainer {
     transition-duration: 0.1s;
@@ -186,6 +186,6 @@ body.flat {
     display: none;
   }
   .dijitDialogUnderlay {
-    opacity: 0.4;
+    opacity: @fade6;
   }
 }
