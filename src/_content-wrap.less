@@ -230,10 +230,8 @@
       font-size: 13px;
       text-decoration: none;
     }
-    &.Unread {
-      .title {
-        color: @default-text;
-      }
+    &.Unread .title {
+      color: @default-text;
     }
     &:not(.marked) .marked-pic,
     &:not(.published) .pub-pic,
@@ -269,10 +267,8 @@
     .title {
       color: @fg-text-muted;
     }
-    &.Unread {
-      .title {
-        color: @default-text;
-      }
+    &.Unread .title {
+      color: @default-text;
     }
     &:not(.marked) .marked-pic,
     &:not(.published) .pub-pic,
@@ -307,6 +303,10 @@
 
       .titleWrap {
         word-break: unset;
+      }
+
+      &:not(.active, .Unread) .title {
+        color: @fg-text-muted;
       }
     }
     &.active {
