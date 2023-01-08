@@ -303,13 +303,21 @@
   // combined expanded
   // ---------------------------------------------------------------------------
   .cdm {
+    .title {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      overflow: hidden;
+    }
+    &[data-enable-grid="false"] .expandable:not(.active) .title {
+      display: inline;
+    }
     &.expanded {
       border-color: @border-default !important;
 
       .titleWrap {
         word-break: unset;
       }
-
       &:not(.active, .Unread) .title {
         color: @fg-text-muted;
       }
@@ -333,8 +341,6 @@
       }
       .title {
         .heading-font-size(0);
-
-        display: block;
         font-family: var(--fonts-heading);
         -webkit-font-smoothing: antialiased;
         font-weight: bold;
@@ -478,12 +484,6 @@
       border-right: none;
       border-left: none;
     }
-    .title {
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 2;
-      overflow: hidden;
-    }
     .content {
       border: none;
       background-color: transparent;
@@ -565,6 +565,9 @@
           bottom: 0;
           left: 0;
           background-color: e("rgb(0 0 0 / @{fade6})");
+        }
+        .title {
+          -webkit-line-clamp: 2;
         }
         :is(.header, .content) {
           right: @margin-x;
