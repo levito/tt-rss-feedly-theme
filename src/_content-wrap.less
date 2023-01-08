@@ -91,18 +91,13 @@
   // ---------------------------------------------------------------------------
   :is(.header, .hl) {
     display: grid;
-    grid-template-areas: "icon feed title updated actions";
-    grid-template-columns: auto 130px 1fr auto auto;
+    grid-template-areas: "feed title updated icon actions";
+    grid-template-columns: 160px 1fr auto auto auto;
 
     > * {
       align-items: center;
       min-height: calc(@headline-height - 2px);
-      padding: 1px;
-    }
-    > .right {
-      z-index: 1;
-      grid-area: icon;
-      line-height: 1;
+      padding: 1px 0;
     }
     > .feed {
       grid-area: feed;
@@ -118,11 +113,16 @@
       grid-area: updated;
       min-height: unset;
     }
+    > .right {
+      z-index: 1;
+      grid-area: icon;
+      line-height: 1;
+    }
     > .left {
       position: relative;
       grid-area: actions;
       flex-direction: row-reverse;
-      padding-left: 28px;
+      padding-right: 1px;
 
       .dijitCheckBox {
         margin-left: 7px;
@@ -147,7 +147,7 @@
       font-size: 18px;
     }
     .updated {
-      padding-left: 5px;
+      padding: 0 4px 0 5px;
     }
   }
   .hl {
@@ -161,10 +161,9 @@
       text-overflow: ellipsis;
     }
   }
-  .icon-score {
+  .icon-feed {
     position: absolute;
-    right: 85px;
-    opacity: 1;
+    left: 1px;
   }
 
   // ---------------------------------------------------------------------------
@@ -172,8 +171,9 @@
   // ---------------------------------------------------------------------------
   :is(a.feed, .feed a) {
     box-sizing: border-box;
-    max-width: calc(100% - 5px);
+    max-width: calc(100% - 31px);
     min-height: 0;
+    margin-left: 26px;
     padding: 1px 6px;
     overflow: hidden;
     border: 1px solid @color-fade1;
@@ -185,8 +185,6 @@
   a.feed {
     display: block;
     justify-self: start;
-    max-width: calc(100% - 7px);
-    margin: 1px;
   }
   // for backward-compatibility with tt-rss before https://git.tt-rss.org/fox/tt-rss.git/commit/?id=df7b2e79849419fcc278c0549fdf10c094991558
   div.feed {
@@ -199,7 +197,7 @@
   // ---------------------------------------------------------------------------
   #headlines-frame[is-vfeed="0"] {
     :is(.header, .hl) {
-      grid-template-columns: auto auto 1fr auto auto;
+      grid-template-columns: auto 1fr auto auto auto;
     }
 
     .feed {
@@ -292,11 +290,6 @@
         display: none;
       }
     }
-    &:not(:hover) {
-      .left {
-        padding-left: 2px;
-      }
-    }
   }
 
   // ---------------------------------------------------------------------------
@@ -346,8 +339,8 @@
         font-weight: bold;
         text-rendering: optimizeLegibility;
       }
-      .icon-score {
-        right: 110px;
+      .icon-feed {
+        left: 26px;
       }
     }
     &.expandable:not(.active) {
@@ -402,7 +395,7 @@
       .cdm.expandable.active .header
     ) {
     grid-template-areas:
-      "icon feed feed updated actions"
+      "feed feed updated icon actions"
       "title title title title title";
     grid-template-rows: auto 1fr;
 
@@ -439,9 +432,6 @@
     @container (min-width: 500px) {
       .hl :is(.marked-pic, .pub-pic, .dijitCheckBox, .icon-score, .updated) {
         display: block !important;
-      }
-      .hl > .left {
-        padding-left: 28px !important;
       }
     }
   }
@@ -488,21 +478,8 @@
       border: none;
       background-color: transparent;
     }
-    .icon-grid-span {
-      position: absolute;
-      right: 136px;
-    }
     :is(.feed-title, .whiteBox, #headlines-spacer) {
       grid-column: 1 / -1;
-    }
-  }
-
-  // ---------------------------------------------------------------------------
-  // grid view
-  // ---------------------------------------------------------------------------
-  #headlines-frame[data-is-cdm="true"][data-is-cdm-expanded="true"][data-enable-grid="true"] {
-    .header > .left {
-      padding-left: 54px;
     }
   }
 
@@ -525,7 +502,7 @@
         border-color: @border-default !important;
 
         .header {
-          grid-template-columns: auto auto 1fr auto auto;
+          grid-template-columns: auto 1fr auto auto auto;
           flex: 1;
           padding: calc(var(--base-spacing) / 6) calc(var(--base-spacing) / 4);
         }
@@ -540,8 +517,8 @@
           font-size: var(--font-size-post);
           white-space: normal;
         }
-        .icon-score {
-          right: calc(85px + var(--base-spacing) / 4);
+        .icon-feed {
+          left: calc(1px + var(--base-spacing) / 4);
         }
       }
       &.active {
@@ -615,8 +592,8 @@
             background-color: transparent;
           }
         }
-        .icon-score {
-          right: calc(@padding-x + 85px);
+        .icon-feed {
+          left: calc(@padding-x + 1px);
         }
       }
     }
