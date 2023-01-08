@@ -146,6 +146,9 @@
       color: @color-fade6;
       font-size: 18px;
     }
+    .updated {
+      padding-left: 5px;
+    }
   }
   .hl {
     > * {
@@ -156,9 +159,6 @@
     :is(.title .hl-content) {
       overflow: hidden;
       text-overflow: ellipsis;
-    }
-    .updated {
-      padding: 0;
     }
   }
   .icon-score {
@@ -391,8 +391,7 @@
   // ---------------------------------------------------------------------------
   :is(
       #headlines-frame[data-is-wide-screen="true"] .hl,
-      #headlines-frame[data-is-cdm="true"][data-is-cdm-expanded="false"][data-enable-grid="true"]
-        .header,
+      #headlines-frame[data-is-cdm="true"][data-enable-grid="true"] .header,
       .cdm.expanded .header,
       .cdm.expandable.active .header
     ) {
@@ -408,6 +407,22 @@
     > .titleWrap,
     .excerpt {
       white-space: normal;
+    }
+  }
+
+  // single feed: move updated to the left and always show action icons
+  :is(
+      #headlines-frame[is-vfeed="0"][data-is-wide-screen="true"] .hl,
+      #headlines-frame[is-vfeed="0"][data-enable-grid="true"] .cdm .header,
+      #headlines-frame[is-vfeed="0"] .cdm.expanded .header,
+      #headlines-frame[is-vfeed="0"] .cdm.expandable.active .header
+    ) {
+    grid-template-areas:
+      "updated updated updated icon actions"
+      "title title title title title";
+
+    :is(.marked-pic, .pub-pic, .dijitCheckBox, .icon-score, .updated) {
+      display: block;
     }
   }
 
