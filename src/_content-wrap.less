@@ -426,6 +426,20 @@
     }
   }
 
+  // show action icons in vertically split list items if they are wide enough
+  #headlines-frame[data-is-wide-screen="true"][data-is-cdm="false"] {
+    container-type: inline-size;
+
+    @container (min-width: 500px) {
+      .hl :is(.marked-pic, .pub-pic, .dijitCheckBox, .icon-score, .updated) {
+        display: block !important;
+      }
+      .hl > .left {
+        padding-left: 28px !important;
+      }
+    }
+  }
+
   // ---------------------------------------------------------------------------
   // vertically split list item and detail overrides
   // ---------------------------------------------------------------------------
