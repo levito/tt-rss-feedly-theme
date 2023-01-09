@@ -54,11 +54,11 @@
 @feeds-toggle-width: var(--base-spacing);
 @feeds-spacing: calc(var(--base-spacing) - 10px);
 @headline-height: var(--base-spacing);
-@content-spacing-right: e("var(--base-spacing) + 4px");
-@content-spacing-left: e("var(--base-spacing) - 4px");
+@content-spacing-right: e("(var(--base-spacing) + 4px)");
+@content-spacing-left: e("(var(--base-spacing) - 4px)");
 
 .heading-font-size(@level: 0) {
-  @font-size: e("var(--font-size-post) + 10px - 2px * @{level}");
+  @font-size: e("(var(--font-size-post) + 10px - 2px * @{level})");
 
   font-size: calc(@font-size);
   line-height: calc(@font-size + 6px);
