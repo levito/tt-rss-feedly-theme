@@ -1,6 +1,13 @@
 @import "_variables.less";
 
 #content-wrap#content-wrap {
+  @header-icon-height: 25px;
+  @expanded-padding: @header-icon-height;
+  @title-padding: e("((@{headline-height} - 17px) / 2)");
+  @sticky-shift: e(
+    "((@{headline-height} - @{header-icon-height}) / 2 + @{title-padding})"
+  );
+
   margin-left: -5px;
   overflow: visible;
 
@@ -13,6 +20,20 @@
     padding-right: calc(@content-spacing-right);
     padding-left: calc(@content-spacing-left);
     transform: none;
+
+    // move headlines-frame up and children down so cdm header doesn't stick too early
+    // especially exclude cards from transform so the overlay keeps working
+    &.cdm:not([data-enable-grid="true"][data-is-cdm-expanded="false"]) {
+      @shift: calc(@headline-height + @expanded-padding);
+
+      margin-top: calc(-1 * @expanded-padding);
+      padding-top: 0;
+      padding-bottom: @shift;
+
+      > * {
+        transform: translateY(@shift);
+      }
+    }
   }
 
   .dijitContentPane {
@@ -100,7 +121,7 @@
       grid-area: title;
       width: auto;
       min-height: unset;
-      padding: calc((@headline-height - 17px) / 2) 5px;
+      padding: calc(@title-padding) 5px;
     }
     // date
     > :nth-child(4) {
@@ -308,18 +329,25 @@
       border-color: @color-fade3 !important;
     }
     &:is(.expanded, .expandable.active) {
-      @padding: 25px;
-
       margin-bottom: 17px;
       background-color: transparent !important;
 
       .header {
-        position: sticky !important;
-        top: calc(-1 * @headline-height - @padding);
-        padding: @padding @padding 0;
+        top: calc(-1 * @headline-height - @expanded-padding - @sticky-shift);
+        padding: @expanded-padding @expanded-padding 0;
+
+        > *:not(.title) {
+          transition: margin 0.2s;
+        }
+        &[data-is-stuck="true"] {
+          > *:not(.titleWrap) {
+            margin-top: calc(@sticky-shift);
+            margin-bottom: calc(-1 * @sticky-shift);
+          }
+        }
       }
       .content {
-        padding: 0 @padding @padding;
+        padding: 0 @expanded-padding @expanded-padding;
       }
       .title {
         .heading-font-size(0);
@@ -329,7 +357,7 @@
         text-rendering: optimizeLegibility;
       }
       .icon-feed {
-        left: 26px;
+        left: calc(@expanded-padding + 1px);
       }
     }
     &.expandable:not(.active) {
