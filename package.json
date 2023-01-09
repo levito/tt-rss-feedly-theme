@@ -24,6 +24,9 @@
       "prettier --write"
     ]
   },
+  "prettier": {
+    "printWidth": 120
+  },
   "stylelint": {
     "extends": "stylelint-config-property-sort-order-smacss",
     "customSyntax": "postcss-less",

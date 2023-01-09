@@ -32,8 +32,7 @@ body.flat {
   }
   .dijitAccordionInnerContainer.dijitHover,
   .dijitButton.dijitButton:not(.dijit):hover,
-  :is(.dijitButton, .dijitDropDownButton):where(.dijitFocused, .dijitHover)
-    .dijitButtonNode,
+  :is(.dijitButton, .dijitDropDownButton):where(.dijitFocused, .dijitHover) .dijitButtonNode,
   .dijitTextBox :is(.dijitDownArrowButtonHover, .dijitUpArrowButtonHover),
   .dijitToolbar .dijitHover:not(.dijitSelect) .dijitButtonNode,
   .dijitTreeRowHover {
@@ -116,12 +115,7 @@ body.flat {
       box-shadow: 0 0 0 2px fade(@color-accent, @fade6);
     }
   }
-  :is(
-      .dijitButton,
-      .dijitComboButton,
-      .dijitDropDownButton,
-      .dijitMultiSelect
-    ) {
+  :is(.dijitButton, .dijitComboButton, .dijitDropDownButton, .dijitMultiSelect) {
     border-radius: 4px;
   }
   :is(.dijitMultiSelect, .dijitSelectActive) {

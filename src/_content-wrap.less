@@ -53,8 +53,7 @@
   .post {
     :is(.header, .content) {
       margin: 0;
-      padding: 10px calc(@content-spacing-right + 6px) 6px
-        calc(@content-spacing-left + 6px);
+      padding: 10px calc(@content-spacing-right + 6px) 6px calc(@content-spacing-left + 6px);
     }
     .header {
       background-color: mix(@default-fg, @default-bg, @fade1);
@@ -320,9 +319,7 @@
       }
       .header {
         @icon-height: 25px;
-        @shift: e(
-          "((@{headline-height} - @{icon-height}) / 2 + @{title-padding})"
-        );
+        @shift: e("((@{headline-height} - @{icon-height}) / 2 + @{title-padding})");
 
         top: calc(-1 * @headline-height - @expanded-padding - @shift);
         padding: @expanded-padding @expanded-padding 0;
@@ -533,9 +530,7 @@
         @margin-x: 14vw;
         @margin-y: var(--base-spacing);
         @padding-x: 7vw;
-        @header-height: e(
-          "var(--font-size-post) * 2 + var(--base-spacing) * 2 + 56px"
-        );
+        @header-height: e("var(--font-size-post) * 2 + var(--base-spacing) * 2 + 56px");
         @header-bottom: calc(@margin-y + @header-height);
 
         &::before,
@@ -566,8 +561,7 @@
         .header {
           top: @margin-y;
           backdrop-filter: none;
-          box-shadow: 0 7px 3px -4px rgb(0 0 0 / 30%),
-            0 8px 8px rgb(0 0 0 / 20%);
+          box-shadow: 0 7px 3px -4px rgb(0 0 0 / 30%), 0 8px 8px rgb(0 0 0 / 20%);
 
           &::after {
             content: "";
