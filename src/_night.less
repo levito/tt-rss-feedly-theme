@@ -21,6 +21,19 @@
       filter: none;
     }
   }
+  :is(.dijitCheckBox, .material-icons) {
+    opacity: 1;
+  }
+  .cdm[data-article-id] {
+    :is(.dijitCheckBox, .marked-pic, .pub-pic) {
+      transition: all 0.2s !important;
+    }
+    &.marked .marked-pic,
+    &.published .pub-pic,
+    .dijitCheckBox.dijitChecked {
+      opacity: 0.75;
+    }
+  }
 }
 .notify {
   color: #000b;
