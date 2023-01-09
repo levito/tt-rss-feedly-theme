@@ -19,6 +19,11 @@
     background-color: @default-bg;
   }
 
+  // reset opacity for night themes
+  :is(.material-icons, .dijitCheckBox) {
+    opacity: 1;
+  }
+
   // ---------------------------------------------------------------------------
   // split detail header, combined expanded footer
   // ---------------------------------------------------------------------------
@@ -118,11 +123,6 @@
       flex-direction: row-reverse;
       padding-right: 1px;
     }
-    .icon-no-feed {
-      opacity: 1;
-      color: @color-fade6;
-      font-size: 18px;
-    }
     .updated {
       padding: 0 4px 0 5px;
     }
@@ -138,14 +138,18 @@
       text-overflow: ellipsis;
     }
   }
+
+  // ---------------------------------------------------------------------------
+  // shared feed icon and name styles for all layouts
+  // ---------------------------------------------------------------------------
   .icon-feed {
     position: absolute;
     left: 1px;
   }
-
-  // ---------------------------------------------------------------------------
-  // shared feed name styles for all layouts
-  // ---------------------------------------------------------------------------
+  .icon-no-feed {
+    color: @color-fade6;
+    font-size: 18px;
+  }
   :is(a.feed, .feed a) {
     box-sizing: border-box;
     max-width: calc(100% - 31px);
@@ -160,7 +164,6 @@
     text-overflow: ellipsis;
   }
   a.feed {
-    display: block;
     justify-self: start;
   }
   // for backward-compatibility with tt-rss before https://git.tt-rss.org/fox/tt-rss.git/commit/?id=df7b2e79849419fcc278c0549fdf10c094991558
@@ -234,9 +237,6 @@
     :is(.icon-anchor, .icon-score, .icon-grid-span),
     .right .material-icons:not(.icon-no-feed) {
       .interactive-icon();
-    }
-    :is(.material-icons, .dijitCheckBox) {
-      opacity: 1;
     }
   }
 
