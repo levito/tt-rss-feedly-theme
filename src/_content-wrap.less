@@ -1,8 +1,7 @@
 @import "_variables.less";
 
 #content-wrap#content-wrap {
-  @header-icon-height: 25px;
-  @expanded-padding: @header-icon-height;
+  @expanded-padding: 25px;
   @title-padding: e("((@{headline-height} - 17px) / 2)");
 
   margin-left: -5px;
@@ -17,17 +16,6 @@
     padding-right: calc(@content-spacing-right);
     padding-left: calc(@content-spacing-left);
     transform: none;
-
-    // move headlines-frame up and children down so cdm header doesn't stick too early
-    // especially exclude cards from transform so the overlay keeps working
-    &.cdm:not([data-enable-grid="true"][data-is-cdm-expanded="false"]) {
-      padding-top: 0;
-      padding-bottom: @headline-height;
-
-      > * {
-        transform: translateY(@headline-height);
-      }
-    }
   }
 
   .dijitContentPane {
@@ -326,9 +314,14 @@
       margin-bottom: 17px;
       background-color: transparent !important;
 
+      .header-sticky-guard {
+        position: relative;
+        top: @headline-height;
+      }
       .header {
+        @icon-height: 25px;
         @shift: e(
-          "((@{headline-height} - @{header-icon-height}) / 2 + @{title-padding})"
+          "((@{headline-height} - @{icon-height}) / 2 + @{title-padding})"
         );
 
         top: calc(-1 * @headline-height - @expanded-padding - @shift);
