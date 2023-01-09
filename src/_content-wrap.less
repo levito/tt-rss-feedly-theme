@@ -123,23 +123,6 @@
       grid-area: actions;
       flex-direction: row-reverse;
       padding-right: 1px;
-
-      .dijitCheckBox {
-        margin-left: 8px;
-        border-color: transparent;
-        background-color: @color-fade5;
-        box-shadow: none;
-
-        &::before {
-          color: @default-bg;
-        }
-        &:hover {
-          background-color: @color-fade6;
-        }
-        &.dijitCheckBoxChecked {
-          background-color: @color-checked;
-        }
-      }
     }
     .icon-no-feed {
       opacity: 1;
@@ -235,6 +218,22 @@
     }
     &.Unread .title {
       color: @default-text;
+    }
+    .dijitCheckBox {
+      margin-left: 8px;
+      border-color: transparent;
+      background-color: @color-fade5;
+      box-shadow: none;
+
+      &::before {
+        color: @default-bg;
+      }
+      &:hover {
+        background-color: @color-fade6;
+      }
+      &.dijitChecked {
+        background-color: @color-checked;
+      }
     }
     &:not(.marked) .marked-pic,
     &:not(.published) .pub-pic,
