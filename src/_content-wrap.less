@@ -378,7 +378,7 @@
   // ---------------------------------------------------------------------------
   :is(
       #headlines-frame[data-is-wide-screen="true"] .hl,
-      #headlines-frame[data-is-cdm="true"][data-enable-grid="true"] .header,
+      #headlines-frame.cdm[data-enable-grid="true"] .header,
       .cdm.expanded .header,
       .cdm.expandable.active .header
     ) {
@@ -453,7 +453,7 @@
   // ---------------------------------------------------------------------------
   // cards/grid shared styles
   // ---------------------------------------------------------------------------
-  #headlines-frame[data-is-cdm="true"][data-enable-grid="true"] {
+  #headlines-frame.cdm[data-enable-grid="true"] {
     grid-gap: 0 17px;
     padding-bottom: 0;
 
@@ -474,7 +474,7 @@
   // ---------------------------------------------------------------------------
   // cards view with overlay for detail
   // ---------------------------------------------------------------------------
-  #headlines-frame[data-is-cdm="true"][data-is-cdm-expanded="false"][data-enable-grid="true"] {
+  #headlines-frame.cdm[data-enable-grid="true"][data-is-cdm-expanded="false"] {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 
