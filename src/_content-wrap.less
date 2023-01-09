@@ -24,14 +24,11 @@
     // move headlines-frame up and children down so cdm header doesn't stick too early
     // especially exclude cards from transform so the overlay keeps working
     &.cdm:not([data-enable-grid="true"][data-is-cdm-expanded="false"]) {
-      @shift: calc(@headline-height + @expanded-padding);
-
-      margin-top: calc(-1 * @expanded-padding);
       padding-top: 0;
-      padding-bottom: @shift;
+      padding-bottom: @headline-height;
 
       > * {
-        transform: translateY(@shift);
+        transform: translateY(@headline-height);
       }
     }
   }
