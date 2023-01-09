@@ -4,9 +4,6 @@
   @header-icon-height: 25px;
   @expanded-padding: @header-icon-height;
   @title-padding: e("((@{headline-height} - 17px) / 2)");
-  @sticky-shift: e(
-    "((@{headline-height} - @{header-icon-height}) / 2 + @{title-padding})"
-  );
 
   margin-left: -5px;
   overflow: visible;
@@ -330,7 +327,11 @@
       background-color: transparent !important;
 
       .header {
-        top: calc(-1 * @headline-height - @expanded-padding - @sticky-shift);
+        @shift: e(
+          "((@{headline-height} - @{header-icon-height}) / 2 + @{title-padding})"
+        );
+
+        top: calc(-1 * @headline-height - @expanded-padding - @shift);
         padding: @expanded-padding @expanded-padding 0;
 
         > *:not(.title) {
@@ -338,8 +339,8 @@
         }
         &[data-is-stuck="true"] {
           > *:not(.titleWrap) {
-            margin-top: calc(@sticky-shift);
-            margin-bottom: calc(-1 * @sticky-shift);
+            margin-top: calc(@shift);
+            margin-bottom: calc(-1 * @shift);
           }
         }
       }
