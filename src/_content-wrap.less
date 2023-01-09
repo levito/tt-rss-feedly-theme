@@ -54,7 +54,6 @@
         calc(@content-spacing-left + 6px);
     }
     .header {
-      display: block;
       background-color: mix(@default-fg, @default-bg, @fade1);
       color: @fg-text-muted;
       font-size: 11px;
@@ -63,11 +62,6 @@
       font-size: 13px;
       line-height: 1.2;
       word-break: unset;
-    }
-    .header > * {
-      align-items: unset;
-      min-height: unset;
-      padding: 0;
     }
     :is(.author, .tags) {
       margin-right: 4px;
@@ -89,7 +83,7 @@
   // ---------------------------------------------------------------------------
   // single row layout for combined collapsed header and horizontally split list item
   // ---------------------------------------------------------------------------
-  :is(.header, .hl) {
+  :where(.cdm .header, .hl) {
     display: grid;
     grid-template-areas: "feed title updated icon actions";
     grid-template-columns: 160px 1fr auto auto auto;
