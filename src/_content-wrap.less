@@ -1,5 +1,16 @@
 @import "_variables.less";
 
+@keyframes card-overlay {
+  0% {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 #content-wrap#content-wrap {
   @expanded-padding: 25px;
   @title-padding: e("((@{headline-height} - 17px) / 2)");
@@ -542,11 +553,9 @@
         }
       }
       &.active {
-        @margin-x: 14vw;
-        @margin-y: var(--base-spacing);
-        @padding-x: 7vw;
-        @header-height: e("var(--font-size-post) * 2 + var(--base-spacing) * 2 + 56px");
-        @header-bottom: calc(@margin-y + @header-height);
+        @width: 75vw;
+        @padding-x: 10vw;
+        @header-height: calc(var(--font-size-post) * 2 + var(--base-spacing) * 2 + 56px);
 
         #main:has(&) {
           // hide dijitSplitter between feeds-holder and content-wrap when overlay is active
@@ -565,38 +574,45 @@
         :is(.header, .content) {
           position: fixed !important;
           z-index: 20;
+          right: 0;
+          box-sizing: border-box;
+          animation: card-overlay 0.35s ease-out;
         }
+        // backdrop
         &::before {
           content: "";
           top: 0;
-          right: 0;
           bottom: 0;
-          left: 0;
+          left: -50px; // card-overlay animation travel
           background-color: e("rgb(0 0 0 / @{fade6})");
         }
         .title {
           -webkit-line-clamp: 2;
         }
         :is(.header, .content) {
-          right: @margin-x;
-          bottom: @margin-y;
-          left: @margin-x;
+          bottom: 0;
+          width: @width;
           padding-right: @padding-x;
           padding-left: @padding-x;
-          border: 1px solid @color-fade3;
-          background-color: @default-bg !important;
         }
         .header {
-          top: @margin-y;
-          backdrop-filter: none;
-          box-shadow: 0 7px 3px -4px rgb(0 0 0 / 30%), 0 8px 8px rgb(0 0 0 / 20%);
+          top: 0;
 
+          &::before,
           &::after {
             content: "";
             position: absolute;
             z-index: -1;
-            top: calc(@headline-height / 2 + 10px);
             right: 0;
+          }
+          &::before {
+            top: 0;
+            box-sizing: border-box;
+            width: @width;
+            height: @header-height;
+          }
+          &::after {
+            top: calc(@headline-height / 2 + 10px);
             bottom: 0;
             left: 0;
           }
@@ -606,24 +622,28 @@
             margin-bottom: 0;
           }
         }
+        .header::before,
         .content {
-          top: @header-bottom;
+          border-left: 1px solid @color-fade3;
+          background-color: @default-bg;
+        }
+        .content {
+          top: @header-height;
           margin: 0;
           overflow: auto;
-          border-top-color: transparent;
         }
         .content-inner {
           margin: 5px;
         }
         .collapse {
           position: fixed;
-          z-index: -2;
+          z-index: -1;
           bottom: 0;
 
           i {
             align-items: flex-start;
             height: 100%;
-            padding: calc(@margin-y + 10px) calc(@margin-x + 10px);
+            padding: 10px;
             background-color: transparent;
           }
         }
