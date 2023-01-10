@@ -540,6 +540,12 @@
         @header-height: e("var(--font-size-post) * 2 + var(--base-spacing) * 2 + 56px");
         @header-bottom: calc(@margin-y + @header-height);
 
+        #main:has(&) {
+          // hide dijitSplitter between feeds-holder and content-wrap when overlay is active
+          > .dijitSplitter {
+            display: none;
+          }
+        }
         &::before,
         :is(.header, .content) {
           position: fixed !important;
