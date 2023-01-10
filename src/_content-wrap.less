@@ -129,10 +129,10 @@
       position: relative;
       grid-area: actions;
       flex-direction: row-reverse;
-      padding-right: 1px;
+      padding-right: 2px;
     }
     .updated {
-      padding: 0 4px 0 5px;
+      padding: 0 3px 0 5px;
     }
   }
   .hl {
@@ -226,8 +226,8 @@
       color: @default-text;
     }
     .dijitCheckBox {
-      margin-left: 8px;
-      border-color: transparent;
+      margin-left: 7px;
+      border: none;
       background-color: @color-fade5;
       box-shadow: none;
 
@@ -246,6 +246,10 @@
     :is(.icon-anchor, .icon-score, .icon-grid-span),
     .right .material-icons:not(.icon-no-feed) {
       .interactive-icon();
+    }
+    // fine tuning: improve optical icon spacing
+    .pub-pic {
+      transform: translateX(1px);
     }
   }
 
