@@ -545,6 +545,13 @@
           > .dijitSplitter {
             display: none;
           }
+          // don't cut overlay in Safari
+          @supports (-webkit-hyphens: none) {
+            #headlines-wrap-inner,
+            #headlines-frame {
+              overflow: visible;
+            }
+          }
         }
         &::before,
         :is(.header, .content) {
