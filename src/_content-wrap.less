@@ -609,29 +609,22 @@
           -webkit-line-clamp: 2;
         }
         :is(.header, .content) {
-          bottom: 0;
           width: @width;
           padding-right: @padding-x;
           padding-left: @padding-x;
+          border-left: 1px solid @border-default;
+          background-color: @default-bg;
         }
         .header {
           top: 0;
+          height: @header-height;
 
-          &::before,
           &::after {
             content: "";
             position: absolute;
             z-index: -1;
+            top: calc(@collapse-bar-height);
             right: 0;
-          }
-          &::before {
-            top: 0;
-            box-sizing: border-box;
-            width: @width;
-            height: @header-height;
-          }
-          &::after {
-            top: calc(@headline-height / 2 + 10px);
             bottom: 0;
             left: 0;
           }
@@ -641,15 +634,12 @@
             transform: none;
           }
         }
-        .header::before,
-        .content {
-          border-left: 1px solid @color-fade3;
-          background-color: @default-bg;
-        }
         .content {
           top: @header-height;
+          bottom: 0;
           margin: 0;
           overflow: auto;
+          border-top: 1px solid @border-default;
         }
         .content-inner {
           margin: 5px;
