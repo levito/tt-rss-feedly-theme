@@ -375,6 +375,13 @@
       .content {
         padding: 0 @expanded-padding @expanded-padding;
       }
+      .titleWrap {
+        pointer-events: none;
+
+        > * {
+          pointer-events: all;
+        }
+      }
       .title {
         .heading-font-size(0);
         font-family: var(--fonts-heading);
