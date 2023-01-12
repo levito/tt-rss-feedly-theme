@@ -133,9 +133,21 @@
     padding-right: 5px;
   }
   .content-shrink-wrap {
+    position: relative;
     margin: 0 -10px;
     padding: 0 10px;
     border-bottom: 1px solid @color-fade3;
+
+    &::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 200px;
+      background: linear-gradient(to top, @default-bg, transparent);
+      pointer-events: none;
+    }
   }
   .expand-prompt {
     margin: 20px 0 0;
