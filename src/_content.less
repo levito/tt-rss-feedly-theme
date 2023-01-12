@@ -13,8 +13,6 @@
     line-height: 1.7;
   }
   .content {
-    margin: -5px;
-
     :is(h1, h2, h3, h4, h5, h6) {
       margin-top: calc(2.5 * var(--font-size-post));
       margin-bottom: var(--font-size-post);
@@ -122,15 +120,12 @@
   .attachments {
     display: block;
     width: fit-content;
-    margin-top: var(--font-size-post);
+    margin: var(--font-size-post) 0;
     font: 14px/20px @fonts-ui;
   }
   .expand-prompt,
   .footer {
     font-family: var(--fonts-ui);
-  }
-  .footer {
-    padding-right: 5px;
   }
   .content-shrink-wrap {
     position: relative;
@@ -150,7 +145,7 @@
     }
   }
   .expand-prompt {
-    margin: 20px 0 0;
+    margin: 20px 0;
 
     &,
     .dijitButtonNode {

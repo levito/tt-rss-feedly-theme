@@ -13,8 +13,9 @@
 
 #content-wrap#content-wrap {
   @expanded-padding: 25px;
+  @expanded-gap: calc(var(--base-spacing) / 5 + 10px);
   @title-padding: e("((@{headline-height} - 17px) / 2)");
-  @collapse-bar-height: e("(@{headline-height} / 2 + 10px)");
+  @collapse-bar-height: e("(@{expanded-padding} + @{title-padding} / 2)");
 
   margin-left: -5px;
   overflow: visible;
@@ -41,6 +42,7 @@
     }
   }
 
+  // target #headlines-frame and #content-insert
   .dijitContentPane {
     background-color: @default-bg;
   }
@@ -49,27 +51,51 @@
     opacity: 1;
   }
 
+  .label {
+    padding: 0 4px;
+    border-radius: 99px;
+    color: @default-text;
+    font-weight: normal;
+  }
+
   // ---------------------------------------------------------------------------
   // split detail header, combined expanded footer
   // ---------------------------------------------------------------------------
-  .icon-close-article {
-    order: 1;
-    transform: scale(1.167); // 18px => 21px without changing dimensions
-  }
-  .tags {
-    overflow: hidden;
-    text-overflow: ellipsis;
+  :is(.post .row, .cdm .footer) {
+    height: auto; // override .cdm .footer
+    padding: 0; // override .cdm .footer padding-left/-right
+    border: none; // override .cdm.expanded .footer
+    color: @fg-text-muted;
+    font-size: 11px;
 
-    + a {
-      .interactive-icon();
-      font-family: "Material Icons";
-      font-size: 0;
-      line-height: 1;
-      text-decoration: none;
+    &,
+    :is(.left, .right) {
+      align-items: flex-start;
+    }
+    &,
+    :is(.material-icons, .tags + a) {
+      line-height: 16px; // for consistency with title and icon alignment with text
+    }
+    .icon-close-article {
+      order: 1;
+      transform: scale(1.167); // 18px => 21px without changing dimensions
+    }
+    .tags {
+      overflow: hidden;
+      text-overflow: ellipsis;
 
-      &::after {
-        content: "add";
-        font-size: 18px;
+      + a {
+        .interactive-icon();
+
+        display: flex;
+        font-family: "Material Icons";
+        font-size: 0;
+        text-decoration: none;
+
+        &::after {
+          content: "add";
+          font-size: 18px;
+        }
       }
     }
   }
@@ -79,17 +105,17 @@
   // ---------------------------------------------------------------------------
   .post {
     :is(.header, .content) {
-      margin: 0;
-      padding: 10px calc(@content-spacing-right + 6px) 6px calc(@content-spacing-left + 6px);
+      padding: calc(@title-padding) calc(@content-spacing-right + 6px) calc(@title-padding)
+        calc(@content-spacing-left + 6px);
     }
     .header {
       background-color: mix(@default-fg, @default-bg, @fade1);
-      color: @fg-text-muted;
-      font-size: 11px;
+    }
+    .row ~ .row {
+      margin: calc(@title-padding / 2) 0 0;
     }
     .title {
       font-size: 13px;
-      line-height: 1.2;
       word-break: unset;
     }
     :is(.author, .tags) {
@@ -101,7 +127,6 @@
     .right {
       position: relative;
       left: 4px;
-      align-items: flex-start;
 
       .material-icons {
         .interactive-icon();
@@ -204,16 +229,9 @@
     :is(.header, .hl) {
       grid-template-columns: auto 1fr auto auto auto;
     }
-
     .feed {
       display: none;
     }
-  }
-
-  .label {
-    padding: 0 4px;
-    border-radius: 99px;
-    vertical-align: baseline;
   }
 
   // ---------------------------------------------------------------------------
@@ -342,7 +360,7 @@
       border-color: @color-fade3 !important;
     }
     &:is(.expanded, .expandable.active) {
-      margin-bottom: 17px;
+      margin-bottom: @expanded-gap;
       background-color: transparent !important;
 
       .header {
@@ -359,8 +377,7 @@
           transition: transform 0.2s, color 0.2s; // to keep icon hover transition working
         }
         &[data-is-stuck="true"] {
-          // prevent layout shift
-          border-bottom: none;
+          // default border is removed earlier to prevent layout shift, use box-shadow instead
           box-shadow: 0 1px 0 @border-default;
 
           :is(.icon-feed, .feed, .updated, .left, .right > *) {
@@ -368,7 +385,7 @@
           }
           .collapse {
             visibility: hidden;
-            transform: translateY(calc(@shift + @collapse-bar-height / 2 + 15px));
+            transform: translateY(calc(@shift + (@collapse-bar-height + @headline-height - @title-padding) / 2));
 
             i::after {
               visibility: visible;
@@ -378,6 +395,9 @@
       }
       .content {
         padding: 0 @expanded-padding @expanded-padding;
+      }
+      .content-inner {
+        margin: 5px;
       }
       .titleWrap {
         pointer-events: none;
@@ -431,11 +451,6 @@
         background-color: @color-fade1;
         color: @color-fade8;
       }
-    }
-    .footer {
-      border: none;
-      color: @fg-text-muted;
-      font-size: 11px;
     }
   }
 
@@ -520,16 +535,13 @@
   // cards/grid shared styles
   // ---------------------------------------------------------------------------
   #headlines-frame.cdm[data-enable-grid="true"] {
-    grid-gap: 0 17px;
+    grid-gap: 0 @expanded-gap;
     padding-bottom: 0;
 
-    .header {
-      border-top: none;
-      border-right: none;
-      border-left: none;
+    :is(.header, .content) {
+      border: none;
     }
     .content {
-      border: none;
       background-color: transparent;
     }
     :is(.feed-title, .whiteBox, #headlines-spacer) {
@@ -547,31 +559,30 @@
     .titleWrap {
       height: 100%;
     }
-
     .cdm {
       &:not(.active) {
         display: flex;
         flex-direction: column;
-        margin-bottom: 17px;
+        margin-bottom: @expanded-gap;
         border-color: @border-default !important;
 
         .header {
           grid-template-columns: auto 1fr auto auto auto;
           flex: 1;
-          padding: calc(var(--base-spacing) / 6) calc(var(--base-spacing) / 4);
+          padding: 5px calc(@title-padding);
         }
         .titleWrap {
           grid-row-start: 1;
           padding-top: @headline-height;
         }
         .title {
-          margin: calc(var(--base-spacing) / 8) 0 calc(var(--base-spacing) / 4);
+          margin: 0 0 calc(@title-padding / 2);
           font-family: var(--fonts-heading);
           font-size: var(--font-size-post);
           white-space: normal;
         }
         .icon-feed {
-          left: calc(1px + var(--base-spacing) / 4);
+          left: calc(@title-padding + 1px);
         }
       }
       &.active {
@@ -644,9 +655,6 @@
           overflow: auto;
           border-top: 1px solid @border-default;
         }
-        .content-inner {
-          margin: 5px;
-        }
         .collapse {
           visibility: visible;
           position: fixed;
@@ -679,7 +687,6 @@
       padding: 0 6px;
       line-height: 1;
     }
-
     .title {
       padding-top: 2px;
       font-size: 12px;
