@@ -13,6 +13,10 @@
     line-height: 1.7;
   }
   .content {
+    :is(iframe, img, pre, video) {
+      box-sizing: border-box;
+      max-width: 100%;
+    }
     :is(h1, h2, h3, h4, h5, h6) {
       margin-top: calc(2.5 * var(--font-size-post));
       margin-bottom: var(--font-size-post);
@@ -55,14 +59,14 @@
     hr {
       border-color: @color-fade3;
     }
-    iframe {
+    .embed-responsive,
+    :not(.embed-responsive) iframe {
       margin: 0.5em 0;
     }
     img:not(.tagsPic),
     video {
       display: block;
       width: auto;
-      max-width: 100%;
       height: auto;
       margin: 0.5em 1em 0.5em 0;
     }
