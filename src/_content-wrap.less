@@ -598,14 +598,10 @@
         .excerpt {
           display: block;
           margin-top: calc(@title-padding / 2);
+          overflow: hidden;
           font-size: 12px;
           line-height: 1.5;
-          text-indent: -0.3em; // remove space after leading "—"
-
-          // remove leading "—"
-          &::first-letter {
-            font-size: 0;
-          }
+          text-indent: -1.3em; // remove leading "— " including space
         }
       }
       &.active {
