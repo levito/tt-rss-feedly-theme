@@ -51,6 +51,17 @@
     opacity: 1;
   }
 
+  .icon-score {
+    color: @green;
+
+    &[title^="-"] {
+      color: @bright-red;
+    }
+    &[title="0"] {
+      .interactive-icon();
+    }
+  }
+
   .label {
     padding: 0 4px;
     border-radius: 99px;
@@ -277,8 +288,8 @@
     }
     &:not(.marked) .marked-pic,
     &:not(.published) .pub-pic,
-    :is(.icon-anchor, .icon-score, .icon-grid-span),
-    .right .material-icons:not(.icon-no-feed) {
+    :is(.icon-anchor, .icon-grid-span),
+    .right .material-icons:not(.icon-no-feed):not(.icon-score) {
       .interactive-icon();
     }
     // fine tuning: improve optical icon spacing
@@ -316,7 +327,7 @@
     &:not(.marked) .marked-pic,
     &:not(.published) .pub-pic,
     &:not(.Selected) .dijitCheckBox,
-    .icon-score {
+    .icon-score[title="0"] {
       display: none;
     }
     &:hover {

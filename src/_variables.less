@@ -18,12 +18,16 @@
 @fade7: (900% / 15);
 @fade8: (1100% / 15);
 
+@bright-red: #f66;
+@dark-red: #c00;
+@green: #6b5;
+
 @default-fg: #000;
 @default-bg: #fff;
 @color-published: #e84;
-@color-marked: #6b5;
+@color-marked: @green;
 @color-checked: #db0;
-@color-error: #c00c;
+@color-error: fade(@dark-red, 80%);
 @color-input: lighten(@default-bg, @fade1);
 @color-button: mix(@default-fg, @default-bg, @fade1);
 @color-button-hover: mix(@default-fg, @default-bg, @fade2);
