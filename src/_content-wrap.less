@@ -588,13 +588,24 @@
           padding-top: @headline-height;
         }
         .title {
-          margin: 0 0 calc(@title-padding / 2);
           font-family: var(--fonts-heading);
           font-size: var(--font-size-post);
           white-space: normal;
         }
         .icon-feed {
           left: calc(@title-padding + 1px);
+        }
+        .excerpt {
+          display: block;
+          margin-top: calc(@title-padding / 2);
+          font-size: 12px;
+          line-height: 1.5;
+          text-indent: -0.3em; // remove space after leading "—"
+
+          // remove leading "—"
+          &::first-letter {
+            font-size: 0;
+          }
         }
       }
       &.active {
