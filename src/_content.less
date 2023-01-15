@@ -121,15 +121,16 @@
   // ---------------------------------------------------------------------------
   // ui styling
   // ---------------------------------------------------------------------------
+  :is(.attachments, .expand-prompt, .footer) {
+    font-family: var(--fonts-ui);
+  }
+  :is(.attachments, .expand-prompt) {
+    font-size: 13px;
+  }
   .attachments {
     display: block;
     width: fit-content;
     margin: var(--font-size-post) 0;
-    font: 14px/20px @fonts-ui;
-  }
-  .expand-prompt,
-  .footer {
-    font-family: var(--fonts-ui);
   }
   .content-shrink-wrap {
     position: relative;
@@ -159,7 +160,6 @@
       border-color: @color-fade1;
       background-color: @color-button;
       color: @fg-text-muted;
-      font-size: 12px;
       font-weight: bold;
 
       &:hover {
@@ -169,6 +169,9 @@
       &:active {
         background-color: @color-button-active;
       }
+    }
+    .material-icons {
+      top: -2px;
     }
   }
 }
