@@ -62,11 +62,20 @@
     }
   }
 
+  .labels {
+    font-size: 0;
+    vertical-align: middle;
+  }
   .label {
+    margin-left: 5px;
     padding: 0 4px;
     border-radius: 99px;
     color: @default-text;
     font-weight: normal;
+    
+    &:first-child {
+      margin-left: 0;
+    }
   }
 
   // ---------------------------------------------------------------------------
