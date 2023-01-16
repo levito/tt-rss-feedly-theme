@@ -61,20 +61,29 @@
     }
     .embed-responsive,
     :not(.embed-responsive) iframe {
-      margin: 0.5em 0;
+      margin: 1em 0;
     }
     img:not(.tagsPic),
     video {
       display: block;
       width: auto;
       height: auto;
-      margin: 0.5em 1em 0.5em 0;
+      margin: 1em 1em 1em 0;
     }
     figure {
       margin: 1em 0;
+    }
+    figcaption {
       font-size: 0.857em;
       font-style: italic;
       line-height: 1.333;
+
+      &:first-child {
+        margin-bottom: -0.5em;
+      }
+      &:last-child {
+        margin-top: -0.5em;
+      }
     }
     :is(pre, code) {
       border: 1px solid @color-fade1;
