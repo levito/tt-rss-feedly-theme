@@ -64,6 +64,10 @@
         padding: 0;
         border: 0;
 
+        ~ :is(th, td) {
+          padding-left: 0.5em;
+        }
+
         > :first-child {
           margin-top: 0; // because margins won't collapse across rows
         }
@@ -72,30 +76,29 @@
     hr {
       border-color: @color-fade3;
     }
-    .embed-responsive,
-    :not(.embed-responsive) iframe {
-      margin: 1em 0;
-    }
-    img:not(.tagsPic),
+    img:not(:where(.tagsPic)),
     video {
       display: block;
-      width: auto;
-      height: auto;
       margin: 1em 1em 1em 0;
     }
-    figure {
+    :is(figure, .embed-responsive, iframe) {
       margin: 1em 0;
     }
-    figcaption {
-      font-size: 0.857em;
-      font-style: italic;
-      line-height: 1.333;
-
-      &:first-child {
-        margin-bottom: -0.5em;
+    .embed-responsive > * {
+      margin: 0;
+    }
+    // fix incorrectly nested html breaking out, incorrectly using p instead of figcaption
+    figure {
+      figcaption,
+      > * ~ figcaption ~ *,
+      > img + p:last-child {
+        margin: -0.5em 0 0;
+        font-size: 0.857em;
+        font-style: italic;
+        line-height: 1.333;
       }
-      &:last-child {
-        margin-top: -0.5em;
+      figcaption:first-child {
+        margin: 0 0 -0.5em;
       }
     }
     :is(pre, code) {
@@ -113,7 +116,7 @@
     }
     code {
       display: inline-block;
-      padding: 0 0.31em;
+      padding: 0 0.1em;
     }
     pre code {
       padding: 0;
@@ -121,13 +124,25 @@
       background-color: transparent;
       font-size: 1em;
     }
-    :is(q, blockquote) {
+    :is(li, blockquote) {
+      margin: 0.5em 0;
+      padding: 0;
+
+      :is(p, ul, ol, dl, blockquote, figure, iframe, img, video) {
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+      }
+    }
+    :is(blockquote, q) {
+      font-style: italic;
+    }
+    blockquote {
       .reading-width();
 
       display: block;
       box-sizing: border-box;
       margin: 1em 0;
-      padding: 0.31em 1em;
+      padding: 0.5em 1em;
       border-left: 4px solid @color-fade3;
       background-color: @color-fade1;
 
@@ -136,6 +151,19 @@
       }
       :last-child {
         margin-bottom: 0;
+      }
+    }
+    :is(ul, ol) {
+      padding-left: 0; // no padding if no li is nested
+
+      li {
+        margin-left: 2.5em; // instead of ul/ol padding, add a margin here
+
+        // remove margin and marker if it's the only item (e. g. Ars Technica slideshow images are rendered like this)
+        &:only-child {
+          margin: 0;
+          list-style: none;
+        }
       }
     }
   }
