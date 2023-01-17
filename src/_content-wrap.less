@@ -292,7 +292,7 @@
         background-color: @color-fade6;
       }
       &.dijitChecked {
-        background-color: @color-checked;
+        background-color: @color-selected;
       }
     }
     &:not(.marked) .marked-pic,
@@ -324,8 +324,8 @@
     }
     &:is(.active, .Selected) {
       z-index: 1;
-      border-color: mix(@color-checked, @default-bg, @fade6);
-      background-color: mix(@color-checked, @default-bg, @fade3) !important;
+      border-color: mix(@color-selected, @default-bg, @fade6);
+      background-color: mix(@color-selected, @default-bg, @fade3) !important;
     }
     .title {
       color: @fg-text-muted;
