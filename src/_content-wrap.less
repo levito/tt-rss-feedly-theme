@@ -280,19 +280,24 @@
       color: @default-text;
     }
     .dijitCheckBox {
-      margin-left: 7px;
+      .interactive-icon();
+
+      width: 21px;
+      height: 21px;
+      margin: 0 0 0 2px;
+      padding: 2px;
       border: none;
-      background-color: @color-fade5;
+      background-color: transparent;
       box-shadow: none;
 
       &::before {
-        color: @default-bg;
-      }
-      &:hover {
-        background-color: @color-fade6;
+        content: "check_box";
+        color: inherit;
+        font-family: "Material Icons";
+        font-size: 21px;
       }
       &.dijitChecked {
-        background-color: @color-selected;
+        color: @color-selected;
       }
     }
     &:not(.marked) .marked-pic,
