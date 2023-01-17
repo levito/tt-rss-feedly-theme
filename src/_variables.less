@@ -61,19 +61,15 @@
 @content-spacing-right: e("(var(--base-spacing) + 4px)");
 @content-spacing-left: e("(var(--base-spacing) - 4px)");
 
-.font-size(@level: 5) {
-  @result: e("(var(--font-size-post) + 10px - 2px * @{level})");
-}
-
 .heading-font-size(@level: 0) {
-  @font-size: .font-size(@level) [ @result];
+  @font-size: e("(var(--font-size-post) + 10px - @{level} * 2px)");
 
   font-size: calc(@font-size);
   line-height: calc(@font-size + 6px);
 }
 
-.reading-width(@width: var(--reading-width)) {
-  max-width: calc(var(--font-size-post) * @width);
+.reading-width() {
+  max-width: calc(var(--font-size-post) * var(--reading-width));
 }
 
 .interactive-icon(@color: @color-icon) {
