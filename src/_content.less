@@ -11,6 +11,18 @@
     font-family: var(--fonts-content);
     font-size: var(--font-size-post);
     line-height: 1.7;
+
+    > :first-child {
+      margin-top: 0;
+
+      each(range(5), {
+        .repeat('> :first-child', @value, {
+          @{result} {
+            margin-top: 0;
+          }
+        });
+      });
+    }
   }
   .content {
     :is(iframe, img, pre, video) {
@@ -46,10 +58,15 @@
     th {
       background-color: @color-fade1;
     }
+    // layout tables
     table[border="0"] {
       :is(th, td) {
         padding: 0;
         border: 0;
+
+        > :first-child {
+          margin-top: 0; // because margins won't collapse across rows
+        }
       }
     }
     hr {
@@ -126,11 +143,15 @@
   // ---------------------------------------------------------------------------
   // ui styling
   // ---------------------------------------------------------------------------
-  :is(.attachments, .expand-prompt, .footer) {
+  :is(.article-note, .attachments, .expand-prompt, .footer) {
     font-family: var(--fonts-ui);
   }
-  :is(.attachments, .expand-prompt) {
+  :is(.article-note, .attachments, .expand-prompt) {
     font-size: 13px;
+  }
+  .content .article-note {
+    margin-top: 0;
+    margin-bottom: calc(5px + var(--font-size-post));
   }
   .attachments {
     display: block;

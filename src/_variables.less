@@ -83,3 +83,18 @@
     color: @color-fade6;
   }
 }
+
+// based on https://bitbucket.org/pixelass/homeless/src/master/src/repeat/repeat.less
+.repeat(@string, @n, @rules) {
+  .repeat(@string, "", @n, @rules);
+}
+.repeat(@string, @separator, @n, @rules) {
+  .reduce(@acc, @cur, @separator, @i, @rules) when (@i > 0) {
+    .return(@result, @i) when (@i = 1) {
+      @rules();
+    }
+    .return(e(@acc), @i);
+    .reduce("@{acc}@{separator}@{cur}", @cur, @separator, @i - 1, @rules);
+  }
+  .reduce(@string, @string, @separator, @n, @rules);
+}

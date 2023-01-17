@@ -72,7 +72,7 @@
     border-radius: 99px;
     color: @default-text;
     font-weight: normal;
-    
+
     &:first-child {
       margin-left: 0;
     }
@@ -397,7 +397,7 @@
           transition: transform 0.2s, color 0.2s; // to keep icon hover transition working
         }
         &[data-is-stuck="true"] {
-          // default border is removed earlier to prevent layout shift, use box-shadow instead
+          border: none;
           box-shadow: 0 1px 0 @border-default;
 
           :is(.icon-feed, .feed, .updated, .left, .right > *) {
@@ -414,7 +414,7 @@
         }
       }
       .content {
-        padding: 0 @expanded-padding @expanded-padding;
+        padding: var(--font-size-post) @expanded-padding @expanded-padding;
       }
       .content-inner {
         margin: 0 5px;
