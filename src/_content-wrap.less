@@ -160,7 +160,7 @@
   :where(.cdm .header, .hl) {
     display: grid;
     grid-template-areas: "feed title updated icon actions";
-    grid-template-columns: minmax(150px, 15%) 1fr auto auto auto;
+    grid-template-columns: clamp(150px, 20%, 250px) 1fr auto auto auto;
 
     > * {
       align-items: center;
