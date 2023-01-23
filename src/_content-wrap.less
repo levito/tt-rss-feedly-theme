@@ -584,7 +584,8 @@
   // ---------------------------------------------------------------------------
   #headlines-frame.cdm[data-enable-grid="true"][data-is-cdm-expanded="false"] {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: @card-columns;
+    justify-content: center;
 
     .titleWrap {
       height: 100%;

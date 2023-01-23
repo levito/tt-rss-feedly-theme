@@ -6,6 +6,7 @@
   --fonts-heading: SansCn;
   --fonts-mono: "Fira Code", Menlo, Monaco, Consolas, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono",
     "Bitstream Vera Sans Mono", "Courier New", monospace;
+  --card-columns: repeat(auto-fit, minmax(300px, 1fr)); // use a `grid-template-columns` value
   --reading-width: 45; // use a unitless `em` value
 }
 
@@ -15,6 +16,7 @@
 @fonts-content: var(--fonts-content);
 @fonts-heading: var(--fonts-heading);
 @fonts-mono: var(--fonts-mono);
+@card-columns: var(--card-columns);
 @reading-width: var(--reading-width);
 
 @fade1: (55% / 15);
