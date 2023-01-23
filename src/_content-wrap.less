@@ -86,7 +86,7 @@
     padding: 0; // override .cdm .footer padding-left/-right
     border: none; // override .cdm.expanded .footer
     color: @fg-text-muted;
-    font-size: 11px;
+    font-size: @font-size-small;
 
     &,
     :is(.left, .right) {
@@ -270,7 +270,7 @@
     }
     .preview {
       padding-left: 0;
-      font-size: 11px;
+      font-size: @font-size-small;
     }
     .title {
       font-size: 13px;
@@ -774,7 +774,7 @@
   // ---------------------------------------------------------------------------
   .time-to-read {
     all: unset;
-    font-size: 11px;
+    font-size: @font-size-small;
   }
   .author:not(:empty) ~ .time-to-read::before {
     content: "\2014\a0";
