@@ -1,13 +1,21 @@
 :root {
-  --base-spacing: 45px;
+  --base-spacing: 45px; // works best with a value between 30px and 75px
   --font-size-post: 16px;
   --fonts-ui: "Helvetica Neue", Arial, Helvetica, "Liberation Sans", "Nimbus Sans L", FreeSans, sans-serif;
   --fonts-content: var(--fonts-ui);
   --fonts-heading: SansCn;
   --fonts-mono: "Fira Code", Menlo, Monaco, Consolas, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono",
     "Bitstream Vera Sans Mono", "Courier New", monospace;
-  --reading-width: 45; // unitless em value
+  --reading-width: 45; // use a unitless `em` value
 }
+
+@base-spacing: var(--base-spacing);
+@font-size-post: var(--font-size-post);
+@fonts-ui: var(--fonts-ui); // also used in defines.less
+@fonts-content: var(--fonts-content);
+@fonts-heading: var(--fonts-heading);
+@fonts-mono: var(--fonts-mono);
+@reading-width: var(--reading-width);
 
 @fade1: (55% / 15);
 @fade2: (100% / 15);
@@ -52,24 +60,21 @@
 @feeds-text: @color-fade7;
 @default-text: @color-fade8;
 
-// needed to override defines.less
-@fonts-ui: var(--fonts-ui);
-
-@feeds-toggle-width: var(--base-spacing);
-@feeds-spacing: calc(var(--base-spacing) - 10px);
-@headline-height: var(--base-spacing);
-@content-spacing-right: e("(var(--base-spacing) + 4px)");
-@content-spacing-left: e("(var(--base-spacing) - 4px)");
+@feeds-toggle-width: @base-spacing;
+@feeds-spacing: calc(@base-spacing - 10px);
+@headline-height: @base-spacing;
+@content-spacing-right: e("(@{base-spacing} + 4px)");
+@content-spacing-left: e("(@{base-spacing} - 4px)");
 
 .heading-font-size(@level: 0) {
-  @font-size: e("(var(--font-size-post) + 10px - @{level} * 2px)");
+  @font-size: e("(@{font-size-post} + 10px - @{level} * 2px)");
 
   font-size: calc(@font-size);
   line-height: calc(@font-size + 6px);
 }
 
 .reading-width() {
-  max-width: calc(var(--font-size-post) * var(--reading-width));
+  max-width: calc(@font-size-post * @reading-width);
 }
 
 .interactive-icon(@color: @color-icon) {

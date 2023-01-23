@@ -13,7 +13,7 @@
 
 #content-wrap#content-wrap {
   @expanded-padding: 25px;
-  @expanded-gap: calc(var(--base-spacing) / 5 + 10px);
+  @expanded-gap: calc(@base-spacing / 5 + 10px);
   @title-padding: e("((@{headline-height} - 17px) / 2)");
   @collapse-bar-height: e("(@{expanded-padding} + @{title-padding} / 2)");
 
@@ -419,7 +419,7 @@
         }
       }
       .content {
-        padding: var(--font-size-post) @expanded-padding @expanded-padding;
+        padding: @font-size-post @expanded-padding @expanded-padding;
       }
       .content-inner {
         margin: 0 5px;
@@ -434,7 +434,7 @@
       }
       .title {
         .heading-font-size(0);
-        font-family: var(--fonts-heading);
+        font-family: @fonts-heading;
         -webkit-font-smoothing: antialiased;
         font-weight: bold;
         text-rendering: optimizeLegibility;
@@ -606,8 +606,8 @@
           padding-top: @headline-height;
         }
         .title {
-          font-family: var(--fonts-heading);
-          font-size: var(--font-size-post);
+          font-family: @fonts-heading;
+          font-size: @font-size-post;
           white-space: normal;
         }
         .icon-feed {
@@ -625,7 +625,7 @@
       &.active {
         @width: 75vw;
         @padding-x: 10vw;
-        @header-height: calc(var(--font-size-post) * 2 + var(--base-spacing) * 2 + 56px);
+        @header-height: calc(@font-size-post * 2 + @base-spacing * 2 + 56px);
 
         #main:has(&) {
           // hide dijitSplitter between feeds-holder and content-wrap when overlay is active
