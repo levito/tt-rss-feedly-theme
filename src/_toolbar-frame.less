@@ -13,6 +13,20 @@
     padding: 6px calc(@content-spacing-left);
     background-color: @default-bg;
 
+    :is(#toolbar-main, .material-icons) {
+      flex-shrink: 0;
+    }
+    :is(#toolbar-headlines, #toolbar-headlines .left) {
+      min-width: 0;
+    }
+    @media (max-width: @breakpoint-lg) {
+      .dijitInputField {
+        padding-left: 4px;
+      }
+      .dijitRight {
+        display: none;
+      }
+    }
     .icon-syndicate {
       border: none;
       color: @default-text;
@@ -20,13 +34,15 @@
     #toolbar-headlines .left,
     > .material-icons {
       position: relative;
-      top: -2px;
+      top: -1px;
       padding-left: 1px;
     }
     .feed_title {
+      overflow: hidden;
       color: @default-text;
       font-size: 15px;
       font-weight: bold;
+      text-overflow: ellipsis;
 
       > * {
         vertical-align: middle;
@@ -72,6 +88,10 @@
     }
     :is(.dijitActive, .dijitHover, .dijitOpened) {
       color: @default-text;
+    }
+    .dijitDropDownButton .material-icons {
+      position: relative;
+      top: -1px;
     }
 
     // -------------------------------------------------------------------------
