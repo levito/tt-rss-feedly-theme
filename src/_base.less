@@ -66,12 +66,8 @@ body.flat {
     padding-left: @feeds-toggle-width;
   }
 
-  .notify {
+  .notify:not(.visible) {
     pointer-events: none;
-
-    .icon-close {
-      pointer-events: all;
-    }
   }
 
   span.highlight {
