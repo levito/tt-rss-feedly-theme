@@ -9,6 +9,7 @@
   --reading-width: 45; // use a unitless `em` value
   --card-max-column-count: 10;
   --card-min-column-width: 300px;
+  --card-target-column-width: var(--card-min-column-width) * 1.15;
 }
 
 @base-spacing: var(--base-spacing);
@@ -20,6 +21,7 @@
 @reading-width: var(--reading-width);
 @card-max-column-count: var(--card-max-column-count);
 @card-min-column-width: var(--card-min-column-width);
+@card-target-column-width: e("(var(--card-target-column-width))");
 
 @fade1: (55% / 15);
 @fade2: (100% / 15);
