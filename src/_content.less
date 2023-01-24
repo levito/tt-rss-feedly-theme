@@ -30,6 +30,7 @@
       max-width: 100%;
     }
     :is(h1, h2, h3, h4, h5, h6) {
+      .reading-width();
       margin-top: calc(2.5 * @font-size-post);
       margin-bottom: @font-size-post;
       font: bold 1em @fonts-heading;
@@ -39,12 +40,10 @@
     each(range(6), {
       h@{value} {
         .heading-font-size(@level: @value);
-        .reading-width();
       }
     });
     :is(p, ul, ol, dl, figcaption) {
       .reading-width();
-
       box-sizing: border-box;
     }
     table {
@@ -67,7 +66,6 @@
         ~ :is(th, td) {
           padding-left: 0.5em;
         }
-
         > :first-child {
           margin-top: 0; // because margins won't collapse across rows
         }
@@ -138,7 +136,6 @@
     }
     blockquote {
       .reading-width();
-
       display: block;
       box-sizing: border-box;
       margin: 1em 0;
@@ -165,6 +162,15 @@
           list-style: none;
         }
       }
+    }
+    :is(h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, blockquote, pre, code) {
+      &:empty,
+      + br {
+        display: none;
+      }
+    }
+    :is(hr, article, section, figure, figcaption) + br {
+      display: none;
     }
   }
 
