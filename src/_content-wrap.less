@@ -583,9 +583,15 @@
   // cards view with overlay for detail
   // ---------------------------------------------------------------------------
   #headlines-frame.cdm[data-enable-grid="true"][data-is-cdm-expanded="false"] {
+    @cards-width: e("(@{card-max-column-count} * (@{card-min-column-width} + @{expanded-gap}) - @{expanded-gap})");
+    @frame-width: e("(100% - @{content-spacing-left} - @{content-spacing-right} - 4px)"); // 4px scrollbar
+    @extra-padding: e("max(0px, calc((@{frame-width} - @{cards-width}) / 2))");
+
     display: grid;
-    grid-template-columns: @card-columns;
+    grid-template-columns: repeat(auto-fit, minmax(@card-min-column-width, 1fr));
     justify-content: center;
+    padding-right: calc(@content-spacing-right + @extra-padding);
+    padding-left: calc(@content-spacing-left + @extra-padding);
 
     .titleWrap {
       height: 100%;
