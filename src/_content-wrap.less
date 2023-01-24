@@ -106,7 +106,6 @@
 
       + a {
         .interactive-icon();
-
         display: flex;
         font-family: "Material Icons";
         font-size: 0;
@@ -281,7 +280,6 @@
     }
     .dijitCheckBox {
       .interactive-icon();
-
       width: 21px;
       height: 21px;
       margin: 0 0 0 2px;
@@ -733,7 +731,7 @@
     }
     .title {
       padding-top: 2px;
-      font-size: 12px;
+      font-size: @font-size-toolbar;
       letter-spacing: 0.05em;
       line-height: 14px;
       text-transform: uppercase;
@@ -741,37 +739,51 @@
   }
 
   // ---------------------------------------------------------------------------
-  // initial loading
+  // initial loading (.whiteBox)
   // ---------------------------------------------------------------------------
-  .whiteBox {
-    padding-bottom: 30px;
-    font-size: 12px;
+  :is(.whiteBox, #headlines-spacer > *) {
+    padding: calc(@title-padding); // align with 2nd headline text
+    border: none;
+    font-size: @font-size-toolbar;
     line-height: 1.5;
+
+    &:not(a) {
+      color: @fg-text-muted;
+    }
   }
 
   // ---------------------------------------------------------------------------
-  // end of list
+  // end of feed, loading next headlines
   // ---------------------------------------------------------------------------
   #headlines-spacer {
     position: relative;
     box-sizing: border-box;
     height: calc(100vh - 44px); // #toolbar height
-    margin: 0;
     padding-top: calc(@headline-height + 1px);
-    font-size: 12px;
-    font-style: normal;
+    font-size: @font-size-toolbar;
 
+    // loading next headlines
+    > span {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .icon-three-dots {
+        order: 1;
+        margin-top: 10px;
+      }
+    }
     &::after {
       content: "The End";
       position: absolute;
-      right: calc(-1 * @content-spacing-right);
+      right: 0;
       bottom: 0;
-      left: calc(-1 * @content-spacing-left);
-      padding: 50px;
-      background-color: @color-fade3;
+      left: 0;
+      padding: calc(@base-spacing);
       color: @color-fade5;
-      font-size: 18px;
+      font-weight: bold;
       letter-spacing: 0.05em;
+      text-transform: uppercase;
     }
   }
 
