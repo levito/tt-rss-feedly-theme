@@ -11,7 +11,7 @@
   "license": "WTFPL",
   "private": true,
   "scripts": {
-    "build": "foreach -g 'src/!(_)*.less' -x 'lessc --js --source-map-inline #{path} > #{name}.css'",
+    "build": "foreach -g 'src/!(_)*.less' -x 'lessc --source-map-inline #{path} > #{name}.css'",
     "compress": "foreach -g 'src/!(_)*.less' -x 'lightningcss -m #{name}.css -o #{name}.css'",
     "lint": "stylelint 'src/**/*.less'",
     "postinstall": "git submodule update --init",
