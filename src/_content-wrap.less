@@ -542,7 +542,7 @@
         grid-row-start: 1;
         padding-top: @headline-height;
       }
-      > *:not(.title) {
+      > :not(.title) {
         background-color: transparent;
       }
     }
@@ -731,9 +731,7 @@
     }
     .title {
       padding-top: 2px;
-      font-size: @font-size-toolbar;
       letter-spacing: 0.05em;
-      line-height: 14px;
       text-transform: uppercase;
     }
   }
@@ -744,11 +742,13 @@
   :is(.whiteBox, #headlines-spacer > *) {
     padding: calc(@title-padding); // align with 2nd headline text
     border: none;
-    font-size: @font-size-toolbar;
-    line-height: 1.5;
-
-    &:not(a) {
+  }
+  :is(.whiteBox, #headlines-spacer) {
+    &,
+    :not(a) {
       color: @fg-text-muted;
+      font-size: @font-size-main;
+      line-height: 1.5;
     }
   }
 
@@ -760,7 +760,6 @@
     box-sizing: border-box;
     height: calc(100vh - 44px); // #toolbar height
     padding-top: calc(@headline-height + 1px);
-    font-size: @font-size-toolbar;
 
     // loading next headlines
     > span {
