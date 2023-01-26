@@ -94,6 +94,35 @@
   }
 }
 
+.media(@from, @rules) {
+  .media(@from, @to: 0, @rules);
+}
+.media(@from, @to, @rules) {
+  @breakpoints: {
+    @0: 0;
+    @sm: @breakpoint-sm;
+    @md: @breakpoint-md;
+    @lg: @breakpoint-lg;
+    @xl: @breakpoint-xl;
+  };
+  .return() when (@from = 0) {
+    @media (max-width: @breakpoints[@@to]) {
+      @rules();
+    }
+  }
+  .return() when (@to = 0) {
+    @media (min-width: @breakpoints[@@from] + 1) {
+      @rules();
+    }
+  }
+  .return() when (default()) {
+    @media (min-width: @breakpoints[@@from] + 1) and (max-width: @breakpoints[@@to]) {
+      @rules();
+    }
+  }
+  .return();
+}
+
 // based on https://bitbucket.org/pixelass/homeless/src/master/src/repeat/repeat.less
 .repeat(@string, @n, @rules) {
   .repeat(@string, "", @n, @rules);
