@@ -14,11 +14,10 @@
     background-color: @default-bg;
 
     .media(0, sm, {
-      padding-right: 0;
-      padding-left: 5px;
+      padding-right: calc(@content-spacing - 8px);
     });
 
-    .media(0, lg, {
+    .media(0, xl, {
       .dijitInputField {
         padding-left: 4px;
       }
@@ -143,11 +142,15 @@
           box-shadow: 0 6px 0 @default-fg, 0 12px 0 @default-fg;
         }
       }
-      &:hover .dijitButtonNode {
-        background-position: 0 0;
-      }
-      &:hover .dijitButtonContents {
-        opacity: @fade8;
+      &:hover {
+        @media (hover: hover) {
+          .dijitButtonNode {
+            background-position: 0 0;
+          }
+          .dijitButtonContents {
+            opacity: @fade8;
+          }
+        }
       }
     }
   }

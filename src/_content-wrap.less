@@ -30,11 +30,6 @@
     padding-left: calc(@content-spacing-left);
     transform: none;
 
-    .media(0, sm, {
-      padding-right: 5px;
-      padding-left: 5px;
-    });
-
     // move headlines-frame up and children down so cdm header doesn't stick too early
     // especially exclude cards from transform so the overlay keeps working
     &.cdm:not([data-enable-grid="true"][data-is-cdm-expanded="false"]) {
@@ -131,11 +126,6 @@
     :is(.header, .content) {
       padding: calc(@title-padding) calc(@content-spacing-right + 6px) calc(@title-padding)
         calc(@content-spacing-left + 6px);
-
-      .media(0, sm, {
-        padding-right: 5px;
-        padding-left: 5px;
-      });
     }
     .header {
       background-color: mix(@default-fg, @default-bg, @fade1);
@@ -171,11 +161,11 @@
     grid-template-areas: "feed title updated icon actions";
     grid-template-columns: clamp(150px, 20%, 250px) 1fr auto auto auto;
 
-    .media(0, md, {
+    .media(0, lg, {
       grid-template-areas:
         "feed updated icon actions"
         "title title title title";
-      grid-template-columns: 1fr auto auto auto;
+      grid-template-columns: minmax(0, 1fr) auto auto auto;
     });
 
     > * {
@@ -192,7 +182,7 @@
       min-height: unset;
       padding: calc(@title-padding) 5px;
 
-      .media(0, md, {
+      .media(0, lg, {
         grid-row-start: 1;
         padding-top: @headline-height;
       });
@@ -358,7 +348,7 @@
     &.Unread .title {
       color: @default-text;
     }
-    .media(md, {
+    @media (hover: hover) {
       &:not(.marked) .marked-pic,
       &:not(.published) .pub-pic,
       &:not(.Selected) .dijitCheckBox,
@@ -376,7 +366,7 @@
           display: none;
         }
       }
-    });
+    }
   }
 
   // ---------------------------------------------------------------------------
@@ -390,7 +380,7 @@
       width: fit-content;
       overflow: hidden;
     }
-    &[data-enable-grid="false"] .expandable:not(.active) .title {
+    &:where([data-enable-grid="false"]) .expandable:not(.active) .title {
       display: inline;
     }
     &.expanded {
@@ -404,11 +394,17 @@
       }
     }
     &.active {
-      border-color: @color-fade3 !important;
+      border-color: @border-darker !important;
     }
     &:is(.expanded, .expandable.active) {
       margin-bottom: @expanded-gap;
       background-color: transparent !important;
+
+      .media(0, sm, {
+        margin-left: calc(-1 * @expanded-padding);
+        border-color: transparent !important;
+        border-top-color: @border-default !important;
+      });
 
       .header {
         @icon-height: 25px;
@@ -464,9 +460,12 @@
         &:hover {
           text-decoration: underline;
         }
-
-        .media(0, md, {
+        .media(0, lg, {
+          .heading-font-size(1);
           margin-top: calc(@title-padding);
+        });
+        .media(0, md, {
+          .heading-font-size(2);
         });
       }
       .icon-feed {
@@ -480,6 +479,14 @@
         white-space: nowrap;
         cursor: pointer;
       }
+      .media(0, lg, {
+        :is(.titleWrap, .title, .excerpt) {
+          white-space: normal;
+        }
+        .title {
+          display: -webkit-box;
+        }
+      });
     }
     .collapse {
       position: absolute;
@@ -581,6 +588,7 @@
     }
     span.feed {
       pointer-events: none;
+
       a {
         pointer-events: all;
       }
@@ -594,8 +602,12 @@
     grid-gap: 0 @expanded-gap;
     padding-bottom: 0;
 
-    .media(0, md, {
-      grid-template-columns: repeat(auto-fit, minmax(@card-min-column-width, 1fr));
+    .media(0, lg, {
+      grid-template-columns: minmax(0, 1fr);
+
+      .icon-grid-span {
+        display: none;
+      }
     });
 
     :is(.header, .content) {
@@ -618,14 +630,12 @@
     @extra-padding: e("max(0px, calc((@{frame-width} - @{cards-width}) / 2))");
 
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(@card-min-column-width, 1fr));
     justify-content: center;
     padding-right: calc(@content-spacing-right + @extra-padding);
     padding-left: calc(@content-spacing-left + @extra-padding);
 
-    .media(0, sm, {
-      padding-right: 5px;
-      padding-left: 5px;
+    .media(md, {
+      grid-template-columns: repeat(auto-fit, minmax(@card-min-column-width, 1fr));
     });
 
     .titleWrap {
@@ -633,36 +643,38 @@
     }
     .cdm {
       &:not(.active) {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: @expanded-gap;
-        border-color: @border-default !important;
-
-        .header {
-          grid-template-columns: auto 1fr auto auto auto;
-          flex: 1;
-          padding: 5px calc(@title-padding);
-        }
-        .titleWrap {
-          grid-row-start: 1;
-          padding-top: @headline-height;
-        }
-        .title {
-          font-family: @fonts-heading;
-          font-size: @font-size-post;
-          white-space: normal;
-        }
-        .icon-feed {
-          left: calc(@title-padding + 1px);
-        }
-        .excerpt {
-          display: block;
-          margin-top: calc(@title-padding / 2);
-          overflow: hidden;
-          font-size: 12px;
-          line-height: 1.333;
-          text-indent: -1.3em; // remove leading "— " including space
-        }
+        .media(md, {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: @expanded-gap;
+          border-color: @border-default !important;
+  
+          .header {
+            grid-template-columns: auto 1fr auto auto auto;
+            flex: 1;
+            padding: 5px calc(@title-padding);
+          }
+          .titleWrap {
+            grid-row-start: 1;
+            padding-top: @headline-height;
+          }
+          .title {
+            font-family: @fonts-heading;
+            font-size: @font-size-post;
+            white-space: normal;
+          }
+          .icon-feed {
+            left: calc(@title-padding + 1px);
+          }
+          .excerpt {
+            display: block;
+            margin-top: calc(@title-padding / 2);
+            overflow: hidden;
+            font-size: 12px;
+            line-height: 1.333;
+            text-indent: -1.3em; // remove leading  —   including space
+          }
+        });
       }
       &.active {
         @width: 75vw;

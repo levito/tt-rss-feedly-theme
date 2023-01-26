@@ -13,6 +13,7 @@
 }
 
 @base-spacing: var(--base-spacing);
+@content-spacing: var(--content-spacing, var(--base-spacing));
 @font-size-post: var(--font-size-post);
 @fonts-ui: var(--fonts-ui); // also used in defines.less
 @fonts-content: var(--fonts-content);
@@ -60,7 +61,7 @@
 
 @color-panel-bg: @color-fade2;
 @border-default: @color-fade2;
-@border-light: @color-fade3;
+@border-darker: @color-fade3;
 @color-icon: @color-fade5;
 @fg-text-muted: @color-fade6;
 @feeds-text: @color-fade7;
@@ -69,10 +70,10 @@
 @font-size-main: @font-size-toolbar;
 
 @feeds-toggle-width: @base-spacing;
-@feeds-spacing: calc(@base-spacing - 10px);
+@feeds-spacing: calc(@base-spacing - 8px);
 @headline-height: @base-spacing;
-@content-spacing-right: e("(@{base-spacing} + 4px)");
-@content-spacing-left: e("(@{base-spacing} - 4px)");
+@content-spacing-right: e("(@{content-spacing} + 4px)");
+@content-spacing-left: e("(@{content-spacing} - 4px)");
 
 .heading-font-size(@level: 0) {
   @font-size: e("(@{font-size-post} + 10px - @{level} * 2px)");
