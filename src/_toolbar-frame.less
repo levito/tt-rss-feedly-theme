@@ -13,19 +13,25 @@
     padding: 6px calc(@content-spacing-left);
     background-color: @default-bg;
 
-    :is(#toolbar-main, .material-icons) {
-      flex-shrink: 0;
-    }
-    :is(#toolbar-headlines, #toolbar-headlines .left) {
-      min-width: 0;
-    }
-    @media (max-width: @breakpoint-lg) {
+    .media(0, sm, {
+      padding-right: 0;
+      padding-left: 5px;
+    });
+
+    .media(0, lg, {
       .dijitInputField {
         padding-left: 4px;
       }
       .dijitRight {
         display: none;
       }
+    });
+
+    :is(#toolbar-main, .material-icons) {
+      flex-shrink: 0;
+    }
+    :is(#toolbar-headlines, #toolbar-headlines .left) {
+      min-width: 0;
     }
     .icon-syndicate {
       border: none;
@@ -38,6 +44,7 @@
       padding-left: 1px;
     }
     .feed_title {
+      display: block !important; // don't hide on mobile
       overflow: hidden;
       color: @default-text;
       font-size: 15px;

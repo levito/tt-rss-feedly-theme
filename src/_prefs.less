@@ -53,6 +53,77 @@ body.ttrss_prefs {
   }
 
   // ---------------------------------------------------------------------------
+  // mobile styling
+  // ---------------------------------------------------------------------------
+  .media(0, md, {
+    @checkbox-indent: 30px;
+
+    // remove header icons, text from prefs exit button, main top tabs and feeds left tabs
+    :is(#header > a, #header > i, #pref-tabs_tablist, .dijitTabContainerLeft-tabs) {
+      font-size: 0;
+    }
+
+    // general preferences
+    .prefs {
+      display: flex;
+      flex-wrap: wrap;
+
+      textarea {
+        max-width: 85vw;
+      }
+      // try to keep help text to the right of inputs but stretch it to available space
+      .help-text {
+        flex: 1;
+      }
+      // force to be in first row only together with checkbox
+      label:first-of-type {
+        flex-basis: calc(100% - @checkbox-indent);
+        margin-right: 0;
+
+        // pull checkboxes before the label
+        + .dijitCheckBox {
+          order: -1;
+          margin-right: 10px;
+
+          // align start of help-text with checkbox label
+          ~ .help-text {
+            margin-left: @checkbox-indent;
+          }
+          // push  preview digest  button to the end
+          + .dijitButton {
+            order: 1;
+          }
+        }
+      }
+    }
+    // plugins
+    ul.prefs-plugin-list {
+      li {
+        line-height: unset;
+        justify-content: space-between;
+
+        label.checkbox {
+          flex-wrap: wrap;
+
+          .name {
+            min-width: 0 !important;
+            margin: 4px 10px;
+            text-align: left;
+          }
+          .description {
+            flex-basis: 100%;
+            margin-left: @checkbox-indent;
+          }
+        }
+        .actions {
+          display: flex;
+          flex-grow: unset;
+        }
+      }
+    }
+  });
+
+  // ---------------------------------------------------------------------------
   // visual fixes
   // ---------------------------------------------------------------------------
   // some icons rendered too wide in top tabs

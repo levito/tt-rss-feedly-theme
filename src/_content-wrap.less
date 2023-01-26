@@ -30,6 +30,11 @@
     padding-left: calc(@content-spacing-left);
     transform: none;
 
+    .media(0, sm, {
+      padding-right: 5px;
+      padding-left: 5px;
+    });
+
     // move headlines-frame up and children down so cdm header doesn't stick too early
     // especially exclude cards from transform so the overlay keeps working
     &.cdm:not([data-enable-grid="true"][data-is-cdm-expanded="false"]) {
@@ -126,6 +131,11 @@
     :is(.header, .content) {
       padding: calc(@title-padding) calc(@content-spacing-right + 6px) calc(@title-padding)
         calc(@content-spacing-left + 6px);
+
+      .media(0, sm, {
+        padding-right: 5px;
+        padding-left: 5px;
+      });
     }
     .header {
       background-color: mix(@default-fg, @default-bg, @fade1);
@@ -161,6 +171,13 @@
     grid-template-areas: "feed title updated icon actions";
     grid-template-columns: clamp(150px, 20%, 250px) 1fr auto auto auto;
 
+    .media(0, md, {
+      grid-template-areas:
+        "feed updated icon actions"
+        "title title title title";
+      grid-template-columns: 1fr auto auto auto;
+    });
+
     > * {
       align-items: center;
       min-height: calc(@headline-height - 2px);
@@ -174,6 +191,11 @@
       width: auto;
       min-height: unset;
       padding: calc(@title-padding) 5px;
+
+      .media(0, md, {
+        grid-row-start: 1;
+        padding-top: @headline-height;
+      });
     }
     // date
     > :nth-child(4) {
@@ -336,23 +358,25 @@
     &.Unread .title {
       color: @default-text;
     }
-    &:not(.marked) .marked-pic,
-    &:not(.published) .pub-pic,
-    &:not(.Selected) .dijitCheckBox,
-    .icon-score[title="0"] {
-      display: none;
-    }
-    &:hover {
-      > * {
-        background-color: @color-fade1;
-      }
-      :is(.marked-pic, .pub-pic, .dijitCheckBox, .icon-score) {
-        display: block;
-      }
-      .updated {
+    .media(md, {
+      &:not(.marked) .marked-pic,
+      &:not(.published) .pub-pic,
+      &:not(.Selected) .dijitCheckBox,
+      .icon-score[title="0"] {
         display: none;
       }
-    }
+      &:hover {
+        > * {
+          background-color: @color-fade1;
+        }
+        :is(.marked-pic, .pub-pic, .dijitCheckBox, .icon-score) {
+          display: block;
+        }
+        .updated {
+          display: none;
+        }
+      }
+    });
   }
 
   // ---------------------------------------------------------------------------
@@ -440,6 +464,10 @@
         &:hover {
           text-decoration: underline;
         }
+
+        .media(0, md, {
+          margin-top: calc(@title-padding);
+        });
       }
       .icon-feed {
         left: calc(@expanded-padding + 1px);
@@ -566,6 +594,10 @@
     grid-gap: 0 @expanded-gap;
     padding-bottom: 0;
 
+    .media(0, md, {
+      grid-template-columns: repeat(auto-fit, minmax(@card-min-column-width, 1fr));
+    });
+
     :is(.header, .content) {
       border: none;
     }
@@ -590,6 +622,11 @@
     justify-content: center;
     padding-right: calc(@content-spacing-right + @extra-padding);
     padding-left: calc(@content-spacing-left + @extra-padding);
+
+    .media(0, sm, {
+      padding-right: 5px;
+      padding-left: 5px;
+    });
 
     .titleWrap {
       height: 100%;
@@ -671,6 +708,10 @@
           border-left: 1px solid @border-default;
           background-color: @default-bg !important;
           backdrop-filter: none;
+
+          .media(0, md, {
+            width: 100vw;
+          });
         }
         .header {
           top: 0;

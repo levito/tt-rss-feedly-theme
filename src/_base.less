@@ -45,6 +45,11 @@
 
 ::-webkit-scrollbar {
   height: 4px;
+
+  .media(0, md, {
+    width: 0;
+    height: 0;
+  });
 }
 
 body.flat.flat ::-webkit-scrollbar-track {
@@ -54,6 +59,70 @@ body.flat.flat ::-webkit-scrollbar-track {
 .dijitOffScreen {
   left: -101vw !important;
 }
+
+// -----------------------------------------------------------------------------
+// mobile styling
+// -----------------------------------------------------------------------------
+.media(0, md, {
+  @feeds-width: calc(100vw - @feeds-toggle-width);
+
+  html {
+    --base-spacing: 37px !important;
+    --font-size-post: 14px !important;
+  }
+
+  // allow swiping between sidebar and main content
+  #main {
+    overflow-x: auto;
+  }
+  #feeds-holder {
+    width: @feeds-width !important;
+  }
+  #feeds-holder_splitter,
+  #feed_current_unread,
+  #toolbar > .material-icons {
+    display: none;
+  }
+  #content-wrap {
+    left: calc(@feeds-toggle-width + @feeds-width) !important;
+    width: calc(100vw - @feeds-toggle-width) !important;
+    margin-left: 0 !important;
+    transition: left 0.2s;
+
+    #feeds-holder[style*="none"] ~ & {
+      left: @feeds-toggle-width !important;
+    }
+  }
+  #toolbar-frame,
+  #headlines-wrap-inner,
+  #headlines-frame,
+  #content-insert {
+    left: 0 !important;
+    right: 0 !important;
+    width: auto !important;
+  }
+
+  .dijitDialog {
+    max-width: 90vw;
+
+    // several inputs and maybe textareas have a large fixed width set as inline style
+    .dijitTextBox[style*="width"] {
+      width: 100% !important;
+
+      // show warnint icon on same row, e. g. feed error on edit feed
+      &:has(+ .material-icons) {
+        width: calc(100% - 25px) !important;
+      }
+    }
+  }
+
+  // careful label baseline styling, further extended in _prefs.less
+  :is(.dijitDialog, .ttrss_prefs) fieldset > label:first-of-type {
+    margin-top: 4px;
+    margin-bottom: 4px;
+    text-align: left !important;
+  }
+});
 
 body.flat {
   background-color: @default-bg;
