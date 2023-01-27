@@ -121,6 +121,17 @@ body.flat {
   :is(.dijitMultiSelect, .dijitSelectActive) {
     box-shadow: none;
   }
+  label.checkbox {
+    display: inline-flex !important;
+    align-items: center;
+    min-height: 30px;
+    vertical-align: middle;
+    gap: 5px;
+
+    > .dijitCheckBox {
+      flex-shrink: 0;
+    }
+  }
   .dijitToolbar {
     margin: 8px;
     padding: 4px;
