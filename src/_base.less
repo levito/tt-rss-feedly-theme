@@ -63,38 +63,6 @@ body.flat.flat ::-webkit-scrollbar-track {
 // -----------------------------------------------------------------------------
 // mobile styling
 // -----------------------------------------------------------------------------
-.media(0, sm, {
-  :root:root {
-    --content-spacing: 12px;
-  }
-});
-.media(0, md, {
-  :root:root {
-    --base-spacing: 37px;
-    --font-size-post: 14px;
-  }
-
-  .dijitDialog {
-    max-width: 90vw;
-
-    // several inputs and maybe textareas have a large fixed width set as inline style
-    .dijitTextBox[style*="width"] {
-      width: 100% !important;
-
-      // show warnint icon on same row, e. g. feed error on edit feed
-      &:has(+ .material-icons) {
-        width: calc(100% - 25px) !important;
-      }
-    }
-  }
-
-  // careful label baseline styling, further extended in _prefs.less
-  :is(.dijitDialog, .ttrss_prefs) fieldset > label:first-of-type {
-    margin-top: 4px;
-    margin-bottom: 4px;
-    text-align: left !important;
-  }
-});
 .media(0, lg, {
   // currently widest popular phone: 428px, + 37px feeds-toggle = 465px
   @feeds-width: calc(min(100vw, 465px) - @feeds-toggle-width);
@@ -128,6 +96,38 @@ body.flat.flat ::-webkit-scrollbar-track {
     left: 0 !important;
     right: 0 !important;
     width: auto !important;
+  }
+});
+.media(0, md, {
+  :root:root {
+    --base-spacing: 37px;
+    --font-size-post: 14px;
+  }
+
+  .dijitDialog {
+    max-width: 90vw;
+
+    // several inputs and maybe textareas have a large fixed width set as inline style
+    .dijitTextBox[style*="width"] {
+      width: 100% !important;
+
+      // show warnint icon on same row, e. g. feed error on edit feed
+      &:has(+ .material-icons) {
+        width: calc(100% - 25px) !important;
+      }
+    }
+  }
+
+  // careful label baseline styling, further extended in _prefs.less
+  :is(.dijitDialog, .ttrss_prefs) fieldset > label:first-of-type {
+    margin-top: 4px;
+    margin-bottom: 4px;
+    text-align: left !important;
+  }
+});
+.media(0, sm, {
+  :root:root {
+    --content-spacing: 12px;
   }
 });
 
