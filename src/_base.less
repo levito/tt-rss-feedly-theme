@@ -107,7 +107,7 @@ body.flat.flat ::-webkit-scrollbar-track {
     max-width: 90vw;
 
     // several inputs and maybe textareas have a large fixed width set as inline style
-    .dijitTextBox[style*="width"] {
+    :is(.dijitTextArea, .dijitTextBox[style*="width"]) {
       width: 100% !important;
 
       // show warnint icon on same row, e. g. feed error on edit feed
@@ -127,6 +127,10 @@ body.flat.flat ::-webkit-scrollbar-track {
 .media(0, sm, {
   :root:root {
     --content-spacing: 12px;
+  }
+
+  .dijitDialog {
+    width: 90vw !important;
   }
 });
 

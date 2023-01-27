@@ -64,7 +64,7 @@ body.ttrss_prefs {
     }
 
     // general preferences
-    .prefs {
+    fieldset.prefs {
       display: flex;
       flex-wrap: wrap;
 
@@ -79,6 +79,7 @@ body.ttrss_prefs {
       label:first-of-type {
         flex-basis: calc(100% - @checkbox-indent);
         margin-right: 0;
+        min-width: 0;
 
         // pull checkboxes before the label
         + .dijitCheckBox {
