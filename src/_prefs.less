@@ -55,13 +55,14 @@ body.ttrss_prefs {
   // ---------------------------------------------------------------------------
   // mobile styling
   // ---------------------------------------------------------------------------
-  .media(0, md, {
-    @checkbox-indent: 30px;
-
+  .media(0, lg, {
     // remove header icons, text from prefs exit button, main top tabs and feeds left tabs
     :is(#header > a, #header > i, #pref-tabs_tablist, .dijitTabContainerLeft-tabs) {
       font-size: 0;
     }
+  });
+  .media(0, md, {
+    @checkbox-indent: 30px;
 
     // general preferences
     fieldset.prefs {
@@ -105,6 +106,8 @@ body.ttrss_prefs {
 
         label.checkbox {
           flex-wrap: wrap;
+          gap: 0;
+          padding-left: 0;
 
           .name {
             min-width: 0 !important;
@@ -118,7 +121,8 @@ body.ttrss_prefs {
         }
         .actions {
           display: flex;
-          flex-grow: unset;
+          flex-grow: 0;
+          padding-right: 0;
         }
       }
     }
