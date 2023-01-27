@@ -20,6 +20,10 @@
   margin-left: -5px;
   overflow: visible;
 
+  &:not(.dijitSplitterActive + *) {
+    transition: left 0.2s;
+  }
+
   #feeds-holder_splitter[style*="none"] + & {
     margin-left: 0;
   }
