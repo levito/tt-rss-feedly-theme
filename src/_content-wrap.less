@@ -365,6 +365,11 @@
         }
       }
     }
+    .media(0, sm, {
+      .dijitCheckBox {
+        display: none;
+      }
+    });
   }
 
   // ---------------------------------------------------------------------------
@@ -405,6 +410,9 @@
         top: calc(-1 * @headline-height - @expanded-padding - @shift);
         padding: @expanded-padding (@expanded-padding + 2px) 0 @expanded-padding;
 
+        .dijitCheckBox {
+          display: none;
+        }
         :is(.icon-feed, .feed, .updated, .left, .collapse) {
           transition: transform 0.2s;
         }
