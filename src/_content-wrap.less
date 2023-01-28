@@ -398,18 +398,12 @@
       margin-bottom: @expanded-gap;
       background-color: transparent !important;
 
-      .media(0, sm, {
-        margin-left: calc(-1 * @expanded-padding);
-        border-color: transparent !important;
-        border-top-color: @border-default !important;
-      });
-
       .header {
         @icon-height: 25px;
         @shift: e("((@{headline-height} - @{icon-height}) / 2 + @{title-padding})");
 
         top: calc(-1 * @headline-height - @expanded-padding - @shift);
-        padding: @expanded-padding @expanded-padding 0;
+        padding: @expanded-padding (@expanded-padding + 2px) 0 @expanded-padding;
 
         :is(.icon-feed, .feed, .updated, .left, .collapse) {
           transition: transform 0.2s;
@@ -436,6 +430,10 @@
       }
       .content {
         padding: @font-size-post @expanded-padding @expanded-padding;
+
+        .media(0, sm, {
+          padding-right: 0;
+        });
       }
       .content-inner {
         margin: 0 5px;
@@ -455,8 +453,10 @@
         font-weight: bold;
         text-rendering: optimizeLegibility;
 
-        &:hover {
-          text-decoration: underline;
+        @media (hover: hover) {
+          &:hover {
+            text-decoration: underline;
+          }
         }
         .media(0, lg, {
           .heading-font-size(1);
@@ -466,9 +466,19 @@
           .heading-font-size(2);
         });
       }
-      .icon-feed {
-        left: calc(@expanded-padding + 1px);
-      }
+      .media(sm, {
+        .icon-feed {
+          left: calc(@expanded-padding + 1px);
+        }
+      });
+      .media(0, sm, {
+        border-color: transparent !important;
+        border-top-color: @border-default !important;
+
+        :is(.header, .content) {
+          padding-left: 0;
+        }
+      });
     }
     &.expandable:not(.active) {
       cursor: unset;
@@ -676,7 +686,7 @@
       }
       &.active {
         @width: 75vw;
-        @padding-x: 10vw;
+        @padding-x: max(calc(15vw - 100px), @content-spacing);
         @header-height: calc(@font-size-post * 2 + @base-spacing * 2 + 56px);
 
         #main:has(&) {
@@ -740,6 +750,12 @@
           :is(.icon-feed, .feed, .updated, .left, .right > *, .collapse) {
             transform: none;
           }
+
+          .media(0, sm, {
+            .left {
+              margin-right: 25px; // keep some space for close button
+            }
+          });
         }
         .content {
           top: @header-height;

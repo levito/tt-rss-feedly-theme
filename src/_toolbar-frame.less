@@ -142,14 +142,12 @@
           box-shadow: 0 6px 0 @default-fg, 0 12px 0 @default-fg;
         }
       }
-      &:hover {
-        @media (hover: hover) {
-          .dijitButtonNode {
-            background-position: 0 0;
-          }
-          .dijitButtonContents {
-            opacity: @fade8;
-          }
+      @media (hover: hover) {
+        &:hover .dijitButtonNode {
+          background-position: 0 0;
+        }
+        &:hover .dijitButtonContents {
+          opacity: @fade8;
         }
       }
     }
