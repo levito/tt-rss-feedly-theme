@@ -438,10 +438,6 @@
       }
       .content {
         padding: @font-size-post @expanded-padding @expanded-padding;
-
-        .media(0, sm, {
-          padding-right: 0;
-        });
       }
       .content-inner {
         margin: 0 5px;
@@ -485,6 +481,9 @@
 
         :is(.header, .content) {
           padding-left: 0;
+        }
+        .content {
+          padding-right: 0;
         }
       });
     }
