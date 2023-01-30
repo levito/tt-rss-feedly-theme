@@ -745,7 +745,7 @@
             position: absolute;
             z-index: -1;
             top: calc(@collapse-bar-height);
-            right: 0;
+            right: 30px; // for mobile, allow tapping on right edge of the header to close detail view
             bottom: 0;
             left: 0;
           }
@@ -756,7 +756,7 @@
 
           .media(0, sm, {
             .left {
-              margin-right: 25px; // keep some space for close button
+              margin-right: 20px; // keep some space for close button
             }
           });
         }
