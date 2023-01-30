@@ -372,7 +372,7 @@
     }
     .media(0, sm, {
       .dijitCheckBox {
-        display: none;
+        display: none !important;
       }
     });
   }
@@ -416,7 +416,7 @@
         padding: @expanded-padding (@expanded-padding + 2px) 0 @expanded-padding;
 
         .dijitCheckBox {
-          display: none;
+          display: none !important;
         }
         :is(.icon-feed, .feed, .updated, .left, .collapse) {
           transition: transform 0.2s;
