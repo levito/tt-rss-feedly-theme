@@ -14,6 +14,7 @@
 
 @base-spacing: var(--base-spacing);
 @content-spacing: var(--content-spacing, var(--base-spacing));
+@feeds-toggle-width: var(--feeds-toggle-width, var(--base-spacing));
 @font-size-post: var(--font-size-post);
 @fonts-ui: var(--fonts-ui); // also used in defines.less
 @fonts-content: var(--fonts-content);
@@ -69,8 +70,7 @@
 
 @font-size-main: @font-size-toolbar;
 
-@feeds-toggle-width: @base-spacing;
-@feeds-spacing: calc(@base-spacing - 8px);
+@feeds-spacing: calc(@feeds-toggle-width - 8px);
 @headline-height: @base-spacing;
 @content-spacing-right: e("(@{content-spacing} + 4px)");
 @content-spacing-left: e("(@{content-spacing} - 4px)");

@@ -692,7 +692,7 @@
         });
       }
       &.active {
-        @width: 75vw;
+        @width: clamp(75vw, calc(@font-size-post * @reading-width), 100vw);
         @padding-x: max(calc(15vw - 100px), @content-spacing);
         @header-height: calc(@font-size-post * 2 + @base-spacing * 2 + 56px);
 
@@ -735,10 +735,6 @@
           border-left: 1px solid @border-default;
           background-color: @default-bg !important;
           backdrop-filter: none;
-
-          .media(0, md, {
-            width: 100vw;
-          });
         }
         .header {
           top: 0;

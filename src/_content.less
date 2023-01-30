@@ -10,7 +10,10 @@
   :is(.content, .content-inner) {
     font-family: @fonts-content;
     font-size: @font-size-post;
-    line-height: 1.7;
+
+    .media(sm, {
+      line-height: 1.7;
+    });
 
     > :first-child {
       margin-top: 0;
