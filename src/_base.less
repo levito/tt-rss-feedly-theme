@@ -70,23 +70,32 @@ body.flat.flat ::-webkit-scrollbar-track {
   // allow swiping between sidebar and main content
   #main {
     overflow-x: auto;
+    scroll-snap-type: x mandatory;
+
+    &::before {
+      content: "";
+      position: absolute;
+      scroll-snap-align: start;
+    }
   }
   #feeds-holder {
     width: @feeds-width !important;
-  }
-  #feeds-holder_splitter,
-  #feed_current_unread,
-  #toolbar > .material-icons {
-    display: none;
+
+    &[style*="none"] ~ #content-wrap {
+      left: @feeds-toggle-width !important;
+      scroll-snap-align: none;
+    }
   }
   #content-wrap {
     left: calc(@feeds-toggle-width + @feeds-width) !important;
     width: calc(100vw - @feeds-toggle-width) !important;
     margin-left: 0 !important;
-
-    #feeds-holder[style*="none"] ~ & {
-      left: @feeds-toggle-width !important;
-    }
+    scroll-snap-align: start;
+  }
+  #feeds-holder_splitter,
+  #feed_current_unread,
+  #toolbar > .material-icons {
+    display: none;
   }
   #toolbar-frame,
   #headlines-wrap-inner,
