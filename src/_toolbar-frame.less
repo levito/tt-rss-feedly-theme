@@ -167,14 +167,14 @@
           padding: @padding;
           width: 0;
           border-radius: 999px;
-          background: @color-accent radial-gradient(circle, transparent 0%, transparent 0.1%, #ffffff1a 1%, transparent 1%) center/100000%;
+          background: @color-accent radial-gradient(circle, transparent 1%, fade(@color-accent, 50%) 1%) center/20000%;
           box-shadow: 0 3px 5px -1px #0003, 0 6px 10px 0 #00000024, 0 1px 18px 0 #0000001f;
-          transition: box-shadow 0.3s, background-size 2s linear, background-color 0.5s 0.2s;
+          transition: box-shadow 0.3s, background 0.8s ease-out;
           -webkit-tap-highlight-color: transparent;
 
           &:active {
             transition: box-shadow 0.3s, background-color 0.2s;
-            background-color: lighten(@color-accent, 15%);
+            background-color: lighten(@color-accent, 20%);
             background-size: 100%;
             box-shadow: 0 7px 8px -4px #0003, 0 12px 17px 2px #00000024, 0 5px 22px 4px #0000001f;
           }
