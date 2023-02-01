@@ -29,16 +29,13 @@
   }
 
   #headlines-frame {
-    padding-top: @headline-height;
-    padding-right: calc(@content-spacing-right);
-    padding-left: calc(@content-spacing-left);
+    padding: @headline-height calc(@content-spacing-right) 0 calc(@content-spacing-left);
     transform: none;
 
     // move headlines-frame up and children down so cdm header doesn't stick too early
     // especially exclude cards from transform so the overlay keeps working
     &.cdm:not([data-enable-grid="true"][data-is-cdm-expanded="false"]) {
-      padding-top: 0;
-      padding-bottom: @headline-height;
+      padding-block: 0 @headline-height;
 
       > * {
         transform: translateY(@headline-height);
@@ -282,8 +279,7 @@
     position: relative;
     margin-bottom: -1px;
     border: 1px solid @border-default;
-    border-right-color: transparent !important;
-    border-left-color: transparent !important;
+    border-inline-color: transparent !important;
     background-color: @default-bg;
 
     :is(.author, .excerpt, .hl-content, .preview, .titleWrap, .updated) {
@@ -488,14 +484,13 @@
         }
       });
       .media(0, sm, {
-        border-color: transparent !important;
-        border-top-color: @border-default !important;
+        border-color: @border-default transparent transparent !important;
 
-        :is(.header, .content) {
+        .header {
           padding-left: 0;
         }
         .content {
-          padding-right: 0;
+          padding-inline: 0;
         }
       });
     }
@@ -517,9 +512,7 @@
     }
     .collapse {
       position: absolute;
-      top: 0;
-      right: 0;
-      left: 0;
+      inset: 0 0 auto;
 
       i {
         display: flex;
@@ -626,7 +619,7 @@
   // cards/grid shared styles
   // ---------------------------------------------------------------------------
   #headlines-frame.cdm[data-enable-grid="true"] {
-    grid-gap: 0 @expanded-gap;
+    gap: 0 @expanded-gap;
     padding-bottom: 0;
 
     .media(0, lg, {
@@ -657,9 +650,7 @@
     @extra-padding: e("max(0px, calc((@{frame-width} - @{cards-width}) / 2))");
 
     display: grid;
-    justify-content: center;
-    padding-right: calc(@content-spacing-right + @extra-padding);
-    padding-left: calc(@content-spacing-left + @extra-padding);
+    padding-inline: calc(@content-spacing-left + @extra-padding) calc(@content-spacing-right + @extra-padding);
 
     .media(md, {
       grid-template-columns: repeat(auto-fit, minmax(@card-min-column-width, 1fr));
@@ -745,8 +736,7 @@
         }
         :is(.header, .content) {
           width: @width;
-          padding-right: @padding-x;
-          padding-left: @padding-x;
+          padding-inline: @padding-x;
           border-left: 1px solid @border-default;
           background-color: @default-bg !important;
           backdrop-filter: none;
@@ -768,7 +758,6 @@
           :is(.icon-feed, .feed, .updated, .left, .right > *, .collapse) {
             transform: none;
           }
-
           .media(0, sm, {
             .left {
               margin-right: 20px; // keep some space for close button
@@ -861,9 +850,7 @@
     &::after {
       content: "The End";
       position: absolute;
-      right: 0;
-      bottom: 0;
-      left: 0;
+      inset: auto 0 0;
       padding: calc(@base-spacing);
       color: @color-fade5;
       font-weight: bold;

@@ -34,8 +34,7 @@
     }
     :is(h1, h2, h3, h4, h5, h6) {
       .reading-width();
-      margin-top: calc(2.5 * @font-size-post);
-      margin-bottom: @font-size-post;
+      margin-block: calc(2.5 * @font-size-post) @font-size-post;
       font: bold 1em @fonts-heading;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
@@ -130,8 +129,7 @@
       padding: 0;
 
       :is(p, ul, ol, dl, blockquote, figure, iframe, img, video) {
-        margin-top: 0.5em;
-        margin-bottom: 0.5em;
+        margin-block: 0.5em;
       }
     }
     :is(blockquote, q) {
@@ -187,8 +185,7 @@
     font-size: @font-size-main;
   }
   .content .article-note {
-    margin-top: 0;
-    margin-bottom: calc(5px + @font-size-post);
+    margin-block: 0 calc(5px + @font-size-post);
   }
   .attachments {
     display: block;
@@ -204,9 +201,7 @@
     &::before {
       content: "";
       position: absolute;
-      right: 0;
-      bottom: 0;
-      left: 0;
+      inset: auto 0 0;
       height: 200px;
       background: linear-gradient(to top, @default-bg, transparent);
       pointer-events: none;
