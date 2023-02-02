@@ -114,8 +114,9 @@
       white-space: pre-wrap;
     }
     code {
-      display: inline-block;
-      padding: 0 0.1em;
+      padding: 0 0.1em !important;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
     }
     pre code {
       padding: 0;
