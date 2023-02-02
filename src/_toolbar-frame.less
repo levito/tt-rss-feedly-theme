@@ -62,10 +62,18 @@
       }
     }
     .cancel_search {
-      padding-left: 10px;
-      transform: translateY(1px);
-      color: transparent;
-      font-weight: normal;
+      font: 0 / 1 "Material Icons";
+      -webkit-font-smoothing: antialiased;
+
+      a {
+        color: inherit;
+        text-decoration: none;
+
+        &::after {
+          content: "close";
+          font-size: 18px;
+        }
+      }
     }
     #feed_current_unread {
       min-width: unset;
