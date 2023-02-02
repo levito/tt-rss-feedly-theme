@@ -160,8 +160,13 @@ body.flat {
   :is(.dijitMultiSelect, .dijitTab.dijitActive) {
     color: @default-text;
   }
-  .dijitTab:not(.dijitChecked) {
-    border: 1px solid transparent;
+  .dijitTab {
+    &:not(.dijitChecked) {
+      border: 1px solid transparent;
+    }
+    .tabLabel {
+      display: block;
+    }
   }
   .dijitTabContainerTop-tabs .dijitTabChecked {
     border-bottom-color: transparent;
