@@ -12,6 +12,8 @@
   --card-target-column-width: var(--card-min-column-width) * 1.15;
 }
 
+@plugin 'less-plugin-reflections';
+
 @base-spacing: var(--base-spacing);
 @content-spacing: var(--content-spacing, var(--base-spacing));
 @content-spacing-right: var(--content-spacing, e("(@{content-spacing} + 4px)"));
@@ -123,6 +125,40 @@
     }
   }
   .return();
+}
+
+// TODO: rework once https://github.com/less/less.js/issues/3766 is solved
+// mixin to add whole selector chain to @contaier query to work around less not inheriting the selector
+// using plugin https://github.com/seven-phases-max/less-plugin-reflections to save selector to a variable
+// as suggested here: https://github.com/less/less.js/issues/3053#issuecomment-299707813
+.container(@from, @rules) {
+  .container(@from, @to: 0, @rules);
+}
+.container(@from, @to, @rules) {
+  @selector: current-selector();
+
+  .return(@selector) when (@from = 0) {
+    @container (max-width: @to) {
+      @{selector} {
+        @rules();
+      }
+    }
+  }
+  .return(@selector) when (@to = 0) {
+    @container (min-width: @from) {
+      @{selector} {
+        @rules();
+      }
+    }
+  }
+  .return(@selector) when (default()) {
+    @container (min-width: @from) and (max-width: @to) {
+      @{selector} {
+        @rules();
+      }
+    }
+  }
+  .return(@selector);
 }
 
 // based on https://bitbucket.org/pixelass/homeless/src/master/src/repeat/repeat.less
