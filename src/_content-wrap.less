@@ -140,26 +140,25 @@
       > .material-icons {
         display: none;
       }
-    }
-    // if there's little available width (widescreen mode, mobile) and at least one tag is applied,
-    // move tags and add button to a new row between title/date and other meta info
-    // prepend whole selector chain to work around less bug of not inheriting selector
-    @container (max-width: 700px) {
-      #content-insert .post .header .row ~ .row:has(.tags a) {
-        display: grid;
-        grid-template-areas:
-          "tags tags tags tags add-tag"
-          "first second comments right right"
-          ". . . . ."; // explisitly add a row so lightningcss doesn't remove `grid-template-rows`
-        grid-template-columns: auto auto 1fr auto auto;
-        grid-template-rows: auto auto 0; // bury extra whitespace in a 3rd zero-height row
-
-        :is(.tags, .tags + a) {
-          align-self: center;
-          margin-bottom: @row-gap; // use margin instead of grid gap to hide the 3rd grid row
-          text-align: right;
+      // if there's little available width (widescreen mode, mobile) and at least one tag is applied,
+      // move tags and add button to a new row between title/date and other meta info
+      .container(0, 700px, {
+        &:has(.tags a) {
+          display: grid;
+          grid-template-areas:
+            "tags tags tags tags add-tag"
+            "first second comments right right"
+            ". . . . ."; // explicitly add a row so lightningcss does not remove `grid-template-rows`
+          grid-template-columns: auto auto 1fr auto auto;
+          grid-template-rows: auto auto 0; // bury extra whitespace in a 3rd zero-height row
+  
+          :is(.tags, .tags + a) {
+            align-self: center;
+            margin-bottom: @row-gap; // use margin instead of grid gap to hide the 3rd grid row
+            text-align: right;
+          }
         }
-      }
+      });
     }
     .title {
       font-size: 13px;
@@ -626,11 +625,11 @@
 
   // show action icons in vertically split list items if they are wide enough
   #headlines-frame[data-is-wide-screen="true"][data-is-cdm="false"] {
-    @container (min-width: 500px) {
+    .container(500px, {
       .hl :is(.marked-pic, .pub-pic, .dijitCheckBox, .icon-score, .updated) {
-        display: block !important;
+        display: block;
       }
-    }
+    });
   }
 
   // ---------------------------------------------------------------------------
