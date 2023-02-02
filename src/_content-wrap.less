@@ -84,7 +84,7 @@
     :is(.left, .right) {
       align-items: flex-start;
     }
-    // comments
+    // cdm footer comments
     .left > a[target] {
       white-space: nowrap;
     }
@@ -122,11 +122,8 @@
   // ---------------------------------------------------------------------------
   // split detail
   // ---------------------------------------------------------------------------
-  #content-insert {
-    container-type: inline-size;
-  }
   .post {
-    @row-gap: calc(@title-padding / 2);
+    container-type: inline-size;
 
     :is(.header, .content) {
       padding: calc(@title-padding) calc(@content-spacing-right + 6px) calc(@title-padding)
@@ -136,6 +133,7 @@
       background-color: mix(@default-fg, @default-bg, @fade1);
     }
     .row ~ .row {
+      @row-gap: calc(@title-padding / 2);
       margin: @row-gap 0 0;
 
       // tags icon
