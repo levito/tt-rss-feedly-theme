@@ -12,10 +12,9 @@
 }
 
 #content-wrap#content-wrap {
-  @expanded-padding: 25px;
   @expanded-gap: calc(@base-spacing / 5 + 10px);
   @title-padding: e("((@{headline-height} - 17px) / 2)");
-  @collapse-bar-height: e("(@{expanded-padding} + @{title-padding} / 2)");
+  @collapse-bar-height: e("(@{expanded-detail-padding-y} + @{title-padding} / 2)");
 
   margin-left: -5px;
   overflow: visible;
@@ -456,12 +455,16 @@
       margin-bottom: @expanded-gap;
       background-color: transparent !important;
 
+      .media(0, sm, {
+        border-color: @border-default transparent transparent !important;
+      });
       .header {
         @icon-height: 25px;
+        @icon-width: 27px;
         @shift: e("((@{headline-height} - @{icon-height}) / 2 + @{title-padding})");
 
-        top: calc(-1 * @headline-height - @expanded-padding - @shift);
-        padding: @expanded-padding (@expanded-padding + 2px) 0 @expanded-padding;
+        top: calc(-1 * @headline-height - @expanded-detail-padding-y - @shift);
+        padding: @expanded-detail-padding-y @icon-width 0 @expanded-detail-padding-x;
 
         .dijitCheckBox {
           display: none !important;
@@ -490,7 +493,7 @@
         }
       }
       .content {
-        padding: @font-size-post @expanded-padding @expanded-padding;
+        padding: @font-size-post @expanded-detail-padding-x @expanded-detail-padding-y;
       }
       .content-inner {
         margin: 0 5px;
@@ -523,21 +526,6 @@
           .heading-font-size(2);
         });
       }
-      .media(sm, {
-        .icon-feed {
-          left: calc(@expanded-padding + 1px);
-        }
-      });
-      .media(0, sm, {
-        border-color: @border-default transparent transparent !important;
-
-        .header {
-          padding-left: 0;
-        }
-        .content {
-          padding-inline: 0;
-        }
-      });
     }
     &.expandable:not(.active) {
       cursor: unset;

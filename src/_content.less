@@ -87,11 +87,10 @@
     .embed-responsive > * {
       margin: 0;
     }
-    // fix incorrectly nested html breaking out, incorrectly using p instead of figcaption
     figure {
-      figcaption,
-      > * ~ figcaption ~ *,
-      > img + p:last-child {
+      > * ~ figcaption ~ *, // fix p/div incorrectly nested inside figcaption breaking out
+      > img + p:last-child, // fix incorrectly using p instead of figcaption
+      figcaption {
         margin: -0.5em 0 0;
         font-size: 0.857em;
         font-style: italic;

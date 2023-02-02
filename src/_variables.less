@@ -12,12 +12,12 @@
   --card-target-column-width: var(--card-min-column-width) * 1.15;
 }
 
-@plugin 'less-plugin-reflections';
-
 @base-spacing: var(--base-spacing);
 @content-spacing: var(--content-spacing, var(--base-spacing));
 @content-spacing-right: var(--content-spacing, e("(@{content-spacing} + 4px)"));
 @content-spacing-left: var(--content-spacing, e("(@{content-spacing} - 4px)"));
+@expanded-detail-padding-x: var(--expanded-detail-padding-x, 25px);
+@expanded-detail-padding-y: 25px;
 @feeds-toggle-width: var(--feeds-toggle-width, var(--base-spacing));
 @feeds-spacing: var(--content-spacing, calc(@feeds-toggle-width - 8px));
 @font-size-post: var(--font-size-post);
@@ -131,6 +131,7 @@
 // mixin to add whole selector chain to @contaier query to work around less not inheriting the selector
 // using plugin https://github.com/seven-phases-max/less-plugin-reflections to save selector to a variable
 // as suggested here: https://github.com/less/less.js/issues/3053#issuecomment-299707813
+@plugin 'reflections'; // this implements `current-selector()`
 .container(@from, @rules) {
   .container(@from, @to: 0, @rules);
 }
