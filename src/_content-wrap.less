@@ -42,8 +42,8 @@
     }
   }
 
-  :is(#headlines-frame, #content-insert) {
-    container-type: inline-size;
+  // target #headlines-frame and #content-insert
+  .dijitContentPane {
     background-color: @default-bg;
   }
 
@@ -122,6 +122,9 @@
   // ---------------------------------------------------------------------------
   // split detail
   // ---------------------------------------------------------------------------
+  #content-insert {
+    container-type: inline-size;
+  }
   .post {
     @row-gap: calc(@title-padding / 2);
 
@@ -613,6 +616,8 @@
 
   // show action icons in vertically split list items if they are wide enough
   #headlines-frame[data-is-wide-screen="true"][data-is-cdm="false"] {
+    container-type: inline-size;
+
     .container(500px, {
       .hl :is(.marked-pic, .pub-pic, .dijitCheckBox, .icon-score, .updated) {
         display: block;
