@@ -90,7 +90,7 @@ body.ttrss_prefs {
 
           // align start of help-text with checkbox label
           ~ .help-text {
-            margin-left: @checkbox-indent;
+            margin: 4px 0 4px @checkbox-indent;
           }
           // push  preview digest  button to the end
           + .dijitButton {
@@ -112,12 +112,12 @@ body.ttrss_prefs {
 
           .name {
             min-width: 0 !important;
-            margin: 4px 10px;
+            margin-inline: 10px 0;
             text-align: left;
           }
           .description {
             flex-basis: 100%;
-            margin-left: @checkbox-indent;
+            margin: 4px 0 4px @checkbox-indent;
           }
         }
         .actions {
@@ -155,6 +155,18 @@ body.ttrss_prefs {
   // preferences > preferences main tab content
   #prefsTab #dijit_layout_AccordionPane_1 {
     padding: 0;
+  }
+  // re-add language selector margin removed via inline style
+  label[for="CB_USER_LANGUAGE"] + .dijitSelect {
+    margin: 4px 4px 4px 0 !important;
+  }
+  fieldset.prefs {
+    .help-text-bottom {
+      margin-top: 0;
+    }
+  }
+  ul.prefs-plugin-list li {
+    line-height: unset;
   }
 
   // ---------------------------------------------------------------------------

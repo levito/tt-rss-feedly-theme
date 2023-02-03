@@ -138,18 +138,19 @@ body.flat {
     border: 1px solid @color-fade2;
     border-radius: 4px;
 
-    :is(.dijitButton, .dijitComboButton, .dijitDropDownButton, .dijitSelect) {
+    :is(.dijitButton, .dijitComboButton, .dijitDropDownButton) {
+      margin: 0;
+
       &:is(.dijitActive, .dijitFocused):not(.dijitDisabled) {
         box-shadow: none;
       }
     }
-    // event log severity selector
-    .dijitSelect {
-      margin: 3px 4px;
-
-      .dijitButtonNode {
-        padding-block: 2px;
-      }
+    // event log severity selector, search
+    :is(.dijitSelect, .dijitTextBox) {
+      margin: 3px 0;
+    }
+    .dijitSelect .dijitButtonNode {
+      padding-block: 2px;
     }
   }
   .dijitDialogPaneContent .dijitToolbar {
@@ -199,14 +200,25 @@ body.flat {
     opacity: @fade6;
   }
   // tab and button layout fixes
-  :is(.dijitButton i.material-icons, .tabLabel > i.material-icons) {
+  :is(.dijitButton, .dijitComboButton, .dijitDropDownButton, .dijitToggleButton, .dijitSelect, .dijitTextBox) {
+    margin: 4px 4px 4px 0;
+  }
+  :is(.dijitDialog footer, .dijitDialog .dlgButtons) :last-child {
+    margin-right: 0;
+  }
+  label.dijitButton {
+    display: inline-flex;
+    align-items: center;
+    height: 16px;
+  }
+  :is(label.dijitButton, .dijitButton i.material-icons, .tabLabel > i.material-icons) {
     top: 0;
   }
   :is(.tabLabel, span.dijitButtonContents, .dijitButtonText) {
     display: flex;
     align-items: center;
   }
-  :is(.tabLabel, .dijitButtonText) {
+  :is(label.dijitButton, .tabLabel, .dijitButtonText) {
     gap: 4px;
   }
   .dijitButtonText span {

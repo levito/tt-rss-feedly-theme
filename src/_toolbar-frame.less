@@ -14,21 +14,8 @@
     padding: 6px calc(@content-spacing-left);
     background-color: @default-bg;
 
-    @media (hover: none) {
-      .action-button {
-        margin-right: 0;
-      }
-    }
     .media(0, sm, {
       padding-inline: 11px 2px; // calc(@content-spacing + 1px), calc(@content-spacing - 8px)
-    });
-    .media(0, xl, {
-      .dijitInputField {
-        padding-left: 4px;
-      }
-      .dijitRight {
-        display: none;
-      }
     });
     :is(#toolbar-main, .material-icons) {
       flex-shrink: 0;
@@ -109,6 +96,24 @@
       position: relative;
       top: -1px;
     }
+    .action-button {
+      margin-right: 4px;
+
+      @media (hover: none) {
+        margin-right: 0;
+      }
+    }
+    .media(0, xl, {
+      .dijitSelect {
+        margin-left: 4px;
+      }
+      .dijitInputField {
+        padding-inline: 4px;
+      }
+      .dijitRight {
+        display: none;
+      }
+    });
 
     // -------------------------------------------------------------------------
     // show/hide feeds, exclude plugin "search button"
