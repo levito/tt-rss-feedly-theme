@@ -27,6 +27,7 @@ body.ttrss_prefs {
 
     > a {
       display: inline-flex;
+      gap: 4px;
       margin-left: 8px;
       padding: 6px 16px;
       transition: background-color 0.2s;
@@ -37,7 +38,6 @@ body.ttrss_prefs {
 
       &::before {
         content: "exit_to_app";
-        margin: 0 4px;
         color: @color-accent;
         font-family: "Material Icons";
         font-size: 18px;
@@ -57,7 +57,8 @@ body.ttrss_prefs {
   // ---------------------------------------------------------------------------
   .media(0, lg, {
     // remove header icons, text from prefs exit button, main top tabs and feeds left tabs
-    :is(#header > a, #header > i, #pref-tabs_tablist, .dijitTabContainerLeft-tabs) {
+    :is(#header > a, #header > i, #pref-tabs_tablist .tabLabel, .dijitTabContainerLeft-tabs .tabLabel) {
+      gap: 0;
       font-size: 0;
     }
   });

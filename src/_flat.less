@@ -145,7 +145,7 @@ body.flat {
     }
     // event log severity selector
     .dijitSelect {
-      margin: 4px;
+      margin: 3px 4px;
 
       .dijitButtonNode {
         padding-block: 2px;
@@ -164,15 +164,16 @@ body.flat {
     &:not(.dijitChecked) {
       border: 1px solid transparent;
     }
-    .tabLabel {
-      display: block;
-    }
   }
   .dijitTabContainerTop-tabs .dijitTabChecked {
     border-bottom-color: transparent;
   }
-  .dijitTabContainerLeft-tabs .dijitTabChecked {
-    border-right-color: transparent;
+  .dijitTabContainerLeft-tabs {
+    margin-right: -0.4px; // fix rounding issues
+
+    .dijitTabChecked {
+      border-right-color: transparent;
+    }
   }
   .dijitDisabled {
     opacity: 0.5;
@@ -196,5 +197,19 @@ body.flat {
   }
   .dijitDialogUnderlay {
     opacity: @fade6;
+  }
+  // tab and button layout fixes
+  :is(.dijitButton i.material-icons, .tabLabel > i.material-icons) {
+    top: 0;
+  }
+  :is(.tabLabel, span.dijitButtonContents, .dijitButtonText) {
+    display: flex;
+    align-items: center;
+  }
+  :is(.tabLabel, .dijitButtonText) {
+    gap: 4px;
+  }
+  .dijitButtonText span {
+    display: block;
   }
 }
