@@ -192,6 +192,10 @@
   // plugins
   // ---------------------------------------------------------------------------
   .userpic-gravatar {
-    transform: scale(1.333);
+    margin-inline: 3px;
+    transform: scale(1.5);
+  }
+  .action-chooser:has(.userpic-gravatar) .dijitArrowButtonInner {
+    display: none !important;
   }
 }
