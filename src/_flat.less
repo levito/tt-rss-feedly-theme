@@ -206,20 +206,23 @@ body.flat {
   :is(.dijitDialog footer, .dijitDialog .dlgButtons) :last-child {
     margin-right: 0;
   }
-  label.dijitButton {
-    display: inline-flex;
-    align-items: center;
-    height: 16px;
-  }
   :is(label.dijitButton, .dijitButton i.material-icons, .tabLabel > i.material-icons) {
     top: 0;
   }
-  :is(.tabLabel, span.dijitButtonContents, .dijitButtonText) {
+  :is(label.dijitButton, .tabLabel, span.dijitButtonContents, .dijitButtonText) {
     display: flex;
     align-items: center;
+    justify-content: center;
   }
   :is(label.dijitButton, .tabLabel, .dijitButtonText) {
     gap: 4px;
+  }
+  label.dijitButton {
+    display: inline-flex;
+    height: 16px;
+  }
+  span.tabLabel {
+    justify-content: flex-start;
   }
   .dijitButtonText span {
     display: block;
