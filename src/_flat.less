@@ -2,6 +2,10 @@ body.flat {
   .dijitTextBox {
     box-sizing: border-box;
   }
+
+  // ---------------------------------------------------------------------------
+  // colors and general appearance
+  // ---------------------------------------------------------------------------
   .dijitContentPane,
   .dijitDialog,
   .dijitTab.dijitChecked,
@@ -121,6 +125,24 @@ body.flat {
   :is(.dijitMultiSelect, .dijitSelectActive) {
     box-shadow: none;
   }
+  .dijitDisabled {
+    opacity: 0.5;
+
+    &,
+    .dijitButtonNode {
+      color: @default-text;
+    }
+  }
+  .dijitDialogUnderlay {
+    opacity: @fade6;
+  }
+  .dijitSplitterThumb {
+    display: none;
+  }
+
+  // ---------------------------------------------------------------------------
+  // layout and exceptions
+  // ---------------------------------------------------------------------------
   label.checkbox {
     display: inline-flex !important;
     align-items: center;
@@ -161,10 +183,8 @@ body.flat {
   :is(.dijitMultiSelect, .dijitTab.dijitActive) {
     color: @default-text;
   }
-  .dijitTab {
-    &:not(.dijitChecked) {
-      border: 1px solid transparent;
-    }
+  .dijitTab:not(.dijitChecked) {
+    border: 1px solid transparent;
   }
   .dijitTabContainerTop-tabs .dijitTabChecked {
     border-bottom-color: transparent;
@@ -176,30 +196,14 @@ body.flat {
       border-right-color: transparent;
     }
   }
-  .dijitDisabled {
-    opacity: 0.5;
-
-    &,
-    .dijitButtonNode {
-      color: @default-text;
-    }
-  }
   &.flat :is(code, pre),
   .dijitTextArea {
     font-family: @fonts-mono;
   }
-  // bookmarklets
-  .dijitButton:not(.dijit) a {
-    color: inherit;
-    text-decoration: none;
-  }
-  .dijitSplitterThumb {
-    display: none;
-  }
-  .dijitDialogUnderlay {
-    opacity: @fade6;
-  }
+
+  // ---------------------------------------------------------------------------
   // tab and button layout fixes
+  // ---------------------------------------------------------------------------
   :is(.dijitButton, .dijitComboButton, .dijitDropDownButton, .dijitToggleButton, .dijitSelect, .dijitTextBox) {
     margin: 4px 4px 4px 0;
   }
@@ -209,22 +213,25 @@ body.flat {
   :is(label.dijitButton, .dijitButton i.material-icons, .tabLabel > i.material-icons) {
     top: 0;
   }
-  :is(label.dijitButton, .tabLabel, span.dijitButtonContents, .dijitButtonText) {
+  // specify `span.dijitButtonContents` to not affect `td.dijitButtonContents` of `.dijitSelect`
+  :is(label.dijitButton, span.dijitButtonContents, .dijitButtonText) {
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  :is(label.dijitButton, .tabLabel, .dijitButtonText) {
     gap: 4px;
+    height: 20px; // adjust icon-only buttons
   }
   label.dijitButton {
     display: inline-flex;
-    height: 16px;
+    padding: 4px 8px;
+
+    a {
+      all: unset; // bookmarklets
+    }
   }
-  span.tabLabel {
-    justify-content: flex-start;
-  }
-  .dijitButtonText span {
-    display: block;
+  .tabLabel {
+    display: flex;
+    align-items: center;
+    gap: 4px;
   }
 }
