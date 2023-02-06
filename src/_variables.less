@@ -14,11 +14,11 @@
 
 @base-spacing: var(--base-spacing);
 @content-spacing: var(--content-spacing, var(--base-spacing));
-@content-spacing-right: var(--content-spacing, e("(@{content-spacing} + 4px)"));
-@content-spacing-left: var(--content-spacing, e("(@{content-spacing} - 4px)"));
+@content-spacing-right: var(--content-spacing, ~"(@{base-spacing} + 4px)");
+@content-spacing-left: var(--content-spacing, ~"(@{base-spacing} - 4px)");
 @expanded-detail-padding-x: var(--expanded-detail-padding-x, 25px);
 @expanded-detail-padding-y: 25px;
-@feeds-toggle-width: var(--feeds-toggle-width, var(--base-spacing));
+@feeds-toggle-width: var(--feeds-toggle-width, @base-spacing);
 @feeds-spacing: var(--content-spacing, calc(@feeds-toggle-width - 8px));
 @font-size-post: var(--font-size-post);
 @fonts-ui: var(--fonts-ui); // also used in defines.less
@@ -28,7 +28,7 @@
 @reading-width: var(--reading-width);
 @card-max-column-count: var(--card-max-column-count);
 @card-min-column-width: var(--card-min-column-width);
-@card-target-column-width: e("(var(--card-target-column-width))");
+@card-target-column-width: ~"(var(--card-target-column-width))";
 
 @fade1: (55% / 15);
 @fade2: (100% / 15);
@@ -77,7 +77,7 @@
 @headline-height: @base-spacing;
 
 .heading-font-size(@level: 0) {
-  @font-size: e("(@{font-size-post} + 10px - @{level} * 2px)");
+  @font-size: ~"(@{font-size-post} + 10px - @{level} * 2px)";
 
   font-size: calc(@font-size);
   line-height: calc(@font-size + 6px);

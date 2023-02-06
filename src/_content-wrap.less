@@ -13,8 +13,8 @@
 
 #content-wrap#content-wrap {
   @expanded-gap: calc(@base-spacing / 5 + 10px);
-  @title-padding: e("((@{headline-height} - 17px) / 2)");
-  @collapse-bar-height: e("(@{expanded-detail-padding-y} + @{title-padding} / 2)");
+  @title-padding: ~"((@{headline-height} - 17px) / 2)";
+  @collapse-bar-height: ~"(@{expanded-detail-padding-y} + @{title-padding} / 2)";
 
   margin-left: -5px;
   overflow: visible;
@@ -462,7 +462,7 @@
       .header {
         @icon-height: 25px;
         @icon-width: 27px;
-        @shift: e("((@{headline-height} - @{icon-height}) / 2 + @{title-padding})");
+        @shift: ~"((@{headline-height} - @{icon-height}) / 2 + @{title-padding})";
 
         top: calc(-1 * @headline-height - @expanded-detail-padding-y - @shift);
         padding: @expanded-detail-padding-y @icon-width 0 @expanded-detail-padding-x;
@@ -683,9 +683,9 @@
   // cards view with overlay for detail
   // ---------------------------------------------------------------------------
   #headlines-frame.cdm[data-enable-grid="true"][data-is-cdm-expanded="false"] {
-    @cards-width: e("(@{card-max-column-count} * (@{card-target-column-width} + @{expanded-gap}) - @{expanded-gap})");
-    @frame-width: e("(100% - @{content-spacing-left} - @{content-spacing-right} - 4px)"); // 4px scrollbar
-    @extra-padding: e("max(0px, calc((@{frame-width} - @{cards-width}) / 2))");
+    @cards-width: ~"(@{card-max-column-count} * (@{card-target-column-width} + @{expanded-gap}) - @{expanded-gap})";
+    @frame-width: ~"(100% - @{content-spacing-left} - @{content-spacing-right} - 4px)"; // 4px scrollbar
+    @extra-padding: ~"max(0px, (@{frame-width} - @{cards-width}) / 2)";
 
     display: grid;
     padding-inline: calc(@content-spacing-left + @extra-padding) calc(@content-spacing-right + @extra-padding);
@@ -733,8 +733,8 @@
         });
       }
       &.active {
-        @width: clamp(75vw, calc(@font-size-post * @reading-width), 100vw);
-        @padding-x: max(calc(15vw - 100px), @content-spacing);
+        @width: ~"clamp(75vw, (@{font-size-post} * @{reading-width}), 100vw)";
+        @padding-x: ~"max((15vw - 100px), @{content-spacing})";
         @header-height: calc(@font-size-post * 2 + @base-spacing * 2 + 56px);
 
         #main:has(&) {
@@ -767,7 +767,7 @@
           top: 0;
           bottom: 0;
           left: -50px; // card-overlay animation travel
-          background-color: e("rgb(0 0 0 / @{fade6})");
+          background-color: ~"rgb(0 0 0 / @{fade6})";
         }
         .title {
           -webkit-line-clamp: 2;
