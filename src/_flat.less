@@ -99,12 +99,17 @@ body.flat {
     border-color: @border-darker;
   }
   :is(.dijitCheckBox, .dijitMultiSelect, .dijitSelect, .dijitTextBox) {
+    transition: border 0.2s, box-shadow 0.2s;
+
     &:is(.dijitActive, .dijitFocused, .dijitHover):not(.dijitDisabled) {
       border-color: @color-accent;
     }
   }
   .dijitCheckBox.dijitCheckBox:not(.dijitChecked)::before {
     color: transparent;
+  }
+  .dijitButton .material-icons {
+    color: unset !important; // fix icons flashing in accent color on closing accordion pane
   }
   :is(
       .dijitButton,
