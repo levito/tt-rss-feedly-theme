@@ -3,7 +3,7 @@
 @fade7: (800% / 15);
 @fade8: (1000% / 15);
 
-@default-fg: #fff;
+@default-fg: @white;
 @color-error: fade(@bright-red, 80%);
 @color-input: darken(@default-bg, @fade1);
 
@@ -30,7 +30,7 @@
     }
   }
   img.icon {
-    filter: opacity(0.8) drop-shadow(0 0 0.2px #fff) drop-shadow(0 0 0.4px #fff);
+    filter: opacity(0.8) drop-shadow(0 0 0.2px @white) drop-shadow(0 0 0.4px @white);
   }
 }
 // needs to be outside #main to also affect dialogs

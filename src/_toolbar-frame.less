@@ -53,7 +53,7 @@
       -webkit-font-smoothing: antialiased;
 
       a {
-        color: inherit;
+        color: unset;
         text-decoration: none;
 
         &::after {
@@ -63,7 +63,7 @@
       }
     }
     #feed_current_unread {
-      min-width: unset;
+      min-width: 0;
       padding: 0 6px;
       border-radius: 99px;
       border-color: transparent;
@@ -142,7 +142,7 @@
         padding: 0;
         overflow: hidden;
         transition: opacity 0.2s;
-        opacity: @fade4;
+        opacity: alpha(@color-feeds-icon);
         color: @default-fg;
         text-indent: 101%;
 
@@ -187,7 +187,7 @@
         .dijitButtonContents {
           top: @padding;
           opacity: 1;
-          color: #fff;
+          color: @white;
         }
       });
     }

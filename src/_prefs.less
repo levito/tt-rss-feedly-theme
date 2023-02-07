@@ -16,7 +16,7 @@ body.ttrss_prefs {
 
   // qr code for authenticator
   img[src^="data:image/png"] {
-    background-color: #fff;
+    background-color: @white;
   }
 
   #header {
@@ -184,10 +184,10 @@ body.ttrss_prefs {
     font {
       padding: 0 5px;
       border-radius: 4px;
-      background-color: #fff;
+      background-color: @white;
     }
     a:not([href]) {
-      color: inherit;
+      color: unset;
       text-decoration: none;
     }
     :is(h1, h2, table) {
@@ -209,12 +209,12 @@ body.ttrss_prefs {
     }
     &.phpinfo :is(th, td) {
       padding: 8px 12px;
-      border-color: @color-fade2;
+      border-color: @border-default;
       vertical-align: top;
     }
     .p {
       margin: 1em 0;
-      font: inherit;
+      font: unset;
       letter-spacing: 0;
       text-transform: none;
     }

@@ -161,7 +161,7 @@
       });
     }
     .title {
-      font-size: 13px;
+      font-size: @font-size-main;
       word-break: unset;
     }
     :is(.author, .tags) {
@@ -229,7 +229,7 @@
     > :is(.title, .titleWrap) {
       grid-area: title;
       width: auto;
-      min-height: unset;
+      min-height: 0;
       padding: calc(@title-padding) 5px;
 
       .media(0, lg, {
@@ -240,7 +240,7 @@
     // date
     > :nth-child(4) {
       grid-area: updated;
-      min-height: unset;
+      min-height: 0;
       pointer-events: none;
     }
     > .right {
@@ -335,7 +335,7 @@
       font-size: @font-size-small;
     }
     .title {
-      font-size: 13px;
+      font-size: @font-size-main;
       text-decoration: none;
     }
     &.Unread .title {
@@ -353,7 +353,7 @@
 
       &::before {
         content: "check_box";
-        color: inherit;
+        color: unset;
         font-family: "Material Icons";
         font-size: 21px;
       }
