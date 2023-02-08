@@ -245,6 +245,16 @@ body.flat {
   .dijitTextArea {
     font-family: @fonts-mono;
   }
+  // action menu
+  &.ttrss_index .dijitMenuItemDisabled {
+    opacity: 1;
+    box-shadow: inset 0 1px 0 @border-darker;
+
+    .dijitMenuItemLabel {
+      padding-top: 16px;
+      font-weight: bold;
+    }
+  }
 
   // ---------------------------------------------------------------------------
   // widget layout fixes
