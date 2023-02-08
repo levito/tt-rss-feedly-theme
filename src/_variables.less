@@ -38,24 +38,28 @@
 @fade6: (600% / 15);
 @fade7: (900% / 15);
 @fade8: (1100% / 15);
+@fade9: (1300% / 15);
 
 @black: #000;
-@bright-red: #f66;
-@dark-red: #c00;
-@green: #6b5;
 @white: #fff;
+@green: #6b5;
+@orange: #e84;
+@yellow: #db0;
+@red: #d45;
 
 @default-fg: @black;
 @default-bg: @white;
+@bg-read: @default-bg;
+@bg-unread: @default-bg;
 @color-marked: @green;
-@color-published: #e84;
-@color-selected: #db0;
+@color-published: @orange;
+@color-selected: @yellow;
 @color-checked: @color-accent;
-@color-error: fade(@dark-red, 80%);
+@color-error: @red;
 @color-input: lighten(@default-bg, @fade1);
-@color-button: mix(@default-fg, @default-bg, @fade1);
-@color-button-hover: mix(@default-fg, @default-bg, @fade2);
-@color-button-active: shade(@default-bg, @fade3);
+@color-button: mix(@default-fg, @default-bg, @fade2);
+@color-button-hover: mix(@default-fg, @default-bg, ((@fade1 + @fade4) / 2));
+@color-button-active: shade(@default-bg, @fade4);
 
 @color-fade0: fade(@default-fg, 0%);
 @color-fade1: fade(@default-fg, @fade1);
@@ -79,6 +83,28 @@
 
 @font-size-main: @font-size-toolbar;
 @headline-height: @base-spacing;
+
+// selects all dijit buttons, excluding:
+// .dijitComboBox .dijitButtonNode
+// .dijitSelect .dijitButtonContents,
+// .dijitSelect .dijitButtonNode,
+// .dijitSpinner .dijitArrowButton,
+@button-selector: ~":is(.dijitButton, .dijitComboButton, .dijitDropDownButton, .dijitToggleButton) .dijitButtonNode";
+
+.color-buttons(@bg-color) {
+  &@{button-selector} {
+    background-color: @bg-color;
+  }
+  &:not(.dijitComboButton):is(.dijitFocused, .dijitHover)@{button-selector},
+  &.dijitComboButton :is(.dijitButtonNodeHover, .dijitDownArrowButtonFocused, .dijitDownArrowButtonHover),
+  &.dijitComboButton .dijitButtonNode:has(.dijitButtonContentsFocused) {
+    background-color: shade(@bg-color, 15%);
+  }
+  &:not(.dijitComboButton).dijitActive@{button-selector},
+  &.dijitComboButton :is(.dijitButtonNodeActive, .dijitDownArrowButtonActive) {
+    background-color: shade(@bg-color, 30%);
+  }
+}
 
 .heading-font-size(@level: 0) {
   @font-size: ~"(@{font-size-post} + 10px - @{level} * 2px)";

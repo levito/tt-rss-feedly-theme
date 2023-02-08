@@ -55,7 +55,7 @@
     color: @green;
 
     &[title^="-"] {
-      color: @bright-red;
+      color: @red;
     }
     &[title="0"] {
       .interactive-icon();
@@ -323,9 +323,14 @@
   :is(.cdm[data-article-id], .hl) {
     position: relative;
     margin-bottom: -1px;
-    border: 1px solid @border-default;
-    border-inline-color: transparent !important;
-    background-color: @default-bg;
+    border: 1px solid;
+    border-inline-color: transparent;
+    background-color: @bg-read;
+    color: @border-default;
+
+    &.Unread {
+      background-color: @bg-unread;
+    }
 
     :is(.author, .excerpt, .hl-content, .preview, .titleWrap, .updated) {
       color: @fg-text-muted;
@@ -380,18 +385,18 @@
   .hl {
     &.marked {
       z-index: 1;
-      border-color: mix(@color-marked, @default-bg, @fade6);
       background-color: mix(@color-marked, @default-bg, @fade3);
+      color: mix(@color-marked, @default-bg, @fade6);
     }
     &.published {
       z-index: 1;
-      border-color: mix(@color-published, @default-bg, @fade6);
       background-color: mix(@color-published, @default-bg, @fade3);
+      color: mix(@color-published, @default-bg, @fade6);
     }
     &:is(.active, .Selected) {
       z-index: 1;
-      border-color: mix(@color-selected, @default-bg, @fade6);
-      background-color: mix(@color-selected, @default-bg, @fade3) !important;
+      background-color: mix(@color-selected, @default-bg, @fade3) !important; // override `.hl .active` accent bg
+      color: mix(@color-selected, @default-bg, @fade6);
     }
     .title {
       color: @fg-text-muted;
@@ -440,7 +445,7 @@
       display: inline;
     }
     &.expanded {
-      border-color: @border-default !important;
+      border-color: @border-default;
 
       .titleWrap {
         word-break: unset;
@@ -450,14 +455,14 @@
       }
     }
     &.active {
-      border-color: @border-darker !important;
+      border-color: @border-darker;
     }
     &:is(.expanded, .expandable.active) {
       margin-bottom: @expanded-gap;
       background-color: transparent !important;
 
       .media(0, sm, {
-        border-color: @border-default transparent transparent !important;
+        border-color: @border-default transparent transparent;
       });
       .header {
         @icon-height: 25px;

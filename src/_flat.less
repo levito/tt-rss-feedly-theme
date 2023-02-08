@@ -27,28 +27,31 @@ body.flat {
     background-color: transparent;
   }
   &.ttrss_prefs #header > a:hover,
-  .dijitTab.dijitHover:not(.dijitChecked) {
-    background-color: @color-fade1;
+  .dijitTab.dijitHover:not(.dijitChecked),
+  .dijitTreeRowHover {
+    background-color: @color-fade2;
   }
   .dijitAccordionInnerContainer,
-  .dijitButton.dijitButton:not(.dijit),
+  label.dijitButton.dijitButton,
   :is(.dijitButton, .dijitDropDownButton) .dijitButtonNode,
+  :is(.dijitButton, .dijitDropDownButton).alt-info .dijitButtonNode,
   .dijitTextBox :is(.dijitDownArrowButton, .dijitUpArrowButton),
   .dijitToolbar {
     background-color: @color-button;
   }
   .dijitAccordionInnerContainer.dijitHover,
-  .dijitButton.dijitButton:not(.dijit):hover,
+  label.dijitButton.dijitButton:hover,
   :is(.dijitButton, .dijitDropDownButton):where(.dijitFocused, .dijitHover) .dijitButtonNode,
+  :is(.dijitButton, .dijitDropDownButton).alt-info:where(.dijitFocused, .dijitHover) .dijitButtonNode,
   .dijitTextBox :is(.dijitDownArrowButtonHover, .dijitUpArrowButtonHover),
-  .dijitToolbar .dijitHover:not(.dijitSelect) .dijitButtonNode,
-  .dijitTreeRowHover {
+  .dijitToolbar .dijitHover:not(.dijitSelect) .dijitButtonNode {
     background-color: @color-button-hover;
   }
   &.ttrss_prefs #header > a:active,
   .dijitAccordionInnerContainer.dijitActive,
-  .dijitButton.dijitButton:not(.dijit):active,
+  label.dijitButton.dijitButton:active,
   :is(.dijitButton, .dijitDropDownButton):where(.dijitActive) .dijitButtonNode,
+  :is(.dijitButton, .dijitDropDownButton).alt-info:where(.dijitActive) .dijitButtonNode,
   .dijitTab.dijitActive:not(.dijitChecked),
   .dijitTextBox :is(.dijitDownArrowButtonActive, .dijitUpArrowButtonActive),
   .dijitToolbar .dijitActive:not(.dijitSelect) .dijitButtonNode {
@@ -80,10 +83,12 @@ body.flat {
     background-color: @color-input;
   }
   &.ttrss_prefs #header > a:active,
+  label.dijitButton.dijitButton.dijitButton, // adjust fake buttons
+  [class*="alt-"] .dijitButtonNode.dijitButtonNode, // colored buttons need higher specificity
+  .dijitButtonNode.dijitButtonNode, // not stronger to keep toolbar buttons borderless
+  .dijitToolbar :is(.dijitActive, .dijitHover) .dijitButtonNode, // not weaker to override default toolbar button
   .dijitAccordionChildWrapper.dijitAccordionChildWrapper,
   .dijitAccordionInnerContainer,
-  .dijitButton.dijitButton.dijitButton:not(.dijit),
-  .dijitButtonNode.dijitButtonNode,
   .dijitCheckBox.dijitCheckBox,
   .dijitDialog,
   .dijitDialogTitleBar,
@@ -94,13 +99,10 @@ body.flat {
   .dijitTab.dijitActive:not(.dijitChecked),
   .dijitTab.dijitChecked,
   .dijitTabPaneWrapper,
-  .dijitTextBox.dijitTextBox,
-  .dijitToolbar :is(.dijitActive, .dijitHover) .dijitButtonNode {
+  .dijitTextBox.dijitTextBox {
     border-color: @border-darker;
   }
   :is(.dijitCheckBox, .dijitMultiSelect, .dijitSelect, .dijitTextBox) {
-    transition: border 0.2s, box-shadow 0.2s;
-
     &:is(.dijitActive, .dijitFocused, .dijitHover):not(.dijitDisabled) {
       border-color: @color-accent;
     }
@@ -108,8 +110,17 @@ body.flat {
   .dijitCheckBox.dijitCheckBox:not(.dijitChecked)::before {
     color: transparent;
   }
-  .dijitButton .material-icons {
+  :is(.dijitButton .material-icons, .dijitDisabled, .dijitDisabled .dijitMenuItemLabel) {
     color: unset !important; // fix icons flashing in accent color on closing accordion pane
+  }
+  @{button-selector},
+  :is(.dijitComboBox .dijitButtonNode, .dijitSpinner .dijitArrowButton, label.dijitButton) {
+    transition: all 0.15s;
+  }
+  .dijitActive@{button-selector},
+  .dijitActive:is(.dijitComboBox .dijitButtonNode, .dijitSpinner .dijitArrowButton),
+  label.dijitButton:active {
+    transition: none;
   }
   :is(
       .dijitButton,
@@ -120,6 +131,8 @@ body.flat {
       .dijitSelect,
       .dijitTextBox
     ) {
+    transition: border 0.2s, box-shadow 0.2s;
+
     &:is(.dijitActive, .dijitFocused):not(.dijitDisabled) {
       box-shadow: 0 0 0 2px fade(@color-accent, @fade6);
     }
@@ -130,19 +143,46 @@ body.flat {
   :is(.dijitMultiSelect, .dijitSelectActive) {
     box-shadow: none;
   }
-  .dijitDisabled {
-    opacity: 0.5;
-
-    &,
-    .dijitButtonNode {
-      color: @default-text;
-    }
-  }
   .dijitDialogUnderlay {
     opacity: @fade6;
   }
   .dijitSplitterThumb {
     display: none;
+  }
+  .alt-primary {
+    .color-buttons(darken(@color-accent, 5%));
+  }
+  .alt-success {
+    .color-buttons(shade(@green, 20%));
+  }
+  .alt-warning {
+    .color-buttons(shade(spin(@orange, -7deg), 14%));
+  }
+  .alt-danger {
+    .color-buttons(shade(@red, 10%));
+  }
+  .alt-info {
+    .dijitButtonNode {
+      color: @color-link;
+    }
+    &:is(.dijitFocused, .dijitHover) .dijitButtonNode {
+      border-color: currentColor;
+      color: saturate(mix(@default-fg, @color-link, 20%), 20%);
+    }
+  }
+  .dijitDisabled {
+    opacity: 0.5;
+  }
+  :is(*, .dijitDisabled) {
+    .dijitButtonNode {
+      color: @default-text;
+    }
+    &[class*="alt-"] .dijitButtonNode {
+      color: @white;
+    }
+    &.alt-info .dijitButtonNode {
+      color: @color-link;
+    }
   }
 
   // ---------------------------------------------------------------------------
