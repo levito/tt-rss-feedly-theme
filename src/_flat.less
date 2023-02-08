@@ -221,7 +221,7 @@ body.flat {
     }
   }
   .dijitDialogPaneContent .dijitToolbar {
-    margin: 0;
+    margin: 0 0 8px;
     padding: 0;
     border: none;
   }
@@ -247,7 +247,7 @@ body.flat {
   }
 
   // ---------------------------------------------------------------------------
-  // tab and button layout fixes
+  // widget layout fixes
   // ---------------------------------------------------------------------------
   :is(.dijitButton, .dijitComboButton, .dijitDropDownButton, .dijitToggleButton, .dijitSelect, .dijitTextBox) {
     margin: 4px 4px 4px 0;
@@ -278,5 +278,19 @@ body.flat {
     display: flex;
     align-items: center;
     gap: 4px;
+  }
+  .dijitToolbar {
+    &::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+    // manage profiles: fix input growing when validation icon is added
+    .dijitValidationTextBox .dijitValidationContainer {
+      padding: 3px;
+    }
+  }
+  #filterEditDlg .dijitToolbar + .dijitContentPane {
+    padding-block: 0;
   }
 }
