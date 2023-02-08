@@ -55,11 +55,14 @@
       position: relative;
       top: -1px;
 
-      &:empty::after {
-        content: "rss_feed";
+      &:empty {
         color: @color-fade6;
         font-family: "Material Icons";
         font-size: 18px;
+
+        &::after {
+          content: "rss_feed";
+        }
       }
     }
 
