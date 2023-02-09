@@ -85,11 +85,11 @@
       background-color: transparent;
       box-shadow: none;
     }
-    :is(.dijitButton, .dijitDropDownButton, .dijitSelect) {
+    :is(.dijitButtonContents, .dijitButtonNode) {
       transition: color 0.2s;
       color: @fg-text-muted;
     }
-    :is(.dijitActive, .dijitHover, .dijitOpened) {
+    :is(.dijitActive, .dijitHover, .dijitOpened) :is(.dijitButtonContents, .dijitButtonNode) {
       color: @default-text;
     }
     .dijitDropDownButton .material-icons {

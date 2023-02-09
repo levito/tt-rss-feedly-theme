@@ -161,7 +161,7 @@ body.flat {
   .alt-danger {
     .color-buttons(shade(@red, 10%));
   }
-  .alt-info {
+  .alt-info.alt-info {
     .dijitButtonNode {
       color: @color-link;
     }
@@ -178,7 +178,7 @@ body.flat {
       color: @default-text;
     }
     &[class*="alt-"] .dijitButtonNode {
-      color: @white;
+      color: fade(@white, @fade9);
     }
     &.alt-info .dijitButtonNode {
       color: @color-link;
