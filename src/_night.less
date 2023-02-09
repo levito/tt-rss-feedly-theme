@@ -39,14 +39,17 @@ body.flat.flat {
     background-color: mix(@default-fg, @default-bg, @fade5);
   }
   // needs to be outside #main to also affect dialogs
-  // bump specificity to override both index and prefs without overriding detail content
+  // bump specificity to 032 to override both index and prefs without overriding detail content
   &.flat hr {
     border-color: @border-default;
   }
   .alert {
     background-color: mix(@default-fg, @default-bg, @fade1);
   }
+  :is(.dijitMenuItemHover, .dijitMenuItemSelected) td {
+    color: @black;
+  }
 }
 .notify {
-  color: #000b;
+  color: fade(@black, @fade8);
 }

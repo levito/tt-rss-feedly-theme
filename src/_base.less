@@ -153,8 +153,13 @@ body.flat {
     font-size: @font-size-main;
   }
 
-  .notify:not(.visible) {
-    pointer-events: none;
+  .notify {
+    &:not(.visible) {
+      pointer-events: none;
+    }
+    &.notify_error {
+      background-color: @red;
+    }
   }
 
   span.highlight {
