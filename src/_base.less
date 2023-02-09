@@ -162,6 +162,25 @@ body.flat {
     }
   }
 
+  div#cmdline {
+    display: flex;
+    bottom: 15px;
+    left: 50%;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    width: 2em;
+    height: 2em;
+    transform: translateX(-50%);
+    border: 2px solid;
+    border-radius: calc(@base-spacing / 3);
+    background-color: fade(@black, @fade7);
+    box-shadow: 0 2px 12px #0006;
+    color: fade(@white, @fade9);
+    font-size: 2.5em;
+    backdrop-filter: blur(6px);
+  }
+
   span.highlight {
     margin: -0.1em -0.2em;
     padding: 0.1em 0.2em;
