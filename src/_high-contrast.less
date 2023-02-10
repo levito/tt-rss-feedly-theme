@@ -109,9 +109,11 @@ body.flat {
       background-color: @bg-unread !important;
     }
   }
-  .cdm[data-enable-grid="true"][data-is-cdm-expanded="false"] .cdm:not(.active) {
-    &:is(.marked, .published, .active, .Selected) {
-      box-shadow: 6px 6px 0;
+  .media(md, {
+    .cdm[data-enable-grid="true"][data-is-cdm-expanded="false"] {
+      .cdm:not(.active):is(.marked, .published, .active, .Selected) {
+        box-shadow: 6px 6px 0;
+      }
     }
-  }
+  });
 }
