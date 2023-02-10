@@ -290,10 +290,13 @@ body.flat {
     gap: 4px;
   }
   .dijitToolbar {
-    &::after {
-      content: "";
-      display: block;
-      clear: both;
+    display: flex;
+    flex-wrap: wrap;
+
+    > :is(.pull-right, [style*="float"]) {
+      order: 1;
+      margin-left: auto;
+      padding-right: 0 !important; // for filters tab search field
     }
     // manage profiles: fix input growing when validation icon is added
     .dijitValidationTextBox .dijitValidationContainer {
