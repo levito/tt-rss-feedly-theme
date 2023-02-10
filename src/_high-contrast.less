@@ -98,12 +98,16 @@ body.flat {
   .cdm.expandable:not(.active),
   .hl {
     transition: box-shadow 0.2s, color 0s 0.2s;
+    border-block-color: @border-default !important;
 
     &:is(.marked, .published, .active, .Selected) {
-      transition: box-shadow 0.2s, color 0.2s;
-      border-block-color: @border-default;
+      transition: box-shadow 0.2s, color 0.1s;
       background-color: @bg-read !important;
-      box-shadow: 6px 0 0;
+      box-shadow: -3px 0 0 @default-bg, -7px 0 0;
+
+      .media(sm, {
+        box-shadow: -6px 0 0 @default-bg, -12px 0 0;
+      });
     }
     &.Unread {
       background-color: @bg-unread !important;
