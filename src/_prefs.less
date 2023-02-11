@@ -137,16 +137,8 @@ body.ttrss_prefs {
     width: 18px;
     vertical-align: top;
   }
-  // broken focus outline of buttons in plugin installer
-  .plugin-installer-list li > .dijitButton {
-    margin-top: 8px;
-    padding: 0;
-  }
-  // my feeds: missing spacing on right text
-  .feedParam {
-    margin-right: 16px;
-    opacity: unit((@fade6 / @fade8));
-    font-size: 0.857em;
+  #pref-tabs > .dijitTabPaneWrapper {
+    border-radius: 0;
   }
   // preferences > personal > app passwords
   #app_passwords_holder .dijitToolbar {
@@ -174,6 +166,17 @@ body.ttrss_prefs {
     h3 .material-icons {
       width: 18px;
     }
+  }
+  // broken focus outline of buttons in plugin installer
+  .plugin-installer-list li > .dijitButton {
+    margin-top: 8px;
+    padding: 0;
+  }
+  // my feeds right text
+  .feedParam {
+    margin-right: 16px;
+    opacity: unit((@fade6 / @fade8));
+    font-size: 0.857em;
   }
 
   // ---------------------------------------------------------------------------
