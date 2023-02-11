@@ -30,6 +30,7 @@
 body.flat {
   &.flat ::-webkit-scrollbar-thumb {
     background-color: @color-accent;
+    background-color: lightblue;
   }
   :is(#main, .post .header) {
     background-color: @default-bg !important;
@@ -87,6 +88,12 @@ body.flat {
       * {
         color: @default-bg !important;
       }
+    }
+    &.UpdatesDisabled {
+      font-style: italic;
+    }
+    :is(.dijitTreeLabel, .feedParam) {
+      opacity: 1;
     }
     .loadingNode {
       filter: brightness(9);
