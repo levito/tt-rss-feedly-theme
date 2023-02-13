@@ -1,0 +1,37 @@
+@import "../tt-rss/themes/night_base.less";
+@import "_base.less";
+@import "_night.less";
+@import "_high-contrast.less";
+
+:root {
+  --fonts-content: Georgia, serif;
+}
+
+@fade7: (1100% / 15);
+@fade8: (1300% / 15);
+
+@default-bg: hsl(25, 40%, 8%);
+@border-default: @color-fade5;
+@border-darker: @color-fade5;
+
+#main#main {
+  :is(.cdm[data-article-id], .hl) {
+    .icon-score:not([title="0"]),
+    &.marked .marked-pic,
+    &.published .pub-pic,
+    .dijitCheckBox.dijitChecked {
+      opacity: 1;
+    }
+  }
+}
+#feedTree#feedTree#feedTree .dijitTreeRow .loadingNode {
+  filter: brightness(0);
+}
+.icon-three-dots {
+  filter: invert(1);
+}
+body.flat {
+  :is(.dijitAccordionInnerContainer.dijitSelected .dijitAccordionTitle, .dijitCheckBox.dijitChecked) {
+    background-color: darken(@color-accent, 5%);
+  }
+}
