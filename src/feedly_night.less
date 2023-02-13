@@ -1,14 +1,6 @@
 @import "../tt-rss/themes/night_base.less";
 @import "_base.less";
 @import "_night.less";
+@import "_night-amber.less";
 
 @default-bg: #111;
-
-.icon-three-dots {
-  filter: invert(1);
-}
-body.flat {
-  :is(.dijitAccordionInnerContainer.dijitSelected .dijitAccordionTitle, .dijitCheckBox.dijitChecked) {
-    background-color: darken(@color-accent, 5%);
-  }
-}

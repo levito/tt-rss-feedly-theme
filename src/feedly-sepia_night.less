@@ -1,19 +1,10 @@
 @import "../tt-rss/themes/night_blue.less";
 @import "_base.less";
 @import "_night.less";
+@import "_night-blue.less";
 
 :root {
   --fonts-content: Georgia, serif;
 }
 
 @default-bg: hsl(210, 60%, 10%);
-
-#feeds-holder#feeds-holder #feedTree .dijitTreeRow .loadingNode {
-  filter: none;
-}
-
-body.flat.flat {
-  :is(.dijitMenuItemHover, .dijitMenuItemSelected) td {
-    color: @white;
-  }
-}
