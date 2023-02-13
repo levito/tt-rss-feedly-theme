@@ -1,8 +1,13 @@
 @import "_variables.less";
 
 #toolbar-frame#toolbar-frame {
-  z-index: 3;
   overflow: visible;
+
+  // on mobile, keep floating action button above content-wrap (z-index: 2)
+  // but don't let the toolbar cover the cards detail overlay in Firefox
+  .media(0, sm, {
+    z-index: 3;
+  });
 
   .dijitToolbar {
     margin: 0;
