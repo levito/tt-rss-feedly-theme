@@ -28,15 +28,15 @@ body.flat {
   }
   &.ttrss_prefs #header > a:hover,
   .dijitTab.dijitHover:not(.dijitChecked),
-  .dijitTreeRowHover {
+  .dijitTreeRowHover,
+  .dijitToolbar {
     background-color: @color-fade2;
   }
   .dijitAccordionInnerContainer,
   label.dijitButton.dijitButton,
   :is(.dijitButton, .dijitDropDownButton) .dijitButtonNode,
   :is(.dijitButton, .dijitDropDownButton).alt-info .dijitButtonNode,
-  .dijitTextBox :is(.dijitDownArrowButton, .dijitUpArrowButton),
-  .dijitToolbar {
+  .dijitTextBox :is(.dijitDownArrowButton, .dijitUpArrowButton) {
     background-color: @color-button;
   }
   .dijitAccordionInnerContainer.dijitHover,
@@ -254,6 +254,12 @@ body.flat {
       padding-top: 16px;
       font-weight: bold;
     }
+  }
+  // panels used for authentication/app passwords, some plugins
+  .panel.panel {
+    border-radius: 4px;
+    border-color: @border-default;
+    // background-color: @color-button;
   }
 
   // ---------------------------------------------------------------------------

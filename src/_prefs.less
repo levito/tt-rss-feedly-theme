@@ -130,6 +130,29 @@ body.ttrss_prefs {
   });
 
   // ---------------------------------------------------------------------------
+  // additional styling
+  // ---------------------------------------------------------------------------
+  #app_passwords_holder {
+    .dijitToolbar {
+      margin-bottom: 0 !important;
+      border-bottom: none;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+    .panel {
+      margin-bottom: 8px;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+    + hr {
+      display: none;
+    }
+    ~ .dijitButton {
+      float: none !important;
+    }
+  }
+
+  // ---------------------------------------------------------------------------
   // visual fixes
   // ---------------------------------------------------------------------------
   // some icons rendered too wide in top tabs
