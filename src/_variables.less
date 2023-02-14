@@ -1,3 +1,6 @@
+// -----------------------------------------------------------------------------
+// theme custumization
+// -----------------------------------------------------------------------------
 :root {
   --base-spacing: 45px; // works best with a value between 30px and 75px
   --font-size-post: 16px;
@@ -12,7 +15,18 @@
   --card-target-column-width: var(--card-min-column-width) * 1.15;
 }
 
+// -----------------------------------------------------------------------------
+// variables
+//
+// *1: values used in tt-rss default styles
+// *2: values reused from from tt-rss default styles
+// -----------------------------------------------------------------------------
+
+// dynamic values
 @base-spacing: var(--base-spacing);
+@card-max-column-count: var(--card-max-column-count);
+@card-min-column-width: var(--card-min-column-width);
+@card-target-column-width: ~"(var(--card-target-column-width))";
 @content-spacing: var(--content-spacing, var(--base-spacing));
 @content-spacing-right: var(--content-spacing, ~"(@{base-spacing} + 4px)");
 @content-spacing-left: var(--content-spacing, ~"(@{base-spacing} - 4px)");
@@ -20,16 +34,26 @@
 @expanded-detail-padding-y: 25px;
 @feeds-toggle-width: var(--feeds-toggle-width, @base-spacing);
 @feeds-spacing: var(--content-spacing, calc(@feeds-toggle-width - 8px));
+@font-size-main: @font-size-toolbar; // *2
 @font-size-post: var(--font-size-post);
-@fonts-ui: var(--fonts-ui); // also used in defines.less
+@fonts-ui: var(--fonts-ui); // *1
 @fonts-content: var(--fonts-content);
 @fonts-heading: var(--fonts-heading);
 @fonts-mono: var(--fonts-mono);
+@headline-height: @base-spacing;
 @reading-width: var(--reading-width);
-@card-max-column-count: var(--card-max-column-count);
-@card-min-column-width: var(--card-min-column-width);
-@card-target-column-width: ~"(var(--card-target-column-width))";
 
+// base colors
+@red: #d45;
+@orange: #e84;
+@yellow: #db0;
+@green: #6b5;
+@black: #000;
+@white: #fff;
+@default-fg: @black; // *1
+@default-bg: @white; // *1
+
+// opacities, color fades
 @fade1: (55% / 15);
 @fade2: (100% / 15);
 @fade3: (200% / 15);
@@ -40,27 +64,7 @@
 @fade8: (1100% / 15);
 @fade9: 100%;
 
-@black: #000;
-@white: #fff;
-@green: #6b5;
-@orange: #e84;
-@yellow: #db0;
-@red: #d45;
-
-@default-fg: @black;
-@default-bg: @white;
-@bg-read: @default-bg;
-@bg-unread: @default-bg;
-@color-marked: @green;
-@color-published: @orange;
-@color-selected: @yellow;
-@color-checked: @color-accent;
-@color-error: @red;
-@color-input: lighten(@default-bg, @fade1);
-@color-button: mix(@default-fg, @default-bg, @fade2);
-@color-button-hover: mix(@default-fg, @default-bg, ((@fade1 + @fade4) / 2));
-@color-button-active: shade(@default-bg, @fade4);
-
+// fades of default fg color
 @color-fade0: fade(@default-fg, 0%);
 @color-fade1: fade(@default-fg, @fade1);
 @color-fade2: fade(@default-fg, @fade2);
@@ -71,18 +75,29 @@
 @color-fade7: fade(@default-fg, @fade7);
 @color-fade8: fade(@default-fg, @fade8);
 
-@color-panel-bg: @color-fade2;
-@border-default: @color-fade2;
+// application of default fg color fades
+@color-panel-bg: @color-fade2; // *1
+@border-default: @color-fade2; // *1
 @border-darker: @color-fade3;
 @color-feeds-icon: @color-fade4;
-@color-icon: @color-fade5;
+@color-icon: @color-fade5; // *1
 @color-icon-hover: @color-fade6;
-@fg-text-muted: @color-fade6;
+@fg-text-muted: @color-fade6; // *1
 @feeds-text: @color-fade7;
-@default-text: @color-fade8;
+@default-text: @color-fade8; // *1
 
-@font-size-main: @font-size-toolbar;
-@headline-height: @base-spacing;
+// other colors
+@bg-read: @default-bg;
+@bg-unread: @default-bg;
+@color-marked: @green; // *1
+@color-published: @orange; // *1
+@color-selected: @yellow;
+@color-checked: @color-accent; // *1
+@color-error: @red;
+@color-input: lighten(@default-bg, @fade1);
+@color-button: mix(@default-fg, @default-bg, @fade2);
+@color-button-hover: mix(@default-fg, @default-bg, ((@fade1 + @fade4) / 2));
+@color-button-active: shade(@default-bg, @fade4);
 
 // selects all dijit buttons, excluding:
 // .dijitComboBox .dijitButtonNode
@@ -91,6 +106,9 @@
 // .dijitSpinner .dijitArrowButton,
 @button-selector: ~":is(.dijitButton, .dijitComboButton, .dijitDropDownButton, .dijitToggleButton) .dijitButtonNode";
 
+// -----------------------------------------------------------------------------
+// mixins
+// -----------------------------------------------------------------------------
 .color-buttons(@bg-color) {
   &@{button-selector} {
     background-color: @bg-color;
@@ -134,10 +152,10 @@
 .media(@from, @to, @rules) {
   @breakpoints: {
     @0: 0;
-    @sm: @breakpoint-sm;
-    @md: @breakpoint-md;
-    @lg: @breakpoint-lg;
-    @xl: @breakpoint-xl;
+    @sm: @breakpoint-sm; // *2
+    @md: @breakpoint-md; // *2
+    @lg: @breakpoint-lg; // *2
+    @xl: @breakpoint-xl; // *2
   };
   .return() when (@from = 0) {
     @media (max-width: @breakpoints[@@to]) {
