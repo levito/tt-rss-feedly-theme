@@ -209,7 +209,8 @@
     }
   }
   .expand-prompt {
-    margin: 20px 0 0;
+    max-width: 400px;
+    margin: 20px auto 0;
 
     &,
     .dijitButtonNode {
@@ -217,17 +218,7 @@
     }
     .dijitButtonNode {
       border-color: @border-darker;
-      background-color: @color-button;
-      color: @fg-text-muted;
-      font-weight: bold;
-
-      &:hover {
-        background-color: @color-button-hover;
-        color: @default-text;
-      }
-      &:active {
-        background-color: @color-button-active;
-      }
+      color: @default-text;
     }
   }
 }
