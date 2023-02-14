@@ -12,13 +12,6 @@
   .cdm.expandable.active {
     background-color: transparent !important;
   }
-  .hl.active,
-  .hl.Selected,
-  .cdm.expandable.Selected {
-    * {
-      filter: none;
-    }
-  }
   :is(.cdm[data-article-id], .hl) {
     :is(.dijitCheckBox, .marked-pic, .pub-pic) {
       transition: all 0.2s !important;
@@ -28,6 +21,12 @@
     &.published .pub-pic,
     .dijitCheckBox.dijitChecked {
       opacity: 0.75;
+    }
+  }
+  // keep specificity below `img.icon`
+  :where(.hl.active, .hl.Selected, .cdm.expandable.Selected) {
+    * {
+      filter: none;
     }
   }
   img.icon {
