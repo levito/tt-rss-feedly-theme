@@ -116,11 +116,11 @@
   &:not(.dijitComboButton):is(.dijitFocused, .dijitHover)@{button-selector},
   &.dijitComboButton :is(.dijitButtonNodeHover, .dijitDownArrowButtonFocused, .dijitDownArrowButtonHover),
   &.dijitComboButton .dijitButtonNode:has(.dijitButtonContentsFocused) {
-    background-color: shade(@bg-color, 15%);
+    background-color: shade(@bg-color, 12%);
   }
   &:not(.dijitComboButton).dijitActive@{button-selector},
-  &.dijitComboButton :is(.dijitButtonNodeActive, .dijitDownArrowButtonActive) {
-    background-color: shade(@bg-color, 30%);
+  &.dijitComboButton :is(.dijitButtonNodeActive.dijitButtonNodeActive, .dijitDownArrowButtonActive) {
+    background-color: shade(@bg-color, 25%);
   }
 }
 
