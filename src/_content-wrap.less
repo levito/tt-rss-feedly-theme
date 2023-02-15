@@ -738,7 +738,7 @@
         });
       }
       &.active {
-        @width: ~"clamp(75vw, (@{font-size-post} * @{reading-width}), 100vw)";
+        @width: ~"clamp(75vw, (@{font-size-post} * @{reading-width}), 100vw + 1px)";
         @padding-x: ~"max((15vw - 100px), @{content-spacing})";
         @header-height: calc(@font-size-post * 2 + @base-spacing * 2 + 56px);
 
