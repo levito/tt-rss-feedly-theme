@@ -7,6 +7,7 @@
 @default-fg: @white;
 @default-bg: @black;
 @color-input: darken(@default-bg, @fade1);
+@color-scrollbar: mix(@default-fg, @default-bg, @fade5);
 
 #main#main {
   .cdm.expandable.active {
@@ -35,9 +36,6 @@
 }
 
 body.flat.flat {
-  ::-webkit-scrollbar-thumb {
-    background-color: mix(@default-fg, @default-bg, @fade5);
-  }
   // needs to be outside #main to also affect dialogs
   // bump specificity to 032 to override both index and prefs without overriding detail content
   &.flat hr {

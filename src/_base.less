@@ -43,17 +43,25 @@
     url("feedly/fonts/texgyreheroscn-bolditalic-webfont.ttf") format("truetype");
 }
 
-::-webkit-scrollbar {
-  height: 4px;
-
-  @media (hover: none) {
-    width: 0 !important; // needed to also override dark themes
-    height: 0;
-  }
+* {
+  scrollbar-color: @color-scrollbar transparent;
+  scrollbar-width: thin;
 }
+body.flat.flat {
+  ::-webkit-scrollbar {
+    height: 4px;
 
-body.flat.flat ::-webkit-scrollbar-track {
-  background-color: transparent;
+    @media (hover: none) {
+      width: 0;
+      height: 0;
+    }
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: @color-scrollbar;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
 }
 
 .dijitOffScreen {
