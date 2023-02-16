@@ -87,18 +87,18 @@
 @default-text: @color-fade8; // *1
 
 // other colors
+@bg-button: mix(@default-fg, @default-bg, @fade2);
+@bg-button-hover: mix(@default-fg, @default-bg, @fade3);
+@bg-button-active: shade(@default-bg, @fade4);
+@bg-input: lighten(@default-bg, @fade1);
 @bg-read: @default-bg;
 @bg-unread: @default-bg;
 @color-scrollbar: @color-accent;
+@color-checked: @color-accent; // *1
 @color-marked: @green; // *1
 @color-published: @orange; // *1
 @color-selected: @yellow;
-@color-checked: @color-accent; // *1
 @color-error: @red;
-@color-input: lighten(@default-bg, @fade1);
-@color-button: mix(@default-fg, @default-bg, @fade2);
-@color-button-hover: mix(@default-fg, @default-bg, @fade3);
-@color-button-active: shade(@default-bg, @fade4);
 
 // selects all dijit buttons, excluding:
 // .dijitComboBox .dijitButtonNode
