@@ -875,8 +875,8 @@
   #headlines-spacer {
     position: relative;
     box-sizing: border-box;
-    height: calc(100vh - 44px); // #toolbar height
-    height: calc(100dvh - 44px); // exclude browser ui on mobile
+    height: calc(100vh - 44px); // Samsung Internet and Opera < 94 still need vh fallback
+    height: calc(100svh - 44px); // exclude #toolbar height and browser ui on mobile
     padding-top: calc(@headline-height + 1px);
 
     // loading next headlines
