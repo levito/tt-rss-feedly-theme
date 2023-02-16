@@ -7,10 +7,15 @@
 
 @default-bg: hsl(45, 80%, 96%);
 
-.content :is(img, video) {
-  mix-blend-mode: multiply;
+.content {
+  @selector: ~":is(img, video)";
+  background-color: @default-bg;
 
-  &:hover {
+  @{selector} {
+    mix-blend-mode: multiply;
+  }
+  @{selector}:hover,
+  .content-shrink-wrap @{selector} {
     mix-blend-mode: normal;
   }
 }
