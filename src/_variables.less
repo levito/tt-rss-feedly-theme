@@ -34,8 +34,13 @@
 @expanded-detail-padding-y: 25px;
 @feeds-toggle-width: var(--feeds-toggle-width, @base-spacing);
 @feeds-spacing: var(--content-spacing, calc(@feeds-toggle-width - 8px));
-@font-size-main: @font-size-toolbar; // *2
 @font-size-post: var(--font-size-post);
+@font-size-content: var(--font-size-prefs, 14px); // *1, most content in prefs
+@font-size-main: var(--font-size-main, 13px); // main view ui elements
+@font-size-toolbar: @font-size-main; // *1, toolbars, menu popups
+@font-size-card-excerpt: var(--font-size-card-excerpt, 12px);
+@font-size-small: var(--font-size-small, 11px); // *1, feed name, date, author, tags
+@font-size-tiny: var(--font-size-tiny, 9px); // *1, feeds holder unread counter, labels
 @fonts-ui: var(--fonts-ui); // *1
 @fonts-content: var(--fonts-content);
 @fonts-heading: var(--fonts-heading);
