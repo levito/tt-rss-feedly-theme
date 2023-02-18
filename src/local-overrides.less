@@ -3,14 +3,15 @@
 
 .theme-colors(@default-fg, @default-bg, @color-checked) {
   &.flat {
-    background-color: mix(@default-fg, @default-bg, @fade2);
+    background-color: @default-bg;
     color: @default-text;
 
-    :is(hr, .content) {
+    hr {
       border-color: @border-darker;
     }
     .content {
-      background-color: @default-bg;
+      border-color: @border-default;
+      background-color: @color-panel-bg;
     }
     .dijitCheckBoxChecked {
       background-color: @color-checked;
