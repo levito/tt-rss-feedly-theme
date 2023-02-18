@@ -1,3 +1,5 @@
+@body: body;
+
 @import "_variables.less";
 @import "_flat.less";
 @import "_feeds-holder.less";
@@ -41,27 +43,6 @@
   src: local("Arial Narrow Bold Italic"), local("Liberation Sans Narrow Bold Italic"),
     url("feedly/fonts/texgyreheroscn-bolditalic-webfont.woff") format("woff"),
     url("feedly/fonts/texgyreheroscn-bolditalic-webfont.ttf") format("truetype");
-}
-
-* {
-  scrollbar-color: @color-scrollbar transparent;
-  scrollbar-width: thin;
-}
-body.flat.flat {
-  ::-webkit-scrollbar {
-    height: 4px;
-
-    @media (hover: none) {
-      width: 0;
-      height: 0;
-    }
-  }
-  ::-webkit-scrollbar-thumb {
-    background-color: @color-scrollbar;
-  }
-  ::-webkit-scrollbar-track {
-    background-color: transparent;
-  }
 }
 
 .dijitOffScreen {
@@ -198,26 +179,6 @@ body.flat {
     border-radius: 0.2em;
     background-color: rgba(255, 192, 0, 0.5);
     color: @fg-text-muted;
-  }
-
-  // arrow icons, expando animation
-  .dijitDropDownButton .dijitArrowButtonInner,
-  .dijitArrowButton,
-  .dijitTreeExpandoClosed,
-  .dijitTreeExpandoOpened {
-    &::before {
-      content: "\f006";
-    }
-  }
-  :is(.dijitTreeExpandoClosed, .dijitTreeExpandoOpened) {
-    position: relative;
-    top: -1px;
-    left: -2px;
-    transition: all 0.2s !important;
-    font-size: 20px;
-  }
-  .dijitTreeExpandoClosed {
-    transform: translate(3px, 3px) rotate(-90deg);
   }
 
   #pref_feeds_errors_btn,

@@ -1,4 +1,25 @@
-body.flat {
+@import "_variables.less";
+
+* {
+  scrollbar-color: @color-scrollbar transparent;
+  scrollbar-width: thin;
+}
+::-webkit-scrollbar {
+  height: 4px !important;
+
+  @media (hover: none) {
+    width: 0 !important;
+    height: 0 !important;
+  }
+}
+::-webkit-scrollbar-thumb {
+  background-color: @color-scrollbar !important;
+}
+::-webkit-scrollbar-track {
+  background-color: transparent !important;
+}
+
+@{body}.flat {
   .dijitTextBox {
     box-sizing: border-box;
   }
@@ -195,10 +216,28 @@ body.flat {
     min-height: 30px;
     vertical-align: middle;
     gap: 5px;
-
-    > .dijitCheckBox {
-      flex-shrink: 0;
+  }
+  .dijitCheckBox {
+    flex-shrink: 0;
+  }
+  // arrow icons, expando animation
+  .dijitDropDownButton .dijitArrowButtonInner,
+  .dijitArrowButton,
+  .dijitTreeExpandoClosed,
+  .dijitTreeExpandoOpened {
+    &::before {
+      content: "\f006";
     }
+  }
+  :is(.dijitTreeExpandoClosed, .dijitTreeExpandoOpened) {
+    position: relative;
+    top: -1px;
+    left: -2px;
+    transition: all 0.2s !important;
+    font-size: 20px;
+  }
+  .dijitTreeExpandoClosed {
+    transform: translate(3px, 3px) rotate(-90deg);
   }
   .dijitToolbar {
     margin: 8px;

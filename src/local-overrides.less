@@ -1,0 +1,86 @@
+@import (reference) "../tt-rss/themes/light/defines.less";
+@import (reference) "_variables.less";
+
+.theme-colors(@default-fg, @default-bg, @color-checked) {
+  &.flat {
+    background-color: mix(@default-fg, @default-bg, @fade2);
+    color: @default-text;
+
+    :is(hr, .content) {
+      border-color: @border-darker;
+    }
+    .content {
+      background-color: @default-bg;
+    }
+    .dijitCheckBoxChecked {
+      background-color: @color-checked;
+    }
+  }
+}
+
+body.ttrss_login {
+  font-family: "Helvetica Neue", Arial, Helvetica, "Liberation Sans", "Nimbus Sans L", FreeSans, sans-serif;
+
+  @body: ~"&"; // rewrite selector `body` to `&` to extend `.ttrss_login` via `@import`
+  @import "_flat.less";
+
+  .theme-colors(@default-fg, @default-bg, @color-checked);
+
+  @media (prefers-color-scheme: dark) {
+    @import (reference) "../tt-rss/themes/night_base.less";
+    @import (multiple) "_flat.less";
+    @import (reference) "_night.less";
+
+    .theme-colors(@default-fg, @default-bg, @color-checked);
+
+    .dijitTooltipContainer {
+      color: @default-text !important;
+    }
+  }
+
+  :focus {
+    outline: none;
+  }
+  h1 {
+    display: none;
+  }
+  .content {
+    margin: 0 10px;
+    border-radius: 4px;
+  }
+  fieldset {
+    min-height: 30px;
+
+    &:has(.dijitSelectDisabled) {
+      display: none;
+    }
+    &.narrow {
+      > label + label {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        min-height: 30px;
+      }
+    }
+  }
+  .dijitTextBox {
+    font-size: 16px;
+  }
+
+  .media(0, sm, {
+    .container {
+      width: 100%;
+    }
+    label {
+      text-align: left !important;
+    }
+    :is(.dijitSelect, .dijitTextBox) {
+      width: 100%;
+    }
+    fieldset.narrow {
+      > label:first-child {
+        display: none;
+      }
+    }
+  });
+}

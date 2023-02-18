@@ -5,7 +5,7 @@
 @fade9: (1300% / 15);
 
 @default-fg: @white;
-@default-bg: @black;
+@default-bg: #111;
 @bg-input: darken(@default-bg, @fade1);
 @color-scrollbar: mix(@default-fg, @default-bg, @fade5);
 
@@ -35,7 +35,7 @@
   }
 }
 
-body.flat.flat {
+@{body}.flat.flat {
   // needs to be outside #main to also affect dialogs
   // bump specificity to 032 to override both index and prefs without overriding detail content
   &.flat hr {
