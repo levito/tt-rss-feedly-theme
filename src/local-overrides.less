@@ -16,6 +16,9 @@
     .dijitCheckBoxChecked {
       background-color: @color-checked;
     }
+    :is(.footer, .footer a) {
+      color: @fg-text-muted !important;
+    }
   }
 }
 
@@ -34,6 +37,9 @@ body.ttrss_login {
 
     .theme-colors(@default-fg, @default-bg, @color-checked);
 
+    a:hover {
+      color: lighten(@color-link, 20%) !important;
+    }
     .dijitTooltipContainer {
       color: @default-text !important;
     }
