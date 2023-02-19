@@ -215,7 +215,11 @@
     align-items: center;
     min-height: 30px;
     vertical-align: middle;
-    gap: 5px;
+    gap: 10px;
+
+    :is(.dijitButton, .dijitSelect, .dijitTextBox) {
+      margin-block: 0;
+    }
   }
   .dijitCheckBox {
     flex-shrink: 0;

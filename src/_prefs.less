@@ -45,11 +45,8 @@ body.ttrss_prefs {
       }
     }
   }
-  #footer#footer {
-    &,
-    a {
-      color: @fg-text-muted;
-    }
+  :is(#footer, #footer a) {
+    color: @fg-text-muted !important;
   }
 
   // ---------------------------------------------------------------------------
