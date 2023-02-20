@@ -1,7 +1,7 @@
 @import (reference) "../tt-rss/themes/light/defines.less";
 @import (reference) "_variables.less";
 
-.theme-colors(@default-fg, @default-bg, @color-checked) {
+@theme-colors: {
   &.flat {
     hr {
       border-color: @border-darker !important;
@@ -17,20 +17,18 @@
       color: @fg-text-muted !important;
     }
   }
-}
+};
 
 body.ttrss_login {
   @body: &; // rewrite selector `body` to `&` to extend `.ttrss_login` via `@import`
   @import "_flat.less";
-
-  .theme-colors(@default-fg, @default-bg, @color-checked);
+  @theme-colors();
 
   @media (prefers-color-scheme: dark) {
     @import (reference) "../tt-rss/themes/night_base.less";
     @import (multiple) "_flat.less";
     @import "_night.less";
-
-    .theme-colors(@default-fg, @default-bg, @color-checked);
+    @theme-colors();
 
     a:hover {
       color: lighten(@color-link, 20%) !important;
