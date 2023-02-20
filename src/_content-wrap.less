@@ -411,7 +411,8 @@
       .icon-score[title="0"] {
         display: none;
       }
-      &:is(:hover, :focus-within) {
+      // don't style :focus-within because it's conflicting with tt-rss keyboard shortcuts and would be confusing
+      &:hover {
         > * {
           background-color: @color-fade1;
         }
