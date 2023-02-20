@@ -3,9 +3,6 @@
 
 .theme-colors(@default-fg, @default-bg, @color-checked) {
   &.flat {
-    background-color: @default-bg;
-    color: @default-text;
-
     hr {
       border-color: @border-darker !important;
     }
@@ -23,9 +20,7 @@
 }
 
 body.ttrss_login {
-  font-family: "Helvetica Neue", Arial, Helvetica, "Liberation Sans", "Nimbus Sans L", FreeSans, sans-serif !important;
-
-  @body: ~"&"; // rewrite selector `body` to `&` to extend `.ttrss_login` via `@import`
+  @body: &; // rewrite selector `body` to `&` to extend `.ttrss_login` via `@import`
   @import "_flat.less";
 
   .theme-colors(@default-fg, @default-bg, @color-checked);
