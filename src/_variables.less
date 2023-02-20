@@ -148,7 +148,7 @@
   color: @color;
 
   @media (hover: hover) {
-    &:hover {
+    &:is(:hover, :focus-visible, :focus-within) {
       color: @color-icon-hover;
     }
   }

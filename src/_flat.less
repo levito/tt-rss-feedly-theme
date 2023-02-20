@@ -23,7 +23,7 @@
   background-color: @default-bg;
   color: @default-text;
   -webkit-tap-highlight-color: fade(@color-accent, @fade6);
-  
+
   &,
   .dijitMenuItemLabel {
     // used in local-overrides which has no access to custom properties, so fallback value is needed
@@ -36,6 +36,10 @@
   // ---------------------------------------------------------------------------
   // colors and general appearance
   // ---------------------------------------------------------------------------
+  a:is(:hover, :focus-visible) {
+    color: darken(@color-link, 20%);
+    text-decoration: underline;
+  }
   .dijitContentPane,
   .dijitDialog,
   .dijitTab.dijitChecked,
@@ -56,8 +60,9 @@
   .dijitTab.dijitTab:not(.dijitChecked) {
     background-color: transparent;
   }
-  &.ttrss_prefs #header > a:hover,
-  .dijitTab.dijitHover:not(.dijitChecked),
+  &.ttrss_prefs #header > a:is(:hover, :focus-visible),
+  .dijitTab.dijitHover:not(.dijitChecked), // no focus here, would stick after click, no :focus-visible possible
+  :where(.dijitTreeRow:focus-within), // needs low specificity, works for feeds in prefs, sadly not for feeds-holder
   .dijitTreeRowHover,
   .dijitToolbar {
     background-color: @color-fade2;
@@ -70,7 +75,7 @@
     background-color: @bg-button;
   }
   .dijitAccordionInnerContainer.dijitHover,
-  label.dijitButton.dijitButton:hover,
+  label.dijitButton.dijitButton:is(:hover, :focus-within),
   :is(.dijitButton, .dijitDropDownButton):where(.dijitFocused, .dijitHover) .dijitButtonNode,
   :is(.dijitButton, .dijitDropDownButton).alt-info:where(.dijitFocused, .dijitHover) .dijitButtonNode,
   .dijitTextBox :is(.dijitDownArrowButtonHover, .dijitUpArrowButtonHover),
@@ -164,7 +169,7 @@
     ) {
     transition: border 0.2s, box-shadow 0.2s;
 
-    &:is(.dijitActive, .dijitFocused):not(.dijitDisabled) {
+    &:is(.dijitActive, .dijitFocused, :focus-within):not(.dijitDisabled) {
       box-shadow: 0 0 0 2px fade(@color-accent, @fade6);
     }
   }
@@ -340,8 +345,19 @@
     display: inline-flex;
     padding: 4px 8px;
 
-    a {
-      all: unset; // bookmarklets
+    // bookmarklets
+    a:link {
+      all: unset;
+    }
+    // edit feed: upload new icon
+    input {
+      display: block !important;
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      clip: rect(0 0 0 0);
+      clip-path: inset(50%);
+      opacity: 0;
     }
   }
   .dijitTab {

@@ -95,6 +95,7 @@
       transition: color 0.2s;
       color: @fg-text-muted;
     }
+    // don't style .dijitFocused because it stays visible when clicking again without remaining accessible
     :is(.dijitActive, .dijitHover, .dijitOpened) :is(.dijitButtonContents, .dijitButtonNode) {
       color: @default-text;
     }

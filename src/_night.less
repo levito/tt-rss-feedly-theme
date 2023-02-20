@@ -35,17 +35,24 @@
   }
 }
 
-@{body}.flat.flat {
+@{body}.flat {
+  a:is(:hover, :focus-visible) {
+    color: lighten(@color-link, 20%);
+  }
   // needs to be outside #main to also affect dialogs
   // bump specificity to 032 to override both index and prefs without overriding detail content
-  &.flat hr {
+  &.flat.flat hr {
     border-color: @border-default;
   }
-  .alert {
+  .alert.alert {
     background-color: mix(@default-fg, @default-bg, @fade1);
   }
-  :is(.dijitMenuItemHover, .dijitMenuItemSelected) td {
-    color: @black;
+  :is(.dijitMenuItemHover, .dijitMenuItemSelected) {
+    color: @black; // dijitComboBox menu popup doesn't have nested td
+
+    td {
+      color: unset; // dijitComboBox menu popup colors nested td, so inherit color explicitly
+    }
   }
 }
 
