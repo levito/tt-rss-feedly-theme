@@ -7,7 +7,7 @@
     color: @default-text;
 
     hr {
-      border-color: @border-darker;
+      border-color: @border-darker !important;
     }
     .content {
       border-color: @border-default;
@@ -33,7 +33,7 @@ body.ttrss_login {
   @media (prefers-color-scheme: dark) {
     @import (reference) "../tt-rss/themes/night_base.less";
     @import (multiple) "_flat.less";
-    @import (reference) "_night.less";
+    @import "_night.less";
 
     .theme-colors(@default-fg, @default-bg, @color-checked);
 
@@ -42,6 +42,10 @@ body.ttrss_login {
     }
     .dijitTooltipContainer {
       color: @default-text !important;
+    }
+    .alert.alert-danger {
+      border-color: darken(@color-alert-danger, 20%);
+      color: @color-alert-danger;
     }
   }
 
