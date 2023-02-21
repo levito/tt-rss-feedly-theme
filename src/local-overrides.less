@@ -19,8 +19,16 @@
   }
 };
 
-body.ttrss_login {
-  @body: &; // rewrite selector `body` to `&` to extend `.ttrss_login` via `@import`
+body.flat.ttrss_utility {
+  margin: clamp(0px, ~"10vw - 50px", 50px); // 0 up to 500px, 50px from 1000px, scaling inbetween
+  :focus {
+    outline: none;
+  }
+
+  // ---------------------------------------------------------------------------
+  // colors and theming
+  // ---------------------------------------------------------------------------
+  @body: &; // rewrite selector `body` to `&` to extend `.ttrss_utility` via `@import`
   @import "_flat.less";
   @theme-colors();
 
@@ -33,50 +41,76 @@ body.ttrss_login {
     .dijitTooltipContainer {
       color: @default-text !important;
     }
+    .alert {
+      border-color: darken(@color-accent, 20%);
+      color: @color-accent;
+    }
+    .alert.alert-info {
+      border-color: darken(@color-alert-info, 20%);
+      color: @color-alert-info;
+    }
     .alert.alert-danger {
       border-color: darken(@color-alert-danger, 20%);
       color: @color-alert-danger;
     }
   }
 
-  :focus {
-    outline: none;
-  }
-  h1 {
-    display: none;
-  }
-  .content {
-    margin: 0 10px;
-    padding: 21px 28px 7px !important;
-    border-radius: 4px;
-  }
-  fieldset.narrow > label + label {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    min-height: 30px;
-  }
-  .dijitTextBox {
-    font-size: 16px;
-  }
-  :is(.dijitSelect, .dijitTextBox, .dijitButton) {
-    margin-right: 0 !important;
-  }
-
-  .media(0, sm, {
+  // ---------------------------------------------------------------------------
+  // shared layout
+  // ---------------------------------------------------------------------------
+  &.flat {
+    h1 {
+      margin-block: 14px;
+      color: unset;
+      font-size: 21px;
+    }
     .container {
-      width: 100%;
-    }
-    label {
-      text-align: left !important;
-    }
-    :is(.dijitSelect, .dijitTextBox) {
-      width: 100%;
-    }
-    fieldset.narrow {
-      > label:first-child {
-        display: none;
+      margin: 10px;
+
+      .content {
+        padding: 21px 30px;
+        border-radius: 4px;
       }
     }
-  });
+    fieldset {
+      width: 100%;
+      margin-inline: 0;
+
+      // checkboxes
+      &.narrow > label + label {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        min-height: 30px;
+      }
+      > :last-child {
+        margin-right: 0;
+      }
+    }
+
+    .media(0, sm, {
+      :is(.dijitSelect, .dijitTextBox) {
+        width: 100% !important;
+      }
+      fieldset > label:first-of-type {
+        text-align: left;
+      }
+      // checkboxes
+      fieldset.narrow > label:first-of-type {
+        display: none;
+      }
+    });
+  }
+
+  // ---------------------------------------------------------------------------
+  // special pages
+  // ---------------------------------------------------------------------------
+  &.ttrss_login {
+    h1 {
+      display: none;
+    }
+    .dijitTextBox {
+      font-size: 16px;
+    }
+  }
 }
