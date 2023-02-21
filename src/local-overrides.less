@@ -1,23 +1,28 @@
 @import (reference) "../tt-rss/themes/light/defines.less";
 @import (reference) "_variables.less";
 
-@theme-colors: {
-  &.flat {
-    hr {
-      border-color: @border-darker !important;
-    }
-    .content {
-      border-color: @border-default;
-      background-color: @color-panel-bg;
-    }
-    .dijitCheckBoxChecked {
-      background-color: @color-checked;
-    }
-    :is(.footer, .footer a) {
-      color: @fg-text-muted !important;
+// use nested mixin so it inherits variables only when called, not already when defined
+.theme() {
+  .colors(@bg-body: shade(@default-bg, @fade2), @bg-content: @default-bg, @border-content: @border-darker) {
+    &.flat {
+      background-color: @bg-body;
+
+      hr {
+        border-color: @border-darker !important;
+      }
+      .content {
+        border-color: @border-content;
+        background-color: @bg-content;
+      }
+      .dijitCheckBoxChecked {
+        background-color: @color-checked;
+      }
+      :is(.footer, .footer a) {
+        color: @fg-text-muted !important;
+      }
     }
   }
-};
+}
 
 body.flat.ttrss_utility {
   margin: clamp(0px, ~"10vw - 50px", 50px); // 0 up to 500px, 50px from 1000px, scaling inbetween
@@ -30,13 +35,13 @@ body.flat.ttrss_utility {
   // ---------------------------------------------------------------------------
   @body: &; // rewrite selector `body` to `&` to extend `.ttrss_utility` via `@import`
   @import "_flat.less";
-  @theme-colors();
+  .theme.colors();
 
   @media (prefers-color-scheme: dark) {
     @import (reference) "../tt-rss/themes/night_base.less";
     @import (multiple) "_flat.less";
     @import "_night.less";
-    @theme-colors();
+    .theme.colors(@default-bg, @color-panel-bg, @border-default);
 
     .dijitTooltipContainer {
       color: @default-text !important;
