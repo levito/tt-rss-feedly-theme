@@ -36,9 +36,17 @@
   // ---------------------------------------------------------------------------
   // colors and general appearance
   // ---------------------------------------------------------------------------
-  a:is(:hover, :focus-visible) {
-    color: darken(@color-link, 20%);
-    text-decoration: underline;
+  a:any-link {
+    &:any-link {
+      color: @color-link;
+      text-decoration: none;
+    }
+    &:is(:hover, :focus-visible) {
+      @media (hover: hover) {
+        .color-link-hover(15%);
+        text-decoration: underline;
+      }
+    }
   }
   .dijitContentPane,
   .dijitDialog,
@@ -202,8 +210,8 @@
       color: @color-link;
     }
     &:is(.dijitFocused, .dijitHover) .dijitButtonNode {
+      .color-link-hover(7.5%);
       border-color: currentColor;
-      color: saturate(mix(@default-fg, @color-link, 20%), 20%);
     }
   }
   .dijitDisabled {
@@ -346,7 +354,7 @@
     padding: 4px 8px;
 
     // bookmarklets
-    a:link {
+    a:any-link {
       all: unset;
     }
     // edit feed: upload new icon

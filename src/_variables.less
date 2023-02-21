@@ -132,6 +132,11 @@
   }
 }
 
+.color-link-hover(@amount) {
+  @is-night: boolean(luma(@default-fg) > 50%);
+  color: if(@is-night, lighten(@color-link, @amount), darken(@color-link, @amount));
+}
+
 .heading-font-size(@level: 0) {
   @font-size: ~"(@{font-size-post} + 10px - @{level} * 2px)";
 

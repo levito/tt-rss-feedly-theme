@@ -36,9 +36,6 @@
 }
 
 @{body}.flat {
-  a:is(:hover, :focus-visible) {
-    color: lighten(@color-link, 20%);
-  }
   // needs to be outside #main to also affect dialogs
   // bump specificity to 032 to override both index and prefs without overriding detail content
   &.flat.flat hr {
