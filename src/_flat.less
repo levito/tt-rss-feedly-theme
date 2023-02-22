@@ -193,6 +193,27 @@
   .dijitSplitterThumb {
     display: none;
   }
+  &.flat.flat {
+    .alert {
+      border-color: fade(@amber, @fade5);
+      background-color: fade(@amber, @fade4);
+      color: if(@is-night, lighten(@amber, @fade3), darken(@amber, @fade3));
+
+      h4 {
+        color: unset;
+      }
+    }
+    each(@colors-alert, {
+      .alert-@{key} {
+        border-color: fade(@value, @fade5);
+        background-color: fade(@value, @fade4);
+        color: if(@is-night, lighten(@value, @fade3), darken(@value, @fade3));
+      }
+      .text-@{key} {
+        color: if(@is-night, lighten(@value, 5%), darken(@value, 10%));
+      }
+    });
+  }
   .alt-primary {
     .color-buttons(darken(@color-accent, 5%));
   }

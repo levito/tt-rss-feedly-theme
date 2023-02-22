@@ -53,6 +53,7 @@
 // base colors
 @red: #d45;
 @orange: #e84;
+@amber: #ea2;
 @yellow: #db0;
 @green: #6b5;
 @blue: #39c;
@@ -107,6 +108,15 @@
 @color-published: @orange; // *1
 @color-selected: @yellow;
 @color-error: @red;
+@colors-alert: {
+  danger: @red;
+  error: @red;
+  info: @blue;
+  success: @green;
+  warning: @amber;
+};
+
+@is-night: boolean(luma(@default-fg) > 50%);
 
 // selects all dijit buttons, excluding:
 // .dijitComboBox .dijitButtonNode
@@ -134,7 +144,6 @@
 }
 
 .color-link-hover(@amount) {
-  @is-night: boolean(luma(@default-fg) > 50%);
   color: if(@is-night, lighten(@color-link, @amount), darken(@color-link, @amount));
 }
 
