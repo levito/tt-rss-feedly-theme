@@ -8,6 +8,8 @@
 @default-bg: #111;
 @bg-input: darken(@default-bg, @fade1);
 @color-scrollbar: mix(@default-fg, @default-bg, @fade5);
+@color-alert-danger: @red;
+@color-alert-info: @blue;
 
 #main#main {
   .cdm.expandable.active {
@@ -43,6 +45,11 @@
   }
   .alert.alert {
     background-color: mix(@default-fg, @default-bg, @fade1);
+
+    &:not([class*="alert-"]) {
+      border-color: darken(@yellow, 20%);
+      color: darken(@yellow, 5%);
+    }
   }
   :is(.dijitMenuItemHover, .dijitMenuItemSelected) {
     color: @black; // dijitComboBox menu popup doesn't have nested td
