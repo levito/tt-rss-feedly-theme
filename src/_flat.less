@@ -216,6 +216,10 @@
   }
   .dijitDisabled {
     opacity: 0.5;
+
+    &:not(.dijitChecked):is(.dijitCheckBox, .dijitMultiSelect, .dijitSelect, .dijitTextBox) {
+      background-color: @color-fade2;
+    }
   }
   :is(*, .dijitDisabled) {
     .dijitButtonNode {
