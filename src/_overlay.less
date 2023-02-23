@@ -2,35 +2,24 @@
 
 #overlay {
   #overlay_inner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    place-content: center;
     height: 100%;
+    margin: 0;
     color: @color-fade5;
     letter-spacing: 0.05em;
     text-transform: uppercase;
   }
 
-  #loading_bar,
-  .alert {
+  #loading_bar {
     position: absolute;
     top: 0;
     left: 0;
     box-sizing: border-box;
     width: 100% !important;
+    height: 5px;
     border-radius: 0;
-  }
-
-  #loading_bar {
     background-color: transparent;
-
-    &,
-    .dijitProgressBarFull {
-      height: 5px;
-    }
-    .dijitProgressBarFull {
-      background-color: @border-darker;
-    }
   }
 
   #loading_bar_label {
