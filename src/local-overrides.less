@@ -130,10 +130,11 @@ body.flat.ttrss_utility {
 
   &.otp {
     // otp has no container, so add margin to heading and content instead
-    h1 {
+    // if tt-rss adds a container later, the adjustments will be ignored
+    h1:not(.container *) {
       margin-inline: 10px;
     }
-    .content {
+    .content:not(.container *) {
       margin: 10px;
     }
   }
