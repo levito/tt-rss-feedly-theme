@@ -7,6 +7,9 @@
     &.flat {
       background-color: @bg-body;
 
+      &::-webkit-scrollbar-thumb {
+        background-color: @color-scrollbar !important;
+      }
       hr {
         border-color: @border-darker !important;
       }
@@ -26,6 +29,17 @@
 
 body.flat.ttrss_utility {
   margin: clamp(0px, ~"10vw - 50px", 50px); // 0 up to 500px, 50px from 1000px, scaling inbetween
+  &::-webkit-scrollbar {
+    height: 4px !important;
+
+    @media (hover: none) {
+      width: 0 !important;
+      height: 0 !important;
+    }
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparent !important;
+  }
   :focus {
     outline: none;
   }

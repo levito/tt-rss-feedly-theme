@@ -338,6 +338,7 @@
   }
   &.flat :is(code, pre),
   .dijitTextArea {
+    // used in local-overrides which has no access to custom properties, so fallback value is needed
     font-family: var(--fonts-mono, @default-fonts-mono);
   }
   // panels used for authentication/app passwords, some plugins
