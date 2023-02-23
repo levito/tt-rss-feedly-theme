@@ -48,18 +48,20 @@ body.flat.ttrss_utility {
   // shared layout
   // ---------------------------------------------------------------------------
   &.flat {
-    h1 {
-      margin-block: 14px;
+    :is(h1, h2, h3, h4) {
+      margin-bottom: 14px;
       color: unset;
+    }
+    h1 {
+      margin-top: 14px;
       font-size: 21px;
     }
     .container {
       margin: 10px;
-
-      .content {
-        padding: 21px 30px;
-        border-radius: 4px;
-      }
+    }
+    .content.content {
+      padding: 21px 30px;
+      border-radius: 4px;
     }
     fieldset {
       width: 100%;
@@ -100,6 +102,16 @@ body.flat.ttrss_utility {
     }
     .dijitTextBox {
       font-size: 16px;
+    }
+  }
+
+  &.otp {
+    // otp has no container, so add margin to heading and content instead
+    h1 {
+      margin-inline: 10px;
+    }
+    .content {
+      margin: 10px;
     }
   }
 }
