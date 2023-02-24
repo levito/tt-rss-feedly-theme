@@ -99,7 +99,7 @@ body.flat.ttrss_utility {
       }
     }
 
-    .media(0, sm, {
+    .media(0, xs, {
       :is(.dijitSelect, .dijitTextBox) {
         width: 100% !important;
       }
@@ -136,6 +136,12 @@ body.flat.ttrss_utility {
     }
     .content:not(.container *) {
       margin: 10px;
+    }
+  }
+
+  &.share_popup {
+    fieldset {
+      padding: 0;
     }
   }
 }

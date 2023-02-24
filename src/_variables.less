@@ -127,6 +127,8 @@
   warning: @amber;
 };
 
+@breakpoint-xs: 480px;
+
 @is-night: boolean(luma(@default-fg) > 50%);
 
 // selects all dijit buttons, excluding:
@@ -186,6 +188,7 @@
 .media(@from, @to, @rules) {
   @breakpoints: {
     @0: 0;
+    @xs: @breakpoint-xs; // custom addition
     @sm: @breakpoint-sm; // *2
     @md: @breakpoint-md; // *2
     @lg: @breakpoint-lg; // *2
