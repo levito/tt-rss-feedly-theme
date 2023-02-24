@@ -150,6 +150,9 @@
     &:is(.dijitActive, .dijitFocused, .dijitHover):not(.dijitDisabled) {
       border-color: @color-accent;
     }
+    &.dijitError.dijitError {
+      border-color: @color-error;
+    }
   }
   .dijitCheckBox.dijitCheckBox:not(.dijitChecked)::before {
     color: transparent;
@@ -179,6 +182,10 @@
 
     &:is(.dijitActive, .dijitFocused, :focus-within):not(.dijitDisabled) {
       box-shadow: 0 0 0 2px fade(@color-accent, @fade6);
+
+      &.dijitError {
+        box-shadow: 0 0 0 2px fade(@color-error, @fade6);
+      }
     }
   }
   :is(.dijitButton, .dijitComboButton, .dijitDropDownButton, .dijitMultiSelect) {

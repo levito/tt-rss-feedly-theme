@@ -36,6 +36,10 @@ body.flat {
   :is(.dijitCheckBox, .dijitMultiSelect, .dijitSelect, .dijitTextBox) {
     &:is(.dijitActive, .dijitFocused, .dijitHover):not(.dijitDisabled) {
       box-shadow: 0 0 0 1px @color-accent;
+
+      &.dijitError {
+        box-shadow: 0 0 0 1px @color-error;
+      }
     }
   }
   :is(
@@ -49,6 +53,10 @@ body.flat {
     ) {
     &:is(.dijitActive, .dijitFocused):not(.dijitDisabled) {
       box-shadow: 0 0 0 3px fade(@color-accent, @fade7);
+
+      &.dijitError {
+        box-shadow: 0 0 0 3px fade(@color-error, @fade7);
+      }
     }
   }
   .dijitDisabled:not(.dijitChecked):is(.dijitCheckBox, .dijitMultiSelect, .dijitSelect, .dijitTextBox) {
