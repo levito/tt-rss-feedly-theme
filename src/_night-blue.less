@@ -5,7 +5,11 @@
 }
 
 body.flat.flat {
-  :is(.dijitMenuItemHover, .dijitMenuItemSelected) td {
-    color: @white;
+  :is(.dijitMenuItemHover, .dijitMenuItemSelected) {
+    color: @white; // dijitComboBox menu popup doesn't have nested td
+
+    td {
+      color: unset; // dijitComboBox menu popup colors nested td, so inherit color explicitly
+    }
   }
 }
