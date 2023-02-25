@@ -103,8 +103,8 @@
       width: 100% !important;
 
       // show warning icon on same row, e. g. feed error on edit feed
-      &:has(+ .material-icons) {
-        width: calc(100% - 25px) !important;
+      + .material-icons {
+        margin-inline: 2px -25px;
       }
     }
   }
