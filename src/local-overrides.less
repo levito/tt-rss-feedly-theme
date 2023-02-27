@@ -95,13 +95,17 @@ body.flat.ttrss_utility {
       margin: 10px;
     }
     .content.content {
-      padding: 21px 30px;
+      padding: 20px 29px;
       border-radius: 4px;
     }
     fieldset {
       width: 100%;
       margin-inline: 0;
+      word-spacing: -0.3em; // remove extra white-space
 
+      * {
+        word-spacing: 0; // restore white-space
+      }
       // checkboxes
       &.narrow > label + label {
         display: inline-flex;
@@ -131,9 +135,13 @@ body.flat.ttrss_utility {
   // ---------------------------------------------------------------------------
   // special pages
   // ---------------------------------------------------------------------------
-  &.ttrss_login {
+  &:is(.ttrss_login, .otp) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: auto;
-    min-height: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
 
     h1 {
       display: none;
@@ -141,19 +149,30 @@ body.flat.ttrss_utility {
     .dijitTextBox {
       font-size: 16px;
     }
+    // stretch submit button
+    form > fieldset:last-child :is(.dijitButton, .dijitButtonNode) {
+      display: block;
+    }
+  }
+
+  &.ttrss_login {
+    // remove empty label before submit button
+    form > fieldset:last-child label {
+      display: none;
+    }
   }
 
   &.otp {
-    // otp has no container, so add margin to heading and content instead
-    // if tt-rss adds a container later, the adjustments will be ignored
-    h1:not(.container *) {
-      margin-inline: 10px;
-    }
-    .content:not(.container *) {
+    .content {
+      flex-basis: 400px;
       margin: 10px;
     }
     .dijitTextBox {
-      font-size: 16px;
+      width: 100%;
+      margin-bottom: 14px; // 4px field margin + 2 * 5px fieldset padding
+    }
+    .dijitButtonNode {
+      position: relative;
     }
   }
 
