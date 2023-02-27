@@ -151,6 +151,25 @@ body.ttrss_prefs {
   #filterEditDlg .dijitToolbar + .dijitContentPane {
     padding-block: 0;
   }
+  // make user css editor dialog resizable
+  .user-css-editor {
+    width: 100%;
+    resize: vertical; // disable horizontal resizing for browsers not supporting `has()`
+  }
+  .dijitDialog:has(.user-css-editor) {
+    height: 50vh;
+    resize: both;
+
+    &,
+    .dijitDialogPaneContent {
+      display: flex;
+      flex-direction: column;
+    }
+    :is(.dijitDialogPaneContent, .user-css-editor) {
+      flex: 1;
+      resize: none;
+    }
+  }
 
   // ---------------------------------------------------------------------------
   // visual fixes
