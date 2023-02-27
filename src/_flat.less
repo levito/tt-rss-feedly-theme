@@ -146,6 +146,10 @@
   .dijitTextBox.dijitTextBox {
     border-color: @border-darker;
   }
+  // match down arrow button border with combo box border
+  .dijitComboBox .dijitButtonNode {
+    border-color: mix(@bg-input, @default-fg, alpha(@border-darker) * 100%);
+  }
   :is(.dijitCheckBox, .dijitMultiSelect, .dijitSelect, .dijitTextBox) {
     &:is(.dijitActive, .dijitFocused, .dijitHover):not(.dijitDisabled) {
       border-color: @color-accent;
