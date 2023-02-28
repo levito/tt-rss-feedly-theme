@@ -162,7 +162,8 @@
     }
     .title {
       font-size: @font-size-main;
-      word-break: unset;
+      overflow-wrap: break-word;
+      word-break: normal;
     }
     :is(.author, .tags) {
       margin-right: 4px;
@@ -439,7 +440,10 @@
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 3;
       width: fit-content;
+      max-width: 100%;
       overflow: hidden;
+      overflow-wrap: break-word;
+      word-break: normal;
     }
     &:where([data-enable-grid="false"]) .expandable:not(.active) .title {
       display: inline;
@@ -447,9 +451,6 @@
     &.expanded {
       border-color: @border-default;
 
-      .titleWrap {
-        word-break: unset;
-      }
       &:not(.active, .Unread) .title {
         color: @fg-text-muted;
       }
