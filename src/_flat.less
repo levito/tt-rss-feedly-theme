@@ -42,6 +42,8 @@
       text-decoration: none;
     }
     &:is(:hover, :focus-visible) {
+      transition: color 0.1s;
+
       @media (hover: hover) {
         .color-link-hover(15%);
         text-decoration: underline;
