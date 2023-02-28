@@ -340,6 +340,7 @@
       font-size: @font-size-small;
     }
     .title {
+      color: @fg-text-muted;
       font-size: @font-size-main;
       text-decoration: none;
     }
@@ -398,12 +399,6 @@
       background-color: mix(@color-selected, @default-bg, @fade3) !important; // override `.hl .active` accent bg
       color: mix(@color-selected, @default-bg, @fade6);
     }
-    .title {
-      color: @fg-text-muted;
-    }
-    &.Unread .title {
-      color: @default-text;
-    }
     @media (hover: hover) {
       &:not(.marked) .marked-pic,
       &:not(.published) .pub-pic,
@@ -439,6 +434,10 @@
 
     &.active {
       --expanded-border-color: mix(@default-fg, @default-bg, alpha(@border-darker) * 100%);
+
+      &:not(.Unread) .title {
+        color: @color-link;
+      }
     }
     .title {
       display: -webkit-box;
@@ -452,9 +451,6 @@
     }
     &:where([data-enable-grid="false"]) .expandable:not(.active) .title {
       display: inline;
-    }
-    &.expanded:not(.active, .Unread) .title {
-      color: @fg-text-muted;
     }
     &:is(.expanded, .expandable.active) {
       margin-bottom: @expanded-gap;
