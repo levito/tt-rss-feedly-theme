@@ -162,9 +162,10 @@
 
 .heading-font-size(@level: 0) {
   @font-size: ~"(@{font-size-post} + 10px - @{level} * 2px)";
+  @line-height: ~"(@{font-size} + 6px)";
 
   font-size: calc(@font-size);
-  line-height: calc(@font-size + 6px);
+  line-height: calc(@line-height);
 }
 
 .reading-width() {

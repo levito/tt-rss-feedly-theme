@@ -745,9 +745,12 @@
         });
       }
       &.active {
-        @width: ~"clamp(75vw, (@{font-size-post} * @{reading-width}), 100vw + 1px)";
+        @width: ~"clamp(75vw, (@{font-size-post} * @{reading-width}), 100vw + 1px)"; // add 1px to push border out
         @padding-x: ~"max((15vw - 100px), @{content-spacing})";
-        @header-height: calc(@font-size-post * 2 + @base-spacing * 2 + 56px);
+        @title-line-height: .heading-font-size(@title-level) [ @line-height];
+        // header-height: sum of expanded-detail-padding on top; 2 * title-line-height because it's clamped to 2 lines;
+        // 1st base-spacing: feed, date, icons; 2nd base-spacing: title padding + author/labels/time-to-read
+        @header-height: calc(@expanded-detail-padding-y + 2 * (@title-line-height + @base-spacing));
 
         #main:has(&) {
           // hide dijitSplitter between feeds-holder and content-wrap when overlay is active
