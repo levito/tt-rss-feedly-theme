@@ -77,8 +77,8 @@ body.ttrss_prefs {
       // force to be in first row only together with checkbox
       label:first-of-type {
         flex-basis: calc(100% - @checkbox-indent);
-        margin-right: 0;
         min-width: 0;
+        margin-right: 0;
 
         // pull checkboxes before the label
         + .dijitCheckBox {
@@ -99,8 +99,8 @@ body.ttrss_prefs {
     // plugins
     ul.prefs-plugin-list {
       li {
-        line-height: unset;
         justify-content: space-between;
+        line-height: unset;
 
         label.checkbox {
           flex-wrap: wrap;

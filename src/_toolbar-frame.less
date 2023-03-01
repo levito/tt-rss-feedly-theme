@@ -176,13 +176,13 @@
         
         .dijitButtonNode {
           position: fixed;
-          inset: auto 16px 16px auto;
-          padding: @padding;
           width: 0;
+          padding: @padding;
+          transition: box-shadow 0.3s, background 0.8s ease-out;
           border-radius: 999px;
           background: @color-accent radial-gradient(circle, transparent 1%, fade(@color-accent, 50%) 1%) center/20000%;
           box-shadow: 0 3px 5px -1px #0003, 0 6px 10px 0 #00000024, 0 1px 18px 0 #0000001f;
-          transition: box-shadow 0.3s, background 0.8s ease-out;
+          inset: auto 16px 16px auto;
           -webkit-tap-highlight-color: transparent;
 
           &:active {
