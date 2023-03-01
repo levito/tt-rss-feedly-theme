@@ -684,10 +684,15 @@
       }
     });
 
+    .cdm {
+      display: flex;
+      flex-direction: column;
+    }
     :is(.header, .content) {
       border: none;
     }
     .content {
+      flex: 1;
       background-color: transparent;
     }
     :is(.feed-title, .whiteBox, #headlines-spacer) {
