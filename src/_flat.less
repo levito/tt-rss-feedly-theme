@@ -376,10 +376,6 @@
   // ---------------------------------------------------------------------------
   // widget layout fixes
   // ---------------------------------------------------------------------------
-  :is(.dijitDialogTitleBar, .dijitDialogPaneContent) {
-    right: 0;
-    width: auto !important;
-  }
   :is(.dijitButton, .dijitComboButton, .dijitDropDownButton, .dijitToggleButton, .dijitSelect, .dijitTextBox) {
     margin: 4px 4px 4px 0;
 
@@ -449,5 +445,51 @@
     .dijitValidationTextBox .dijitValidationContainer {
       padding: 3px;
     }
+  }
+
+  // fix sizing of dialogs and content, especially on mobile and when resizing the viewport
+  .dijitDialog {
+    @default-width: 600px;
+
+    // large dialogs don't have a width set, reducing the viewport width adds a width as inline style,
+    // increasing the viewport width sets inline width to auto which breaks the dialog, so override it
+    &[style*="width: auto"] {
+      width: @default-width !important;
+    }
+    :is(.dijitComboBox, .dijitSelect, .dijitTextBox) {
+      max-width: 100%;
+    }
+    .media(0, md, {
+      // setting dijitDialog to border-box breaks scrolling content, so add 1px border to calculations
+      @width: ~"min(@{default-width}, 100vw - 22px)"; // 2   (10px margin + 1px border)
+  
+      left: calc((100vw - @width) / 2 - 1px) !important; // subtract 1px for border
+      width: @width !important;
+  
+      // several inputs have a large fixed width set as inline style
+      .dijitTextBox[style*="width"] {
+        width: 100% !important;
+        margin-right: 0;
+  
+        // show warning icon on same row (feed error on edit feed)
+        + .material-icons {
+          position: absolute;
+          margin: 9.5px 0 0 5px;
+        }
+      }
+    });
+  }
+  :is(.dijitDialog, .dijitDialogPaneContent) {
+    display: flex;
+    flex-direction: column;
+  }
+  :is(.dijitDialogTitleBar, .dijitDialogPaneContent) {
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+  }
+  .dijitDialogPaneContent {
+    flex: 1;
+    overflow: auto;
   }
 }

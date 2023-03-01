@@ -97,20 +97,6 @@
   }
 });
 .media(0, md, {
-  .dijitDialog {
-    max-width: 90vw;
-
-    // several inputs have a large fixed width set as inline style and textareas like custom css are too wide
-    :is(.dijitTextArea, .dijitTextBox[style*="width"]) {
-      width: 100% !important;
-
-      // show warning icon on same row, e. g. feed error on edit feed
-      + .material-icons {
-        margin-inline: 2px -25px;
-      }
-    }
-  }
-
   // careful label baseline styling, further extended in _prefs.less
   :is(.dijitDialog, .ttrss_prefs) fieldset > label:first-of-type {
     text-align: left !important;
@@ -122,9 +108,8 @@
     --expanded-detail-padding-x: 0px;
     --feeds-toggle-width: 0px;
   }
-
-  .dijitDialog {
-    width: 90vw !important;
+  .dijitDialog fieldset .dijitTextBox {
+    width: 100%;
   }
 });
 
@@ -217,5 +202,22 @@ body.flat {
   #feedEditDlg img.feedIcon {
     border-color: @border-darker;
     background-color: @white;
+  }
+
+  // make user css editor and article note dialog resizable
+  @dialog-textareas: ~".user-css-editor, .dijitTextArea[name=note]";
+  :is(@{dialog-textareas}) {
+    flex: 1 1 100px; // 100px needed for note; user-css-editor gets default height via tt-rss css
+    width: 100% !important;
+    margin-right: 0;
+    resize: vertical; // disable horizontal resizing for browsers not supporting `has()`
+  }
+  .dijitDialog:has(@{dialog-textareas}) {
+    height: 50vh;
+    resize: both;
+
+    :is(@{dialog-textareas}) {
+      resize: none;
+    }
   }
 }
