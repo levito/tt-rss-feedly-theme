@@ -631,15 +631,20 @@
     }
   }
 
-  // show action icons in vertically split list items if they are wide enough
+  // widescreen mode extra adjustments
   #headlines-frame[data-is-wide-screen="true"][data-is-cdm="false"] {
     container-type: inline-size;
 
+    // show action icons in vertically split list items if they are wide enough
     .container(500px, {
       .hl :is(.marked-pic, .pub-pic, .dijitCheckBox, .icon-score, .updated) {
         display: block;
       }
     });
+    // if detail is opened, use smaller content spacing on the right
+    &:has(~ #content-insert) {
+      padding-right: calc(@content-spacing-left);
+    }
   }
 
   // ---------------------------------------------------------------------------
