@@ -73,19 +73,17 @@
       font-size: 18px;
     }
 
+    :is(.dijitTreeExpando, .dijitTreeExpandoLeaf, .loadingNode) {
+      top: 0;
+    }
+
     .dijitTreeExpando {
       .interactive-icon(@color-feeds-icon);
-      top: 0;
       left: -1px;
     }
 
     .dijitTreeExpandoLeaf {
-      top: 0;
       order: 1;
-    }
-
-    .loadingNode {
-      top: 0;
     }
 
     .dijitTreeRow[style="padding-left: 19px;"] {
