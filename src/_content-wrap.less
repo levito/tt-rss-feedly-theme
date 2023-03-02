@@ -609,10 +609,6 @@
       box-sizing: border-box;
       width: 100%;
     }
-    > .titleWrap,
-    .excerpt {
-      white-space: normal;
-    }
   }
 
   // single feed: move updated to the left and always show action icons
@@ -751,7 +747,7 @@
           .excerpt {
             display: block;
             margin-top: calc(@title-padding / 2);
-            overflow: hidden;
+            white-space: normal;
             font-size: @font-size-card-excerpt;
             line-height: 1.333;
             text-indent: -1.25em; // remove leading `— ` including space
