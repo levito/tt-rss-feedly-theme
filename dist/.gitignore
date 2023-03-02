@@ -1,9 +1,14 @@
-# build artifacts
+# sources
+.github
+.husky
 dist
-feedly*.css
-local-overrides.css
-!*_auto.css
-!.gitignore
+screenshots
+src
+tt-rss
+.gitmodules
+package-lock.json
+package.json
+README.md
 
 # junk
 *~
