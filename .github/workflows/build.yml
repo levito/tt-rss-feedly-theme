@@ -41,6 +41,10 @@ jobs:
         git config --global user.email "levito82@gmail.com"
         git config --global user.name "Veit Lehmann"
         git clean -ffdx
-        git add .
-        git commit -m "build css"
-        git push origin dist
+        if [[ $(git status --porcelain) ]]; then
+          git add .
+          git commit -m "build css"
+          git push origin dist
+        else
+          echo "No changes to commit"
+        fi
