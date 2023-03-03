@@ -11,7 +11,7 @@ jobs:
 
     steps:
     - name: Checkout main branch
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         ref: main
 
@@ -19,18 +19,12 @@ jobs:
       run: npm install
 
     - name: Build and compress CSS
-      run: |
-        npm run build
-        npm run compress
-
-    - name: Copy compiled CSS to dist
-      run: cp -Rv feedly* local-overrides* dist
+      run: npm run dist
 
     - name: Checkout dist branch
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         ref: dist
-        fetch-depth: 0
         clean: false
 
     - name: Copy compiled CSS to root
@@ -40,7 +34,6 @@ jobs:
       run: |
         git config --global user.email "levito82@gmail.com"
         git config --global user.name "Veit Lehmann"
-        git clean -ffdx
         if [[ $(git status --porcelain) ]]; then
           git add .
           git commit -m "build css"

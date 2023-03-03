@@ -12,7 +12,10 @@
   "private": true,
   "scripts": {
     "build": "foreach -g 'src/!(_)*.less' -x 'lessc --source-map-inline #{path} > #{name}.css'",
-    "compress": "foreach -g 'src/!(_)*.less' -x 'lightningcss --browserslist -m #{name}.css -o #{name}.css'",
+    "clean": "git clean -ffdx *.css dist",
+    "dist:compress": "foreach -g '*.css' -x 'lightningcss --browserslist -m #{path} -o dist/#{path}'",
+    "dist:copy": "cp -R feedly local-overrides.js dist",
+    "dist": "npm-run-all clean build -p dist:*",
     "lint": "stylelint 'src/**/*.less'",
     "postinstall": "git submodule update --init",
     "prepare": "husky install",
