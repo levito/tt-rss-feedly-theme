@@ -21,8 +21,21 @@ jobs:
         node-version: lts/*
         cache: 'npm'
 
+    - name: Get submodule cache
+      uses: actions/cache/restore@v3
+      id: restore-cache
+      with:
+        path: tt-rss
+        key: submodule-${{ hashFiles('.git/modules/tt-rss') }}
+
     - name: Install dependencies
       run: npm install
+
+    - name: Cache submodule
+      uses: actions/cache/save@v3
+      with:
+        path: tt-rss
+        key: ${{ steps.restore-cache.outputs.cache-primary-key }}
 
     - name: Build and compress CSS
       run: npm run dist
