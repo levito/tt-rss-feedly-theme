@@ -47,3 +47,8 @@ jobs:
         else
           echo "No changes to commit"
         fi
+
+    - name: Switch back to main branch
+      uses: actions/checkout@v3
+      with:
+        ref: main
