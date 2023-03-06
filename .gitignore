@@ -3,7 +3,7 @@ dist
 feedly*.css
 local-overrides.css
 !*_auto.css
-!.gitignore
+!dist/.gitignore
 
 # junk
 *~
