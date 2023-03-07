@@ -25,7 +25,6 @@
   --reading-width: 45; // use a unitless `em` value
   --card-max-column-count: 10;
   --card-min-column-width: 300px;
-  --card-target-column-width: var(--card-min-column-width) * 1.15;
 }
 
 // -----------------------------------------------------------------------------
@@ -39,7 +38,7 @@
 @base-spacing: var(--base-spacing);
 @card-max-column-count: var(--card-max-column-count);
 @card-min-column-width: var(--card-min-column-width);
-@card-target-column-width: ~"(var(--card-target-column-width))";
+@card-target-column-width: ~"(var(--card-min-column-width) * 1.15)";
 @content-spacing: var(--content-spacing, var(--base-spacing));
 @content-spacing-right: var(--content-spacing, ~"(@{base-spacing} + 4px)");
 @content-spacing-left: var(--content-spacing, ~"(@{base-spacing} - 4px)");
