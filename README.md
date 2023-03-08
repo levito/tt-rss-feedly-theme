@@ -93,6 +93,9 @@ Tablets are also supported, both iPads and Android. The theme detects touch devi
 ### Is there a way to quickly switch between light and night mode?
 Yes, this theme is compatible with the [*toggle_night_mode* plugin by ltGuillaume](https://github.com/ltGuillaume/FeedMei/tree/main/plugins.local). If you selected either a regular or a *night* color variant, you can toggle back and forth by hitting `a N`. If you want your OS/browser to control this, select an *auto* color variant.
 
+### Why did you change the license?
+I want this theme to have a proper, well-recognized license to make it clear and easy for others to use this code as source or part of their work. In contrast to the previously used WTFPL, the MIT license is very popular, permissive, short and clear. Please include the license with the copyright notice in any copy or fork.
+
 ## Screenshots
 
 This is a selection to give you an impression of what to expect.

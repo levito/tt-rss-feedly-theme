@@ -8,7 +8,7 @@
     "url": "https://github.com/levito/tt-rss-feedly-theme.git"
   },
   "author": "Veit Lehmann",
-  "license": "WTFPL",
+  "license": "MIT",
   "private": true,
   "scripts": {
     "build": "foreach -g 'src/!(_)*.less' -x 'lessc --source-map-inline #{path} > #{name}.css'",
