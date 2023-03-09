@@ -14,7 +14,8 @@ For the best experience, please use a current browser.
 3. Go into your TT-RSS preferences and select the feedly theme.
 4. Install/activate recommended plugins
    - `toggle_sidebar` for collapsing the feeds holder sidebar by clicking the left side of the screen
-   - `shorten_expanded` to truncate long articles in expanded mode
+   - `close_button` to allow closing article detail in split view, important for mobile
+   - `shorten_expanded` to truncate long articles in combined view
 
 ## Features
 
