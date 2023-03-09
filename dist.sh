@@ -46,9 +46,9 @@ confirm-dirty() {
 # Build commit message with sha from main and changes since last dist push, set as $message
 get-message() {
   pushd dist > /dev/null
-  lastsha=$(git log -1 --pretty=format:%B | head -n1 | cut -d' ' -f4)
+  lastsha=$(git log -1 --pretty=format:%s | cut -d" " -f4)
   popd > /dev/null
-  changes=$([ -n "$lastsha" ] && git log $lastsha..$mainsha --pretty=format:%B | sed '/^$/d')
+  changes=$([ -n "$lastsha" ] && git log $lastsha..$mainsha --pretty=format:"%h  %s")
   body=$([ -n "$changes" ] && printf "\n\nChanges since $lastsha:\n$changes")
   message="build css from $mainsha $msgsuffix $body"
 }
