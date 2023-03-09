@@ -9,7 +9,7 @@ message=
 msgsuffix=
 
 # Exit if no dist branch is found
-if [[ ! $(git ls-remote --heads --exit-code $origin $branch) ]]; then
+if [[ ! $(git ls-remote --heads --exit-code "$origin" $branch) ]]; then
   echo
   echo "No $branch branch found, won't push."
   exit
@@ -17,13 +17,13 @@ fi
 
 # Clone and configure dist branch
 clone() {
-  pushd dist
+  pushd dist || exit
   if [ ! -d ".git" ]; then
-    git clone $origin -b $branch --depth 1 --bare .git
+    git clone "$origin" -b $branch --depth 1 --bare .git
     git config --unset core.bare
     git reset
   fi
-  popd
+  popd || exit
 }
 
 # If main is dirty, confirm push to dist
@@ -31,11 +31,11 @@ confirm-dirty() {
   if [[ $(git status --porcelain) ]]; then
     echo
     echo "Uncommitted changes found, push to $branch anyway? [yN]"
-    while read -sn1 key; do
+    while read -rsn1 key; do
       case $key in
         "") exit;;
-        n) echo $key; exit;;
-        y) echo $key; break;;
+        n) echo "$key"; exit;;
+        y) echo "$key"; break;;
       esac
     done
     msgsuffix="(wip)"
@@ -45,11 +45,11 @@ confirm-dirty() {
 
 # Build commit message with sha from main and changes since last dist push, set as $message
 get-message() {
-  pushd dist > /dev/null
+  pushd dist > /dev/null || exit
   lastsha=$(git log -1 --pretty=format:%s | cut -d" " -f4)
-  popd > /dev/null
-  changes=$([ -n "$lastsha" ] && git log $lastsha..$mainsha --pretty=format:"%h  %s")
-  body=$([ -n "$changes" ] && printf "\n\nChanges since $lastsha:\n$changes")
+  popd > /dev/null || exit
+  changes=$([ -n "$lastsha" ] && git log "$lastsha".."$mainsha" --pretty=format:"%h  %s")
+  body=$([ -n "$changes" ] && printf "\n\nChanges since %s:\n%s" "$lastsha" "$changes")
   message="build css from $mainsha $msgsuffix $body"
 }
 
@@ -57,16 +57,16 @@ get-message() {
 push() {
   confirm-dirty
   get-message
-  pushd dist
+  pushd dist || exit
   if [[ $(git status --porcelain) ]]; then
-    git commit -am $message
+    git commit -am "$message"
     git push origin $branch
   else
     echo
     echo "No changes to commit."
     echo
   fi
-  popd
+  popd || exit
 }
 
 # Handle incorrect usage
