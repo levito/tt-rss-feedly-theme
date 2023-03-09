@@ -1,13 +1,16 @@
-#!/bin/sh
+#!/bin/bash
 
+# Distinguish " ", "\t" from "\n"
+IFS=
 branch=dist
 origin=$(git remote get-url origin)
 srcsha=$(git rev-parse --short HEAD)
 
 # Exit if no dist branch is found
 if [[ ! $(git ls-remote --heads --exit-code $origin $branch) ]]; then
-  echo "No $branch branch found"
-  exit 1
+  echo
+  echo "No $branch branch found, won't push."
+  exit
 fi
 
 # Clone and configure dist branch
@@ -21,14 +24,34 @@ clone() {
   popd
 }
 
+# If main is dirty, confirm push to dist
+confirm-dirty() {
+  if [[ $(git status --porcelain) ]]; then
+    echo
+    echo "Uncommitted changes found, push to $branch anyway? [yN]"
+    while read -sn1 key; do
+      case $key in
+        "") exit;;
+        n) echo $key; exit;;
+        y) echo $key; break;;
+      esac
+    done
+    srcsha="$srcsha (WIP)"
+    echo
+  fi
+}
+
 # Push changes to dist branch
 push() {
+  confirm-dirty
   pushd dist
   if [[ $(git status --porcelain) ]]; then
     git commit -am "build css from $srcsha"
     git push origin $branch
   else
-    echo "No changes to commit"
+    echo
+    echo "No changes to commit."
+    echo
   fi
   popd
 }
