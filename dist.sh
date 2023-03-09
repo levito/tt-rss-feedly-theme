@@ -4,7 +4,9 @@
 IFS=
 branch=dist
 origin=$(git remote get-url origin)
-srcsha=$(git rev-parse --short HEAD)
+mainsha=$(git rev-parse --short HEAD)
+message=
+msgsuffix=
 
 # Exit if no dist branch is found
 if [[ ! $(git ls-remote --heads --exit-code $origin $branch) ]]; then
@@ -36,17 +38,28 @@ confirm-dirty() {
         y) echo $key; break;;
       esac
     done
-    srcsha="$srcsha (WIP)"
+    msgsuffix="(wip)"
     echo
   fi
+}
+
+# Build commit message with sha from main and changes since last dist push, set as $message
+get-message() {
+  pushd dist > /dev/null
+  lastsha=$(git log -1 --pretty=format:%B | head -n1 | cut -d' ' -f4)
+  popd > /dev/null
+  changes=$([ -n "$lastsha" ] && git log $lastsha..$mainsha --pretty=format:%B | sed '/^$/d')
+  body=$([ -n "$changes" ] && printf "\n\nChanges since $lastsha:\n$changes")
+  message="build css from $mainsha $msgsuffix $body"
 }
 
 # Push changes to dist branch
 push() {
   confirm-dirty
+  get-message
   pushd dist
   if [[ $(git status --porcelain) ]]; then
-    git commit -am "build css from $srcsha"
+    git commit -am $message
     git push origin $branch
   else
     echo
