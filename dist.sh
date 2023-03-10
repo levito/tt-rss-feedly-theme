@@ -2,71 +2,79 @@
 
 # Distinguish " ", "\t" from "\n"
 IFS=
-branch=dist
+dest_branch=dist
 origin=$(git remote get-url origin)
-mainsha=$(git rev-parse --short HEAD)
+src_branch=$(git rev-parse --abbrev-ref HEAD)
+src_sha=$(git rev-parse --short HEAD)
 message=
-msgsuffix=
+msg_suffix=
 
-# Exit if no dist branch is found
-if [[ ! $(git ls-remote --heads --exit-code "$origin" $branch) ]]; then
+# Exit if no dest branch is found
+if [[ ! $(git ls-remote --heads --exit-code "$origin" $dest_branch) ]]; then
   echo
-  echo "No $branch branch found, won't push."
+  echo "No $dest_branch branch found, won't push."
   exit
 fi
 
-# Clone and configure dist branch
+# Clone and configure dest branch
 clone() {
-  pushd dist || exit
-  if [ ! -d ".git" ]; then
-    git clone "$origin" -b $branch --depth 1 --bare .git
+  pushd dist || exit 1
+  if [[ ! -d '.git' ]]; then
+    git clone "$origin" -b $dest_branch --depth 1 --bare .git
     git config --unset core.bare
     git reset
   fi
-  popd || exit
+  popd || exit 1
 }
 
-# If main is dirty, confirm push to dist
-confirm-dirty() {
+# If src branch is dirty, confirm push to dest branch
+confirm_dirty() {
   if [[ $(git status --porcelain) ]]; then
     echo
-    echo "Uncommitted changes found, push to $branch anyway? [yN]"
+    echo "Uncommitted changes found, push to $dest_branch anyway? [yN]"
     while read -rsn1 key; do
       case $key in
-        "") exit;;
-        n) echo "$key"; exit;;
-        y) echo "$key"; break;;
+      '') exit ;;
+      n)
+        echo "$key"
+        exit
+        ;;
+      y)
+        echo "$key"
+        break
+        ;;
       esac
     done
-    msgsuffix="(wip)"
+    msg_suffix='(wip)'
     echo
   fi
 }
 
-# Build commit message with sha from main and changes since last dist push, set as $message
-get-message() {
-  pushd dist > /dev/null || exit
-  lastsha=$(git log -1 --pretty=format:%s | cut -d" " -f4)
-  popd > /dev/null || exit
-  changes=$([ -n "$lastsha" ] && git log "$lastsha".."$mainsha" --pretty=format:"%h  %s")
-  body=$([ -n "$changes" ] && printf "\n\nChanges since %s:\n%s" "$lastsha" "$changes")
-  message="build css from $mainsha $msgsuffix $body"
+# Build commit message with sha from src branch and changes since last dest branch push, set as $message
+get_message() {
+  local last_sha changes body
+  pushd dist >/dev/null || exit 1
+  last_sha=$(git log -1 --pretty=format:%s | cut -d' ' -f4)
+  popd >/dev/null || exit 1
+  changes=$([[ -n "$last_sha" ]] && git log "$last_sha".."$src_sha" --pretty=format:'%h  %s')
+  body=$([[ -n "$changes" ]] && printf '\n\nChanges since %s:\n%s' "$last_sha" "$changes")
+  message="build from $src_branch: $src_sha $msg_suffix $body"
 }
 
-# Push changes to dist branch
+# Push changes to dest branch
 push() {
-  confirm-dirty
-  get-message
-  pushd dist || exit
+  confirm_dirty
+  get_message
+  pushd dist || exit 1
   if [[ $(git status --porcelain) ]]; then
     git commit -am "$message"
-    git push origin $branch
+    git push origin $dest_branch
   else
     echo
-    echo "No changes to commit."
+    echo 'No changes to commit.'
     echo
   fi
-  popd || exit
+  popd || exit 1
 }
 
 # Handle incorrect usage
@@ -76,15 +84,15 @@ usage() {
 }
 
 # Read options
-while getopts "cp" option; do
+while getopts 'cp' option; do
   case $option in
-    c) clone;;
-    p) push;;
-    ?) usage;;
+  c) clone ;;
+  p) push ;;
+  ?) usage ;;
   esac
 done
 
 # Handle no options given
-if [ $OPTIND -eq 1 ]; then
+if [[ $OPTIND -eq 1 ]]; then
   usage
 fi
