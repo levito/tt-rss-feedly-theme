@@ -45,6 +45,17 @@
         border-bottom-color: @border-darker;
         color: @fg-text-muted;
       }
+      .content {
+        :is(blockquote, pre, th) {
+          background-color: @color-fade1;
+        }
+        :is(blockquote, th, td) {
+          border-color: @border-darker;
+        }
+        pre {
+          border: 1px solid @color-fade1;
+        }
+      }
     }
   }
 }
@@ -73,7 +84,7 @@ body.flat.ttrss_utility {
   .theme.colors();
 
   @media (prefers-color-scheme: dark) {
-    @import (reference) "../tt-rss/themes/night_base.less";
+    @color-accent: #b87d2c;
     @import (multiple) "_flat.less";
     @import "_night.less";
     .theme.colors(@default-bg, @color-panel-bg, @border-default);
@@ -203,8 +214,44 @@ body.flat.ttrss_utility {
         padding: 1em 0 0;
         background-color: transparent;
 
-        :is(img, video) {
+        * {
+          margin: 0;
+
+          + * {
+            margin-top: 1em;
+          }
+          + :is(h1, h2, h3, h4, h5, h6) {
+            margin-top: 2em;
+          }
+          + li {
+            margin-top: 0.5em;
+          }
+        }
+        li {
+          padding: 0;
+        }
+        :is(img, video, ) {
           max-width: 100%;
+        }
+        .embed-responsive {
+          aspect-ratio: 16 / 9;
+
+          iframe {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        blockquote {
+          padding: 0.5em 1em;
+        }
+        table {
+          border-collapse: collapse;
+
+          &:not([border="0"]) :is(th, td) {
+            padding: 0 0.5em;
+            border-width: 1px;
+            border-style: solid;
+          }
         }
       }
     }
