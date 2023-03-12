@@ -15,17 +15,21 @@
     .media(sm, {
       line-height: 1.7;
     });
+  }
+  // `* + *` reset excluding `.dijit`, `.dijit *`, `.content .footer` and `.article-note`
+  :where(.hl .content, .cdm .content-inner) {
+    :not(:where(.dijit, .dijit *)) {
+      margin: 0;
 
-    > :first-child {
-      margin-top: 0;
-
-      each(range(5), {
-        .repeat('> :first-child', @value, {
-          @{result} {
-            margin-top: 0;
-          }
-        });
-      });
+      + :not(:where(.dijit *)) {
+        margin-top: 1em;
+      }
+      + :is(h1, h2, h3, h4, h5, h6) {
+        margin-top: calc(2.5 * @font-size-post);
+      }
+      + :is(li, figcaption) {
+        margin-top: 0.5em;
+      }
     }
   }
   .content {
@@ -35,7 +39,6 @@
     }
     :is(h1, h2, h3, h4, h5, h6) {
       .reading-width();
-      margin-block: calc(2.5 * @font-size-post) @font-size-post;
       font: bold 1em @fonts-heading;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
@@ -49,28 +52,36 @@
       .reading-width();
       box-sizing: border-box;
     }
+    :is(ul, ol) {
+      padding-left: 0; // no padding if no li is nested
+
+      li {
+        margin-left: 2.5em; // instead of ul/ol padding, add a margin here
+
+        // remove margin if it's the only item (e. g. Ars Technica slideshow images are rendered like this)
+        &:only-child {
+          margin: 0;
+          list-style: none;
+        }
+      }
+    }
+    li {
+      padding: 0;
+    }
     table {
       border-collapse: collapse;
-    }
-    :is(th, td) {
-      padding: 0 0.5em;
-      border: 1px solid @border-darker;
-      vertical-align: top;
-    }
-    th {
-      background-color: @color-fade1;
-    }
-    // layout tables
-    table[border="0"] {
-      :is(th, td) {
-        padding: 0;
-        border: 0;
 
-        ~ :is(th, td) {
-          padding-left: 0.5em;
+      :is(th, td) + * {
+        padding-left: 0.5em;
+      }
+      // not for layout tables
+      &:not([border="0"]) {
+        :is(th, td) {
+          padding: 0 0.5em;
+          border: 1px solid @border-darker;
         }
-        > :first-child {
-          margin-top: 0; // because margins won't collapse across rows
+        th {
+          background-color: @color-fade1;
         }
       }
     }
@@ -78,27 +89,25 @@
       border-color: @border-darker;
     }
     img:not(:where(.tagsPic)),
-    video {
+    :is(iframe, video) {
       display: block;
-      margin: 1em 1em 1em 0;
-    }
-    :is(figure, .embed-responsive, iframe) {
-      margin: 1em 0;
-    }
-    .embed-responsive > * {
-      margin: 0;
+      margin-right: 1em;
     }
     figure {
       > * ~ figcaption ~ *, // fix p/div incorrectly nested inside figcaption breaking out
       > img + p:last-child, // fix incorrectly using p instead of figcaption
       figcaption {
-        margin: -0.5em 0 0;
+        margin-top: 0.5em;
         font-size: 0.857em;
         font-style: italic;
         line-height: 1.333;
       }
       figcaption:first-child {
-        margin: 0 0 -0.5em;
+        margin-top: 0;
+
+        + * {
+          margin-top: 0.5em;
+        }
       }
     }
     :is(pre, code) {
@@ -125,14 +134,6 @@
       background-color: transparent;
       font-size: 1em;
     }
-    :is(li, blockquote) {
-      margin: 0.5em 0;
-      padding: 0;
-
-      :is(p, ul, ol, dl, blockquote, figure, iframe, img, video) {
-        margin-block: 0.5em;
-      }
-    }
     :is(blockquote, q) {
       font-style: italic;
     }
@@ -140,30 +141,9 @@
       .reading-width();
       display: block;
       box-sizing: border-box;
-      margin: 1em 0;
       padding: 0.5em 1em;
       border-left: 4px solid @border-darker;
       background-color: @color-fade1;
-
-      :first-child {
-        margin-top: 0;
-      }
-      :last-child {
-        margin-bottom: 0;
-      }
-    }
-    :is(ul, ol) {
-      padding-left: 0; // no padding if no li is nested
-
-      li {
-        margin-left: 2.5em; // instead of ul/ol padding, add a margin here
-
-        // remove margin and marker if it's the only item (e. g. Ars Technica slideshow images are rendered like this)
-        &:only-child {
-          margin: 0;
-          list-style: none;
-        }
-      }
     }
     :is(h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, blockquote, pre, code) {
       &:empty,
