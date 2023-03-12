@@ -57,12 +57,9 @@
     background-color: @default-bg;
   }
   #feedsTab,
-  #filterDlg_Actions#filterDlg_Actions,
-  #filterDlg_Matches#filterDlg_Matches,
-  #footer#footer,
+  #footer,
   .dijitAccordionChildWrapper.dijitAccordionChildWrapper,
   .dijitAccordionTitle.dijitAccordionTitle,
-  .dijitCheckBox.dijitCheckBox:not(.dijitChecked)::before,
   .dijitDialog .dijitToolbar,
   .dijitSelect.dijit.dijit.dijit .dijitButtonContents,
   .dijitSelect.dijit.dijit.dijit .dijitButtonNode,
@@ -112,6 +109,7 @@
         border-bottom-right-radius: 0;
         border-bottom-left-radius: 0;
         background-color: @color-accent;
+        color: @white;
       }
     }
   }
@@ -263,7 +261,7 @@
     color: @fg-text-muted;
   }
   &.flat.flat {
-    .alert {
+    :is(.alert, .article-note) {
       border-color: fade(@amber, @fade5);
       background-color: fade(@amber, @fade4);
       color: if(@is-night, lighten(@amber, @fade3), darken(@amber, @fade3));
@@ -358,7 +356,7 @@
     padding: 0;
     border: none;
   }
-  :is(.dijitMultiSelect, .dijitTab.dijitActive) {
+  :is(.dijitMultiSelect, .dijitTab.dijitActive, .dijitTab.dijitHover, .dijitTextArea) {
     color: @default-text;
   }
   .dijitTab:not(.dijitChecked) {
@@ -498,5 +496,6 @@
   .dijitDialogPaneContent {
     flex: 1;
     overflow: auto;
+    background-color: @color-panel-bg;
   }
 }

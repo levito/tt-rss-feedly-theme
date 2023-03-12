@@ -24,22 +24,14 @@
       opacity: 0.75;
     }
   }
-  // keep specificity below `img.icon`
-  :where(.hl.active, .hl.Selected, .cdm.expandable.Selected) {
-    * {
-      filter: none;
-    }
-  }
   img.icon {
     filter: opacity(0.8) drop-shadow(0 0 0.2px @white) drop-shadow(0 0 0.4px @white);
   }
 }
 
 @{body}.flat {
-  // needs to be outside #main to also affect dialogs
-  // bump specificity to 032 to override both index and prefs without overriding detail content
-  &.flat.flat hr {
-    border-color: @border-default;
+  code {
+    color: @amber !important;
   }
   :is(.dijitMenuItemHover, .dijitMenuItemSelected) {
     color: @black; // dijitComboBox menu popup doesn't have nested td

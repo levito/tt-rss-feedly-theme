@@ -148,7 +148,7 @@ body.ttrss_prefs {
         font-weight: bold;
         text-transform: capitalize;
       }
-      tr:not(:last-child) td.timestamp::after {
+      tr:not(:last-child) td:last-child:after {
         content: "";
         grid-column: 1 / 3;
         margin: 10px 0;
@@ -189,6 +189,15 @@ body.ttrss_prefs {
   }
   #filterEditDlg .dijitToolbar + .dijitContentPane {
     padding-block: 0;
+  }
+  // adapted from night_base.less
+  #filterNewRuleDlg {
+    .dijitValidationTextAreaError {
+      background-color: mix(@red, @bg-input, @fade4);
+    }
+    .dijitValidationTextArea:not(.dijitValidationTextAreaError) {
+      background-color: mix(@green, @bg-input, @fade4);
+    }
   }
 
   // ---------------------------------------------------------------------------
