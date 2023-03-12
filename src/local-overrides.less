@@ -223,14 +223,15 @@ body.flat.ttrss_utility {
           + :is(h1, h2, h3, h4, h5, h6) {
             margin-top: 2em;
           }
-          + li {
+          + :is(li, figcaption) {
             margin-top: 0.5em;
           }
         }
         li {
           padding: 0;
         }
-        :is(img, video, ) {
+        :is(img, video) {
+          display: block;
           max-width: 100%;
         }
         .embed-responsive {
@@ -240,6 +241,9 @@ body.flat.ttrss_utility {
             width: 100%;
             height: 100%;
           }
+        }
+        :is(blockquote, q, figcaption) {
+          font-style: italic;
         }
         blockquote {
           padding: 0.5em 1em;
