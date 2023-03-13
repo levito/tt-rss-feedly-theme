@@ -2,7 +2,7 @@
 
 #content-wrap#content-wrap {
   // reliably set root styles, exclude `.content .footer` and `.article-note`
-  :where(.hl .content, .content-inner, .content-shrink-wrap) {
+  :where(.post .content, .content-inner, .content-shrink-wrap) {
     color: @default-text;
     font-family: @fonts-content;
 
@@ -75,5 +75,8 @@
       border-color: @border-darker;
       color: @default-text;
     }
+  }
+  .footer {
+    padding-top: 20px;
   }
 }
