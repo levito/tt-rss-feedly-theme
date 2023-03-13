@@ -22,8 +22,8 @@
 @{body}.flat {
   background-color: @default-bg;
   color: @default-text;
+  font-family: @fonts-ui;
   -webkit-tap-highlight-color: fade(@color-accent, @fade6);
-  font-family: var(--fonts-ui, @default-fonts-ui); // fallback needed for local-overrides without custom property access
 
   .dijitMenuItemLabel {
     font-family: unset;
@@ -373,8 +373,7 @@
   }
   &.flat :is(code, pre),
   .dijitTextArea {
-    // used in local-overrides which has no access to custom properties, so fallback value is needed
-    font-family: var(--fonts-mono, @default-fonts-mono);
+    font-family: @fonts-mono;
   }
 
   // ---------------------------------------------------------------------------

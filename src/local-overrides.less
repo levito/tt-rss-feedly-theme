@@ -1,5 +1,5 @@
 @import (reference) "../tt-rss/themes/light/defines.less";
-@import (reference) "_variables.less";
+@import "_variables.less";
 
 // use nested mixin so it inherits variables only when called, not already when defined
 .theme() {
@@ -46,15 +46,7 @@
         color: @fg-text-muted;
       }
       .content {
-        :is(blockquote, pre, th) {
-          background-color: @color-fade1;
-        }
-        :is(blockquote, th, td) {
-          border-color: @border-darker;
-        }
-        pre {
-          border: 1px solid @color-fade1;
-        }
+        @import "_content-inner-colors.less";
       }
     }
   }
@@ -209,6 +201,7 @@ body.flat.ttrss_utility {
         padding: 1em 0 0;
         background-color: transparent;
 
+        // `* + *` reset
         * {
           margin: 0;
 
@@ -216,46 +209,24 @@ body.flat.ttrss_utility {
             margin-top: 1em;
           }
           + :is(h1, h2, h3, h4, h5, h6) {
-            margin-top: 2em;
+            margin-top: calc(2.5 * @font-size-post);
           }
           + :is(li, figcaption) {
             margin-top: 0.5em;
           }
         }
-        li {
-          padding: 0;
-        }
-        :is(iframe, img, video) {
-          display: block;
-          max-width: 100%;
-        }
-        iframe {
-          border: none;
-        }
+
+        // styles shared with main index
+        @import "_content-inner.less";
+
+        // additions for local-overrides
         .embed-responsive {
           aspect-ratio: 16 / 9;
 
           iframe {
             width: 100%;
             height: 100%;
-          }
-        }
-        :is(blockquote, q, figcaption) {
-          font-style: italic;
-        }
-        blockquote {
-          padding: 0.5em 1em;
-        }
-        table {
-          border-collapse: collapse;
-
-          :is(th, td) + * {
-            padding-left: 0.5em;
-          }
-          &:not([border="0"]) :is(th, td) {
-            padding: 0 0.5em;
-            border-width: 1px;
-            border-style: solid;
+            border: none;
           }
         }
       }

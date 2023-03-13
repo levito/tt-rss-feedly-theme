@@ -1,27 +1,14 @@
 // -----------------------------------------------------------------------------
 // theme custumization
 // -----------------------------------------------------------------------------
-@default-fonts-ui: ~("Helvetica Neue", Arial, Helvetica, "Liberation Sans", "Nimbus Sans L", FreeSans, sans-serif);
-@default-fonts-mono: ~(
-  "Fira Code",
-  Menlo,
-  Monaco,
-  Consolas,
-  "Lucida Console",
-  "Liberation Mono",
-  "DejaVu Sans Mono",
-  "Bitstream Vera Sans Mono",
-  "Courier New",
-  monospace
-);
-
 :root {
   --base-spacing: 45px; // works best with a value between 30px and 75px
   --font-size-post: 16px;
-  --fonts-ui: @default-fonts-ui;
+  --fonts-ui: "Helvetica Neue", Arial, Helvetica, "Liberation Sans", "Nimbus Sans L", FreeSans, sans-serif;
   --fonts-content: var(--fonts-ui);
   --fonts-heading: SansCn;
-  --fonts-mono: @default-fonts-mono;
+  --fonts-mono: "Fira Code", Menlo, Monaco, Consolas, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono",
+    "Bitstream Vera Sans Mono", "Courier New", monospace;
   --reading-width: 45; // use a unitless `em` value
   --card-max-column-count: 10;
   --card-min-column-width: 300px;
