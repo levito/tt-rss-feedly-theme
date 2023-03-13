@@ -95,7 +95,7 @@ body.flat.ttrss_utility {
   // ---------------------------------------------------------------------------
   &.flat {
     box-sizing: border-box;
-    margin: 0;
+    margin: 0 auto;
     padding: clamp(0px, ~"10vw - 50px", 50px); // 0 up to 500px, 50px from 1000px, scaling inbetween
 
     :is(h1, h2, h3, h4) {
@@ -190,9 +190,6 @@ body.flat.ttrss_utility {
       width: 100%;
       margin-bottom: 14px; // 4px field margin + 2 * 5px fieldset padding
     }
-    .dijitButtonNode {
-      position: relative;
-    }
   }
 
   &.share_popup {
@@ -203,8 +200,6 @@ body.flat.ttrss_utility {
 
   // articles shared by unique url
   &.ttrss_zoom {
-    margin-inline: auto;
-
     .post {
       .header {
         padding: 0 0 1em;
