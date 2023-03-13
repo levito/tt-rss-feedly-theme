@@ -202,7 +202,6 @@ body.flat.ttrss_utility {
 
   // articles shared by unique url
   &.ttrss_zoom {
-    box-sizing: unset;
     margin-inline: auto;
 
     .post {
@@ -230,9 +229,12 @@ body.flat.ttrss_utility {
         li {
           padding: 0;
         }
-        :is(img, video) {
+        :is(iframe, img, video) {
           display: block;
           max-width: 100%;
+        }
+        iframe {
+          border: none;
         }
         .embed-responsive {
           aspect-ratio: 16 / 9;
