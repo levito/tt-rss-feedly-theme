@@ -23,11 +23,10 @@
   background-color: @default-bg;
   color: @default-text;
   -webkit-tap-highlight-color: fade(@color-accent, @fade6);
+  font-family: var(--fonts-ui, @default-fonts-ui); // fallback needed for local-overrides without custom property access
 
-  &,
   .dijitMenuItemLabel {
-    // used in local-overrides which has no access to custom properties, so fallback value is needed
-    font-family: var(--fonts-ui, @default-fonts-ui) !important;
+    font-family: unset;
   }
   .dijitTextBox {
     box-sizing: border-box;
