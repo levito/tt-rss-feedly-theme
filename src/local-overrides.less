@@ -249,6 +249,9 @@ body.flat.ttrss_utility {
         table {
           border-collapse: collapse;
 
+          :is(th, td) + * {
+            padding-left: 0.5em;
+          }
           &:not([border="0"]) :is(th, td) {
             padding: 0 0.5em;
             border-width: 1px;
