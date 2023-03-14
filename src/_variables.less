@@ -1,7 +1,9 @@
 // -----------------------------------------------------------------------------
 // theme custumization
 // -----------------------------------------------------------------------------
-:root {
+
+// `html` instead of `:root` for lower specificity => reliable override, fixes regression introduced in af82dde
+html {
   --base-spacing: 45px; // works best with a value between 30px and 75px
   --font-size-post: 16px;
   --fonts-ui: "Helvetica Neue", Arial, Helvetica, "Liberation Sans", "Nimbus Sans L", FreeSans, sans-serif;
