@@ -6,20 +6,8 @@
     color: @default-text;
     font-family: @fonts-content;
 
-    // `* + *` reset excluding `.dijit`, `.dijit *`
-    :not(:where(.dijit, .dijit *)) {
-      margin: 0;
-
-      + :not(:where(.dijit *)) {
-        margin-top: 1em;
-      }
-      + :is(h1, h2, h3, h4, h5, h6) {
-        margin-top: calc(2.5 * @font-size-post);
-      }
-      + :is(li, figcaption) {
-        margin-top: 0.5em;
-      }
-    }
+    // prepare `* + *` reset excluding `.dijit *` in _content-inner.less
+    @reset-selector: ~":not(:where(.dijit *))";
 
     // styles shared with local-overrides
     @import "_content-inner-colors.less";

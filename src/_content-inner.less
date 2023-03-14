@@ -6,6 +6,20 @@ font-size: @font-size-post;
   line-height: 1.7;
 });
 
+@{reset-selector} {
+  margin: 0;
+
+  + @{reset-selector} {
+    margin-top: 1em;
+  }
+  + :is(h1, h2, h3, h4, h5, h6) {
+    margin-top: calc(2.5 * @font-size-post);
+  }
+  + :is(li, figcaption) {
+    margin-top: 0.5em;
+  }
+}
+
 // pull centered table layouts from newsletter feeds to the left
 > [align="center"] {
   margin-left: 0;
