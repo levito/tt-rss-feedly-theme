@@ -6,6 +6,7 @@ font-size: @font-size-post;
   line-height: 1.7;
 });
 
+// setup vertical rhythm with `* + *` method
 @{reset-selector} {
   margin: 0;
 
@@ -15,7 +16,7 @@ font-size: @font-size-post;
   + :is(h1, h2, h3, h4, h5, h6) {
     margin-top: calc(2.5 * @font-size-post);
   }
-  + :is(li, figcaption) {
+  + :is(dt, li) {
     margin-top: 0.5em;
   }
 }
@@ -24,12 +25,14 @@ font-size: @font-size-post;
 > [align="center"] {
   margin-left: 0;
 }
-:is(iframe, img, pre, video) {
+:is(blockquote, dl, iframe, img, ol, pre, table, ul, video) {
   box-sizing: border-box;
   max-width: 100%;
 }
-:is(h1, h2, h3, h4, h5, h6) {
+:is(blockquote, dl, figcaption, h1, h2, h3, h4, h5, h6, ol, p, ul) {
   .reading-width();
+}
+:is(h1, h2, h3, h4, h5, h6) {
   -webkit-font-smoothing: antialiased;
   font-weight: bold;
   text-rendering: optimizeLegibility;
@@ -39,10 +42,6 @@ each(range(6), {
     .heading-font-size(@level: @value);
   }
 });
-:is(p, ul, ol, dl, figcaption) {
-  .reading-width();
-  box-sizing: border-box;
-}
 :is(ul, ol) {
   padding-left: 0; // no padding if no li is nested
 
@@ -57,6 +56,9 @@ each(range(6), {
     }
   }
 }
+dd {
+  margin: 0 0 0 2.5em;
+}
 table {
   border-collapse: collapse;
 
@@ -70,10 +72,27 @@ table {
     border-style: solid;
   }
 }
-img:not(:where(.tagsPic)),
-:is(iframe, video) {
+:is(iframe, img, video) {
   display: block;
-  margin-right: 1em;
+}
+// `img` in `a` or other inline elements should get more margin-top because inline elements don't apply it
+img {
+  margin: 1em 1em 0.5em 0; // margin-right/-bottom to add space for floating/left-aligned media
+}
+// ... but not in blockquotes, figures and table-cells and not when it's the first element
+&,
+:where(blockquote, figure, td, th) {
+  > img:first-child {
+    margin-top: 0.5em;
+  }
+  // nested :first-child selector, e. g. for layout tables
+  each(range(5), {
+    .repeat('> :first-child', @value, {
+      @{result} > img:first-child {
+        margin-top: 0.5em;
+      }
+    });
+  });
 }
 figure {
   > * ~ figcaption ~ *, // fix p/div incorrectly nested inside figcaption breaking out
@@ -121,17 +140,11 @@ pre code {
   font-style: italic;
 }
 blockquote {
-  .reading-width();
-  display: block;
-  box-sizing: border-box;
   padding: 0.5em 1em;
 }
-:is(h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, blockquote, pre, code) {
-  &:empty,
-  + br {
-    display: none;
-  }
-}
-:is(hr, article, section, figure, figcaption) + br {
+@empty-selector: ~":not(area, br, col, embed, hr, iframe, img, input, link, td, th, track, video, wbr, .dijit *):empty";
+@{empty-selector},
+@{empty-selector} + br,
+:is(br + br, hr, div, article, blockquote, figure, figcaption, section, table) + br {
   display: none;
 }
