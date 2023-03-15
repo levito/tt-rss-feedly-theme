@@ -61,17 +61,29 @@ dd {
 }
 table {
   border-collapse: collapse;
-  background-color: transparent; // some layout tables set bgcolor, so reset it
 
-  :is(th, td) + * {
-    padding-left: 0.5em;
-  }
-  // not for layout tables
-  &:not([border="0"]) :is(th, td) {
+  :is(th, td) {
     padding: 0 0.5em;
     border-width: 1px;
     border-style: solid;
   }
+  // layout tables
+  &[border="0"] {
+    :is(th, td) {
+      padding: 0;
+      border: none; // tables nested in layout tables should also be layout tables, so explicitly remove the border
+
+      + * {
+        padding-left: 0.5em;
+      }
+    }
+    table {
+      width: 100%; // fix nested tables used for layout
+    }
+  }
+}
+[bgcolor] {
+  background-color: transparent; // some layout tables set bgcolor, so reset it
 }
 :is(iframe, img, video) {
   display: block;
