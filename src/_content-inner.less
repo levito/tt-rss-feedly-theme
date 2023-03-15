@@ -61,6 +61,7 @@ dd {
 }
 table {
   border-collapse: collapse;
+  background-color: transparent; // some layout tables set bgcolor, so reset it
 
   :is(th, td) + * {
     padding-left: 0.5em;
@@ -79,7 +80,7 @@ table {
 img {
   margin: 1em 1em 0.5em 0; // margin-right/-bottom to add space for floating/left-aligned media
 }
-// ... but not in blockquotes, figures and table-cells and not when it's the first element
+// ... but not in blockquotes, figures and table-cells, and not when it's the first element
 &,
 :where(blockquote, figure, td, th) {
   > img:first-child {
