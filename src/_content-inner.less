@@ -22,7 +22,8 @@ font-size: @font-size-post;
 }
 
 // pull centered table layouts from newsletter feeds to the left
-> [align="center"] {
+:is(> [align="center"], center *) {
+  margin-right: auto;
   margin-left: 0;
 }
 :is(blockquote, dl, iframe, img, ol, pre, table, ul, video) {
