@@ -1,5 +1,12 @@
 @import "_variables.less";
 
+// scale based on factor 1.6
+@spacing-xs: 0.375em; // 6px
+@spacing-sm: 0.625em; // 10px
+@spacing-md: 1em; // 16px
+@spacing-lg: 1.5625em; // 25px
+@spacing-xl: 2.5em; // 40px
+
 font-size: @font-size-post;
 
 .media(sm, {
@@ -10,14 +17,17 @@ font-size: @font-size-post;
 @{reset-selector} {
   margin: 0;
 
+  &:where(img, iframe, blockquote, pre, table, video) {
+    margin-block: @spacing-xs @spacing-sm; // align with top of text, add default margin-bottom for plain text after
+  }
   + @{reset-selector} {
-    margin-top: 1.5em;
+    margin-top: @spacing-lg;
   }
   + :is(h1, h2, h3, h4, h5, h6) {
-    margin-top: 2.5em;
+    margin-top: @spacing-xl;
   }
   + :is(dt, li) {
-    margin-top: 0.5em;
+    margin-top: @spacing-sm;
   }
 }
 
@@ -47,7 +57,7 @@ each(range(6), {
   padding-left: 0; // no padding if no li is nested
 
   li {
-    margin-left: 2.5em; // instead of ul/ol padding, add a margin here
+    margin-left: @spacing-xl; // instead of ul/ol padding, add a margin here
     padding: 0; // reset tt-rss default style
 
     // remove margin and marker if it's the only item (e. g. Ars Technica slideshow images are rendered like this)
@@ -58,24 +68,25 @@ each(range(6), {
   }
 }
 dd {
-  margin: 0 0 0 2.5em;
+  margin: 0 0 0 @spacing-xl;
 }
 table {
   border-collapse: collapse;
 
   :is(th, td) {
-    padding: 0 0.5em;
+    padding: @spacing-xs @spacing-sm;
     border-width: 1px;
     border-style: solid;
   }
   // layout tables
   &[border="0"] {
+    // tables nested in layout tables should also be layout tables, so explicitly remove the border and padding
     :is(th, td) {
       padding: 0;
-      border: none; // tables nested in layout tables should also be layout tables, so explicitly remove the border
+      border: none;
 
       + * {
-        padding-left: 0.5em;
+        padding-left: @spacing-xs; // add space for columns with text
       }
     }
     table {
@@ -89,21 +100,28 @@ table {
 :is(iframe, img, video) {
   display: block;
 }
+// add space for floating/aligned media
+:is([align="left"], [style*="float:left"], [style*="float: left"]) {
+  margin-right: @spacing-md;
+}
+:is([align="right"], [style*="float:right"], [style*="float: right"]) {
+  margin-left: @spacing-md;
+}
 // `img` in `a` or other inline elements should get more margin-top because inline elements don't apply it
 img {
-  margin: 1.5em 1em 0.5em 0; // margin-right/-bottom to add space for floating/left-aligned media
+  margin-top: @spacing-lg;
 }
 // ... but not in blockquotes, figures and table-cells, and not when it's the first element
 &,
 :where(blockquote, figure, td, th) {
   > img:first-child {
-    margin-top: 0.5em;
+    margin-top: @spacing-xs;
   }
   // nested :first-child selector, e. g. for layout tables
   each(range(5), {
     .repeat('> :first-child', @value, {
       @{result} > img:first-child {
-        margin-top: 0.5em;
+        margin-top: @spacing-xs;
       }
     });
   });
@@ -112,7 +130,7 @@ figure {
   > * ~ figcaption ~ *, // fix p/div incorrectly nested inside figcaption breaking out
   > img + p:last-child, // fix incorrectly using p instead of figcaption
   figcaption {
-    margin-top: 0.5em;
+    margin-top: @spacing-sm;
     font-size: 0.875em;
     font-style: italic;
     line-height: 1.357;
@@ -121,7 +139,7 @@ figure {
     margin-top: 0;
 
     + * {
-      margin-top: 0.5em;
+      margin-top: @spacing-sm;
     }
   }
 }
@@ -131,7 +149,7 @@ figure {
   line-height: 1.357;
 }
 pre {
-  padding: 0.5em;
+  padding: @spacing-sm;
   overflow: auto;
   white-space: pre-wrap;
 }
@@ -154,7 +172,7 @@ pre code {
   font-style: italic;
 }
 blockquote {
-  padding: 0.5em 1em;
+  padding: @spacing-sm @spacing-md;
 }
 @empty-selector: ~":not(area, br, col, embed, hr, iframe, img, input, link, td, th, track, video, wbr, .dijit *):empty";
 @{empty-selector},
