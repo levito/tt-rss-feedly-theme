@@ -1,16 +1,9 @@
 @import "_variables.less";
 
-@line-height: var(--line-height, 1.5);
-@margin-base: ~"@{font-size-post} * @{line-height}"; // default font-size: 16px, line-height: 1.5 (1.6875)
-@margin-sm: calc(@margin-base / 3); // => 8px (9px)
-@margin-md: calc(@margin-base); // => 24px (27px)
-@margin-lg: calc(@margin-base / 3 * 5); // => 40px (45px)
-
 font-size: @font-size-post;
-line-height: @line-height;
 
 .media(sm, {
-  --line-height: 1.6875;
+  line-height: 1.625;
 });
 
 // setup vertical rhythm with `* + *` method
@@ -18,13 +11,13 @@ line-height: @line-height;
   margin: 0;
 
   + @{reset-selector} {
-    margin-top: @margin-md;
+    margin-top: 1.5em;
   }
   + :is(h1, h2, h3, h4, h5, h6) {
-    margin-top: @margin-lg;
+    margin-top: 2.5em;
   }
   + :is(dt, li) {
-    margin-top: @margin-sm;
+    margin-top: 0.5em;
   }
 }
 
@@ -97,7 +90,7 @@ table {
 }
 // `img` in `a` or other inline elements should get more margin-top because inline elements don't apply it
 img {
-  margin: 1em 1em 0.5em 0; // margin-right/-bottom to add space for floating/left-aligned media
+  margin: 1.5em 1em 0.5em 0; // margin-right/-bottom to add space for floating/left-aligned media
 }
 // ... but not in blockquotes, figures and table-cells, and not when it's the first element
 &,
