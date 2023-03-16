@@ -1,9 +1,16 @@
 @import "_variables.less";
 
+@line-height: var(--line-height, 1.5);
+@margin-base: ~"@{font-size-post} * @{line-height}"; // default font-size: 16px, line-height: 1.5 (1.6875)
+@margin-sm: calc(@margin-base / 3); // => 8px (9px)
+@margin-md: calc(@margin-base); // => 24px (27px)
+@margin-lg: calc(@margin-base / 3 * 5); // => 40px (45px)
+
 font-size: @font-size-post;
+line-height: @line-height;
 
 .media(sm, {
-  line-height: 1.7;
+  --line-height: 1.6875;
 });
 
 // setup vertical rhythm with `* + *` method
@@ -11,13 +18,13 @@ font-size: @font-size-post;
   margin: 0;
 
   + @{reset-selector} {
-    margin-top: 1em;
+    margin-top: @margin-md;
   }
   + :is(h1, h2, h3, h4, h5, h6) {
-    margin-top: calc(2.5 * @font-size-post);
+    margin-top: @margin-lg;
   }
   + :is(dt, li) {
-    margin-top: 0.5em;
+    margin-top: @margin-sm;
   }
 }
 
