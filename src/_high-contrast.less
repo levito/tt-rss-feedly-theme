@@ -92,7 +92,7 @@ body.flat {
         background-color: @red;
       }
       * {
-        color: @default-bg !important;
+        color: if(@is-night, @black, @white) !important;
       }
     }
     &.UpdatesDisabled {
