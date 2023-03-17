@@ -400,6 +400,23 @@
     gap: 4px;
     height: 20px; // adjust icon-only buttons
   }
+  // allow to easily set width on `.dijitButton`
+  // specify `span.dijitButtonNode` to not affect `table.dijitButtonNode` of `.dijitSelect`
+  span.dijitButtonNode {
+    display: block;
+  }
+  // align links after button and apply button dimensions/margins, for e. g. password reset and subscribe to feed success
+  // only needed after `.dijitButton` for now, may be extended in the future
+  .dijitButton + a {
+    display: inline-flex;
+    box-sizing: border-box; // so we can apply `width: 100%`
+    align-items: center;
+    justify-content: center;
+    min-height: 30px; // total height because of `box-sizing: border-box`
+    margin: 4px 0;
+    padding: 5px 9px; // buttons have 1px border and 4px/8px padding
+    vertical-align: middle;
+  }
   label.dijitButton {
     display: inline-flex;
     padding: 4px 8px;
