@@ -17,10 +17,10 @@
     }
 
     .dijitTreeRow {
-      padding-right: @feeds-spacing;
+      padding-right: 8px;
       transition: none;
       border: 0 solid transparent;
-      border-left-width: @feeds-spacing;
+      border-width: 0 @feeds-spacing;
       color: @feeds-text;
 
       &,
@@ -36,7 +36,13 @@
       }
     }
 
+    .dijitTreeContent {
+      flex-grow: 0;
+    }
+
     .counterNode {
+      min-width: 0;
+      margin-inline: auto 0;
       border-color: transparent;
       background-color: transparent;
       color: @feeds-text;
@@ -84,6 +90,17 @@
 
     .dijitTreeExpandoLeaf {
       order: 1;
+      width: auto;
+      margin: 0;
+    }
+
+    .loadingNode {
+      flex-shrink: 0;
+      margin-left: 8px;
+
+      &:not(.visible) {
+        display: none;
+      }
     }
 
     .dijitTreeRow[style="padding-left: 19px;"] {
