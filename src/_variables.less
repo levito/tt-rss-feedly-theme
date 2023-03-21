@@ -8,7 +8,7 @@ html {
   --font-size-post: 16px;
   --fonts-ui: "Helvetica Neue", Arial, Helvetica, "Liberation Sans", "Nimbus Sans L", FreeSans, sans-serif;
   --fonts-content: var(--fonts-ui);
-  --fonts-heading: SansCn;
+  --fonts-heading: sans-serif-condensed, SansCn; // sans-serif-condensed to get Roboto Condensed on Android, others use SansCn
   --fonts-mono: "Fira Code", Menlo, Monaco, Consolas, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono",
     "Bitstream Vera Sans Mono", "Courier New", monospace;
   --reading-width: 45; // use a unitless `em` value
@@ -120,7 +120,7 @@ html {
 @is-night: boolean(luma(@default-fg) > 50%);
 
 // selects all dijit buttons, excluding:
-// .dijitComboBox .dijitButtonNode
+// .dijitComboBox .dijitButtonNode,
 // .dijitSelect .dijitButtonContents,
 // .dijitSelect .dijitButtonNode,
 // .dijitSpinner .dijitArrowButton,
