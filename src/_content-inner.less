@@ -177,6 +177,6 @@ blockquote {
 @empty-selector: ~":not(area, br, col, embed, hr, iframe, img, input, link, td, th, track, video, wbr, .dijit *):empty";
 @{empty-selector},
 @{empty-selector} + br,
-:is(br + br, hr, div, article, blockquote, figure, figcaption, section, table) + br {
+:is(article, blockquote, div, figure, figcaption, hr, section, table) + br {
   display: none;
 }
