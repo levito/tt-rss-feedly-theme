@@ -29,8 +29,11 @@ font-size: @font-size-post;
   + :is(dt, li) {
     margin-top: @spacing-sm;
   }
+  // prevent Firefox from adding extra margin
+  + br {
+    margin-top: 0;
+  }
 }
-
 // pull centered table layouts from newsletter feeds to the left
 :is([align="center"], center *) {
   margin-right: auto;
