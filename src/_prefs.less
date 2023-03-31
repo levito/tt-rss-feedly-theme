@@ -203,6 +203,22 @@ body.ttrss_prefs {
     width: 100% !important;
     resize: vertical;
   }
+  :is(#filterTree .filterRules li, #filterDlg_Matches .filterRule) {
+    color: darken(@green, 15%);
+
+    &.inverse {
+      color: @red;
+    }
+  }
+  #filterTree {
+    .dijitTreeRowSelected .filterRules li {
+      color: @white;
+    }
+
+    .filterRules {
+      margin-block: 0;
+    }
+  }
 
   // ---------------------------------------------------------------------------
   // visual fixes
