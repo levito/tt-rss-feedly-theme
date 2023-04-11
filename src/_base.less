@@ -205,16 +205,29 @@ body.flat {
     background-color: @white;
   }
 
-  // make user css editor and article note dialog resizable
-  @dialog-textareas: ~".user-css-editor, .dijitTextArea[name=note]";
+  // make user css editor, article note and edit tags dialogs resizable
+  @dialog-textareas: ~".user-css-editor, .dijitTextArea[name=note], #tags_str";
   :is(@{dialog-textareas}) {
-    flex: 1 1 100px; // 100px needed for note; user-css-editor gets default height via tt-rss css
+    flex: 1 1 auto;
     width: 100% !important;
     margin-right: 0;
     resize: vertical; // disable horizontal resizing for browsers not supporting `has()`
   }
+  // edit tags needs special treatment because its textarea is wrapped in a section
+  section:has(#tags_str) {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column; // for autocomplete
+    gap: 4px;
+  }
+  #tags_str:empty {
+    display: none;
+  }
+  // align article note dialog buttons to the right
+  .dijitDialog .dijitTextArea[name="note"] + footer {
+    text-align: right;
+  }
   .dijitDialog:has(@{dialog-textareas}) {
-    height: 50vh;
     resize: both;
 
     :is(@{dialog-textareas}) {
