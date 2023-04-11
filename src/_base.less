@@ -213,6 +213,13 @@ body.flat {
     margin-right: 0;
     resize: vertical; // disable horizontal resizing for browsers not supporting `has()`
   }
+  .dijitDialog:has(@{dialog-textareas}) {
+    resize: both;
+
+    :is(@{dialog-textareas}) {
+      resize: none;
+    }
+  }
   // edit tags needs special treatment because its textarea is wrapped in a section
   section:has(#tags_str) {
     display: flex;
@@ -223,15 +230,14 @@ body.flat {
   #tags_str:empty {
     display: none;
   }
-  // align article note dialog buttons to the right
-  .dijitDialog .dijitTextArea[name="note"] + footer {
+
+  // align article note and share article by url dialog buttons to the right
+  .dijitDialog .dijitTextArea[name="note"] + footer,
+  .dijitDialog section:has(.target-url) + footer {
     text-align: right;
   }
-  .dijitDialog:has(@{dialog-textareas}) {
-    resize: both;
-
-    :is(@{dialog-textareas}) {
-      resize: none;
-    }
+  // left-align unshare article button
+  .dijitDialog section:has(.target-url) + footer .dijitButton.alt-danger {
+    float: left;
   }
 }
