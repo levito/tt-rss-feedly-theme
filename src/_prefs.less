@@ -259,11 +259,22 @@ body.ttrss_prefs {
     margin-top: 8px;
     padding: 0;
   }
-  // my feeds tree row right text
-  .feedParam {
-    margin-right: 10px;
-    opacity: unit((@fade6 / @fade8));
-    font-size: 0.857em;
+  #feedTree {
+    // allow truncating feed label
+    .dijitTreeContent {
+      display: inline;
+      margin-left: 0;
+
+      > * {
+        vertical-align: top;
+      }
+    }
+    // my feeds tree row right text
+    .feedParam {
+      margin-inline: 8px 10px;
+      opacity: unit((@fade6 / @fade8));
+      font-size: 0.857em;
+    }
   }
   // labels tree row icons
   .dijitTreeRow .icon-label {
